@@ -1,5 +1,14 @@
 ### Hi there 👋
-
+ I´m Abdullah 😄
+ 
+ 🌱 I’m currently learning Python & Javascript
+ 
+ #Social 
+ 
+ 
+ Tech Stack:
+ Javascript
+ 
 <!--
 **AbdullahBakir97/AbdullahBakir97** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
