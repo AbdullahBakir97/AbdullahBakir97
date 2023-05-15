@@ -1,6 +1,9 @@
 # 💫 About Me:
 <br><h3>Hi there 👋</h3><br><h1>I´m Abdullah 😄</h1><br><h3>👀 I’m interested in Front and Backend Devolpment</h3><br><h3>🌱 I’m currently learning Python and Javascript</h3>
 
+![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/videoplasty-11018-chill-coding-programming-lofi-animation-stock-animation-pdp.mp4)
+
+
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy.webp)
 
 ## 🌐 Socials:
