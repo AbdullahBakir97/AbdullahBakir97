@@ -1,9 +1,10 @@
 # 💫 About Me:
 <br><h3>Hi there 👋</h3><br><h1>I´m Abdullah 😄</h1><br><h3>👀 I’m interested in Front and Backend Devolpment</h3><br><h3>🌱 I’m currently learning Python and Javascript</h3>
+
 <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/qgQUggAC3Pfv687qPC" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/dommespace-domme-space-programador-qgQUggAC3Pfv687qPC">via GIPHY</a></p>
 
 
-https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/0d5fe16b-ee9d-4311-88dc-f7a027b0b8c9
+
 
 
 ## 🌐 Socials:
