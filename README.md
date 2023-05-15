@@ -1,7 +1,7 @@
 # 💫 About Me:
 <br><h3>Hi there 👋</h3><br><h1>I´m Abdullah 😄</h1><br><h3>👀 I’m interested in Front and Backend Devolpment</h3><br><h3>🌱 I’m currently learning Python and Javascript</h3>
 
-<iframe src="https://giphy.com/embed/qgQUggAC3Pfv687qPC" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dommespace-domme-space-programador-qgQUggAC3Pfv687qPC">via GIPHY</a></p>
+
 
 
 ## 🌐 Socials:
