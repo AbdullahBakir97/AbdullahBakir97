@@ -1,5 +1,5 @@
 # 💫 About Me:
-<br>Hi there 👋<br><h1>I´m Abdullah</h1>😄<br>👀 I’m interested in Front and Backend Devolpment<br>🌱 I’m currently learning Python and Javascript
+<br>Hi there 👋<br><h1>I´m Abdullah</h1>😄<br><h3>👀 I’m interested in Front and Backend Devolpment</h3><br><h3>🌱 I’m currently learning Python and Javascript</h3>
 
 
 ## 🌐 Socials:
