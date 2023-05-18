@@ -4,7 +4,8 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-![My Skills](https://skillicons.dev/icons?i=py,git,github,bootstrap,arduino,PostgreSQL,MySQL,JWT,AJAX,Charts,ORM,AWS,Htmx,Deploy,SQL,Vue.js,Heroku,Docker,Redis,Celery,Postman API,Swagger API,Django REST Framework,Django,Responsive Web Design,Bootstrap,JavaScript,Cascading Style Sheets (CSS),HTML,Automation,Object-Oriented Programming (OOP) ·)
+
+![My Skills](https://skillicons.dev/icons?i=py,git,github,discord,bootstrap,arduino)
 
 ## 🌐 Socials:
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/https://www.facebook.com/profile.php?id=100007615024761/) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/https://www.instagram.com/abdullahbakir/) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/abdullah-bakir-809065273/) 
@@ -25,4 +26,5 @@
 
 https://www.instagram.com/abdulahbaker/
 
-![My Skills](https://skillicons.dev/icons?i=py,git,github,discord,bootstrap,arduino)
+
+![My Skills](https://skillicons.dev/icons?i=py,git,github,bootstrap,arduino,PostgreSQL,MySQL,JWT,AJAX,Charts,ORM,AWS,Htmx,Deploy,SQL,Vue.js,Heroku,Docker,Redis,Celery,Postman API,Swagger API,Django REST Framework,Django,Bootstrap,JavaScript,CSS,HTML,Automation,Object-Oriented Programming (OOP) ·)
