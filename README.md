@@ -1,5 +1,5 @@
 # 💫 About Me:
-<br><h3>Hi there 👋</h3><br><h1>I´m Abdullah 😄</h1><br><h3>👀 I’m interested in Front and Backend Devolpment</h3><br><h3>🌱 I’m currently learning Python and Javascript</h3>
+### <img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px"> <br><h3>Hi there 👋</h3><br><h1>I´m Abdullah 😄</h1><br><h3>👀 I’m interested in Front and Backend Devolpment</h3><br><h3>🌱 I’m currently learning Python and Javascript</h3>
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
