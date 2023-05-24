@@ -28,3 +28,4 @@ https://www.instagram.com/abdulahbaker/
 
 
 ![My Skills](https://skillicons.dev/icons?i=py,git,github,bootstrap,arduino,PostgreSQL,MySQL,JWT,AJAX,Charts,ORM,AWS,Htmx,Deploy,SQL,Vue.js,Heroku,Docker,Redis,Celery,Postman API,Swagger API,Django REST Framework,Django,Bootstrap,JavaScript,CSS,HTML,Automation,Object-Oriented Programming (OOP) ·)
+wsg
