@@ -1,4 +1,4 @@
-<h3> <img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px"> Hi there </h3
+<h3> <img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px"> Hi there </h3>
 
 # I'm Abdullah 😄
 
