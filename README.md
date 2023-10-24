@@ -19,7 +19,7 @@
 - **Web Security:** I prioritize security, implementing measures to protect web applications and user data.
 - **Passion for Innovation:** I thrive on staying at the forefront of web development trends and technologies, ensuring that my projects are always cutting-edge.
 
-## 📊 GitHub Stats:
+## 📊 GitHub Stats: 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=dark&hide_border=true&include_all_commits=false&count_private=false)
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=dark&hide_border=true)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=dark&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
