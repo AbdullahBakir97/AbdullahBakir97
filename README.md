@@ -1,17 +1,4 @@
 
-<span style="position:relative;">
-  <style>
-    .code:hover {
-      color: firebrick;
-      animation: burn 1s infinite;
-    }
-
-    @keyframes burn {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-  </style>
   
   ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Language:+English+(Default),+unless+a+specific+language+is+mentioned;)
 </span>
