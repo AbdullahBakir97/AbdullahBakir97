@@ -1,4 +1,5 @@
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=2900&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web&Python+Developer+Based+In+Germany;Experienced+In+Python,+Django,+And+More;)
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web&Python+Developer+Based+In+Germany;Experienced+In+Python,+Django,+And+More;)
+
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
