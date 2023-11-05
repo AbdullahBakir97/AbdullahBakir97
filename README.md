@@ -1,8 +1,4 @@
-<h2> <img src="https://raw.githubusercontent.com/iampavangandhi/iampavangandhi/master/gifs/Hi.gif" width="30px"> Hi there </h2>
-
-# I'm Abdullah 😄
-
-# 👀 I’m interested in Front and Backend Development
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=2900&pause=2000&color=ff4500&center=true&vCenter=true&width=1000&lines=Hi+there+👋,+I'm+Abdullah+Bakir;Welcome+to+My+Profile!;I'm+a+passionate+web+developer+based+in+Germany;Experienced+in+Python,+Django,+and+more;)
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
