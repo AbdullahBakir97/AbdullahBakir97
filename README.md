@@ -6,9 +6,17 @@
 
 
 
+<img  width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='50px' width='20%' > 🍳__Skills & Tools__ </span>  <img width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
 
-# 🍳 Skills: 
-![Python](https://img.shields.io/badge/Python-3670A0?style=flat-square&logo=python&logoColor=ffdd54)
+
+<p  <a href="https://www.python.org/">
+  <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="icon" width="40" height="40" />
+   <td align="center" width="96">
+        <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="40" height="40" />
+     <td align="center" width="96">
+        <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="40" height="40" />
+        <td align="center" width="96">
+</p>
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=flat-square&logo=bootstrap&logoColor=white)
@@ -23,7 +31,6 @@
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
 ![Postman API](https://img.shields.io/badge/Postman%20API-FF6C37?style=flat-square&logo=postman&logoColor=white)
 ![Swagger API](https://img.shields.io/badge/Swagger%20API-85EA2D?style=flat-square&logo=swagger&logoColor=black)
-![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
 ![Htmx](https://img.shields.io/badge/Htmx-FF4700?style=flat-square&logo=htmx&logoColor=white)
 ![Deploy](https://img.shields.io/badge/Deploy-2CA5E0?style=flat-square&logo=vercel&logoColor=white)
@@ -43,10 +50,10 @@
 ![ORM](https://img.shields.io/badge/ORM-111111?style=flat-square)
 
 
-# 🌐 Socials:
+ <img  width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='50px' width='20%' > __Contact Me__ </span>  <img width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/https://www.facebook.com/profile.php?id=100007615024761/) <p align="left">
-<a href="https://www.linkedin.com/in/abdulrahim-ramadan-3983b6299/"><img src="https://user-images.githubusercontent.com/74038190/235294012-0a55e343-37ad-4b0f-924f-c8431d9d2483.gif" width="100"></a>
-<a href="https://instagram.com/sz.xj"><img src="https://user-images.githubusercontent.com/74038190/235294013-a33e5c43-a01c-43f6-b44d-a406d8b4ab75.gif" width="100"></a>
+<a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://user-images.githubusercontent.com/74038190/235294012-0a55e343-37ad-4b0f-924f-c8431d9d2483.gif" width="100"></a>
+<a href="https://www.instagram.com/abdulahbaker/"><img src="https://user-images.githubusercontent.com/74038190/235294013-a33e5c43-a01c-43f6-b44d-a406d8b4ab75.gif" width="100"></a>
 </p>
 
 
