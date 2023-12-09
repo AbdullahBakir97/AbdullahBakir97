@@ -1,8 +1,3 @@
-<div align="center">
-  <p><b>Profile Views</b></p>
-  <img src="https://profile-counter.glitch.me/AbdullahBakir97/count.svg" />
-</div>
-
 <img src="./assets/borderseparator.gif" width="100%"/>
 
 <div align="center">
@@ -103,3 +98,8 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=dark&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
 
 <img align="right" width='100%' src="https://raw.githubusercontent.com/imrrobat/imrrobat/d1b244e170d2b75fdda3efd499eaaf163f7a617c/images/github-contribution-grid-snake.svg" />
+
+<div align="center">
+  <p><b>Profile Views</b></p>
+  <img src="https://profile-counter.glitch.me/AbdullahBakir97/count.svg" />
+</div>
