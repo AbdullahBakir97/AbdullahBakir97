@@ -8,7 +8,10 @@
 
 <img src="./assets/borderseparator.gif" width="100%"/>
 
-
+<div align="center">
+  <p><b>Profile Views</b></p>
+  <img src="https://profile-counter.glitch.me/godkingjay/count.svg" />
+</div>
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
