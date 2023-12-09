@@ -68,9 +68,7 @@
 <img  width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='50px' width='20%' > __Tech Stack__ </span>  <img width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
 
 
-## 💻 About Me
-
-Hello there! I'm passionate about crafting exceptional web experiences and building robust backend solutions. Here's a glimpse of my technical expertise:
+## 💻 Technical expertise :
 
 - ### Frontend Development :
 Proficient in Vue.js, JavaScript, HTML, and CSS, I specialize in creating interactive and user-friendly frontends that captivate users.
