@@ -72,22 +72,22 @@
 
 Hello there! I'm passionate about crafting exceptional web experiences and building robust backend solutions. Here's a glimpse of my technical expertise:
 
-### Frontend Development
+- ### Frontend Development :
 Proficient in Vue.js, JavaScript, HTML, and CSS, I specialize in creating interactive and user-friendly frontends that captivate users.
 
-### Backend Mastery
+### - Backend Mastery :
 As a Python developer, I harness the power of Django and Django Rest Framework to develop robust and efficient server-side solutions.
 
-### Database Wizardry
+### - Database Wizardry :
 My expertise in database management includes PostgreSQL, MySQL, and Redis, ensuring seamless data storage and retrieval for optimal performance.
 
-### Cloud & Deployment
+### - Cloud & Deployment :
 I excel at deploying web applications on platforms like AWS, Heroku, and Docker, ensuring scalability and reliability for your projects.
 
-### Web Security
+### - Web Security :
 I prioritize security, implementing measures to protect web applications and user data, providing a secure user experience.
 
-### Passion for Innovation
+### - Passion for Innovation :
 I thrive on staying at the forefront of web development trends and technologies, ensuring that my projects are always cutting-edge.
 
 Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀
