@@ -59,7 +59,7 @@
 
 <img  width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='50px' width='20%' > __Tech Stack__ </span>  <img width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
 
-# 💻
+- 💻:
 - **Frontend Development:** Proficient in Vue.js, JavaScript, HTML, and CSS, crafting interactive and user-friendly frontends that captivate users.
 - **Backend Mastery:** As a Python developer, I leverage Django and Django Rest Framework to create robust and efficient server-side solutions.
 - **Database Wizardry:** My experience in database management includes PostgreSQL, MySQL, and Redis, ensuring seamless data storage and retrieval.
