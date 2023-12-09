@@ -1,6 +1,15 @@
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;)
 
+<img src="./assets/borderseparator.gif" width="100%"/>
+
+<div align="center">
+  <img src="./assets/animated-flame-01.gif" width="1.75%" align="left"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey%2C+I'm+Jarrian+and+Welcome+to+my+Profile!" alt="Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;" width="90%" align="middle"/>
+  <img src="./assets/animated-flame-01.gif" width="1.75%" align="right"/>
+</div>
+
+<img src="./assets/borderseparator.gif" width="100%"/>
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
@@ -62,12 +71,12 @@
 
 - 💻: 
 
-# - **Frontend Development:** Proficient in Vue.js, JavaScript, HTML, and CSS, crafting interactive and user-friendly frontends that captivate users.
-# - **Backend Mastery:** As a Python developer, I leverage Django and Django Rest Framework to create robust and efficient server-side solutions.
-# - **Database Wizardry:** My experience in database management includes PostgreSQL, MySQL, and Redis, ensuring seamless data storage and retrieval.
-# - **Cloud & Deployment:** I excel at deploying web applications on platforms like AWS, Heroku, and Docker for scalability and reliability.
-# - **Web Security:** I prioritize security, implementing measures to protect web applications and user data.
-# - **Passion for Innovation:** I thrive on staying at the forefront of web development trends and technologies, ensuring that my projects are always cutting-edge.
+ - **Frontend Development:** Proficient in Vue.js, JavaScript, HTML, and CSS, crafting interactive and user-friendly frontends that captivate users.
+ - **Backend Mastery:** As a Python developer, I leverage Django and Django Rest Framework to create robust and efficient server-side solutions.
+ - **Database Wizardry:** My experience in database management includes PostgreSQL, MySQL, and Redis, ensuring seamless data storage and retrieval.
+ - **Cloud & Deployment:** I excel at deploying web applications on platforms like AWS, Heroku, and Docker for scalability and reliability.
+ - **Web Security:** I prioritize security, implementing measures to protect web applications and user data.
+ - **Passion for Innovation:** I thrive on staying at the forefront of web development trends and technologies, ensuring that my projects are always cutting-edge.
 
   
 <img  width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='50px' width='20%' > __GitHub Stats__ </span>  <img width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
