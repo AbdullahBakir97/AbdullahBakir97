@@ -61,14 +61,14 @@
 
 
 <h3>- 💻: </h3>
-<h4>
+
 - **Frontend Development:** Proficient in Vue.js, JavaScript, HTML, and CSS, crafting interactive and user-friendly frontends that captivate users.
 - **Backend Mastery:** As a Python developer, I leverage Django and Django Rest Framework to create robust and efficient server-side solutions.
 - **Database Wizardry:** My experience in database management includes PostgreSQL, MySQL, and Redis, ensuring seamless data storage and retrieval.
 - **Cloud & Deployment:** I excel at deploying web applications on platforms like AWS, Heroku, and Docker for scalability and reliability.
 - **Web Security:** I prioritize security, implementing measures to protect web applications and user data.
 - **Passion for Innovation:** I thrive on staying at the forefront of web development trends and technologies, ensuring that my projects are always cutting-edge.
-</h4>
+
   
 <img  width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='50px' width='20%' > __GitHub Stats__ </span>  <img width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
  
