@@ -1,3 +1,4 @@
+<div align="center">
 <img src="./assets/borderseparator.gif" width="100%"/>
 <img src="./assets/animated-flame-01.gif" width="1.75%" align="left"/>
 
@@ -5,7 +6,7 @@
 
 <img src="./assets/animated-flame-01.gif" width="1.75%" align="right"/>
 <img src="./assets/borderseparator.gif" width="100%"/>
-
+</div>
 
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
