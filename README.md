@@ -1,15 +1,10 @@
-
+<img src="./assets/borderseparator.gif" width="100%"/>
+<img src="./assets/animated-flame-01.gif" width="1.75%" align="left"/>
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;)
-
+<img src="./assets/animated-flame-01.gif" width="1.75%" align="right"/>
 <img src="./assets/borderseparator.gif" width="100%"/>
 
-<div align="center">
-  <img src="./assets/animated-flame-01.gif" width="1.75%" align="left"/>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey%2C+I'm+Jarrian+and+Welcome+to+my+Profile!" alt="Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;" width="90%" align="middle"/>
-  <img src="./assets/animated-flame-01.gif" width="1.75%" align="right"/>
-</div>
 
-<img src="./assets/borderseparator.gif" width="100%"/>
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
