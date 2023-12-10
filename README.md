@@ -1,3 +1,5 @@
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&label=Profile%20views&color=0e75b6&style=flat" alt="AbdullahBakir97" /> </p>
+
 <img src="./assets/borderseparator.gif" width="100%"/>
 
 <div align="center">
