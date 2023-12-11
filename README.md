@@ -103,3 +103,5 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=dark&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
 
 <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/snake.svg" alt="Snake animation" />
+
+<img align="right" width='100%' src="https://raw.githubusercontent.com/imrrobat/imrrobat/d1b244e170d2b75fdda3efd499eaaf163f7a617c/images/github-contribution-grid-snake.svg" />
