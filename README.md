@@ -1,5 +1,5 @@
-![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97
-&color=blue)
+
+![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=blue)
 
 
 <img src="./assets/borderseparator.gif" width="100%"/>
