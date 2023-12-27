@@ -2,13 +2,18 @@
 ![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red)
 # My Awesome GitHub Profile
 
-Repo Stars: ![GitHub Repo Stars](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=Total%20user%20stars%20in%20all%20repo&logoColor=red&style=social&color=red)
+Repo Stars: ![GitHub Repo Stars (Red)](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=Total%20user%20stars%20in%20all%20repo&logoColor=red&style=social&color=red)
+![GitHub Repo Stars (Dark)](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=Total%20user%20stars%20in%20all%20repo&logoColor=red&style=social&color=333)
 
-Profile Views: ![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red)
+Profile Views: ![Profile views (Red)](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red)
+![Profile views (Dark)](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=333)
 
-CodeTime Badge: [![CodeTime badge](https://img.shields.io/endpoint?style=flat&color=red&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
+CodeTime Badge: [![CodeTime badge (Red)](https://img.shields.io/endpoint?style=flat&color=red&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
+[![CodeTime badge (Dark)](https://img.shields.io/endpoint?style=flat&color=333&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
 
-GitHub User's Stars: [![GitHub User's stars](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=Total%20user%20stars%20in%20all%20repo&logoColor=red&style=social&color=red)](https://github.com/AbdullahBakir97)
+GitHub User's Stars: [![GitHub User's stars (Red)](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=Total%20user%20stars%20in%20all%20repo&logoColor=red&style=social&color=red)](https://github.com/AbdullahBakir97)
+[![GitHub User's stars (Dark)](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=Total%20user%20stars%20in%20all%20repo&logoColor=red&style=social&color=333)](https://github.com/AbdullahBakir97)
+)
 
 
 
