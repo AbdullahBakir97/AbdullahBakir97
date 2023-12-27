@@ -1,6 +1,6 @@
 
 ![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=blue)<br>
-[![CodeTime badge](https://img.shields.io/endpoint?style=for-the-badge&color=red&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
+[![CodeTime badge](https://img.shields.io/endpoint?style=plastic&color=red&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
 
 
 <img src="./assets/borderseparator.gif" width="100%"/>
