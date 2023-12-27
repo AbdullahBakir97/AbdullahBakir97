@@ -1,6 +1,6 @@
 
 ![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red)
-[![CodeTime badge](https://img.shields.io/endpoint?style=flat&color=darkred&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
+[![CodeTime badge](https://img.shields.io/endpoint?style=flat&color=red&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
 <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER%2CCOLLABORATOR%2CORGANIZATION_MEMBER&label=Total%20user%20stars%20in%20all%20repo&logoColor=red&style=social&color=red" alt="GitHub User's stars"></a>
 
 
