@@ -6,6 +6,7 @@
 
 
 <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4">
+
   <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-thumbnail.gif" width="400" alt="GitHub Unwrapped Video">
 </a>
 
@@ -16,8 +17,9 @@
 
 <div align="center">
   
+![animated-flame-01](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/6d798eb0-edc7-4249-ab78-8e94f27ba678)
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;)
-
+![animated-flame-01](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/6d798eb0-edc7-4249-ab78-8e94f27ba678)
 </div>
 
 <img src="./assets/redline.gif" width="100%"/>
