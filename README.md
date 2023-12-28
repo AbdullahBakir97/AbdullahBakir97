@@ -76,7 +76,12 @@
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Tech Stack](https://img.shields.io/badge/TECH-STACK-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
 </span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
-![Tech](https://github.com/AbdullahBakir97/AbdullahBakir97/raw/main/assets/127149804/fc104996-0e56-4abd-809d-c0b7308f4fa3.gif)
+<div style="position:relative;width:fit-content;height:fit-content;">
+            <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/q9TbNefV3EJ?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+                <img loading="lazy" style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
+            </a>
+            <iframe allow="autoplay;" allowfullscreen style="border:none" src="https://clipchamp.com/watch/q9TbNefV3EJ/embed" width="640" height="360"></iframe>
+        </div>
 
  Technical expertise :
 
