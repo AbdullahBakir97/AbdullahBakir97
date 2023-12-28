@@ -24,7 +24,9 @@
 
 
 <div style="display: flex; justify-content: center;">
-  [![Skills & Tools](https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
+  
+[![Skills & Tools](https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
+
 </div>
 <img src="./assets/redline.gif" width="100%"/>
 
