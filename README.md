@@ -93,7 +93,7 @@ I thrive on staying at the forefront of web development trends and technologies,
 
 Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀
  
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>__Contact Me__</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Connect ME](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
  
 <p align="center">
@@ -104,17 +104,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
-<div style="display: flex; align-items: center; justify-content: center; width: 100%; background-color: #181717;">
-  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
-  <span style="font-size: 50px; width: 20%;">
-    <a href="https://github.com/AbdullahBakir97">
-      <img src="https://img.shields.io/badge/GitHub-Stats-181717?style=flat&logo=github&color=red" alt="GitHub Stats">
-    </a>
-  </span>
-  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
-</div>
-
-
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra\&rank_icon=github)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=AbdullahBakir97&repo=github-readme-stats&theme=codeSTACKr)](https://github.com/anuraghazra/github-readme-stats)
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true)
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true)
