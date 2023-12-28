@@ -4,7 +4,15 @@
 
 
 
-<img src="./assets/borderseparator.gif" width="100%"/>
+
+<a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4">
+  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-thumbnail.gif" width="400" alt="GitHub Unwrapped Video">
+</a>
+
+
+
+
+<img src="./assets/redline.gif" width="100%"/>
 
 <div align="center">
   
@@ -12,7 +20,7 @@
 
 </div>
 
-<img src="./assets/borderseparator.gif" width="100%"/>
+<img src="./assets/redline.gif" width="100%"/>
 
 
 
@@ -68,9 +76,10 @@
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Tech Stack](https://img.shields.io/badge/TECH-STACK-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
 </span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
+![tech](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/fc104996-0e56-4abd-809d-c0b7308f4fa3)
 
 
-## 💻 Technical expertise :
+ ![tech](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/fc104996-0e56-4abd-809d-c0b7308f4fa3) Technical expertise :
 
 - ### Frontend Development :
 Proficient in Vue.js, JavaScript, HTML, and CSS, I specialize in creating interactive and user-friendly frontends that captivate users.
@@ -106,6 +115,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GHub-Stats-181717?style=flat&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203)
+![github](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/bb129829-0ca0-4a85-a800-1c002d122cf0)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Store)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Jobs-Portal)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Blog-app)
@@ -120,10 +130,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=false&layout=compact&title_color=ffD700)
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
+<picture> src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
 </picture>
 
 
