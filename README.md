@@ -22,7 +22,8 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>__Skills & Tools__</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Skills & Tools](https://img.shields.io/badge/Skills%20%26%20Tools-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
+</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 
 
@@ -67,7 +68,8 @@
 ![Charts](https://img.shields.io/badge/Charts-111111?style=flat-square)
 ![ORM](https://img.shields.io/badge/ORM-111111?style=flat-square)
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>__Tech Stack__</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Tech Stack](https://img.shields.io/badge/Tech%20Stack-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
+</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 
 
