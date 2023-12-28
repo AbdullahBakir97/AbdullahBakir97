@@ -23,13 +23,7 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-<div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-  
-  [![Skills & Tools](https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
-  
-</div>
-
-<img src="./assets/redline.gif" width="100%"/>
+<img src="./assets/redline.gif" width="100%"/>[![Skills & Tools](https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)<img src="./assets/redline.gif" width="100%"/>
 
 
 
