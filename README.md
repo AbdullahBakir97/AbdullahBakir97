@@ -23,7 +23,14 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-<img src="./assets/redline.gif" width="100%"/><span style='font-size: 50px; width: 20%;'>[![Skills & Tools](https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)</span><img src="./assets/redline.gif" width="100%"/>
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
 
 
 
