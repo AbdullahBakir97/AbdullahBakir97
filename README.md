@@ -109,15 +109,16 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Django-Store)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/Jobs-Portal)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/Automtion)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=django-blog-app&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/django-blog-app)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/Automtion)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/Automtion)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/Automtion)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/Automtion)
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&subtitle_color=ffD700&icon_color=ffD700)
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Jobs-Portal)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Django-Blog-app)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automation&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Automation)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=BookStore&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/BookStore)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Bot&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Bot)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=JS-TO-DO&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/JS-TO-DO)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&title_color=ffD700&icon_color=ffD700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/AbdullahBakir97)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&subtitle_color=ffD700&icon_color=ffD700&text_color=da644d)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&text_color=da644d)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=false&layout=compact&title_color=ffD700)
 
 
