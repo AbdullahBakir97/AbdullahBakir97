@@ -4,12 +4,17 @@
 
 
 
+<img src="./assets/redline.gif" width="100%"/>
 
-<a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4">
+<div align="center">
+  <img src="./assets/animated-flame-01.gif" width="1.75%" align="left"/>
+  
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=500&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;)
 
-  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-thumbnail.gif" width="400" alt="GitHub Unwrapped Video">
-</a>
+  <img src="./assets/animated-flame-01.gif" width="1.75%" align="right"/>
+</div>
 
+<img src="./assets/redline.gif" width="100%"/>
 
 
 
@@ -19,9 +24,9 @@
   <div>
     <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/animated-flame-01.gif" alt="animated-flame-01" width="50">
     
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=500&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;)
+    ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=500&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;)
     
-   <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/animated-flame-01.gif" alt="animated-flame-01" width="50">
+    <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/animated-flame-01.gif" alt="animated-flame-01" width="50">
   </div>
 </div>
 
