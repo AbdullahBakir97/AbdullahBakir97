@@ -105,9 +105,9 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>__GitHub Stats__</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
  
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=dark&hide_border=true&include_all_commits=false&count_private=false)
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=dark&hide_border=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=dark&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=tokyonight&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
