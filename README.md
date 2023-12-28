@@ -104,9 +104,14 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <a href="(https://www.facebook.com/)"><img src="https://user-images.githubusercontent.com/74038190/235294010-ec412ef5-e3da-4efa-b1d4-0ab4d4638755.gif" width="100"></a>
 </p>
 
-Solarized dark             |  Solarized Ocean
-:-------------------------:|:-------------------------:
-![](https://...Dark.png)  |  ![](https://...Ocean.png)
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <img width='30%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+      <span style='font-size: 4vw; width: 50%;'>
+          [![GitHub Stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)
+      </span>
+    <img width='30%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+</div>
+
 
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
