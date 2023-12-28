@@ -76,7 +76,8 @@
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Tech Stack](https://img.shields.io/badge/TECH-STACK-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
 </span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
-![Tech Icon](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/2852e60b-c87f-46af-9634-8f2001ef36d6)
+![Tech Icon](./assets/127149804/2852e60b-c87f-46af-9634-8f2001ef36d6)
+
 
  Technical expertise :
 
