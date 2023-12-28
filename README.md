@@ -22,7 +22,7 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Skills & Tools](https://img.shields.io/badge/Skills%20%26%20Tools-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Skills & Tools](https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
 </span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 
@@ -68,7 +68,7 @@
 ![Charts](https://img.shields.io/badge/Charts-111111?style=flat-square)
 ![ORM](https://img.shields.io/badge/ORM-111111?style=flat-square)
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Tech Stack](https://img.shields.io/badge/Tech%20Stack-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Tech Stack](https://img.shields.io/badge/TECH-STACK-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
 </span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 
@@ -95,7 +95,7 @@ I thrive on staying at the forefront of web development trends and technologies,
 
 Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀
  
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Connect Me](https://img.shields.io/badge/Connect-Me-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Connect Me](https://img.shields.io/badge/CONNECT-ME-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
  
 <p align="center">
@@ -104,10 +104,9 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <a href="(https://www.facebook.com/)"><img src="https://user-images.githubusercontent.com/74038190/235294010-ec412ef5-e3da-4efa-b1d4-0ab4d4638755.gif" width="100"></a>
 </p>
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GITHUB-STATS-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
-[![GitHub Trends](https://api.githubtrends.io/user/svg/avgupta456/langs&theme=codeSTACKr)](https://githubtrends.io)
-![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97\&repo=?tab=repositories-readme-stats\&title_color=fff\&icon_color=f9f9f9\&text_color=9f9f9f\&bg_color=151515)
+
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true)
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
