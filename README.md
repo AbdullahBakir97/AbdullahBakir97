@@ -108,6 +108,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=shadow_green&hide_border=true&include_all_commits=false&count_private=false)
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=shadow_green&hide_border=true)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=shadow_green&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
