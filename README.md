@@ -109,7 +109,8 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=ffD700&icon_color=ffD700&text_color=ffD700&bg_color=151515)](https://github.com/AbdullahBakir97/Automtion)
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&title_color=ffD700&icon_color=ffD700)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&subtitle_color=ffD700&icon_color=ffD700)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&subtitle_color=ffD700&icon_color=ffD700)
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=false&layout=compact&title_color=ffD700)
 
