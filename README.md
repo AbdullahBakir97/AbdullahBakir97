@@ -22,9 +22,9 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-
-<img  width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'><span font-size='50px' width='20%' >__Skills & Tools__</span><img width='44%' src='https://github.com/Afsanehaa/Afsanehaa/assets/115100233/1632db93-5d88-408c-aa7a-3be102febcd3'>
-
+<a href="https://github.com/AbullahBakir97/AbdullahBakir97/assets/line.gif">
+  <img  width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/assets/line.gif'><span font-size='50px' width='20%' >__Skills & Tools__</span><img width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/assets/line.gif'>
+</a>
 
 <p align="center" <a href="https://www.python.org/">
   <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="icon" width="40" height="40" />
