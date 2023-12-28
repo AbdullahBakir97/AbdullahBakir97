@@ -101,6 +101,10 @@ Feel free to explore my repositories and reach out if you have any questions or 
   <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
 </a>
 
+[![GitHub Stats](https://github-readme-stats.vercel.app/api/pin/?username=AbdullahBakir97&repo=github-readme-stats&theme=codeSTACKr)](https://github.com/anuraghazra/github-readme-stats)
+[![Connect Me](https://img.shields.io/badge/Connect-Me-181717?style=flat&color=red&logo=earth&logoColor=red)](YOUR_CONNECT_ME_LINK)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true)](https://github.com/DenverCoder1/github-readme-streak-stats)
+
  
 <p align="center">
 <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://user-images.githubusercontent.com/74038190/235294012-0a55e343-37ad-4b0f-924f-c8431d9d2483.gif" width="100"></a>
