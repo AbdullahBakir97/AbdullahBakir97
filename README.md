@@ -4,13 +4,6 @@
 
 
 
-
-<a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4">
-  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.gif" width="400" alt="GitHub Unwrapped Video">
-</a>
-
-
-
 <img src="./assets/borderseparator.gif" width="100%"/>
 
 <div align="center">
