@@ -1,5 +1,5 @@
 
-![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red)
+![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&style=flat&logo=eye&logoColor=red)
 [![CodeTime badge](https://img.shields.io/endpoint?style=flat&color=red&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/AbdullahBakir97?label=GitHub%20Repo%20Stars&style=flat&color=red&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)
 
