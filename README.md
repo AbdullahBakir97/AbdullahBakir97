@@ -5,7 +5,7 @@
 
 
 
-![GitHub Unwrapped Video]((https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4))
+[![GitHub Unwrapped Video](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-thumbnail.gif)](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4)
 
 
 
