@@ -95,6 +95,12 @@ Feel free to explore my repositories and reach out if you have any questions or 
  
 <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Connect ME](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
+<a href="YOUR_CONNECT_ME_LINK">
+  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
+  <img src="https://img.shields.io/badge/Connect-Me-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Connect Me">
+  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
+</a>
+
  
 <p align="center">
 <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://user-images.githubusercontent.com/74038190/235294012-0a55e343-37ad-4b0f-924f-c8431d9d2483.gif" width="100"></a>
