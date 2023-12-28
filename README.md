@@ -123,11 +123,10 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 
 <div align="center">
-  <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://img.shields.io/badge/GHub-Stats-181717?style=flat&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red" alt="GitHub Stats">
   </a>
-  <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+  <img src="./assets/redline.gif" width="100%"/>
 </div>
 
 
