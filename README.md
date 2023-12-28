@@ -77,7 +77,8 @@
 </span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 
-[![Watch the video](https://example.com/path/to/thumbnail.png)](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/Untitled%20video%20-%20Made%20with%20Clipchamp.mp4)
+<img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/tech.gif" alt="Tech" width="100">
+
 
  Technical expertise :
 
