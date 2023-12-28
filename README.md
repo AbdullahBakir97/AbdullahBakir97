@@ -23,9 +23,7 @@
 
 
 <a href="https://github.com/AbullahBakir97/AbdullahBakir97">
-    <img width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
-    <span style='font-size: 50px; width: 20%;'>__Skills & Tools__</span>
-    <img width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+    <img width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>__Skills & Tools__</span><img width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 </a>
 
 
