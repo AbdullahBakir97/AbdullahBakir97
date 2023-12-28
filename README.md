@@ -77,7 +77,7 @@
 </span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
 
-![tech](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/fc104996-0e56-4abd-809d-c0b7308f4fa3) Technical expertise :
+![tech](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/fc104996-0e56-4abd-809d-c0b7308f4fa3) # Technical expertise :
 
 - ### Frontend Development :
 Proficient in Vue.js, JavaScript, HTML, and CSS, I specialize in creating interactive and user-friendly frontends that captivate users.
