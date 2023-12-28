@@ -93,17 +93,7 @@ I thrive on staying at the forefront of web development trends and technologies,
 
 Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀
  
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Connect ME](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
-
-<a href="YOUR_CONNECT_ME_LINK">
-  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
-  <img src="https://img.shields.io/badge/Connect-Me-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Connect Me">
-  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
-</a>
-
-[![GitHub Stats](https://github-readme-stats.vercel.app/api/pin/?username=AbdullahBakir97&repo=github-readme-stats&theme=codeSTACKr)](https://github.com/anuraghazra/github-readme-stats)
-[![Connect Me](https://img.shields.io/badge/Connect-Me-181717?style=flat&color=red&logo=earth&logoColor=red)](YOUR_CONNECT_ME_LINK)
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true)](https://github.com/DenverCoder1/github-readme-streak-stats)
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Connect Me](https://img.shields.io/badge/Connect-Me-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
  
 <p align="center">
