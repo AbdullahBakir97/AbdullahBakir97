@@ -102,17 +102,8 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <a href="(https://www.facebook.com/)"><img src="https://user-images.githubusercontent.com/74038190/235294010-ec412ef5-e3da-4efa-b1d4-0ab4d4638755.gif" width="100"></a>
 </p>
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&logo=github&color=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GitHub-Stats-181717?style=flat&logo=github&theme=codeSTACKr&hide_border=true)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 
-<div style="display: flex; align-items: center; justify-content: center; width: 100%; background-color: #181717;">
-  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
-  <span style="font-size: 50px; width: 20%;">
-    <a href="https://github.com/AbdullahBakir97">
-      <img src="https://img.shields.io/badge/GitHub-Stats-181717?style=flat&logo=github&color=red" alt="GitHub Stats">
-    </a>
-  </span>
-  <img width="44%" src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif" alt="Line Image">
-</div>
 
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=AbdullahBakir97&repo=github-readme-stats&theme=codeSTACKr)](https://github.com/anuraghazra/github-readme-stats)
