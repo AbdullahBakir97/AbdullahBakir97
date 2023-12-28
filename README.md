@@ -5,7 +5,9 @@
 
 
 
-[![GitHub Unwrapped Video](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-thumbnail.gif)](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4)
+<a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-AbdullahBakir97.mp4">
+  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/unwrapped-thumbnail.gif" width="400" alt="GitHub Unwrapped Video">
+</a>
 
 
 
