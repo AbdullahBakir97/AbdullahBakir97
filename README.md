@@ -108,7 +108,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
  
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/CONACT-ME-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools">
+    <img src="https://img.shields.io/badge/CONNECT-ME-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools">
   </a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
