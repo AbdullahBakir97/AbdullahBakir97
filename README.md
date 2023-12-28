@@ -22,9 +22,10 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-<a href="https://github.com/AbullahBakir97/AbdullahBakir97">
-    <img width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>__Skills & Tools__</span><img width='44%' src='https://github.com/AbullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<a href="https://github.com/AbdullahBakir97/AbdullahBakir97">
+    <img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>__Skills & Tools__</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
 </a>
+
 
 
 <p align="center" <a href="https://www.python.org/">
