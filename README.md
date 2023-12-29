@@ -78,8 +78,8 @@
 <div align="center">
     <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/TECH-STACK-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools width=150">
-  </a>
+    <img src="https://img.shields.io/badge/TECH-STACK-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Tech Stack" width="150">
+</a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
@@ -110,9 +110,9 @@ Feel free to explore my repositories and reach out if you have any questions or 
  
 <div align="center">
     <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/CONNECT-ME-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools width=150">
-  </a>
+<a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/CONNECT-ME-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Connect Me" width="150">
+</a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
@@ -127,9 +127,9 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 <div align="center">
     <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GHub-Stats-181717?style=flat&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red" alt="GitHub Stats width=150">
-  </a>
+<a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/GHub-Stats-181717?style=flat-square&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red" alt="GitHub Stats" width="150">
+</a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
