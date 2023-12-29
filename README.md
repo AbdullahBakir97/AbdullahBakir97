@@ -25,9 +25,9 @@
 
 <div align="center">
     <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools">
-  </a>
+ <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Skills & Tools" width="150">
+</a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
