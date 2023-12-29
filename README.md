@@ -151,7 +151,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 
 
-<picture> src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
+<picture src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
 </picture>
 
 
