@@ -24,6 +24,7 @@
 
 
 <div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools">
   </a>
@@ -75,6 +76,7 @@
 ![ORM](https://img.shields.io/badge/ORM-111111?style=flat-square)
 
 <div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://img.shields.io/badge/TECH-STACK-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools">
   </a>
@@ -107,6 +109,7 @@ I thrive on staying at the forefront of web development trends and technologies,
 Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀
  
 <div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://img.shields.io/badge/CONNECT-ME-181717?style=flat&color=red&logo=earth&logoColor=red" alt="Skills & Tools">
   </a>
@@ -123,6 +126,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 
 <div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://img.shields.io/badge/GHub-Stats-181717?style=flat&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red" alt="GitHub Stats">
   </a>
