@@ -117,10 +117,10 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
  
  <p align="center">
-  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/127149804/7f279ad1-0b56-4eda-a894-a0294cee42f1.gif" width="100"></a>
-  <a href="https://www.instagram.com/abdulahbaker/"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/127149804/693df456-e379-467d-8f77-f22d1e3603a2.gif" width="100"></a>
-  <a href="https://t.me/BlackSea0011"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/127149804/93b803ed-585d-4dd3-9c90-dd3b298e9364.gif" width="100"></a>
-  <a href="https://github.com/AbdullahBakir97"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/127149804/6f5d5b19-0748-43ea-8057-8ffd8a5ffc48.gif" width="100"></a>
+  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/linkedin.gif" width="100"></a>
+  <a href="https://www.instagram.com/abdulahbaker/"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/instagram.gif" width="100"></a>
+  <a href="https://t.me/BlackSea0011"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/telegram.gif" width="100"></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/githubred.gif" width="100"></a>
 </p>
 
 
