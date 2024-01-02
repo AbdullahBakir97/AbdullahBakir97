@@ -4,23 +4,32 @@
 
 
 
-<img src="./assets/borderseparator.gif" width="100%"/>
+<img src="./assets/redline.gif" width="100%"/>
 
 <div align="center">
   
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;)
+  <img src="https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;" alt="Typing SVG" style="color:f90001; vertical-align: bottom;">
 
+  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/pro.gif" alt="Pro" width="50" style="vertical-align:bottom;" align="right">
 </div>
 
-<img src="./assets/borderseparator.gif" width="100%"/>
+<img src="./assets/redline.gif" width="100%"/>
+
+
 
 
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Skills & Tools](https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
-</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
+ <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/SKILLS-TOOLS-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Skills & Tools" width="150">
+</a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
 
 
 
@@ -65,12 +74,18 @@
 ![Charts](https://img.shields.io/badge/Charts-111111?style=flat-square)
 ![ORM](https://img.shields.io/badge/ORM-111111?style=flat-square)
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Tech Stack](https://img.shields.io/badge/TECH-STACK-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)
-</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/TECH-STACK-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Tech Stack" width="150">
+</a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
 
 
+<img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/tech.gif" alt="Tech" width="100"> - **Technical expertise:**
 
-## 💻 Technical expertise :
+
 
 - ### Frontend Development :
 Proficient in Vue.js, JavaScript, HTML, and CSS, I specialize in creating interactive and user-friendly frontends that captivate users.
@@ -92,7 +107,13 @@ I thrive on staying at the forefront of web development trends and technologies,
 
 Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀
  
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![Connect Me](https://img.shields.io/badge/CONNECT-ME-181717?style=flat&color=red&logo=earth&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
+<a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/CONNECT-ME-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Connect Me" width="150">
+</a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
 
  
 <p align="center">
@@ -103,9 +124,17 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 
 
-<img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image"><span style='font-size: 50px; width: 20%;'>[![GitHub stats](https://img.shields.io/badge/GHub-Stats-181717?style=flat&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)</span><img width='44%' src='https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/line.gif' alt="Line Image">
+<div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
+<a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/GHub-Stats-181717?style=flat-square&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red" alt="GitHub Stats" width="150">
+</a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203)
+![github](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/bb129829-0ca0-4a85-a800-1c002d122cf0)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Store)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Jobs-Portal)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Blog-app)
@@ -120,12 +149,12 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=false&layout=compact&title_color=ffD700)
 
 
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
 </picture>
-
 
 
 
