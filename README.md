@@ -33,14 +33,7 @@
 
 
 
-<p align="center" <a href="https://www.python.org/">
-  <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="icon" width="40" height="40" />
-   <td align="center" width="96">
-        <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="40" height="40" />
-     <td align="center" width="96">
-        <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="40" height="40" />
-        <td align="center" width="96">
-</p>
+
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
