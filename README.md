@@ -145,7 +145,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 <p >
   <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=abdullahbakir97&theme=dracula&column=7&no-bg=true&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203" alt="abdullahbakir97" />
+    <img src="https://github-profile-trophy.vercel.app/?username=abdullahbakir97&theme=radical&column=7&no-bg=true&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203" alt="abdullahbakir97" />
   </a>
 </p>
 
