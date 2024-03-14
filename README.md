@@ -143,9 +143,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=830203&color=d60606)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=false&layout=compact&title_color=830203)
 
-<p >
-    <img src="https://github-profile-trophy.vercel.app/?username=abdullahbakir97&theme=radical&column=7&no-bg=true&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203" alt="abdullahbakir97" />
-</p>
+[![trophy](https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=radical)](https://github.com/ryo-ma/github-profile-trophy)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
