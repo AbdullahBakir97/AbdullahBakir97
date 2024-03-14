@@ -2,8 +2,6 @@
 [![CodeTime badge](https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=abdullahbakir97" alt="abdullahbakir97" /></a> </p>
-
 
 <img src="./assets/redline.gif" width="100%"/>
 
@@ -145,7 +143,11 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=830203&color=d60606)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=false&layout=compact&title_color=830203)
 
-
+<p align="left">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=abdullahbakir97&theme=dracula&column=7&no-bg=true&icon_color=ffde01" alt="abdullahbakir97" />
+  </a>
+</p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
