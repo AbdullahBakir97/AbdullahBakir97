@@ -51,7 +51,7 @@
 [![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=1572B6)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&labelColor=000000)](https://git-scm.com/)
 [![Version Control](https://img.shields.io/badge/Version%20Control-111111?style=for-the-badge&logo=git&logoColor=F05032&labelColor=111111)](https://git-scm.com/)
-[![render](https://img.shields.io/badge/render-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=430098)](https://www.render.com/)
+[![render](https://img.shields.io/badge/render-FF4700?style=for-the-badge&logo=render&logoColor=white&labelColor=FF4700)](https://www.render.com/)
 [![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=430098)](https://www.heroku.com/)
 [![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white&labelColor=232F3E)](https://aws.amazon.com/)
 [![Htmx](https://img.shields.io/badge/Htmx-FF4700?style=for-the-badge&logo=htmx&logoColor=white&labelColor=FF4700)](https://htmx.org/)
