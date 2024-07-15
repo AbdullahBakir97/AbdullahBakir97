@@ -1,7 +1,6 @@
 ![Profile views](https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&text_color=04172c)
-[![CodeTime badge](https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in%3D8640000000)](https://codetime.dev)
-[![GitHub Repo Stars](https://img.shields.io/github/stars/AbdullahBakir97?label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)
-
+[![CodeTime Badge](https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000)](https://codetime.dev)
+[![GitHub Repo Stars](https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red)](https://github.com/AbdullahBakir97)
 
 
 
@@ -38,14 +37,15 @@
 
 
 
-<p align="center" <a href="https://www.python.org/">
-  <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="icon" width="40" height="40" />
-   <td align="center" width="96">
-        <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="40" height="40" />
-     <td align="center" width="96">
-        <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="40" height="40" />
-        <td align="center" width="96">
-</p>
+[![Object-Oriented Programming (OOP)](https://img.shields.io/badge/Object--Oriented%20Programming%20(OOP)-3333FF?style=for-the-badge&logo=oop&logoColor=white&labelColor=3333FF)](https://en.wikipedia.org/wiki/Object-oriented_programming)
+[![Caching](https://img.shields.io/badge/Caching-111111?style=for-the-badge&labelColor=111111)](https://en.wikipedia.org/wiki/Cache_(computing))
+[![Translation](https://img.shields.io/badge/Translation-111111?style=for-the-badge&labelColor=111111)](https://en.wikipedia.org/wiki/Software_localization)
+[![Deployment](https://img.shields.io/badge/Deployment-111111?style=for-the-badge&labelColor=111111)](https://en.wikipedia.org)
+[![Summernote](https://img.shields.io/badge/Summernote-111111?style=for-the-badge&labelColor=111111)](https://summernote.org/)
+[![Taggit](https://img.shields.io/badge/Taggit-111111?style=for-the-badge&labelColor=111111)](https://github.com/jazzband/django-taggit)
+[![JWT](https://img.shields.io/badge/JWT-111111?style=for-the-badge&labelColor=111111)](https://jwt.io/)
+[![Charts](https://img.shields.io/badge/Charts-111111?style=for-the-badge&labelColor=111111)](https://www.chartjs.org/)
+[![ORM](https://img.shields.io/badge/ORM-111111?style=for-the-badge&labelColor=111111)](https://en.wikipedia.org/wiki/Object-relational_mapping)
 
 ![Object-Oriented Programming (OOP)](https://img.shields.io/badge/Object--Oriented%20Programming%20(OOP)-3333FF?style=flat-square&logo=oop&logoColor=white)
 ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=flat-square&logo=django&logoColor=white&color=ff1709&labelColor=gray)
@@ -153,11 +153,13 @@ Feel free to explore my repositories and reach out if you have any questions or 
 </div>
 
  
-<p align="center">
-<a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://user-images.githubusercontent.com/74038190/235294012-0a55e343-37ad-4b0f-924f-c8431d9d2483.gif" width="100"></a>
-<a href="https://www.instagram.com/abdulahbaker/"><img src="https://user-images.githubusercontent.com/74038190/235294013-a33e5c43-a01c-43f6-b44d-a406d8b4ab75.gif" width="100"></a>
-<a href="(https://www.facebook.com/)"><img src="https://user-images.githubusercontent.com/74038190/235294010-ec412ef5-e3da-4efa-b1d4-0ab4d4638755.gif" width="100"></a>
+ <p align="center">
+  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/linkedin.gif" width="100"></a>
+  <a href="https://www.instagram.com/abdulahbaker/"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/instagram.gif" width="100"></a>
+  <a href="https://t.me/BlackSea0011"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/telegram.gif" width="100"></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/githubred.gif" width="100"></a>
 </p>
+
 
 
 
@@ -173,6 +175,12 @@ Feel free to explore my repositories and reach out if you have any questions or 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203)
 ![github](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/bb129829-0ca0-4a85-a800-1c002d122cf0)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Store)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Barber-Salon)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Project-Management-Tool)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Python-Django-join_with)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Weather--App-django-vue.js&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Weather--App-django-vue.js)
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Vuejs-Courses-Filter&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Vuejs-Courses-Filter )
+[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=API&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/API)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Jobs-Portal)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Blog-app)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Automtion)
@@ -188,6 +196,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 
 
+[![trophy](https://github-profile-trophy.vercel.app/?username=AbdullahBakir97&theme=radical)](https://github.com/AbdullahBakir97/github-profile-trophy)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
