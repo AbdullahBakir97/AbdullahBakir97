@@ -46,15 +46,6 @@
         </a>
     </p>
 </div>
-
-<div align="center">
-    <img src="./assets/redline.gif" width="100%"/>
-    <a href="https://github.com/AbdullahBakir97">
-        <img src="https://img.shields.io/badge/TECH-STACK-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Tech Stack" width="150">
-    </a>
-    <img src="./assets/redline.gif" width="100%"/>
-</div>
-
 <div align="center">
     <a href="#"><img src="https://img.shields.io/badge/Object--Oriented%20Programming%20(OOP)-3333FF?style=flat-square&logo=oop&logoColor=white" alt="OOP"></a>
     <a href="#"><img src="https://img.shields.io/badge/DJANGO-REST-ff1709?style=flat-square&logo=django&logoColor=white&color=ff1709&labelColor=gray" alt="Django REST"></a>
@@ -118,6 +109,16 @@
     <a href="#"><img src="https://img.shields.io/badge/Charts-111111?style=flat-square" alt="Charts"></a>
     <a href="#"><img src="https://img.shields.io/badge/ORM-111111?style=flat-square" alt="ORM"></a>
 </div>
+
+<div align="center">
+    <img src="./assets/redline.gif" width="100%"/>
+    <a href="https://github.com/AbdullahBakir97">
+        <img src="https://img.shields.io/badge/TECH-STACK-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Tech Stack" width="150">
+    </a>
+    <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+
 
 
 
