@@ -188,7 +188,6 @@ Feel free to explore my repositories and reach out if you have any questions or 
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Automtion)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=BookStore&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/BookStore)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page)
-[![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Bot&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/Bot)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=JS-TO-DO&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/JS-TO-DO)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr)](https://github.com/AbdullahBakir97/AbdullahBakir97)
 
