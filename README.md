@@ -197,8 +197,8 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=830203)
-![Top Languages](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=830203)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00)
+![Top Languages](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00)
 
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=AbdullahBakir97&theme=radical)](https://github.com/AbdullahBakir97/github-profile-trophy)
