@@ -176,7 +176,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 ![AbdullahBakir97 GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203)
 ![AbdullahBakir97's GitHub Contribution](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&bg_color=0D1117&color=ff0000&title_color=ffffff&text_color=da644d&icon_color=ffde01)
-![AbdullahBakir97's Graph](https://github-readme-activity-graph.vercel.app/graph?username=AbdullahBakir97&custom_title=AbdullahBakir97's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=ffde01&line=da644d&point=ff6f00&area_color=ff0000&title_color=da644d&area=true&border_color=0D1117)
+![AbdullahBakir97's Graph](https://github-readme-activity-graph.vercel.app/graph?username=AbdullahBakir97&custom_title=AbdullahBakir97's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=ffde01&line=da644d&point=ff6f00&area_color=830203&title_color=da644d&area=true&border_color=0D1117)
 
 
 ![github](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/bb129829-0ca0-4a85-a800-1c002d122cf0)
