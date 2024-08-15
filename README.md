@@ -176,12 +176,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=AbdullahBakir97\&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203)
 ![AbdullahBakir97's Graph](https://github-readme-activity-graph.vercel.app/graph?username=AbdullahBakir97&custom_title=AbdullahBakir97's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=7F3FBF&line=7F3FBF&point=7F3FBF&area_color=FFFFFF&title_color=FFFFFF&area=true)
-
-<p align="center">
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=radical&border=7F3FBF&background=0D1117" alt="AbdullahBakir97's GitHub streak"/>
-  </a>
-</p>
+![AbdullahBakir97's GitHub Contribution](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=radical&bg_color=0D1117&color=7F3FBF&title_color=FFFFFF)
 
 ![github](https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/bb129829-0ca0-4a85-a800-1c002d122cf0)
 [![Customized Card](https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2)](https://github.com/AbdullahBakir97/Django-Store)
