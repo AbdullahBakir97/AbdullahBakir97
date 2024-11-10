@@ -210,9 +210,9 @@ Feel free to explore my repositories and reach out if you have any questions or 
 </picture>
 
 
-<img src="https://cr-summary-widget.azurewebsites.net/api/api?username=abdullahbakir97&show-other-skills=true" width="auto"></img>
+<!-- <img src="https://cr-summary-widget.azurewebsites.net/api/api?username=abdullahbakir97&show-other-skills=true" width="auto"></img>
 
 <!--  2d history skills для обновления картинки нужно обновить профиль на странице https://profile.codersrank.io/user/abdullahbakir97-->
 
-<img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=abdullahbakir97&show-other-skills=true" width="auto"></img>
+<!-- <img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=abdullahbakir97&show-other-skills=true" width="auto"></img> -->
 
