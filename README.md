@@ -347,6 +347,200 @@
     <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="49%" />
 </div>
 
+<!-- CURRENT FOCUS SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/CURRENT-FOCUS-181717?style=flat-square&color=red&logo=target&logoColor=red" alt="Current Focus" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>🎯 What I'm Currently Working On</h3>
+  
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://img.shields.io/badge/Django-REST_API-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django REST API"/>
+        <p>Building scalable REST APIs with Django</p>
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/Vue.js-3-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue.js 3"/>
+        <p>Exploring Vue.js 3 Composition API</p>
+      </td>
+      <td align="center">
+        <img src="https://img.shields.io/badge/Docker-Containerization-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+        <p>Improving deployment workflows with Docker</p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- WAKATIME STATS SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/CODING-ACTIVITY-181717?style=flat-square&color=red&logo=wakatime&logoColor=red" alt="Coding Activity" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>⏱️ My Coding Activity</h3>
+  <p>Real-time statistics from my WakaTime profile</p>
+  
+  <!-- This section is automatically updated by the metrics workflow -->
+  <div align="center">
+    <a href="https://wakatime.com/@AbdullahBakir97">
+      <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics.svg" width="70%" alt="WakaTime Stats">
+    </a>
+  </div>
+</div>
+
+<!-- GOOGLE PAGESPEED SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/GOOGLE-PAGESPEED-181717?style=flat-square&color=red&logo=google&logoColor=red" alt="Google PageSpeed" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>⏱️ Website Performance Metrics</h3>
+  <p>Performance statistics for my <a href="https://github.com/AbdullahBakir97/Barber-Salon">Barber Salon</a> project website</p>
+  
+  <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+    <img src="https://img.shields.io/badge/Performance-95%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Performance: 95%" />
+    <img src="https://img.shields.io/badge/Accessibility-92%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Accessibility: 92%" />
+    <img src="https://img.shields.io/badge/Best_Practices-95%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Best Practices: 95%" />
+    <img src="https://img.shields.io/badge/SEO-98%25-success?style=for-the-badge&logo=google&logoColor=white" alt="SEO: 98%" />
+  </div>
+  
+  <table>
+    <tr>
+      <th>Metric</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>95/100</td>
+    </tr>
+    <tr>
+      <td>Accessibility</td>
+      <td>92/100</td>
+    </tr>
+    <tr>
+      <td>Best Practices</td>
+      <td>95/100</td>
+    </tr>
+    <tr>
+      <td>SEO</td>
+      <td>98/100</td>
+    </tr>
+  </table>
+  
+  <p><em>Scores based on Google PageSpeed Insights - Updated monthly</em></p>
+  <p><small>This plugin is not affiliated with Google. PageSpeed Insights is a trademark of Google LLC.</small></p>
+</div>
+
+<!-- LANGUAGE STATS SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/LANGUAGE-STATS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Language Stats" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>🔤 My Programming Languages</h3>
+  <p>Automatically updated statistics of my most used languages</p>
+  
+  <div align="center">
+    <a href="https://github.com/AbdullahBakir97">
+      <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-languages.svg" width="70%" alt="Language Stats">
+    </a>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/GITHUB-ACHIEVEMENTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Achievements" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>🏆 My GitHub Achievements</h3>
+  <p>Badges and achievements earned through GitHub activity</p>
+  
+  <div align="center">
+    <a href="https://github.com/AbdullahBakir97">
+      <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-achievements.svg" width="70%" alt="GitHub Achievements">
+    </a>
+  </div>
+</div>
+
+
+<!-- SUPPORT ME SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/SUPPORT-ME-181717?style=flat-square&color=red&logo=buymeacoffee&logoColor=red" alt="Support Me" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>☕ Support My Work</h3>
+  <p>If you find my projects helpful or want to support my work, you can:</p>
+  
+  <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+    <a href="#"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /></a>
+    <a href="#"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsors" /></a>
+    <a href="#"><img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal" /></a>
+  </div>
+  
+  <p><em>Your support helps me create more open-source projects and tutorials!</em></p>
+</div>
+
+
+<!-- LATEST BLOG POSTS -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/LATEST-BLOGS-181717?style=flat-square&color=red&logo=medium&logoColor=red" alt="Latest Blogs" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+
+<!-- SUPPORT ME SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/SUPPORT-ME-181717?style=flat-square&color=red&logo=buymeacoffee&logoColor=red" alt="Support Me" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>☕ Support My Work</h3>
+  <p>If you find my projects helpful or want to support my work, you can:</p>
+  
+  <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+    <a href="#"><img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" /></a>
+    <a href="#"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsors" /></a>
+    <a href="#"><img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal" /></a>
+  </div>
+  
+  <p><em>Your support helps me create more open-source projects and tutorials!</em></p>
+</div>
+
 <!-- CONTRIBUTION SNAKE -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
@@ -356,4 +550,24 @@
     <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
   </picture>
   <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<!-- GITHUB SKYLINE SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/GITHUB-SKYLINE-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Skyline" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<div align="center">
+  <h3>🌇 GitHub Skyline - 3D Contribution Calendar</h3>
+  <p>View my contribution history in 3D at <a href="https://skyline.github.com/AbdullahBakir97/2024">skyline.github.com/AbdullahBakir97</a></p>
+  
+  <a href="https://skyline.github.com/AbdullahBakir97/2024">
+    <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/skyline.gif" width="70%" alt="GitHub Skyline">
+  </a>
+  
+  <p><em>⚠️ This animation is a representation. Visit the link above for the interactive 3D version.</em></p>
 </div>
