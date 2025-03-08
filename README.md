@@ -9,9 +9,11 @@
 </div>
 
 <!-- Profile Views and Social Badges -->
-<img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&text_color=04172c" alt="Profile views" />
-<a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime Badge" /></a>
-<a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red" alt="GitHub Repo Stars" /></a>
+<p style="display: flex; gap: 10px; align-items: center;">
+  <img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&text_color=04172c" alt="Profile views" />
+  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime Badge" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red" alt="GitHub Repo Stars" /></a>
+</p>
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
@@ -240,7 +242,7 @@
       <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true" width="49%" alt="GitHub Stats" />
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606" width="49%" alt="GitHub Streak" />
     </a>
-  </div>div>
+  </div>
 
 <!-- GITHUB TROPHIES -->
 <div align="center">
@@ -374,4 +376,3 @@
   </picture>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
-
