@@ -8,15 +8,9 @@
   <img src="./assets/redline.gif" width="100%"/>
   
   <!-- Profile Views and Social Badges -->
-  <p align="center">
-    <img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&text_color=04172c" alt="Profile views" />
-    <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime Badge" /></a>
-    <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red" alt="GitHub Repo Stars" /></a>
-  </p>
-  
-  
-  
-
+  <img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&text_color=04172c" alt="Profile views" />
+  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime Badge" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red" alt="GitHub Repo Stars" /></a>
 </div>
 
 
@@ -227,13 +221,14 @@
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://img.shields.io/badge/GHub-Stats-181717?style=flat-square&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red" alt="GitHub Stats" width="150">
   </a>
-  <!-- METRICS INSIGHTS -->
-  <a href="https://metrics.lecoq.io/about/AbdullahBakir97">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&bg_color=0D1117&color=ff0000&text_color=da644d&icon_color=ffde01" width="100%" alt="Activity Graph" />
-  </a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
+<!-- METRICS INSIGHTS -->
+<a href="https://metrics.lecoq.io/about/AbdullahBakir97">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&bg_color=0D1117&color=ff0000&text_color=da644d&icon_color=ffde01" width="100%" alt="Activity Graph" />
+</a>
+  
 <!-- METRICS DASHBOARD -->
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
