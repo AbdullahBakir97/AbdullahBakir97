@@ -458,6 +458,13 @@
     <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
   </picture>
   <!-- GITHUB SKYLINE SECTION -->
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/GITHUB-SKYLINE-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Skyline" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+
+  <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
     <!-- GitHub Skyline -->
     <div style="width: 49%;">
       <a href="https://skyline.github.com/AbdullahBakir97/2024">
