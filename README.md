@@ -229,40 +229,6 @@
   </div>
 </div>
 
-<style>
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 15px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.skills-category {
-  background-color: rgba(40, 40, 40, 0.1);
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.skills-category:hover {
-  transform: translateY(-5px);
-}
-
-.skills-category h3 {
-  border-bottom: 2px solid #ff1709;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-  color: #ff6f00;
-}
-</style>
 
 <div align="center">
   <p>Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀</p>
