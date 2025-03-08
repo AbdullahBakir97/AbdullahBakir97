@@ -241,37 +241,6 @@ Feel free to explore my repositories and reach out if you have any questions or 
   </a>
 </div>
 
-<!-- LANGUAGES SECTION -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/LANGUAGES-STATS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Languages" width="150">
-  </a>
-  <img src="./assets/redline.gif" width="100%"/>
-</div>
-
-<!-- LANGUAGES METRICS -->
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-languages.svg" width="70%" alt="Languages Stats" />
-  </a>
-</div>
-
-<!-- STARGAZERS SECTION -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/STAR-GAZERS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Stargazers" width="150">
-  </a>
-  <img src="./assets/redline.gif" width="100%"/>
-</div>
-
-<!-- STARGAZERS CHART -->
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-stargazers.svg" width="70%" alt="Stargazers Evolution" />
-  </a>
-</div>
 
 <!-- FEATURED REPOSITORIES -->
 <div align="center">
