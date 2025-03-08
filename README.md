@@ -267,36 +267,6 @@
   </a>
 </div>
 
-<!-- ACHIEVEMENTS SECTION -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-ACHIEVEMENTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Achievements" width="200">
-  </a>
-  <img src="./assets/redline.gif" width="100%"/>
-</div>
-
-<!-- ACHIEVEMENTS METRICS -->
-<div align="center" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 300px; max-width: 48%;">
-    <a href="https://github.com/AbdullahBakir97">
-      <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-achievements.svg" width="100%" alt="GitHub Achievements" />
-    </a>
-  </div>
-  <div style="flex: 1; min-width: 300px; max-width: 48%;">
-    <a href="https://github.com/AbdullahBakir97">
-      <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-languages.svg" width="100%" alt="GitHub Languages" />
-    </a>
-  </div>
-</div>
-
-<!-- Additional Metrics Row -->
-<div align="center" style="margin-top: 20px;">
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-stargazers.svg" width="70%" alt="GitHub Stargazers" />
-  </a>
-</div>
-
 <!-- REPOSITORY CARDS -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
