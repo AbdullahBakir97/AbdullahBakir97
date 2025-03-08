@@ -229,7 +229,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/ACHIEVEMENTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Achievements" width="150">
+    <img src="https://img.shields.io/badge/ACHIEVEMENTS-181717?style=flat-square&text_color=04172c&color=red&theme=codeSTACKr&logo=github&logoColor=red" alt="GitHub Stats" width="150">
   </a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
