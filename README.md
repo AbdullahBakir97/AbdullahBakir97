@@ -151,7 +151,7 @@
       <a href="#"><img src="https://img.shields.io/badge/PyTorch-%23EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch"></a>
       <a href="#"><img src="https://img.shields.io/badge/NumPy-%23013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"></a>
       <a href="#"><img src="https://img.shields.io/badge/Pandas-%23150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"></a>
-      <a href="#"><img src="https://img.shields.io/badge/Matplotlib-%23ffffff?style=for-the-badge&logo=Matplotlib&logoColor=black" alt="Matplotlib"></a>
+      <a href="#"><img src="https://img.shields.io/badge/Matplotlib-%233F4F75?style=for-the-badge&logo=Matplotlib&logoColor=white" alt="Matplotlib"></a>
       <a href="#"><img src="https://img.shields.io/badge/Plotly-%233F4F75?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"></a>
       <a href="#"><img src="https://img.shields.io/badge/Chart.js-F5788D?style=for-the-badge&logo=chart.js&logoColor=white" alt="Chart.js"></a>
     </div>
@@ -374,9 +374,18 @@
         <p>Improving deployment workflows with Docker</p>
       </td>
     </tr>
+    <tr>
+      <td align="center">
+        <img src="https://img.shields.io/badge/Generative-AI-FF5A5F?style=for-the-badge&logo=openai&logoColor=white" alt="Generative AI"/>
+        <p>Learning and integrating AI capabilities into applications</p>
+      </td>
+      <td align="center" colspan="2">
+        <img src="./assets/pydev-logo.png" alt="PyDev" height="40"/>
+        <p>Contributing to PyDev: Enterprise Python Development Platform - An enterprise-grade platform that revolutionizes Python application development by combining powerful CLI tooling, a secure template marketplace, and AI-driven development features.</p>
+      </td>
+    </tr>
   </table>
 </div>
-
 
 <!-- GOOGLE PAGESPEED SECTION -->
 <div align="center">
@@ -389,13 +398,13 @@
 
 <div align="center">
   <h3>⏱️ Website Performance Metrics</h3>
-  <p>Performance statistics for my <a href="https://github.com/AbdullahBakir97/Barber-Salon">Barber Salon</a> project website</p>
+  <p>Performance statistics for <a href="http://kharsa-style.de/">Kharsa Style</a> website</p>
   
   <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-    <img src="https://img.shields.io/badge/Performance-95%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Performance: 95%" />
-    <img src="https://img.shields.io/badge/Accessibility-92%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Accessibility: 92%" />
-    <img src="https://img.shields.io/badge/Best_Practices-95%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Best Practices: 95%" />
-    <img src="https://img.shields.io/badge/SEO-98%25-success?style=for-the-badge&logo=google&logoColor=white" alt="SEO: 98%" />
+    <img src="https://img.shields.io/badge/Performance-68%25-yellow?style=for-the-badge&logo=google&logoColor=white" alt="Performance: 68%" />
+    <img src="https://img.shields.io/badge/Accessibility-85%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Accessibility: 85%" />
+    <img src="https://img.shields.io/badge/Best_Practices-90%25-success?style=for-the-badge&logo=google&logoColor=white" alt="Best Practices: 90%" />
+    <img src="https://img.shields.io/badge/SEO-92%25-success?style=for-the-badge&logo=google&logoColor=white" alt="SEO: 92%" />
   </div>
   
   <table>
@@ -405,26 +414,25 @@
     </tr>
     <tr>
       <td>Performance</td>
-      <td>95/100</td>
+      <td>68/100</td>
     </tr>
     <tr>
       <td>Accessibility</td>
-      <td>92/100</td>
+      <td>85/100</td>
     </tr>
     <tr>
       <td>Best Practices</td>
-      <td>95/100</td>
+      <td>90/100</td>
     </tr>
     <tr>
       <td>SEO</td>
-      <td>98/100</td>
+      <td>92/100</td>
     </tr>
   </table>
   
-  <p><em>Scores based on Google PageSpeed Insights - Updated monthly</em></p>
+  <p><em>Scores based on Google PageSpeed Insights - Last updated March 2025</em></p>
   <p><small>This plugin is not affiliated with Google. PageSpeed Insights is a trademark of Google LLC.</small></p>
 </div>
-
 
 <!-- SUPPORT ME SECTION -->
 <div align="center">
