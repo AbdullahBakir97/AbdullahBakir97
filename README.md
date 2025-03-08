@@ -250,16 +250,11 @@ Feel free to explore my repositories and reach out if you have any questions or 
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
+
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Django-Store">
     <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Django Store" />
   </a>
-  <a href="https://github.com/AbdullahBakir97/Barber-Salon">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Barber Salon" />
-  </a>
-</div>
-
-<div align="center">
   <a href="https://github.com/AbdullahBakir97/Project-Management-Tool">
     <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="32%" alt="Project Management Tool" />
   </a>
@@ -268,6 +263,9 @@ Feel free to explore my repositories and reach out if you have any questions or 
   </a>
   <a href="https://github.com/AbdullahBakir97/Python-Django-join_with">
     <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="32%" alt="Python Django join_with" />
+  </a>
+  <a href="https://github.com/AbdullahBakir97/Barber-Salon">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Barber Salon" />
   </a>
 </div>
 
