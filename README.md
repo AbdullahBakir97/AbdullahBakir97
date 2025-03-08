@@ -209,6 +209,38 @@ Feel free to explore my repositories and reach out if you have any questions or 
   </a>
 </div>
 
+<!-- GITHUB METRICS EMBED -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/GITHUB-METRICS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Metrics" width="200">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<!-- METRICS DASHBOARD -->
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://metrics.lecoq.io/AbdullahBakir97?template=classic&isocalendar=1&languages=1&achievements=1&lines=1&stargazers=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&isocalendar=false&isocalendar.duration=half-year&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.analysis.timeout.repositories=7.5&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&stargazers=false&stargazers.charts=true&stargazers.charts.type=classic&stargazers.worldmap=false&stargazers.worldmap.sample=0&achievements=false&achievements.threshold=C&achievements.secrets=true&achievements.display=compact&achievements.limit=0&config.timezone=Europe%2FBerlin" width="100%" alt="Detailed GitHub Metrics" />
+  </a>
+</div>
+
+<!-- STARGAZERS SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/STAR-GAZERS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Stargazers" width="150">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<!-- STARGAZERS CHART -->
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://metrics.lecoq.io/AbdullahBakir97?template=classic&stargazers=1&stargazers.charts=true&stargazers.charts.type=graph&config.timezone=Europe%2FBerlin" width="70%" alt="Stargazers Evolution" />
+  </a>
+</div>
+
 <!-- FEATURED REPOSITORIES -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
@@ -256,4 +288,3 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <!--  2d history skills для обновления картинки нужно обновить профиль на странице https://profile.codersrank.io/user/abdullahbakir97-->
 
 <!-- <img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=abdullahbakir97&show-other-skills=true" width="auto"></img> -->
-
