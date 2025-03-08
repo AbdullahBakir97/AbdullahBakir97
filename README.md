@@ -268,10 +268,10 @@ Feel free to explore my repositories and reach out if you have any questions or 
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Python-Django-join_with">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="32%" alt="Python Django join_with" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Python Django join_with" />
   </a>
   <a href="https://github.com/AbdullahBakir97/Project-Management-Tool">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="32%" alt="Project Management Tool" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Project Management Tool" />
   </a>
 </div>
 
