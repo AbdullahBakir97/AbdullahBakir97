@@ -221,7 +221,39 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <!-- METRICS DASHBOARD -->
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://metrics.lecoq.io/AbdullahBakir97?template=classic&isocalendar=1&languages=1&achievements=1&lines=1&stargazers=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&isocalendar=false&isocalendar.duration=half-year&languages=false&languages.limit=8&languages.threshold=0%25&languages.other=false&languages.colors=github&languages.sections=most-used&languages.indepth=false&languages.analysis.timeout=15&languages.analysis.timeout.repositories=7.5&languages.categories=markup%2C%20programming&languages.recent.categories=markup%2C%20programming&languages.recent.load=300&languages.recent.days=14&stargazers=false&stargazers.charts=true&stargazers.charts.type=classic&stargazers.worldmap=false&stargazers.worldmap.sample=0&achievements=false&achievements.threshold=C&achievements.secrets=true&achievements.display=compact&achievements.limit=0&config.timezone=Europe%2FBerlin" width="100%" alt="Detailed GitHub Metrics" />
+    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics.svg" width="100%" alt="Detailed GitHub Metrics" />
+  </a>
+</div>
+
+<!-- ACHIEVEMENTS SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/ACHIEVEMENTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Achievements" width="150">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<!-- ACHIEVEMENTS METRICS -->
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-achievements.svg" width="70%" alt="GitHub Achievements" />
+  </a>
+</div>
+
+<!-- LANGUAGES SECTION -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/LANGUAGES-STATS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Languages" width="150">
+  </a>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
+<!-- LANGUAGES METRICS -->
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-languages.svg" width="70%" alt="Languages Stats" />
   </a>
 </div>
 
@@ -237,7 +269,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
 <!-- STARGAZERS CHART -->
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://metrics.lecoq.io/AbdullahBakir97?template=classic&stargazers=1&stargazers.charts=true&stargazers.charts.type=graph&config.timezone=Europe%2FBerlin" width="70%" alt="Stargazers Evolution" />
+    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-stargazers.svg" width="70%" alt="Stargazers Evolution" />
   </a>
 </div>
 
