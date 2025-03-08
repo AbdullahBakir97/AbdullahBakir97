@@ -29,7 +29,7 @@
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-EXPERTISE-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Technical Expertise" width="200">
+    <img src="https://img.shields.io/badge/SKILLS-EXPERTISE-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Technical Expertise" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
@@ -113,13 +113,6 @@
 </table>
 
 <!-- Additional Skills Categories -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-SKILLS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Additional Skills" width="200">
-  </a>
-  <img src="./assets/redline.gif" width="100%"/>
-</div>
 
 <div class="skills-grid">
   <div class="skills-category">
@@ -251,8 +244,8 @@
   <!-- GitHub Metrics -->
   <div align="center">
     <a href="https://github.com/AbdullahBakir97">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606" width="49%" alt="GitHub Streak" />
       <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true" width="49%" alt="GitHub Stats" />
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606" width="49%" alt="GitHub Streak" />
     </a>
   </div>div>
 
