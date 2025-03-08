@@ -65,14 +65,6 @@ I thrive on staying at the forefront of web development trends and technologies,
 
 Feel free to explore my repositories and reach out if you have any questions or collaboration ideas! 🚀
 
-<!-- LANGUAGES SECTION -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-LANGUAGES-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Languages" width="200">
-  </a>
-  <img src="./assets/redline.gif" width="100%"/>
-</div>
 
 <!-- SKILLS & TOOLS SECTION -->
 <div align="center">
@@ -178,14 +170,7 @@ Feel free to explore my repositories and reach out if you have any questions or 
   <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="49%" />
 </div>
 
-<!-- STARGAZERS SECTION -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-STARGAZERS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Stargazers" width="200">
-  </a>
-  <img src="./assets/redline.gif" width="100%"/>
-</div>
+
 
 <!-- CONNECT WITH ME SECTION -->
 <div align="center">
