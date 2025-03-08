@@ -448,6 +448,33 @@
   <p><small>This plugin is not affiliated with Google. PageSpeed Insights is a trademark of Google LLC.</small></p>
 </div>
 
+
+<!-- CONTRIBUTION SNAKE -->
+<div align="center">
+  <img src="./assets/redline.gif" width="100%"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
+  </picture>
+
+  <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+    <!-- GitHub Skyline -->
+    <div style="width: 49%;">
+      <a href="https://skyline.github.com/AbdullahBakir97/2024">
+        <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline.svg" width="100%" alt="GitHub Skyline">
+      </a>
+    </div>
+    <!-- GitHub City -->
+    <div style="width: 49%;">
+      <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024">
+        <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city.svg" width="100%" alt="GitHub City">
+      </a>
+    </div>
+  <p><em>⚠️ These visualizations are automatically updated daily. Visit the links above for interactive 3D versions.</em></p>
+  <img src="./assets/redline.gif" width="100%"/>
+</div>
+
 <!-- SUPPORT ME SECTION -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
@@ -466,38 +493,4 @@
   </div>
   
   <p><em>Your support helps me create more open-source projects and tutorials!</em></p>
-</div>
-
-
-<!-- CONTRIBUTION SNAKE -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%"/>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
-  </picture>
-  <!-- GITHUB SKYLINE SECTION -->
-  <img src="./assets/redline.gif" width="100%"/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-SKYLINE-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Skyline" width="200">
-  </a>
-  <img src="./assets/redline.gif" width="100%"/>
-
-  <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
-    <!-- GitHub Skyline -->
-    <div style="width: 49%;">
-      <a href="https://skyline.github.com/AbdullahBakir97/2024">
-        <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline.svg" width="100%" alt="GitHub Skyline">
-      </a>
-    </div>
-    <!-- GitHub City -->
-    <div style="width: 49%;">
-      <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024">
-        <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city.svg" width="100%" alt="GitHub City">
-      </a>
-    </div>
-  <p><em>⚠️ These visualizations are automatically updated daily. Visit the links above for interactive 3D versions.</em></p>
-  <img src="./assets/redline.gif" width="100%"/>
-  <img src="./assets/redline.gif" width="100%"/>
 </div>
