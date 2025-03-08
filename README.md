@@ -101,9 +101,13 @@
     </td>
     <td width="50%" valign="top">
       <h3 align="center">Technology Proficiency</h3>
-      <div align="center">
+      
+      <!-- Language Stats Cards - Repositioned for better layout -->
+      <div align="center" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00" alt="Top Languages" width="90%" />
+        <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="90%" />
       </div>
+      
       <h4>🔹 Cloud & Deployment</h4>
       <p>I excel at deploying web applications on platforms like AWS, Heroku, and Docker, ensuring scalability and reliability for your projects.</p>
       <div class="skills-container">
@@ -129,7 +133,7 @@
         <a href="#"><img src="https://img.shields.io/badge/PyCharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green" alt="PyCharm"></a>
       </div>
       <div align="center">
-        <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="90%" />
+        <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&bg_color=0D1117&color=ff0000&text_color=da644d&icon_color=ffde01" alt="Profile Details" width="90%" />
       </div>
     </td>
   </tr>
