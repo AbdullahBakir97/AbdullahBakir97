@@ -241,17 +241,15 @@ Feel free to explore my repositories and reach out if you have any questions or 
   </a>
 </div>
 
-
-<!-- FEATURED REPOSITORIES -->
+<!-- REPOSITORY CARDS -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/FEATURED-PROJECTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Featured Projects" width="200">
+    <img src="https://img.shields.io/badge/MY-PROJECTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Projects" width="150">
   </a>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
-<!-- REPOSITORY CARDS -->
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Django-Store">
     <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Django Store" />
@@ -259,17 +257,62 @@ Feel free to explore my repositories and reach out if you have any questions or 
   <a href="https://github.com/AbdullahBakir97/Barber-Salon">
     <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Barber Salon" />
   </a>
+</div>
+
+<div align="center">
   <a href="https://github.com/AbdullahBakir97/Project-Management-Tool">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Project Management Tool" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="32%" alt="Project Management Tool" />
+  </a>
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/assets/127149804/bb129829-0ca0-4a85-a800-1c002d122cf0" width="32%" alt="Abdullah Bakir" style="border-radius:50%;" />
   </a>
   <a href="https://github.com/AbdullahBakir97/Python-Django-join_with">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Python Django join_with" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="32%" alt="Python Django join_with" />
   </a>
+</div>
+
+<div align="center">
   <a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js">
     <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Weather--App-django-vue.js&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Weather App" />
   </a>
   <a href="https://github.com/AbdullahBakir97/Django-Vuejs-Courses-Filter">
     <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Vuejs-Courses-Filter&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Django Vuejs Courses Filter" />
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/API">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=API&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="API" />
+  </a>
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Jobs Portal" />
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Django Blog app" />
+  </a>
+  <a href="https://github.com/AbdullahBakir97/Automtion">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr" width="49%" alt="Automtion" />
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/BookStore">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=BookStore&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr" width="49%" alt="BookStore" />
+  </a>
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr" width="49%" alt="2050 Bootstrap Landing page" />
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/JS-TO-DO">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=JS-TO-DO&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr" width="49%" alt="JS TO DO" />
+  </a>
+  <a href="https://github.com/AbdullahBakir97/AbdullahBakir97">
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr" width="49%" alt="Profile README" />
   </a>
 </div>
 
