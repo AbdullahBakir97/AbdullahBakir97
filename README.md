@@ -224,22 +224,19 @@
   <img src="./assets/redline.gif" width="100%"/>
 </div>
 
-<!-- METRICS INSIGHTS -->
-<a href="https://metrics.lecoq.io/about/AbdullahBakir97">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&bg_color=0D1117&color=ff0000&text_color=da644d&icon_color=ffde01" width="100%" alt="Activity Graph" />
-</a>
   
 <!-- METRICS DASHBOARD -->
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true" width="49%" alt="GitHub Stats" />
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=AbdullahBakir97&custom_title=AbdullahBakir97's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=ffde01&line=830203&point=FF652F&area_color=&title_color=da644d&area=true" width="100%" alt="Activity Graph" />
   </a>
 </div>
 
   <!-- GitHub Metrics -->
   <div align="center">
     <a href="https://github.com/AbdullahBakir97">
-      <img src="https://github-readme-activity-graph.vercel.app/graph?username=AbdullahBakir97&custom_title=AbdullahBakir97's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=ffde01&line=830203&point=FF652F&area_color=&title_color=da644d&area=true" width="100%" alt="Activity Graph" />
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&bg_color=0D1117&color=ff0000&text_color=da644d&icon_color=ffde01" width="100%" alt="Activity Graph" />
+      <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true" width="49%" alt="GitHub Stats" />
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606" width="49%" alt="GitHub Streak" />
     </a>
   </div>
