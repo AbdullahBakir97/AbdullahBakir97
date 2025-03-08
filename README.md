@@ -98,9 +98,6 @@
         <a href="#"><img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"></a>
         <a href="#"><img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL"></a>
       </div>
-      <div align="center" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00" alt="Top Languages" width="90%" />
-      </div>
     </td>
     <td width="50%" valign="top">
       <h3 align="center">Technology Proficiency</h3>
@@ -127,9 +124,6 @@
         <a href="#"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
         <a href="#"><img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="Visual Studio Code"></a>
         <a href="#"><img src="https://img.shields.io/badge/PyCharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green" alt="PyCharm"></a>
-      </div>
-      <div align="center" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
-        <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="90%" />
       </div>
     </td>
   </tr>
@@ -384,6 +378,11 @@
   </a>
 </div>
 
+<div align="center">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00" alt="Top Languages" width="49%" />
+    <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="49%" />
+</div>
+
 <!-- CONTRIBUTION SNAKE -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
@@ -394,3 +393,4 @@
   </picture>
   <img src="./assets/redline.gif" width="100%"/>
 </div>
+
