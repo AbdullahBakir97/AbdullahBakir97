@@ -441,8 +441,6 @@
   
   <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
     <a href="https://www.buymeacoffee.com/abdullahbad"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=abdullahbad&button_colour=1540c1&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00" /></a>
-    <a href="#"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="GitHub Sponsors" /></a>
-    <a href="#"><img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal" /></a>
   </div>
   
   <p><em>Your support helps me create more open-source projects and tutorials!</em></p>
