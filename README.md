@@ -472,7 +472,6 @@
       </a>
     </div>
   <p><em>⚠️ These visualizations are automatically updated daily. Visit the links above for interactive 3D versions.</em></p>
-  <img src="./assets/redline.gif" width="100%"/>
 </div>
 
 <!-- SUPPORT ME SECTION -->
