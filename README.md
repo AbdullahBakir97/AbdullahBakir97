@@ -54,9 +54,6 @@
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <div align="center">
-        <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/tech.gif" alt="Tech" width="100">
-      </div>
       <h3 align="center">Core Technologies</h3>
       <div align="center">
         <a href="https://www.python.org/">
@@ -100,6 +97,9 @@
       </div>
     </td>
     <td width="50%" valign="top">
+      <div align="center">
+        <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/tech.gif" alt="Tech" width="100">
+      </div>
       <h3 align="center">Technology Proficiency</h3>
       <h4>🔹 Cloud & Deployment</h4>
       <p>I excel at deploying web applications on platforms like AWS, Heroku, and Docker, ensuring scalability and reliability for your projects.</p>
