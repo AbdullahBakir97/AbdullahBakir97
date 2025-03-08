@@ -101,13 +101,11 @@
     </td>
     <td width="50%" valign="top">
       <h3 align="center">Technology Proficiency</h3>
-      
       <!-- Language Stats Cards - Repositioned for better layout -->
       <div align="center" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00" alt="Top Languages" width="90%" />
         <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Abdullahbakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="90%" />
       </div>
-      
       <h4>🔹 Cloud & Deployment</h4>
       <p>I excel at deploying web applications on platforms like AWS, Heroku, and Docker, ensuring scalability and reliability for your projects.</p>
       <div class="skills-container">
