@@ -380,7 +380,7 @@
         <p>Learning and integrating AI capabilities into applications</p>
       </td>
       <td align="center" colspan="2">
-        <img src="./assets/pydev-logo.png" alt="PyDev" height="40"/>
+        <img src="./assets/pydev-logo.png" alt="PyDev" height="60"/>
         <p>Contributing to PyDev: Enterprise Python Development Platform - An enterprise-grade platform that revolutionizes Python application development by combining powerful CLI tooling, a secure template marketplace, and AI-driven development features.</p>
       </td>
     </tr>
