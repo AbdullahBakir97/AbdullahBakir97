@@ -10,9 +10,9 @@
 
 <!-- Profile Views and Social Badges -->
 <p style="display: flex; gap: 15px; align-items: center; justify-content: center; margin: 15px 0;">
-  <img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&text_color=04172c" alt="Profile views" height="28" />
-  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime Badge" height="28" /></a>
-  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red" alt="GitHub Repo Stars" height="28" /></a>
+  <img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red&text_color=04172c" alt="Profile views" height="22" />
+  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=flat&color=red&text_color=04172c&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime Badge" height="22" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&text_color=04172c&logo=github&logoColor=red" alt="GitHub Repo Stars" height="22" /></a>
 </p>
 
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)

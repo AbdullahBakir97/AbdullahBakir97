@@ -102,7 +102,7 @@ jobs:
       # Generate GitHub Skyline visualization
       - uses: lowlighter/metrics@latest
         with:
-          token: NOT_NEEDED
+          token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
           template: classic
           config_timezone: Europe/Berlin
@@ -112,6 +112,13 @@ jobs:
           plugin_skyline_year: 2024
           plugin_skyline_frames: 60
           plugin_skyline_quality: 0.8
+          plugin_skyline_settings: |
+            {
+              "url": "https://skyline.github.com/${login}/${year}",
+              "ready": ".octicon-mark-github",
+              "wait": 5,
+              "hide": ".js-site-search-form, .HeaderMenu, .Header-old, .Header"
+            }
           committer_branch: metrics-output
           committer_message: Update skyline metrics
           output_action: commit
@@ -119,7 +126,7 @@ jobs:
       # Generate GitHub City visualization (alternative to skyline)
       - uses: lowlighter/metrics@latest
         with:
-          token: NOT_NEEDED
+          token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
           template: classic
           config_timezone: Europe/Berlin
@@ -133,7 +140,7 @@ jobs:
             {
               "url": "https://honzaap.github.io/GithubCity?name=${login}&year=${year}",
               "ready": "[...document.querySelectorAll('.display-info span')].map(span => span.innerText).includes('${login}')",
-              "wait": 4,
+              "wait": 8,
               "hide": ".github-corner, .footer-link, .buttons-options, .mobile-rotate, .display-info span:first-child"
             }
           committer_branch: metrics-output
