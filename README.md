@@ -18,7 +18,6 @@
 ![](https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif)
 
 
-
 <!-- TECHNICAL EXPERTISE -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%"/>
