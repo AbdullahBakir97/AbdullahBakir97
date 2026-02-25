@@ -380,7 +380,7 @@
       </td>
       <td align="center" colspan="2">
         <img src="./assets/pydev-logo.png" alt="PyDev" height="60"/>
-        <p>Contributing to PyDev: Enterprise Python Development Platform - An enterprise-grade platform that revolutionizes Python application development by combining powerful CLI tooling, a secure template marketplace, and AI-driven development features.</p>
+        <p>Contributing to PyDev: Python Development Platform - An enterprise-grade platform that revolutionizes Python application development by combining powerful CLI tooling, a secure template marketplace, and AI-driven development features.</p>
       </td>
     </tr>
     <tr>
@@ -391,10 +391,7 @@
         <p>Building a full-featured bakery management system with Django and Vue.js, featuring inventory tracking, recipe management, online ordering, customer accounts, and real-time production scheduling. Includes a responsive admin dashboard for bakery owners and an intuitive customer-facing interface for browsing products and placing orders.</p>
       </td>
       <td align="center" colspan="2">
-        <a href="https://github.com/AbdullahBakir97/Tawil-Media---Advertisement">
-          <img src="./assets/tawillogo.png" alt="Tawil Media" height="60"/>
-        </a>
-        <p>Developing a sophisticated digital archive system for Tawil Media with comprehensive magazine edition management, categorized content organization, advanced metadata tracking, and multi-format content preservation. Features include year-based archiving, edition tracking, content digitization, and searchable archives with custom taxonomies.</p>
+        <p>Developing a sophisticated digital archive system for Media and News with comprehensive magazine edition management, categorized content organization, advanced metadata tracking, and multi-format content preservation. Features include year-based archiving, edition tracking, content digitization, and searchable archives with custom taxonomies.</p>
       </td>
     </tr>
   </table>
