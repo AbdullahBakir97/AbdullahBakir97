@@ -1,5 +1,5 @@
 <!-- METRICS HEADER -->
-<div align="center">
+<div align="center"> 
   <img src="https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;" alt="Typing SVG" style="color:f90001; vertical-align: bottom;">
   <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/pro.gif" alt="Pro" width="50" style="vertical-align:bottom;" align="right">
 </div>
