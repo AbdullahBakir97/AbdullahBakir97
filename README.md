@@ -60,12 +60,7 @@
   <tr>
     <td width="50%" valign="top">
       <h3 align="center">Core Technologies</h3>
-      <div align="center">
-        <a href="https://www.python.org/"><img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="40" height="40" /></a>
-        <a href="https://www.djangoproject.com/"><img src="https://techstack-generator.vercel.app/django-icon.svg" alt="Django" width="40" height="40" /></a>
-        <a href="https://www.javascript.com/"><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="40" height="40" /></a>
-        <a href="https://www.typescriptlang.org/"><img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="TypeScript" width="40" height="40" /></a>
-      </div>
+      <p align="center"><a href="https://www.python.org/"><img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="40" height="40" /></a> <a href="https://www.djangoproject.com/"><img src="https://techstack-generator.vercel.app/django-icon.svg" alt="Django" width="40" height="40" /></a> <a href="https://www.javascript.com/"><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="40" height="40" /></a> <a href="https://www.typescriptlang.org/"><img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="TypeScript" width="40" height="40" /></a></p>
       <h4>🔹 Frontend Development</h4>
       <p>Proficient in Vue.js, JavaScript, HTML, and CSS. I build interactive, accessible interfaces.</p>
       <p>
