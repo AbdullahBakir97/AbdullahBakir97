@@ -2,6 +2,7 @@ name: Metrics
 on:
   schedule: [{cron: "0 0 * * *"}]
   workflow_dispatch:
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -44,8 +45,7 @@ jobs:
           committer_message: Update metrics
           output_action: commit
           filename: github-metrics.svg
-          
-      # Generate additional metrics files
+
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
           committer_branch: metrics-output
           committer_message: Update achievements metrics
           output_action: commit
-          
+
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -83,7 +83,7 @@ jobs:
           committer_branch: metrics-output
           committer_message: Update languages metrics
           output_action: commit
-          
+
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -98,18 +98,47 @@ jobs:
           committer_branch: metrics-output
           committer_message: Update stargazers metrics
           output_action: commit
-          
-      # Generate GitHub Skyline visualization
+
+  # Compute the list of years to render skylines/cities for: from START_YEAR
+  # to the current year. Auto-extends every Jan 1 with no edits required.
+  setup-years:
+    runs-on: ubuntu-latest
+    outputs:
+      years: ${{ steps.compute.outputs.years }}
+    env:
+      START_YEAR: "2024"
+    steps:
+      - id: compute
+        name: Compute years START_YEAR..current
+        run: |
+          current=$(TZ=Europe/Berlin date +%Y)
+          years=$(python3 -c "import json; print(json.dumps([str(y) for y in range(${START_YEAR}, ${current}+1)]))")
+          echo "Years to render: $years"
+          echo "years=$years" >> "$GITHUB_OUTPUT"
+
+  # One skyline + one city visualization per year. Serialized
+  # (max-parallel: 1) so concurrent pushes don't race on metrics-output.
+  skyline-and-city:
+    needs: setup-years
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        year: ${{ fromJSON(needs.setup-years.outputs.years) }}
+    steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
           template: classic
           config_timezone: Europe/Berlin
-          filename: github-metrics-skyline.svg
+          filename: github-metrics-skyline-${{ matrix.year }}.svg
           base: ""
           plugin_skyline: yes
-          plugin_skyline_year: 2024
+          plugin_skyline_year: ${{ matrix.year }}
           plugin_skyline_frames: 60
           plugin_skyline_quality: 0.8
           plugin_skyline_settings: |
@@ -120,20 +149,19 @@ jobs:
               "hide": ".js-site-search-form, .HeaderMenu, .Header-old, .Header"
             }
           committer_branch: metrics-output
-          committer_message: Update skyline metrics
+          committer_message: "Update skyline ${{ matrix.year }}"
           output_action: commit
-          
-      # Generate GitHub City visualization (alternative to skyline)
+
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
           template: classic
           config_timezone: Europe/Berlin
-          filename: github-metrics-city.svg
+          filename: github-metrics-city-${{ matrix.year }}.svg
           base: ""
           plugin_skyline: yes
-          plugin_skyline_year: 2024
+          plugin_skyline_year: ${{ matrix.year }}
           plugin_skyline_frames: 60
           plugin_skyline_quality: 0.8
           plugin_skyline_settings: |
@@ -144,5 +172,45 @@ jobs:
               "hide": ".github-corner, .footer-link, .buttons-options, .mobile-rotate, .display-info span:first-child"
             }
           committer_branch: metrics-output
-          committer_message: Update city metrics
+          committer_message: "Update city ${{ matrix.year }}"
           output_action: commit
+
+  # Generate 3D-printable STL files via the official github/gh-skyline CLI
+  # extension. STL files are rendered interactively in GitHub's web UI, so
+  # linking to them from README gives "spin with mouse" 3D models per year.
+  stl-skylines:
+    needs: [setup-years, skyline-and-city]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        year: ${{ fromJSON(needs.setup-years.outputs.years) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: metrics-output
+          token: ${{ secrets.METRICS_TOKEN }}
+
+      - name: Install gh-skyline extension
+        run: gh extension install github/gh-skyline
+
+      - name: Generate STL for ${{ matrix.year }}
+        run: gh skyline --user ${{ github.repository_owner }} --year ${{ matrix.year }} --output skyline-${{ matrix.year }}.stl
+
+      - name: Commit STL if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add skyline-${{ matrix.year }}.stl
+          if git diff --cached --quiet; then
+            echo "no STL changes for ${{ matrix.year }}"
+          else
+            git commit -m "Update STL skyline ${{ matrix.year }}"
+            git pull --rebase origin metrics-output
+            git push
+          fi

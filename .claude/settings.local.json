@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import yaml; yaml.safe_load\\(open\\('.github/workflows/snake.yml'\\)\\); yaml.safe_load\\(open\\('.github/workflows/metrics.yml'\\)\\); yaml.safe_load\\(open\\('.github/workflows/readme.yml'\\)\\); print\\('YAML OK'\\)\")",
+      "Bash(python -m py_compile .github/scripts/update_readme.py)",
+      "Bash(gh auth *)",
+      "Bash(python -c \"import requests; print\\('requests', requests.__version__\\)\")",
+      "Bash(curl -s \"https://api.github.com/users/AbdullahBakir97/repos?per_page=100&sort=created&direction=desc\")",
+      "Bash(python -c ' *)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(python -m pip install --quiet requests)",
+      "Bash(cp README.md /tmp/readme-test.md)",
+      "Read(//tmp/**)",
+      "Bash(python .github/scripts/update_readme.py)",
+      "Bash(curl -s \"https://api.github.com/users/AbdullahBakir97/events/public?per_page=10\")",
+      "Bash(sed -n '/<!-- ACTIVITY:START -->/,/<!-- ACTIVITY:END -->/p' /tmp/readme-test.md)",
+      "Bash(sed -n '/<!-- SKYLINE_LINK:START -->/,/<!-- SKYLINE_LINK:END -->/p' /tmp/readme-test.md)",
+      "Bash(sed -n '/<!-- CITY_LINK:START -->/,/<!-- CITY_LINK:END -->/p' /tmp/readme-test.md)",
+      "Bash(sed -n '/<!-- SKYLINE_GRID:START -->/,/<!-- SKYLINE_GRID:END -->/p' /tmp/readme-test.md)",
+      "Bash(sed -n '/<!-- CITY_GRID:START -->/,/<!-- CITY_GRID:END -->/p' /tmp/readme-test.md)",
+      "Skill(schedule)",
+      "WebSearch",
+      "Bash(sed -n '/<!-- STL_LINKS:START -->/,/<!-- STL_LINKS:END -->/p' /tmp/readme-test.md)",
+      "Bash(sed -n '/<!-- GITCITY_LINKS:START -->/,/<!-- GITCITY_LINKS:END -->/p' /tmp/readme-test.md)"
+    ]
+  }
+}
