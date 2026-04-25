@@ -257,9 +257,7 @@
 <p align="center"><b>📊 This year, by the numbers</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center">
-  <i>Auto-updated weekly by the readme workflow.</i>
-</p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-92-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-5-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-9-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-10_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <h3 align="center">🗓️ 2025</h3>
@@ -328,8 +326,14 @@
 <h2 id="activity" align="center">⚡ Recent Activity</h2>
 
 <!-- ACTIVITY:START -->
-<!-- Auto-updated daily by .github/workflows/readme.yml — do not edit manually. -->
-- _Recent activity will appear here after the first run of the readme workflow._
+- 🔀 Opened PR [#1](https://github.com/bloghd/bloghd/pull/1) in [`bloghd/bloghd`](https://github.com/bloghd/bloghd)
+- 🍴 Forked [`bloghd/bloghd`](https://github.com/bloghd/bloghd)
+- 🍴 Forked [`primer/css`](https://github.com/primer/css)
+- 🍴 Forked [`github/spec-kit`](https://github.com/github/spec-kit)
+- 🍴 Forked [`refactoringhq/tolaria`](https://github.com/refactoringhq/tolaria)
+- ❗ Opened issue [#20](https://github.com/AbdullahBakir97/Stock-Manager/issues/20) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#19](https://github.com/AbdullahBakir97/Stock-Manager/pull/19) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Closed PR [#18](https://github.com/AbdullahBakir97/Stock-Manager/pull/18) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
@@ -344,8 +348,7 @@
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
-<!-- Auto-updated daily. -->
-- _Latest releases will appear here after the first run of the readme workflow._
+- 📦 [`Stock-Manager` `v2.4.3`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.4.3) — Stock Manager Pro v2.4.3 <sub>(2026-04-23)</sub>
 <!-- LATEST_RELEASES:END -->
 
 <!-- FEATURED PROJECTS -->
@@ -492,23 +495,21 @@
 <h3 align="center">🌆 GitHub Skylines</h3>
 
 <!-- SKYLINE_GRID:START -->
-<!-- Auto-rendered from per-year SVGs by .github/workflows/readme.yml -->
-<table align="center" width="100%"><tr><td align="center"><i>Skylines will appear here after the first metrics workflow run for each year.</i></td></tr></table>
+<table align="center" width="100%"><tr><td width="33%" align="center"><a href="https://skyline.github.com/AbdullahBakir97/2024"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline-2024.svg" width="100%" alt="GitHub Skyline 2024"></a><p><b>2024</b></p></td><td width="33%" align="center"><a href="https://skyline.github.com/AbdullahBakir97/2025"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline-2025.svg" width="100%" alt="GitHub Skyline 2025"></a><p><b>2025</b></p></td><td width="33%" align="center"><a href="https://skyline.github.com/AbdullahBakir97/2026"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline-2026.svg" width="100%" alt="GitHub Skyline 2026"></a><p><b>2026 <sub>(live)</sub></b></p></td></tr></table>
 <!-- SKYLINE_GRID:END -->
 
 <!-- STL_LINKS:START -->
-<p align="center"><b>📐 Spin a 3D model:</b> <i>STL downloads appear here after the first stl-skylines run.</i></p>
+<p align="center"><b>📐 Spin a 3D model:</b> <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2024.stl">2024 STL</a> · <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2025.stl">2025 STL</a> · <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2026.stl">2026 STL <sub>(live)</sub></a></p>
 <!-- STL_LINKS:END -->
 
 <h3 align="center">🏙️ GitHub Cities</h3>
 
 <!-- CITY_GRID:START -->
-<!-- Auto-rendered from per-year SVGs by .github/workflows/readme.yml -->
-<table align="center" width="100%"><tr><td align="center"><i>City views will appear here after the first metrics workflow run for each year.</i></td></tr></table>
+<table align="center" width="100%"><tr><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2024.svg" width="100%" alt="GitHub City 2024"></a><p><b>2024</b></p></td><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2025"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2025.svg" width="100%" alt="GitHub City 2025"></a><p><b>2025</b></p></td><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2026"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2026.svg" width="100%" alt="GitHub City 2026"></a><p><b>2026 <sub>(live)</sub></b></p></td></tr></table>
 <!-- CITY_GRID:END -->
 
 <!-- GITCITY_LINKS:START -->
-<p align="center"><b>🚗 Drive through:</b> <i>City links appear here after the first readme workflow run.</i></p>
+<p align="center"><b>🚗 Drive through:</b> <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024">2024 city</a> · <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2025">2025 city</a> · <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2026">2026 city <sub>(live)</sub></a></p>
 <!-- GITCITY_LINKS:END -->
 
 <p align="center"><em>⚠️ Regenerated daily. The current year refreshes with new contributions; past years are frozen archives. Click any tile or link for the interactive view — STLs render in GitHub's built-in 3D viewer, cities open at <a href="https://honzaap.github.io/GithubCity">honzaap.github.io/GithubCity</a>.</em></p>
