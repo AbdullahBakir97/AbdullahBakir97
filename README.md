@@ -471,20 +471,28 @@
 <h3 align="center">🎨 3D Animated Profile</h3>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-view.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-south-season.svg">
-    <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution profile" />
-  </picture>
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — rainbow" />
 </p>
 
 <details>
-<summary align="center"><b>More 3D styles</b> — gitblock, rainbow, season-animate</summary>
+<summary align="center"><b>More 3D styles</b> — night-view, gitblock, season-animate, south-season</summary>
+
+<br/>
 
 <p align="center">
-  <img src="./profile-3d-contrib/profile-gitblock.svg" width="32%" alt="Git block style" />
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="32%" alt="Rainbow style" />
-  <img src="./profile-3d-contrib/profile-season-animate.svg" width="32%" alt="Animated seasons style" />
+  <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="Night view style" />
+</p>
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="Git block style" />
+</p>
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="Animated seasons style" />
+</p>
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="South-season style" />
 </p>
 
 </details>

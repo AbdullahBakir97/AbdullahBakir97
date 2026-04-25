@@ -21,7 +21,10 @@
       "Skill(schedule)",
       "WebSearch",
       "Bash(sed -n '/<!-- STL_LINKS:START -->/,/<!-- STL_LINKS:END -->/p' /tmp/readme-test.md)",
-      "Bash(sed -n '/<!-- GITCITY_LINKS:START -->/,/<!-- GITCITY_LINKS:END -->/p' /tmp/readme-test.md)"
+      "Bash(sed -n '/<!-- GITCITY_LINKS:START -->/,/<!-- GITCITY_LINKS:END -->/p' /tmp/readme-test.md)",
+      "Bash(git ls-remote *)",
+      "Bash(git fetch *)",
+      "Bash(git ls-tree *)"
     ]
   }
 }
