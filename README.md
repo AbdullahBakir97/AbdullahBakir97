@@ -1,32 +1,104 @@
-<!-- HEADER -->
+<!-- ============================================================ -->
+<!-- 🎬 ANIMATED HEADER BANNER — capsule-render with wave gradient -->
+<!-- ============================================================ -->
+<a href="https://github.com/AbdullahBakir97">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:F90001&height=260&section=header&text=Abdullah%20Bakir&fontSize=82&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Full-Stack%20Developer%20%E2%9A%A1%20Python%20%E2%80%A2%20Django%20%E2%80%A2%20Vue%20%E2%80%A2%20Nuxt&descAlignY=58&descSize=20&descColor=F0F0F0" width="100%" alt="Abdullah Bakir — Full-Stack Developer" />
+</a>
+
+<!-- 🐙 PROFESSIONAL GITHUB IDENTIFIER — pulsing brand-red halo + Invertocat -->
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97" aria-label="GitHub profile">
+    <img src="./assets/github-icon.svg" width="96" height="96" alt="GitHub @AbdullahBakir97" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://img.shields.io/badge/%40AbdullahBakir97-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="@AbdullahBakir97" />
+  </a>
+</p>
+
+<!-- 🪄 TYPING SVG — 11 rotating headlines, JetBrains Mono coding font -->
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=f90001+Code&size=35&duration=3200&pause=2000&color=f90001&center=true&vCenter=true&width=1000&lines=Hi+There+👋,+I'm+Abdullah;Welcome+To+My+Profile!;I'm+a+Passionate+Web+%26+Python+Developer;Based+In+Germany;Experienced+In+Python,+Django,+And+More+😉+;Languages:+English+,+German+,+Arabic;" alt="Typing SVG">
-  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/pro.gif" alt="Pro" width="50" align="right">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2400&pause=1000&color=F90001&center=true&vCenter=true&width=950&lines=Hi+there%2C+I%27m+Abdullah+%F0%9F%91%8B;Full-Stack+Developer+%E2%9A%A1+Based+in+Germany+%F0%9F%87%A9%F0%9F%87%AA;Python+%2F+Django+%2F+Vue+%2F+Nuxt+%2F+TypeScript;Building+production+systems+that+actually+ship;Crafting+AI-augmented+developer+tools+%F0%9F%A4%96;Architecting+microservices+that+scale+%F0%9F%8F%97%EF%B8%8F;Designing+APIs+that+don%27t+make+you+cry;From+bakeries+to+GitHub+Apps+%E2%80%94+I+ship;Currently+exploring+local+LLMs+and+RAG;Speaking+English+%2F+Deutsch+%2F+%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9;Open+to+collaborate+on+meaningful+work+%E2%9C%A8;Hallo%21+Ich+bin+Abdullah+aus+Deutschland+%F0%9F%87%A9%F0%9F%87%AA;Full-Stack-Entwickler+%C2%B7+Python+%C2%B7+Django+%C2%B7+Vue;Ich+baue+L%C3%B6sungen+f%C3%BCr+kleine+Unternehmen;Sauberer+Code%2C+klare+APIs%2C+gl%C3%BCckliche+Nutzer;Vom+Prototyp+zum+produktiven+System;Open+Source+ist+meine+Leidenschaft;Lass+uns+etwas+Gro%C3%9Fartiges+zusammen+bauen;Berliner+Kaffee%2C+dauerhafter+Code;Qualit%C3%A4t+schl%C3%A4gt+Quantit%C3%A4t%2C+jedes+Mal;Bereit+f%C3%BCr+neue+Herausforderungen+%E2%9C%A8;%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C+%D8%A3%D9%86%D8%A7+%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87+%D9%85%D9%86+%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7+%F0%9F%87%A9%F0%9F%87%AA;%D9%85%D8%B7%D9%88%D8%B1+Full-Stack+%E2%80%94+Python+%D9%88+Django+%D9%88+Vue;%D8%A3%D8%A8%D9%86%D9%8A+%D8%AD%D9%84%D9%88%D9%84%D8%A7%D9%8B+%D9%84%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84+%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9;%D9%83%D9%88%D8%AF+%D9%86%D8%B8%D9%8A%D9%81%D8%8C+%D9%88%D8%A7%D8%AC%D9%87%D8%A7%D8%AA+%D9%88%D8%A7%D8%B6%D8%AD%D8%A9%D8%8C+%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%88%D9%86+%D8%B3%D8%B9%D8%AF%D8%A7%D8%A1;%D9%85%D9%86+%D8%A7%D9%84%D9%86%D9%85%D9%88%D8%B0%D8%AC+%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%8A+%D8%A5%D9%84%D9%89+%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85+%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A;%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%D8%A7%D8%AA+%D9%85%D9%81%D8%AA%D9%88%D8%AD%D8%A9+%D8%A7%D9%84%D9%85%D8%B5%D8%AF%D8%B1+%D8%B4%D8%BA%D9%81%D9%8A;%D9%84%D9%86%D8%A8%D9%86%D9%8A+%D8%B4%D9%8A%D8%A6%D8%A7%D9%8B+%D8%B9%D8%B8%D9%8A%D9%85%D8%A7%D9%8B+%D9%85%D8%B9%D8%A7%D9%8B;%D8%B4%D8%BA%D9%81+%D9%85%D9%86+%D8%AF%D9%85%D8%B4%D9%82%D8%8C+%D9%83%D9%88%D8%AF+%D9%85%D9%86+%D8%A8%D8%B1%D9%84%D9%8A%D9%86;%D8%A7%D9%84%D8%AC%D9%88%D8%AF%D8%A9+%D8%AA%D8%AA%D9%81%D9%88%D9%82+%D8%B9%D9%84%D9%89+%D8%A7%D9%84%D9%83%D9%85%D9%8A%D8%A9+%D8%AF%D8%A7%D8%A6%D9%85%D8%A7%D9%8B;%D9%85%D8%B3%D8%AA%D8%B9%D8%AF+%D9%84%D9%84%D8%AA%D8%AD%D8%AF%D9%8A%D8%A7%D8%AA+%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9+%E2%9C%A8" alt="Typing animation: 31 rotating headlines in English, Deutsch, العربية" />
+  </a>
 </div>
+
+<!-- 🏷️ PROFESSIONAL BADGES — stats row -->
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97"><img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&label=PROFILE%20VIEWS&color=F90001&style=for-the-badge" alt="Profile views" /></a>
+  <a href="https://github.com/AbdullahBakir97?tab=followers"><img src="https://img.shields.io/github/followers/AbdullahBakir97?label=FOLLOWERS&style=for-the-badge&color=F90001&logo=github&logoColor=white" alt="GitHub followers" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER&label=TOTAL%20STARS&style=for-the-badge&color=F90001&logo=github&logoColor=white" alt="Total stars" /></a>
+  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=for-the-badge&color=F90001&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime hours" /></a>
+</p>
+
+<!-- 🏷️ PROFESSIONAL BADGES — contact / availability row -->
+<p align="center">
+  <a href="mailto:abdullah.bakir.1997@gmail.com"><img src="https://img.shields.io/badge/EMAIL-D44638?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://t.me/BlackSea0011"><img src="https://img.shields.io/badge/TELEGRAM-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/badge/Open_to_Work-00C853?style=for-the-badge&logo=googlechat&logoColor=white" alt="Open to work" /></a>
+</p>
 
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
 
-<!-- Profile Views and Social Badges -->
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&color=red" alt="Profile views" height="22" />
-  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=flat&color=red&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime Badge" height="22" /></a>
-  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER&label=GitHub%20Repo%20Stars&style=flat&color=red&logo=github&logoColor=red" alt="GitHub Repo Stars" height="22" /></a>
-</p>
+<!-- ============================================================ -->
+<!-- 💻 ABOUT ME — Terminal aesthetic with Python class            -->
+<!-- ============================================================ -->
+<h2 id="about" align="center">💻 About Me</h2>
 
-<!-- ABOUT ME -->
-<h2 id="about" align="center">👋 About Me</h2>
+<!-- 🎨 Single rotating terminal line — color changes per text shown -->
+<div align="center">
+  <img src="./assets/about-typing.svg" alt="terminal animation: $ whoami → $ cat about.py → # nice to meet you" />
+</div>
 
-<p align="center">
-  Full-stack developer based in Germany, focused on Python/Django backends and Vue/Nuxt frontends.<br/>
-  I build production systems for small businesses — bakeries, salons, archives etc. — and tinker with developer tooling, CLIs, and template marketplaces on the side.<br/>
-  Open to collaboration on Django REST APIs, AI-augmented dev tools, and anything that ships.
-</p>
+```python
+class AbdullahBakir:
+    """Full-stack developer crafting production-grade web systems."""
+
+    pronouns        = "he/him"
+    location        = "🇩🇪 Germany — open to remote"
+    languages       = ["Python", "TypeScript", "JavaScript"]
+    frameworks      = ["Django", "Django REST", "Vue 3", "Nuxt"]
+    databases       = ["PostgreSQL", "MySQL", "Redis"]
+    currently_into  = ["AI-augmented dev tooling", "GitHub Apps", "CLI ergonomics"]
+    available_for   = ["Open source", "Freelance", "Long-term collaboration"]
+    speaks          = ["English", "Deutsch", "العربية"]
+
+    def philosophy(self) -> str:
+        return "Ship something useful → learn → ship again."
+
+    def __repr__(self) -> str:
+        return f"<{type(self).__name__} based_in={self.location!r}>"
+
+
+me = AbdullahBakir()
+print(me.philosophy())  # → Ship something useful → learn → ship again.
+```
 
 <p align="center">
   <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif" alt="Python coding animation" />
 </p>
+
+<!-- 💬 single rotating motto line — color changes per text shown -->
+<div align="center">
+  <img src="./assets/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
+</div>
+
+<!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
+<!-- QUOTE:START -->
+<p align="center">
+  <i>"First, solve the problem. Then, write the code."</i><br/>
+  <sub>— <b>John Johnson</b></sub>
+</p>
+<!-- QUOTE:END -->
+
+<div align="center">
+  <img src="./assets/animated-divider.svg" width="100%" alt="" />
+</div>
 
 <!-- TABLE OF CONTENTS -->
 <h2 id="toc" align="center">🧭 Table of Contents</h2>
@@ -54,132 +126,78 @@
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
 
-<h2 id="skills" align="center">💻 Technical Expertise</h2>
+<h2 id="skills" align="center">💻 Tech Stack</h2>
 
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">Core Technologies</h3>
-      <p align="center"><a href="https://www.python.org/"><img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="40" height="40" /></a> <a href="https://www.djangoproject.com/"><img src="https://techstack-generator.vercel.app/django-icon.svg" alt="Django" width="40" height="40" /></a> <a href="https://www.javascript.com/"><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="40" height="40" /></a> <a href="https://www.typescriptlang.org/"><img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="TypeScript" width="40" height="40" /></a></p>
-      <h4>🔹 Frontend Development</h4>
-      <p>Proficient in Vue.js, JavaScript, HTML, and CSS. I build interactive, accessible interfaces.</p>
-      <p>
-        <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue.js">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML">
-        <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS">
-        <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-        <img src="https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=white" alt="Nuxt.js">
-      </p>
-      <h4>🔹 Backend Mastery</h4>
-      <p>Django, Django REST Framework, Flask, FastAPI — robust, well-tested server-side systems.</p>
-      <p>
-        <img src="https://img.shields.io/badge/DJANGO_REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray" alt="Django REST">
-        <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
-        <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
-        <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white" alt="JWT">
-      </p>
-      <h4>🔹 Databases</h4>
-      <p>PostgreSQL, MySQL, Redis — modeling, indexing, and caching for performance at scale.</p>
-      <p>
-        <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
-        <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-        <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
-        <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">Tooling & Infra</h3>
-      <div align="center">
-        <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/assets/tech.gif" alt="Tech" width="100">
-      </div>
-      <h4>🔹 Cloud & Deployment</h4>
-      <p>Shipping on AWS, Heroku, Render, and Docker — with CI/CD pipelines that don't break on Friday.</p>
-      <p>
-        <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
-        <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="Heroku">
-        <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-        <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render">
-      </p>
-      <h4>🔹 APIs & Security</h4>
-      <p>REST, JWT auth, Swagger/OpenAPI specs, Postman collections — clean contracts for clean systems.</p>
-      <p>
-        <img src="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=api&logoColor=white" alt="REST APIs">
-        <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="Swagger">
-        <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman">
-        <img src="https://img.shields.io/badge/JWT-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink" alt="JWT">
-      </p>
-      <h4>🔹 Dev Environment</h4>
-      <p>Git, GitHub, VS Code, PyCharm — plus a healthy collection of editor plugins and CLI tools.</p>
-      <p>
-        <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-        <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS Code">
-        <img src="https://img.shields.io/badge/PyCharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green" alt="PyCharm">
-      </p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <i>Production-grade tools for production-grade systems.</i>
+</p>
 
-<details>
-<summary align="center"><b>More Skills</b> — paradigms, OS, async, data, services</summary>
+<!-- 🌟 Hero icon row — full stack at a glance -->
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="https://skillicons.dev/icons?i=python,django,fastapi,flask,vue,nuxt,ts,js,html,css,tailwind,postgres,mysql,redis,sqlite,rabbitmq,docker,aws,heroku,vercel,nginx,git,github,linux,pytorch,tensorflow,jupyter&perline=14" alt="Full tech stack" />
+  </a>
+</p>
 
 <br/>
 
-<table width="100%">
-  <tr>
-    <td valign="top" width="33%">
-      <h4>🧠 Paradigms</h4>
-      <p>
-        <img src="https://img.shields.io/badge/OOP-3333FF?style=for-the-badge&logoColor=white" alt="OOP">
-        <img src="https://img.shields.io/badge/ORM-111111?style=for-the-badge&logo=database&logoColor=white" alt="ORM">
-        <img src="https://img.shields.io/badge/Version_Control-111111?style=for-the-badge&logo=git&logoColor=F05032" alt="Version Control">
-      </p>
-    </td>
-    <td valign="top" width="33%">
-      <h4>🖥️ Operating Systems</h4>
-      <p>
-        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
-        <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu">
-        <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
-      </p>
-    </td>
-    <td valign="top" width="33%">
-      <h4>🔄 Async</h4>
-      <p>
-        <img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white" alt="Celery">
-        <img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&logoColor=white" alt="Socket.io">
-        <img src="https://img.shields.io/badge/AJAX-111111?style=for-the-badge&logo=ajax&logoColor=white" alt="AJAX">
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <h4>🧩 Frontend Frameworks</h4>
-      <p>
-        <img src="https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF" alt="Vuetify">
-        <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
-        <img src="https://img.shields.io/badge/Htmx-FF4700?style=for-the-badge&logo=htmx&logoColor=white" alt="Htmx">
-      </p>
-    </td>
-    <td valign="top">
-      <h4>📊 Data Science</h4>
-      <p>
-        <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
-        <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
-        <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
-        <img src="https://img.shields.io/badge/Matplotlib-3F4F75?style=for-the-badge&logo=Matplotlib&logoColor=white" alt="Matplotlib">
-      </p>
-    </td>
-    <td valign="top">
-      <h4>🔧 IDEs / Notebooks</h4>
-      <p>
-        <img src="https://img.shields.io/badge/Jupyter-FA0F00?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter">
-        <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252" alt="Colab">
-        <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white" alt="Visual Studio">
-      </p>
-    </td>
-  </tr>
+<!-- 💎 Elite tech stack cards — single SVG, 6 glassmorphism cards in 3×2 grid
+     with accent stripes, stats, and animated proficiency bars (Vercel/Linear aesthetic) -->
+<a href="https://github.com/AbdullahBakir97?tab=repositories">
+  <img src="./assets/tech-cards.svg" width="100%" alt="Tech Stack — Backend, Frontend, Architecture, Data Layer, DevOps, AI &amp; Data" />
+</a>
+
+<br/><br/>
+
+<!-- 🧠 NEURAL SKILL ATLAS
+     ──────────────────────────────────────────────────────────────────────
+     The brain SVG below is built from Wikimedia Commons' anatomically-
+     accurate "Human-brain.SVG" by Hugh Guiney (CC-BY-SA-3.0), recolored
+     with our neon palette via scripts/build_anatomical_brain.py.
+
+     Regenerate (e.g., to tweak colors) with:
+        python scripts/build_anatomical_brain.py
+     ────────────────────────────────────────────────────────────────────── -->
+
+<h3 align="center">🧠 Neural Skill Atlas</h3>
+
+<p align="center">
+  <sub><i>A living anatomical map of how my technical mind is organized — 200+ paths of real neuroanatomy, recolored with a neon palette and animated to pulse like a living brain.</i></sub>
+</p>
+
+<p align="center">
+  <img src="./assets/brain-anatomical.svg" width="80%" alt="Neural Skill Atlas — anatomically-accurate human brain (lateral view) recolored with neon gradient, pulsing" />
+</p>
+
+<p align="center">
+  <a href="https://abdullahbakir97.github.io/AbdullahBakir97/"><img src="https://img.shields.io/badge/🖱️_Explore_in_Interactive_3D-F90001?style=for-the-badge&labelColor=0D1117&logo=three.js&logoColor=white" alt="Interactive 3D — drag to rotate" /></a>
+  &nbsp;
+  <a href="https://commons.wikimedia.org/wiki/File:Human-brain.SVG"><img src="https://img.shields.io/badge/Anatomy-Hugh_Guiney_·_CC--BY--SA_3.0-7C3AED?style=for-the-badge&labelColor=0D1117" alt="Brain anatomy attribution"/></a>
+</p>
+
+<p align="center"><sub><i>🖱️ The interactive 3D version (above) extrudes every anatomical path into a 3D mesh with neon emissive shaders. Drag to rotate, scroll to zoom, right-drag to pan, auto-rotates when idle.</i></sub></p>
+
+<details>
+<summary align="center"><b>📦 More skills</b> — Paradigms · Operating Systems · Async · UI frameworks · Data Science · IDEs · APIs &amp; Security</summary>
+
+<br/>
+
+<table align="center" width="100%">
+<tr>
+<td align="center" width="33%" valign="top"><h4>🧠 Paradigms &amp; Architecture</h4><p><img src="https://img.shields.io/badge/OOP-3333FF?style=for-the-badge&logoColor=white" alt="OOP"> <img src="https://img.shields.io/badge/ORM-111111?style=for-the-badge&logo=database&logoColor=white" alt="ORM"> <img src="https://img.shields.io/badge/Microservices-34D399?style=for-the-badge&logoColor=white" alt="Microservices"> <img src="https://img.shields.io/badge/Event--Driven-F90001?style=for-the-badge&logoColor=white" alt="Event-Driven"> <img src="https://img.shields.io/badge/Domain--Driven-FF652F?style=for-the-badge&logoColor=white" alt="Domain-Driven"> <img src="https://img.shields.io/badge/Version_Control-111111?style=for-the-badge&logo=git&logoColor=F05032" alt="Version Control"></p></td>
+<td align="center" width="33%" valign="top"><h4>🖥️ Operating Systems</h4><p><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu"> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows"></p></td>
+<td align="center" width="33%" valign="top"><h4>🔄 Async &amp; Messaging</h4><p><img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white" alt="Celery"> <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ"> <img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&logoColor=white" alt="Socket.io"> <img src="https://img.shields.io/badge/AJAX-111111?style=for-the-badge&logo=ajax&logoColor=white" alt="AJAX"></p></td>
+</tr>
+<tr>
+<td align="center" width="33%" valign="top"><h4>🧩 UI Frameworks</h4><p><img src="https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF" alt="Vuetify"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery"> <img src="https://img.shields.io/badge/Htmx-FF4700?style=for-the-badge&logo=htmx&logoColor=white" alt="Htmx"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"></p></td>
+<td align="center" width="33%" valign="top"><h4>📊 Data Science</h4><p><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch"> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"> <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"> <img src="https://img.shields.io/badge/Matplotlib-3F4F75?style=for-the-badge&logo=Matplotlib&logoColor=white" alt="Matplotlib"></p></td>
+<td align="center" width="33%" valign="top"><h4>🔧 IDEs &amp; Notebooks</h4><p><img src="https://img.shields.io/badge/Jupyter-FA0F00?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"> <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252" alt="Colab"> <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS Code"> <img src="https://img.shields.io/badge/PyCharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green" alt="PyCharm"></p></td>
+</tr>
+<tr>
+<td align="center" width="33%" valign="top"><h4>🔐 APIs &amp; Security</h4><p><img src="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=api&logoColor=white" alt="REST APIs"> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="Swagger"> <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman"> <img src="https://img.shields.io/badge/JWT-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink" alt="JWT"></p></td>
+<td align="center" width="33%" valign="top"><h4>🎨 Design &amp; Docs</h4><p><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"> <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown"> <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" alt="Canva"></p></td>
+<td align="center" width="33%" valign="top"><h4>🌐 Languages</h4><p><img src="https://img.shields.io/badge/English-Native-F90001?style=for-the-badge" alt="English"> <img src="https://img.shields.io/badge/Deutsch-Fluent-FF652F?style=for-the-badge" alt="Deutsch"> <img src="https://img.shields.io/badge/العربية-Native-FFD700?style=for-the-badge" alt="Arabic"></p></td>
+</tr>
 </table>
 
 </details>
@@ -195,45 +213,9 @@
 
 <h2 id="focus" align="center">🎯 Current Focus</h2>
 
-<div align="center">
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <img src="https://img.shields.io/badge/Django-REST_API-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django REST API"/>
-      <p>Building scalable REST APIs with Django</p>
-    </td>
-    <td align="center" width="33%">
-      <img src="https://img.shields.io/badge/Vue.js-3-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue.js 3"/>
-      <p>Exploring Vue.js 3 Composition API</p>
-    </td>
-    <td align="center" width="33%">
-      <img src="https://img.shields.io/badge/Docker-Containerization-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-      <p>Improving deployment workflows with Docker</p>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://img.shields.io/badge/Generative-AI-FF5A5F?style=for-the-badge&logo=openai&logoColor=white" alt="Generative AI"/>
-      <p>Integrating AI capabilities into Django/Vue applications</p>
-    </td>
-    <td align="center" colspan="2">
-      <img src="./assets/pydev-logo.png" alt="PyDev" height="60"/>
-      <p><b>PyDev: Python Development Platform</b> — enterprise-grade tooling that combines a CLI, a secure template marketplace, and AI-driven dev features.</p>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/AbdullahBakir97/Baeckrei">
-        <img src="./assets/backlover.jpg" alt="Baeckrei" height="60"/>
-      </a>
-      <p><b>Baeckrei</b> — full-featured bakery management system: inventory, recipes, online orders, customer accounts, real-time production scheduling.</p>
-    </td>
-    <td align="center" colspan="2">
-      <p><b>Media Archive</b> — digital archive for magazines and news with edition management, metadata tracking, multi-format preservation, and searchable taxonomies.</p>
-    </td>
-  </tr>
-</table>
-</div>
+<p align="center">
+  <img src="./assets/current-focus.svg" width="100%" alt="Now working on: PyDev, Baeckrei, Stock-Manager, Generative AI, Docker/CI-CD, Media Archive — 6 active focus tiles" />
+</p>
 
 <!-- YEARLY HIGHLIGHTS -->
 <div align="center">
@@ -246,31 +228,22 @@
 
 <h2 id="highlights" align="center">🚀 Yearly Highlights</h2>
 
-<h3 align="center">📍 2026 — Current Year</h3>
+<p align="center">
+  <img src="./assets/yearly-highlights.svg" width="100%" alt="Career timeline 2024 → 2026 — Foundation, Growth, Tooling &amp; Reach" />
+</p>
 
-<!-- HIGHLIGHTS_CURRENT_YEAR:START -->
-- Shifting focus toward developer tooling and automation — building things that help engineers, not just end users.
-- Branching out from web into desktop and CLI applications.
-- Investing in public presence: portfolio, blog, and open-source contributions.
-<!-- HIGHLIGHTS_CURRENT_YEAR:END -->
-
-<p align="center"><b>📊 This year, by the numbers</b></p>
+<!-- 📊 Live stats — auto-refreshed daily from GitHub GraphQL by readme.yml -->
+<p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
 <p align="center"><img src="https://img.shields.io/badge/Commits-92-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-5-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-9-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-10_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
-<h3 align="center">🗓️ 2025</h3>
-
-- Maintained and grew long-running client systems through their first full year in production.
-- Went hands-on with the modern AI/LLM stack — local models, RAG, and agent workflows.
-- Contributed to community and educational projects beyond my own repos.
-
-<h3 align="center">🗓️ 2024</h3>
-
-- A year of shipping — a wave of full-stack Django and Vue projects went live for real users.
-- Established long-running client engagements that are still running today.
-- Earned community recognition through open-source work and collaborative tooling.
+<!-- The narrative bullets are still updated separately by you — kept as a marker
+     so the text stays editable without rebuilding the SVG. -->
+<!-- HIGHLIGHTS_CURRENT_YEAR:START -->
+<!-- (Narrative for the current year is rendered inside yearly-highlights.svg) -->
+<!-- HIGHLIGHTS_CURRENT_YEAR:END -->
 
 <!-- GITHUB STATS -->
 <div align="center">
@@ -314,6 +287,13 @@
   </a>
 </div>
 
+<!-- ⏱️ WAKATIME WEEKLY STATS — auto-updated by .github/workflows/waka-stats.yml -->
+<h3 align="center">⏱️ Weekly Coding Time</h3>
+
+<!--START_OF_CODE_STATS-->
+<p align="center"><i>WakaTime weekly stats appear here after the first run of the waka-stats workflow.<br/>Set <code>WAKATIME_API_KEY</code> in repo secrets, then trigger the "WakaTime Weekly Stats" workflow.</i></p>
+<!--END_OF_CODE_STATS-->
+
 <!-- RECENT ACTIVITY -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
@@ -324,6 +304,23 @@
 </div>
 
 <h2 id="activity" align="center">⚡ Recent Activity</h2>
+
+<!-- 🌳 GITGRAPH — Mermaid visualization of recent push events per repo -->
+<h3 align="center">🌳 Branch Flow (last 7 days)</h3>
+
+<!-- GITGRAPH:START -->
+```mermaid
+gitGraph
+   commit id: "main"
+   branch profile-readme
+   commit id: "c1"
+   commit id: "c2"
+   checkout main
+   merge profile-readme
+```
+<!-- GITGRAPH:END -->
+
+<h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
 - 🔀 Opened PR [#1](https://github.com/bloghd/bloghd/pull/1) in [`bloghd/bloghd`](https://github.com/bloghd/bloghd)
@@ -361,6 +358,103 @@
 </div>
 
 <h2 id="projects" align="center">🏗️ Featured Projects</h2>
+
+<!-- ============================================================ -->
+<!-- 🌟 NARRATIVE CARDS — Problem · Approach · Stack · Outcome     -->
+<!-- ============================================================ -->
+
+<table width="100%">
+  <tr>
+    <td valign="top" width="50%">
+      <h3>🥖 Baeckrei — Bakery Management</h3>
+      <p>
+        <b>Problem.</b> Small bakeries juggle inventory, recipes, and customer orders on paper or fragmented tools.<br/>
+        <b>Approach.</b> One Django/Vue app: real-time production scheduling, recipe-driven inventory deduction, customer accounts, online orders.<br/>
+        <b>Stack.</b> <code>Django · DRF · Vue 3 · PostgreSQL · Redis · Docker</code><br/>
+        <b>Outcome.</b> Live with one bakery; expanding to two more in 2026.
+      </p>
+      <p><a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="https://img.shields.io/badge/View_Repo-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="View repo" /></a></p>
+    </td>
+    <td valign="top" width="50%">
+      <h3>📦 Stock-Manager — Desktop Inventory</h3>
+      <p>
+        <b>Problem.</b> Browser-based inventory tools force constant network round-trips for shop-floor users.<br/>
+        <b>Approach.</b> Native Python desktop app — local-first inventory with sync; barcode-aware; multi-user with role separation.<br/>
+        <b>Stack.</b> <code>Python · Tkinter/PyQt · SQLite · Sync layer</code><br/>
+        <b>Outcome.</b> v2.4.3 shipped; daily-driver for the inventory clerk role.
+      </p>
+      <p><a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="https://img.shields.io/badge/View_Repo-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="View repo" /></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" colspan="2">
+      <h3>🛠️ PyDev — Python Development Platform</h3>
+      <p>
+        <b>Problem.</b> Python dev tooling is fragmented — CLI scaffolds, template marketplaces, and AI assistants live in separate worlds.<br/>
+        <b>Approach.</b> One enterprise-grade platform combining a CLI, a secure template marketplace, and AI-driven dev features (issue triage, PR coaching, conventional commits, README generation, AI-quality gating).<br/>
+        <b>Stack.</b> <code>Python · GitHub Apps API · LLM tooling · CLI ergonomics</code><br/>
+        <b>Outcome.</b> 5 supporting GitHub Apps shipped April 2026 — issue-triage-bot, pr-coach, commit-craft, repodoc-ai, ai-quality-gate.
+      </p>
+      <p><a href="https://github.com/AbdullahBakir97?tab=repositories&q=pr-coach+OR+commit-craft+OR+repodoc-ai+OR+ai-quality-gate+OR+issue-triage-bot"><img src="https://img.shields.io/badge/Browse_Apps-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Browse apps" /></a></p>
+    </td>
+  </tr>
+</table>
+
+<!-- 🎬 TERMINAL DEMO — record once with `vhs` or asciinema and drop the GIF/SVG below -->
+<details>
+<summary align="center"><b>🎥 Watch a CLI demo</b> — record with <code>vhs</code> or <code>asciinema</code> (instructions below)</summary>
+
+<br/>
+
+<p align="center">
+  <img src="./assets/cli-demo.gif" alt="CLI demo placeholder — record with vhs or asciinema" onerror="this.style.display='none'"/>
+  <br/>
+  <i>Place your recorded demo at <code>assets/cli-demo.gif</code>.</i>
+</p>
+
+<br/>
+
+<details>
+<summary><b>How to record (5 minutes)</b></summary>
+
+**Option A — `vhs` (Charm) — produces clean GIF/MP4:**
+```bash
+brew install vhs                    # macOS
+# or: go install github.com/charmbracelet/vhs@latest
+
+# Create assets/demo.tape:
+cat > assets/demo.tape <<'EOF'
+Output assets/cli-demo.gif
+Set FontSize 16
+Set Width 1200
+Set Height 600
+Type "stock-manager --help"
+Enter
+Sleep 2s
+Type "stock-manager list --low-stock"
+Enter
+Sleep 3s
+EOF
+
+vhs assets/demo.tape
+git add assets/cli-demo.gif && git commit -m "demo: stock-manager CLI" && git push
+```
+
+**Option B — `asciinema` — embeds a playable terminal recording:**
+```bash
+asciinema rec demo.cast
+# do your thing in the terminal, exit when done
+asciinema upload demo.cast    # gives you a public URL
+```
+Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...thumbnail..." /></a>`.
+
+</details>
+
+</details>
+
+<br/>
+
+<h3 align="center">📌 Pinned Repositories</h3>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Django-Store">
@@ -544,6 +638,28 @@
   📧 <a href="mailto:abdullah.bakir.1997@gmail.com">abdullah.bakir.1997@gmail.com</a>
 </p>
 
+<!-- 📝 GUESTBOOK — visitors leave a message via a pre-filled issue template -->
+<div align="center">
+  <img src="./assets/animated-divider.svg" width="100%" alt="" />
+</div>
+
+<h2 id="guestbook" align="center">📝 Guestbook</h2>
+
+<p align="center">
+  Drop a hello, share something cool you're building, or just say hi! 👋<br/>
+  Each entry opens a public issue on this repo (it's how the guestbook stays open and visible).
+</p>
+
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/issues/new?template=guestbook.yml">
+    <img src="https://img.shields.io/badge/Sign_the_Guestbook-F90001?style=for-the-badge&logo=githubactions&logoColor=white&labelColor=0D1117" alt="Sign the guestbook" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/issues?q=label%3Aguestbook">
+    <img src="https://img.shields.io/badge/Read_Past_Entries-FF652F?style=for-the-badge&logo=read.cv&logoColor=white&labelColor=0D1117" alt="Read past entries" />
+  </a>
+</p>
+
 <!-- SUPPORT -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
@@ -562,3 +678,18 @@
 </p>
 
 <p align="center"><em>Your support helps me create more open-source projects and tutorials!</em></p>
+
+<!-- ============================================================ -->
+<!-- 🎬 ANIMATED FOOTER BANNER — twinkling, mirrored gradient      -->
+<!-- ============================================================ -->
+
+<!-- snake animation as a visual handoff into the footer -->
+<div align="center">
+
+[⬆ back to top](#about)
+
+</div>
+
+<a href="#about">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:F90001,100:0D1117&height=180&section=footer&text=Thanks%20for%20visiting!&fontSize=42&fontColor=ffffff&animation=twinkling&fontAlignY=70&desc=Let's%20build%20something%20great%20together&descAlignY=92&descSize=14&descColor=F0F0F0&reversal=true" width="100%" alt="Thanks for visiting" />
+</a>

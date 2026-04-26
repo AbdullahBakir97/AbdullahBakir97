@@ -366,6 +366,100 @@ def city_grid() -> str:
     )
 
 
+# --- QUOTE OF THE DAY ---------------------------------------------------------
+
+QUOTES = [
+    ("First, solve the problem. Then, write the code.", "John Johnson"),
+    ("Programs must be written for people to read, and only incidentally for machines to execute.", "Harold Abelson"),
+    ("Premature optimization is the root of all evil.", "Donald Knuth"),
+    ("Simplicity is prerequisite for reliability.", "Edsger W. Dijkstra"),
+    ("The best error message is the one that never shows up.", "Thomas Fuchs"),
+    ("Make it work, make it right, make it fast.", "Kent Beck"),
+    ("Walking on water and developing software from a specification are easy if both are frozen.", "Edward V. Berard"),
+    ("Code is like humor. When you have to explain it, it's bad.", "Cory House"),
+    ("There are only two kinds of languages: the ones people complain about and the ones nobody uses.", "Bjarne Stroustrup"),
+    ("Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", "Martin Fowler"),
+    ("Talk is cheap. Show me the code.", "Linus Torvalds"),
+    ("If debugging is the process of removing software bugs, then programming must be the process of putting them in.", "Edsger W. Dijkstra"),
+    ("Truth can only be found in one place: the code.", "Robert C. Martin"),
+    ("Programming isn't about what you know; it's about what you can figure out.", "Chris Pine"),
+    ("It's not a bug — it's an undocumented feature.", "Anonymous"),
+    ("The most damaging phrase in the language is: 'We've always done it this way!'", "Grace Hopper"),
+    ("Software is a great combination of artistry and engineering.", "Bill Gates"),
+    ("Java is to JavaScript what car is to carpet.", "Chris Heilmann"),
+    ("Good code is its own best documentation.", "Steve McConnell"),
+    ("In order to be irreplaceable, one must always be different.", "Coco Chanel"),
+    ("Don't comment bad code — rewrite it.", "Brian Kernighan"),
+    ("Programs are meant to be read by humans and only incidentally for computers to execute.", "Donald Knuth"),
+    ("The function of good software is to make the complex appear to be simple.", "Grady Booch"),
+    ("Code never lies, comments sometimes do.", "Ron Jeffries"),
+    ("Quality is more important than quantity. One home run is much better than two doubles.", "Steve Jobs"),
+    ("Software undergoes beta testing shortly before it's released. Beta is Latin for 'still doesn't work'.", "Anonymous"),
+    ("Real programmers count from 0.", "Anonymous"),
+    ("Programming is the art of telling another human being what one wants the computer to do.", "Donald Knuth"),
+    ("If you don't fail at least 90% of the time, you're not aiming high enough.", "Alan Kay"),
+    ("The only way to learn a new programming language is by writing programs in it.", "Dennis Ritchie"),
+    ("Computers are good at following instructions, but not at reading your mind.", "Donald Knuth"),
+]
+
+
+def quote_of_the_day() -> str:
+    """Pick a quote indexed by day-of-year so it rotates daily and is stable for the whole day."""
+    day_of_year = dt.datetime.now(dt.timezone.utc).timetuple().tm_yday
+    quote, author = QUOTES[day_of_year % len(QUOTES)]
+    return (
+        f'<p align="center">\n'
+        f'  <i>"{quote}"</i><br/>\n'
+        f'  <sub>— <b>{author}</b></sub>\n'
+        f"</p>"
+    )
+
+
+# --- MERMAID GITGRAPH FROM RECENT PUSH EVENTS ---------------------------------
+
+
+def gitgraph_from_activity(limit: int = 8) -> str:
+    """Render a small Mermaid gitGraph from recent PushEvents — visualizes commit cadence per repo."""
+    r = requests.get(
+        f"https://api.github.com/users/{GH_USER}/events/public?per_page=50",
+        headers=GH_HEADERS,
+        timeout=20,
+    )
+    r.raise_for_status()
+    pushes: list[tuple[str, int]] = []  # (repo_short, commit_count)
+    seen_repos: set[str] = set()
+    for event in r.json():
+        if event["type"] != "PushEvent":
+            continue
+        commits = event["payload"].get("commits") or []
+        if not commits:
+            continue
+        repo_full = event["repo"]["name"]
+        repo_short = repo_full.split("/")[-1]
+        if repo_short in seen_repos:
+            continue
+        seen_repos.add(repo_short)
+        pushes.append((repo_short, len(commits)))
+        if len(pushes) >= limit:
+            break
+
+    if not pushes:
+        return "_No recent push events to visualize._"
+
+    lines = ["```mermaid", "gitGraph", '   commit id: "main"']
+    for repo, count in pushes:
+        # Sanitize branch name for Mermaid (no special chars)
+        branch = re.sub(r"[^a-zA-Z0-9_-]", "-", repo)[:30] or "branch"
+        lines.append(f"   branch {branch}")
+        lines.append(f"   checkout {branch}")
+        for i in range(min(count, 4)):  # cap at 4 commits per branch for readability
+            lines.append(f'   commit id: "c{i + 1}"')
+        lines.append("   checkout main")
+        lines.append("   merge " + branch)
+    lines.append("```")
+    return "\n".join(lines)
+
+
 # --- INLINE LINK BARS (STL + GitCity) -----------------------------------------
 
 STL_BASE = f"https://github.com/{GH_USER}/{GH_USER}/blob/metrics-output"
@@ -412,6 +506,8 @@ def main() -> int:
         ("STL_LINKS", stl_links),
         ("CITY_GRID", city_grid),
         ("GITCITY_LINKS", gitcity_links),
+        ("QUOTE", quote_of_the_day),
+        ("GITGRAPH", gitgraph_from_activity),
     ]
 
     for marker, fn in sections:

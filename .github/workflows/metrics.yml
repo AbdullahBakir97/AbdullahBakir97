@@ -10,6 +10,7 @@ jobs:
       contents: write
     steps:
       - uses: lowlighter/metrics@latest
+        continue-on-error: true  # action commits SVG successfully then crashes in post-completion logging — known v3.34 bug
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
@@ -43,6 +44,7 @@ jobs:
           filename: github-metrics.svg
 
       - uses: lowlighter/metrics@latest
+        continue-on-error: true  # action commits SVG successfully then crashes in post-completion logging — known v3.34 bug
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
@@ -65,6 +67,7 @@ jobs:
           output_action: commit
 
       - uses: lowlighter/metrics@latest
+        continue-on-error: true  # action commits SVG successfully then crashes in post-completion logging — known v3.34 bug
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
@@ -110,6 +113,7 @@ jobs:
         year: ${{ fromJSON(needs.setup-years.outputs.years) }}
     steps:
       - uses: lowlighter/metrics@latest
+        continue-on-error: true  # action commits SVG successfully then crashes in post-completion logging — known v3.34 bug
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97
@@ -133,6 +137,7 @@ jobs:
           output_action: commit
 
       - uses: lowlighter/metrics@latest
+        continue-on-error: true  # action commits SVG successfully then crashes in post-completion logging — known v3.34 bug
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: AbdullahBakir97

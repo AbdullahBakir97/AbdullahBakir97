@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="6" viewBox="0 0 1200 6" preserveAspectRatio="none" role="presentation" aria-hidden="true">
+  <defs>
+    <!-- Brand-red gradient that travels across the divider -->
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#0D1117" stop-opacity="0" />
+      <stop offset="35%"  stop-color="#830203" stop-opacity="0.6" />
+      <stop offset="50%"  stop-color="#F90001" stop-opacity="1" />
+      <stop offset="65%"  stop-color="#FF652F" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="0" />
+      <animate attributeName="x1" values="-1;1;-1" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="0;2;0" dur="6s" repeatCount="indefinite" />
+    </linearGradient>
+  </defs>
+
+  <!-- Static base line (subtle, brand red) -->
+  <rect x="0" y="2.5" width="1200" height="1" fill="#F90001" fill-opacity="0.25" />
+
+  <!-- Animated sweeping highlight (the eye-catching part) -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#sweep)" />
+</svg>
