@@ -91,8 +91,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"First, solve the problem. Then, write the code."</i><br/>
-  <sub>— <b>John Johnson</b></sub>
+  <i>"Code never lies, comments sometimes do."</i><br/>
+  <sub>— <b>Ron Jeffries</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -236,7 +236,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-92-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-5-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-9-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-10_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-100-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-5-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-10-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-10_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -309,15 +309,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <h3 align="center">🌳 Branch Flow (last 7 days)</h3>
 
 <!-- GITGRAPH:START -->
-```mermaid
-gitGraph
-   commit id: "main"
-   branch profile-readme
-   commit id: "c1"
-   commit id: "c2"
-   checkout main
-   merge profile-readme
-```
+_No recent push events to visualize._
 <!-- GITGRAPH:END -->
 
 <h3 align="center">📜 Event Log</h3>
