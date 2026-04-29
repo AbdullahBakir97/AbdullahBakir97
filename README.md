@@ -91,7 +91,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Software undergoes beta testing shortly before it's released. Beta is Latin for 'still doesn't work'."</i><br/>
+  <i>"Real programmers count from 0."</i><br/>
   <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
@@ -337,7 +337,7 @@ _No recent push events to visualize._
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
-- 📦 [`Stock-Manager` `v2.4.4`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.4.4) — Stock Manager Pro v2.4.4 <sub>(2026-04-27)</sub>
+- 📦 [`Stock-Manager` `v2.4.8`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.4.8) — Stock Manager Pro v2.4.8 <sub>(2026-04-28)</sub>
 - 📦 [`cortex` `v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) — v1.0.0 — first GA release <sub>(2026-04-27)</sub>
 <!-- LATEST_RELEASES:END -->
 
