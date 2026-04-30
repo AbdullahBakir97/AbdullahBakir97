@@ -91,8 +91,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Real programmers count from 0."</i><br/>
-  <sub>— <b>Anonymous</b></sub>
+  <i>"Programming is the art of telling another human being what one wants the computer to do."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -236,7 +236,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-213-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-20-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-10-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-11_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-222-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-23-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-11-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-12_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -315,14 +315,14 @@ _No recent push events to visualize._
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- 🔀 Merged PR [#15](https://github.com/AbdullahBakir97/cortex/pull/15) in [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
-- 🔀 Opened PR [#15](https://github.com/AbdullahBakir97/cortex/pull/15) in [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
-- 🔀 Merged PR [#14](https://github.com/AbdullahBakir97/cortex/pull/14) in [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
-- 🔀 Opened PR [#14](https://github.com/AbdullahBakir97/cortex/pull/14) in [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
-- 📦 Released [`v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) of [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
-- 🔀 Merged PR [#13](https://github.com/AbdullahBakir97/cortex/pull/13) in [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
-- 🔀 Opened PR [#13](https://github.com/AbdullahBakir97/cortex/pull/13) in [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
-- 🔀 Merged PR [#12](https://github.com/AbdullahBakir97/cortex/pull/12) in [`AbdullahBakir97/cortex`](https://github.com/AbdullahBakir97/cortex)
+- 🔀 Opened PR [#31](https://github.com/AbdullahBakir97/PortfolioCraft/pull/31) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+- 📦 Released [`v0.1.0`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.1.0) of [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+- 🔀 Closed PR [#11](https://github.com/AbdullahBakir97/PortfolioCraft/pull/11) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+- 🔀 Merged PR [#15](https://github.com/AbdullahBakir97/PortfolioCraft/pull/15) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+- 🔀 Opened PR [#15](https://github.com/AbdullahBakir97/PortfolioCraft/pull/15) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+- 🔀 Merged PR [#14](https://github.com/AbdullahBakir97/PortfolioCraft/pull/14) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+- 🔀 Opened PR [#14](https://github.com/AbdullahBakir97/PortfolioCraft/pull/14) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+- 🔀 Closed PR [#13](https://github.com/AbdullahBakir97/PortfolioCraft/pull/13) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
@@ -337,7 +337,8 @@ _No recent push events to visualize._
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
-- 📦 [`Stock-Manager` `v2.4.8`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.4.8) — Stock Manager Pro v2.4.8 <sub>(2026-04-28)</sub>
+- 📦 [`PortfolioCraft` `v0.1.0`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.1.0) — v0.1.0 — Initial release <sub>(2026-04-30)</sub>
+- 📦 [`Stock-Manager` `v2.5.0`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.5.0) — Stock Manager Pro v2.5.0 <sub>(2026-04-29)</sub>
 - 📦 [`cortex` `v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) — v1.0.0 — first GA release <sub>(2026-04-27)</sub>
 <!-- LATEST_RELEASES:END -->
 
