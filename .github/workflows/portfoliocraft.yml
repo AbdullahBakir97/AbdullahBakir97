@@ -1,0 +1,40 @@
+name: PortfolioCraft (live dogfood)
+
+# Runs the PortfolioCraft Action against the profile repo daily.
+# Generates JSON Resume + audit artifacts to .portfoliocraft/ — does NOT
+# touch README.md (the curated banner stays intact).
+
+on:
+  schedule:
+    - cron: '23 4 * * *'   # daily, offset from other workflow crons
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfoliocraft
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run PortfolioCraft (portfolio + audit)
+        uses: AbdullahBakir97/PortfolioCraft@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          mode: both
+          # README is curated — skip the marker injection; only emit artifacts.
+          output-readme: ''
+          output-json: .portfoliocraft/profile.json
+          output-pdf: .portfoliocraft/cv.pdf
+          output-svg-dir: .portfoliocraft/cards
+          audit-output-md: .portfoliocraft/audit.md
+          audit-output-json: .portfoliocraft/audit.json
+          audit-fail-on: ''
+          commit: true
+          commit-message: 'chore: refresh PortfolioCraft artifacts'
