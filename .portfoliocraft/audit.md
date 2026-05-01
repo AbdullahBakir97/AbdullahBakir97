@@ -520,7 +520,7 @@ _Generated 2026-05-01. 153 findings across 85 repos (53 flagged)._
 
 - **[low]** `pr-rot` — Awaiting reviewer: AbdullahBakir97/Stock-Manager#19
   - A reviewer was the last to act on this PR and hasn't replied since 2026-04-24. This isn't your problem to push on — it's logged for awareness.
-  - Awaiting: reviewer (6 days)
+  - Awaiting: reviewer (7 days)
   - Evidence: [Last activity: 2026-04-24](https://github.com/AbdullahBakir97/Stock-Manager/pull/19)
   - **Action:** Reach out to the reviewer or convert to draft.
 
