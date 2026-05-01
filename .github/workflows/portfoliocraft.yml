@@ -23,11 +23,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run PortfolioCraft (portfolio + audit)
+      - name: Run PortfolioCraft (portfolio + audit + summary)
         uses: AbdullahBakir97/PortfolioCraft@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          mode: both
+          mode: all
           # README is curated — skip the marker injection; only emit artifacts.
           output-readme: ''
           output-json: .portfoliocraft/profile.json
@@ -36,5 +36,10 @@ jobs:
           audit-output-md: .portfoliocraft/audit.md
           audit-output-json: .portfoliocraft/audit.json
           audit-fail-on: ''
+          summary-format: all
+          summary-output-cv: .portfoliocraft/summary-cv.md
+          summary-output-uni: .portfoliocraft/summary-uni.md
+          summary-output-case-studies: .portfoliocraft/summary-case-studies.md
+          summary-projects-max: 6
           commit: true
           commit-message: 'chore: refresh PortfolioCraft artifacts'
