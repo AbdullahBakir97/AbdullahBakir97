@@ -94,7 +94,7 @@ automation, cli, cv-generator, developer-portfolio, github-action, github-market
 **Scale:** 20 stars, 1 fork
 
 ### Overview
-A ml project in Python.
+A machine-learning project in Python.
 
 ### Domain
 Machine learning / data

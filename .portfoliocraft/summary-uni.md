@@ -49,7 +49,7 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 
 ### Stock-Manager
 
-An active ml project built primarily in Python, developed over 1 month (2026).
+An active machine-learning project built primarily in Python, developed over 1 month (2026).
 
 A professional desktop inventory management application for Windows.
 
@@ -69,7 +69,7 @@ Repository: [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/
 
 ### AbdullahBakir97
 
-An active ml project built primarily in Python, developed over 36 months (2023–2026).
+An active machine-learning project built primarily in Python, developed over 36 months (2023–2026).
 
 The repository carries 20 stars and 1 fork.
 
@@ -78,7 +78,7 @@ Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97
 ## Technical depth
 
 **Backend** (3 repositories): 3 backend projects in Python covering django, django-rest-framework, javascript.
-**Ml** (2 repositories): 2 ml projects in Python, HTML, and Inno Setup covering desktop-app, inventory-management, offline.
+**Machine Learning** (2 repositories): 2 machine-learning projects in Python, HTML, and Inno Setup covering desktop-app, inventory-management, offline.
 **Frontend** (1 repository): 1 frontend project in TypeScript, JavaScript, and MDX covering automation, cli, cv-generator.
 
 ## Scope of self-directed work
