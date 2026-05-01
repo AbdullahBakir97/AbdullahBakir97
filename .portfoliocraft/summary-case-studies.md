@@ -4,7 +4,7 @@
 
 **Repository:** [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon)
 **Stack:** Python · ajax, css, deployment
-**Duration:** Feb 2025 (13 months)
+**Duration:** Jan 2024–Feb 2025 (13 months)
 **Status:** dormant
 **Scale:** 52 stars, 11 forks · pinned
 
@@ -21,7 +21,7 @@ ajax, css, deployment, django, django-rest-framework, html5, htmx, javascript, j
 
 **Repository:** [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store)
 **Stack:** Python · ajax, bootstrap, cashing
-**Duration:** Aug 2024 (10 months)
+**Duration:** Sep 2023–Aug 2024 (10 months)
 **Status:** dormant
 **Scale:** 26 stars, 5 forks · pinned
 
@@ -38,7 +38,7 @@ ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-res
 
 **Repository:** [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal)
 **Stack:** Python · css, django, django-rest-framework
-**Duration:** Apr 2024 (6 months)
+**Duration:** Nov 2023–Apr 2024 (6 months)
 **Status:** dormant
 **Scale:** 30 stars, 4 forks · pinned
 
@@ -55,7 +55,7 @@ css, django, django-rest-framework, html, javascript, python, swagger
 
 **Repository:** [AbdullahBakir97/Stock-Manager](https://github.com/AbdullahBakir97/Stock-Manager)
 **Stack:** Python, HTML, Inno Setup · desktop-app, inventory-management, offline
-**Duration:** Apr 2026 (1 month)
+**Duration:** Mar 2026–Apr 2026 (1 month)
 **Status:** active
 **Scale:** 1 star, 0 forks · pinned
 
@@ -72,7 +72,7 @@ desktop-app, inventory-management, offline, pyqt6, python, sqlite, stock-manager
 
 **Repository:** [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/PortfolioCraft)
 **Stack:** TypeScript, JavaScript, MDX · automation, cli, cv-generator
-**Duration:** May 2026 (1 month)
+**Duration:** Apr 2026–May 2026 (1 month)
 **Status:** active
 **Scale:** 1 star, 1 fork · pinned
 
@@ -89,7 +89,7 @@ automation, cli, cv-generator, developer-portfolio, github-action, github-market
 
 **Repository:** [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97)
 **Stack:** Python
-**Duration:** May 2026 (36 months)
+**Duration:** May 2023–May 2026 (36 months)
 **Status:** active
 **Scale:** 20 stars, 1 fork
 

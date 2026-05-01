@@ -1,5 +1,5 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, TypeScript, HTML · 85 public repos · 241 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, TypeScript, HTML · 85 public repos · 242 commits
 
 Python Developer
 
@@ -7,7 +7,6 @@ Python Developer
 
 **Strong:** Python, TypeScript
 **Working knowledge:** HTML, Vue, JavaScript, CSS, Inno Setup, Batchfile, Dockerfile, MDX
-**Familiar with:** Jupyter Notebook
 
 ### Selected projects
 
@@ -32,7 +31,7 @@ A ml project in Python.
 
 ### Activity (last 12 months)
 
-241 commits · 30 pull requests · 0 reviews · contributed to 15 repositories
+242 commits · 31 pull requests · 0 reviews · contributed to 15 repositories
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._

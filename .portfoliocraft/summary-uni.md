@@ -1,29 +1,25 @@
 # Software development background
 
-I'm a aspiring backend engineer · Python, TypeScript, HTML · 85 public repos · 241 commits with 85 public repositories on GitHub spanning backend and ml.
+I'm an aspiring backend engineer with 85 public repositories on GitHub spanning backend and ml.
 
 Python Developer
 
 ## Learning trajectory
 
 **2023**: Created 21 repos primarily in HTML, Python, and CSS, focused on frontend and ml.
-Created 21 repositories in HTML and Python, across frontend and ml.
 
 **2024**: Created 39 repos primarily in Python, Vue, and HTML, focused on ml and backend.
-Created 39 repositories in Python and Vue, across ml and backend.
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
-Created 6 repositories in JavaScript and Python, across frontend and ml.
 
 **2026**: Created 19 repos primarily in TypeScript, Python, and JavaScript, focused on ml and frontend.
-Created 19 repositories in TypeScript and Python, across ml and frontend.
 
 
 ## Selected projects
 
 ### Barber-Salon
 
-A dormant backend project built primarily in Python, developed over 13 months (2025).
+A dormant backend project built primarily in Python, developed over 13 months (2024–2025).
 
 Salon Management System: A comprehensive software solution for hair salons and beauty parlors, featuring full API, appointment management, staff profiles, customer reviews, gallery showcases, Products, price management, and multi-language support.
 
@@ -33,7 +29,7 @@ Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Ba
 
 ### Django-Store
 
-A dormant backend project built primarily in Python, developed over 10 months (2024).
+A dormant backend project built primarily in Python, developed over 10 months (2023–2024).
 
 Amazon Clone Using Python , Django and Django Rest Framework with full api. Store containes Products and Products Detail, Brands, Reviews, Orders, Payments Methods, Charts, Users accounts, multi languages
 
@@ -43,7 +39,7 @@ Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Dj
 
 ### Jobs-Portal
 
-A dormant backend project built primarily in Python, developed over 6 months (2024).
+A dormant backend project built primarily in Python, developed over 6 months (2023–2024).
 
 Jobs Portal is a comprehensive web application built using Python, Django, and Django Rest Framework. It serves as a platform for job seekers and employers to connect and streamline the job search and hiring process.
 
@@ -73,7 +69,7 @@ Repository: [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/
 
 ### AbdullahBakir97
 
-A active ml project built primarily in Python, developed over 36 months (2026).
+A active ml project built primarily in Python, developed over 36 months (2023–2026).
 
 The repository carries 20 stars and 1 fork.
 
@@ -87,7 +83,7 @@ Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97
 
 ## Scope of self-directed work
 
-I've worked across 85 public repositories, of which 74% are open-source. My longest sustained project ran for 36 months (AbdullahBakir97/Barber-Salon is my most-starred repository at 52 stars).
+I've worked across 85 public repositories, of which 74% are open-source. My longest sustained project ran for 36 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 52 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
