@@ -11,11 +11,51 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate 3D contribution SVGs
+      # The yoshi389111 action writes the same set of style filenames
+      # (profile-night-rainbow.svg, profile-night-view.svg, ...) every run,
+      # so we invoke it once per year and shuffle outputs into a year folder
+      # before the next call overwrites them. YEAR=0 triggers rolling-window
+      # mode (the default — used for the live current-year hero tile).
+      - name: Generate 2023 (year-locked)
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: "2023"
+      - name: Stash 2023 outputs
+        run: |
+          mkdir -p profile-3d-contrib/2023
+          mv profile-3d-contrib/profile-*.svg profile-3d-contrib/2023/
+
+      - name: Generate 2024 (year-locked)
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: "2024"
+      - name: Stash 2024 outputs
+        run: |
+          mkdir -p profile-3d-contrib/2024
+          mv profile-3d-contrib/profile-*.svg profile-3d-contrib/2024/
+
+      - name: Generate 2025 (year-locked)
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: "2025"
+      - name: Stash 2025 outputs
+        run: |
+          mkdir -p profile-3d-contrib/2025
+          mv profile-3d-contrib/profile-*.svg profile-3d-contrib/2025/
+
+      # Final pass — rolling window — leaves files in profile-3d-contrib/
+      # at the canonical paths so existing README references keep working.
+      - name: Generate live (rolling window)
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -29,6 +69,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "no changes to commit"
           else
-            git commit -m "chore(3d-contrib): regenerate profile contribution SVGs"
+            git commit -m "chore(3d-contrib): regenerate per-year + rolling profile contribution SVGs"
             git push
           fi

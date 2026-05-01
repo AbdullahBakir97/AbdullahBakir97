@@ -15,7 +15,9 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import math
 import os
+import random
 import re
 import sys
 import urllib.parse
@@ -318,6 +320,599 @@ def fetch_year_stats() -> str:
     )
 
 
+# --- PER-YEAR CONTRIBUTION ASSETS ---------------------------------------------
+# GitHub's GraphQL contributionCalendar is the only authoritative per-year source.
+# Render two visualizations from the same data:
+#   * heatmap-{year}.svg   — classic 53×7 grid (used by the snake section's small row)
+#   * skyline-{year}.svg   — isometric weekly bars (used by the Skyline section)
+# Files write into ./assets/ and are committed by readme.yml alongside README.md.
+
+ASSETS_DIR = os.environ.get("ASSETS_DIR", "assets")
+
+CONTRIB_QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection(from: $from, to: $to) {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays { date contributionCount color weekday }
+        }
+      }
+    }
+  }
+}
+"""
+
+
+def fetch_contribution_calendar(year: int) -> dict:
+    start = f"{year}-01-01T00:00:00Z"
+    end = (
+        dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        if year == CURRENT_YEAR
+        else f"{year}-12-31T23:59:59Z"
+    )
+    data = graphql(CONTRIB_QUERY, {"login": GH_USER, "from": start, "to": end})
+    return data["user"]["contributionsCollection"]["contributionCalendar"]
+
+
+def _heatmap_color(count: int, fallback: str) -> str:
+    # GitHub dark-theme palette — the GraphQL `color` field is theme-dependent
+    # and sometimes empty for zero days, so we map by count for consistency.
+    if count <= 0:
+        return "#161b22"
+    if count < 4:
+        return "#0e4429"
+    if count < 8:
+        return "#006d32"
+    if count < 12:
+        return "#26a641"
+    return fallback or "#39d353"
+
+
+def render_heatmap_svg(year: int, calendar: dict, dest: str) -> None:
+    weeks = calendar["weeks"]
+    total = calendar["totalContributions"]
+    cell, gap = 11, 2
+    pad_x, pad_top = 8, 24
+    width = pad_x * 2 + len(weeks) * (cell + gap)
+    height = pad_top + 7 * (cell + gap) + 8
+
+    parts: list[str] = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
+        f'role="img" aria-label="{GH_USER} contributions in {year}">',
+        '<rect width="100%" height="100%" fill="#0d1117"/>',
+        '<style>text{font-family:-apple-system,Segoe UI,sans-serif;font-size:11px;'
+        'fill:#8b949e}</style>',
+        f'<text x="{pad_x}" y="16">'
+        f'<tspan font-weight="600" fill="#c9d1d9">{total:,}</tspan> '
+        f'contributions in {year}</text>',
+    ]
+
+    for wi, week in enumerate(weeks):
+        x = pad_x + wi * (cell + gap)
+        for day in week["contributionDays"]:
+            di = day["weekday"]
+            y = pad_top + di * (cell + gap)
+            color = _heatmap_color(day["contributionCount"], day.get("color") or "")
+            parts.append(
+                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" '
+                f'rx="2" ry="2" fill="{color}"><title>{day["contributionCount"]} '
+                f'on {day["date"]}</title></rect>'
+            )
+
+    parts.append("</svg>")
+    with open(dest, "w", encoding="utf-8") as f:
+        f.write("".join(parts))
+
+
+_ISO_COS = math.cos(math.radians(30))   # ≈ 0.8660
+_ISO_SIN = math.sin(math.radians(30))   # = 0.5
+
+
+def _iso(x: float, y: float, z: float = 0.0) -> tuple[float, float]:
+    """30° isometric projection — viewer at (+X, +Y, +Z) infinity.
+    Visible faces of any cuboid: top (+Z), right (+X), left (+Y)."""
+    return ((x - y) * _ISO_COS, (x + y) * _ISO_SIN - z)
+
+
+# GitHub-style intensity palette: (top, right, left) — top brightest, left in shadow.
+# 5 buckets matching the official contribution-graph levels.
+_SKYLINE_PALETTE: list[tuple[str, str, str]] = [
+    ("#1f242c", "#161b22", "#0d1117"),   # 0 contributions  — flat ground tile
+    ("#2ea043", "#1f7a35", "#155724"),   # 1–3
+    ("#39d353", "#2ea043", "#1a8c30"),   # 4–7
+    ("#56d364", "#3fb950", "#238636"),   # 8–11
+    ("#7ee787", "#56d364", "#26a641"),   # 12+
+]
+
+
+def _palette_for(count: int) -> tuple[str, str, str]:
+    if count <= 0:
+        return _SKYLINE_PALETTE[0]
+    if count < 4:
+        return _SKYLINE_PALETTE[1]
+    if count < 8:
+        return _SKYLINE_PALETTE[2]
+    if count < 12:
+        return _SKYLINE_PALETTE[3]
+    return _SKYLINE_PALETTE[4]
+
+
+def _interp(p1: tuple[float, float], p2: tuple[float, float], t: float) -> tuple[float, float]:
+    return (p1[0] + t * (p2[0] - p1[0]), p1[1] + t * (p2[1] - p1[1]))
+
+
+def render_skyline_svg(year: int, calendar: dict, dest: str) -> None:
+    """Render contributions as an animated cinematic isometric 'modern city'.
+
+    Stack of 12 perceptual depth layers:
+       1  Deep-space radial sky
+       2  Two soft nebula blobs (violet + cyan), animated hue-rotate
+       3  Animated starfield (~80 stars, 5 staggered twinkle classes)
+       4  Distant moon with crater stipple + bloom filter
+       5  Aurora ribbon path with wave-translation animation
+       6  Subtle horizon glow line
+       7  Ground platform + iso grid lines (depth cues)
+       8  366 buildings, depth-sorted painter's-algorithm rendering,
+          three lit faces per cuboid + a top-edge rim highlight on tall ones
+       9  Animated window lights (flicker classes) on count≥6 days
+      10  Antennas + pulse halos on count≥12 'landmark' buildings
+      11  Floating embers rising, varied speeds & delays
+      12  Vignette + HUD typography (ghost-year, username, totals, footer)
+
+    All randomness seeded on `year` so renders are reproducible run-to-run
+    (no daily commit churn from animation noise).
+    """
+    weeks = calendar["weeks"]
+    total = calendar["totalContributions"]
+    n_weeks = len(weeks)
+
+    cell_w = 14.0
+    cell_d = 14.0
+    max_h = 140.0
+
+    max_count = 1
+    avg_count = 0.0
+    nonzero_days = 0
+    for week in weeks:
+        for day in week["contributionDays"]:
+            c = day["contributionCount"]
+            if c > max_count:
+                max_count = c
+            if c > 0:
+                avg_count += c
+                nonzero_days += 1
+    avg_count = avg_count / nonzero_days if nonzero_days else 0.0
+
+    extents_x = n_weeks * cell_w
+    extents_y = 7 * cell_d
+
+    bbox_pts = [
+        _iso(0, 0, 0), _iso(extents_x, 0, 0),
+        _iso(extents_x, extents_y, 0), _iso(0, extents_y, 0),
+        _iso(0, 0, max_h), _iso(extents_x, 0, max_h),
+        _iso(extents_x, extents_y, max_h), _iso(0, extents_y, max_h),
+    ]
+    min_x = min(p[0] for p in bbox_pts)
+    max_x = max(p[0] for p in bbox_pts)
+    min_y = min(p[1] for p in bbox_pts)
+    max_y = max(p[1] for p in bbox_pts)
+
+    pad_x = 56
+    pad_top = 90
+    pad_bottom = 56
+
+    width = int(math.ceil(max_x - min_x)) + pad_x * 2
+    height = int(math.ceil(max_y - min_y)) + pad_top + pad_bottom
+
+    ox = pad_x - min_x
+    oy = pad_top - min_y
+
+    def fmt_pts(*corners: tuple[float, float]) -> str:
+        return " ".join(f"{c[0] + ox:.2f},{c[1] + oy:.2f}" for c in corners)
+
+    rng = random.Random(year * 9973 + 17)
+
+    parts: list[str] = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
+        f'role="img" aria-label="{GH_USER} {year} contribution skyline — animated modern city">',
+        # ---- DEFS: gradients, filters, animations ----
+        '<defs>',
+        # Sky — deep-space radial focused at horizon
+        '<radialGradient id="sky" cx="50%" cy="100%" r="115%">'
+        '<stop offset="0%" stop-color="#1b2447"/>'
+        '<stop offset="35%" stop-color="#0d1430"/>'
+        '<stop offset="100%" stop-color="#02030a"/>'
+        '</radialGradient>',
+        # Nebula blobs
+        '<radialGradient id="nebulaA" cx="22%" cy="28%" r="55%">'
+        '<stop offset="0%" stop-color="#7c3aed" stop-opacity="0.32"/>'
+        '<stop offset="60%" stop-color="#7c3aed" stop-opacity="0.06"/>'
+        '<stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>'
+        '</radialGradient>',
+        '<radialGradient id="nebulaB" cx="78%" cy="18%" r="48%">'
+        '<stop offset="0%" stop-color="#06b6d4" stop-opacity="0.28"/>'
+        '<stop offset="60%" stop-color="#06b6d4" stop-opacity="0.05"/>'
+        '<stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>'
+        '</radialGradient>',
+        # Aurora ribbon — multi-stop horizontal sweep
+        '<linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">'
+        '<stop offset="0%" stop-color="#39d353" stop-opacity="0"/>'
+        '<stop offset="22%" stop-color="#34d399" stop-opacity="0.55"/>'
+        '<stop offset="48%" stop-color="#06b6d4" stop-opacity="0.85"/>'
+        '<stop offset="72%" stop-color="#a855f7" stop-opacity="0.55"/>'
+        '<stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>'
+        '</linearGradient>',
+        # Moon
+        '<radialGradient id="moon" cx="38%" cy="38%" r="62%">'
+        '<stop offset="0%" stop-color="#fffbeb"/>'
+        '<stop offset="55%" stop-color="#fde68a"/>'
+        '<stop offset="100%" stop-color="#fbbf24" stop-opacity="0.55"/>'
+        '</radialGradient>',
+        # Ground platform (deep with slight cyan-bias toward horizon)
+        '<linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#1f2a3d"/>'
+        '<stop offset="55%" stop-color="#0d1117"/>'
+        '<stop offset="100%" stop-color="#02030a"/>'
+        '</linearGradient>',
+        # Halo (used behind landmark buildings)
+        '<radialGradient id="halo" cx="50%" cy="50%" r="50%">'
+        '<stop offset="0%" stop-color="#7ee787" stop-opacity="0.55"/>'
+        '<stop offset="60%" stop-color="#39d353" stop-opacity="0.18"/>'
+        '<stop offset="100%" stop-color="#39d353" stop-opacity="0"/>'
+        '</radialGradient>',
+        # Vignette
+        '<radialGradient id="vignette" cx="50%" cy="55%" r="78%">'
+        '<stop offset="60%" stop-color="#000" stop-opacity="0"/>'
+        '<stop offset="100%" stop-color="#000" stop-opacity="0.55"/>'
+        '</radialGradient>',
+        # Soft bloom for moon + landmark windows
+        '<filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">'
+        '<feGaussianBlur stdDeviation="2.4" result="b"/>'
+        '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+        '</filter>',
+        # Larger blur for aurora + nebula
+        '<filter id="haze" x="-20%" y="-20%" width="140%" height="140%">'
+        '<feGaussianBlur stdDeviation="6"/>'
+        '</filter>',
+        # ---- CSS animations (named classes — portable across renderers) ----
+        '<style><![CDATA[',
+        '@keyframes twinkle{0%,100%{opacity:.18}50%{opacity:1}}',
+        '@keyframes pulseHalo{0%,100%{opacity:.25;transform:scale(.92)}50%{opacity:.75;transform:scale(1.08)}}',
+        '@keyframes flicker{0%,100%{opacity:.95}9%{opacity:.35}19%{opacity:1}33%{opacity:.55}48%{opacity:1}71%{opacity:.4}82%{opacity:1}}',
+        '@keyframes auroraWave{0%,100%{transform:translateX(0);opacity:.55}50%{transform:translateX(28px);opacity:.85}}',
+        '@keyframes hueShift{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(28deg)}}',
+        '@keyframes rise{0%{transform:translateY(36px);opacity:0}10%{opacity:.85}90%{opacity:.85}100%{transform:translateY(-220px);opacity:0}}',
+        '@keyframes beam{0%,100%{opacity:.18}50%{opacity:.42}}',
+        '.star{animation:twinkle 3.4s ease-in-out infinite}',
+        '.star.b{animation-duration:2.1s}',
+        '.star.c{animation-duration:4.7s}',
+        '.star.d{animation-duration:5.6s}',
+        '.star.e{animation-duration:1.8s}',
+        '.halo-anim{animation:pulseHalo 4.2s ease-in-out infinite;transform-origin:center;transform-box:fill-box}',
+        '.halo-anim.b{animation-duration:5.1s}',
+        '.halo-anim.c{animation-duration:6.0s}',
+        '.flicker{animation:flicker 4.5s steps(7,end) infinite}',
+        '.flicker.b{animation-duration:3.0s}',
+        '.flicker.c{animation-duration:5.5s}',
+        '.flicker.d{animation-duration:6.8s}',
+        '.aurora{animation:auroraWave 11s ease-in-out infinite}',
+        '.nebula{animation:hueShift 22s ease-in-out infinite}',
+        '.ember{animation:rise 12s linear infinite}',
+        '.ember.b{animation-duration:9s}',
+        '.ember.c{animation-duration:15s}',
+        '.ember.d{animation-duration:18s}',
+        '.beam{animation:beam 6s ease-in-out infinite}',
+        ']]></style>',
+        '</defs>',
+    ]
+
+    # --- Layer 1: sky ---
+    parts.append(f'<rect width="{width}" height="{height}" fill="url(#sky)"/>')
+
+    # --- Layer 2: nebula (animated hue) ---
+    parts.append(
+        '<g class="nebula" filter="url(#haze)">'
+        f'<rect width="{width}" height="{pad_top + 30}" fill="url(#nebulaA)"/>'
+        f'<rect width="{width}" height="{pad_top + 40}" fill="url(#nebulaB)"/>'
+        '</g>'
+    )
+
+    # --- Layer 3: starfield ---
+    parts.append('<g fill="#e6edf3">')
+    star_classes = ["", "b", "c", "d", "e"]
+    for _ in range(80):
+        sx = rng.randint(6, width - 6)
+        sy = rng.randint(4, pad_top + 18)
+        sr = rng.choice([0.4, 0.6, 0.8, 1.0, 1.3])
+        cls = "star " + rng.choice(star_classes) if rng.random() < 0.85 else "star"
+        delay = rng.randint(0, 60) / 10
+        parts.append(
+            f'<circle class="{cls.strip()}" cx="{sx}" cy="{sy}" r="{sr}" '
+            f'style="animation-delay:-{delay}s"/>'
+        )
+    # A handful of warm-colored stars for variety
+    for _ in range(8):
+        sx = rng.randint(6, width - 6)
+        sy = rng.randint(4, pad_top - 4)
+        c = rng.choice(["#fde68a", "#f9a8d4", "#bae6fd"])
+        parts.append(
+            f'<circle class="star c" cx="{sx}" cy="{sy}" r="1.1" fill="{c}"'
+            f' style="animation-delay:-{rng.randint(0, 60)/10}s"/>'
+        )
+    parts.append('</g>')
+
+    # --- Layer 4: moon ---
+    moon_x = width - pad_x - 30
+    moon_y = pad_top - 20
+    parts.append(
+        f'<g filter="url(#bloom)">'
+        f'<circle cx="{moon_x}" cy="{moon_y}" r="22" fill="url(#moon)"/>'
+        f'<circle cx="{moon_x - 5}" cy="{moon_y - 4}" r="3" fill="#000" opacity="0.07"/>'
+        f'<circle cx="{moon_x + 4}" cy="{moon_y + 5}" r="2.2" fill="#000" opacity="0.06"/>'
+        f'<circle cx="{moon_x - 3}" cy="{moon_y + 7}" r="1.4" fill="#000" opacity="0.05"/>'
+        f'</g>'
+    )
+
+    # --- Layer 5: aurora ribbon (animated wave) ---
+    ay = pad_top + 14
+    aurora_d = (
+        f"M0,{ay} "
+        f"Q{width*0.22:.0f},{ay - 28} {width*0.5:.0f},{ay - 6} "
+        f"T{width},{ay - 18} "
+        f"L{width},{ay + 32} "
+        f"Q{width*0.78:.0f},{ay + 8} {width*0.5:.0f},{ay + 28} "
+        f"T0,{ay + 16} Z"
+    )
+    parts.append(
+        f'<path class="aurora" d="{aurora_d}" fill="url(#aurora)" '
+        f'filter="url(#haze)" opacity="0.7"/>'
+    )
+
+    # --- Layer 6: thin horizon glow line ---
+    horizon_y = pad_top + (max_y - min_y) * 0.55
+    parts.append(
+        f'<line class="beam" x1="0" y1="{horizon_y:.0f}" x2="{width}" y2="{horizon_y:.0f}" '
+        'stroke="#39d353" stroke-width="0.6" opacity="0.25"/>'
+    )
+
+    # --- Layer 7: ground platform + iso grid lines ---
+    base_pad = 8
+    g_corners = [
+        _iso(-base_pad, -base_pad, 0),
+        _iso(extents_x + base_pad, -base_pad, 0),
+        _iso(extents_x + base_pad, extents_y + base_pad, 0),
+        _iso(-base_pad, extents_y + base_pad, 0),
+    ]
+    parts.append(
+        f'<polygon points="{fmt_pts(*g_corners)}" fill="url(#ground)" '
+        'stroke="#39d353" stroke-width="0.5" stroke-opacity="0.25"/>'
+    )
+    for i in range(0, n_weeks + 1, 4):
+        p1 = _iso(i * cell_w, 0, 0)
+        p2 = _iso(i * cell_w, extents_y, 0)
+        parts.append(
+            f'<line x1="{p1[0]+ox:.2f}" y1="{p1[1]+oy:.2f}" '
+            f'x2="{p2[0]+ox:.2f}" y2="{p2[1]+oy:.2f}" '
+            'stroke="#39d353" stroke-width="0.3" opacity="0.18"/>'
+        )
+    for j in range(0, 8):
+        p1 = _iso(0, j * cell_d, 0)
+        p2 = _iso(extents_x, j * cell_d, 0)
+        parts.append(
+            f'<line x1="{p1[0]+ox:.2f}" y1="{p1[1]+oy:.2f}" '
+            f'x2="{p2[0]+ox:.2f}" y2="{p2[1]+oy:.2f}" '
+            'stroke="#39d353" stroke-width="0.3" opacity="0.13"/>'
+        )
+
+    # --- Layer 8 + 9 + 10: buildings (with windows, antennas, halos) ---
+    cells: list[tuple[int, int, int, str]] = []
+    for wi, week in enumerate(weeks):
+        for day in week["contributionDays"]:
+            cells.append((wi, day["weekday"], day["contributionCount"], day.get("date", "")))
+    cells.sort(key=lambda c: (c[0] + c[1], c[0]))
+
+    # Pre-pass: emit halos behind landmark buildings (drawn before city group so
+    # they sit underneath everything in their footprint but above the ground).
+    parts.append('<g class="halos">')
+    halo_classes = ["", "b", "c"]
+    landmark_threshold = max(12, int(avg_count * 2.2))
+    for wi, di, count, _date in cells:
+        if count < landmark_threshold:
+            continue
+        x = wi * cell_w + cell_w / 2
+        y = di * cell_d + cell_d / 2
+        ratio = count / max_count
+        h = (ratio ** 0.5) * max_h + 4.0
+        cx_, cy_ = _iso(x, y, h * 0.7)
+        r = 14 + count * 0.45
+        cls = "halo-anim " + rng.choice(halo_classes)
+        parts.append(
+            f'<circle class="{cls.strip()}" cx="{cx_+ox:.1f}" cy="{cy_+oy:.1f}" '
+            f'r="{r:.0f}" fill="url(#halo)" '
+            f'style="animation-delay:-{rng.randint(0, 50)/10}s"/>'
+        )
+    parts.append('</g>')
+
+    parts.append('<g class="city">')
+    flicker_classes = ["", "b", "c", "d"]
+    window_palette = ["#fde68a", "#fcd34d", "#a7f3d0", "#bae6fd", "#fbcfe8"]
+    for wi, di, count, date in cells:
+        x = wi * cell_w
+        y = di * cell_d
+
+        if count > 0:
+            ratio = count / max_count
+            h = (ratio ** 0.55) * max_h + 4.0
+        else:
+            h = 1.5
+
+        top_c, right_c, left_c = _palette_for(count)
+
+        c100 = _iso(x + cell_w, y,            0)
+        c110 = _iso(x + cell_w, y + cell_d,   0)
+        c010 = _iso(x,          y + cell_d,   0)
+        c001 = _iso(x,          y,            h)
+        c101 = _iso(x + cell_w, y,            h)
+        c111 = _iso(x + cell_w, y + cell_d,   h)
+        c011 = _iso(x,          y + cell_d,   h)
+
+        # Right face (+X side, sunlit)
+        parts.append(f'<polygon points="{fmt_pts(c100, c110, c111, c101)}" fill="{right_c}"/>')
+        # Left face (+Y side, shadow)
+        parts.append(f'<polygon points="{fmt_pts(c010, c110, c111, c011)}" fill="{left_c}"/>')
+        # Top face (+Z, brightest)
+        parts.append(
+            f'<polygon points="{fmt_pts(c001, c101, c111, c011)}" fill="{top_c}">'
+            f'<title>{count} on {date}</title></polygon>'
+        )
+
+        # Top-edge rim highlight on tall buildings: a thin lighter polygon
+        if count >= 8 and h > 30:
+            rim = _interp(c001, c011, 0.0)
+            rim2 = _interp(c101, c111, 0.0)
+            # Tiny ridge along the front edge of the top face
+            ridge = [
+                c001,
+                c101,
+                _interp(c001, c011, 0.18),
+                _interp(c101, c111, 0.18),
+            ]
+            # Just two pts forming a thin trapezoid
+            ridge_pts = [
+                c001, c101,
+                _interp(c101, c111, 0.12),
+                _interp(c001, c011, 0.12),
+            ]
+            parts.append(
+                f'<polygon points="{fmt_pts(*ridge_pts)}" fill="#a7f3d0" opacity="0.55"/>'
+            )
+
+        # Window lights — only for count>=6, only on the right face (sunlit
+        # side), arranged in a 2-column grid scaled with building height.
+        if count >= 6 and h > 18:
+            n_rows = min(int(h / 14), 5)
+            for col_t in (0.32, 0.68):
+                for row in range(n_rows):
+                    row_t = (row + 0.5) / n_rows
+                    bot = _interp(c100, c110, col_t)
+                    top = _interp(c101, c111, col_t)
+                    pos = _interp(bot, top, row_t)
+                    flick = "flicker " + rng.choice(flicker_classes) if rng.random() < 0.4 else ""
+                    color = rng.choice(window_palette)
+                    delay = rng.randint(0, 60) / 10
+                    extra = (
+                        f' style="animation-delay:-{delay}s"' if flick else ""
+                    )
+                    parts.append(
+                        f'<rect class="{flick.strip()}" x="{pos[0]+ox-0.7:.2f}" '
+                        f'y="{pos[1]+oy-0.9:.2f}" width="1.4" height="1.8" '
+                        f'fill="{color}"{extra}/>'
+                    )
+
+        # Antenna + beacon for landmark buildings
+        if count >= landmark_threshold:
+            top_mid = _interp(c001, c111, 0.5)
+            beacon_x = top_mid[0] + ox
+            beacon_y = top_mid[1] + oy
+            parts.append(
+                f'<line x1="{beacon_x:.1f}" y1="{beacon_y:.1f}" '
+                f'x2="{beacon_x:.1f}" y2="{beacon_y - 9:.1f}" '
+                f'stroke="#a7f3d0" stroke-width="0.7" opacity="0.85"/>'
+                f'<circle class="flicker b" cx="{beacon_x:.1f}" cy="{beacon_y - 10:.1f}" '
+                f'r="1.3" fill="#fef3c7" filter="url(#bloom)" '
+                f'style="animation-delay:-{rng.randint(0, 50)/10}s"/>'
+            )
+
+    parts.append('</g>')
+
+    # --- Layer 11: floating embers ---
+    parts.append('<g class="embers">')
+    ember_classes = ["", "b", "c", "d"]
+    for _ in range(28):
+        ex = rng.randint(20, width - 20)
+        ey = rng.randint(pad_top + 30, height - pad_bottom)
+        sz = rng.choice([0.7, 1.0, 1.3, 1.6])
+        cls = "ember " + rng.choice(ember_classes)
+        col = rng.choice(["#7ee787", "#39d353", "#a7f3d0", "#86efac"])
+        delay = rng.randint(0, 180) / 10
+        parts.append(
+            f'<circle class="{cls.strip()}" cx="{ex}" cy="{ey}" r="{sz}" '
+            f'fill="{col}" filter="url(#bloom)" '
+            f'style="animation-delay:-{delay}s"/>'
+        )
+    parts.append('</g>')
+
+    # --- Layer 12: vignette + HUD typography ---
+    parts.append(
+        f'<rect width="{width}" height="{height}" fill="url(#vignette)" pointer-events="none"/>'
+    )
+
+    parts.append(
+        '<style><![CDATA['
+        'text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif}'
+        '.t-user{font-size:28px;font-weight:800;fill:#e6edf3;letter-spacing:0.2px}'
+        '.t-meta{font-size:13px;font-weight:500;fill:#8b949e}'
+        '.t-meta .num{fill:#7ee787;font-weight:700}'
+        '.t-year{font-size:96px;font-weight:900;fill:#7ee787;opacity:.07;letter-spacing:-4px}'
+        '.t-tag{font-size:10px;font-weight:600;fill:#7ee787;letter-spacing:2px;text-transform:uppercase}'
+        '.t-foot{font-size:11px;fill:#6e7681}'
+        '.t-stat{font-size:12px;font-weight:600;fill:#c9d1d9}'
+        '.t-stat-label{font-size:9px;fill:#6e7681;letter-spacing:1.5px;text-transform:uppercase}'
+        ']]></style>'
+        # Giant ghost year
+        f'<text x="{width - pad_x}" y="{pad_top - 14}" class="t-year" text-anchor="end">{year}</text>'
+        # Top-left tag
+        f'<text x="{pad_x}" y="22" class="t-tag">// CONTRIBUTION SKYLINE</text>'
+        # Username
+        f'<text x="{pad_x}" y="50" class="t-user">{GH_USER}</text>'
+        # Meta line
+        f'<text x="{pad_x}" y="70" class="t-meta">'
+        f'<tspan class="num">{total:,}</tspan> contributions · '
+        f'<tspan class="num">{max_count}</tspan> peak · '
+        f'<tspan class="num">{nonzero_days}</tspan> active days</text>'
+        # Bottom-left mini stats panel
+        f'<g transform="translate({pad_x},{height - 38})">'
+        f'<text class="t-stat-label">DAILY AVG</text>'
+        f'<text class="t-stat" y="14">{avg_count:.1f}</text>'
+        f'</g>'
+        f'<g transform="translate({pad_x + 90},{height - 38})">'
+        f'<text class="t-stat-label">PEAK DAY</text>'
+        f'<text class="t-stat" y="14">{max_count}</text>'
+        f'</g>'
+        f'<g transform="translate({pad_x + 180},{height - 38})">'
+        f'<text class="t-stat-label">ACTIVE</text>'
+        f'<text class="t-stat" y="14">{nonzero_days} / {sum(len(w["contributionDays"]) for w in weeks)}</text>'
+        f'</g>'
+        # Footer
+        f'<text x="{width - pad_x}" y="{height - 18}" class="t-foot" text-anchor="end">'
+        f'github.com/{GH_USER}</text>'
+    )
+
+    parts.append("</svg>")
+    with open(dest, "w", encoding="utf-8") as f:
+        f.write("".join(parts))
+
+
+def regenerate_yearly_assets() -> None:
+    """Refresh heatmap-{year}.svg and skyline-{year}.svg for the hero+small window."""
+    big_year, small_years = _hero_years()
+    os.makedirs(ASSETS_DIR, exist_ok=True)
+    for y in [big_year, *small_years]:
+        try:
+            cal = fetch_contribution_calendar(y)
+        except Exception as e:
+            warn(f"contribution calendar fetch failed for {y}: {e}")
+            continue
+        try:
+            render_heatmap_svg(y, cal, os.path.join(ASSETS_DIR, f"heatmap-{y}.svg"))
+            render_skyline_svg(y, cal, os.path.join(ASSETS_DIR, f"skyline-{y}.svg"))
+            print(f"refreshed assets for {y} (total={cal['totalContributions']})")
+        except Exception as e:
+            warn(f"asset render failed for {y}: {e}")
+
+
 # --- SKYLINE / CITY GRIDS -----------------------------------------------------
 
 RAW_BASE = f"https://raw.githubusercontent.com/{GH_USER}/{GH_USER}/metrics-output"
@@ -368,15 +963,16 @@ def _grid(href_for: Callable[[int], str], svg_for: Callable[[int], str], alt_kin
 
 
 def skyline_grid() -> str:
-    # skyline.github.com was retired in late 2024; the metrics-action
-    # plugin_skyline screenshots that dead URL and produces empty SVGs.
-    # Use the Deno contributions heatmap (per-year) for the image, and
-    # link the tile to the gh-skyline CLI-generated STL on the
-    # metrics-output branch (rendered by GitHub's built-in 3D viewer).
+    # skyline.github.com was retired in late 2024 and the public Deno
+    # contributions API ignores its ?year= parameter (returns the same
+    # rolling-year SVG no matter what). We render real per-year skyline
+    # SVGs ourselves from GitHub's GraphQL contributionCalendar — see
+    # render_skyline_svg() above. Tile clicks open the gh-skyline-CLI
+    # STL on metrics-output (rendered by GitHub's built-in 3D viewer).
     return _grid(
         href_for=lambda y: f"https://github.com/{GH_USER}/{GH_USER}/blob/metrics-output/skyline-{y}.stl",
-        svg_for=lambda y: f"https://github-contributions-api.deno.dev/{GH_USER}.svg?year={y}",
-        alt_kind=f"{GH_USER} —",
+        svg_for=lambda y: f"./{ASSETS_DIR}/skyline-{y}.svg",
+        alt_kind=f"{GH_USER} contribution skyline",
     )
 
 
@@ -409,7 +1005,7 @@ def snake_grid() -> str:
         return (
             f'<td width="33%" align="center">'
             f'<a href="https://github.com/{GH_USER}?tab=overview&from={y}-01-01&to={y}-12-31">'
-            f'<img src="https://github-contributions-api.deno.dev/{GH_USER}.svg?year={y}" '
+            f'<img src="./{ASSETS_DIR}/heatmap-{y}.svg" '
             f'width="100%" alt="{GH_USER} — {y} contribution heatmap">'
             f"</a>"
             f"<p><b>{y}</b></p>"
@@ -554,6 +1150,13 @@ def gitcity_links() -> str:
 
 
 def main() -> int:
+    # Regenerate per-year contribution heatmap + skyline SVGs first so the
+    # snake/skyline marker bodies reference fresh files in this same commit.
+    try:
+        regenerate_yearly_assets()
+    except Exception as e:
+        warn(f"yearly asset regeneration failed (continuing with existing files): {e}")
+
     with open(README_PATH, encoding="utf-8") as f:
         text = f.read()
     original = text
