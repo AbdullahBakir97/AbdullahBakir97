@@ -49,7 +49,7 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 
 ### Stock-Manager
 
-A active ml project built primarily in Python, developed over 1 month (2026).
+An active ml project built primarily in Python, developed over 1 month (2026).
 
 A professional desktop inventory management application for Windows.
 
@@ -59,7 +59,7 @@ Repository: [AbdullahBakir97/Stock-Manager](https://github.com/AbdullahBakir97/S
 
 ### PortfolioCraft
 
-A active frontend project built primarily in TypeScript, developed over 1 month (2026).
+An active frontend project built primarily in TypeScript, developed over 1 month (2026).
 
 Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
 
@@ -69,7 +69,7 @@ Repository: [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/
 
 ### AbdullahBakir97
 
-A active ml project built primarily in Python, developed over 36 months (2023–2026).
+An active ml project built primarily in Python, developed over 36 months (2023–2026).
 
 The repository carries 20 stars and 1 fork.
 
