@@ -557,36 +557,18 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <h2 id="contributions" align="center">🐍 Contribution Graph</h2>
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg">
-  </picture>
-</div>
+<!-- SNAKE_GRID:START -->
+<table align="center" width="100%"><tr><td colspan="3" align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake.svg"><img alt="GitHub contribution grid snake animation" src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/output/github-contribution-grid-snake-dark.svg" width="100%"></picture><p><b>2026 <sub>(live · rolling 365 days)</sub></b></p></td></tr><tr><td width="33%" align="center"><a href="https://github.com/AbdullahBakir97?tab=overview&from=2023-01-01&to=2023-12-31"><img src="https://github-contributions-api.deno.dev/AbdullahBakir97.svg?year=2023" width="100%" alt="AbdullahBakir97 — 2023 contribution heatmap"></a><p><b>2023</b></p></td><td width="33%" align="center"><a href="https://github.com/AbdullahBakir97?tab=overview&from=2024-01-01&to=2024-12-31"><img src="https://github-contributions-api.deno.dev/AbdullahBakir97.svg?year=2024" width="100%" alt="AbdullahBakir97 — 2024 contribution heatmap"></a><p><b>2024</b></p></td><td width="33%" align="center"><a href="https://github.com/AbdullahBakir97?tab=overview&from=2025-01-01&to=2025-12-31"><img src="https://github-contributions-api.deno.dev/AbdullahBakir97.svg?year=2025" width="100%" alt="AbdullahBakir97 — 2025 contribution heatmap"></a><p><b>2025</b></p></td></tr></table>
+<!-- SNAKE_GRID:END -->
 
 <h3 align="center">🎨 3D Animated Profile</h3>
 
-<p align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — rainbow" />
-</p>
+<table align="center" width="100%"><tr><td colspan="3" align="center"><img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — Night Rainbow style" /><p><b>Night Rainbow <sub>(live)</sub></b></p></td></tr><tr><td width="33%" align="center"><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution profile — Night View style" /><p><b>Night View</b></p></td><td width="33%" align="center"><img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="3D contribution profile — Git Block style" /><p><b>Git Block</b></p></td><td width="33%" align="center"><img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="3D contribution profile — Season Animate style" /><p><b>Season Animate</b></p></td></tr></table>
 
 <details>
-<summary align="center"><b>More 3D styles</b> — night-view, gitblock, season-animate, south-season</summary>
+<summary align="center"><b>More 3D styles</b> — south-season</summary>
 
 <br/>
-
-<p align="center">
-  <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="Night view style" />
-</p>
-
-<p align="center">
-  <img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="Git block style" />
-</p>
-
-<p align="center">
-  <img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="Animated seasons style" />
-</p>
 
 <p align="center">
   <img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="South-season style" />
@@ -597,24 +579,24 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <h3 align="center">🌆 GitHub Skylines</h3>
 
 <!-- SKYLINE_GRID:START -->
-<table align="center" width="100%"><tr><td width="33%" align="center"><a href="https://skyline.github.com/AbdullahBakir97/2024"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline-2024.svg" width="100%" alt="GitHub Skyline 2024"></a><p><b>2024</b></p></td><td width="33%" align="center"><a href="https://skyline.github.com/AbdullahBakir97/2025"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline-2025.svg" width="100%" alt="GitHub Skyline 2025"></a><p><b>2025</b></p></td><td width="33%" align="center"><a href="https://skyline.github.com/AbdullahBakir97/2026"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-skyline-2026.svg" width="100%" alt="GitHub Skyline 2026"></a><p><b>2026 <sub>(live)</sub></b></p></td></tr></table>
+<table align="center" width="100%"><tr><td colspan="3" align="center"><a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2026.stl"><img src="https://github-contributions-api.deno.dev/AbdullahBakir97.svg?year=2026" width="100%" alt="AbdullahBakir97 — 2026 contributions"></a><p><b>2026 <sub>(live)</sub></b></p></td></tr><tr><td width="33%" align="center"><a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2023.stl"><img src="https://github-contributions-api.deno.dev/AbdullahBakir97.svg?year=2023" width="100%" alt="AbdullahBakir97 — 2023 contributions"></a><p><b>2023</b></p></td><td width="33%" align="center"><a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2024.stl"><img src="https://github-contributions-api.deno.dev/AbdullahBakir97.svg?year=2024" width="100%" alt="AbdullahBakir97 — 2024 contributions"></a><p><b>2024</b></p></td><td width="33%" align="center"><a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2025.stl"><img src="https://github-contributions-api.deno.dev/AbdullahBakir97.svg?year=2025" width="100%" alt="AbdullahBakir97 — 2025 contributions"></a><p><b>2025</b></p></td></tr></table>
 <!-- SKYLINE_GRID:END -->
 
 <!-- STL_LINKS:START -->
-<p align="center"><b>📐 Spin a 3D model:</b> <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2024.stl">2024 STL</a> · <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2025.stl">2025 STL</a> · <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2026.stl">2026 STL <sub>(live)</sub></a></p>
+<p align="center"><b>📐 Spin a 3D model:</b> <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2023.stl">2023 STL</a> · <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2024.stl">2024 STL</a> · <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2025.stl">2025 STL</a> · <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/metrics-output/skyline-2026.stl">2026 STL <sub>(live)</sub></a></p>
 <!-- STL_LINKS:END -->
 
 <h3 align="center">🏙️ GitHub Cities</h3>
 
 <!-- CITY_GRID:START -->
-<table align="center" width="100%"><tr><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2024.svg" width="100%" alt="GitHub City 2024"></a><p><b>2024</b></p></td><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2025"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2025.svg" width="100%" alt="GitHub City 2025"></a><p><b>2025</b></p></td><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2026"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2026.svg" width="100%" alt="GitHub City 2026"></a><p><b>2026 <sub>(live)</sub></b></p></td></tr></table>
+<table align="center" width="100%"><tr><td colspan="3" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2026"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2026.svg" width="100%" alt="GitHub City 2026"></a><p><b>2026 <sub>(live)</sub></b></p></td></tr><tr><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2023"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2023.svg" width="100%" alt="GitHub City 2023"></a><p><b>2023</b></p></td><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2024.svg" width="100%" alt="GitHub City 2024"></a><p><b>2024</b></p></td><td width="33%" align="center"><a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2025"><img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-city-2025.svg" width="100%" alt="GitHub City 2025"></a><p><b>2025</b></p></td></tr></table>
 <!-- CITY_GRID:END -->
 
 <!-- GITCITY_LINKS:START -->
-<p align="center"><b>🚗 Drive through:</b> <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024">2024 city</a> · <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2025">2025 city</a> · <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2026">2026 city <sub>(live)</sub></a></p>
+<p align="center"><b>🚗 Drive through:</b> <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2023">2023 city</a> · <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2024">2024 city</a> · <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2025">2025 city</a> · <a href="https://honzaap.github.io/GithubCity?name=AbdullahBakir97&year=2026">2026 city <sub>(live)</sub></a></p>
 <!-- GITCITY_LINKS:END -->
 
-<p align="center"><em>⚠️ Regenerated daily. The current year refreshes with new contributions; past years are frozen archives. Click any tile or link for the interactive view — STLs render in GitHub's built-in 3D viewer, cities open at <a href="https://honzaap.github.io/GithubCity">honzaap.github.io/GithubCity</a>.</em></p>
+<p align="center"><em>⚠️ Regenerated daily. The current year refreshes with new contributions; past years are frozen archives. Click a Skyline tile to open its <code>.stl</code> in GitHub's built-in 3D viewer, or a City tile to drive through it at <a href="https://honzaap.github.io/GithubCity">honzaap.github.io/GithubCity</a>.</em></p>
 
 <!-- CONNECT WITH ME -->
 <div align="center">

@@ -324,37 +324,59 @@ RAW_BASE = f"https://raw.githubusercontent.com/{GH_USER}/{GH_USER}/metrics-outpu
 
 
 def _years() -> list[int]:
+    """All renderable years from START_YEAR..CURRENT_YEAR (used for STL/city link bars)."""
     if CURRENT_YEAR < START_YEAR:
         return [CURRENT_YEAR]
     return list(range(START_YEAR, CURRENT_YEAR + 1))
 
 
+def _hero_years() -> tuple[int, list[int]]:
+    """Current year (hero) + the three preceding years (small row underneath)."""
+    small = [CURRENT_YEAR - 3, CURRENT_YEAR - 2, CURRENT_YEAR - 1]
+    return CURRENT_YEAR, small
+
+
 def _grid(href_for: Callable[[int], str], svg_for: Callable[[int], str], alt_kind: str) -> str:
-    years = _years()
-    width = 100 // len(years)
-    cells = []
-    for y in years:
-        label = f"{y} <sub>(live)</sub>" if y == CURRENT_YEAR else str(y)
-        cells.append(
-            f'<td width="{width}%" align="center">'
-            f'<a href="{href_for(y)}">'
-            f'<img src="{svg_for(y)}" width="100%" alt="{alt_kind} {y}">'
-            f"</a>"
-            f"<p><b>{label}</b></p>"
-            f"</td>"
-        )
+    """Hero + 3-up layout: current year rendered large on top, three preceding years as a small row below."""
+    big_year, small_years = _hero_years()
+
+    hero_cell = (
+        f'<td colspan="3" align="center">'
+        f'<a href="{href_for(big_year)}">'
+        f'<img src="{svg_for(big_year)}" width="100%" alt="{alt_kind} {big_year}">'
+        f"</a>"
+        f'<p><b>{big_year} <sub>(live)</sub></b></p>'
+        f"</td>"
+    )
+
+    small_cells = "".join(
+        f'<td width="33%" align="center">'
+        f'<a href="{href_for(y)}">'
+        f'<img src="{svg_for(y)}" width="100%" alt="{alt_kind} {y}">'
+        f"</a>"
+        f"<p><b>{y}</b></p>"
+        f"</td>"
+        for y in small_years
+    )
+
     return (
-        '<table align="center" width="100%"><tr>'
-        + "".join(cells)
-        + "</tr></table>"
+        '<table align="center" width="100%">'
+        f"<tr>{hero_cell}</tr>"
+        f"<tr>{small_cells}</tr>"
+        "</table>"
     )
 
 
 def skyline_grid() -> str:
+    # skyline.github.com was retired in late 2024; the metrics-action
+    # plugin_skyline screenshots that dead URL and produces empty SVGs.
+    # Use the Deno contributions heatmap (per-year) for the image, and
+    # link the tile to the gh-skyline CLI-generated STL on the
+    # metrics-output branch (rendered by GitHub's built-in 3D viewer).
     return _grid(
-        href_for=lambda y: f"https://skyline.github.com/{GH_USER}/{y}",
-        svg_for=lambda y: f"{RAW_BASE}/github-metrics-skyline-{y}.svg",
-        alt_kind="GitHub Skyline",
+        href_for=lambda y: f"https://github.com/{GH_USER}/{GH_USER}/blob/metrics-output/skyline-{y}.stl",
+        svg_for=lambda y: f"https://github-contributions-api.deno.dev/{GH_USER}.svg?year={y}",
+        alt_kind=f"{GH_USER} —",
     )
 
 
@@ -363,6 +385,43 @@ def city_grid() -> str:
         href_for=lambda y: f"https://honzaap.github.io/GithubCity?name={GH_USER}&year={y}",
         svg_for=lambda y: f"{RAW_BASE}/github-metrics-city-{y}.svg",
         alt_kind="GitHub City",
+    )
+
+
+def snake_grid() -> str:
+    """Hero (rolling-365 snake) + 3 small per-year contribution heatmaps."""
+    big_year, small_years = _hero_years()
+
+    snake_dark = f"https://raw.githubusercontent.com/{GH_USER}/{GH_USER}/output/github-contribution-grid-snake-dark.svg"
+    snake_light = f"https://raw.githubusercontent.com/{GH_USER}/{GH_USER}/output/github-contribution-grid-snake.svg"
+    hero_cell = (
+        f'<td colspan="3" align="center">'
+        f'<picture>'
+        f'<source media="(prefers-color-scheme: dark)" srcset="{snake_dark}">'
+        f'<source media="(prefers-color-scheme: light)" srcset="{snake_light}">'
+        f'<img alt="GitHub contribution grid snake animation" src="{snake_dark}" width="100%">'
+        f'</picture>'
+        f'<p><b>{big_year} <sub>(live · rolling 365 days)</sub></b></p>'
+        f"</td>"
+    )
+
+    def heatmap_cell(y: int) -> str:
+        return (
+            f'<td width="33%" align="center">'
+            f'<a href="https://github.com/{GH_USER}?tab=overview&from={y}-01-01&to={y}-12-31">'
+            f'<img src="https://github-contributions-api.deno.dev/{GH_USER}.svg?year={y}" '
+            f'width="100%" alt="{GH_USER} — {y} contribution heatmap">'
+            f"</a>"
+            f"<p><b>{y}</b></p>"
+            f"</td>"
+        )
+
+    small_cells = "".join(heatmap_cell(y) for y in small_years)
+    return (
+        '<table align="center" width="100%">'
+        f"<tr>{hero_cell}</tr>"
+        f"<tr>{small_cells}</tr>"
+        "</table>"
     )
 
 
@@ -466,8 +525,10 @@ STL_BASE = f"https://github.com/{GH_USER}/{GH_USER}/blob/metrics-output"
 
 
 def _link_bar(prefix: str, href_for: Callable[[int], str], label_for: Callable[[int], str]) -> str:
+    """Inline link bar — mirrors the hero-grid year window (3 preceding years + current)."""
+    big_year, small_years = _hero_years()
     parts: list[str] = []
-    for y in _years():
+    for y in [*small_years, big_year]:
         suffix = " <sub>(live)</sub>" if y == CURRENT_YEAR else ""
         parts.append(f'<a href="{href_for(y)}">{label_for(y)}{suffix}</a>')
     return f'<p align="center"><b>{prefix}</b> ' + " · ".join(parts) + "</p>"
@@ -502,6 +563,7 @@ def main() -> int:
         ("LATEST_RELEASES", fetch_releases),
         ("PAGESPEED", fetch_pagespeed),
         ("HIGHLIGHTS_STATS", fetch_year_stats),
+        ("SNAKE_GRID", snake_grid),
         ("SKYLINE_GRID", skyline_grid),
         ("STL_LINKS", stl_links),
         ("CITY_GRID", city_grid),
