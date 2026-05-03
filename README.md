@@ -91,8 +91,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The only way to learn a new programming language is by writing programs in it."</i><br/>
-  <sub>— <b>Dennis Ritchie</b></sub>
+  <i>"Computers are good at following instructions, but not at reading your mind."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -341,7 +341,6 @@ _No recent push events to visualize._
 - 📦 Released [`v0.4.3`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.3) of [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
 - 🔀 Merged PR [#43](https://github.com/AbdullahBakir97/PortfolioCraft/pull/43) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
 - 🔀 Opened PR [#43](https://github.com/AbdullahBakir97/PortfolioCraft/pull/43) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
-- 📦 Released [`v0.4.2`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.2) of [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
@@ -356,8 +355,8 @@ _No recent push events to visualize._
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
+- 📦 [`Stock-Manager` `v2.5.1`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.5.1) — Stock Manager Pro v2.5.1 <sub>(2026-05-02)</sub>
 - 📦 [`PortfolioCraft` `v0.4.4`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.4) — v0.4.4 — Complete enum-leak sweep <sub>(2026-05-01)</sub>
-- 📦 [`Stock-Manager` `v2.5.0`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.5.0) — Stock Manager Pro v2.5.0 <sub>(2026-04-29)</sub>
 - 📦 [`cortex` `v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) — v1.0.0 — first GA release <sub>(2026-04-27)</sub>
 <!-- LATEST_RELEASES:END -->
 
