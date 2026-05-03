@@ -1,6 +1,6 @@
 ## Audit
 
-_Generated 2026-05-02. 153 findings across 85 repos (53 flagged)._
+_Generated 2026-05-03. 153 findings across 85 repos (53 flagged)._
 
 | Severity | Count |
 | --- | --- |
@@ -177,15 +177,15 @@ _Generated 2026-05-02. 153 findings across 85 repos (53 flagged)._
   - **Action:** Add a LICENSE file (MIT or Apache-2.0 are common defaults).
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1056 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1056 days)
-  - Evidence: [Opened 1056 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1057 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1057 days)
+  - Evidence: [Opened 1057 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 702 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 703 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 702 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 703 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[medium]** `docs` — No README: AbdullahBakir97/AI-KI
@@ -520,7 +520,7 @@ _Generated 2026-05-02. 153 findings across 85 repos (53 flagged)._
 
 - **[low]** `pr-rot` — Awaiting reviewer: AbdullahBakir97/Stock-Manager#19
   - A reviewer was the last to act on this PR and hasn't replied since 2026-04-24. This isn't your problem to push on — it's logged for awareness.
-  - Awaiting: reviewer (7 days)
+  - Awaiting: reviewer (8 days)
   - Evidence: [Last activity: 2026-04-24](https://github.com/AbdullahBakir97/Stock-Manager/pull/19)
   - **Action:** Reach out to the reviewer or convert to draft.
 
