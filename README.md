@@ -91,8 +91,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Computers are good at following instructions, but not at reading your mind."</i><br/>
-  <sub>— <b>Donald Knuth</b></sub>
+  <i>"First, solve the problem. Then, write the code."</i><br/>
+  <sub>— <b>John Johnson</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -237,7 +237,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-259-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-12-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-13_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-455-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-12-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -335,12 +335,7 @@ _No recent push events to visualize._
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- 📦 Released [`v0.4.4`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.4) of [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
-- 🔀 Merged PR [#44](https://github.com/AbdullahBakir97/PortfolioCraft/pull/44) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
-- 🔀 Opened PR [#44](https://github.com/AbdullahBakir97/PortfolioCraft/pull/44) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
-- 📦 Released [`v0.4.3`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.3) of [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
-- 🔀 Merged PR [#43](https://github.com/AbdullahBakir97/PortfolioCraft/pull/43) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
-- 🔀 Opened PR [#43](https://github.com/AbdullahBakir97/PortfolioCraft/pull/43) in [`AbdullahBakir97/PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft)
+_No recent public activity._
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
