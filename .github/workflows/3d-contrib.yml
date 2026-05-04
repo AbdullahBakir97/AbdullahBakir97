@@ -24,7 +24,7 @@ jobs:
       # in the GitHub Skylines section. This workflow now only refreshes the
       # rolling-window style variants.
       - name: Generate rolling-window style variants
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
