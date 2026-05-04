@@ -237,9 +237,9 @@ def push_one(name: str, declared_settings: str | None, force_node: bool = False)
             return {"name": name, "status": "already-exists", "kind": kind}
         ci_path.write_text(yml, encoding="utf-8")
 
-        # Configure git — use the GitHub noreply email tied to AbdullahBakir97's
-        # account so commits attribute to the right profile. The personal
-        # gmail is verified on Black-Sea001, which would mis-route attribution.
+        # Configure git — use the GitHub noreply email permanently tied to
+        # the AbdullahBakir97 account id, so attribution is bulletproof
+        # regardless of which personal emails are verified where.
         run(["git", "config", "user.name", "AbdullahBakir97"], cwd=repo_dir)
         run(["git", "config", "user.email",
              "127149804+AbdullahBakir97@users.noreply.github.com"], cwd=repo_dir)
