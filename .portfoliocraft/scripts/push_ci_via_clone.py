@@ -11,9 +11,36 @@ import base64
 import json
 import os
 import shutil
+import stat
 import subprocess
 import time
 from pathlib import Path
+
+
+def _force_rmtree(path: Path) -> None:
+    """Remove a directory tree even when it contains Windows read-only files
+    (e.g. objects under .git/objects/pack/*.idx)."""
+    if not path.exists():
+        return
+
+    def on_rm_error(func, p, exc_info):
+        try:
+            os.chmod(p, stat.S_IWRITE)
+            func(p)
+        except Exception:
+            pass
+
+    # Python 3.12+ uses onexc instead of onerror
+    try:
+        shutil.rmtree(path, onexc=on_rm_error)
+    except TypeError:
+        shutil.rmtree(path, onerror=on_rm_error)
+    # Last-resort fallback: shell-out to Windows rmdir if anything remains
+    if path.exists():
+        subprocess.run(
+            ["cmd", "/c", "rmdir", "/s", "/q", str(path)],
+            capture_output=True, text=True
+        )
 
 OWNER = "AbdullahBakir97"
 WORKDIR = Path(r"C:\Temp\polish-clones")
@@ -169,7 +196,7 @@ def find_django_settings_local(repo_dir: Path) -> str:
 def push_one(name: str, declared_settings: str | None, force_node: bool = False) -> dict:
     repo_dir = WORKDIR / name
     if repo_dir.exists():
-        shutil.rmtree(repo_dir, ignore_errors=True)
+        _force_rmtree(repo_dir)
 
     token = get_token()
     if not token:
@@ -236,7 +263,7 @@ def push_one(name: str, declared_settings: str | None, force_node: bool = False)
         return {"name": name, "status": "pushed", "kind": kind}
     finally:
         # Always clean up (so we don't leak clones)
-        shutil.rmtree(repo_dir, ignore_errors=True)
+        _force_rmtree(repo_dir)
 
 
 # ── Main ────────────────────────────────────────────────────────────────────
