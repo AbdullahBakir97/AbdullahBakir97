@@ -219,18 +219,9 @@ def render() -> str:
 
     # ── Main name + role (left side) ──────────────────────────────────────
     name_x = 60
-    name_y = 175
+    name_y = 150
 
-    # // tag above name
-    parts.append(
-        f'<text x="{name_x}" y="{name_y - 50}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-        f'font-size="14" font-weight="700" fill="#39d353" letter-spacing="3" '
-        f'text-transform="uppercase">'
-        f'Hi, I\'m</text>'
-    )
-
-    # Name — display weight, very large
+    # Name — display weight, very large (no tag above; "Hi, I'm" goes BELOW)
     parts.append(
         f'<text x="{name_x}" y="{name_y}" '
         f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
@@ -239,9 +230,18 @@ def render() -> str:
         f'Abdullah Bakir</text>'
     )
 
+    # "Hi, I'm" greeting — placed UNDER the name, not above. Combined with role.
+    parts.append(
+        f'<text x="{name_x}" y="{name_y + 38}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
+        f'font-size="14" font-weight="700" fill="#39d353" letter-spacing="3" '
+        f'text-transform="uppercase">'
+        f'👋 Hi, I\'m a</text>'
+    )
+
     # Role — secondary, large, colored
     parts.append(
-        f'<text x="{name_x}" y="{name_y + 50}" '
+        f'<text x="{name_x}" y="{name_y + 80}" '
         f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
         f'font-size="32" font-weight="600" fill="#a855f7" '
         f'letter-spacing="-0.5">'
@@ -250,14 +250,14 @@ def render() -> str:
 
     # Tagline / philosophy
     parts.append(
-        f'<text x="{name_x}" y="{name_y + 92}" '
+        f'<text x="{name_x}" y="{name_y + 122}" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
         f'font-size="18" font-weight="400" fill="#c9d1d9" font-style="italic">'
         f'"Ship something useful → learn → ship again."</text>'
     )
 
     # Available pill
-    pill_y = name_y + 120
+    pill_y = name_y + 150
     parts.append(
         f'<g transform="translate({name_x}, {pill_y})">'
         f'<rect x="0" y="0" width="220" height="32" rx="16" fill="#0d2818" '

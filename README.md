@@ -88,6 +88,13 @@ me = AbdullahBakir()
 print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```
 
+<!-- 🪐 Tech-orbit footer — animated technologies-circle, paired with the banner -->
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="./assets/about-orbit.svg" width="100%" alt="Tech stack — orbiting technologies (animated)" />
+  </a>
+</p>
+
 <!-- 💬 single rotating motto line — color changes per text shown -->
 <div align="center">
   <img src="./assets/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
@@ -731,16 +738,15 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <h3 align="center">🎨 3D Animated Profile</h3>
 
-<table align="center" width="100%"><tr><td colspan="3" align="center"><img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — 2026 (live)" /><p><b>2026 <sub>(live)</sub></b></p></td></tr><tr><td width="33%" align="center"><img src="./profile-3d-contrib/2023/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — 2023" /><p><b>2023</b></p></td><td width="33%" align="center"><img src="./profile-3d-contrib/2024/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — 2024" /><p><b>2024</b></p></td><td width="33%" align="center"><img src="./profile-3d-contrib/2025/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — 2025" /><p><b>2025</b></p></td></tr></table>
+<p align="center"><sub><i>Five render styles of the same live rolling-365-day data — for per-year contribution visuals see the <a href="#contributions">GitHub Skylines</a> grid below.</i></sub></p>
 
-<details>
-<summary align="center"><b>More 3D styles</b> — alternate visualizations of the same rolling-window data</summary>
+<!-- Hero — the headline rainbow render -->
+<p align="center">
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — Night Rainbow (live)" />
+</p>
 
-<br/>
-
-<table align="center" width="100%"><tr><td width="25%" align="center"><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution profile — Night View style" /><p><b>Night View</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="3D contribution profile — Git Block style" /><p><b>Git Block</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="3D contribution profile — Season Animate style" /><p><b>Season Animate</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="3D contribution profile — South Season style" /><p><b>South Season</b></p></td></tr></table>
-
-</details>
+<!-- Style variants — 4-up grid, all rolling-window views, distinct visualizations -->
+<table align="center" width="100%"><tr><td width="25%" align="center"><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution profile — Night View" /><p><b>Night View</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="3D contribution profile — Git Block" /><p><b>Git Block</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="3D contribution profile — Season Animate" /><p><b>Season Animate</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="3D contribution profile — South Season" /><p><b>South Season</b></p></td></tr></table>
 
 <h3 align="center">🌆 GitHub Skylines</h3>
 
