@@ -108,7 +108,6 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
   <a href="#focus">Current Focus</a> •
   <a href="#highlights">Yearly Highlights</a> •
   <a href="#stats">GitHub Stats</a> •
-  <a href="#achievements">Achievements</a> •
   <a href="#activity">Recent Activity</a> •
   <a href="#releases">Latest Releases</a> •
   <a href="#projects">Featured Projects</a> •
@@ -294,25 +293,6 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!--START_OF_CODE_STATS-->
 <p align="center"><i>WakaTime weekly stats appear here after the first run of the waka-stats workflow.<br/>Set <code>WAKATIME_API_KEY</code> in repo secrets, then trigger the "WakaTime Weekly Stats" workflow.</i></p>
 <!--END_OF_CODE_STATS-->
-
-<!-- ACHIEVEMENTS -->
-<div align="center">
-  <img src="./assets/redline.gif" width="100%" alt=""/>
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-ACHIEVEMENTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Achievements" width="200">
-  </a>
-  <img src="./assets/redline.gif" width="100%" alt=""/>
-</div>
-
-<h2 id="achievements" align="center">🏆 GitHub Achievements &amp; Trophies</h2>
-
-<p align="center"><i>Live trophies across stars, commits, repos, PRs, issues, and follows — auto-rendered by <a href="https://github.com/ryo-ma/github-profile-trophy">github-profile-trophy</a>. The full GitHub-native achievements list lives on my <a href="https://github.com/AbdullahBakir97?tab=achievements">profile achievements tab</a>.</i></p>
-
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97?tab=achievements">
-    <img src="https://github-profile-trophy.vercel.app/?username=AbdullahBakir97&theme=radical&row=2&column=4&margin-w=10&margin-h=10&no-bg=false&no-frame=false" width="100%" alt="AbdullahBakir97's GitHub trophies" />
-  </a>
-</div>
 
 <!-- RECENT ACTIVITY -->
 <div align="center">
