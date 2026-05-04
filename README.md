@@ -248,7 +248,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-521-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-522-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -277,13 +277,13 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&v=20260504" width="100%" alt="Profile Summary" />
-    <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true&v=20260504" width="49%" alt="GitHub Stats" />
+    <img src="./assets/stats/main-stats.svg" width="49%" alt="GitHub Stats" />
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606&v=20260504" width="49%" alt="GitHub Streak" />
   </a>
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00&v=20260504" alt="Top Languages" width="49%" />
+  <img src="./assets/stats/top-langs.svg" alt="Top Languages" width="49%" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=AbdullahBakir97&theme=codeSTACKr&title_color=ff6f00&v=20260504" alt="Language Distribution" width="49%" />
 </div>
 
@@ -667,40 +667,6 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 </div>
 <!-- PINNED_REPOS:END -->
 
-<details>
-<summary align="center"><b>More projects</b> — Django blog, BookStore, JS to-do, automation, landing pages</summary>
-
-<br/>
-
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2&v=20260504" width="49%" alt="Django Blog app" />
-  </a>
-  <a href="https://github.com/AbdullahBakir97/BookStore">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=BookStore&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="BookStore" />
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97/Automtion">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="Automation" />
-  </a>
-  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="2050 Bootstrap Landing page" />
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97/JS-TO-DO">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=JS-TO-DO&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="JS TO DO" />
-  </a>
-  <a href="https://github.com/AbdullahBakir97/AbdullahBakir97">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="Profile README" />
-  </a>
-</div>
-
-</details>
-
 <!-- GOOGLE PAGESPEED -->
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
@@ -738,15 +704,23 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <h3 align="center">🎨 3D Animated Profile</h3>
 
-<p align="center"><sub><i>Five render styles of the same live rolling-365-day data — for per-year contribution visuals see the <a href="#contributions">GitHub Skylines</a> grid below.</i></sub></p>
+<p align="center"><sub><i>Per-year 3D rainbow contribution towers · current year hero with three preceding years below · self-rendered from real GraphQL contributionCalendar data.</i></sub></p>
 
-<!-- Hero — the headline rainbow render -->
+<!-- 3D rainbow per-year grid — current big + 23-25 small -->
+<table align="center" width="100%"><tr><td colspan="3" align="center"><img src="./assets/3d-rainbow-2026.svg" width="100%" alt="3D rainbow — 2026 (live)" /><p><b>2026 <sub>(live)</sub></b></p></td></tr><tr><td width="33%" align="center"><img src="./assets/3d-rainbow-2023.svg" width="100%" alt="3D rainbow — 2023" /><p><b>2023</b></p></td><td width="33%" align="center"><img src="./assets/3d-rainbow-2024.svg" width="100%" alt="3D rainbow — 2024" /><p><b>2024</b></p></td><td width="33%" align="center"><img src="./assets/3d-rainbow-2025.svg" width="100%" alt="3D rainbow — 2025" /><p><b>2025</b></p></td></tr></table>
+
+<details>
+<summary align="center"><b>Alternate render styles</b> — rolling-window views from yoshi389111/github-profile-3d-contrib</summary>
+
+<br/>
+
 <p align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — Night Rainbow (live)" />
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="Night Rainbow" />
 </p>
 
-<!-- Style variants — 4-up grid, all rolling-window views, distinct visualizations -->
-<table align="center" width="100%"><tr><td width="25%" align="center"><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D contribution profile — Night View" /><p><b>Night View</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="3D contribution profile — Git Block" /><p><b>Git Block</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="3D contribution profile — Season Animate" /><p><b>Season Animate</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="3D contribution profile — South Season" /><p><b>South Season</b></p></td></tr></table>
+<table align="center" width="100%"><tr><td width="25%" align="center"><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="Night View" /><p><b>Night View</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="Git Block" /><p><b>Git Block</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="Season Animate" /><p><b>Season Animate</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="South Season" /><p><b>South Season</b></p></td></tr></table>
+
+</details>
 
 <h3 align="center">🌆 GitHub Skylines</h3>
 

@@ -906,7 +906,8 @@ def render_skyline_svg(year: int, calendar: dict, dest: str) -> None:
 
 
 def regenerate_yearly_assets() -> None:
-    """Refresh heatmap-{year}.svg and skyline-{year}.svg for the hero+small window."""
+    """Refresh heatmap-{year}.svg, skyline-{year}.svg, and 3d-rainbow-{year}.svg
+    for the hero+small window."""
     big_year, small_years = _hero_years()
     os.makedirs(ASSETS_DIR, exist_ok=True)
     for y in [big_year, *small_years]:
@@ -918,9 +919,175 @@ def regenerate_yearly_assets() -> None:
         try:
             render_heatmap_svg(y, cal, os.path.join(ASSETS_DIR, f"heatmap-{y}.svg"))
             render_skyline_svg(y, cal, os.path.join(ASSETS_DIR, f"skyline-{y}.svg"))
+            render_3d_rainbow_svg(y, cal, os.path.join(ASSETS_DIR, f"3d-rainbow-{y}.svg"))
             print(f"refreshed assets for {y} (total={cal['totalContributions']})")
         except Exception as e:
             warn(f"asset render failed for {y}: {e}")
+
+
+# --- 3D RAINBOW PROFILE (per-year, custom — yoshi389111's YEAR env is broken) ---
+# Same iso projection as render_skyline_svg, but with a rainbow palette
+# rolling across weeks for a vibrant "3D night rainbow" aesthetic. Renders
+# real per-year data so the four tiles in the 3D Animated Profile section
+# actually differ year to year.
+
+def _rainbow_face_colors(week_idx: int, count: int) -> tuple[str, str, str]:
+    """Cycle through a vibrant rainbow palette by week index. Returns
+    (top, right, left) — top is the brightest, right is medium-lit,
+    left is shadowed. Empty days fall back to a dim ground tile palette."""
+    if count <= 0:
+        return ("#1c2129", "#161b22", "#0d1117")
+    # Eight rainbow stops, hue rolls across the year
+    palette = [
+        ("#FF6B6B", "#E84A4A", "#A82F2F"),  # red
+        ("#FFA94D", "#E78A2F", "#A85B1F"),  # orange
+        ("#FFE066", "#E6C24A", "#9F8B2A"),  # yellow
+        ("#9CFF85", "#5AD650", "#36873B"),  # green
+        ("#5EEAD4", "#06B6D4", "#0891B2"),  # cyan
+        ("#67C7FF", "#2C8DE8", "#1B5FA8"),  # blue
+        ("#A78BFA", "#7C3AED", "#5B21B6"),  # violet
+        ("#F0ABFC", "#C026D3", "#86198F"),  # magenta
+    ]
+    return palette[week_idx % len(palette)]
+
+
+def render_3d_rainbow_svg(year: int, calendar: dict, dest: str) -> None:
+    """Render a per-year 3D rainbow contribution city — vibrant alternative
+    to the green skyline. Same iso projection, but a rainbow palette rolls
+    across weeks. Real per-year data (from contributionCalendar)."""
+    weeks = calendar["weeks"]
+    total = calendar["totalContributions"]
+    n_weeks = len(weeks)
+
+    cell_w = 14.0
+    cell_d = 14.0
+    max_h = 130.0
+
+    max_count = 1
+    for w in weeks:
+        for d in w["contributionDays"]:
+            if d["contributionCount"] > max_count:
+                max_count = d["contributionCount"]
+
+    extents_x = n_weeks * cell_w
+    extents_y = 7 * cell_d
+
+    bbox = [
+        _iso(0, 0, 0), _iso(extents_x, 0, 0),
+        _iso(extents_x, extents_y, 0), _iso(0, extents_y, 0),
+        _iso(0, 0, max_h), _iso(extents_x, 0, max_h),
+        _iso(extents_x, extents_y, max_h), _iso(0, extents_y, max_h),
+    ]
+    min_x, max_x = min(p[0] for p in bbox), max(p[0] for p in bbox)
+    min_y, max_y = min(p[1] for p in bbox), max(p[1] for p in bbox)
+
+    pad_x, pad_top, pad_bottom = 40, 60, 36
+    width = int(math.ceil(max_x - min_x)) + pad_x * 2
+    height = int(math.ceil(max_y - min_y)) + pad_top + pad_bottom
+
+    ox = pad_x - min_x
+    oy = pad_top - min_y
+
+    def fmt_pts(*corners: tuple[float, float]) -> str:
+        return " ".join(f"{c[0] + ox:.2f},{c[1] + oy:.2f}" for c in corners)
+
+    rng = random.Random(year * 1729 + 3)
+
+    parts: list[str] = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
+        f'role="img" aria-label="{GH_USER} {year} 3D rainbow contribution profile">',
+        # Backdrop — deep space with violet glow
+        '<defs>'
+        '<radialGradient id="rainbowSky" cx="50%" cy="100%" r="120%">'
+        '<stop offset="0%" stop-color="#241039"/>'
+        '<stop offset="40%" stop-color="#0d0820"/>'
+        '<stop offset="100%" stop-color="#02030a"/>'
+        '</radialGradient>'
+        '<linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#1a1330"/>'
+        '<stop offset="100%" stop-color="#02030a"/>'
+        '</linearGradient>'
+        '<filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">'
+        '<feGaussianBlur stdDeviation="2" result="b"/>'
+        '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+        '</filter>'
+        '</defs>',
+        f'<rect width="{width}" height="{height}" fill="url(#rainbowSky)"/>',
+    ]
+
+    # Stars — sparse rainbow
+    parts.append('<g>')
+    for _ in range(40):
+        sx = rng.randint(8, width - 8)
+        sy = rng.randint(8, pad_top - 4)
+        sr = rng.choice([0.4, 0.6, 0.9])
+        col = rng.choice(["#fde68a", "#f0abfc", "#a78bfa", "#67c7ff", "#5eead4", "#9cff85"])
+        parts.append(f'<circle cx="{sx}" cy="{sy}" r="{sr}" fill="{col}" opacity="0.85"/>')
+    parts.append('</g>')
+
+    # Ground platform
+    base_pad = 6
+    g_corners = [
+        _iso(-base_pad, -base_pad, 0),
+        _iso(extents_x + base_pad, -base_pad, 0),
+        _iso(extents_x + base_pad, extents_y + base_pad, 0),
+        _iso(-base_pad, extents_y + base_pad, 0),
+    ]
+    parts.append(
+        f'<polygon points="{fmt_pts(*g_corners)}" fill="url(#ground)" '
+        f'stroke="#a78bfa" stroke-width="0.5" stroke-opacity="0.4"/>'
+    )
+
+    # Cells — depth-sorted painter's algorithm
+    cells = []
+    for wi, week in enumerate(weeks):
+        for d in week["contributionDays"]:
+            cells.append((wi, d["weekday"], d["contributionCount"], d.get("date", "")))
+    cells.sort(key=lambda c: (c[0] + c[1], c[0]))
+
+    for wi, di, count, date in cells:
+        x = wi * cell_w
+        y = di * cell_d
+
+        if count > 0:
+            ratio = count / max_count
+            h = (ratio ** 0.55) * max_h + 4.0
+        else:
+            h = 1.5
+
+        top_c, right_c, left_c = _rainbow_face_colors(wi, count)
+
+        c100 = _iso(x + cell_w, y,            0)
+        c110 = _iso(x + cell_w, y + cell_d,   0)
+        c010 = _iso(x,          y + cell_d,   0)
+        c001 = _iso(x,          y,            h)
+        c101 = _iso(x + cell_w, y,            h)
+        c111 = _iso(x + cell_w, y + cell_d,   h)
+        c011 = _iso(x,          y + cell_d,   h)
+
+        parts.append(f'<polygon points="{fmt_pts(c100, c110, c111, c101)}" fill="{right_c}"/>')
+        parts.append(f'<polygon points="{fmt_pts(c010, c110, c111, c011)}" fill="{left_c}"/>')
+        parts.append(
+            f'<polygon points="{fmt_pts(c001, c101, c111, c011)}" fill="{top_c}">'
+            f'<title>{count} on {date}</title></polygon>'
+        )
+
+    # HUD
+    parts.append(
+        '<style>text{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif}</style>'
+        f'<text x="{pad_x}" y="32" font-size="22" font-weight="800" fill="#e6edf3">'
+        f'{GH_USER}</text>'
+        f'<text x="{pad_x}" y="52" font-size="13" font-weight="500" fill="#a78bfa">'
+        f'<tspan font-weight="700" fill="#FFE066">{total:,}</tspan> '
+        f'contributions in {year} · 3D Rainbow</text>'
+        f'<text x="{width - pad_x}" y="32" text-anchor="end" '
+        f'font-size="64" font-weight="900" fill="#FF6B6B" opacity="0.10" '
+        f'letter-spacing="-2">{year}</text>'
+    )
+
+    parts.append("</svg>")
+    with open(dest, "w", encoding="utf-8") as f:
+        f.write("".join(parts))
 
 
 # --- SKYLINE / CITY GRIDS -----------------------------------------------------
@@ -1208,7 +1375,7 @@ LANG_COLORS = {
     "Inno Setup": "#264B99", "MDX": "#1B6E5E",
 }
 
-PIN_W, PIN_H = 400, 120
+PIN_W, PIN_H = 460, 200
 
 
 def _truncate(s: str, n: int) -> str:
@@ -1216,98 +1383,162 @@ def _truncate(s: str, n: int) -> str:
     return s if len(s) <= n else s[:n - 1].rstrip() + "…"
 
 
-def _wrap_two_lines(s: str, line_chars: int = 50) -> tuple[str, str]:
-    s = s.strip()
-    if len(s) <= line_chars:
-        return s, ""
-    # find a space near line_chars to break on
-    cut = s.rfind(" ", 0, line_chars + 1)
-    if cut <= 0:
-        cut = line_chars
-    line1 = s[:cut].rstrip()
-    line2 = s[cut:].lstrip()
-    if len(line2) > line_chars:
-        line2 = line2[:line_chars - 1].rstrip() + "…"
-    return line1, line2
+def _wrap_lines_pin(s: str, line_chars: int, max_lines: int) -> list[str]:
+    s = (s or "").strip()
+    out: list[str] = []
+    while s and len(out) < max_lines:
+        if len(s) <= line_chars:
+            out.append(s)
+            break
+        cut = s.rfind(" ", 0, line_chars + 1)
+        if cut <= 0:
+            cut = line_chars
+        out.append(s[:cut].rstrip())
+        s = s[cut:].lstrip()
+    if s and len(out) == max_lines:
+        last = out[-1]
+        room = line_chars - 1
+        out[-1] = (last[: room].rstrip() + "…") if len(last) > room else last
+    return out
 
 
 def render_pin_svg(repo: dict, dest: Path) -> None:
-    """Render a single repo pin card SVG (400x120) — independent of any
-    third-party service. Mirrors the github-readme-stats codeSTACKr theme."""
+    """Render a Pinned repo card — 460x200, distinctly styled vs the
+    larger Featured cards. Editorial layout: repo icon + name header,
+    2-line description, topic chips, lang dot + star/fork stats, last
+    commit timestamp. No third-party dependency."""
     name = repo["name"]
     desc = (repo.get("description") or "_No description._").strip()
     stars = repo.get("stargazers_count", 0)
     forks = repo.get("forks_count", 0)
-    lang = repo.get("language") or ""
+    lang = repo.get("language") or "—"
     lang_color = LANG_COLORS.get(lang, "#6e7681")
+    topics = (repo.get("topics") or [])[:5]
+    pushed = (repo.get("pushed_at") or "")[:10]
 
-    line1, line2 = _wrap_two_lines(desc, 50)
-    title = _truncate(name, 32)
+    desc_lines = _wrap_lines_pin(desc, 52, 2)
+    title = _truncate(name, 30)
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{PIN_W}" height="{PIN_H}" '
         f'viewBox="0 0 {PIN_W} {PIN_H}" role="img" aria-label="{name}">',
-        # background card
         '<defs>'
+        # Background — subtle inverse gradient (pin uses dark-to-mid, featured uses mid-to-dark)
         '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0%" stop-color="#1a1f29"/>'
-        '<stop offset="100%" stop-color="#0d1117"/>'
+        '<stop offset="0%" stop-color="#161b22"/>'
+        '<stop offset="100%" stop-color="#0a0e14"/>'
+        '</linearGradient>'
+        # Pin accent stripe gradient (yellow→red, distinct from featured's red→purple)
+        '<linearGradient id="pinAccent" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#ffde01"/>'
+        '<stop offset="100%" stop-color="#F90001"/>'
         '</linearGradient>'
         '</defs>',
-        f'<rect width="{PIN_W-2}" height="{PIN_H-2}" x="1" y="1" rx="6" '
+        # Card body
+        f'<rect width="{PIN_W-2}" height="{PIN_H-2}" x="1" y="1" rx="10" '
         f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
-        # left accent stripe
-        f'<rect x="0" y="0" width="3" height="{PIN_H}" fill="#F90001" opacity="0.85"/>',
-        # repo icon (filled book/repo glyph approximation)
-        f'<g transform="translate(18, 18)">'
-        f'<path d="M2 0h12a2 2 0 012 2v12a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2zm0 1.5a.5.5 0 00-.5.5v11a.5.5 0 00.5.5h12a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5H2z" '
-        f'fill="{PIN_CARD_ICON_COLOR}" fill-opacity="0.85"/>'
-        f'</g>',
-        # title
-        f'<text x="42" y="32" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="14" font-weight="700" fill="{PIN_CARD_TITLE_COLOR}">'
-        f'{title}</text>',
-        # description (2 lines)
-        f'<text x="20" y="58" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" fill="{PIN_CARD_TEXT_COLOR}" opacity="0.95">'
-        f'{line1}</text>',
+        # Left vertical accent stripe (yellow→red, full height — visual fingerprint of "pin")
+        f'<rect x="0" y="0" width="4" height="{PIN_H}" fill="url(#pinAccent)" rx="2"/>',
     ]
-    if line2:
-        parts.append(
-            f'<text x="20" y="74" '
-            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="12" fill="{PIN_CARD_TEXT_COLOR}" opacity="0.95">'
-            f'{line2}</text>'
-        )
-    # bottom row: language dot+name, stars, forks
+
+    # Header — pin icon + repo name
     parts.append(
-        f'<g transform="translate(20, 100)">'
-        # language color dot
-        f'<circle cx="6" cy="-3" r="6" fill="{lang_color}"/>'
-        # language name
-        f'<text x="18" y="2" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" fill="{PIN_CARD_TITLE_COLOR}">{lang or "—"}</text>'
-        # star icon (5-point star)
-        f'<g transform="translate(150, -8)">'
-        f'<path d="M8 0l2.39 4.84L16 5.6l-4 3.9.94 5.5L8 12.4 3.06 15l.94-5.5-4-3.9 5.61-.76L8 0z" '
-        f'fill="{PIN_CARD_ICON_COLOR}"/>'
+        # Stylized pin emoji (rendered as text — works in pure SVG)
+        f'<text x="20" y="36" font-family="-apple-system,Segoe UI Emoji,sans-serif" '
+        f'font-size="18" fill="#F90001">📌</text>'
+        # Repo name
+        f'<text x="46" y="36" '
+        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
+        f'font-size="17" font-weight="800" fill="#e6edf3" letter-spacing="-0.2">'
+        f'{title}</text>'
+    )
+    # "PINNED" tag on the right
+    parts.append(
+        f'<g transform="translate({PIN_W-72}, 18)">'
+        f'<rect width="58" height="22" rx="11" fill="#0d1117" '
+        f'stroke="#ffde01" stroke-width="1"/>'
+        f'<text x="29" y="15" text-anchor="middle" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="9.5" font-weight="700" fill="#ffde01" letter-spacing="1.5">'
+        f'PINNED</text>'
         f'</g>'
-        f'<text x="172" y="2" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="600" fill="{PIN_CARD_TITLE_COLOR}">{stars}</text>'
-        # fork icon (Y-shape)
-        f'<g transform="translate(220, -10)" stroke="{PIN_CARD_ICON_COLOR}" stroke-width="1.5" fill="none">'
+    )
+
+    # Description (2 lines)
+    desc_y = 64
+    for i, line in enumerate(desc_lines):
+        parts.append(
+            f'<text x="20" y="{desc_y + i*18}" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="12.5" font-weight="400" fill="#c9d1d9" opacity="0.9">'
+            f'{line}</text>'
+        )
+
+    # Topic chips
+    chip_y = 116
+    chip_x = 20
+    for i, t in enumerate(topics):
+        bg, fg = TOPIC_PALETTE[i % len(TOPIC_PALETTE)]
+        chip_w = max(48, len(t) * 6.5 + 14)
+        if chip_x + chip_w > PIN_W - 16:
+            break
+        parts.append(
+            f'<g transform="translate({chip_x}, {chip_y})">'
+            f'<rect width="{chip_w}" height="20" rx="10" fill="#0d1117" '
+            f'stroke="{bg}" stroke-width="1"/>'
+            f'<text x="{chip_w//2}" y="14" text-anchor="middle" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="10" font-weight="600" fill="{fg}" letter-spacing="0.2">'
+            f'{t}</text>'
+            f'</g>'
+        )
+        chip_x += chip_w + 5
+
+    # Footer — language + stars + forks + last commit
+    foot_y = PIN_H - 22
+    # Language dot + name
+    parts.append(
+        f'<circle cx="28" cy="{foot_y-4}" r="6" fill="{lang_color}"/>'
+        f'<text x="40" y="{foot_y}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="600" fill="#c9d1d9">'
+        f'{lang}</text>'
+    )
+    # Stars
+    star_x = 130
+    parts.append(
+        f'<g transform="translate({star_x}, {foot_y-12})">'
+        f'<path d="M8 0l2.39 4.84L16 5.6l-4 3.9.94 5.5L8 12.4 3.06 15l.94-5.5-4-3.9 5.61-.76L8 0z" '
+        f'fill="#ffde01"/>'
+        f'</g>'
+        f'<text x="{star_x+22}" y="{foot_y}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="700" fill="#c9d1d9">'
+        f'{stars}</text>'
+    )
+    # Forks
+    fork_x = star_x + 60
+    parts.append(
+        f'<g transform="translate({fork_x}, {foot_y-12})" stroke="#7d8590" stroke-width="1.5" fill="none">'
         f'<circle cx="3" cy="3" r="2"/>'
         f'<circle cx="13" cy="3" r="2"/>'
         f'<circle cx="8" cy="14" r="2"/>'
         f'<path d="M3 5v3a2 2 0 002 2h6a2 2 0 002-2V5"/>'
         f'<line x1="8" y1="10" x2="8" y2="12"/>'
         f'</g>'
-        f'<text x="244" y="2" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="600" fill="{PIN_CARD_TITLE_COLOR}">{forks}</text>'
-        f'</g>'
+        f'<text x="{fork_x+22}" y="{foot_y}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="700" fill="#c9d1d9">'
+        f'{forks}</text>'
     )
+    # Last commit (right aligned)
+    parts.append(
+        f'<text x="{PIN_W-20}" y="{foot_y}" text-anchor="end" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="11" font-weight="500" fill="#7d8590">'
+        f'updated {pushed}</text>'
+    )
+
     parts.append('</svg>')
 
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -1322,6 +1553,253 @@ def regenerate_pin_svgs(repos: list[dict]) -> None:
             render_pin_svg(r, pins_dir / f"{r['name']}.svg")
         except Exception as e:
             warn(f"pin render failed for {r['name']}: {e}")
+
+
+# --- SELF-HOSTED GITHUB-STATS CARDS ------------------------------------------
+# github-readme-stats.vercel.app has been returning 503 globally for hours,
+# breaking the main stats card and top-languages card. Render them ourselves
+# from real GraphQL/REST data so the README stays alive when the third-party
+# service is down.
+
+STATS_QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    name
+    repositoriesContributedTo(first: 1, contributionTypes: [COMMIT]) { totalCount }
+    pullRequests { totalCount }
+    issues { totalCount }
+    repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+      totalCount
+      nodes { stargazerCount }
+    }
+    contributionsCollection(from: $from, to: $to) {
+      totalCommitContributions
+      totalPullRequestContributions
+      totalIssueContributions
+    }
+  }
+}
+"""
+
+
+def _fmt(n: int) -> str:
+    if n >= 10_000:
+        return f"{n / 1000:.1f}k".replace(".0k", "k")
+    return str(n)
+
+
+def render_main_stats_svg(dest: Path) -> None:
+    """Emulate github-readme-stats main card with codeSTACKr-style theme.
+    Pulls live numbers via GraphQL — independent of the 503'd service."""
+    now = dt.datetime.now(dt.timezone.utc)
+    year_start = dt.datetime(now.year, 1, 1, tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    data = graphql(STATS_QUERY, {"login": GH_USER, "from": year_start, "to": now_iso})
+    user = data["user"]
+    total_stars = sum(r["stargazerCount"] for r in user["repositories"]["nodes"])
+    total_commits_yr = user["contributionsCollection"]["totalCommitContributions"]
+    total_prs = user["pullRequests"]["totalCount"]
+    total_issues = user["issues"]["totalCount"]
+    contributed_to = user["repositoriesContributedTo"]["totalCount"]
+
+    # Title
+    name = user.get("name") or GH_USER
+    title = f"{name}'s GitHub Stats"
+
+    W, H = 495, 195
+    rows = [
+        ("Total Stars Earned",         _fmt(total_stars),       "⭐"),
+        ("Total Commits ({year})".format(year=now.year), _fmt(total_commits_yr), "🕒"),
+        ("Total PRs",                  _fmt(total_prs),          "🔀"),
+        ("Total Issues",               _fmt(total_issues),       "❗"),
+        ("Contributed to (last year)", _fmt(contributed_to),     "🤝"),
+    ]
+
+    # Compute simple "rank" (A+ if all metrics over thresholds, scale down)
+    score = (
+        (1 if total_stars >= 100 else 0) +
+        (1 if total_commits_yr >= 1000 else 0) +
+        (1 if total_prs >= 50 else 0) +
+        (1 if total_issues >= 50 else 0) +
+        (1 if contributed_to >= 10 else 0)
+    )
+    rank_label = ["B", "B+", "A-", "A", "A+", "S"][min(score, 5)]
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
+        f'viewBox="0 0 {W} {H}" role="img" aria-label="{title}">',
+        '<defs>'
+        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#1a1f29"/>'
+        '<stop offset="100%" stop-color="#0d1117"/>'
+        '</linearGradient>'
+        '<linearGradient id="rankRing" x1="0" y1="0" x2="1" y2="1">'
+        '<stop offset="0%" stop-color="#F90001"/>'
+        '<stop offset="100%" stop-color="#FF652F"/>'
+        '</linearGradient>'
+        '</defs>',
+        f'<rect width="{W-2}" height="{H-2}" x="1" y="1" rx="6" '
+        f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
+        # Title
+        f'<text x="20" y="32" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="16" font-weight="700" fill="#c6c6c2">'
+        f'{title}</text>',
+        # Underline accent
+        f'<line x1="20" y1="40" x2="{W-130}" y2="40" stroke="#30363d" stroke-width="1"/>',
+    ]
+
+    # Rows
+    row_y = 65
+    for i, (label, value, icon) in enumerate(rows):
+        y = row_y + i * 22
+        parts.append(
+            f'<text x="20" y="{y}" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif" '
+            f'font-size="14" fill="#ffde01">{icon}</text>'
+            f'<text x="44" y="{y}" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="13" fill="#da644d">{label}:</text>'
+            f'<text x="{W-130}" y="{y}" text-anchor="end" '
+            f'font-family="-apple-system,BlinkMacSystemFont,SF Mono,Monaco,monospace" '
+            f'font-size="14" font-weight="700" fill="#c6c6c2">{value}</text>'
+        )
+
+    # Rank badge (right side)
+    rank_cx, rank_cy = W - 75, H // 2
+    rank_r = 50
+    parts.append(
+        # Outer gradient ring
+        f'<circle cx="{rank_cx}" cy="{rank_cy}" r="{rank_r}" fill="none" '
+        f'stroke="#30363d" stroke-width="6"/>'
+        f'<circle cx="{rank_cx}" cy="{rank_cy}" r="{rank_r}" fill="none" '
+        f'stroke="url(#rankRing)" stroke-width="6" '
+        f'stroke-dasharray="{(score+1)*52} 314" '
+        f'transform="rotate(-90 {rank_cx} {rank_cy})"/>'
+        # Center
+        f'<text x="{rank_cx}" y="{rank_cy+12}" text-anchor="middle" '
+        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,sans-serif" '
+        f'font-size="32" font-weight="900" fill="#c6c6c2">{rank_label}</text>'
+    )
+
+    parts.append('</svg>')
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text("".join(parts), encoding="utf-8")
+
+
+LANGS_QUERY = """
+query($login: String!) {
+  user(login: $login) {
+    repositories(first: 100, ownerAffiliations: OWNER, isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
+      nodes {
+        languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+          edges {
+            size
+            node { name color }
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+
+def render_top_langs_svg(dest: Path, top_n: int = 8) -> None:
+    """Emulate github-readme-stats top-langs compact card. Aggregates language
+    byte counts across all owned non-fork repos."""
+    data = graphql(LANGS_QUERY, {"login": GH_USER})
+    repos = data["user"]["repositories"]["nodes"]
+    totals: dict[str, int] = {}
+    colors: dict[str, str] = {}
+    for r in repos:
+        for edge in r["languages"]["edges"]:
+            n = edge["node"]["name"]
+            totals[n] = totals.get(n, 0) + edge["size"]
+            colors[n] = edge["node"].get("color") or LANG_COLORS.get(n, "#6e7681")
+    if not totals:
+        warn("no language data — skipping top-langs render")
+        return
+    sorted_items = sorted(totals.items(), key=lambda x: -x[1])[:top_n]
+    grand_total = sum(totals.values())
+
+    W, H = 495, 195
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
+        f'viewBox="0 0 {W} {H}" role="img" aria-label="Top Languages">',
+        '<defs>'
+        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#1a1f29"/>'
+        '<stop offset="100%" stop-color="#0d1117"/>'
+        '</linearGradient>'
+        '</defs>',
+        f'<rect width="{W-2}" height="{H-2}" x="1" y="1" rx="6" '
+        f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
+        # Title
+        f'<text x="20" y="32" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="16" font-weight="700" fill="#ff6f00">'
+        f'Most Used Languages</text>',
+        f'<line x1="20" y1="40" x2="{W-20}" y2="40" stroke="#30363d" stroke-width="1"/>',
+    ]
+
+    # Stacked bar
+    bar_x, bar_y, bar_w, bar_h = 20, 56, W - 40, 14
+    cur_x = bar_x
+    for name, size in sorted_items:
+        pct = size / grand_total
+        seg = max(2, int(bar_w * pct))
+        parts.append(
+            f'<rect x="{cur_x}" y="{bar_y}" width="{seg}" height="{bar_h}" '
+            f'fill="{colors[name]}" '
+            + ('rx="7"' if cur_x == bar_x else '')
+            + '/>'
+        )
+        cur_x += seg
+    # Round the right edge of the last segment by overlaying a rounded rect
+    parts.append(
+        f'<rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="{bar_h}" '
+        f'rx="7" fill="none" stroke="#30363d" stroke-width="0.5"/>'
+    )
+
+    # Two-column legend
+    leg_y = bar_y + bar_h + 24
+    col_w = (W - 40) // 2
+    for i, (name, size) in enumerate(sorted_items):
+        col = i % 2
+        row = i // 2
+        x = bar_x + col * col_w
+        y = leg_y + row * 22
+        pct = (size / grand_total) * 100
+        parts.append(
+            f'<circle cx="{x+8}" cy="{y-3}" r="6" fill="{colors[name]}"/>'
+            f'<text x="{x+22}" y="{y}" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="12" font-weight="600" fill="#c6c6c2">{name}</text>'
+            f'<text x="{x+col_w-6}" y="{y}" text-anchor="end" '
+            f'font-family="-apple-system,BlinkMacSystemFont,SF Mono,Monaco,monospace" '
+            f'font-size="11" fill="#7d8590">{pct:.1f}%</text>'
+        )
+
+    parts.append('</svg>')
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text("".join(parts), encoding="utf-8")
+
+
+def regenerate_stats_cards() -> None:
+    stats_dir = Path(ASSETS_DIR) / "stats"
+    stats_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        render_main_stats_svg(stats_dir / "main-stats.svg")
+        print("rendered main-stats.svg")
+    except Exception as e:
+        warn(f"main-stats render failed: {e}")
+    try:
+        render_top_langs_svg(stats_dir / "top-langs.svg")
+        print("rendered top-langs.svg")
+    except Exception as e:
+        warn(f"top-langs render failed: {e}")
 
 
 # --- RICH FEATURED-PROJECT CARD ---------------------------------------------
@@ -1850,6 +2328,13 @@ def main() -> int:
             regenerate_yearly_assets()
         except Exception as e:
             warn(f"yearly asset regeneration failed (continuing with existing files): {e}")
+
+        # Self-hosted GitHub Stats cards — independent of the flaky
+        # github-readme-stats.vercel.app service.
+        try:
+            regenerate_stats_cards()
+        except Exception as e:
+            warn(f"stats cards regeneration failed: {e}")
 
         # Regenerate the About-Me hero SVG too (idempotent — same byte output
         # given same date, so no spurious commits).

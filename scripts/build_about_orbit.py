@@ -10,38 +10,49 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parents[1] / "assets" / "about-orbit.svg"
 
-W, H = 1400, 540
+# Bigger canvas so the outer ring isn't clipped at top/bottom.
+W, H = 1400, 760
 CX, CY = W // 2, H // 2
 
-# Three rings of tech badges, each a different radius and rotation speed.
+# Three rings of tech badges, expanded coverage. Each tuple:
+#   (label, color, ring_index, angle_deg)
 ORBIT = [
-    # (label, color, ring_index 0..2, angle_deg)
-    # Inner ring — primary stack (clockwise, fastest)
-    ("Py",   "#3776ab", 0,    0),
-    ("Dj",   "#0c4b33", 0,   60),
-    ("DRF",  "#a30000", 0,  120),
-    ("Vue",  "#42b883", 0,  180),
-    ("Nx",   "#00dc82", 0,  240),
-    ("TS",   "#3178c6", 0,  300),
-    # Middle ring — data + infra (counter-clockwise)
-    ("PG",   "#336791", 1,    0),
-    ("MySQL","#00758F", 1,   45),
-    ("Rd",   "#dc382d", 1,   90),
-    ("Dk",   "#2496ed", 1,  135),
-    ("Js",   "#f7df1e", 1,  180),
-    ("Tw",   "#06b6d4", 1,  225),
-    ("Ng",   "#009639", 1,  270),
-    ("Cy",   "#37814A", 1,  315),
-    # Outer ring — devops + AI (clockwise, slowest)
-    ("AWS",  "#ff9900", 2,    0),
-    ("Vrcl", "#000000", 2,   60),
-    ("CI",   "#ff652f", 2,  120),
-    ("AI",   "#a855f7", 2,  180),
-    ("RAG",  "#06b6d4", 2,  240),
-    ("CLI",  "#7e57c2", 2,  300),
+    # Inner ring — core daily stack (6, fastest CW)
+    ("Py",      "#3776ab", 0,    0),
+    ("Dj",      "#0c4b33", 0,   60),
+    ("DRF",     "#a30000", 0,  120),
+    ("Vue",     "#42b883", 0,  180),
+    ("Nx",      "#00dc82", 0,  240),
+    ("TS",      "#3178c6", 0,  300),
+
+    # Middle ring — frameworks, data, async (10, CCW)
+    ("FApi",    "#009485", 1,    0),
+    ("Flsk",    "#000000", 1,   36),
+    ("PG",      "#336791", 1,   72),
+    ("MySQL",   "#00758F", 1,  108),
+    ("Rd",      "#dc382d", 1,  144),
+    ("Cy",      "#37814A", 1,  180),
+    ("RMQ",     "#FF6600", 1,  216),
+    ("Tw",      "#06b6d4", 1,  252),
+    ("Bs",      "#7952B3", 1,  288),
+    ("Htmx",    "#3D72D7", 1,  324),
+
+    # Outer ring — devops, cloud, AI/data, tooling (12, slowest CW)
+    ("AWS",     "#ff9900", 2,    0),
+    ("Vrcl",    "#000000", 2,   30),
+    ("Hku",     "#430098", 2,   60),
+    ("Dk",      "#2496ed", 2,   90),
+    ("Ngx",     "#009639", 2,  120),
+    ("Linux",   "#FCC624", 2,  150),
+    ("Git",     "#F05032", 2,  180),
+    ("CI",      "#2088FF", 2,  210),
+    ("PyT",     "#EE4C2C", 2,  240),
+    ("Jpr",     "#F37626", 2,  270),
+    ("AI",      "#a855f7", 2,  300),
+    ("RAG",     "#06b6d4", 2,  330),
 ]
 
-RADII = [120, 200, 290]
+RADII = [140, 230, 330]
 
 
 def render() -> str:
@@ -54,8 +65,7 @@ def render() -> str:
     )
 
     parts.append('<defs>')
-
-    # Background (deep editorial)
+    # Background
     parts.append(
         '<radialGradient id="bg" cx="50%" cy="50%" r="80%">'
         '<stop offset="0%" stop-color="#1a1f2e"/>'
@@ -77,8 +87,7 @@ def render() -> str:
         '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
         '</filter>'
     )
-
-    # Animations — concentric rings rotate at different speeds, breathing core
+    # Animations
     parts.append(
         '<style><![CDATA['
         '@keyframes twinkle{0%,100%{opacity:.18}50%{opacity:1}}'
@@ -101,26 +110,24 @@ def render() -> str:
         '.halo-pulse{animation:haloPulse 4s ease-in-out infinite}'
         ']]></style>'
     )
-
     parts.append('</defs>')
 
-    # Backdrop
     parts.append(f'<rect width="{W}" height="{H}" fill="url(#bg)"/>')
-    # Halo behind the city
+    # Halo
     parts.append(
         f'<g class="halo-pulse">'
-        f'<circle cx="{CX}" cy="{CY}" r="320" fill="url(#halo)"/>'
+        f'<circle cx="{CX}" cy="{CY}" r="380" fill="url(#halo)"/>'
         f'</g>'
     )
 
-    # Starfield — sparse, professional
+    # Starfield
     parts.append('<g fill="#e6edf3">')
     star_classes = ['', 'b', 'c']
-    for _ in range(70):
+    for _ in range(90):
         sx = rng.randint(8, W - 8)
         sy = rng.randint(8, H - 8)
         # Avoid placing stars inside the orbit area for clarity
-        if abs(sx - CX) < RADII[2] + 30 and abs(sy - CY) < RADII[2] + 30:
+        if abs(sx - CX) < RADII[2] + 50 and abs(sy - CY) < RADII[2] + 50:
             if rng.random() < 0.7:
                 continue
         sr = rng.choice([0.4, 0.6, 0.9])
@@ -132,7 +139,7 @@ def render() -> str:
         )
     parts.append('</g>')
 
-    # Top-left tag
+    # Top tags
     parts.append(
         f'<text x="60" y="42" '
         f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
@@ -141,19 +148,19 @@ def render() -> str:
         f'<text x="{W-60}" y="42" text-anchor="end" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
         f'font-size="13" font-weight="600" fill="#7d8590" letter-spacing="2">'
-        f'orbiting technologies · drag to imagine</text>'
+        f'orbiting technologies · 28 in active rotation</text>'
     )
 
-    # Subtitle — section caption
+    # Bottom caption
     parts.append(
         f'<text x="{CX}" y="{H-30}" text-anchor="middle" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
         f'font-size="14" font-weight="500" fill="#7d8590" font-style="italic" '
         f'letter-spacing="0.5">'
-        f'Languages · Frameworks · Data · Infra · DevOps · AI</text>'
+        f'Languages · Frameworks · Data · Async · Frontend · DevOps · Cloud · AI</text>'
     )
 
-    # Concentric guide rings (thin, faint)
+    # Concentric guide rings
     for r in RADII:
         parts.append(
             f'<circle cx="{CX}" cy="{CY}" r="{r}" '
@@ -176,7 +183,7 @@ def render() -> str:
             theta = math.radians(angle)
             tx = CX + r * math.cos(theta)
             ty = CY + r * math.sin(theta)
-            badge_r = 28 if ring_idx == 0 else (24 if ring_idx == 1 else 22)
+            badge_r = 30 if ring_idx == 0 else (26 if ring_idx == 1 else 24)
             font_size = 14 if len(label) <= 2 else (12 if len(label) <= 3 else 10)
             # Halo
             parts.append(
@@ -188,7 +195,7 @@ def render() -> str:
                 f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="{badge_r}" '
                 f'fill="#0d1117" stroke="{color}" stroke-width="2.5"/>'
             )
-            # Inner glow on the rim
+            # Inner glow rim
             parts.append(
                 f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="{badge_r-2}" '
                 f'fill="none" stroke="{color}" stroke-width="1" opacity="0.35"/>'
@@ -202,31 +209,26 @@ def render() -> str:
             )
         parts.append('</g>')
 
-    # Center core — bigger and more polished than the hero version
-    core_r = 72
+    # Center core
+    core_r = 80
     parts.append(
         f'<g class="core" filter="url(#bloom)">'
-        # Outer glow ring
-        f'<circle cx="{CX}" cy="{CY}" r="{core_r+12}" fill="url(#coreGrad)" opacity="0.25"/>'
-        # Solid colored ring
-        f'<circle cx="{CX}" cy="{CY}" r="{core_r+4}" fill="none" '
+        f'<circle cx="{CX}" cy="{CY}" r="{core_r+14}" fill="url(#coreGrad)" opacity="0.25"/>'
+        f'<circle cx="{CX}" cy="{CY}" r="{core_r+5}" fill="none" '
         f'stroke="url(#coreGrad)" stroke-width="3"/>'
-        # Inner disc
         f'<circle cx="{CX}" cy="{CY}" r="{core_r}" '
         f'fill="#0d1117" stroke="#161b22" stroke-width="2"/>'
-        # Bolt symbol
-        f'<text x="{CX}" y="{CY+18}" text-anchor="middle" '
+        f'<text x="{CX}" y="{CY+22}" text-anchor="middle" '
         f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-        f'font-size="56" font-weight="900" fill="#39d353">⚡</text>'
-        # Label under bolt — actually overlaying outside
+        f'font-size="64" font-weight="900" fill="#39d353">⚡</text>'
         f'</g>'
     )
 
-    # Big "AB" mark above the core (hover mark)
+    # Username caption above core
     parts.append(
-        f'<text x="{CX}" y="{CY-90}" text-anchor="middle" '
+        f'<text x="{CX}" y="{CY-110}" text-anchor="middle" '
         f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-        f'font-size="13" font-weight="700" fill="#7d8590" letter-spacing="3" '
+        f'font-size="14" font-weight="700" fill="#7d8590" letter-spacing="3" '
         f'text-transform="uppercase">'
         f'@AbdullahBakir97</text>'
     )
