@@ -733,9 +733,9 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <h3 align="center">🎨 3D Animated Profile</h3>
 
-<p align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — rainbow" />
-</p>
+<!-- 3D_GRID:START -->
+<table align="center" width="100%"><tr><td colspan="3" align="center"><img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="AbdullahBakir97 — 3D contribution profile, night-rainbow style — 2026 (rolling 365 days)"><p><b>2026 <sub>(live · rolling 365 days)</sub></b></p></td></tr><tr><td width="33%" align="center"><img src="./profile-3d-contrib/2023/profile-night-rainbow.svg" width="100%" alt="AbdullahBakir97 — 3D contribution profile 2023"><p><b>2023</b></p></td><td width="33%" align="center"><img src="./profile-3d-contrib/2024/profile-night-rainbow.svg" width="100%" alt="AbdullahBakir97 — 3D contribution profile 2024"><p><b>2024</b></p></td><td width="33%" align="center"><img src="./profile-3d-contrib/2025/profile-night-rainbow.svg" width="100%" alt="AbdullahBakir97 — 3D contribution profile 2025"><p><b>2025</b></p></td></tr></table>
+<!-- 3D_GRID:END -->
 
 <details>
 <summary align="center"><b>More 3D styles</b> — night-view, gitblock, season-animate, south-season</summary>

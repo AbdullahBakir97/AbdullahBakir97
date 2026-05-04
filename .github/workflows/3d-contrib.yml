@@ -11,20 +11,56 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
-      # NOTE: The yoshi389111/github-profile-3d-contrib action's `YEAR` env var
-      # is documented but doesn't actually filter rendered data — every value
-      # produces a byte-identical rolling-window SVG (verified 2026-05-04 via
-      # sha1sum on profile-night-rainbow across YEAR=2023/2024/2025). We
-      # therefore drop the per-year matrix entirely. Per-year contribution
-      # visuals are already covered by our self-rendered skylines + heatmaps
-      # in the GitHub Skylines section. This workflow now only refreshes the
-      # rolling-window style variants.
-      - name: Generate rolling-window style variants
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+      # The yoshi389111 action writes the same set of style filenames
+      # (profile-night-rainbow.svg, profile-night-view.svg, ...) every run,
+      # so we invoke it once per year and shuffle outputs into a year folder
+      # before the next call overwrites them.
+      #
+      # IMPORTANT: the YEAR env var requires v0.8.0+ — earlier versions
+      # silently ignore it and produce identical rolling-window output for
+      # every YEAR value. We pin to 0.9.2 (current latest) which fetches
+      # contributionsCollection(from, to) per year via GraphQL.
+      - name: Generate 2023 (year-locked via GraphQL)
+        uses: yoshi389111/github-profile-3d-contrib@0.9.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: "2023"
+      - name: Stash 2023 outputs
+        run: |
+          mkdir -p profile-3d-contrib/2023
+          mv profile-3d-contrib/profile-*.svg profile-3d-contrib/2023/
+
+      - name: Generate 2024 (year-locked via GraphQL)
+        uses: yoshi389111/github-profile-3d-contrib@0.9.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: "2024"
+      - name: Stash 2024 outputs
+        run: |
+          mkdir -p profile-3d-contrib/2024
+          mv profile-3d-contrib/profile-*.svg profile-3d-contrib/2024/
+
+      - name: Generate 2025 (year-locked via GraphQL)
+        uses: yoshi389111/github-profile-3d-contrib@0.9.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: "2025"
+      - name: Stash 2025 outputs
+        run: |
+          mkdir -p profile-3d-contrib/2025
+          mv profile-3d-contrib/profile-*.svg profile-3d-contrib/2025/
+
+      # Final pass — no YEAR set → rolling window (current 365 days).
+      # Outputs land at the canonical paths used as the hero tile in README.
+      - name: Generate live (rolling window — 2026 hero)
+        uses: yoshi389111/github-profile-3d-contrib@0.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
@@ -38,7 +74,7 @@ jobs:
             echo "no changes to commit"
             exit 0
           fi
-          git commit -m "chore(3d-contrib): regenerate rolling-window 3D contribution style variants"
+          git commit -m "chore(3d-contrib): regenerate per-year + rolling profile contribution SVGs"
           for i in 1 2 3 4 5; do
             if git push; then
               echo "push succeeded on attempt $i"
