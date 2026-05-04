@@ -295,7 +295,9 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
     contributionsCollection(from: $from, to: $to) {
       totalCommitContributions
       totalPullRequestContributions
-      totalRepositoriesWithContributedCommits
+      commitContributionsByRepository(maxRepositories: 100) {
+        repository { name }
+      }
     }
   }
 }
@@ -307,6 +309,12 @@ def fetch_year_stats() -> str:
     end = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     data = graphql(STATS_QUERY, {"login": GH_USER, "from": start, "to": end})
     cc = data["user"]["contributionsCollection"]
+    # `totalRepositoriesWithContributedCommits` was removed from the GraphQL
+    # schema; derive it from commitContributionsByRepository instead.
+    active_repos = len({
+        n["repository"]["name"]
+        for n in cc.get("commitContributionsByRepository", [])
+    })
 
     new_repos_q = (
         f"https://api.github.com/search/repositories?q="
@@ -325,7 +333,7 @@ def fetch_year_stats() -> str:
         f'<img src="https://img.shields.io/badge/Commits-{cc["totalCommitContributions"]}-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> '
         f'<img src="https://img.shields.io/badge/PRs-{cc["totalPullRequestContributions"]}-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> '
         f'<img src="https://img.shields.io/badge/New_Repos-{new_repos_count}-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> '
-        f'<img src="https://img.shields.io/badge/Active_in-{cc["totalRepositoriesWithContributedCommits"]}_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" />'
+        f'<img src="https://img.shields.io/badge/Active_in-{active_repos}_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" />'
         "</p>"
     )
 
@@ -1561,7 +1569,7 @@ def regenerate_pin_svgs(repos: list[dict]) -> None:
 # from real GraphQL/REST data so the README stays alive when the third-party
 # service is down.
 
-STATS_QUERY = """
+MAIN_STATS_QUERY = """
 query($login: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $login) {
     name
@@ -1594,7 +1602,7 @@ def render_main_stats_svg(dest: Path) -> None:
     now = dt.datetime.now(dt.timezone.utc)
     year_start = dt.datetime(now.year, 1, 1, tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-    data = graphql(STATS_QUERY, {"login": GH_USER, "from": year_start, "to": now_iso})
+    data = graphql(MAIN_STATS_QUERY, {"login": GH_USER, "from": year_start, "to": now_iso})
     user = data["user"]
     total_stars = sum(r["stargazerCount"] for r in user["repositories"]["nodes"])
     total_commits_yr = user["contributionsCollection"]["totalCommitContributions"]
@@ -1787,6 +1795,191 @@ def render_top_langs_svg(dest: Path, top_n: int = 8) -> None:
     dest.write_text("".join(parts), encoding="utf-8")
 
 
+def render_streak_svg(dest: Path) -> None:
+    """Self-hosted GitHub streak card. Matches github-readme-streak-stats
+    visual style + codeSTACKr theme. Computes streak from the live
+    contributionCalendar so it's accurate the moment commits register
+    (no upstream caching). Three columns: Total Contributions ·
+    Current Streak · Longest Streak."""
+    # GraphQL contributionsCollection caps at 1-year windows. Stitch multiple
+    # one-year fetches so streaks crossing year boundaries compute correctly.
+    now = dt.datetime.now(dt.timezone.utc)
+    today = now.date()
+
+    days: list[tuple[dt.date, int]] = []
+    for years_back in (2, 1, 0):
+        end_year = now.year - years_back
+        from_dt = dt.datetime(end_year, 1, 1, tzinfo=dt.timezone.utc)
+        to_dt = (
+            now
+            if years_back == 0
+            else dt.datetime(end_year, 12, 31, 23, 59, 59, tzinfo=dt.timezone.utc)
+        )
+        try:
+            data = graphql(CONTRIB_QUERY, {
+                "login": GH_USER,
+                "from": from_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "to":   to_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            })
+            weeks = data["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+            for w in weeks:
+                for d in w["contributionDays"]:
+                    try:
+                        date = dt.date.fromisoformat(d["date"])
+                        days.append((date, d["contributionCount"]))
+                    except Exception:
+                        continue
+        except Exception as e:
+            warn(f"streak window {end_year} fetch failed: {e}")
+
+    # Dedupe (each year may overlap a few days at boundaries) and sort
+    seen: dict[dt.date, int] = {}
+    for d, c in days:
+        seen[d] = max(seen.get(d, 0), c)
+    days = sorted(seen.items())
+    days = [d for d in days if d[0] <= today]
+
+    total = sum(c for _, c in days)
+    first_contrib = next((d for d, c in days if c > 0), None)
+
+    # Current streak — walk backwards from today; allow today to be 0 if
+    # there's still time left in the day, but stop once we hit yesterday=0.
+    current = 0
+    cs_start = None
+    for date, count in reversed(days):
+        if count > 0:
+            current += 1
+            cs_start = date
+        else:
+            if date == today:
+                # Today has no contributions yet — don't break the streak
+                # as long as yesterday counts.
+                continue
+            break
+    # `%-d` (no zero padding) is POSIX-only, breaks on Windows. Build manually.
+    def fmt_date(d):
+        if d is None: return "—"
+        return d.strftime("%b ") + str(d.day) + d.strftime(", %Y")
+    cs_range = f"{fmt_date(cs_start)} - Present" if cs_start else "—"
+
+    # Longest streak
+    longest = 0
+    longest_start = longest_end = None
+    run = 0
+    run_start = None
+    for date, count in days:
+        if count > 0:
+            if run == 0:
+                run_start = date
+            run += 1
+            if run > longest:
+                longest = run
+                longest_start = run_start
+                longest_end = date
+        else:
+            run = 0
+            run_start = None
+    ls_range = (
+        f"{fmt_date(longest_start)} - {fmt_date(longest_end)}"
+        if longest_start else "—"
+    )
+
+    # Total date range
+    last_contrib = next((d for d, c in reversed(days) if c > 0), today)
+    total_range = (
+        f"{fmt_date(first_contrib)} - {'Present' if last_contrib >= today - dt.timedelta(days=1) else fmt_date(last_contrib)}"
+        if first_contrib else "—"
+    )
+
+    W, H = 495, 195
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
+        f'viewBox="0 0 {W} {H}" role="img" aria-label="GitHub Streak">',
+        '<defs>'
+        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#1a1f29"/>'
+        '<stop offset="100%" stop-color="#0d1117"/>'
+        '</linearGradient>'
+        # Flame gradient for the current-streak ring
+        '<linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#ffd700"/>'
+        '<stop offset="100%" stop-color="#d60606"/>'
+        '</linearGradient>'
+        '</defs>',
+        f'<rect width="{W-2}" height="{H-2}" x="1" y="1" rx="6" '
+        f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
+    ]
+
+    # Three vertical columns
+    col_w = W // 3
+    columns = [
+        ("Total Contributions", _fmt(total),       total_range),
+        ("Current Streak",      str(current),      cs_range),
+        ("Longest Streak",      str(longest),      ls_range),
+    ]
+
+    for i, (label, value, sub) in enumerate(columns):
+        cx = i * col_w + col_w // 2
+
+        # Big value at center
+        is_streak = i == 1
+        if is_streak:
+            # Highlighted with flame ring
+            parts.append(
+                f'<circle cx="{cx}" cy="60" r="32" fill="none" '
+                f'stroke="url(#flame)" stroke-width="3"/>'
+                f'<text x="{cx}" y="73" text-anchor="middle" '
+                f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
+                f'font-size="40" font-weight="800" fill="#ffd700">'
+                f'{value}</text>'
+            )
+        else:
+            parts.append(
+                f'<text x="{cx}" y="73" text-anchor="middle" '
+                f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
+                f'font-size="40" font-weight="800" fill="#c6c6c2">'
+                f'{value}</text>'
+            )
+
+        # Label
+        parts.append(
+            f'<text x="{cx}" y="115" text-anchor="middle" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="13" font-weight="700" fill="#da644d" letter-spacing="0.3">'
+            f'{label}</text>'
+        )
+
+        # Date range / subtitle
+        parts.append(
+            f'<text x="{cx}" y="138" text-anchor="middle" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="11" font-weight="500" fill="#7d8590">'
+            f'{sub}</text>'
+        )
+
+        # Flame icon for the streak column (just under the value circle)
+        if is_streak:
+            parts.append(
+                f'<g transform="translate({cx-7}, 152)">'
+                f'<path d="M7 0 C 4 4, 0 7, 0 11 C 0 15, 3 18, 7 18 C 11 18, 14 15, 14 11 '
+                f'C 14 8, 12 5, 10 4 C 11 6, 10 8, 9 8 C 9 6, 8 3, 7 0 Z" '
+                f'fill="url(#flame)"/>'
+                f'</g>'
+            )
+
+        # Vertical separator (between columns)
+        if i > 0:
+            sx = i * col_w
+            parts.append(
+                f'<line x1="{sx}" y1="40" x2="{sx}" y2="{H-30}" '
+                f'stroke="#30363d" stroke-width="1"/>'
+            )
+
+    parts.append('</svg>')
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text("".join(parts), encoding="utf-8")
+
+
 def regenerate_stats_cards() -> None:
     stats_dir = Path(ASSETS_DIR) / "stats"
     stats_dir.mkdir(parents=True, exist_ok=True)
@@ -1800,6 +1993,11 @@ def regenerate_stats_cards() -> None:
         print("rendered top-langs.svg")
     except Exception as e:
         warn(f"top-langs render failed: {e}")
+    try:
+        render_streak_svg(stats_dir / "streak.svg")
+        print("rendered streak.svg")
+    except Exception as e:
+        warn(f"streak render failed: {e}")
 
 
 # --- RICH FEATURED-PROJECT CARD ---------------------------------------------
