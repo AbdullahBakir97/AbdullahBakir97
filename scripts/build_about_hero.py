@@ -6,12 +6,26 @@ The capsule-render banner at the very top of the README already carries
 the user's name, role, and locations — so this hero focuses on what's
 NEXT: what I'm actively shipping, my philosophy, and live stats. The
 right-hand avatar block stays as the visual anchor.
+
+The avatar embeds assets/abdullah.jpg as base64 data URI so the SVG is
+fully self-contained (no relative-path resolution gotchas inside
+GitHub's camo image proxy).
 """
+import base64
 import datetime as dt
 import random
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parents[1] / "assets" / "about-hero.svg"
+ASSETS = Path(__file__).resolve().parents[1] / "assets"
+OUT = ASSETS / "about-hero.svg"
+PHOTO = ASSETS / "abdullah.jpg"
+
+
+def _photo_data_uri() -> str | None:
+    if not PHOTO.exists():
+        return None
+    raw = PHOTO.read_bytes()
+    return "data:image/jpeg;base64," + base64.b64encode(raw).decode("ascii")
 
 W, H = 1400, 460
 
@@ -169,6 +183,7 @@ def render() -> str:
 
     # ── Avatar (right side) — kept as the visual anchor ───────────────────
     av_cx, av_cy, av_r = W - 220, 220, 110
+    photo_uri = _photo_data_uri()
     parts.append(
         # Outer dashed rotating ring
         f'<g style="transform-origin:{av_cx}px {av_cy}px;'
@@ -180,14 +195,37 @@ def render() -> str:
         # Solid gradient ring
         f'<circle cx="{av_cx}" cy="{av_cy}" r="{av_r+5}" fill="none" '
         f'stroke="url(#avatarRing)" stroke-width="3"/>'
-        # Inner avatar disc
-        f'<circle cx="{av_cx}" cy="{av_cy}" r="{av_r}" '
-        f'fill="url(#avatarFill)" stroke="#161b22" stroke-width="2"/>'
-        # Initials
-        f'<text x="{av_cx}" y="{av_cy+30}" text-anchor="middle" '
-        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-        f'font-size="92" font-weight="900" fill="#e6edf3" letter-spacing="-3">AB</text>'
     )
+
+    if photo_uri:
+        # Define a clipPath the size of the avatar so the photo crops
+        # to a circle. (clipPath is referenced via clip-path="url(#…)".)
+        parts.append(
+            f'<defs><clipPath id="avatarClip">'
+            f'<circle cx="{av_cx}" cy="{av_cy}" r="{av_r}"/>'
+            f'</clipPath></defs>'
+            # Inner border ring (sits above the photo for a clean edge)
+            f'<circle cx="{av_cx}" cy="{av_cy}" r="{av_r}" '
+            f'fill="#0d1117"/>'
+            # The actual photo, clipped to the circle
+            f'<image href="{photo_uri}" '
+            f'x="{av_cx-av_r}" y="{av_cy-av_r}" '
+            f'width="{av_r*2}" height="{av_r*2}" '
+            f'preserveAspectRatio="xMidYMid slice" '
+            f'clip-path="url(#avatarClip)"/>'
+            # Subtle inner border on top of the photo for depth
+            f'<circle cx="{av_cx}" cy="{av_cy}" r="{av_r}" '
+            f'fill="none" stroke="#161b22" stroke-width="2"/>'
+        )
+    else:
+        # Fallback to "AB" initials if the photo file is missing
+        parts.append(
+            f'<circle cx="{av_cx}" cy="{av_cy}" r="{av_r}" '
+            f'fill="url(#avatarFill)" stroke="#161b22" stroke-width="2"/>'
+            f'<text x="{av_cx}" y="{av_cy+30}" text-anchor="middle" '
+            f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
+            f'font-size="92" font-weight="900" fill="#e6edf3" letter-spacing="-3">AB</text>'
+        )
     # Pulsing availability dot
     dot_x, dot_y = av_cx + 78, av_cy + 78
     parts.append(
