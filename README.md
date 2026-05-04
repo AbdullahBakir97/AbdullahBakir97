@@ -8,7 +8,7 @@
 <!-- 🐙 PROFESSIONAL GITHUB IDENTIFIER — pulsing brand-red halo + Invertocat -->
 <p align="center">
   <a href="https://github.com/AbdullahBakir97" aria-label="GitHub profile">
-    <img src="./assets/github-icon.svg" width="96" height="96" alt="GitHub @AbdullahBakir97" />
+    <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/github-icon.svg" width="96" height="96" alt="GitHub @AbdullahBakir97" />
   </a>
 </p>
 
@@ -97,7 +97,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 
 <!-- 💬 single rotating motto line — color changes per text shown -->
 <div align="center">
-  <img src="./assets/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
 </div>
 
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
@@ -109,7 +109,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- QUOTE:END -->
 
 <div align="center">
-  <img src="./assets/animated-divider.svg" width="100%" alt="" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/animated-divider.svg" width="100%" alt="" />
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -156,7 +156,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💎 Elite tech stack cards — single SVG, 6 glassmorphism cards in 3×2 grid
      with accent stripes, stats, and animated proficiency bars (Vercel/Linear aesthetic) -->
 <a href="https://github.com/AbdullahBakir97?tab=repositories">
-  <img src="./assets/tech-cards.svg" width="100%" alt="Tech Stack — Backend, Frontend, Architecture, Data Layer, DevOps, AI &amp; Data" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/tech-cards.svg" width="100%" alt="Tech Stack — Backend, Frontend, Architecture, Data Layer, DevOps, AI &amp; Data" />
 </a>
 
 <br/><br/>
@@ -178,7 +178,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 </p>
 
 <p align="center">
-  <img src="./assets/brain-anatomical.svg" width="80%" alt="Neural Skill Atlas — anatomically-accurate human brain (lateral view) recolored with neon gradient, pulsing" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/brain-anatomical.svg" width="80%" alt="Neural Skill Atlas — anatomically-accurate human brain (lateral view) recolored with neon gradient, pulsing" />
 </p>
 
 <p align="center">
@@ -226,7 +226,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <h2 id="focus" align="center">🎯 Current Focus</h2>
 
 <p align="center">
-  <img src="./assets/current-focus.svg" width="100%" alt="Now working on: PyDev, Baeckrei, Stock-Manager, Generative AI, Docker/CI-CD, Media Archive — 6 active focus tiles" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/current-focus.svg" width="100%" alt="Now working on: PyDev, Baeckrei, Stock-Manager, Generative AI, Docker/CI-CD, Media Archive — 6 active focus tiles" />
 </p>
 
 <!-- YEARLY HIGHLIGHTS -->
@@ -241,7 +241,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <h2 id="highlights" align="center">🚀 Yearly Highlights</h2>
 
 <p align="center">
-  <img src="./assets/yearly-highlights.svg" width="100%" alt="Career timeline 2024 → 2026 — Foundation, Growth, Tooling &amp; Reach" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/yearly-highlights.svg" width="100%" alt="Career timeline 2024 → 2026 — Foundation, Growth, Tooling &amp; Reach" />
 </p>
 
 <!-- 📊 Live stats — auto-refreshed daily from GitHub GraphQL by readme.yml -->
@@ -768,7 +768,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <!-- 📝 GUESTBOOK — visitors leave a message via a pre-filled issue template -->
 <div align="center">
-  <img src="./assets/animated-divider.svg" width="100%" alt="" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/animated-divider.svg" width="100%" alt="" />
 </div>
 
 <h2 id="guestbook" align="center">📝 Guestbook</h2>
