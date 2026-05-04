@@ -304,13 +304,13 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
 
-<h2 id="achievements" align="center">🏆 GitHub Achievements</h2>
+<h2 id="achievements" align="center">🏆 GitHub Achievements &amp; Trophies</h2>
 
-<p align="center"><i>All achievements unlocked across public repositories — including secret ones — auto-refreshed daily by the Metrics workflow.</i></p>
+<p align="center"><i>Live trophies across stars, commits, repos, PRs, issues, and follows — auto-rendered by <a href="https://github.com/ryo-ma/github-profile-trophy">github-profile-trophy</a>. The full GitHub-native achievements list lives on my <a href="https://github.com/AbdullahBakir97?tab=achievements">profile achievements tab</a>.</i></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97?tab=achievements">
-    <img src="https://raw.githubusercontent.com/AbdullahBakir97/AbdullahBakir97/metrics-output/github-metrics-achievements.svg" width="100%" alt="GitHub Achievements" />
+    <img src="https://github-profile-trophy.vercel.app/?username=AbdullahBakir97&theme=radical&row=2&column=4&margin-w=10&margin-h=10&no-bg=false&no-frame=false" width="100%" alt="AbdullahBakir97's GitHub trophies" />
   </a>
 </div>
 

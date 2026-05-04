@@ -31,14 +31,12 @@ jobs:
           plugin_languages_threshold: 0%
           plugin_lines: yes
           plugin_stargazers: yes
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          # secrets: yes triggers the Projects-Classic query inside users.mjs
-          # which crashes the panel (upstream issue #1706). The ignored: Manager
-          # filter only affects display, not the underlying fetch. Disable
-          # secrets to render only the public-tier achievements.
-          plugin_achievements_secrets: no
-          plugin_achievements_threshold: C
+          # plugin_achievements is intentionally disabled — the underlying
+          # users.mjs query relies on the deprecated Projects-Classic GraphQL
+          # field and unconditionally fails (upstream issue lowlighter/metrics#1706).
+          # Even plugin_achievements_secrets: no doesn't help because the query
+          # is issued before any filter applies. README uses github-profile-trophy
+          # for the achievements-style display instead.
           plugin_wakatime: yes
           plugin_wakatime_days: 7
           plugin_wakatime_limit: 5
@@ -90,32 +88,12 @@ jobs:
           committer_message: Update stargazers metrics
           output_action: commit
 
-      # Standalone achievements panel — referenced as its own section in README
-      # (separate from the achievements that also appear inside github-metrics.svg
-      #  via the first job's plugin_achievements: yes).
-      - uses: lowlighter/metrics@latest
-        continue-on-error: true  # action commits SVG successfully then crashes in post-completion logging — known v3.34 bug
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: AbdullahBakir97
-          template: classic
-          config_timezone: Europe/Berlin
-          filename: github-metrics-achievements.svg
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_display: detailed
-          # plugin_achievements_secrets: yes is intentionally OFF here.
-          # The "Manager" secret achievement queries the deprecated Projects
-          # Classic GraphQL field and crashes the whole panel (upstream
-          # issue #1706). plugin_achievements_ignored: Manager only filters
-          # display, not the underlying fetch — so secrets:yes still triggers
-          # the broken query. Public-tier achievements render fine without it.
-          plugin_achievements_secrets: no
-          plugin_achievements_threshold: C
-          plugin_achievements_limit: 0
-          committer_branch: metrics-output
-          committer_message: Update achievements metrics
-          output_action: commit
+      # NOTE: Dedicated achievements step removed.
+      # Upstream lowlighter/metrics#1706 (Projects-Classic deprecation, May 2024)
+      # makes the achievements plugin issue a failing GraphQL query in users.mjs
+      # regardless of any filter (ignored / secrets / threshold all act AFTER
+      # the broken fetch). The SVG ends up baked with "Unexpected error".
+      # README now sources its achievements display from github-profile-trophy.
 
   # Compute the list of years to render skylines/cities for: from START_YEAR
   # to the current year. Auto-extends every Jan 1 with no edits required.
