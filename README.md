@@ -50,9 +50,9 @@
 <!-- ============================================================ -->
 <h2 id="about" align="center">💻 About Me</h2>
 
-<!-- 🎨 Single rotating terminal line — color changes per text shown -->
+<!-- 💬 Rotating motto ticker — 50 dev mottos cycling -->
 <div align="center">
-  <img src="./assets/about-typing.svg" alt="terminal animation: $ whoami → $ cat about.py → # nice to meet you" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
 </div>
 
 <!-- 🌟 Editorial hero banner — name, role, availability, stats -->
@@ -152,9 +152,9 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
   </a>
 </p>
 
-<!-- 💬 Rotating motto ticker — 50 dev mottos cycling, Tech Stack header -->
+<!-- 🎨 Single rotating terminal line — color changes per text shown, Tech Stack header -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
+  <img src="./assets/about-typing.svg" alt="terminal animation: $ whoami → $ cat about.py → # nice to meet you" />
 </div>
 
 <br/>
