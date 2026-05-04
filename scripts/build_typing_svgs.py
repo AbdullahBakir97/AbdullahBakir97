@@ -23,59 +23,62 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT  = os.path.dirname(SCRIPT_DIR)
 
 
-# ── ABOUT (terminal commands) — 30 lines, 60s cycle, 2s per line ─────────────
+# ── ABOUT (terminal commands) — 50 lines, 100s cycle, 2s per line ────────────
+# 50/50 split between Mac/Linux ($) and Windows PowerShell (PS>) prompts,
+# alternating to showcase both platform vocabularies.
 ABOUT_LINES = [
-    ("$ whoami",                                       "#00C853"),  # green: terminal prompt
-    ("$ pwd",                                          "#22D3EE"),  # cyan: location
-    ("$ cat about.py",                                 "#FF652F"),  # orange: file path
-    ("$ ls projects/",                                 "#EC4899"),  # magenta: listing
-    ("$ git status",                                   "#F90001"),  # red: state check
-    ("$ history | head",                               "#A78BFA"),  # purple: past commands
-    ("$ uptime",                                       "#34D399"),  # green: system info
-    ("$ cat skills.json",                              "#FFD700"),  # gold: skills metadata
-    ("$ python --version",                             "#00C853"),  # green: tool version
-    ("$ tree -L 1",                                    "#22D3EE"),  # cyan: structure
-    ("$ docker ps",                                    "#FF652F"),  # orange: containers
-    ("$ git log --oneline | head -3",                  "#EC4899"),  # magenta: recent commits
-    ("$ stack list",                                   "#F90001"),  # red: tech stack
-    ("$ npm list -g --depth=0",                        "#A78BFA"),  # purple: globals
-    ("$ which python",                                 "#34D399"),  # green: locate
-    ("$ ls -la ~/code",                                "#FFD700"),  # gold: workspace
-    ("$ pytest -q",                                    "#00C853"),  # green: test
-    ("$ make build",                                   "#22D3EE"),  # cyan: build
-    ("$ curl api.github.com/users/AbdullahBakir97",    "#FF652F"),  # orange: api call
-    ("$ docker compose up -d",                         "#EC4899"),  # magenta: orchestrate
-    ("$ tmux attach",                                  "#F90001"),  # red: session
-    ("$ vim ~/.config/me",                             "#A78BFA"),  # purple: edit
-    ("$ echo $LANG",                                   "#34D399"),  # green: env
-    ("$ ssh prod -t htop",                             "#FFD700"),  # gold: monitor
-    ("$ ps aux | grep python",                         "#00C853"),  # green: processes
-    ("$ git push origin main",                         "#22D3EE"),  # cyan: deploy
-    ("$ tail -f /var/log/app.log",                     "#FF652F"),  # orange: logs
-    ("$ man developer",                                "#EC4899"),  # magenta: meta
-    ("$ exit 0",                                       "#A78BFA"),  # purple: clean exit
-    ("# open to collab",                               "#FFD700"),  # gold: comment
-    # ─── 20 personal lines: actual projects, daily commands, Abdullah's work ─
-    ("$ cd ~/projects/baeckrei && make dev",           "#34D399"),  # bakery dev mode
-    ("$ python -m pydev create my-app",                "#F90001"),  # PyDev platform
-    ("$ stock-manager --inventory --low-stock",        "#FFD700"),  # Stock-Manager
-    ("$ python -m issue_triage_bot run",               "#A78BFA"),  # GitHub App
-    ("$ python -m pr_coach review",                    "#22D3EE"),  # GitHub App
-    ("$ python -m commit_craft check HEAD",            "#FF652F"),  # GitHub App
-    ("$ python -m repodoc_ai generate",                "#EC4899"),  # GitHub App
-    ("$ python -m ai_quality_gate scan",               "#00C853"),  # GitHub App
-    ("$ docker compose -f baeckrei.yml up -d",         "#FFD700"),  # bakery prod
-    ("$ deploy.sh barber-salon-prod",                  "#F90001"),  # client deploy
-    ("$ tail -f /var/log/baeckrei.log",                "#34D399"),  # monitoring
-    ("$ npx nuxt build && npx nuxt start",             "#22D3EE"),  # Vue/Nuxt
-    ("$ python manage.py migrate baeckrei",            "#A78BFA"),  # Django migration
-    ("$ rabbitmq-plugins enable rabbitmq_management",  "#FF652F"),  # RabbitMQ
-    ("$ ssh tawil-media-prod",                         "#EC4899"),  # client server
-    ("$ git checkout -b feature/recipe-scheduler",     "#00C853"),  # branch
-    ("$ pytest baeckrei/tests/test_orders.py -v",      "#FFD700"),  # test
-    ("$ gh extension install AbdullahBakir97/pydev",   "#F90001"),  # PyDev install
-    ("$ python -c 'import abdullah; help(abdullah)'",  "#A78BFA"),  # meta
-    ("# made in Germany, for small shops worldwide",   "#22D3EE"),  # signature
+    # ── Mac/Win alternating: identity, files, processes, dev tooling ─────────
+    ("$ whoami",                                       "#00C853"),  # mac: green
+    ("PS> $env:USERNAME",                              "#22D3EE"),  # win: cyan
+    ("$ pwd",                                          "#FF652F"),  # mac: orange
+    ("PS> Get-Location",                               "#EC4899"),  # win: magenta
+    ("$ cat about.py",                                 "#F90001"),  # mac: red
+    ("PS> Get-Content about.py",                       "#A78BFA"),  # win: purple
+    ("$ ls projects/",                                 "#34D399"),  # mac: green
+    ("PS> Get-ChildItem .\\projects",                  "#FFD700"),  # win: gold
+    ("$ git status",                                   "#00C853"),  # mac: green
+    ("PS> git log --oneline -n 3",                     "#22D3EE"),  # win: cyan
+    ("$ which python",                                 "#FF652F"),  # mac: orange
+    ("PS> Get-Command python",                         "#EC4899"),  # win: magenta
+    ("$ uptime",                                       "#F90001"),  # mac: red
+    ("PS> Get-History -Count 10",                      "#A78BFA"),  # win: purple
+    ("$ tree -L 1",                                    "#34D399"),  # mac: green
+    ("PS> docker ps",                                  "#FFD700"),  # win: gold
+    ("$ ps aux | grep python",                         "#00C853"),  # mac: green
+    ("PS> Get-Process python",                         "#22D3EE"),  # win: cyan
+    ("$ tail -f /var/log/app.log",                     "#FF652F"),  # mac: orange
+    ("PS> Get-Content app.log -Wait",                  "#EC4899"),  # win: magenta
+    ("$ tmux attach",                                  "#F90001"),  # mac: red
+    ("PS> python --version",                           "#A78BFA"),  # win: purple
+    ("$ vim ~/.config/me",                             "#34D399"),  # mac: green
+    ("PS> docker compose up -d",                       "#FFD700"),  # win: gold
+    ("$ ssh prod -t htop",                             "#00C853"),  # mac: green
+    ("PS> Invoke-RestMethod api.github.com",           "#22D3EE"),  # win: cyan
+    ("$ git push origin main",                         "#FF652F"),  # mac: orange
+    ("PS> npm list -g --depth=0",                      "#EC4899"),  # win: magenta
+    ("$ make build",                                   "#F90001"),  # mac: red
+    ("PS> echo $env:LANG",                             "#A78BFA"),  # win: purple
+    # ─── 20 personal lines: Abdullah's actual projects & daily commands ─────
+    ("$ cd ~/projects/baeckrei && make dev",           "#34D399"),  # mac: bakery dev
+    ("PS> python -m pydev create my-app",              "#FFD700"),  # win: PyDev
+    ("$ deploy.sh barber-salon-prod",                  "#00C853"),  # mac: client deploy
+    ("PS> stock-manager --inventory --low-stock",      "#22D3EE"),  # win: Stock-Manager
+    ("$ python -m issue_triage_bot run",               "#FF652F"),  # mac: GitHub App
+    ("PS> python -m pr_coach review",                  "#EC4899"),  # win: GitHub App
+    ("$ python -m commit_craft check HEAD",            "#F90001"),  # mac: GitHub App
+    ("PS> python -m repodoc_ai generate",              "#A78BFA"),  # win: GitHub App
+    ("$ python -m ai_quality_gate scan",               "#34D399"),  # mac: GitHub App
+    ("PS> docker compose -f baeckrei.yml up -d",       "#FFD700"),  # win: bakery prod
+    ("$ tail -f /var/log/baeckrei.log",                "#00C853"),  # mac: monitoring
+    ("PS> npx nuxt build; npx nuxt start",             "#22D3EE"),  # win: Vue/Nuxt
+    ("$ python manage.py migrate baeckrei",            "#FF652F"),  # mac: Django
+    ("PS> rabbitmq-plugins enable management",         "#EC4899"),  # win: RabbitMQ
+    ("$ ssh tawil-media-prod",                         "#F90001"),  # mac: client server
+    ("PS> git checkout -b feature/recipe-scheduler",   "#A78BFA"),  # win: branch
+    ("$ pytest baeckrei/tests/test_orders.py",         "#34D399"),  # mac: test
+    ("PS> gh extension install Abdullah/pydev",        "#FFD700"),  # win: PyDev install
+    ("$ python -c 'import abdullah; help(abdullah)'",  "#00C853"),  # mac: meta
+    ("PS> # made in Germany, for small shops",         "#22D3EE"),  # win: signature
 ]
 
 # ── MOTTO (dev philosophy quotes) — 30 lines, 90s cycle, 3s per line ─────────
