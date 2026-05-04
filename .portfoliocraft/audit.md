@@ -783,3 +783,76 @@ _Generated 2026-05-01. 153 findings across 85 repos (53 flagged)._
   - Your bio or company field references an employer, but the commit-author email domains in your repositories don’t overlap with that claim. This weakens verifiable employment context for visitors.
   - Evidence: [Unverified domains: 163.com, algolia.com, antonagestam.se, archlinux.org, beimir.net, creativeadvtech.com, decorahvikings.k12.ia.us, dynamous.ai, eecs.harvard.edu, example.com, flo-edelmann.de, ghyllebert.be, github.com, gmail.com, gmx.net, google.com, gorillatech.io, grafana.com, hotmail.co.uk, hotmail.com, ibj.io, icloud.com, iit.demokritos.gr, initiatives.fr, iress.com, j0ach1mmall3.com, jomo.tv, jonrohan.codes, kakaocorp.com, live.ca, m.zato.io, me.com, micropyramid.com, mrlolethan.com, nkmem.es, outlook.com, peth.me, phroa.net, proton.me, protonmail.com, qq.com, readyprompt.com, rtainc.in, sewan.fr, shaunpud.com, smirking.ninja, sobolevn.me, spiral.sh, staples.com, starlogik.com, statsperform.com, stribny.name, student.han.nl, synvert.com, thirty3.de, trivadis.com, viner.tv, whitesourcesoftware.com, wix.com, x-factory.jp, yahoo.com, yahoo.com.br, yahoo.fr, zkorean.com](https://github.com/AbdullahBakir97)
   - **Action:** Add a verified domain to your GitHub email or update your bio so commit context reflects employer claim.
+
+---
+
+## Repositories audited
+
+_Updated 2026-05-04. Full coverage of 63 owned non-fork repositories. Repos with no flagged findings show as **clean** — they passed every check (license, docs, CI presence, dependency hygiene, secret scanning, signed commits, etc.)._
+
+| Repository | Status | Findings summary |
+| --- | --- | --- |
+| [`2050-Bootstrap-Landing-page`](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page) | 🟢 clean | clean |
+| [`AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97) | 🟢 clean | clean |
+| [`AI-KI`](https://github.com/AbdullahBakir97/AI-KI) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`ai-quality-gate`](https://github.com/AbdullahBakir97/ai-quality-gate) | 🟢 clean | clean |
+| [`Amazon-Project`](https://github.com/AbdullahBakir97/Amazon-Project) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`API`](https://github.com/AbdullahBakir97/API) | 🟡 flagged | 1 medium, 1 low |
+| [`API-Client-Generator`](https://github.com/AbdullahBakir97/API-Client-Generator) | 🟡 flagged | 1 high, 1 medium |
+| [`Automtion`](https://github.com/AbdullahBakir97/Automtion) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Barber-Salon`](https://github.com/AbdullahBakir97/Barber-Salon) | 🟡 flagged | 1 medium, 1 low |
+| [`Bootstrap-1`](https://github.com/AbdullahBakir97/Bootstrap-1) | 🟢 clean | clean |
+| [`Bootstrap-banner`](https://github.com/AbdullahBakir97/Bootstrap-banner) | 🟢 clean | clean |
+| [`BOT`](https://github.com/AbdullahBakir97/BOT) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`commit-craft`](https://github.com/AbdullahBakir97/commit-craft) | 🟢 clean | clean |
+| [`Content-Creator-Tool`](https://github.com/AbdullahBakir97/Content-Creator-Tool) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`cortex`](https://github.com/AbdullahBakir97/cortex) | 🟡 flagged | 1 low |
+| [`Dj--To-Do`](https://github.com/AbdullahBakir97/Dj--To-Do) | 🟡 flagged | 1 medium, 1 low |
+| [`Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System) | 🟡 flagged | 1 medium, 1 low |
+| [`Django-Blog-app`](https://github.com/AbdullahBakir97/Django-Blog-app) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`Django-Followers-System`](https://github.com/AbdullahBakir97/Django-Followers-System) | 🟡 flagged | 1 medium, 1 low |
+| [`Django-Reporting-System`](https://github.com/AbdullahBakir97/Django-Reporting-System) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`Django-Store`](https://github.com/AbdullahBakir97/Django-Store) | 🟡 flagged | 1 medium, 1 low |
+| [`Django-Vuejs-Courses-Filter`](https://github.com/AbdullahBakir97/Django-Vuejs-Courses-Filter) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`E-Commerce_Management_Hub`](https://github.com/AbdullahBakir97/E-Commerce_Management_Hub) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`email`](https://github.com/AbdullahBakir97/email) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Email-Sender`](https://github.com/AbdullahBakir97/Email-Sender) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`GitHub-Doc-Generator`](https://github.com/AbdullahBakir97/GitHub-Doc-Generator) | 🟡 flagged | 1 medium |
+| [`GitHub-Issues-Wall`](https://github.com/AbdullahBakir97/GitHub-Issues-Wall) | 🟡 flagged | 1 low |
+| [`HTML-1`](https://github.com/AbdullahBakir97/HTML-1) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`image-cropping`](https://github.com/AbdullahBakir97/image-cropping) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`issue-triage-bot`](https://github.com/AbdullahBakir97/issue-triage-bot) | 🟢 clean | clean |
+| [`Jobs-Portal`](https://github.com/AbdullahBakir97/Jobs-Portal) | 🟡 flagged | 1 medium, 1 low |
+| [`JS-TO-DO`](https://github.com/AbdullahBakir97/JS-TO-DO) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`JS-TO-DO-LIST`](https://github.com/AbdullahBakir97/JS-TO-DO-LIST) | 🟡 flagged | 2 high, 1 medium, 1 low |
+| [`LeetCode_Python`](https://github.com/AbdullahBakir97/LeetCode_Python) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`Logo-Generator`](https://github.com/AbdullahBakir97/Logo-Generator) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG) | 🟡 flagged | 2 medium, 1 low |
+| [`Pilot-Logbook`](https://github.com/AbdullahBakir97/Pilot-Logbook) | 🟡 flagged | 1 medium, 1 low |
+| [`Portfolio`](https://github.com/AbdullahBakir97/Portfolio) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`PortfolioCraft`](https://github.com/AbdullahBakir97/PortfolioCraft) | 🟡 flagged | 1 low |
+| [`pr-coach`](https://github.com/AbdullahBakir97/pr-coach) | 🟢 clean | clean |
+| [`Project-Management-Tool`](https://github.com/AbdullahBakir97/Project-Management-Tool) | 🟡 flagged | 2 medium, 1 low |
+| [`Projekt-1`](https://github.com/AbdullahBakir97/Projekt-1) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Py-Desktop-Expense_Tracker`](https://github.com/AbdullahBakir97/Py-Desktop-Expense_Tracker) | 🟡 flagged | 1 medium, 1 low |
+| [`Py-Tetris-Game`](https://github.com/AbdullahBakir97/Py-Tetris-Game) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Python-Basics`](https://github.com/AbdullahBakir97/Python-Basics) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Python-Django-join_with`](https://github.com/AbdullahBakir97/Python-Django-join_with) | 🟡 flagged | 1 medium, 1 low |
+| [`Python-Environment-Management-Tool`](https://github.com/AbdullahBakir97/Python-Environment-Management-Tool) | 🟡 flagged | 1 medium, 1 low |
+| [`Python-Game`](https://github.com/AbdullahBakir97/Python-Game) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Python-HackerRank-Tests`](https://github.com/AbdullahBakir97/Python-HackerRank-Tests) | 🟡 flagged | 1 medium, 1 low |
+| [`release-pilot`](https://github.com/AbdullahBakir97/release-pilot) | 🟢 clean | clean |
+| [`Repo-Directory-Structure`](https://github.com/AbdullahBakir97/Repo-Directory-Structure) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`repodoc-ai`](https://github.com/AbdullahBakir97/repodoc-ai) | 🟢 clean | clean |
+| [`schedule-`](https://github.com/AbdullahBakir97/schedule-) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Space-Shooter`](https://github.com/AbdullahBakir97/Space-Shooter) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager) | 🟡 flagged | 2 low |
+| [`Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement) | 🟡 flagged | 1 medium, 1 low |
+| [`test`](https://github.com/AbdullahBakir97/test) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Trello-Clone-Services`](https://github.com/AbdullahBakir97/Trello-Clone-Services) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`tzgf`](https://github.com/AbdullahBakir97/tzgf) | 🟡 flagged | 1 high, 2 medium, 1 low |
+| [`Vue-Store`](https://github.com/AbdullahBakir97/Vue-Store) | 🟡 flagged | 1 high, 1 medium, 1 low |
+| [`Weather--App-django-vue.js`](https://github.com/AbdullahBakir97/Weather--App-django-vue.js) | 🟡 flagged | 1 medium, 1 low |
+| [`Web-Scraping-`](https://github.com/AbdullahBakir97/Web-Scraping-) | 🟡 flagged | 1 high, 1 medium, 1 low |
+
