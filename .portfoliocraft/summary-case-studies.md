@@ -131,13 +131,13 @@ axios, cors-headers, django, primevue, python3, rest-framework, vuejs3
 **Scale:** 11 stars, 0 forks · pinned
 
 ### Overview
-Project Management Application: with features such as task boards, Gantt charts, time tracking, and team collaboration.
+Project management tool — boards, tasks, members, comments, activity feed. Django + DRF + Vue.
 
 ### Domain
 Backend / API
 
 ### Topics
-calendar-integration, database-management, django, django-channels, file-management, gantt-charts, javascript, notifications, productivity-tools, project-management, python, reporting-and-analytics, restful-api, task-boards, task-management, team-collaboration, time-tracking, user-roles-and-permissions, vuejs
+calendar-integration, database-management, django, django-channels, file-management, gantt-charts, javascript, notifications, productivity-tools, project-management, python, reporting-and-analytics, restful-api, task-boards, task-management, team-collaboration, time-tracking, user-roles-and-permissions
 
 ## API
 
@@ -148,7 +148,7 @@ calendar-integration, database-management, django, django-channels, file-managem
 **Scale:** 5 stars, 0 forks · pinned
 
 ### Overview
-Django application that includes authentication functionalities such as signup, login, logout, password change, password reset, and related CRUD operations for teams, players, matches, fantasy teams, contests, and contest entries.
+Django REST Framework reference API — auth, pagination, throttling, filtering, OpenAPI/Swagger docs.
 
 ### Domain
 Backend / API
@@ -165,7 +165,7 @@ api, dj-rest-auth, django, django-rest-framework, python, swagger, users
 **Scale:** 4 stars, 0 forks · pinned
 
 ### Overview
-Custom Django queryset class for efficient and simplified join operations. Includes examples and API views for joining user profiles, orders, and countries.
+Django QuerySet join examples — annotated, nested, and aggregated query patterns with real models.
 
 ### Domain
 Backend / API
@@ -182,7 +182,7 @@ api, django, django-queries, django-rest-framework, python, queries
 **Scale:** 3 stars, 0 forks · pinned
 
 ### Overview
-Dynamic web application, crafted with Django and Vue.js, seamlessly integrates the Tomorrow.io Weather API to provide up-to-the-minute weather forecasts. With its intuitive search feature powered by the Google Maps API, stay informed about weather conditions anywhere in the world.
+Weather lookup app — Django backend with Vue.js frontend, geolocation and forecast widgets.
 
 ### Domain
 Frontend / UI
@@ -193,104 +193,104 @@ api, axios, django, google-maps-api, moment-js, tomorrow-io, vuejs, vuetifyjs
 ## ai-quality-gate
 
 **Repository:** [AbdullahBakir97/ai-quality-gate](https://github.com/AbdullahBakir97/ai-quality-gate)  
-**Stack:** Python  
+**Stack:** Python · ai, automation, ci-cd  
 **Duration:** Apr 2026–May 2026 (1 month)  
 **Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-GitHub App that detects AI-generated issues and PRs, scores contribution quality, and protects maintainers from automated spam.
+GitHub App that runs an AI-driven quality gate on every PR — readability, scope, and risk scoring.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+ai, automation, ci-cd, code-quality, developer-tools, github-action, github-app, pr-review, python
 
 ## commit-craft
 
 **Repository:** [AbdullahBakir97/commit-craft](https://github.com/AbdullahBakir97/commit-craft)  
-**Stack:** Python  
+**Stack:** Python · automation, ci-cd, conventional-commits  
 **Duration:** Apr 2026–May 2026 (1 month)  
 **Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-GitHub App that enforces conventional commit messages on every PR. Parses commit format, scores quality 0-100 with 11 rules, suggests improvements, and creates GitHub Checks with per-commit breakdown.
+GitHub App that auto-formats pull-request commits to conventional-commits style.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+automation, ci-cd, conventional-commits, developer-tools, github-action, github-app, pre-commit, python
 
 ## issue-triage-bot
 
 **Repository:** [AbdullahBakir97/issue-triage-bot](https://github.com/AbdullahBakir97/issue-triage-bot)  
-**Stack:** Python  
+**Stack:** Python · ai, auto-label, automation  
 **Duration:** Apr 2026–May 2026 (1 month)  
 **Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-GitHub App that auto-categorizes issues (bug/feature/question/docs), assigns priority P0-P4, checks completeness, detects duplicates, and responds with templates. Smart routing for maintainers at scale.
+GitHub App that auto-labels and routes new issues based on title, body, and historical patterns.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+ai, auto-label, automation, ci-cd, developer-tools, github-action, github-app, issue-tracker, python, triage
 
 ## pr-coach
 
 **Repository:** [AbdullahBakir97/pr-coach](https://github.com/AbdullahBakir97/pr-coach)  
-**Stack:** Python  
+**Stack:** Python · ai, automation, ci-cd  
 **Duration:** Apr 2026–May 2026 (1 month)  
 **Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-GitHub App that coaches contributors to write better pull requests. Analyzes title, description, and diff for completeness, scores PR quality, and posts actionable suggestions via GitHub Checks.
+GitHub App that coaches authors during pull-request review — title, description, scope feedback.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+ai, automation, ci-cd, code-review, developer-tools, github-action, github-app, pull-request, python
 
 ## release-pilot
 
 **Repository:** [AbdullahBakir97/release-pilot](https://github.com/AbdullahBakir97/release-pilot)  
-**Stack:** Python  
+**Stack:** Python · automation, changelog, ci-cd  
 **Duration:** Apr 2026–May 2026 (1 month)  
 **Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-release pilot — Python repository. Detailed write-up pending.
+GitHub App that drafts release notes and version bumps from merged pull-request history.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+automation, changelog, ci-cd, developer-tools, github-action, github-app, python, release-notes, semver
 
 ## repodoc-ai
 
 **Repository:** [AbdullahBakir97/repodoc-ai](https://github.com/AbdullahBakir97/repodoc-ai)  
-**Stack:** Python  
+**Stack:** Python · ai, automation, ci-cd  
 **Duration:** Apr 2026–May 2026 (1 month)  
 **Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-GitHub App that auto-generates README.md from your repository structure, commits, and code analysis.
+GitHub App that auto-generates and refreshes README sections from real repo signals.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+ai, automation, ci-cd, developer-tools, documentation, github-action, github-app, python, readme
 
 ## Django--LMS--Learning-Management-System
 
@@ -301,13 +301,13 @@ Tooling / CLI
 **Scale:** 22 stars, 7 forks
 
 ### Overview
-Django (LMS) , facilitating user profile management, job listings, private messaging, course enrollment, certifications, and more. This project includes features for professional networking, user-generated posts, and group collaboration. Currently under development, with plans for advanced analytics and enhanced search capabilities, API Integration
+Learning management system — courses, certifications, messaging, networking, groups. Django + Channels.
 
 ### Domain
 Backend / API
 
 ### Topics
-career-opportunities, certifications, collaboration, companies, connections, courses, development, django, django-channels, education, events, groups, job-listings, lms, messaging, networking, notifications, online-learning, python, user-profiles
+career-opportunities, certifications, collaboration, companies, connections, courses, development, django, django-channels, education, events, groups, job-listings, lms, messaging, networking, notifications, online-learning
 
 ## 2050-Bootstrap-Landing-page
 
@@ -318,7 +318,7 @@ career-opportunities, certifications, collaboration, companies, connections, cou
 **Scale:** 14 stars, 0 forks
 
 ### Overview
-landing page using html, css, bootstrap5, javascript
+Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
 
 ### Domain
 Frontend / UI
@@ -330,12 +330,12 @@ anmation, anmation-css, bootstrap5, css, html, javascript
 
 **Repository:** [AbdullahBakir97/Django-Blog-app](https://github.com/AbdullahBakir97/Django-Blog-app)  
 **Stack:** Python · bootstrap, django, python3  
-**Duration:** Aug 2023–Jan 2024 (5 months)  
-**Status:** dormant  
+**Duration:** Aug 2023–May 2026 (33 months)  
+**Status:** active  
 **Scale:** 14 stars, 0 forks
 
 ### Overview
-📝 Django Blog App  Manage and publish blog posts with ease using this Django app.
+Django blog application — posts, categories, comments, search, SEO-friendly slugs.
 
 ### Domain
 Frontend / UI
@@ -346,19 +346,19 @@ bootstrap, django, python3, summernote, taggit
 ## Automtion
 
 **Repository:** [AbdullahBakir97/Automtion](https://github.com/AbdullahBakir97/Automtion)  
-**Stack:** Python  
-**Duration:** Dec 2023–Jun 2024 (6 months)  
-**Status:** dormant  
+**Stack:** Python · automation, browser-automation, python  
+**Duration:** Dec 2023–May 2026 (29 months)  
+**Status:** active  
 **Scale:** 13 stars, 0 forks
 
 ### Overview
-Automtion — Python repository. Detailed write-up pending.
+Browser-automation playground — Selenium-driven scrapers and form fillers for repeatable workflows.
 
 ### Domain
-Backend / API
+Tooling / CLI
 
 ### Topics
-—
+automation, browser-automation, python, selenium, web-scraping
 
 ## Amazon-Project
 
@@ -431,19 +431,19 @@ Machine learning / data
 ## image-cropping
 
 **Repository:** [AbdullahBakir97/image-cropping](https://github.com/AbdullahBakir97/image-cropping)  
-**Stack:** Python  
-**Duration:** Aug 2023–Aug 2023 (1 month)  
-**Status:** dormant  
+**Stack:** Python · image-cropping, image-processing, pillow  
+**Duration:** Aug 2023–May 2026 (33 months)  
+**Status:** active  
 **Scale:** 11 stars, 0 forks
 
 ### Overview
-image cropping — Python repository. Detailed write-up pending.
+Server-side image cropping utility — Pillow-based resize, smart-crop, and aspect-ratio presets.
 
 ### Domain
 Machine learning / data
 
 ### Topics
-—
+image-cropping, image-processing, pillow, python, thumbnails
 
 ## JS-TO-DO
 
@@ -556,7 +556,7 @@ bootstrap5, css, html, javascript, primevue, vuejs3
 **Scale:** 7 stars, 1 fork
 
 ### Overview
-Expense Tracker is a Python-based desktop application built with Tkinter and SQLite, designed for efficient expense management. It offers intuitive features for adding, categorizing, and analyzing expenses, making it ideal for personal or small business use.
+Desktop expense tracker — categories, charts, monthly reports. Tkinter + SQLite.
 
 ### Domain
 Backend / API
@@ -573,7 +573,7 @@ csv-handling, data-analysis, data-storage, data-visualization, expense-managemen
 **Scale:** 7 stars, 0 forks
 
 ### Overview
-Tool provides a graphical user interface (GUI) for managing Python libraries, virtual environments, and project files. This tool integrates SQLite for library management and supports tasks such as creating virtual environments, managing files, installing libraries, and interacting with Django projects. It aims to streamline the development setup.
+CLI to manage Python virtualenvs and project dependencies — bootstrap, freeze, sync.
 
 ### Domain
 Tooling / CLI
@@ -590,7 +590,7 @@ automation, development-tools, django, environment-setup, github-integration, gu
 **Scale:** 6 stars, 1 fork
 
 ### Overview
-A Django-based system for managing user relationships within a web application. Features include user following, sending and managing follow requests, accepting or rejecting follow requests, and maintaining followers and following lists. Additionally, it supports real-time user chat.
+Reusable followers/following app for Django — relationships, feeds, signals.
 
 ### Domain
 Backend / API
@@ -618,30 +618,30 @@ coding-challenges, dominant-cells, grid-algorithms, hackerrank, python, vending-
 ## Pilot-Logbook
 
 **Repository:** [AbdullahBakir97/Pilot-Logbook](https://github.com/AbdullahBakir97/Pilot-Logbook)  
-**Stack:** Python  
+**Stack:** Python · aviation, django, logbook  
 **Duration:** Jul 2024–Aug 2024 (1 month)  
 **Status:** dormant  
 **Scale:** 5 stars, 0 forks
 
 ### Overview
-A comprehensive Django-based solution for managing pilot logbooks, featuring an extensible data model, RESTful API endpoints, sophisticated data import/export mechanisms, and a customizable admin interface. Designed with solid OOP principles and a focus on maintainability and scalability.
+Pilot logbook — track flight hours, aircraft, routes, and certifications. Django + DRF.
 
 ### Domain
 Backend / API
 
 ### Topics
-—
+aviation, django, logbook, pilot, python
 
 ## Django-Reporting-System
 
 **Repository:** [AbdullahBakir97/Django-Reporting-System](https://github.com/AbdullahBakir97/Django-Reporting-System)  
 **Stack:** Python · api, django, django-cors-headers  
-**Duration:** Jul 2024–Jul 2024 (1 month)  
-**Status:** dormant  
+**Duration:** Jul 2024–May 2026 (22 months)  
+**Status:** active  
 **Scale:** 4 stars, 0 forks
 
 ### Overview
-A Django-based RESTful API designed for modern reporting systems. It features JWT authentication, OTP-based email login, media file management, and CRUD operations. Built with PostgreSQL and Docker for scalability and ease of deployment.
+Reporting dashboard for Django apps — chart cards, exports, scheduled emails.
 
 ### Domain
 Backend / API
@@ -652,19 +652,19 @@ api, django, django-cors-headers, django-rest-framework, docker, jwt-authenticat
 ## Trello-Clone-Services
 
 **Repository:** [AbdullahBakir97/Trello-Clone-Services](https://github.com/AbdullahBakir97/Trello-Clone-Services)  
-**Stack:** Python  
-**Duration:** Jan 2026–Jan 2026 (1 month)  
-**Status:** dormant  
+**Stack:** Python · django, kanban, python  
+**Duration:** Jan 2026–May 2026 (4 months)  
+**Status:** active  
 **Scale:** 4 stars, 0 forks
 
 ### Overview
-Trello Clone Services — Python repository. Detailed write-up pending.
+Trello-style kanban backend — boards, lists, cards, drag-and-drop ordering, members. Django services layer.
 
 ### Domain
 Backend / API
 
 ### Topics
-—
+django, kanban, python, services, trello-clone
 
 ## Dj--To-Do
 
@@ -675,7 +675,7 @@ Backend / API
 **Scale:** 3 stars, 0 forks
 
 ### Overview
-a robust To-Do App developed using Django, The App allows users to efficiently manage their tasks by providing essential features such as creating, updating, and deleting tasks, as well as marking tasks as completed. With a clean and intuitive user interface, users can easily organize their tasks and stay productive.
+Django to-do app — CRUD, status filters, due dates, owner-scoped queries.
 
 ### Domain
 Frontend / UI
@@ -703,36 +703,36 @@ Machine learning / data
 ## AI-KI
 
 **Repository:** [AbdullahBakir97/AI-KI](https://github.com/AbdullahBakir97/AI-KI)  
-**Stack:** Jupyter Notebook  
-**Duration:** Jul 2024–Jul 2024 (1 month)  
-**Status:** dormant  
+**Stack:** Jupyter Notebook · ai, experiments, jupyter  
+**Duration:** Jul 2024–May 2026 (22 months)  
+**Status:** active  
 **Scale:** 2 stars, 0 forks
 
 ### Overview
-AI KI — Jupyter Notebook repository. Detailed write-up pending.
+Notebook-driven AI experiments — model exploration, training, and evaluation in Jupyter.
 
 ### Domain
 Machine learning / data
 
 ### Topics
-—
+ai, experiments, jupyter, machine-learning, python
 
 ## API-Client-Generator
 
 **Repository:** [AbdullahBakir97/API-Client-Generator](https://github.com/AbdullahBakir97/API-Client-Generator)  
-**Stack:** Python  
-**Duration:** Jun 2024–Oct 2024 (4 months)  
-**Status:** dormant  
+**Stack:** Python · api-client, cli, codegen  
+**Duration:** Jun 2024–May 2026 (23 months)  
+**Status:** active  
 **Scale:** 2 stars, 0 forks
 
 ### Overview
-API Client Generator — Python repository. Detailed write-up pending.
+Generate typed Python API clients from OpenAPI specs — handles auth, pagination, and retries.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+api-client, cli, codegen, openapi, python
 
 ## LeetCode_Python
 
@@ -754,47 +754,47 @@ Backend / API
 ## Mini-RAG
 
 **Repository:** [AbdullahBakir97/Mini-RAG](https://github.com/AbdullahBakir97/Mini-RAG)  
-**Stack:** Python  
-**Duration:** Jun 2024–Jun 2024 (1 month)  
-**Status:** dormant  
+**Stack:** Python · embeddings, llm, python  
+**Duration:** Jun 2024–May 2026 (23 months)  
+**Status:** active  
 **Scale:** 2 stars, 0 forks
 
 ### Overview
-Mini RAG — Python repository. Detailed write-up pending.
+Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.
 
 ### Domain
 Machine learning / data
 
 ### Topics
-—
+embeddings, llm, python, rag, vector-store
 
 ## Py-Tetris-Game
 
 **Repository:** [AbdullahBakir97/Py-Tetris-Game](https://github.com/AbdullahBakir97/Py-Tetris-Game)  
-**Stack:** Python  
-**Duration:** Jun 2024–Jun 2024 (1 month)  
-**Status:** dormant  
+**Stack:** Python · game, pygame, python  
+**Duration:** Jun 2024–May 2026 (23 months)  
+**Status:** active  
 **Scale:** 2 stars, 0 forks
 
 ### Overview
-Py Tetris Game — Python repository. Detailed write-up pending.
+Tetris implementation in Python with pygame — classic mechanics, scoring, level progression.
 
 ### Domain
 Game
 
 ### Topics
-—
+game, pygame, python, tetris
 
 ## Repo-Directory-Structure
 
 **Repository:** [AbdullahBakir97/Repo-Directory-Structure](https://github.com/AbdullahBakir97/Repo-Directory-Structure)  
 **Stack:** Python · analyzer, automation, github  
-**Duration:** Jun 2024–Jun 2024 (1 month)  
-**Status:** dormant  
+**Duration:** Jun 2024–May 2026 (23 months)  
+**Status:** active  
 **Scale:** 2 stars, 0 forks
 
 ### Overview
-This project provides Python scripts to analyze the structure of a GitHub repository, categorizing items such as classes, functions, views, models, serializers, tests, signals, services, consumers, queries, querysets, and endpoints. The results can be printed to the console or written to a specified text file.
+Generate a tree-style snapshot of any repository's directory structure — Markdown export.
 
 ### Domain
 Tooling / CLI
@@ -805,19 +805,19 @@ analyzer, automation, github, python
 ## Content-Creator-Tool
 
 **Repository:** [AbdullahBakir97/Content-Creator-Tool](https://github.com/AbdullahBakir97/Content-Creator-Tool)  
-**Stack:** Python  
-**Duration:** Jan 2025–Jan 2025 (1 month)  
-**Status:** dormant  
+**Stack:** Python · automation, content-generation, python  
+**Duration:** Jan 2025–May 2026 (16 months)  
+**Status:** active  
 **Scale:** 1 star, 0 forks
 
 ### Overview
-Content Creator Tool — Python repository. Detailed write-up pending.
+Content creation utility — generate posts, captions, and assets for social media workflows.
 
 ### Domain
-Machine learning / data
+Tooling / CLI
 
 ### Topics
-—
+automation, content-generation, python, social-media
 
 ## cortex
 
@@ -828,7 +828,7 @@ Machine learning / data
 **Scale:** 1 star, 0 forks
 
 ### Overview
-Anatomically-accurate neon brain skill atlas for your GitHub profile README. Turns 30 lines of YAML into 10 animated SVG widgets that pulse with your real activity. Pure SVG + SMIL, no JS, no build step.
+Memory-augmented agent kernel — context windows, retrieval, and structured output for LLM workflows.
 
 ### Domain
 Tooling / CLI
@@ -839,19 +839,19 @@ anatomical, animated-svg, brain-visualization, developer-portfolio, generative-a
 ## GitHub-Doc-Generator
 
 **Repository:** [AbdullahBakir97/GitHub-Doc-Generator](https://github.com/AbdullahBakir97/GitHub-Doc-Generator)  
-**Stack:** Python  
+**Stack:** Python · cli, documentation, github-api  
 **Duration:** Jul 2024–Jul 2024 (1 month)  
 **Status:** dormant  
 **Scale:** 1 star, 0 forks
 
 ### Overview
-GitHub Doc Generator — Python repository. Detailed write-up pending.
+Auto-generate documentation pages from a GitHub repository — README parsing and Markdown output.
 
 ### Domain
 Tooling / CLI
 
 ### Topics
-—
+cli, documentation, github-api, markdown, python
 
 ## GitHub-Issues-Wall
 
@@ -862,7 +862,7 @@ Tooling / CLI
 **Scale:** 1 star, 0 forks
 
 ### Overview
-Real-time GitHub issues monitoring dashboard for wall displays. Tracks most interacted-with issues with heat map scoring, dark/light themes, and auto-refresh. Zero dependencies.
+Browser wall of GitHub issues — fetched via API, sortable and filterable cards.
 
 ### Domain
 Frontend / UI
@@ -890,53 +890,53 @@ Machine learning / data
 ## Space-Shooter
 
 **Repository:** [AbdullahBakir97/Space-Shooter](https://github.com/AbdullahBakir97/Space-Shooter)  
-**Stack:** Python  
-**Duration:** Jun 2024–Jun 2024 (1 month)  
-**Status:** dormant  
+**Stack:** Python · arcade, game, pygame  
+**Duration:** Jun 2024–May 2026 (23 months)  
+**Status:** active  
 **Scale:** 1 star, 0 forks
 
 ### Overview
-Space Shooter — Python repository. Detailed write-up pending.
+Space shooter mini-game — pygame-based arcade clone with enemies, power-ups, scoring.
 
 ### Domain
 Game
 
 ### Topics
-—
+arcade, game, pygame, python
 
 ## Tawil-Media---Advertisement
 
 **Repository:** [AbdullahBakir97/Tawil-Media---Advertisement](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)  
-**Stack:** Python  
+**Stack:** Python · business, django, marketing-site  
 **Duration:** Dec 2024–Sep 2025 (9 months)  
 **Status:** dormant  
 **Scale:** 1 star, 0 forks
 
 ### Overview
-Tawil Media   Advertisement — Python repository. Detailed write-up pending.
+Marketing site for Tawil Media — hero, services, portfolio, contact form. Django + Tailwind.
 
 ### Domain
 Backend / API
 
 ### Topics
-—
+business, django, marketing-site, python, tailwindcss
 
 ## Baeckrei
 
 **Repository:** [AbdullahBakir97/Baeckrei](https://github.com/AbdullahBakir97/Baeckrei)  
-**Stack:** Python  
-**Duration:** Dec 2024–Sep 2025 (9 months)  
-**Status:** dormant  
+**Stack:** Python · bakery, django, inventory-management  
+**Duration:** Dec 2024–May 2026 (17 months)  
+**Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-Baeckrei — Python repository. Detailed write-up pending.
+Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.
 
 ### Domain
 Backend / API
 
 ### Topics
-—
+bakery, django, inventory-management, pos, python, vue3
 
 ## E-Commerce_Management_Hub
 
@@ -958,34 +958,34 @@ Backend / API
 ## Email-Sender
 
 **Repository:** [AbdullahBakir97/Email-Sender](https://github.com/AbdullahBakir97/Email-Sender)  
-**Stack:** Python  
-**Duration:** Sep 2025–Sep 2025 (1 month)  
-**Status:** dormant  
+**Stack:** Python · bulk-email, email, python  
+**Duration:** Sep 2025–May 2026 (8 months)  
+**Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-Email Sender — Python repository. Detailed write-up pending.
+Bulk email sender — templating, attachments, delivery logs. Python.
 
 ### Domain
 Backend / API
 
 ### Topics
-—
+bulk-email, email, python, smtp
 
 ## Portfolio
 
 **Repository:** [AbdullahBakir97/Portfolio](https://github.com/AbdullahBakir97/Portfolio)  
-**Stack:** TypeScript  
-**Duration:** Mar 2026–Mar 2026 (1 month)  
+**Stack:** TypeScript · nextjs, personal-site, portfolio  
+**Duration:** Mar 2026–May 2026 (2 months)  
 **Status:** active  
 **Scale:** 0 stars, 0 forks
 
 ### Overview
-Portfolio — TypeScript repository. Detailed write-up pending.
+Personal portfolio site — projects, blog, contact. TypeScript.
 
 ### Domain
 Frontend / UI
 
 ### Topics
-—
+nextjs, personal-site, portfolio, typescript
 
