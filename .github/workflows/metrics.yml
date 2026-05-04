@@ -177,7 +177,7 @@ jobs:
       matrix:
         year: ${{ fromJSON(needs.setup-years.outputs.years) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: metrics-output
           token: ${{ secrets.METRICS_TOKEN }}
