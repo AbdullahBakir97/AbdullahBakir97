@@ -12,46 +12,46 @@ Python Developer
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
-**2026**: Created 19 repos primarily in TypeScript, Python, and JavaScript, focused on ml and frontend.
+**2026**: Created 19 repos primarily in TypeScript, Python, and JavaScript, focused on devops and frontend.
 
 
 ## Selected projects
 
 ### Barber-Salon
 
-A dormant backend project built primarily in Python, developed over 13 months (2024–2025).
+An active backend project built primarily in Python, developed over 28 months (2024–2026).
 
-Salon Management System: A comprehensive software solution for hair salons and beauty parlors, featuring full API, appointment management, staff profiles, customer reviews, gallery showcases, Products, price management, and multi-language support.
+Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
 The repository carries 52 stars and 11 forks, with primary topics: ajax, css, deployment.
 
 Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon).
 
-### Django-Store
-
-A dormant backend project built primarily in Python, developed over 10 months (2023–2024).
-
-Amazon Clone Using Python , Django and Django Rest Framework with full api. Store containes Products and Products Detail, Brands, Reviews, Orders, Payments Methods, Charts, Users accounts, multi languages
-
-The repository carries 26 stars and 5 forks, with primary topics: ajax, bootstrap, cashing.
-
-Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store).
-
 ### Jobs-Portal
 
-A dormant backend project built primarily in Python, developed over 6 months (2023–2024).
+An active backend project built primarily in Python, developed over 30 months (2023–2026).
 
-Jobs Portal is a comprehensive web application built using Python, Django, and Django Rest Framework. It serves as a platform for job seekers and employers to connect and streamline the job search and hiring process.
+Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
 The repository carries 30 stars and 4 forks, with primary topics: css, django, django-rest-framework.
 
 Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal).
 
+### Django-Store
+
+An active backend project built primarily in Python, developed over 31 months (2023–2026).
+
+Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
+
+The repository carries 26 stars and 5 forks, with primary topics: ajax, bootstrap, cashing.
+
+Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store).
+
 ### Stock-Manager
 
 An active machine-learning project built primarily in Python, developed over 1 month (2026).
 
-A professional desktop inventory management application for Windows.
+Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.
 
 The repository carries 1 star and 0 forks, with primary topics: desktop-app, inventory-management, offline.
 
@@ -71,14 +71,16 @@ Repository: [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/
 
 An active machine-learning project built primarily in Python, developed over 36 months (2023–2026).
 
-The repository carries 20 stars and 1 fork.
+GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
+
+The repository carries 20 stars and 1 fork, with primary topics: animation, auto-update, dynamic-readme.
 
 Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97).
 
 ## Technical depth
 
 **Backend** (3 repositories): 3 backend projects in Python covering django, django-rest-framework, javascript.
-**Machine Learning** (2 repositories): 2 machine-learning projects in Python, HTML, and Inno Setup covering desktop-app, inventory-management, offline.
+**Machine Learning** (2 repositories): 2 machine-learning projects in Python, HTML, and Inno Setup covering animation, auto-update, desktop-app.
 **Frontend** (1 repository): 1 frontend project in TypeScript, JavaScript, and MDX covering automation, cli, cv-generator.
 
 ## Scope of self-directed work

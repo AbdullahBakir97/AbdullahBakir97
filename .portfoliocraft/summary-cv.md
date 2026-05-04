@@ -1,37 +1,37 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, TypeScript, HTML · 85 public repos · 261 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 85 public repos · 457 commits
 
 Python Developer
 
 ### Technical skills
 
-**Strong:** Python, TypeScript
-**Working knowledge:** HTML, Vue, JavaScript, CSS, Inno Setup, Batchfile, Dockerfile, MDX
+**Strong:** Python, JavaScript, Vue, HTML, CSS, PowerShell, TypeScript
+**Working knowledge:** Jinja, Inno Setup, Dockerfile, Batchfile
 
 ### Selected projects
 
-**Barber-Salon** — Python · 52★ · 13 mo · pinned
-Salon Management System: A comprehensive software solution for hair salons and beauty parlors, featuring full API, appointment management, staff profiles, customer reviews, gallery showcases, Products, price management, and multi-language support.
+**Barber-Salon** — Python · 52★ · 28 mo · pinned
+Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
-**Django-Store** — Python · 26★ · 10 mo · pinned
-Amazon Clone Using Python , Django and Django Rest Framework with full api. Store containes Products and Products Detail, Brands, Reviews, Orders, Payments Methods, Charts, Users accounts, multi languages
+**Jobs-Portal** — Python · 30★ · 30 mo · pinned
+Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
-**Jobs-Portal** — Python · 30★ · 6 mo · pinned
-Jobs Portal is a comprehensive web application built using Python, Django, and Django Rest Framework. It serves as a platform for job seekers and employers to connect and streamline the job search and hiring process.
+**Django-Store** — Python · 26★ · 31 mo · pinned
+Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
 **Stock-Manager** — Python, HTML, Inno Setup · 1★ · pinned
-A professional desktop inventory management application for Windows.
+Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.
 
 **PortfolioCraft** — TypeScript, JavaScript, MDX · 1★ · pinned
 Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
 
-**AbdullahBakir97** — Python · 20★ · 36 mo
-A ml project in Python.
+**AbdullahBakir97** — Python, HTML · 20★ · 36 mo
+GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
 
 ### Activity (last 12 months)
 
-261 commits · 34 pull requests · 0 reviews · contributed to 15 repositories
+457 commits · 34 pull requests · 0 reviews · contributed to 42 repositories
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
