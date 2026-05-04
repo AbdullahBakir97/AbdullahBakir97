@@ -231,36 +231,6 @@ def build_svg(lines, *, width, height, font_size, font_weight, total_dur, reveal
     print(f"[OK] Wrote {output_path} ({os.path.getsize(output_path):,} bytes, {n} lines)")
 
 
-TECH_LINES = [
-    ("$ python --version",                                   "#3776AB"),
-    ("→ Python 3.12 · the daily driver",                     "#FFD700"),
-    ("$ which framework",                                    "#0c4b33"),
-    ("→ /Django · /Vue · /Nuxt · /FastAPI",                  "#42b883"),
-    ("$ ls ~/.skills/databases/",                            "#336791"),
-    ("→ postgres mysql redis sqlite",                        "#22D3EE"),
-    ("$ git log --since=4y --oneline | wc -l",               "#F05032"),
-    ("→ 5,000+ commits and counting",                        "#34D399"),
-    ("$ docker ps | grep production",                        "#2496ED"),
-    ("→ baeckrei · stock-manager · pydev-apps",              "#FF652F"),
-    ("$ npm run build && npm test",                          "#CB3837"),
-    ("→ ✓ build passing · ✓ tests green",                    "#00C853"),
-    ("$ kubectl get pods --all-namespaces",                  "#326CE5"),
-    ("→ orchestrating from prototype to scale",              "#A78BFA"),
-    ("$ cat ~/.zshrc | grep alias",                          "#FFD700"),
-    ("→ alias ship='git push origin main'",                  "#F90001"),
-    ("$ uname -a",                                           "#FCC624"),
-    ("→ Linux · macOS · Windows · all 3 daily",              "#34D399"),
-    ("$ awk '/expertise/{print $0}'",                        "#A78BFA"),
-    ("→ Full-Stack · APIs · GitHub Apps · CI/CD",            "#22D3EE"),
-    ("$ ai --augmented",                                     "#a855f7"),
-    ("→ RAG pipelines · LLM tooling · agents",               "#EC4899"),
-    ("$ echo $LANG",                                         "#FFD700"),
-    ("→ EN · DE · العربية · Python is the 4th",              "#FF652F"),
-    ("$ grep -r 'production' ./repos/",                      "#34D399"),
-    ("→ 60+ repos · all built to ship",                      "#F90001"),
-]
-
-
 def main() -> int:
     # 50 lines × 2s = 100s cycle; line text up to ~24 chars at 22pt mono ~= 480px wide
     build_svg(
@@ -281,16 +251,6 @@ def main() -> int:
         text_x=10, text_y=26,
         has_cursor=False,
         output_path=os.path.join(REPO_ROOT, "assets", "motto-typing.svg"),
-    )
-    # 26 lines × 2.5s = 65s cycle; longer terminal lines for Tech Stack
-    build_svg(
-        TECH_LINES,
-        width=900, height=50,
-        font_size=18, font_weight=600,
-        total_dur=65, reveal_w=880,
-        text_x=18, text_y=33,
-        has_cursor=True,
-        output_path=os.path.join(REPO_ROOT, "assets", "tech-typing.svg"),
     )
     return 0
 
