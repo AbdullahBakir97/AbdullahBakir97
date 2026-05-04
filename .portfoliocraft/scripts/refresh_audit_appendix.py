@@ -83,7 +83,11 @@ def severity_summary(name):
     return ", ".join(f"{c} {s}" for s, c in ordered)
 
 
+archived_set = {r["name"] for r in repos if r.get("archived")}
+
 def status_for(name):
+    if name in archived_set:
+        return "🔵 archived"
     findings = findings_by_repo.get(name, [])
     if not findings:
         return "🟢 clean"
@@ -100,15 +104,23 @@ with AUDIT_MD.open(encoding="utf-8") as f:
 existing = re.split(r"\n---\n\n## Repositories audited", existing, maxsplit=1)[0].rstrip()
 
 today = dt.date(2026, 5, 4)
-flagged = sum(1 for n in all_names if findings_by_repo.get(n) and any(not is_resolved(f) for f in findings_by_repo[n]))
-clean_or_resolved = len(all_names) - flagged
+archived_count = len(archived_set)
+flagged = sum(1 for n in all_names
+              if n not in archived_set
+              and findings_by_repo.get(n)
+              and any(not is_resolved(f) for f in findings_by_repo[n]))
+clean_or_resolved = len(all_names) - flagged - archived_count
 
 lines = ["\n\n---\n\n## Repositories audited\n\n"]
 lines.append(
-    f"_Updated {today.isoformat()}. Coverage of {len(all_names)} owned non-fork repos. "
+    f"_Updated {today.isoformat()}. Coverage of {len(all_names)} owned non-fork repos: "
+    f"**🟢 {clean_or_resolved} active and clean/resolved** · "
+    f"**🟡 {flagged} active with open findings** · "
+    f"**🔵 {archived_count} archived**. "
     f"**🟢 Clean** = no findings · **🟢 Resolved** = all original findings have been "
-    f"fixed since the audit was generated · **🟡 Flagged** = open findings remain. "
-    f"License presence is verified live against the GitHub API at table-render time._\n\n"
+    f"fixed since the audit was generated · **🟡 Flagged** = open findings remain · "
+    f"**🔵 Archived** = repo retired (read-only). License presence is verified live "
+    f"against the GitHub API at table-render time._\n\n"
 )
 lines.append("| Repository | Status | Findings summary |\n")
 lines.append("| --- | --- | --- |\n")
@@ -136,7 +148,8 @@ new = existing + "".join(lines) + "\n"
 AUDIT_MD.write_text(new, encoding="utf-8")
 print(f"\nWrote audit.md appendix")
 print(f"  total repos: {len(all_names)}")
+print(f"  archived:    {archived_count}")
 print(f"  flagged:     {flagged}")
-print(f"  clean+resolved: {clean_or_resolved}")
+print(f"  clean+resolved (active): {clean_or_resolved}")
 print(f"  fully resolved repos: {len(fully_resolved)}")
 print(f"  license findings resolved: {len(license_resolved)}")
