@@ -709,21 +709,30 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <h3 align="center">🎨 3D Animated Profile</h3>
 
-<p align="center"><sub><i>Per-year 3D rainbow contribution towers · current year hero with three preceding years below · self-rendered from real GraphQL contributionCalendar data.</i></sub></p>
-
-<!-- 3D rainbow per-year grid — current big + 23-25 small -->
-<table align="center" width="100%"><tr><td colspan="3" align="center"><img src="./assets/3d-rainbow-2026.svg" width="100%" alt="3D rainbow — 2026 (live)" /><p><b>2026 <sub>(live)</sub></b></p></td></tr><tr><td width="33%" align="center"><img src="./assets/3d-rainbow-2023.svg" width="100%" alt="3D rainbow — 2023" /><p><b>2023</b></p></td><td width="33%" align="center"><img src="./assets/3d-rainbow-2024.svg" width="100%" alt="3D rainbow — 2024" /><p><b>2024</b></p></td><td width="33%" align="center"><img src="./assets/3d-rainbow-2025.svg" width="100%" alt="3D rainbow — 2025" /><p><b>2025</b></p></td></tr></table>
+<p align="center">
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution profile — rainbow" />
+</p>
 
 <details>
-<summary align="center"><b>Alternate render styles</b> — rolling-window views from yoshi389111/github-profile-3d-contrib</summary>
+<summary align="center"><b>More 3D styles</b> — night-view, gitblock, season-animate, south-season</summary>
 
 <br/>
 
 <p align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="Night Rainbow" />
+  <img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="Night view style" />
 </p>
 
-<table align="center" width="100%"><tr><td width="25%" align="center"><img src="./profile-3d-contrib/profile-night-view.svg" width="100%" alt="Night View" /><p><b>Night View</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="Git Block" /><p><b>Git Block</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="Season Animate" /><p><b>Season Animate</b></p></td><td width="25%" align="center"><img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="South Season" /><p><b>South Season</b></p></td></tr></table>
+<p align="center">
+  <img src="./profile-3d-contrib/profile-gitblock.svg" width="100%" alt="Git block style" />
+</p>
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-season-animate.svg" width="100%" alt="Animated seasons style" />
+</p>
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-south-season.svg" width="100%" alt="South-season style" />
+</p>
 
 </details>
 

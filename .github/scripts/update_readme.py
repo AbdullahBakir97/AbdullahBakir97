@@ -914,8 +914,11 @@ def render_skyline_svg(year: int, calendar: dict, dest: str) -> None:
 
 
 def regenerate_yearly_assets() -> None:
-    """Refresh heatmap-{year}.svg, skyline-{year}.svg, and 3d-rainbow-{year}.svg
-    for the hero+small window."""
+    """Refresh heatmap-{year}.svg and skyline-{year}.svg for the hero+small
+    window. The 3D Animated Profile section uses the action-generated
+    profile-3d-contrib/* SVGs from yoshi389111/github-profile-3d-contrib
+    (refreshed by .github/workflows/3d-contrib.yml), so we no longer
+    render per-year 3d-rainbow SVGs here."""
     big_year, small_years = _hero_years()
     os.makedirs(ASSETS_DIR, exist_ok=True)
     for y in [big_year, *small_years]:
@@ -927,7 +930,6 @@ def regenerate_yearly_assets() -> None:
         try:
             render_heatmap_svg(y, cal, os.path.join(ASSETS_DIR, f"heatmap-{y}.svg"))
             render_skyline_svg(y, cal, os.path.join(ASSETS_DIR, f"skyline-{y}.svg"))
-            render_3d_rainbow_svg(y, cal, os.path.join(ASSETS_DIR, f"3d-rainbow-{y}.svg"))
             print(f"refreshed assets for {y} (total={cal['totalContributions']})")
         except Exception as e:
             warn(f"asset render failed for {y}: {e}")
