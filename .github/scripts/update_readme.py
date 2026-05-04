@@ -62,10 +62,19 @@ def _repo_link(name: str) -> str:
 
 
 def _push_event(e: dict) -> str | None:
-    commits = e["payload"].get("commits") or []
-    if not commits:
-        return None  # skip empty pushes (branch deletes etc.)
-    return f"⬆️ Pushed {len(commits)} commit(s) to {_repo_link(e['repo']['name'])}"
+    """GitHub's PushEvent payload has been getting trimmed — many entries now
+    return only {before, head, push_id, ref, repository_id} with no `size`,
+    `distinct_size`, or `commits`. Trust whatever count we can find; if all we
+    have is a `head` SHA, treat it as ≥1 commit so the feed isn't silently empty."""
+    payload = e["payload"]
+    commits = payload.get("commits") or []
+    n = payload.get("size") or payload.get("distinct_size") or len(commits)
+    if n == 0 and payload.get("head"):
+        n = 1  # stripped payload — still a real push
+    if n == 0:
+        return None  # branch create/delete with no head — truly nothing
+    plural = "" if n == 1 else "s"
+    return f"⬆️ Pushed {n} commit{plural} to {_repo_link(e['repo']['name'])}"
 
 
 def _pr_event(e: dict) -> str:
@@ -1086,15 +1095,20 @@ def gitgraph_from_activity(limit: int = 8) -> str:
     for event in r.json():
         if event["type"] != "PushEvent":
             continue
-        commits = event["payload"].get("commits") or []
-        if not commits:
+        payload = event["payload"]
+        commits = payload.get("commits") or []
+        # See _push_event for why payloads have been getting stripped lately.
+        n = payload.get("size") or payload.get("distinct_size") or len(commits)
+        if n == 0 and payload.get("head"):
+            n = 1
+        if n == 0:
             continue
         repo_full = event["repo"]["name"]
         repo_short = repo_full.split("/")[-1]
         if repo_short in seen_repos:
             continue
         seen_repos.add(repo_short)
-        pushes.append((repo_short, len(commits)))
+        pushes.append((repo_short, n))
         if len(pushes) >= limit:
             break
 
@@ -1179,7 +1193,47 @@ def _score_repo(repo: dict, recent_commits: int) -> float:
     return 0.4 * stars + 0.4 * recent_commits + 0.2 * (recency * 50)
 
 
-def fetch_featured_projects(limit: int = 6) -> str:
+PIN_CARD_THEME = "codeSTACKr"
+PIN_CARD_TITLE_COLOR = "c6c6c2"
+PIN_CARD_ICON_COLOR = "ffde01"
+PIN_CARD_TEXT_COLOR = "da644d"
+
+
+def _pin_card_url(name: str, lines: int = 2) -> str:
+    return (
+        f"https://github-readme-stats.vercel.app/api/pin?username={GH_USER}"
+        f"&repo={name}&theme={PIN_CARD_THEME}"
+        f"&title_color={PIN_CARD_TITLE_COLOR}"
+        f"&icon_color={PIN_CARD_ICON_COLOR}"
+        f"&text_color={PIN_CARD_TEXT_COLOR}"
+        f"&description_lines_count={lines}"
+    )
+
+
+def _render_pin_grid(repos: list[dict]) -> str:
+    """Render a 2-col grid of github-readme-stats pin cards."""
+    if not repos:
+        return ""
+    rows = []
+    for i in range(0, len(repos), 2):
+        rows.append('<div align="center">')
+        for j in range(2):
+            if i + j >= len(repos):
+                continue
+            r = repos[i + j]
+            name = r["name"]
+            url = _pin_card_url(name)
+            rows.append(
+                f'  <a href="https://github.com/{GH_USER}/{name}">'
+                f'<img src="{url}" width="49%" alt="{name}" /></a>'
+            )
+        rows.append('</div>')
+    return "\n".join(rows)
+
+
+def fetch_featured_projects(limit: int = 10) -> str:
+    """Top N most-active owned non-fork non-archived repos, rendered as
+    github-readme-stats pin cards (consistent visual with Pinned Repos)."""
     r = requests.get(
         f"https://api.github.com/users/{GH_USER}/repos?per_page=100&type=owner",
         headers=GH_HEADERS, timeout=20,
@@ -1190,7 +1244,6 @@ def fetch_featured_projects(limit: int = 6) -> str:
         if not x.get("fork") and not x.get("archived")
         and x["name"] != GH_USER  # exclude profile readme repo
     ]
-    # Recent commit count per repo (last 30 days), best-effort
     since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=30)).isoformat()
     scored = []
     for repo in repos:
@@ -1206,119 +1259,128 @@ def fetch_featured_projects(limit: int = 6) -> str:
             pass
         scored.append((_score_repo(repo, commits), repo, commits))
     scored.sort(key=lambda t: -t[0])
-    top = scored[:limit]
+    top = [r for _, r, _ in scored[:limit]]
 
     if not top:
         return "_No featured projects yet._"
 
-    cards = ['<table align="center" width="100%">']
-    for i in range(0, len(top), 2):
-        cards.append("<tr>")
-        for j in range(2):
-            if i + j >= len(top):
-                cards.append('<td width="50%"></td>')
-                continue
-            score, r, commits = top[i + j]
-            name = r["name"]
-            desc = (r.get("description") or "_No description yet._").strip()
-            stars = r["stargazers_count"]
-            cat = _category_for(r)
-            lang = r.get("language") or "—"
-            url = r["html_url"]
-            cards.append(
-                f'<td valign="top" width="50%">'
-                f'<h3>{cat} · <a href="{url}">{name}</a></h3>'
-                f'<p>{desc}</p>'
-                f'<p>'
-                f'<img src="https://img.shields.io/badge/{lang}-3776AB?style=flat-square&logoColor=white" alt="{lang}"> '
-                f'<img src="https://img.shields.io/github/stars/{GH_USER}/{name}?style=flat-square&color=FFD700" alt="stars"> '
-                f'<img src="https://img.shields.io/github/last-commit/{GH_USER}/{name}?style=flat-square&color=blue" alt="last commit"> '
-                f'<img src="https://img.shields.io/badge/commits_30d-{commits}-39d353?style=flat-square" alt="commits 30d"> '
-                f'</p>'
-                f'</td>'
-            )
-        cards.append("</tr>")
-    cards.append("</table>")
-
     today = dt.date.today().isoformat()
     return (
-        f'<p align="center"><sub>📊 Auto-ranked weekly by recent commits + stars. '
-        f'Last updated {today}.</sub></p>\n\n'
-        + "".join(cards)
+        f'<p align="center"><sub>🔥 Top {len(top)} most-active repos · '
+        f'auto-ranked weekly by recent commits + stars. Last updated {today}.</sub></p>\n\n'
+        + _render_pin_grid(top)
     )
 
 
 # --- PINNED REPOS (daily auto-update) ----------------------------------------
 
-PINNED_QUERY = """
-query($login: String!) {
-  user(login: $login) {
-    pinnedItems(first: 6, types: REPOSITORY) {
-      nodes {
-        ... on Repository {
-          name
-          description
-          url
-          stargazerCount
-          forkCount
-          primaryLanguage { name color }
-          pushedAt
-          repositoryTopics(first: 6) { nodes { topic { name } } }
-        }
-      }
-    }
-  }
-}
-"""
+def _categorize_repo(repo: dict) -> str:
+    """Bucket a repo into a coarse showcase category."""
+    name = repo["name"]
+    topics = set(repo.get("topics") or [])
+    lang = repo.get("language") or ""
+    if name in {"PortfolioCraft", "GitHub-Doc-Generator", "Repo-Directory-Structure",
+                "Python-Environment-Management-Tool", "API-Client-Generator",
+                "commit-craft", "pr-coach", "repodoc-ai", "ai-quality-gate",
+                "issue-triage-bot", "release-pilot"}:
+        return "tools"
+    if topics & {"ai", "ml", "machine-learning", "rag", "llm", "embeddings"}:
+        return "ai"
+    if name in {"AI-KI", "Mini-RAG", "cortex"}:
+        return "ai"
+    if topics & {"game", "pygame", "arcade"}:
+        return "game"
+    if topics & {"vue", "react", "nuxt", "frontend", "tailwindcss"} or lang in {"Vue", "TypeScript"}:
+        return "frontend"
+    if name in {"AbdullahBakir97"}:
+        return "tools"
+    if lang == "HTML" or lang == "CSS":
+        return "frontend"
+    return "backend"
 
 
 def fetch_pinned_repos() -> str:
-    data = graphql(PINNED_QUERY, {"login": GH_USER})
-    nodes = data["user"]["pinnedItems"]["nodes"]
-    if not nodes:
-        return "_No pinned repos._"
+    """Render an exhaustive showcase grid: pinned repos at the top, then
+    every active (non-archived) repo grouped by category, all using the
+    consistent github-readme-stats pin-card visual style."""
+    r = requests.get(
+        f"https://api.github.com/users/{GH_USER}/repos?per_page=100&type=owner",
+        headers=GH_HEADERS, timeout=20,
+    )
+    r.raise_for_status()
+    all_repos = [
+        x for x in r.json()
+        if not x.get("fork") and not x.get("archived")
+    ]
 
-    cards = ['<table align="center" width="100%">']
-    for i in range(0, len(nodes), 2):
-        cards.append("<tr>")
-        for j in range(2):
-            if i + j >= len(nodes):
-                cards.append('<td width="50%"></td>')
-                continue
-            r = nodes[i + j]
-            name = r["name"]
-            url = r["url"]
-            desc = (r.get("description") or "_No description._").strip()
-            stars = r["stargazerCount"]
-            forks = r["forkCount"]
-            lang = (r.get("primaryLanguage") or {}).get("name") or "—"
-            color = ((r.get("primaryLanguage") or {}).get("color") or "#6e7681").lstrip("#")
-            pushed = r.get("pushedAt", "")[:10]
-            topics = [
-                t["topic"]["name"]
-                for t in (r.get("repositoryTopics") or {}).get("nodes", [])
-            ][:4]
-            topic_pills = " ".join(
-                f'<code>{t}</code>' for t in topics
-            ) if topics else ""
+    # Pinned via GraphQL (authoritative for pin order)
+    PINNED_Q = """
+    query($login: String!) {
+      user(login: $login) {
+        pinnedItems(first: 6, types: REPOSITORY) {
+          nodes { ... on Repository { name } }
+        }
+      }
+    }
+    """
+    pinned_names = []
+    try:
+        data = graphql(PINNED_Q, {"login": GH_USER})
+        pinned_names = [n["name"] for n in data["user"]["pinnedItems"]["nodes"]]
+    except Exception as e:
+        warn(f"pinnedItems query failed: {e}")
 
-            cards.append(
-                f'<td valign="top" width="50%" style="padding:8px">'
-                f'<a href="{url}"><h3>📌 {name}</h3></a>'
-                f'<p>{desc}</p>'
-                f'<p>'
-                f'<img src="https://img.shields.io/badge/{lang}-{color}?style=flat-square&logoColor=white" alt="{lang}"> '
-                f'<img src="https://img.shields.io/github/stars/{GH_USER}/{name}?style=flat-square&color=FFD700" alt="stars"> '
-                f'<img src="https://img.shields.io/github/forks/{GH_USER}/{name}?style=flat-square&color=blue" alt="forks"> '
-                f'<sub>last commit · {pushed}</sub>'
-                f'</p>'
-                f'<p>{topic_pills}</p>'
-                f'</td>'
-            )
-        cards.append("</tr>")
-    cards.append("</table>")
+    by_name = {r["name"]: r for r in all_repos}
+    pinned_set = set(pinned_names)
 
-    return "".join(cards)
+    pinned_repos = [by_name[n] for n in pinned_names if n in by_name]
+    rest = [r for r in all_repos if r["name"] not in pinned_set]
+    rest.sort(key=lambda r: -r.get("stargazers_count", 0))
+
+    # Category buckets (rest)
+    buckets: dict[str, list[dict]] = {
+        "most_starred": [], "tools": [], "backend": [],
+        "frontend": [], "ai": [], "game": [],
+    }
+    for r in rest:
+        if r.get("stargazers_count", 0) >= 10:
+            buckets["most_starred"].append(r)
+        else:
+            buckets[_categorize_repo(r)].append(r)
+
+    sections: list[str] = []
+
+    if pinned_repos:
+        sections.append('<h4 align="center">📌 Pinned by the author</h4>')
+        sections.append(_render_pin_grid(pinned_repos))
+
+    label_map = {
+        "most_starred": ("⭐ Most-Starred Showcases", "Repos with notable community traction"),
+        "tools":        ("🛠️ Developer Tools",        "GitHub Apps, CLIs, and dev-experience tooling"),
+        "backend":      ("🌐 Backend / API",          "Django / DRF systems and reference APIs"),
+        "frontend":     ("🎨 Frontend / UI",          "Vue, Nuxt, and design-forward web apps"),
+        "ai":           ("🧠 AI · Data · Notebooks",  "RAG, agents, ML experiments"),
+        "game":         ("🎮 Game",                   "Pygame & arcade clones"),
+    }
+    for key in ("most_starred", "tools", "backend", "frontend", "ai", "game"):
+        items = buckets[key]
+        if not items:
+            continue
+        title, sub = label_map[key]
+        sections.append(f'<h4 align="center">{title} <sub>· {len(items)}</sub></h4>')
+        sections.append(f'<p align="center"><sub><i>{sub}</i></sub></p>')
+        sections.append(_render_pin_grid(items))
+
+    today = dt.date.today().isoformat()
+    sections.insert(
+        0,
+        f'<p align="center"><sub>🔄 Auto-refreshed daily · '
+        f'<b>{len(all_repos)}</b> active repos shown across '
+        f'<b>{sum(1 for k,v in buckets.items() if v) + (1 if pinned_repos else 0)}</b> categories. '
+        f'Last updated {today}.</sub></p>'
+    )
+
+    return "\n\n".join(sections)
 
 
 # --- STATS CACHE BUSTER ------------------------------------------------------

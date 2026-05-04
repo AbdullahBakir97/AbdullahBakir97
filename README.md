@@ -50,16 +50,19 @@
 <!-- ============================================================ -->
 <h2 id="about" align="center">💻 About Me</h2>
 
+<!-- 🌟 Editorial hero banner — name, role, availability, stats -->
 <p align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="./assets/about-hero.svg" width="100%" alt="Abdullah Bakir — Full-Stack Developer · animated profile card with tech orbit" />
+    <img src="./assets/about-hero.svg" width="100%" alt="Abdullah Bakir — Full-Stack Developer · editorial profile banner" />
   </a>
 </p>
 
-<details>
-<summary align="center"><b>📋 The full bio block</b> — pronouns, frameworks, databases, languages I speak, what I'm into</summary>
+<!-- 🎬 Personality break — Python coding GIF -->
+<p align="center">
+  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif" alt="Python coding animation" />
+</p>
 
-<br/>
+<!-- 📋 Full bio — Python class block, always visible -->
 
 ```python
 class AbdullahBakir:
@@ -77,12 +80,13 @@ class AbdullahBakir:
     def philosophy(self) -> str:
         return "Ship something useful → learn → ship again."
 
+    def __repr__(self) -> str:
+        return f"<{type(self).__name__} based_in={self.location!r}>"
+
 
 me = AbdullahBakir()
 print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```
-
-</details>
 
 <!-- 💬 single rotating motto line — color changes per text shown -->
 <div align="center">
@@ -237,7 +241,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-517-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-518-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -310,13 +314,63 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <h3 align="center">🌳 Branch Flow (last 7 days)</h3>
 
 <!-- GITGRAPH:START -->
-_No recent push events to visualize._
+```mermaid
+gitGraph
+   commit id: "main"
+   branch AbdullahBakir97
+   checkout AbdullahBakir97
+   commit id: "c1"
+   checkout main
+   merge AbdullahBakir97
+   branch Portfolio
+   checkout Portfolio
+   commit id: "c1"
+   checkout main
+   merge Portfolio
+   branch repodoc-ai
+   checkout repodoc-ai
+   commit id: "c1"
+   checkout main
+   merge repodoc-ai
+   branch release-pilot
+   checkout release-pilot
+   commit id: "c1"
+   checkout main
+   merge release-pilot
+   branch pr-coach
+   checkout pr-coach
+   commit id: "c1"
+   checkout main
+   merge pr-coach
+   branch issue-triage-bot
+   checkout issue-triage-bot
+   commit id: "c1"
+   checkout main
+   merge issue-triage-bot
+   branch commit-craft
+   checkout commit-craft
+   commit id: "c1"
+   checkout main
+   merge commit-craft
+   branch ai-quality-gate
+   checkout ai-quality-gate
+   commit id: "c1"
+   checkout main
+   merge ai-quality-gate
+```
 <!-- GITGRAPH:END -->
 
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-_No recent public activity._
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
@@ -351,9 +405,28 @@ _No recent public activity._
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>📊 Auto-ranked weekly by recent commits + stars. Last updated 2026-05-04.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · auto-ranked weekly by recent commits + stars. Last updated 2026-05-04.</sub></p>
 
-<table align="center" width="100%"><tr><td valign="top" width="50%"><h3>🧠 AI / Data · <a href="https://github.com/AbdullahBakir97/cortex">cortex</a></h3><p>Memory-augmented agent kernel — context windows, retrieval, and structured output for LLM workflows.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/cortex?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/cortex?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-100-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Stock-Manager">Stock-Manager</a></h3><p>Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Stock-Manager?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Stock-Manager?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-89-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td></tr><tr><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Barber-Salon">Barber-Salon</a></h3><p>Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Barber-Salon?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Barber-Salon?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-7-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td><td valign="top" width="50%"><h3>🛠️ Tooling · <a href="https://github.com/AbdullahBakir97/PortfolioCraft">PortfolioCraft</a></h3><p>Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.</p><p><img src="https://img.shields.io/badge/TypeScript-3776AB?style=flat-square&logoColor=white&v=20260504" alt="TypeScript"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/PortfolioCraft?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/PortfolioCraft?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-38-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td></tr><tr><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Jobs-Portal">Jobs-Portal</a></h3><p>Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Jobs-Portal?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Jobs-Portal?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-7-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Django-Store">Django-Store</a></h3><p>Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Django-Store?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Django-Store?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-5-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td></tr></table>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/cortex"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=cortex&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="cortex" /></a>
+  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Stock-Manager&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Stock-Manager" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Barber-Salon" /></a>
+  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=PortfolioCraft&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="PortfolioCraft" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Jobs-Portal" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Store" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django--LMS--Learning-Management-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
+  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Automtion" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Blog-app" /></a>
+</div>
 <!-- FEATURED_PROJECTS:END -->
 
 <br/>
@@ -465,7 +538,126 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<table align="center" width="100%"><tr><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Stock-Manager"><h3>📌 Stock-Manager</h3></a><p>Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Stock-Manager?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Stock-Manager?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-02</sub></p><p><code>desktop-app</code> <code>inventory-management</code> <code>offline</code> <code>pyqt6</code></p></td><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Django-Store"><h3>📌 Django-Store</h3></a><p>Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Django-Store?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Django-Store?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>ajax</code> <code>bootstrap</code> <code>cashing</code> <code>celery</code></p></td></tr><tr><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Barber-Salon"><h3>📌 Barber-Salon</h3></a><p>Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Barber-Salon?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Barber-Salon?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>css</code> <code>django</code> <code>html5</code> <code>javascript</code></p></td><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Jobs-Portal"><h3>📌 Jobs-Portal</h3></a><p>Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Jobs-Portal?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Jobs-Portal?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>css</code> <code>django</code> <code>html</code> <code>javascript</code></p></td></tr><tr><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><h3>📌 Django--LMS--Learning-Management-System</h3></a><p>Learning management system — courses, certifications, messaging, networking, groups. Django + Channels.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Django--LMS--Learning-Management-System?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Django--LMS--Learning-Management-System?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>certifications</code> <code>collaboration</code> <code>companies</code> <code>connections</code></p></td><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/PortfolioCraft"><h3>📌 PortfolioCraft</h3></a><p>Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.</p><p><img src="https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logoColor=white&v=20260504" alt="TypeScript"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/PortfolioCraft?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/PortfolioCraft?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-01</sub></p><p><code>automation</code> <code>cli</code> <code>cv-generator</code> <code>developer-portfolio</code></p></td></tr></table>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>42</b> active repos shown across <b>7</b> categories. Last updated 2026-05-04.</sub></p>
+
+<h4 align="center">📌 Pinned by the author</h4>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Stock-Manager&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Stock-Manager" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Store" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Barber-Salon" /></a>
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Jobs-Portal" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django--LMS--Learning-Management-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
+  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=PortfolioCraft&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="PortfolioCraft" /></a>
+</div>
+
+<h4 align="center">⭐ Most-Starred Showcases <sub>· 6</sub></h4>
+
+<p align="center"><sub><i>Repos with notable community traction</i></sub></p>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/AbdullahBakir97"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="AbdullahBakir97" /></a>
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Blog-app" /></a>
+  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Automtion" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=image-cropping&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="image-cropping" /></a>
+  <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Project-Management-Tool" /></a>
+</div>
+
+<h4 align="center">🛠️ Developer Tools <sub>· 10</sub></h4>
+
+<p align="center"><sub><i>GitHub Apps, CLIs, and dev-experience tooling</i></sub></p>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Python-Environment-Management-Tool"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Environment-Management-Tool&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Python-Environment-Management-Tool" /></a>
+  <a href="https://github.com/AbdullahBakir97/API-Client-Generator"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=API-Client-Generator&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="API-Client-Generator" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Repo-Directory-Structure"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Repo-Directory-Structure&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Repo-Directory-Structure" /></a>
+  <a href="https://github.com/AbdullahBakir97/GitHub-Doc-Generator"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=GitHub-Doc-Generator&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="GitHub-Doc-Generator" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/ai-quality-gate"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=ai-quality-gate&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="ai-quality-gate" /></a>
+  <a href="https://github.com/AbdullahBakir97/commit-craft"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=commit-craft&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="commit-craft" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/issue-triage-bot"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=issue-triage-bot&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="issue-triage-bot" /></a>
+  <a href="https://github.com/AbdullahBakir97/pr-coach"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=pr-coach&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="pr-coach" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/release-pilot"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=release-pilot&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="release-pilot" /></a>
+  <a href="https://github.com/AbdullahBakir97/repodoc-ai"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=repodoc-ai&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="repodoc-ai" /></a>
+</div>
+
+<h4 align="center">🌐 Backend / API <sub>· 11</sub></h4>
+
+<p align="center"><sub><i>Django / DRF systems and reference APIs</i></sub></p>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Py-Desktop-Expense_Tracker"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Py-Desktop-Expense_Tracker&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Py-Desktop-Expense_Tracker" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Followers-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Followers-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Followers-System" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/API"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=API&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="API" /></a>
+  <a href="https://github.com/AbdullahBakir97/Pilot-Logbook"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Pilot-Logbook&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Pilot-Logbook" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Django-Reporting-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Reporting-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Reporting-System" /></a>
+  <a href="https://github.com/AbdullahBakir97/Python-Django-join_with"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Python-Django-join_with" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Trello-Clone-Services"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Trello-Clone-Services&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Trello-Clone-Services" /></a>
+  <a href="https://github.com/AbdullahBakir97/Content-Creator-Tool"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Content-Creator-Tool&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Content-Creator-Tool" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/GitHub-Issues-Wall"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=GitHub-Issues-Wall&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="GitHub-Issues-Wall" /></a>
+  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Baeckrei&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Baeckrei" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Email-Sender"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Email-Sender&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Email-Sender" /></a>
+</div>
+
+<h4 align="center">🎨 Frontend / UI <sub>· 4</sub></h4>
+
+<p align="center"><sub><i>Vue, Nuxt, and design-forward web apps</i></sub></p>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Dj--To-Do"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Dj--To-Do&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Dj--To-Do" /></a>
+  <a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Weather--App-django-vue.js&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Weather--App-django-vue.js" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Tawil-Media---Advertisement"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Tawil-Media---Advertisement&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Tawil-Media---Advertisement" /></a>
+  <a href="https://github.com/AbdullahBakir97/Portfolio"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Portfolio&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Portfolio" /></a>
+</div>
+
+<h4 align="center">🧠 AI · Data · Notebooks <sub>· 3</sub></h4>
+
+<p align="center"><sub><i>RAG, agents, ML experiments</i></sub></p>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/AI-KI"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AI-KI&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="AI-KI" /></a>
+  <a href="https://github.com/AbdullahBakir97/Mini-RAG"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Mini-RAG&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Mini-RAG" /></a>
+</div>
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/cortex"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=cortex&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="cortex" /></a>
+</div>
+
+<h4 align="center">🎮 Game <sub>· 2</sub></h4>
+
+<p align="center"><sub><i>Pygame & arcade clones</i></sub></p>
+
+<div align="center">
+  <a href="https://github.com/AbdullahBakir97/Py-Tetris-Game"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Py-Tetris-Game&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Py-Tetris-Game" /></a>
+  <a href="https://github.com/AbdullahBakir97/Space-Shooter"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Space-Shooter&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Space-Shooter" /></a>
+</div>
 <!-- PINNED_REPOS:END -->
 
 <details>
