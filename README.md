@@ -253,7 +253,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-523-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-528-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -282,13 +282,13 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&v=20260504" width="100%" alt="Profile Summary" />
-    <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true" width="49%" alt="GitHub Stats" />
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606" width="49%" alt="GitHub Streak" />
+    <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true&v=20260504" width="49%" alt="GitHub Stats" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606&v=20260504" width="49%" alt="GitHub Streak" />
   </a>
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00" alt="Top Languages" width="49%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00&v=20260504" alt="Top Languages" width="49%" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=AbdullahBakir97&theme=codeSTACKr&title_color=ff6f00&v=20260504" alt="Language Distribution" width="49%" />
 </div>
 
@@ -552,7 +552,10 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <!-- PINNED_REPOS:START -->
 <p align="center"><sub>🔄 Auto-refreshed daily · <b>42</b> active repos shown across <b>7</b> categories. Last updated 2026-05-04.</sub></p>
 
-<h4 align="center">📌 Pinned by the author</h4>
+<details open>
+<summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
+
+<p align="center"><sub><i>Hand-picked headline projects</i></sub></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="./assets/pins/Stock-Manager.svg" width="49%" alt="Stock-Manager" /></a>
@@ -567,7 +570,10 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/pins/PortfolioCraft.svg" width="49%" alt="PortfolioCraft" /></a>
 </div>
 
-<h4 align="center">⭐ Most-Starred Showcases <sub>· 6</sub></h4>
+</details>
+
+<details>
+<summary align="center"><b>⭐ Most-Starred Showcases</b> <sub>· 6</sub></summary>
 
 <p align="center"><sub><i>Repos with notable community traction</i></sub></p>
 
@@ -584,7 +590,10 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="./assets/pins/Project-Management-Tool.svg" width="49%" alt="Project-Management-Tool" /></a>
 </div>
 
-<h4 align="center">🛠️ Developer Tools <sub>· 10</sub></h4>
+</details>
+
+<details>
+<summary align="center"><b>🛠️ Developer Tools</b> <sub>· 10</sub></summary>
 
 <p align="center"><sub><i>GitHub Apps, CLIs, and dev-experience tooling</i></sub></p>
 
@@ -609,7 +618,10 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/repodoc-ai"><img src="./assets/pins/repodoc-ai.svg" width="49%" alt="repodoc-ai" /></a>
 </div>
 
-<h4 align="center">🌐 Backend / API <sub>· 11</sub></h4>
+</details>
+
+<details>
+<summary align="center"><b>🌐 Backend / API</b> <sub>· 11</sub></summary>
 
 <p align="center"><sub><i>Django / DRF systems and reference APIs</i></sub></p>
 
@@ -637,7 +649,10 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/Email-Sender"><img src="./assets/pins/Email-Sender.svg" width="49%" alt="Email-Sender" /></a>
 </div>
 
-<h4 align="center">🎨 Frontend / UI <sub>· 4</sub></h4>
+</details>
+
+<details>
+<summary align="center"><b>🎨 Frontend / UI</b> <sub>· 4</sub></summary>
 
 <p align="center"><sub><i>Vue, Nuxt, and design-forward web apps</i></sub></p>
 
@@ -650,7 +665,10 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/Portfolio"><img src="./assets/pins/Portfolio.svg" width="49%" alt="Portfolio" /></a>
 </div>
 
-<h4 align="center">🧠 AI · Data · Notebooks <sub>· 3</sub></h4>
+</details>
+
+<details>
+<summary align="center"><b>🧠 AI · Data · Notebooks</b> <sub>· 3</sub></summary>
 
 <p align="center"><sub><i>RAG, agents, ML experiments</i></sub></p>
 
@@ -662,7 +680,10 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/pins/cortex.svg" width="49%" alt="cortex" /></a>
 </div>
 
-<h4 align="center">🎮 Game <sub>· 2</sub></h4>
+</details>
+
+<details>
+<summary align="center"><b>🎮 Game</b> <sub>· 2</sub></summary>
 
 <p align="center"><sub><i>Pygame & arcade clones</i></sub></p>
 
@@ -670,6 +691,8 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/Py-Tetris-Game"><img src="./assets/pins/Py-Tetris-Game.svg" width="49%" alt="Py-Tetris-Game" /></a>
   <a href="https://github.com/AbdullahBakir97/Space-Shooter"><img src="./assets/pins/Space-Shooter.svg" width="49%" alt="Space-Shooter" /></a>
 </div>
+
+</details>
 <!-- PINNED_REPOS:END -->
 
 <!-- GOOGLE PAGESPEED -->

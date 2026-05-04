@@ -2449,9 +2449,27 @@ def fetch_pinned_repos() -> str:
 
     sections: list[str] = []
 
+    def _collapsible(title: str, count: int, sub: str, body: str, *, open_: bool = False) -> str:
+        """Each category renders inside a <details> so users can collapse it.
+        First section (Pinned-by-author) opens by default; rest collapsed."""
+        attr = " open" if open_ else ""
+        return (
+            f'<details{attr}>\n'
+            f'<summary align="center"><b>{title}</b> '
+            f'<sub>· {count}</sub></summary>\n\n'
+            f'<p align="center"><sub><i>{sub}</i></sub></p>\n\n'
+            f'{body}\n\n'
+            f'</details>'
+        )
+
     if pinned_repos:
-        sections.append('<h4 align="center">📌 Pinned by the author</h4>')
-        sections.append(_render_pin_grid(pinned_repos))
+        sections.append(_collapsible(
+            "📌 Pinned by the author",
+            len(pinned_repos),
+            "Hand-picked headline projects",
+            _render_pin_grid(pinned_repos),
+            open_=True,
+        ))
 
     label_map = {
         "most_starred": ("⭐ Most-Starred Showcases", "Repos with notable community traction"),
@@ -2466,9 +2484,7 @@ def fetch_pinned_repos() -> str:
         if not items:
             continue
         title, sub = label_map[key]
-        sections.append(f'<h4 align="center">{title} <sub>· {len(items)}</sub></h4>')
-        sections.append(f'<p align="center"><sub><i>{sub}</i></sub></p>')
-        sections.append(_render_pin_grid(items))
+        sections.append(_collapsible(title, len(items), sub, _render_pin_grid(items)))
 
     today = dt.date.today().isoformat()
     sections.insert(
