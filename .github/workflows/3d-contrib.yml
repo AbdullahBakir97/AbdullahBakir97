@@ -68,7 +68,19 @@ jobs:
           git add profile-3d-contrib/
           if git diff --cached --quiet; then
             echo "no changes to commit"
-          else
-            git commit -m "chore(3d-contrib): regenerate per-year + rolling profile contribution SVGs"
-            git push
+            exit 0
           fi
+          git commit -m "chore(3d-contrib): regenerate per-year + rolling profile contribution SVGs"
+          # Retry push with rebase up to 5 times — the snake/readme/metrics
+          # workflows may push to main concurrently, causing fetch-first rejections.
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "push succeeded on attempt $i"
+              exit 0
+            fi
+            echo "push attempt $i rejected — pulling with rebase and retrying"
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::failed to push after 5 attempts"
+          exit 1

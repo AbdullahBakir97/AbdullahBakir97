@@ -37,7 +37,15 @@ jobs:
           git add README.md assets/heatmap-*.svg assets/skyline-*.svg
           if git diff --cached --quiet; then
             echo "no changes to commit"
-          else
-            git commit -m "chore(readme): refresh markers + per-year contribution SVGs"
-            git push
+            exit 0
           fi
+          git commit -m "chore(readme): refresh markers + per-year contribution SVGs"
+          # Retry on push race with sibling workflows (3d-contrib, snake)
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "push attempt $i rejected — rebasing"
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::failed to push after 5 attempts"
+          exit 1
