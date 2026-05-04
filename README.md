@@ -8,7 +8,7 @@
 <!-- 🐙 PROFESSIONAL GITHUB IDENTIFIER — pulsing brand-red halo + Invertocat -->
 <p align="center">
   <a href="https://github.com/AbdullahBakir97" aria-label="GitHub profile">
-    <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/github-icon.svg" width="96" height="96" alt="GitHub @AbdullahBakir97" />
+    <img src="./assets/github-icon.svg" width="200" height="200" alt="GitHub @AbdullahBakir97 — color-pulsing brand identifier" />
   </a>
 </p>
 
@@ -21,7 +21,7 @@
 <!-- 🪄 TYPING SVG — 11 rotating headlines, JetBrains Mono coding font -->
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2400&pause=1000&color=F90001&center=true&vCenter=true&width=950&lines=Hi+there%2C+I%27m+Abdullah+%F0%9F%91%8B;Full-Stack+Developer+%E2%9A%A1+Based+in+Germany+%F0%9F%87%A9%F0%9F%87%AA;Python+%2F+Django+%2F+Vue+%2F+Nuxt+%2F+TypeScript;Building+production+systems+that+actually+ship;Crafting+AI-augmented+developer+tools+%F0%9F%A4%96;Architecting+microservices+that+scale+%F0%9F%8F%97%EF%B8%8F;Designing+APIs+that+don%27t+make+you+cry;From+bakeries+to+GitHub+Apps+%E2%80%94+I+ship;Currently+exploring+local+LLMs+and+RAG;Speaking+English+%2F+Deutsch+%2F+%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9;Open+to+collaborate+on+meaningful+work+%E2%9C%A8;Hallo%21+Ich+bin+Abdullah+aus+Deutschland+%F0%9F%87%A9%F0%9F%87%AA;Full-Stack-Entwickler+%C2%B7+Python+%C2%B7+Django+%C2%B7+Vue;Ich+baue+L%C3%B6sungen+f%C3%BCr+kleine+Unternehmen;Sauberer+Code%2C+klare+APIs%2C+gl%C3%BCckliche+Nutzer;Vom+Prototyp+zum+produktiven+System;Open+Source+ist+meine+Leidenschaft;Lass+uns+etwas+Gro%C3%9Fartiges+zusammen+bauen;Berliner+Kaffee%2C+dauerhafter+Code;Qualit%C3%A4t+schl%C3%A4gt+Quantit%C3%A4t%2C+jedes+Mal;Bereit+f%C3%BCr+neue+Herausforderungen+%E2%9C%A8;%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C+%D8%A3%D9%86%D8%A7+%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87+%D9%85%D9%86+%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7+%F0%9F%87%A9%F0%9F%87%AA;%D9%85%D8%B7%D9%88%D8%B1+Full-Stack+%E2%80%94+Python+%D9%88+Django+%D9%88+Vue;%D8%A3%D8%A8%D9%86%D9%8A+%D8%AD%D9%84%D9%88%D9%84%D8%A7%D9%8B+%D9%84%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84+%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9;%D9%83%D9%88%D8%AF+%D9%86%D8%B8%D9%8A%D9%81%D8%8C+%D9%88%D8%A7%D8%AC%D9%87%D8%A7%D8%AA+%D9%88%D8%A7%D8%B6%D8%AD%D8%A9%D8%8C+%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%88%D9%86+%D8%B3%D8%B9%D8%AF%D8%A7%D8%A1;%D9%85%D9%86+%D8%A7%D9%84%D9%86%D9%85%D9%88%D8%B0%D8%AC+%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%8A+%D8%A5%D9%84%D9%89+%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85+%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A;%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%D8%A7%D8%AA+%D9%85%D9%81%D8%AA%D9%88%D8%AD%D8%A9+%D8%A7%D9%84%D9%85%D8%B5%D8%AF%D8%B1+%D8%B4%D8%BA%D9%81%D9%8A;%D9%84%D9%86%D8%A8%D9%86%D9%8A+%D8%B4%D9%8A%D8%A6%D8%A7%D9%8B+%D8%B9%D8%B8%D9%8A%D9%85%D8%A7%D9%8B+%D9%85%D8%B9%D8%A7%D9%8B;%D8%B4%D8%BA%D9%81+%D9%85%D9%86+%D8%AF%D9%85%D8%B4%D9%82%D8%8C+%D9%83%D9%88%D8%AF+%D9%85%D9%86+%D8%A8%D8%B1%D9%84%D9%8A%D9%86;%D8%A7%D9%84%D8%AC%D9%88%D8%AF%D8%A9+%D8%AA%D8%AA%D9%81%D9%88%D9%82+%D8%B9%D9%84%D9%89+%D8%A7%D9%84%D9%83%D9%85%D9%8A%D8%A9+%D8%AF%D8%A7%D8%A6%D9%85%D8%A7%D9%8B;%D9%85%D8%B3%D8%AA%D8%B9%D8%AF+%D9%84%D9%84%D8%AA%D8%AD%D8%AF%D9%8A%D8%A7%D8%AA+%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9+%E2%9C%A8" alt="Typing animation: 31 rotating headlines in English, Deutsch, العربية" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=33&duration=2400&pause=1000&color=F90001&center=true&vCenter=true&width=950&lines=Hi+there%2C+I%27m+Abdullah+%F0%9F%91%8B;Full-Stack+Developer+%E2%9A%A1+Based+in+Germany+%F0%9F%87%A9%F0%9F%87%AA;Python+%2F+Django+%2F+Vue+%2F+Nuxt+%2F+TypeScript;Building+production+systems+that+actually+ship;Crafting+AI-augmented+developer+tools+%F0%9F%A4%96;Architecting+microservices+that+scale+%F0%9F%8F%97%EF%B8%8F;Designing+APIs+that+don%27t+make+you+cry;From+bakeries+to+GitHub+Apps+%E2%80%94+I+ship;Currently+exploring+local+LLMs+and+RAG;Speaking+English+%2F+Deutsch+%2F+%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9;Open+to+collaborate+on+meaningful+work+%E2%9C%A8;Hallo%21+Ich+bin+Abdullah+aus+Deutschland+%F0%9F%87%A9%F0%9F%87%AA;Full-Stack-Entwickler+%C2%B7+Python+%C2%B7+Django+%C2%B7+Vue;Ich+baue+L%C3%B6sungen+f%C3%BCr+kleine+Unternehmen;Sauberer+Code%2C+klare+APIs%2C+gl%C3%BCckliche+Nutzer;Vom+Prototyp+zum+produktiven+System;Open+Source+ist+meine+Leidenschaft;Lass+uns+etwas+Gro%C3%9Fartiges+zusammen+bauen;Berliner+Kaffee%2C+dauerhafter+Code;Qualit%C3%A4t+schl%C3%A4gt+Quantit%C3%A4t%2C+jedes+Mal;Bereit+f%C3%BCr+neue+Herausforderungen+%E2%9C%A8;%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C+%D8%A3%D9%86%D8%A7+%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87+%D9%85%D9%86+%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7+%F0%9F%87%A9%F0%9F%87%AA;%D9%85%D8%B7%D9%88%D8%B1+Full-Stack+%E2%80%94+Python+%D9%88+Django+%D9%88+Vue;%D8%A3%D8%A8%D9%86%D9%8A+%D8%AD%D9%84%D9%88%D9%84%D8%A7%D9%8B+%D9%84%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84+%D8%A7%D9%84%D8%B5%D8%BA%D9%8A%D8%B1%D8%A9;%D9%83%D9%88%D8%AF+%D9%86%D8%B8%D9%8A%D9%81%D8%8C+%D9%88%D8%A7%D8%AC%D9%87%D8%A7%D8%AA+%D9%88%D8%A7%D8%B6%D8%AD%D8%A9%D8%8C+%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%88%D9%86+%D8%B3%D8%B9%D8%AF%D8%A7%D8%A1;%D9%85%D9%86+%D8%A7%D9%84%D9%86%D9%85%D9%88%D8%B0%D8%AC+%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%8A+%D8%A5%D9%84%D9%89+%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85+%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A;%D8%A7%D9%84%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%D8%A7%D8%AA+%D9%85%D9%81%D8%AA%D9%88%D8%AD%D8%A9+%D8%A7%D9%84%D9%85%D8%B5%D8%AF%D8%B1+%D8%B4%D8%BA%D9%81%D9%8A;%D9%84%D9%86%D8%A8%D9%86%D9%8A+%D8%B4%D9%8A%D8%A6%D8%A7%D9%8B+%D8%B9%D8%B8%D9%8A%D9%85%D8%A7%D9%8B+%D9%85%D8%B9%D8%A7%D9%8B;%D8%B4%D8%BA%D9%81+%D9%85%D9%86+%D8%AF%D9%85%D8%B4%D9%82%D8%8C+%D9%83%D9%88%D8%AF+%D9%85%D9%86+%D8%A8%D8%B1%D9%84%D9%8A%D9%86;%D8%A7%D9%84%D8%AC%D9%88%D8%AF%D8%A9+%D8%AA%D8%AA%D9%81%D9%88%D9%82+%D8%B9%D9%84%D9%89+%D8%A7%D9%84%D9%83%D9%85%D9%8A%D8%A9+%D8%AF%D8%A7%D8%A6%D9%85%D8%A7%D9%8B;%D9%85%D8%B3%D8%AA%D8%B9%D8%AF+%D9%84%D9%84%D8%AA%D8%AD%D8%AF%D9%8A%D8%A7%D8%AA+%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9+%E2%9C%A8" alt="Typing animation: 31 rotating headlines in English, Deutsch, العربية" />
   </a>
 </div>
 
@@ -49,6 +49,11 @@
 <!-- 💻 ABOUT ME — animated cinematic hero card                    -->
 <!-- ============================================================ -->
 <h2 id="about" align="center">💻 About Me</h2>
+
+<!-- 🎨 Single rotating terminal line — color changes per text shown -->
+<div align="center">
+  <img src="./assets/about-typing.svg" alt="terminal animation: $ whoami → $ cat about.py → # nice to meet you" />
+</div>
 
 <!-- 🌟 Editorial hero banner — name, role, availability, stats -->
 <p align="center">
@@ -109,7 +114,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- QUOTE:END -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/animated-divider.svg" width="100%" alt="" />
+  <img src="./assets/animated-divider.svg" width="100%" alt="" />
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -178,7 +183,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/brain-anatomical.svg" width="80%" alt="Neural Skill Atlas — anatomically-accurate human brain (lateral view) recolored with neon gradient, pulsing" />
+  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/brain-anatomical.svg" width="100%" alt="Neural Skill Atlas — anatomically-accurate human brain (lateral view) recolored with neon gradient, pulsing" />
 </p>
 
 <p align="center">
@@ -226,7 +231,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <h2 id="focus" align="center">🎯 Current Focus</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/current-focus.svg" width="100%" alt="Now working on: PyDev, Baeckrei, Stock-Manager, Generative AI, Docker/CI-CD, Media Archive — 6 active focus tiles" />
+  <img src="./assets/current-focus-nobg.svg" width="100%" alt="Now working on: PyDev, Baeckrei, Stock-Manager, Generative AI, Docker/CI-CD, Media Archive — 6 active focus tiles" />
 </p>
 
 <!-- YEARLY HIGHLIGHTS -->
@@ -241,7 +246,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <h2 id="highlights" align="center">🚀 Yearly Highlights</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/yearly-highlights.svg" width="100%" alt="Career timeline 2024 → 2026 — Foundation, Growth, Tooling &amp; Reach" />
+  <img src="./assets/yearly-highlights-nobg.svg" width="100%" alt="Career timeline 2024 → 2026 — Foundation, Growth, Tooling &amp; Reach" />
 </p>
 
 <!-- 📊 Live stats — auto-refreshed daily from GitHub GraphQL by readme.yml -->
@@ -768,7 +773,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <!-- 📝 GUESTBOOK — visitors leave a message via a pre-filled issue template -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/animated-divider.svg" width="100%" alt="" />
+  <img src="./assets/animated-divider.svg" width="100%" alt="" />
 </div>
 
 <h2 id="guestbook" align="center">📝 Guestbook</h2>
