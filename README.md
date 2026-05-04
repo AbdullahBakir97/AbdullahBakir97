@@ -248,7 +248,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-519-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-521-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -412,27 +412,27 @@ gitGraph
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>🔥 Top 10 most-active repos · auto-ranked weekly by recent commits + stars. Last updated 2026-05-04.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-05-04.</sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/pins/cortex.svg" width="49%" alt="cortex" /></a>
-  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="./assets/pins/Stock-Manager.svg" width="49%" alt="Stock-Manager" /></a>
+  <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/featured/cortex.svg" width="49%" alt="cortex — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="./assets/featured/Stock-Manager.svg" width="49%" alt="Stock-Manager — featured project card" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/pins/Barber-Salon.svg" width="49%" alt="Barber-Salon" /></a>
-  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/pins/PortfolioCraft.svg" width="49%" alt="PortfolioCraft" /></a>
+  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/featured/Barber-Salon.svg" width="49%" alt="Barber-Salon — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/featured/PortfolioCraft.svg" width="49%" alt="PortfolioCraft — featured project card" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/pins/Jobs-Portal.svg" width="49%" alt="Jobs-Portal" /></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/pins/Django-Store.svg" width="49%" alt="Django-Store" /></a>
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/featured/Jobs-Portal.svg" width="49%" alt="Jobs-Portal — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/featured/Django-Store.svg" width="49%" alt="Django-Store — featured project card" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/pins/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
-  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/pins/Automtion.svg" width="49%" alt="Automtion" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/featured/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/featured/Automtion.svg" width="49%" alt="Automtion — featured project card" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/pins/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/pins/Django-Blog-app.svg" width="49%" alt="Django-Blog-app" /></a>
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project card" /></a>
 </div>
 <!-- FEATURED_PROJECTS:END -->
 

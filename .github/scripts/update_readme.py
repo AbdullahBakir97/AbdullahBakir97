@@ -1324,6 +1324,268 @@ def regenerate_pin_svgs(repos: list[dict]) -> None:
             warn(f"pin render failed for {r['name']}: {e}")
 
 
+# --- RICH FEATURED-PROJECT CARD ---------------------------------------------
+# Distinct visual style from the small pin card: 720x240, three-line
+# description, topic chips, fuller metrics, trending indicator on the right.
+
+FEATURED_W, FEATURED_H = 720, 240
+
+# Topic chip palette — cycle so chips of different topics look visually distinct
+TOPIC_PALETTE = [
+    ("#1f6feb", "#388bfd"),   # blue
+    ("#bf4b8a", "#db61a2"),   # pink
+    ("#3fb950", "#56d364"),   # green
+    ("#d29922", "#e3b341"),   # gold
+    ("#a371f7", "#bc8cff"),   # purple
+    ("#f78166", "#ffa28b"),   # orange
+    ("#39c5cf", "#76e3ea"),   # teal
+]
+
+
+def _humanize_date(iso: str) -> str:
+    """Turn an ISO date into 'today' / 'yesterday' / 'N days ago' / '~M months ago'."""
+    if not iso:
+        return "—"
+    try:
+        d = dt.datetime.fromisoformat(iso.replace("Z", "+00:00"))
+    except Exception:
+        return iso[:10]
+    days = (dt.datetime.now(dt.timezone.utc) - d).days
+    if days <= 0:
+        return "today"
+    if days == 1:
+        return "yesterday"
+    if days < 14:
+        return f"{days} days ago"
+    if days < 60:
+        return f"{days // 7} weeks ago"
+    if days < 365:
+        return f"~{days // 30} months ago"
+    return f"~{days // 365} years ago"
+
+
+def _wrap_lines(s: str, line_chars: int, max_lines: int) -> list[str]:
+    s = (s or "").strip()
+    out: list[str] = []
+    while s and len(out) < max_lines:
+        if len(s) <= line_chars:
+            out.append(s)
+            break
+        cut = s.rfind(" ", 0, line_chars + 1)
+        if cut <= 0:
+            cut = line_chars
+        out.append(s[:cut].rstrip())
+        s = s[cut:].lstrip()
+    if s and len(out) == max_lines:
+        # ellipsize the last line
+        last = out[-1]
+        room = line_chars - 1
+        if len(last) > room:
+            last = last[: room - 1].rstrip() + "…"
+        else:
+            last = last[: room].rstrip() + "…"
+        out[-1] = last
+    return out
+
+
+def render_featured_card_svg(repo: dict, recent_commits: int, dest: Path) -> None:
+    """Render a rich Featured Project card — 720x240, distinct from pin cards.
+
+    Layout:
+      - Header strip (top, 50px): category icon + repo name + trending badge
+      - Description block (3 lines, 60px)
+      - Topics chip row (40px, up to 5 chips)
+      - Footer stats row (40px): lang dot + name | ⭐ N | 🍴 N | created · updated
+    """
+    name = repo["name"]
+    desc = (repo.get("description") or "").strip() or "_No description._"
+    stars = repo.get("stargazers_count", 0)
+    forks = repo.get("forks_count", 0)
+    watchers = repo.get("watchers_count", stars)
+    lang = repo.get("language") or "—"
+    lang_color = LANG_COLORS.get(lang, "#6e7681")
+    topics = (repo.get("topics") or [])[:6]
+    pushed = (repo.get("pushed_at") or "")[:10]
+    created = (repo.get("created_at") or "")[:10]
+    pushed_human = _humanize_date(repo.get("pushed_at") or "")
+
+    # Category emoji
+    category = _category_for(repo)
+    cat_emoji = category.split(" ")[0]
+    cat_text = " ".join(category.split(" ")[1:])
+
+    # Trending badge — show if many recent commits
+    if recent_commits >= 30:
+        trend_label, trend_color = f"🔥 {recent_commits}/30d", "#F90001"
+    elif recent_commits >= 10:
+        trend_label, trend_color = f"⚡ {recent_commits}/30d", "#FF652F"
+    elif recent_commits >= 1:
+        trend_label, trend_color = f"📈 {recent_commits}/30d", "#39d353"
+    else:
+        trend_label, trend_color = "💤 quiet", "#7d8590"
+
+    desc_lines = _wrap_lines(desc, 60, 3)
+
+    parts: list[str] = []
+    parts.append(
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{FEATURED_W}" '
+        f'height="{FEATURED_H}" viewBox="0 0 {FEATURED_W} {FEATURED_H}" '
+        f'role="img" aria-label="{name} — featured project card">'
+    )
+
+    # Defs
+    parts.append(
+        '<defs>'
+        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#1f242c"/>'
+        '<stop offset="100%" stop-color="#0d1117"/>'
+        '</linearGradient>'
+        '<linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">'
+        '<stop offset="0%" stop-color="#F90001"/>'
+        '<stop offset="50%" stop-color="#FF652F"/>'
+        '<stop offset="100%" stop-color="#a855f7"/>'
+        '</linearGradient>'
+        '<filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">'
+        '<feGaussianBlur stdDeviation="2.4" result="b"/>'
+        '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
+        '</filter>'
+        '</defs>'
+    )
+
+    # Card background
+    parts.append(
+        f'<rect width="{FEATURED_W-2}" height="{FEATURED_H-2}" x="1" y="1" '
+        f'rx="10" fill="url(#bg)" stroke="#30363d" stroke-width="1"/>'
+    )
+    # Top accent strip
+    parts.append(
+        f'<rect width="{FEATURED_W-20}" height="3" x="10" y="0" '
+        f'fill="url(#accentGrad)" rx="1.5"/>'
+    )
+
+    # ── Header row: category badge + repo name + trending pill ───────────
+    # Category pill (left)
+    parts.append(
+        f'<g transform="translate(20, 22)">'
+        f'<rect width="148" height="26" rx="13" fill="#161b22" stroke="#30363d" stroke-width="1"/>'
+        f'<text x="74" y="18" text-anchor="middle" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="700" fill="#c9d1d9" letter-spacing="0.5">'
+        f'{cat_emoji} {cat_text[:14]}</text>'
+        f'</g>'
+    )
+    # Repo name (centered, large)
+    parts.append(
+        f'<text x="20" y="78" '
+        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
+        f'font-size="22" font-weight="800" fill="#e6edf3" letter-spacing="-0.3">'
+        f'{name}</text>'
+    )
+    # Trending pill (right) — anchored to the right edge
+    parts.append(
+        f'<g transform="translate({FEATURED_W-148}, 22)">'
+        f'<rect width="128" height="26" rx="13" fill="#0d1117" '
+        f'stroke="{trend_color}" stroke-width="1.5"/>'
+        f'<text x="64" y="18" text-anchor="middle" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="700" fill="{trend_color}" letter-spacing="0.5">'
+        f'{trend_label}</text>'
+        f'</g>'
+    )
+
+    # ── Description (up to 3 lines) ──────────────────────────────────────
+    desc_y = 105
+    for i, line in enumerate(desc_lines):
+        parts.append(
+            f'<text x="20" y="{desc_y + i*20}" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="13" font-weight="400" fill="#c9d1d9" opacity="0.9">'
+            f'{line}</text>'
+        )
+
+    # ── Topic chips ──────────────────────────────────────────────────────
+    chip_y = 175
+    chip_x = 20
+    for i, t in enumerate(topics):
+        bg, fg = TOPIC_PALETTE[i % len(TOPIC_PALETTE)]
+        chip_w = max(48, len(t) * 7 + 16)
+        if chip_x + chip_w > FEATURED_W - 20:
+            break  # ran out of room
+        parts.append(
+            f'<g transform="translate({chip_x}, {chip_y})">'
+            f'<rect width="{chip_w}" height="22" rx="11" fill="#0d1117" '
+            f'stroke="{bg}" stroke-width="1"/>'
+            f'<text x="{chip_w//2}" y="15" text-anchor="middle" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="10.5" font-weight="600" fill="{fg}" letter-spacing="0.2">'
+            f'{t}</text>'
+            f'</g>'
+        )
+        chip_x += chip_w + 6
+
+    # ── Footer stats row ─────────────────────────────────────────────────
+    foot_y = FEATURED_H - 20
+    # Language
+    parts.append(
+        f'<circle cx="28" cy="{foot_y-4}" r="6" fill="{lang_color}"/>'
+        f'<text x="40" y="{foot_y}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="600" fill="#c9d1d9">'
+        f'{lang}</text>'
+    )
+    # Stars
+    star_x = 130
+    parts.append(
+        f'<g transform="translate({star_x}, {foot_y-12})">'
+        f'<path d="M8 0l2.39 4.84L16 5.6l-4 3.9.94 5.5L8 12.4 3.06 15l.94-5.5-4-3.9 5.61-.76L8 0z" '
+        f'fill="#ffde01"/>'
+        f'</g>'
+        f'<text x="{star_x+22}" y="{foot_y}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="700" fill="#c9d1d9">'
+        f'{stars}</text>'
+    )
+    # Forks
+    fork_x = star_x + 70
+    parts.append(
+        f'<g transform="translate({fork_x}, {foot_y-12})" stroke="#7d8590" stroke-width="1.5" fill="none">'
+        f'<circle cx="3" cy="3" r="2"/>'
+        f'<circle cx="13" cy="3" r="2"/>'
+        f'<circle cx="8" cy="14" r="2"/>'
+        f'<path d="M3 5v3a2 2 0 002 2h6a2 2 0 002-2V5"/>'
+        f'<line x1="8" y1="10" x2="8" y2="12"/>'
+        f'</g>'
+        f'<text x="{fork_x+22}" y="{foot_y}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="700" fill="#c9d1d9">'
+        f'{forks}</text>'
+    )
+    # Watchers (eye)
+    eye_x = fork_x + 70
+    parts.append(
+        f'<g transform="translate({eye_x}, {foot_y-12})" stroke="#7d8590" stroke-width="1.4" fill="none">'
+        f'<path d="M0 8 C 4 2, 12 2, 16 8 C 12 14, 4 14, 0 8 Z"/>'
+        f'<circle cx="8" cy="8" r="2.2" fill="#7d8590"/>'
+        f'</g>'
+        f'<text x="{eye_x+22}" y="{foot_y}" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="700" fill="#c9d1d9">'
+        f'{watchers}</text>'
+    )
+    # Created · updated (right-aligned)
+    parts.append(
+        f'<text x="{FEATURED_W-20}" y="{foot_y}" text-anchor="end" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="11" font-weight="500" fill="#7d8590">'
+        f'created {created}  ·  updated {pushed_human}</text>'
+    )
+
+    parts.append('</svg>')
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text("".join(parts), encoding="utf-8")
+
+
 def _pin_card_url(name: str, lines: int = 2) -> str:
     """Reference the locally-rendered pin card. Independent of the flaky
     github-readme-stats.vercel.app service (which 503s frequently)."""
@@ -1384,14 +1646,39 @@ def fetch_featured_projects(limit: int = 10) -> str:
     if not top:
         return "_No featured projects yet._"
 
-    # Side effect: generate pin SVGs for the top set.
-    regenerate_pin_svgs(top)
+    # Side effect: render rich Featured-card SVGs for each entry.
+    feat_dir = Path(ASSETS_DIR) / "featured"
+    feat_dir.mkdir(parents=True, exist_ok=True)
+    # commit-count map needed for trending labels
+    commits_by_name = {r["name"]: c for _, r, c in scored}
+    for r in top:
+        try:
+            render_featured_card_svg(r, commits_by_name.get(r["name"], 0),
+                                     feat_dir / f"{r['name']}.svg")
+        except Exception as e:
+            warn(f"featured render failed for {r['name']}: {e}")
+
+    # Render as 2-col grid of <a><img></a> referencing the new cards
+    rows = []
+    for i in range(0, len(top), 2):
+        rows.append('<div align="center">')
+        for j in range(2):
+            if i + j >= len(top):
+                continue
+            n = top[i + j]["name"]
+            rows.append(
+                f'  <a href="https://github.com/{GH_USER}/{n}">'
+                f'<img src="./{ASSETS_DIR}/featured/{n}.svg" '
+                f'width="49%" alt="{n} — featured project card" /></a>'
+            )
+        rows.append('</div>')
 
     today = dt.date.today().isoformat()
     return (
         f'<p align="center"><sub>🔥 Top {len(top)} most-active repos · '
-        f'auto-ranked weekly by recent commits + stars. Last updated {today}.</sub></p>\n\n'
-        + _render_pin_grid(top)
+        f'rich cards with topics, last-updated, watchers · ranked by recent '
+        f'commits + stars. Last updated {today}.</sub></p>\n\n'
+        + "\n".join(rows)
     )
 
 
