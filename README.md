@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/%40AbdullahBakir97-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="@AbdullahBakir97" />
+    <img src="https://img.shields.io/badge/%40AbdullahBakir97-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117&v=20260504" alt="@AbdullahBakir97" />
   </a>
 </p>
 
@@ -27,18 +27,18 @@
 
 <!-- 🏷️ PROFESSIONAL BADGES — stats row -->
 <p align="center">
-  <a href="https://github.com/AbdullahBakir97"><img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&label=PROFILE%20VIEWS&color=F90001&style=for-the-badge" alt="Profile views" /></a>
-  <a href="https://github.com/AbdullahBakir97?tab=followers"><img src="https://img.shields.io/github/followers/AbdullahBakir97?label=FOLLOWERS&style=for-the-badge&color=F90001&logo=github&logoColor=white" alt="GitHub followers" /></a>
-  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER&label=TOTAL%20STARS&style=for-the-badge&color=F90001&logo=github&logoColor=white" alt="Total stars" /></a>
-  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=for-the-badge&color=F90001&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000" alt="CodeTime hours" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&label=PROFILE%20VIEWS&color=F90001&style=for-the-badge&v=20260504" alt="Profile views" /></a>
+  <a href="https://github.com/AbdullahBakir97?tab=followers"><img src="https://img.shields.io/github/followers/AbdullahBakir97?label=FOLLOWERS&style=for-the-badge&color=F90001&logo=github&logoColor=white&v=20260504" alt="GitHub followers" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER&label=TOTAL%20STARS&style=for-the-badge&color=F90001&logo=github&logoColor=white&v=20260504" alt="Total stars" /></a>
+  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=for-the-badge&color=F90001&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000&v=20260504" alt="CodeTime hours" /></a>
 </p>
 
 <!-- 🏷️ PROFESSIONAL BADGES — contact / availability row -->
 <p align="center">
-  <a href="mailto:abdullah.bakir.1997@gmail.com"><img src="https://img.shields.io/badge/EMAIL-D44638?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://t.me/BlackSea0011"><img src="https://img.shields.io/badge/TELEGRAM-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
-  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/badge/Open_to_Work-00C853?style=for-the-badge&logo=googlechat&logoColor=white" alt="Open to work" /></a>
+  <a href="mailto:abdullah.bakir.1997@gmail.com"><img src="https://img.shields.io/badge/EMAIL-D44638?style=for-the-badge&logo=gmail&logoColor=white&v=20260504" alt="Email" /></a>
+  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&v=20260504" alt="LinkedIn" /></a>
+  <a href="https://t.me/BlackSea0011"><img src="https://img.shields.io/badge/TELEGRAM-26A5E4?style=for-the-badge&logo=telegram&logoColor=white&v=20260504" alt="Telegram" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/badge/Open_to_Work-00C853?style=for-the-badge&logo=googlechat&logoColor=white&v=20260504" alt="Open to work" /></a>
 </p>
 
 <div align="center">
@@ -46,14 +46,20 @@
 </div>
 
 <!-- ============================================================ -->
-<!-- 💻 ABOUT ME — Terminal aesthetic with Python class            -->
+<!-- 💻 ABOUT ME — animated cinematic hero card                    -->
 <!-- ============================================================ -->
 <h2 id="about" align="center">💻 About Me</h2>
 
-<!-- 🎨 Single rotating terminal line — color changes per text shown -->
-<div align="center">
-  <img src="./assets/about-typing.svg" alt="terminal animation: $ whoami → $ cat about.py → # nice to meet you" />
-</div>
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="./assets/about-hero.svg" width="100%" alt="Abdullah Bakir — Full-Stack Developer · animated profile card with tech orbit" />
+  </a>
+</p>
+
+<details>
+<summary align="center"><b>📋 The full bio block</b> — pronouns, frameworks, databases, languages I speak, what I'm into</summary>
+
+<br/>
 
 ```python
 class AbdullahBakir:
@@ -71,17 +77,12 @@ class AbdullahBakir:
     def philosophy(self) -> str:
         return "Ship something useful → learn → ship again."
 
-    def __repr__(self) -> str:
-        return f"<{type(self).__name__} based_in={self.location!r}>"
-
 
 me = AbdullahBakir()
 print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```
 
-<p align="center">
-  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif" alt="Python coding animation" />
-</p>
+</details>
 
 <!-- 💬 single rotating motto line — color changes per text shown -->
 <div align="center">
@@ -121,7 +122,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/SKILLS-EXPERTISE-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Technical Expertise" width="200">
+    <img src="https://img.shields.io/badge/SKILLS-EXPERTISE-181717?style=flat-square&color=red&logo=github&logoColor=red&v=20260504" alt="Technical Expertise" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -170,9 +171,9 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 </p>
 
 <p align="center">
-  <a href="https://abdullahbakir97.github.io/AbdullahBakir97/"><img src="https://img.shields.io/badge/🖱️_Explore_in_Interactive_3D-F90001?style=for-the-badge&labelColor=0D1117&logo=three.js&logoColor=white" alt="Interactive 3D — drag to rotate" /></a>
+  <a href="https://abdullahbakir97.github.io/AbdullahBakir97/"><img src="https://img.shields.io/badge/🖱️_Explore_in_Interactive_3D-F90001?style=for-the-badge&labelColor=0D1117&logo=three.js&logoColor=white&v=20260504" alt="Interactive 3D — drag to rotate" /></a>
   &nbsp;
-  <a href="https://commons.wikimedia.org/wiki/File:Human-brain.SVG"><img src="https://img.shields.io/badge/Anatomy-Hugh_Guiney_·_CC--BY--SA_3.0-7C3AED?style=for-the-badge&labelColor=0D1117" alt="Brain anatomy attribution"/></a>
+  <a href="https://commons.wikimedia.org/wiki/File:Human-brain.SVG"><img src="https://img.shields.io/badge/Anatomy-Hugh_Guiney_·_CC--BY--SA_3.0-7C3AED?style=for-the-badge&labelColor=0D1117&v=20260504" alt="Brain anatomy attribution"/></a>
 </p>
 
 <p align="center"><sub><i>🖱️ The interactive 3D version (above) extrudes every anatomical path into a 3D mesh with neon emissive shaders. Drag to rotate, scroll to zoom, right-drag to pan, auto-rotates when idle.</i></sub></p>
@@ -184,19 +185,19 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 
 <table align="center" width="100%">
 <tr>
-<td align="center" width="33%" valign="top"><h4>🧠 Paradigms &amp; Architecture</h4><p><img src="https://img.shields.io/badge/OOP-3333FF?style=for-the-badge&logoColor=white" alt="OOP"> <img src="https://img.shields.io/badge/ORM-111111?style=for-the-badge&logo=database&logoColor=white" alt="ORM"> <img src="https://img.shields.io/badge/Microservices-34D399?style=for-the-badge&logoColor=white" alt="Microservices"> <img src="https://img.shields.io/badge/Event--Driven-F90001?style=for-the-badge&logoColor=white" alt="Event-Driven"> <img src="https://img.shields.io/badge/Domain--Driven-FF652F?style=for-the-badge&logoColor=white" alt="Domain-Driven"> <img src="https://img.shields.io/badge/Version_Control-111111?style=for-the-badge&logo=git&logoColor=F05032" alt="Version Control"></p></td>
-<td align="center" width="33%" valign="top"><h4>🖥️ Operating Systems</h4><p><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" alt="Ubuntu"> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows"></p></td>
-<td align="center" width="33%" valign="top"><h4>🔄 Async &amp; Messaging</h4><p><img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white" alt="Celery"> <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white" alt="RabbitMQ"> <img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&logoColor=white" alt="Socket.io"> <img src="https://img.shields.io/badge/AJAX-111111?style=for-the-badge&logo=ajax&logoColor=white" alt="AJAX"></p></td>
+<td align="center" width="33%" valign="top"><h4>🧠 Paradigms &amp; Architecture</h4><p><img src="https://img.shields.io/badge/OOP-3333FF?style=for-the-badge&logoColor=white&v=20260504" alt="OOP"> <img src="https://img.shields.io/badge/ORM-111111?style=for-the-badge&logo=database&logoColor=white&v=20260504" alt="ORM"> <img src="https://img.shields.io/badge/Microservices-34D399?style=for-the-badge&logoColor=white&v=20260504" alt="Microservices"> <img src="https://img.shields.io/badge/Event--Driven-F90001?style=for-the-badge&logoColor=white&v=20260504" alt="Event-Driven"> <img src="https://img.shields.io/badge/Domain--Driven-FF652F?style=for-the-badge&logoColor=white&v=20260504" alt="Domain-Driven"> <img src="https://img.shields.io/badge/Version_Control-111111?style=for-the-badge&logo=git&logoColor=F05032&v=20260504" alt="Version Control"></p></td>
+<td align="center" width="33%" valign="top"><h4>🖥️ Operating Systems</h4><p><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black&v=20260504" alt="Linux"> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white&v=20260504" alt="Ubuntu"> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white&v=20260504" alt="Windows"></p></td>
+<td align="center" width="33%" valign="top"><h4>🔄 Async &amp; Messaging</h4><p><img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white&v=20260504" alt="Celery"> <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white&v=20260504" alt="RabbitMQ"> <img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&logoColor=white&v=20260504" alt="Socket.io"> <img src="https://img.shields.io/badge/AJAX-111111?style=for-the-badge&logo=ajax&logoColor=white&v=20260504" alt="AJAX"></p></td>
 </tr>
 <tr>
-<td align="center" width="33%" valign="top"><h4>🧩 UI Frameworks</h4><p><img src="https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF" alt="Vuetify"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery"> <img src="https://img.shields.io/badge/Htmx-FF4700?style=for-the-badge&logo=htmx&logoColor=white" alt="Htmx"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"></p></td>
-<td align="center" width="33%" valign="top"><h4>📊 Data Science</h4><p><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch"> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"> <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"> <img src="https://img.shields.io/badge/Matplotlib-3F4F75?style=for-the-badge&logo=Matplotlib&logoColor=white" alt="Matplotlib"></p></td>
-<td align="center" width="33%" valign="top"><h4>🔧 IDEs &amp; Notebooks</h4><p><img src="https://img.shields.io/badge/Jupyter-FA0F00?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"> <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252" alt="Colab"> <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS Code"> <img src="https://img.shields.io/badge/PyCharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green" alt="PyCharm"></p></td>
+<td align="center" width="33%" valign="top"><h4>🧩 UI Frameworks</h4><p><img src="https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF&v=20260504" alt="Vuetify"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white&v=20260504" alt="jQuery"> <img src="https://img.shields.io/badge/Htmx-FF4700?style=for-the-badge&logo=htmx&logoColor=white&v=20260504" alt="Htmx"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white&v=20260504" alt="Bootstrap"></p></td>
+<td align="center" width="33%" valign="top"><h4>📊 Data Science</h4><p><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white&v=20260504" alt="PyTorch"> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white&v=20260504" alt="TensorFlow"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white&v=20260504" alt="NumPy"> <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white&v=20260504" alt="Pandas"> <img src="https://img.shields.io/badge/Matplotlib-3F4F75?style=for-the-badge&logo=Matplotlib&logoColor=white&v=20260504" alt="Matplotlib"></p></td>
+<td align="center" width="33%" valign="top"><h4>🔧 IDEs &amp; Notebooks</h4><p><img src="https://img.shields.io/badge/Jupyter-FA0F00?style=for-the-badge&logo=jupyter&logoColor=white&v=20260504" alt="Jupyter"> <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252&v=20260504" alt="Colab"> <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white&v=20260504" alt="VS Code"> <img src="https://img.shields.io/badge/PyCharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green&v=20260504" alt="PyCharm"></p></td>
 </tr>
 <tr>
-<td align="center" width="33%" valign="top"><h4>🔐 APIs &amp; Security</h4><p><img src="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=api&logoColor=white" alt="REST APIs"> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="Swagger"> <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman"> <img src="https://img.shields.io/badge/JWT-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink" alt="JWT"></p></td>
-<td align="center" width="33%" valign="top"><h4>🎨 Design &amp; Docs</h4><p><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"> <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown"> <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" alt="Canva"></p></td>
-<td align="center" width="33%" valign="top"><h4>🌐 Languages</h4><p><img src="https://img.shields.io/badge/English-Native-F90001?style=for-the-badge" alt="English"> <img src="https://img.shields.io/badge/Deutsch-Fluent-FF652F?style=for-the-badge" alt="Deutsch"> <img src="https://img.shields.io/badge/العربية-Native-FFD700?style=for-the-badge" alt="Arabic"></p></td>
+<td align="center" width="33%" valign="top"><h4>🔐 APIs &amp; Security</h4><p><img src="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=api&logoColor=white&v=20260504" alt="REST APIs"> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black&v=20260504" alt="Swagger"> <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white&v=20260504" alt="Postman"> <img src="https://img.shields.io/badge/JWT-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink&v=20260504" alt="JWT"></p></td>
+<td align="center" width="33%" valign="top"><h4>🎨 Design &amp; Docs</h4><p><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&v=20260504" alt="Figma"> <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white&v=20260504" alt="Markdown"> <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white&v=20260504" alt="Canva"></p></td>
+<td align="center" width="33%" valign="top"><h4>🌐 Languages</h4><p><img src="https://img.shields.io/badge/English-Native-F90001?style=for-the-badge&v=20260504" alt="English"> <img src="https://img.shields.io/badge/Deutsch-Fluent-FF652F?style=for-the-badge&v=20260504" alt="Deutsch"> <img src="https://img.shields.io/badge/العربية-Native-FFD700?style=for-the-badge&v=20260504" alt="Arabic"></p></td>
 </tr>
 </table>
 
@@ -206,7 +207,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/CURRENT-FOCUS-181717?style=flat-square&color=red&logo=target&logoColor=red" alt="Current Focus" width="200">
+    <img src="https://img.shields.io/badge/CURRENT-FOCUS-181717?style=flat-square&color=red&logo=target&logoColor=red&v=20260504" alt="Current Focus" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -221,7 +222,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/YEARLY-HIGHLIGHTS-181717?style=flat-square&color=red&logo=star&logoColor=red" alt="Yearly Highlights" width="200">
+    <img src="https://img.shields.io/badge/YEARLY-HIGHLIGHTS-181717?style=flat-square&color=red&logo=star&logoColor=red&v=20260504" alt="Yearly Highlights" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -236,7 +237,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-464-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-12-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-517-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -249,7 +250,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GITHUB-STATS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="GitHub Stats" width="200">
+    <img src="https://img.shields.io/badge/GITHUB-STATS-181717?style=flat-square&color=red&logo=github&logoColor=red&v=20260504" alt="GitHub Stats" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -258,26 +259,26 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=AbdullahBakir97&custom_title=AbdullahBakir97's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=ffde01&line=830203&point=FF652F&area_color=&title_color=da644d&area=true" width="100%" alt="Activity Graph" />
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=AbdullahBakir97&custom_title=AbdullahBakir97&v=20260504's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=ffde01&line=830203&point=FF652F&area_color=&title_color=da644d&area=true" width="100%" alt="Activity Graph" />
   </a>
 </div>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr" width="100%" alt="Profile Summary" />
-    <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true" width="49%" alt="GitHub Stats" />
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606" width="49%" alt="GitHub Streak" />
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AbdullahBakir97&theme=codeSTACKr&v=20260504" width="100%" alt="Profile Summary" />
+    <img src="https://github-readme-stats.vercel.app/api?username=AbdullahBakir97&theme=codeSTACKr&show_icons=true&rank_icon=github&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&ring_color=830203&hide_border=true&v=20260504" width="49%" alt="GitHub Stats" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbdullahBakir97&theme=codeSTACKr&hide_border=true&stroke=ffD700&color=d60606&v=20260504" width="49%" alt="GitHub Streak" />
   </a>
 </div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00" alt="Top Languages" width="49%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=AbdullahBakir97&theme=codeSTACKr&title_color=ff6f00" alt="Language Distribution" width="49%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AbdullahBakir97&theme=codeSTACKr&hide_border=true&include_all_commits=false&count_private=true&layout=compact&title_color=ff6f00&v=20260504" alt="Top Languages" width="49%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=AbdullahBakir97&theme=codeSTACKr&title_color=ff6f00&v=20260504" alt="Language Distribution" width="49%" />
 </div>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://github-profile-trophy.vercel.app/?username=AbdullahBakir97&theme=radical&row=1&column=7" width="100%" alt="GitHub Trophies" />
+    <img src="https://github-profile-trophy.vercel.app/?username=AbdullahBakir97&theme=radical&row=1&column=7&v=20260504" width="100%" alt="GitHub Trophies" />
   </a>
 </div>
 
@@ -298,7 +299,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/RECENT-ACTIVITY-181717?style=flat-square&color=red&logo=githubactions&logoColor=red" alt="Recent Activity" width="200">
+    <img src="https://img.shields.io/badge/RECENT-ACTIVITY-181717?style=flat-square&color=red&logo=githubactions&logoColor=red&v=20260504" alt="Recent Activity" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -322,7 +323,7 @@ _No recent public activity._
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/LATEST-RELEASES-181717?style=flat-square&color=red&logo=semver&logoColor=red" alt="Latest Releases" width="200">
+    <img src="https://img.shields.io/badge/LATEST-RELEASES-181717?style=flat-square&color=red&logo=semver&logoColor=red&v=20260504" alt="Latest Releases" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -339,12 +340,28 @@ _No recent public activity._
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/FEATURED-PROJECTS-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Featured Projects" width="200">
+    <img src="https://img.shields.io/badge/FEATURED-PROJECTS-181717?style=flat-square&color=red&logo=github&logoColor=red&v=20260504" alt="Featured Projects" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
 
 <h2 id="projects" align="center">🏗️ Featured Projects</h2>
+
+<!-- ============================================================ -->
+<!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
+<!-- ============================================================ -->
+<!-- FEATURED_PROJECTS:START -->
+<p align="center"><sub>📊 Auto-ranked weekly by recent commits + stars. Last updated 2026-05-04.</sub></p>
+
+<table align="center" width="100%"><tr><td valign="top" width="50%"><h3>🧠 AI / Data · <a href="https://github.com/AbdullahBakir97/cortex">cortex</a></h3><p>Memory-augmented agent kernel — context windows, retrieval, and structured output for LLM workflows.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/cortex?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/cortex?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-100-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Stock-Manager">Stock-Manager</a></h3><p>Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Stock-Manager?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Stock-Manager?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-89-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td></tr><tr><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Barber-Salon">Barber-Salon</a></h3><p>Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Barber-Salon?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Barber-Salon?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-7-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td><td valign="top" width="50%"><h3>🛠️ Tooling · <a href="https://github.com/AbdullahBakir97/PortfolioCraft">PortfolioCraft</a></h3><p>Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.</p><p><img src="https://img.shields.io/badge/TypeScript-3776AB?style=flat-square&logoColor=white&v=20260504" alt="TypeScript"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/PortfolioCraft?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/PortfolioCraft?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-38-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td></tr><tr><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Jobs-Portal">Jobs-Portal</a></h3><p>Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Jobs-Portal?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Jobs-Portal?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-7-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td><td valign="top" width="50%"><h3>🌐 Backend / API · <a href="https://github.com/AbdullahBakir97/Django-Store">Django-Store</a></h3><p>Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.</p><p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Django-Store?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/last-commit/AbdullahBakir97/Django-Store?style=flat-square&color=blue&v=20260504" alt="last commit"> <img src="https://img.shields.io/badge/commits_30d-5-39d353?style=flat-square&v=20260504" alt="commits 30d"> </p></td></tr></table>
+<!-- FEATURED_PROJECTS:END -->
+
+<br/>
+
+<details>
+<summary align="center"><b>📖 Hand-written narrative cards</b> — Problem · Approach · Stack · Outcome</summary>
+
+<br/>
 
 <!-- ============================================================ -->
 <!-- 🌟 NARRATIVE CARDS — Problem · Approach · Stack · Outcome     -->
@@ -360,7 +377,7 @@ _No recent public activity._
         <b>Stack.</b> <code>Django · DRF · Vue 3 · PostgreSQL · Redis · Docker</code><br/>
         <b>Outcome.</b> Live with one bakery; expanding to two more in 2026.
       </p>
-      <p><a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="https://img.shields.io/badge/View_Repo-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="View repo" /></a></p>
+      <p><a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="https://img.shields.io/badge/View_Repo-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117&v=20260504" alt="View repo" /></a></p>
     </td>
     <td valign="top" width="50%">
       <h3>📦 Stock-Manager — Desktop Inventory</h3>
@@ -370,7 +387,7 @@ _No recent public activity._
         <b>Stack.</b> <code>Python · Tkinter/PyQt · SQLite · Sync layer</code><br/>
         <b>Outcome.</b> v2.4.3 shipped; daily-driver for the inventory clerk role.
       </p>
-      <p><a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="https://img.shields.io/badge/View_Repo-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="View repo" /></a></p>
+      <p><a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="https://img.shields.io/badge/View_Repo-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117&v=20260504" alt="View repo" /></a></p>
     </td>
   </tr>
   <tr>
@@ -382,10 +399,12 @@ _No recent public activity._
         <b>Stack.</b> <code>Python · GitHub Apps API · LLM tooling · CLI ergonomics</code><br/>
         <b>Outcome.</b> 5 supporting GitHub Apps shipped April 2026 — issue-triage-bot, pr-coach, commit-craft, repodoc-ai, ai-quality-gate.
       </p>
-      <p><a href="https://github.com/AbdullahBakir97?tab=repositories&q=pr-coach+OR+commit-craft+OR+repodoc-ai+OR+ai-quality-gate+OR+issue-triage-bot"><img src="https://img.shields.io/badge/Browse_Apps-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Browse apps" /></a></p>
+      <p><a href="https://github.com/AbdullahBakir97?tab=repositories&q=pr-coach+OR+commit-craft+OR+repodoc-ai+OR+ai-quality-gate+OR+issue-triage-bot"><img src="https://img.shields.io/badge/Browse_Apps-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117&v=20260504" alt="Browse apps" /></a></p>
     </td>
   </tr>
 </table>
+
+</details>
 
 <!-- 🎬 TERMINAL DEMO — record once with `vhs` or asciinema and drop the GIF/SVG below -->
 <details>
@@ -443,41 +462,11 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <h3 align="center">📌 Pinned Repositories</h3>
 
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django-Store">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Django Store" />
-  </a>
-  <a href="https://github.com/AbdullahBakir97/Barber-Salon">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Barber Salon" />
-  </a>
-</div>
+<p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97/Project-Management-Tool">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Project Management Tool" />
-  </a>
-  <a href="https://github.com/AbdullahBakir97/Python-Django-join_with">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Python Django join_with" />
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Weather--App-django-vue.js&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Weather App" />
-  </a>
-  <a href="https://github.com/AbdullahBakir97/Django-Vuejs-Courses-Filter">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Vuejs-Courses-Filter&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Django Vuejs Courses Filter" />
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/AbdullahBakir97/API">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=API&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="API" />
-  </a>
-  <a href="https://github.com/AbdullahBakir97/Jobs-Portal">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Jobs Portal" />
-  </a>
-</div>
+<!-- PINNED_REPOS:START -->
+<table align="center" width="100%"><tr><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Stock-Manager"><h3>📌 Stock-Manager</h3></a><p>Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Stock-Manager?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Stock-Manager?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-02</sub></p><p><code>desktop-app</code> <code>inventory-management</code> <code>offline</code> <code>pyqt6</code></p></td><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Django-Store"><h3>📌 Django-Store</h3></a><p>Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Django-Store?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Django-Store?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>ajax</code> <code>bootstrap</code> <code>cashing</code> <code>celery</code></p></td></tr><tr><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Barber-Salon"><h3>📌 Barber-Salon</h3></a><p>Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Barber-Salon?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Barber-Salon?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>css</code> <code>django</code> <code>html5</code> <code>javascript</code></p></td><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Jobs-Portal"><h3>📌 Jobs-Portal</h3></a><p>Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Jobs-Portal?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Jobs-Portal?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>css</code> <code>django</code> <code>html</code> <code>javascript</code></p></td></tr><tr><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><h3>📌 Django--LMS--Learning-Management-System</h3></a><p>Learning management system — courses, certifications, messaging, networking, groups. Django + Channels.</p><p><img src="https://img.shields.io/badge/Python-3572A5?style=flat-square&logoColor=white&v=20260504" alt="Python"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/Django--LMS--Learning-Management-System?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/Django--LMS--Learning-Management-System?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-04</sub></p><p><code>certifications</code> <code>collaboration</code> <code>companies</code> <code>connections</code></p></td><td valign="top" width="50%" style="padding:8px"><a href="https://github.com/AbdullahBakir97/PortfolioCraft"><h3>📌 PortfolioCraft</h3></a><p>Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.</p><p><img src="https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logoColor=white&v=20260504" alt="TypeScript"> <img src="https://img.shields.io/github/stars/AbdullahBakir97/PortfolioCraft?style=flat-square&color=FFD700&v=20260504" alt="stars"> <img src="https://img.shields.io/github/forks/AbdullahBakir97/PortfolioCraft?style=flat-square&color=blue&v=20260504" alt="forks"> <sub>last commit · 2026-05-01</sub></p><p><code>automation</code> <code>cli</code> <code>cv-generator</code> <code>developer-portfolio</code></p></td></tr></table>
+<!-- PINNED_REPOS:END -->
 
 <details>
 <summary align="center"><b>More projects</b> — Django blog, BookStore, JS to-do, automation, landing pages</summary>
@@ -486,28 +475,28 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Django-Blog-app">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2" width="49%" alt="Django Blog app" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&description_lines_count=2&v=20260504" width="49%" alt="Django Blog app" />
   </a>
   <a href="https://github.com/AbdullahBakir97/BookStore">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=BookStore&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr" width="49%" alt="BookStore" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=BookStore&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="BookStore" />
   </a>
 </div>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Automtion">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr" width="49%" alt="Automation" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="Automation" />
   </a>
   <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr" width="49%" alt="2050 Bootstrap Landing page" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="2050 Bootstrap Landing page" />
   </a>
 </div>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/JS-TO-DO">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=JS-TO-DO&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr" width="49%" alt="JS TO DO" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=JS-TO-DO&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="JS TO DO" />
   </a>
   <a href="https://github.com/AbdullahBakir97/AbdullahBakir97">
-    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr" width="49%" alt="Profile README" />
+    <img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&title_color=c6c6c2&icon_color=ffd700&text_color=da644d&theme=codeSTACKr&v=20260504" width="49%" alt="Profile README" />
   </a>
 </div>
 
@@ -517,7 +506,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/GOOGLE-PAGESPEED-181717?style=flat-square&color=red&logo=google&logoColor=red" alt="Google PageSpeed" width="200">
+    <img src="https://img.shields.io/badge/GOOGLE-PAGESPEED-181717?style=flat-square&color=red&logo=google&logoColor=red&v=20260504" alt="Google PageSpeed" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -537,7 +526,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/CONTRIBUTION-GRAPH-181717?style=flat-square&color=red&logo=github&logoColor=red" alt="Contribution Graph" width="200">
+    <img src="https://img.shields.io/badge/CONTRIBUTION-GRAPH-181717?style=flat-square&color=red&logo=github&logoColor=red&v=20260504" alt="Contribution Graph" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -587,7 +576,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/CONNECT-WITH_ME-181717?style=flat-square&color=red&logo=earth&logoColor=red" alt="Connect Me" width="200">
+    <img src="https://img.shields.io/badge/CONNECT-WITH_ME-181717?style=flat-square&color=red&logo=earth&logoColor=red&v=20260504" alt="Connect Me" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
@@ -619,11 +608,11 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 
 <p align="center">
   <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/issues/new?template=guestbook.yml">
-    <img src="https://img.shields.io/badge/Sign_the_Guestbook-F90001?style=for-the-badge&logo=githubactions&logoColor=white&labelColor=0D1117" alt="Sign the guestbook" />
+    <img src="https://img.shields.io/badge/Sign_the_Guestbook-F90001?style=for-the-badge&logo=githubactions&logoColor=white&labelColor=0D1117&v=20260504" alt="Sign the guestbook" />
   </a>
   &nbsp;
   <a href="https://github.com/AbdullahBakir97/AbdullahBakir97/issues?q=label%3Aguestbook">
-    <img src="https://img.shields.io/badge/Read_Past_Entries-FF652F?style=for-the-badge&logo=read.cv&logoColor=white&labelColor=0D1117" alt="Read past entries" />
+    <img src="https://img.shields.io/badge/Read_Past_Entries-FF652F?style=for-the-badge&logo=read.cv&logoColor=white&labelColor=0D1117&v=20260504" alt="Read past entries" />
   </a>
 </p>
 
@@ -631,7 +620,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <div align="center">
   <img src="./assets/redline.gif" width="100%" alt=""/>
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/SUPPORT-ME-181717?style=flat-square&color=red&logo=buymeacoffee&logoColor=red" alt="Support Me" width="200">
+    <img src="https://img.shields.io/badge/SUPPORT-ME-181717?style=flat-square&color=red&logo=buymeacoffee&logoColor=red&v=20260504" alt="Support Me" width="200">
   </a>
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>

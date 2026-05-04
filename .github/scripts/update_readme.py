@@ -1149,31 +1149,268 @@ def gitcity_links() -> str:
 # --- MAIN ---------------------------------------------------------------------
 
 
+# --- FEATURED PROJECTS (weekly auto-update) ----------------------------------
+# Scores all owned non-fork non-archived repos by recent activity + stars,
+# renders the top 6 as narrative cards.
+
+def _category_for(repo: dict) -> str:
+    name = repo["name"]
+    topics = set(repo.get("topics") or [])
+    if name in {"PortfolioCraft", "GitHub-Doc-Generator", "Repo-Directory-Structure",
+                "Python-Environment-Management-Tool", "API-Client-Generator",
+                "commit-craft", "pr-coach", "repodoc-ai", "ai-quality-gate",
+                "issue-triage-bot", "release-pilot"}:
+        return "🛠️ Tooling"
+    if topics & {"ai", "ml", "machine-learning", "rag", "llm"} or name in {"AI-KI", "Mini-RAG", "cortex"}:
+        return "🧠 AI / Data"
+    if topics & {"game", "pygame"} or name in {"Py-Tetris-Game", "Space-Shooter"}:
+        return "🎮 Game"
+    if (repo.get("language") or "") in ("Vue", "TypeScript", "JavaScript", "HTML", "CSS"):
+        return "🎨 Frontend"
+    return "🌐 Backend / API"
+
+
+def _score_repo(repo: dict, recent_commits: int) -> float:
+    stars = repo.get("stargazers_count", 0)
+    forks = repo.get("forks_count", 0)
+    pushed = dt.datetime.fromisoformat(repo["pushed_at"].replace("Z", "+00:00"))
+    days_since = max(0, (dt.datetime.now(dt.timezone.utc) - pushed).days)
+    recency = max(0.0, 1.0 - days_since / 365.0)
+    return 0.4 * stars + 0.4 * recent_commits + 0.2 * (recency * 50)
+
+
+def fetch_featured_projects(limit: int = 6) -> str:
+    r = requests.get(
+        f"https://api.github.com/users/{GH_USER}/repos?per_page=100&type=owner",
+        headers=GH_HEADERS, timeout=20,
+    )
+    r.raise_for_status()
+    repos = [
+        x for x in r.json()
+        if not x.get("fork") and not x.get("archived")
+        and x["name"] != GH_USER  # exclude profile readme repo
+    ]
+    # Recent commit count per repo (last 30 days), best-effort
+    since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=30)).isoformat()
+    scored = []
+    for repo in repos:
+        commits = 0
+        try:
+            cr = requests.get(
+                f"https://api.github.com/repos/{GH_USER}/{repo['name']}/commits",
+                headers=GH_HEADERS, params={"since": since, "per_page": 100}, timeout=10,
+            )
+            if cr.ok:
+                commits = len(cr.json())
+        except Exception:
+            pass
+        scored.append((_score_repo(repo, commits), repo, commits))
+    scored.sort(key=lambda t: -t[0])
+    top = scored[:limit]
+
+    if not top:
+        return "_No featured projects yet._"
+
+    cards = ['<table align="center" width="100%">']
+    for i in range(0, len(top), 2):
+        cards.append("<tr>")
+        for j in range(2):
+            if i + j >= len(top):
+                cards.append('<td width="50%"></td>')
+                continue
+            score, r, commits = top[i + j]
+            name = r["name"]
+            desc = (r.get("description") or "_No description yet._").strip()
+            stars = r["stargazers_count"]
+            cat = _category_for(r)
+            lang = r.get("language") or "—"
+            url = r["html_url"]
+            cards.append(
+                f'<td valign="top" width="50%">'
+                f'<h3>{cat} · <a href="{url}">{name}</a></h3>'
+                f'<p>{desc}</p>'
+                f'<p>'
+                f'<img src="https://img.shields.io/badge/{lang}-3776AB?style=flat-square&logoColor=white" alt="{lang}"> '
+                f'<img src="https://img.shields.io/github/stars/{GH_USER}/{name}?style=flat-square&color=FFD700" alt="stars"> '
+                f'<img src="https://img.shields.io/github/last-commit/{GH_USER}/{name}?style=flat-square&color=blue" alt="last commit"> '
+                f'<img src="https://img.shields.io/badge/commits_30d-{commits}-39d353?style=flat-square" alt="commits 30d"> '
+                f'</p>'
+                f'</td>'
+            )
+        cards.append("</tr>")
+    cards.append("</table>")
+
+    today = dt.date.today().isoformat()
+    return (
+        f'<p align="center"><sub>📊 Auto-ranked weekly by recent commits + stars. '
+        f'Last updated {today}.</sub></p>\n\n'
+        + "".join(cards)
+    )
+
+
+# --- PINNED REPOS (daily auto-update) ----------------------------------------
+
+PINNED_QUERY = """
+query($login: String!) {
+  user(login: $login) {
+    pinnedItems(first: 6, types: REPOSITORY) {
+      nodes {
+        ... on Repository {
+          name
+          description
+          url
+          stargazerCount
+          forkCount
+          primaryLanguage { name color }
+          pushedAt
+          repositoryTopics(first: 6) { nodes { topic { name } } }
+        }
+      }
+    }
+  }
+}
+"""
+
+
+def fetch_pinned_repos() -> str:
+    data = graphql(PINNED_QUERY, {"login": GH_USER})
+    nodes = data["user"]["pinnedItems"]["nodes"]
+    if not nodes:
+        return "_No pinned repos._"
+
+    cards = ['<table align="center" width="100%">']
+    for i in range(0, len(nodes), 2):
+        cards.append("<tr>")
+        for j in range(2):
+            if i + j >= len(nodes):
+                cards.append('<td width="50%"></td>')
+                continue
+            r = nodes[i + j]
+            name = r["name"]
+            url = r["url"]
+            desc = (r.get("description") or "_No description._").strip()
+            stars = r["stargazerCount"]
+            forks = r["forkCount"]
+            lang = (r.get("primaryLanguage") or {}).get("name") or "—"
+            color = ((r.get("primaryLanguage") or {}).get("color") or "#6e7681").lstrip("#")
+            pushed = r.get("pushedAt", "")[:10]
+            topics = [
+                t["topic"]["name"]
+                for t in (r.get("repositoryTopics") or {}).get("nodes", [])
+            ][:4]
+            topic_pills = " ".join(
+                f'<code>{t}</code>' for t in topics
+            ) if topics else ""
+
+            cards.append(
+                f'<td valign="top" width="50%" style="padding:8px">'
+                f'<a href="{url}"><h3>📌 {name}</h3></a>'
+                f'<p>{desc}</p>'
+                f'<p>'
+                f'<img src="https://img.shields.io/badge/{lang}-{color}?style=flat-square&logoColor=white" alt="{lang}"> '
+                f'<img src="https://img.shields.io/github/stars/{GH_USER}/{name}?style=flat-square&color=FFD700" alt="stars"> '
+                f'<img src="https://img.shields.io/github/forks/{GH_USER}/{name}?style=flat-square&color=blue" alt="forks"> '
+                f'<sub>last commit · {pushed}</sub>'
+                f'</p>'
+                f'<p>{topic_pills}</p>'
+                f'</td>'
+            )
+        cards.append("</tr>")
+    cards.append("</table>")
+
+    return "".join(cards)
+
+
+# --- STATS CACHE BUSTER ------------------------------------------------------
+# GitHub's camo image proxy caches the live-rendered stats services for hours.
+# Append a daily-rotating ?v= or &v= to force a fresh fetch.
+
+_STATS_HOSTS = (
+    "github-readme-stats.vercel.app",
+    "github-readme-streak-stats.herokuapp.com",
+    "github-profile-summary-cards.vercel.app",
+    "github-profile-trophy.vercel.app",
+    "github-readme-activity-graph.vercel.app",
+    "komarev.com",
+    "img.shields.io",
+)
+
+
+def bust_stats_cache(text: str) -> str:
+    """Rotate the ?v= / &v= query param on every stats-card URL to today's date."""
+    today = dt.date.today().strftime("%Y%m%d")
+
+    def _bust(match: re.Match) -> str:
+        url = match.group(0)
+        # Strip an existing v= we previously injected
+        url = re.sub(r"([?&])v=\d{8}(?=[&\"]|$)", r"\1", url)
+        url = re.sub(r"\?\&", "?", url).rstrip("?&")
+        sep = "&" if "?" in url else "?"
+        return f"{url}{sep}v={today}"
+
+    pattern = re.compile(
+        r'https://(?:' + "|".join(re.escape(h) for h in _STATS_HOSTS) + r')[^\s"\'<>]+'
+    )
+    return pattern.sub(_bust, text)
+
+
+# --- MAIN --------------------------------------------------------------------
+
+
 def main() -> int:
-    # Regenerate per-year contribution heatmap + skyline SVGs first so the
-    # snake/skyline marker bodies reference fresh files in this same commit.
-    try:
-        regenerate_yearly_assets()
-    except Exception as e:
-        warn(f"yearly asset regeneration failed (continuing with existing files): {e}")
+    activity_only = "--activity-only" in sys.argv
+
+    if not activity_only:
+        # Regenerate per-year contribution heatmap + skyline SVGs first so the
+        # snake/skyline marker bodies reference fresh files in this same commit.
+        try:
+            regenerate_yearly_assets()
+        except Exception as e:
+            warn(f"yearly asset regeneration failed (continuing with existing files): {e}")
+
+        # Regenerate the About-Me hero SVG too (idempotent — same byte output
+        # given same date, so no spurious commits).
+        try:
+            from pathlib import Path as _P
+            import importlib.util as _ilu
+            scripts_dir = _P(__file__).resolve().parents[2] / "scripts"
+            spec = _ilu.spec_from_file_location("about_hero", scripts_dir / "build_about_hero.py")
+            if spec and spec.loader:
+                mod = _ilu.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                mod.main()
+        except Exception as e:
+            warn(f"about-hero rebuild failed: {e}")
 
     with open(README_PATH, encoding="utf-8") as f:
         text = f.read()
     original = text
 
-    sections: list[tuple[str, Callable[[], str]]] = [
-        ("ACTIVITY", fetch_activity),
-        ("LATEST_RELEASES", fetch_releases),
-        ("PAGESPEED", fetch_pagespeed),
-        ("HIGHLIGHTS_STATS", fetch_year_stats),
-        ("SNAKE_GRID", snake_grid),
-        ("SKYLINE_GRID", skyline_grid),
-        ("STL_LINKS", stl_links),
-        ("CITY_GRID", city_grid),
-        ("GITCITY_LINKS", gitcity_links),
-        ("QUOTE", quote_of_the_day),
-        ("GITGRAPH", gitgraph_from_activity),
-    ]
+    if activity_only:
+        # 3-hourly fast path — only activity + cache-buster + featured-trending.
+        sections: list[tuple[str, Callable[[], str]]] = [
+            ("ACTIVITY", fetch_activity),
+        ]
+    else:
+        # Full daily refresh.
+        sections = [
+            ("ACTIVITY", fetch_activity),
+            ("LATEST_RELEASES", fetch_releases),
+            ("PAGESPEED", fetch_pagespeed),
+            ("HIGHLIGHTS_STATS", fetch_year_stats),
+            ("SNAKE_GRID", snake_grid),
+            ("SKYLINE_GRID", skyline_grid),
+            ("STL_LINKS", stl_links),
+            ("CITY_GRID", city_grid),
+            ("GITCITY_LINKS", gitcity_links),
+            ("QUOTE", quote_of_the_day),
+            ("GITGRAPH", gitgraph_from_activity),
+            ("PINNED_REPOS", fetch_pinned_repos),
+        ]
+        # Featured Projects only refreshes if it's a Monday (or via dispatch flag),
+        # but include it on every full run too — score is fast and idempotent.
+        if "--include-featured" in sys.argv or dt.date.today().weekday() == 0:
+            sections.append(("FEATURED_PROJECTS", fetch_featured_projects))
 
     for marker, fn in sections:
         try:
@@ -1182,6 +1419,9 @@ def main() -> int:
             print(f"updated {marker}")
         except Exception as e:
             warn(f"{marker} update failed: {e}")
+
+    # Cache-buster always runs — daily-rotating ?v= on every stats URL.
+    text = bust_stats_cache(text)
 
     if text == original:
         print("no changes")
