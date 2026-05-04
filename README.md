@@ -241,7 +241,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-518-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-519-red?style=for-the-badge&logo=git&logoColor=white&v=20260504" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-34-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260504" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -408,24 +408,24 @@ gitGraph
 <p align="center"><sub>🔥 Top 10 most-active repos · auto-ranked weekly by recent commits + stars. Last updated 2026-05-04.</sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/cortex"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=cortex&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="cortex" /></a>
-  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Stock-Manager&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Stock-Manager" /></a>
+  <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/pins/cortex.svg" width="49%" alt="cortex" /></a>
+  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="./assets/pins/Stock-Manager.svg" width="49%" alt="Stock-Manager" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Barber-Salon" /></a>
-  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=PortfolioCraft&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="PortfolioCraft" /></a>
+  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/pins/Barber-Salon.svg" width="49%" alt="Barber-Salon" /></a>
+  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/pins/PortfolioCraft.svg" width="49%" alt="PortfolioCraft" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Jobs-Portal" /></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Store" /></a>
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/pins/Jobs-Portal.svg" width="49%" alt="Jobs-Portal" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/pins/Django-Store.svg" width="49%" alt="Django-Store" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django--LMS--Learning-Management-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
-  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Automtion" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/pins/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
+  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/pins/Automtion.svg" width="49%" alt="Automtion" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Blog-app" /></a>
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/pins/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/pins/Django-Blog-app.svg" width="49%" alt="Django-Blog-app" /></a>
 </div>
 <!-- FEATURED_PROJECTS:END -->
 
@@ -543,16 +543,16 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <h4 align="center">📌 Pinned by the author</h4>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Stock-Manager&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Stock-Manager" /></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Store&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Store" /></a>
+  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="./assets/pins/Stock-Manager.svg" width="49%" alt="Stock-Manager" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/pins/Django-Store.svg" width="49%" alt="Django-Store" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Barber-Salon&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Barber-Salon" /></a>
-  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Jobs-Portal&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Jobs-Portal" /></a>
+  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/pins/Barber-Salon.svg" width="49%" alt="Barber-Salon" /></a>
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/pins/Jobs-Portal.svg" width="49%" alt="Jobs-Portal" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django--LMS--Learning-Management-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
-  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=PortfolioCraft&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="PortfolioCraft" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/pins/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
+  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/pins/PortfolioCraft.svg" width="49%" alt="PortfolioCraft" /></a>
 </div>
 
 <h4 align="center">⭐ Most-Starred Showcases <sub>· 6</sub></h4>
@@ -560,16 +560,16 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub><i>Repos with notable community traction</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/AbdullahBakir97"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AbdullahBakir97&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="AbdullahBakir97" /></a>
-  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=2050-Bootstrap-Landing-page&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
+  <a href="https://github.com/AbdullahBakir97/AbdullahBakir97"><img src="./assets/pins/AbdullahBakir97.svg" width="49%" alt="AbdullahBakir97" /></a>
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/pins/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Blog-app&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Blog-app" /></a>
-  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Automtion&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Automtion" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/pins/Django-Blog-app.svg" width="49%" alt="Django-Blog-app" /></a>
+  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/pins/Automtion.svg" width="49%" alt="Automtion" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=image-cropping&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="image-cropping" /></a>
-  <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Project-Management-Tool&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Project-Management-Tool" /></a>
+  <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="./assets/pins/image-cropping.svg" width="49%" alt="image-cropping" /></a>
+  <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="./assets/pins/Project-Management-Tool.svg" width="49%" alt="Project-Management-Tool" /></a>
 </div>
 
 <h4 align="center">🛠️ Developer Tools <sub>· 10</sub></h4>
@@ -577,24 +577,24 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub><i>GitHub Apps, CLIs, and dev-experience tooling</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Python-Environment-Management-Tool"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Environment-Management-Tool&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Python-Environment-Management-Tool" /></a>
-  <a href="https://github.com/AbdullahBakir97/API-Client-Generator"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=API-Client-Generator&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="API-Client-Generator" /></a>
+  <a href="https://github.com/AbdullahBakir97/Python-Environment-Management-Tool"><img src="./assets/pins/Python-Environment-Management-Tool.svg" width="49%" alt="Python-Environment-Management-Tool" /></a>
+  <a href="https://github.com/AbdullahBakir97/API-Client-Generator"><img src="./assets/pins/API-Client-Generator.svg" width="49%" alt="API-Client-Generator" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Repo-Directory-Structure"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Repo-Directory-Structure&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Repo-Directory-Structure" /></a>
-  <a href="https://github.com/AbdullahBakir97/GitHub-Doc-Generator"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=GitHub-Doc-Generator&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="GitHub-Doc-Generator" /></a>
+  <a href="https://github.com/AbdullahBakir97/Repo-Directory-Structure"><img src="./assets/pins/Repo-Directory-Structure.svg" width="49%" alt="Repo-Directory-Structure" /></a>
+  <a href="https://github.com/AbdullahBakir97/GitHub-Doc-Generator"><img src="./assets/pins/GitHub-Doc-Generator.svg" width="49%" alt="GitHub-Doc-Generator" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/ai-quality-gate"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=ai-quality-gate&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="ai-quality-gate" /></a>
-  <a href="https://github.com/AbdullahBakir97/commit-craft"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=commit-craft&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="commit-craft" /></a>
+  <a href="https://github.com/AbdullahBakir97/ai-quality-gate"><img src="./assets/pins/ai-quality-gate.svg" width="49%" alt="ai-quality-gate" /></a>
+  <a href="https://github.com/AbdullahBakir97/commit-craft"><img src="./assets/pins/commit-craft.svg" width="49%" alt="commit-craft" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/issue-triage-bot"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=issue-triage-bot&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="issue-triage-bot" /></a>
-  <a href="https://github.com/AbdullahBakir97/pr-coach"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=pr-coach&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="pr-coach" /></a>
+  <a href="https://github.com/AbdullahBakir97/issue-triage-bot"><img src="./assets/pins/issue-triage-bot.svg" width="49%" alt="issue-triage-bot" /></a>
+  <a href="https://github.com/AbdullahBakir97/pr-coach"><img src="./assets/pins/pr-coach.svg" width="49%" alt="pr-coach" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/release-pilot"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=release-pilot&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="release-pilot" /></a>
-  <a href="https://github.com/AbdullahBakir97/repodoc-ai"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=repodoc-ai&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="repodoc-ai" /></a>
+  <a href="https://github.com/AbdullahBakir97/release-pilot"><img src="./assets/pins/release-pilot.svg" width="49%" alt="release-pilot" /></a>
+  <a href="https://github.com/AbdullahBakir97/repodoc-ai"><img src="./assets/pins/repodoc-ai.svg" width="49%" alt="repodoc-ai" /></a>
 </div>
 
 <h4 align="center">🌐 Backend / API <sub>· 11</sub></h4>
@@ -602,27 +602,27 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub><i>Django / DRF systems and reference APIs</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Py-Desktop-Expense_Tracker"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Py-Desktop-Expense_Tracker&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Py-Desktop-Expense_Tracker" /></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Followers-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Followers-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Followers-System" /></a>
+  <a href="https://github.com/AbdullahBakir97/Py-Desktop-Expense_Tracker"><img src="./assets/pins/Py-Desktop-Expense_Tracker.svg" width="49%" alt="Py-Desktop-Expense_Tracker" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Followers-System"><img src="./assets/pins/Django-Followers-System.svg" width="49%" alt="Django-Followers-System" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/API"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=API&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="API" /></a>
-  <a href="https://github.com/AbdullahBakir97/Pilot-Logbook"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Pilot-Logbook&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Pilot-Logbook" /></a>
+  <a href="https://github.com/AbdullahBakir97/API"><img src="./assets/pins/API.svg" width="49%" alt="API" /></a>
+  <a href="https://github.com/AbdullahBakir97/Pilot-Logbook"><img src="./assets/pins/Pilot-Logbook.svg" width="49%" alt="Pilot-Logbook" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django-Reporting-System"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Django-Reporting-System&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Django-Reporting-System" /></a>
-  <a href="https://github.com/AbdullahBakir97/Python-Django-join_with"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Python-Django-join_with&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Python-Django-join_with" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Reporting-System"><img src="./assets/pins/Django-Reporting-System.svg" width="49%" alt="Django-Reporting-System" /></a>
+  <a href="https://github.com/AbdullahBakir97/Python-Django-join_with"><img src="./assets/pins/Python-Django-join_with.svg" width="49%" alt="Python-Django-join_with" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Trello-Clone-Services"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Trello-Clone-Services&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Trello-Clone-Services" /></a>
-  <a href="https://github.com/AbdullahBakir97/Content-Creator-Tool"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Content-Creator-Tool&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Content-Creator-Tool" /></a>
+  <a href="https://github.com/AbdullahBakir97/Trello-Clone-Services"><img src="./assets/pins/Trello-Clone-Services.svg" width="49%" alt="Trello-Clone-Services" /></a>
+  <a href="https://github.com/AbdullahBakir97/Content-Creator-Tool"><img src="./assets/pins/Content-Creator-Tool.svg" width="49%" alt="Content-Creator-Tool" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/GitHub-Issues-Wall"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=GitHub-Issues-Wall&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="GitHub-Issues-Wall" /></a>
-  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Baeckrei&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Baeckrei" /></a>
+  <a href="https://github.com/AbdullahBakir97/GitHub-Issues-Wall"><img src="./assets/pins/GitHub-Issues-Wall.svg" width="49%" alt="GitHub-Issues-Wall" /></a>
+  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/pins/Baeckrei.svg" width="49%" alt="Baeckrei" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Email-Sender"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Email-Sender&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Email-Sender" /></a>
+  <a href="https://github.com/AbdullahBakir97/Email-Sender"><img src="./assets/pins/Email-Sender.svg" width="49%" alt="Email-Sender" /></a>
 </div>
 
 <h4 align="center">🎨 Frontend / UI <sub>· 4</sub></h4>
@@ -630,12 +630,12 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub><i>Vue, Nuxt, and design-forward web apps</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Dj--To-Do"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Dj--To-Do&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Dj--To-Do" /></a>
-  <a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Weather--App-django-vue.js&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Weather--App-django-vue.js" /></a>
+  <a href="https://github.com/AbdullahBakir97/Dj--To-Do"><img src="./assets/pins/Dj--To-Do.svg" width="49%" alt="Dj--To-Do" /></a>
+  <a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js"><img src="./assets/pins/Weather--App-django-vue.js.svg" width="49%" alt="Weather--App-django-vue.js" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Tawil-Media---Advertisement"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Tawil-Media---Advertisement&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Tawil-Media---Advertisement" /></a>
-  <a href="https://github.com/AbdullahBakir97/Portfolio"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Portfolio&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Portfolio" /></a>
+  <a href="https://github.com/AbdullahBakir97/Tawil-Media---Advertisement"><img src="./assets/pins/Tawil-Media---Advertisement.svg" width="49%" alt="Tawil-Media---Advertisement" /></a>
+  <a href="https://github.com/AbdullahBakir97/Portfolio"><img src="./assets/pins/Portfolio.svg" width="49%" alt="Portfolio" /></a>
 </div>
 
 <h4 align="center">🧠 AI · Data · Notebooks <sub>· 3</sub></h4>
@@ -643,11 +643,11 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub><i>RAG, agents, ML experiments</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/AI-KI"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=AI-KI&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="AI-KI" /></a>
-  <a href="https://github.com/AbdullahBakir97/Mini-RAG"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Mini-RAG&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Mini-RAG" /></a>
+  <a href="https://github.com/AbdullahBakir97/AI-KI"><img src="./assets/pins/AI-KI.svg" width="49%" alt="AI-KI" /></a>
+  <a href="https://github.com/AbdullahBakir97/Mini-RAG"><img src="./assets/pins/Mini-RAG.svg" width="49%" alt="Mini-RAG" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/cortex"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=cortex&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="cortex" /></a>
+  <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/pins/cortex.svg" width="49%" alt="cortex" /></a>
 </div>
 
 <h4 align="center">🎮 Game <sub>· 2</sub></h4>
@@ -655,8 +655,8 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub><i>Pygame & arcade clones</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Py-Tetris-Game"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Py-Tetris-Game&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Py-Tetris-Game" /></a>
-  <a href="https://github.com/AbdullahBakir97/Space-Shooter"><img src="https://github-readme-stats.vercel.app/api/pin?username=AbdullahBakir97&repo=Space-Shooter&theme=codeSTACKr&title_color=c6c6c2&icon_color=ffde01&text_color=da644d&description_lines_count=2&v=20260504" width="49%" alt="Space-Shooter" /></a>
+  <a href="https://github.com/AbdullahBakir97/Py-Tetris-Game"><img src="./assets/pins/Py-Tetris-Game.svg" width="49%" alt="Py-Tetris-Game" /></a>
+  <a href="https://github.com/AbdullahBakir97/Space-Shooter"><img src="./assets/pins/Space-Shooter.svg" width="49%" alt="Space-Shooter" /></a>
 </div>
 <!-- PINNED_REPOS:END -->
 

@@ -21,6 +21,7 @@ import random
 import re
 import sys
 import urllib.parse
+from pathlib import Path
 from typing import Callable
 
 import requests
@@ -1193,21 +1194,140 @@ def _score_repo(repo: dict, recent_commits: int) -> float:
     return 0.4 * stars + 0.4 * recent_commits + 0.2 * (recency * 50)
 
 
-PIN_CARD_THEME = "codeSTACKr"
-PIN_CARD_TITLE_COLOR = "c6c6c2"
-PIN_CARD_ICON_COLOR = "ffde01"
-PIN_CARD_TEXT_COLOR = "da644d"
+PIN_CARD_TITLE_COLOR = "#c6c6c2"
+PIN_CARD_ICON_COLOR = "#ffde01"
+PIN_CARD_TEXT_COLOR = "#da644d"
+
+# Language → color (mirrors github-readme-stats / GitHub Linguist)
+LANG_COLORS = {
+    "Python": "#3572A5", "JavaScript": "#F1E05A", "TypeScript": "#3178C6",
+    "Vue": "#41B883", "HTML": "#E34F26", "CSS": "#563D7C", "SCSS": "#C6538C",
+    "Jupyter Notebook": "#DA5B0B", "Shell": "#89E051", "Dockerfile": "#384D54",
+    "Java": "#B07219", "Go": "#00ADD8", "Rust": "#DEA584", "C": "#555555",
+    "C++": "#F34B7D", "C#": "#178600", "PHP": "#4F5D95", "Ruby": "#701516",
+    "Inno Setup": "#264B99", "MDX": "#1B6E5E",
+}
+
+PIN_W, PIN_H = 400, 120
+
+
+def _truncate(s: str, n: int) -> str:
+    s = s.strip()
+    return s if len(s) <= n else s[:n - 1].rstrip() + "…"
+
+
+def _wrap_two_lines(s: str, line_chars: int = 50) -> tuple[str, str]:
+    s = s.strip()
+    if len(s) <= line_chars:
+        return s, ""
+    # find a space near line_chars to break on
+    cut = s.rfind(" ", 0, line_chars + 1)
+    if cut <= 0:
+        cut = line_chars
+    line1 = s[:cut].rstrip()
+    line2 = s[cut:].lstrip()
+    if len(line2) > line_chars:
+        line2 = line2[:line_chars - 1].rstrip() + "…"
+    return line1, line2
+
+
+def render_pin_svg(repo: dict, dest: Path) -> None:
+    """Render a single repo pin card SVG (400x120) — independent of any
+    third-party service. Mirrors the github-readme-stats codeSTACKr theme."""
+    name = repo["name"]
+    desc = (repo.get("description") or "_No description._").strip()
+    stars = repo.get("stargazers_count", 0)
+    forks = repo.get("forks_count", 0)
+    lang = repo.get("language") or ""
+    lang_color = LANG_COLORS.get(lang, "#6e7681")
+
+    line1, line2 = _wrap_two_lines(desc, 50)
+    title = _truncate(name, 32)
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{PIN_W}" height="{PIN_H}" '
+        f'viewBox="0 0 {PIN_W} {PIN_H}" role="img" aria-label="{name}">',
+        # background card
+        '<defs>'
+        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#1a1f29"/>'
+        '<stop offset="100%" stop-color="#0d1117"/>'
+        '</linearGradient>'
+        '</defs>',
+        f'<rect width="{PIN_W-2}" height="{PIN_H-2}" x="1" y="1" rx="6" '
+        f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
+        # left accent stripe
+        f'<rect x="0" y="0" width="3" height="{PIN_H}" fill="#F90001" opacity="0.85"/>',
+        # repo icon (filled book/repo glyph approximation)
+        f'<g transform="translate(18, 18)">'
+        f'<path d="M2 0h12a2 2 0 012 2v12a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2zm0 1.5a.5.5 0 00-.5.5v11a.5.5 0 00.5.5h12a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5H2z" '
+        f'fill="{PIN_CARD_ICON_COLOR}" fill-opacity="0.85"/>'
+        f'</g>',
+        # title
+        f'<text x="42" y="32" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="14" font-weight="700" fill="{PIN_CARD_TITLE_COLOR}">'
+        f'{title}</text>',
+        # description (2 lines)
+        f'<text x="20" y="58" '
+        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" fill="{PIN_CARD_TEXT_COLOR}" opacity="0.95">'
+        f'{line1}</text>',
+    ]
+    if line2:
+        parts.append(
+            f'<text x="20" y="74" '
+            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+            f'font-size="12" fill="{PIN_CARD_TEXT_COLOR}" opacity="0.95">'
+            f'{line2}</text>'
+        )
+    # bottom row: language dot+name, stars, forks
+    parts.append(
+        f'<g transform="translate(20, 100)">'
+        # language color dot
+        f'<circle cx="6" cy="-3" r="6" fill="{lang_color}"/>'
+        # language name
+        f'<text x="18" y="2" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" fill="{PIN_CARD_TITLE_COLOR}">{lang or "—"}</text>'
+        # star icon (5-point star)
+        f'<g transform="translate(150, -8)">'
+        f'<path d="M8 0l2.39 4.84L16 5.6l-4 3.9.94 5.5L8 12.4 3.06 15l.94-5.5-4-3.9 5.61-.76L8 0z" '
+        f'fill="{PIN_CARD_ICON_COLOR}"/>'
+        f'</g>'
+        f'<text x="172" y="2" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="600" fill="{PIN_CARD_TITLE_COLOR}">{stars}</text>'
+        # fork icon (Y-shape)
+        f'<g transform="translate(220, -10)" stroke="{PIN_CARD_ICON_COLOR}" stroke-width="1.5" fill="none">'
+        f'<circle cx="3" cy="3" r="2"/>'
+        f'<circle cx="13" cy="3" r="2"/>'
+        f'<circle cx="8" cy="14" r="2"/>'
+        f'<path d="M3 5v3a2 2 0 002 2h6a2 2 0 002-2V5"/>'
+        f'<line x1="8" y1="10" x2="8" y2="12"/>'
+        f'</g>'
+        f'<text x="244" y="2" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
+        f'font-size="12" font-weight="600" fill="{PIN_CARD_TITLE_COLOR}">{forks}</text>'
+        f'</g>'
+    )
+    parts.append('</svg>')
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text("".join(parts), encoding="utf-8")
+
+
+def regenerate_pin_svgs(repos: list[dict]) -> None:
+    pins_dir = Path(ASSETS_DIR) / "pins"
+    pins_dir.mkdir(parents=True, exist_ok=True)
+    for r in repos:
+        try:
+            render_pin_svg(r, pins_dir / f"{r['name']}.svg")
+        except Exception as e:
+            warn(f"pin render failed for {r['name']}: {e}")
 
 
 def _pin_card_url(name: str, lines: int = 2) -> str:
-    return (
-        f"https://github-readme-stats.vercel.app/api/pin?username={GH_USER}"
-        f"&repo={name}&theme={PIN_CARD_THEME}"
-        f"&title_color={PIN_CARD_TITLE_COLOR}"
-        f"&icon_color={PIN_CARD_ICON_COLOR}"
-        f"&text_color={PIN_CARD_TEXT_COLOR}"
-        f"&description_lines_count={lines}"
-    )
+    """Reference the locally-rendered pin card. Independent of the flaky
+    github-readme-stats.vercel.app service (which 503s frequently)."""
+    return f"./{ASSETS_DIR}/pins/{name}.svg"
 
 
 def _render_pin_grid(repos: list[dict]) -> str:
@@ -1263,6 +1383,9 @@ def fetch_featured_projects(limit: int = 10) -> str:
 
     if not top:
         return "_No featured projects yet._"
+
+    # Side effect: generate pin SVGs for the top set.
+    regenerate_pin_svgs(top)
 
     today = dt.date.today().isoformat()
     return (
@@ -1347,6 +1470,17 @@ def fetch_pinned_repos() -> str:
             buckets["most_starred"].append(r)
         else:
             buckets[_categorize_repo(r)].append(r)
+
+    # Side effect: render pin SVG for every repo we'll show, so all <img src>
+    # references in the markdown resolve to local files (independent of
+    # third-party stats services).
+    showcase_set = list(pinned_repos)
+    seen = {r["name"] for r in showcase_set}
+    for r in all_repos:
+        if r["name"] not in seen:
+            showcase_set.append(r)
+            seen.add(r["name"])
+    regenerate_pin_svgs(showcase_set)
 
     sections: list[str] = []
 
