@@ -156,6 +156,11 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
   </a>
 </p>
 
+<!-- 💻 Rotating terminal — 26 tech-flavored lines cycling above the cards -->
+<div align="center">
+  <img src="./assets/tech-typing.svg" alt="terminal animation: $ python --version → Python 3.12 · $ which framework → Django/Vue/Nuxt · $ docker ps → production-ready" />
+</div>
+
 <br/>
 
 <!-- 💎 Elite tech stack cards — single SVG, 6 glassmorphism cards in 3×2 grid
