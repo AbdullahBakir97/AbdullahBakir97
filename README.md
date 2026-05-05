@@ -155,8 +155,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- ⚙️ Celery & Socket.io are NOT in skillicons.dev's catalog (they render as empty
      slots) — so we surface them here as shields.io badges, matching encyclopedia colors. -->
 <p align="center">
-  <img src="https://img.shields.io/badge/-37814A?style=for-the-badge&logo=celery&logoColor=white&v=20260505" alt="Celery">
-  <img src="https://img.shields.io/badge/-black?style=for-the-badge&logo=socket.io&logoColor=white&v=20260505" alt="Socket.io">
+  <img src="https://img.shields.io/badge/-37814A?style=flat-square&logo=celery&logoColor=white&v=20260505" alt="Celery">
+  <img src="https://img.shields.io/badge/-black?style=flat-square&logo=socket.io&logoColor=white&v=20260505" alt="Socket.io">
 </p>
 
 <!-- 🎨 Single rotating terminal line — color changes per text shown, Tech Stack header -->
