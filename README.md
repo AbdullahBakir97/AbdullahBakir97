@@ -145,19 +145,16 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
   <i>Production-grade tools for production-grade systems.</i>
 </p>
 
-<!-- 🌟 Hero icon row — full stack at a glance (15×3 grid via perline=15) -->
-<p align="center">
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="https://skillicons.dev/icons?i=python,django,fastapi,flask,graphql,nodejs,vue,nuxt,react,bootstrap,tailwind,htmx,ts,js,html,css,md,postgres,mysql,redis,sqlite,mongodb,rabbitmq,docker,kubernetes,aws,heroku,vercel,nginx,githubactions,git,github,linux,bash,powershell,vscode,pycharm,postman,figma,pytorch,tensorflow,sklearn,numpy,pandas,jupyter&perline=15" alt="Full tech stack" />
-  </a>
-</p>
+<!-- 🌟 Hero icon row — 3 rows of 16+16+15 elements. Celery (after flask) and
+     Socket.io (after rabbitmq) are interleaved as 48px-tall shields.io pills
+     since skillicons.dev's catalog doesn't include them. The skillicons URL
+     is split across 5 segments to keep them at their correct semantic
+     positions. Tags are kept on one line per row to avoid whitespace gaps. -->
+<p align="center"><a href="https://github.com/AbdullahBakir97"><img src="https://skillicons.dev/icons?i=python,django,fastapi,flask&perline=4" alt="Python · Django · FastAPI · Flask" /></a><img height="48" src="https://img.shields.io/badge/-37814A?style=flat-square&logo=celery&logoColor=white&v=20260505" alt="Celery"><a href="https://github.com/AbdullahBakir97"><img src="https://skillicons.dev/icons?i=graphql,nodejs,vue,nuxt,react,bootstrap,tailwind,htmx,ts,js,html&perline=11" alt="GraphQL · Node.js · Vue · Nuxt · React · Bootstrap · Tailwind · htmx · TS · JS · HTML" /></a></p>
 
-<!-- ⚙️ Celery & Socket.io are NOT in skillicons.dev's catalog (they render as empty
-     slots) — so we surface them here as shields.io badges, matching encyclopedia colors. -->
-<p align="center">
-  <img src="https://img.shields.io/badge/-37814A?style=flat-square&logo=celery&logoColor=white&v=20260505" alt="Celery">
-  <img src="https://img.shields.io/badge/-black?style=flat-square&logo=socket.io&logoColor=white&v=20260505" alt="Socket.io">
-</p>
+<p align="center"><a href="https://github.com/AbdullahBakir97"><img src="https://skillicons.dev/icons?i=css,md,postgres,mysql,redis,sqlite,mongodb,rabbitmq&perline=8" alt="CSS · Markdown · PostgreSQL · MySQL · Redis · SQLite · MongoDB · RabbitMQ" /></a><img height="48" src="https://img.shields.io/badge/-black?style=flat-square&logo=socket.io&logoColor=white&v=20260505" alt="Socket.io"><a href="https://github.com/AbdullahBakir97"><img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,heroku,vercel,nginx,githubactions&perline=7" alt="Docker · Kubernetes · AWS · Heroku · Vercel · Nginx · GitHub Actions" /></a></p>
+
+<p align="center"><a href="https://github.com/AbdullahBakir97"><img src="https://skillicons.dev/icons?i=git,github,linux,bash,powershell,vscode,pycharm,postman,figma,pytorch,tensorflow,sklearn,numpy,pandas,jupyter&perline=15" alt="Git · GitHub · Linux · Bash · PowerShell · VS Code · PyCharm · Postman · Figma · PyTorch · TensorFlow · sklearn · NumPy · Pandas · Jupyter" /></a></p>
 
 <!-- 🎨 Single rotating terminal line — color changes per text shown, Tech Stack header -->
 <div align="center">
