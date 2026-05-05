@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-05-04T05:35:35.803Z"
+    "lastModified": "2026-05-05T05:25:14.553Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -212,7 +212,7 @@
       ],
       "highlights": [
         "primary:Python",
-        "score:0.61"
+        "score:0.74"
       ]
     }
   ],
