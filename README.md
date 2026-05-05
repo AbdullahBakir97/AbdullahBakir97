@@ -145,11 +145,18 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
   <i>Production-grade tools for production-grade systems.</i>
 </p>
 
-<!-- 🌟 Hero icon row — full stack at a glance -->
+<!-- 🌟 Hero icon row — full stack at a glance (15×3 grid via perline=15) -->
 <p align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://skillicons.dev/icons?i=python,django,fastapi,flask,celery,graphql,nodejs,vue,nuxt,react,bootstrap,tailwind,htmx,ts,js,html,css,md,postgres,mysql,redis,sqlite,mongodb,rabbitmq,socketio,docker,kubernetes,aws,heroku,vercel,nginx,githubactions,git,github,linux,bash,powershell,vscode,pycharm,postman,figma,pytorch,tensorflow,sklearn,numpy,pandas,jupyter&perline=16" alt="Full tech stack" />
+    <img src="https://skillicons.dev/icons?i=python,django,fastapi,flask,graphql,nodejs,vue,nuxt,react,bootstrap,tailwind,htmx,ts,js,html,css,md,postgres,mysql,redis,sqlite,mongodb,rabbitmq,docker,kubernetes,aws,heroku,vercel,nginx,githubactions,git,github,linux,bash,powershell,vscode,pycharm,postman,figma,pytorch,tensorflow,sklearn,numpy,pandas,jupyter&perline=15" alt="Full tech stack" />
   </a>
+</p>
+
+<!-- ⚙️ Celery & Socket.io are NOT in skillicons.dev's catalog (they render as empty
+     slots) — so we surface them here as shields.io badges, matching encyclopedia colors. -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white&v=20260505" alt="Celery">
+  <img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&logoColor=white&v=20260505" alt="Socket.io">
 </p>
 
 <!-- 🎨 Single rotating terminal line — color changes per text shown, Tech Stack header -->
