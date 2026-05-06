@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programs must be written for people to read, and only incidentally for machines to execute."</i><br/>
-  <sub>— <b>Harold Abelson</b></sub>
+  <i>"Premature optimization is the root of all evil."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -363,21 +363,6 @@ gitGraph
    commit id: "c1"
    checkout main
    merge pr-coach
-   branch issue-triage-bot
-   checkout issue-triage-bot
-   commit id: "c1"
-   checkout main
-   merge issue-triage-bot
-   branch commit-craft
-   checkout commit-craft
-   commit id: "c1"
-   checkout main
-   merge commit-craft
-   branch ai-quality-gate
-   checkout ai-quality-gate
-   commit id: "c1"
-   checkout main
-   merge ai-quality-gate
 ```
 <!-- GITGRAPH:END -->
 
@@ -559,7 +544,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>42</b> active repos shown across <b>7</b> categories. Last updated 2026-05-05.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>42</b> active repos shown across <b>7</b> categories. Last updated 2026-05-06.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
