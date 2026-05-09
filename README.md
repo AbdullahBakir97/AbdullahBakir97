@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The best error message is the one that never shows up."</i><br/>
-  <sub>— <b>Thomas Fuchs</b></sub>
+  <i>"Make it work, make it right, make it fast."</i><br/>
+  <sub>— <b>Kent Beck</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-562-red?style=for-the-badge&logo=git&logoColor=white&v=20260509" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-35-red?style=for-the-badge&logo=github&logoColor=white&v=20260509" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-12-red?style=for-the-badge&logo=github&logoColor=white&v=20260509" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-42_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260509" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-570-red?style=for-the-badge&logo=git&logoColor=white&v=20260509" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-35-red?style=for-the-badge&logo=github&logoColor=white&v=20260509" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-13-red?style=for-the-badge&logo=github&logoColor=white&v=20260509" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260509" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -338,6 +338,11 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```mermaid
 gitGraph
    commit id: "main"
+   branch DevTrust
+   checkout DevTrust
+   commit id: "c1"
+   checkout main
+   merge DevTrust
    branch AbdullahBakir97
    checkout AbdullahBakir97
    commit id: "c1"
@@ -529,7 +534,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>42</b> active repos shown across <b>7</b> categories. Last updated 2026-05-08.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-05-09.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
@@ -600,7 +605,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 </details>
 
 <details>
-<summary align="center"><b>🌐 Backend / API</b> <sub>· 11</sub></summary>
+<summary align="center"><b>🌐 Backend / API</b> <sub>· 12</sub></summary>
 
 <p align="center"><sub><i>Django / DRF systems and reference APIs</i></sub></p>
 
@@ -625,6 +630,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/pins/Baeckrei.svg" width="49%" alt="Baeckrei" /></a>
 </div>
 <div align="center">
+  <a href="https://github.com/AbdullahBakir97/DevTrust"><img src="./assets/pins/DevTrust.svg" width="49%" alt="DevTrust" /></a>
   <a href="https://github.com/AbdullahBakir97/Email-Sender"><img src="./assets/pins/Email-Sender.svg" width="49%" alt="Email-Sender" /></a>
 </div>
 
