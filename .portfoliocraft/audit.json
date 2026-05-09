@@ -1,31 +1,31 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-05-08T05:17:31.445Z",
+  "generatedAt": "2026-05-09T05:30:00.281Z",
   "user": "AbdullahBakir97",
   "summary": {
-    "totalFindings": 8,
+    "totalFindings": 9,
     "bySeverity": {
       "critical": 0,
       "high": 1,
       "medium": 1,
-      "low": 5,
+      "low": 6,
       "info": 1
     },
     "byCategory": {
       "stale": 0,
       "license": 0,
       "docs": 0,
-      "tests": 4,
+      "tests": 5,
       "pr-rot": 2,
       "bug-debt": 1,
       "archived": 0,
       "archive-suggestion": 0,
       "unverified-employer-context": 1
     },
-    "bugDebtScore": 1416,
-    "reposScanned": 85,
-    "reposWithFindings": 6,
-    "verifiedSignatureRatio": 0.40258773452573104
+    "bugDebtScore": 1418,
+    "reposScanned": 86,
+    "reposWithFindings": 7,
+    "verifiedSignatureRatio": 0.397851408237193
   },
   "findings": [
     {
@@ -39,18 +39,18 @@
         "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST"
       },
       "title": "Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1",
-      "message": "This PR has been open for 1062 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 1063 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1",
-          "label": "Opened 1062 days ago"
+          "label": "Opened 1063 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 1062,
+        "ageDays": 1063,
         "lastEventAt": "2023-06-10T22:53:05Z"
       }
     },
@@ -65,20 +65,20 @@
         "url": "https://github.com/AbdullahBakir97/Project-Management-Tool"
       },
       "title": "Bug debt: AbdullahBakir97/Project-Management-Tool",
-      "message": "2 open issues; the oldest is 708 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "2 open issues; the oldest is 709 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/Project-Management-Tool/issues",
-          "label": "2 open · oldest 708 days"
+          "label": "2 open · oldest 709 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {
-        "debtScore": 1416,
-        "weightedDebtScore": 2832,
+        "debtScore": 1418,
+        "weightedDebtScore": 2836,
         "labelMultiplier": 2,
-        "oldestAgeDays": 708,
+        "oldestAgeDays": 709,
         "openIssuesCount": 2,
         "dominantLabels": [
           "bug"
@@ -104,12 +104,34 @@
         }
       ],
       "suggestedAction": "Reach out to the reviewer or convert to draft.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {
         "lastActorRole": "reviewer",
-        "ageDays": 13,
+        "ageDays": 14,
         "lastEventAt": "2026-04-24T09:52:08.000Z"
       }
+    },
+    {
+      "id": "9fe388741284fa7e",
+      "schemaVersion": "1.0.0",
+      "severity": "low",
+      "category": "tests",
+      "repo": {
+        "owner": "AbdullahBakir97",
+        "name": "DevTrust",
+        "url": "https://github.com/AbdullahBakir97/DevTrust"
+      },
+      "title": "No tests detected: AbdullahBakir97/DevTrust",
+      "message": "Heuristic detector based on top-level entries found no test directory or *.test/spec.* files. Even a single smoke test compounds confidence over time.",
+      "evidence": [
+        {
+          "url": "https://github.com/AbdullahBakir97/DevTrust",
+          "label": "Repo root contents"
+        }
+      ],
+      "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
+      "metadata": {}
     },
     {
       "id": "5c1fb65207b35efe",
@@ -130,7 +152,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {}
     },
     {
@@ -152,7 +174,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {}
     },
     {
@@ -174,7 +196,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {}
     },
     {
@@ -196,7 +218,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {}
     },
     {
@@ -214,7 +236,7 @@
         }
       ],
       "suggestedAction": "Add a verified domain to your GitHub email or update your bio so commit context reflects employer claim.",
-      "detectedAt": "2026-05-08T05:17:31.445Z",
+      "detectedAt": "2026-05-09T05:30:00.281Z",
       "metadata": {
         "matchedDomains": [],
         "unmatchedDomains": [
@@ -283,8 +305,8 @@
           "yahoo.fr",
           "zkorean.com"
         ],
-        "avgSignatureRatio": 0.40258773452573104,
-        "repoCountWithStats": 84
+        "avgSignatureRatio": 0.397851408237193,
+        "repoCountWithStats": 85
       }
     }
   ],
