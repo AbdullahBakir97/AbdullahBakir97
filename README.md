@@ -313,11 +313,9 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
   </a>
 </div>
 
-<!-- ⏱️ WAKATIME WEEKLY STATS — auto-updated by .github/workflows/waka-stats.yml -->
-<h3 align="center">⏱️ Weekly Coding Time</h3>
 
 <!--START_OF_CODE_STATS-->
-<p align="center"><i>WakaTime weekly stats appear here after the first run of the waka-stats workflow.<br/>Set <code>WAKATIME_API_KEY</code> in repo secrets, then trigger the "WakaTime Weekly Stats" workflow.</i></p>
+
 <!--END_OF_CODE_STATS-->
 
 <!-- RECENT ACTIVITY -->
