@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"There are only two kinds of languages: the ones people complain about and the ones nobody uses."</i><br/>
-  <sub>— <b>Bjarne Stroustrup</b></sub>
+  <i>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</i><br/>
+  <sub>— <b>Martin Fowler</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -341,16 +341,16 @@ gitGraph
    commit id: "c1"
    checkout main
    merge AbdullahBakir97
-   branch DevTrust
-   checkout DevTrust
-   commit id: "c1"
-   checkout main
-   merge DevTrust
    branch Stock-Manager
    checkout Stock-Manager
    commit id: "c1"
    checkout main
    merge Stock-Manager
+   branch DevTrust
+   checkout DevTrust
+   commit id: "c1"
+   checkout main
+   merge DevTrust
 ```
 <!-- GITGRAPH:END -->
 
@@ -379,7 +379,7 @@ gitGraph
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
-- 📦 [`Stock-Manager` `v2.5.5`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.5.5) — Stock Manager Pro v2.5.5 <sub>(2026-05-09)</sub>
+- 📦 [`Stock-Manager` `v2.5.6`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.5.6) — Stock Manager Pro v2.5.6 <sub>(2026-05-12)</sub>
 - 📦 [`PortfolioCraft` `v0.4.4`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.4) — v0.4.4 — Complete enum-leak sweep <sub>(2026-05-01)</sub>
 - 📦 [`cortex` `v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) — v1.0.0 — first GA release <sub>(2026-04-27)</sub>
 <!-- LATEST_RELEASES:END -->
@@ -532,7 +532,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-05-12.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-05-13.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
