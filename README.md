@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programming isn't about what you know; it's about what you can figure out."</i><br/>
-  <sub>— <b>Chris Pine</b></sub>
+  <i>"It's not a bug — it's an undocumented feature."</i><br/>
+  <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -399,7 +399,7 @@ gitGraph
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-05-11.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-05-18.</sub></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/featured/cortex.svg" width="49%" alt="cortex — featured project card" /></a>
@@ -532,7 +532,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-05-17.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-05-18.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
