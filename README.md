@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Software is a great combination of artistry and engineering."</i><br/>
-  <sub>— <b>Bill Gates</b></sub>
+  <i>"Java is to JavaScript what car is to carpet."</i><br/>
+  <sub>— <b>Chris Heilmann</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-603-red?style=for-the-badge&logo=git&logoColor=white&v=20260521" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-38-red?style=for-the-badge&logo=github&logoColor=white&v=20260521" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260521" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260521" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-605-red?style=for-the-badge&logo=git&logoColor=white&v=20260521" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-41-red?style=for-the-badge&logo=github&logoColor=white&v=20260521" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260521" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260521" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -336,16 +336,16 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```mermaid
 gitGraph
    commit id: "main"
-   branch AbdullahBakir97
-   checkout AbdullahBakir97
-   commit id: "c1"
-   checkout main
-   merge AbdullahBakir97
    branch ai-approve
    checkout ai-approve
    commit id: "c1"
    checkout main
    merge ai-approve
+   branch AbdullahBakir97
+   checkout AbdullahBakir97
+   commit id: "c1"
+   checkout main
+   merge AbdullahBakir97
    branch ai-quality-gate
    checkout ai-quality-gate
    commit id: "c1"
@@ -356,11 +356,6 @@ gitGraph
    commit id: "c1"
    checkout main
    merge Stock-Manager
-   branch DevTrust
-   checkout DevTrust
-   commit id: "c1"
-   checkout main
-   merge DevTrust
 ```
 <!-- GITGRAPH:END -->
 
@@ -542,7 +537,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-05-20.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-05-21.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
