@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Good code is its own best documentation."</i><br/>
-  <sub>— <b>Steve McConnell</b></sub>
+  <i>"In order to be irreplaceable, one must always be different."</i><br/>
+  <sub>— <b>Coco Chanel</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -532,7 +532,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-05-22.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-05-23.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
@@ -568,8 +568,8 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/pins/Automtion.svg" width="49%" alt="Automtion" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="./assets/pins/image-cropping.svg" width="49%" alt="image-cropping" /></a>
   <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="./assets/pins/Project-Management-Tool.svg" width="49%" alt="Project-Management-Tool" /></a>
+  <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="./assets/pins/image-cropping.svg" width="49%" alt="image-cropping" /></a>
 </div>
 
 </details>
