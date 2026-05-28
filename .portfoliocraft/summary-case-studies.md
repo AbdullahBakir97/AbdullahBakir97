@@ -55,7 +55,7 @@ ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-res
 
 **Repository:** [AbdullahBakir97/Stock-Manager](https://github.com/AbdullahBakir97/Stock-Manager)
 **Stack:** Python, HTML, Inno Setup · desktop-app, inventory-management, offline
-**Duration:** Mar 2026–May 2026 (1 month)
+**Duration:** Mar 2026–May 2026 (2 months)
 **Status:** active
 **Scale:** 1 star, 0 forks · pinned
 

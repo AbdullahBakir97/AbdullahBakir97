@@ -49,7 +49,7 @@ Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Dj
 
 ### Stock-Manager
 
-An active machine-learning project built primarily in Python, developed over 1 month (2026).
+An active machine-learning project built primarily in Python, developed over 2 months (2026).
 
 Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.
 

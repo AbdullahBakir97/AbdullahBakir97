@@ -1,5 +1,5 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 87 public repos · 615 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 87 public repos · 623 commits
 
 Python Developer
 
@@ -19,7 +19,7 @@ Jobs portal for seekers and employers — listings, applications, employer dashb
 **Django-Store** — Python · 26★ · 31 mo · pinned
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
-**Stock-Manager** — Python, HTML, Inno Setup · 1★ · pinned
+**Stock-Manager** — Python, HTML, Inno Setup · 1★ · 2 mo · pinned
 Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.
 
 **PortfolioCraft** — TypeScript, JavaScript, MDX · 1★ · pinned
@@ -31,7 +31,7 @@ GitHub profile README — animated headers, 3D contribution skyline, per-year st
 
 ### Activity (last 12 months)
 
-615 commits · 42 pull requests · 0 reviews · contributed to 44 repositories
+623 commits · 45 pull requests · 0 reviews · contributed to 44 repositories
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
