@@ -69,7 +69,7 @@ Repository: [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/
 
 ### AbdullahBakir97
 
-An active machine-learning project built primarily in Python, developed over 36 months (2023–2026).
+An active machine-learning project built primarily in Python, developed over 37 months (2023–2026).
 
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
@@ -85,7 +85,7 @@ Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97
 
 ## Scope of self-directed work
 
-I've worked across 87 public repositories, of which 75% are open-source. My longest sustained project ran for 36 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 52 stars.
+I've worked across 87 public repositories, of which 75% are open-source. My longest sustained project ran for 37 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 52 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
