@@ -1,6 +1,6 @@
 ## Audit
 
-_Generated 2026-06-02. 11 findings across 87 repos (9 flagged)._
+_Generated 2026-06-04. 11 findings across 87 repos (9 flagged)._
 
 | Severity | Count |
 | --- | --- |
@@ -17,26 +17,26 @@ _Generated 2026-06-02. 11 findings across 87 repos (9 flagged)._
 ### Findings
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1087 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1087 days)
-  - Evidence: [Opened 1087 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1089 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1089 days)
+  - Evidence: [Opened 1089 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 733 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 735 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 733 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 735 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[medium]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 37 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (37 days)
-  - Evidence: [Opened 37 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 39 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (39 days)
+  - Evidence: [Opened 39 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[low]** `pr-rot` — Awaiting reviewer: AbdullahBakir97/Stock-Manager#19
   - A reviewer was the last to act on this PR and hasn't replied since 2026-04-24. This isn't your problem to push on — it's logged for awareness.
-  - Awaiting: reviewer (38 days)
+  - Awaiting: reviewer (40 days)
   - Evidence: [Last activity: 2026-04-24](https://github.com/AbdullahBakir97/Stock-Manager/pull/19)
   - **Action:** Reach out to the reviewer or convert to draft.
 

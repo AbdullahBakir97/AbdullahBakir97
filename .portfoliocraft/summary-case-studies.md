@@ -72,7 +72,7 @@ desktop-app, inventory-management, offline, pyqt6, python, sqlite, stock-manager
 
 **Repository:** [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/PortfolioCraft)
 **Stack:** TypeScript, JavaScript, MDX · automation, cli, cv-generator
-**Duration:** Apr 2026–May 2026 (1 month)
+**Duration:** Apr 2026–Jun 2026 (1 month)
 **Status:** active
 **Scale:** 1 star, 1 fork · pinned
 
