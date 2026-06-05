@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"First, solve the problem. Then, write the code."</i><br/>
-  <sub>— <b>John Johnson</b></sub>
+  <i>"Programs must be written for people to read, and only incidentally for machines to execute."</i><br/>
+  <sub>— <b>Harold Abelson</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -532,7 +532,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-06-04.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-06-05.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
