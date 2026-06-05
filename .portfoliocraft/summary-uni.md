@@ -33,7 +33,7 @@ An active backend project built primarily in Python, developed over 30 months (2
 
 Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
-The repository carries 30 stars and 4 forks, with primary topics: css, django, django-rest-framework.
+The repository carries 29 stars and 4 forks, with primary topics: css, django, django-rest-framework.
 
 Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal).
 
