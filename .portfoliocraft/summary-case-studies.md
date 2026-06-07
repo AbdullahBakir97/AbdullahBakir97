@@ -23,7 +23,7 @@ ajax, css, deployment, django, django-rest-framework, html5, htmx, javascript, j
 **Stack:** Python · css, django, django-rest-framework
 **Duration:** Nov 2023–May 2026 (30 months)
 **Status:** active
-**Scale:** 29 stars, 4 forks · pinned
+**Scale:** 30 stars, 4 forks · pinned
 
 ### Overview
 Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
