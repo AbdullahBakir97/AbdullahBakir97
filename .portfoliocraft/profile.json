@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-06-10T05:52:11.173Z"
+    "lastModified": "2026-06-11T06:02:24.416Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -74,12 +74,12 @@
       "keywords": []
     },
     {
-      "name": "Dockerfile",
+      "name": "Batchfile",
       "level": "proficient",
       "keywords": []
     },
     {
-      "name": "Batchfile",
+      "name": "Dockerfile",
       "level": "proficient",
       "keywords": []
     }
