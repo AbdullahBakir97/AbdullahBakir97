@@ -12,7 +12,7 @@ Python Developer
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
-**2026**: Created 21 repos primarily in TypeScript, Python, and JavaScript, focused on devops and frontend.
+**2026**: Created 21 repos primarily in Python, TypeScript, and JavaScript, focused on devops and frontend.
 
 
 ## Selected projects
@@ -49,7 +49,7 @@ Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Dj
 
 ### Stock-Manager
 
-An active machine-learning project built primarily in Python, developed over 2 months (2026).
+An active machine-learning project built primarily in Python, developed over 3 months (2026).
 
 Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.
 
