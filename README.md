@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</i><br/>
-  <sub>— <b>Martin Fowler</b></sub>
+  <i>"Talk is cheap. Show me the code."</i><br/>
+  <sub>— <b>Linus Torvalds</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-625-red?style=for-the-badge&logo=git&logoColor=white&v=20260614" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-45-red?style=for-the-badge&logo=github&logoColor=white&v=20260614" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260614" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260614" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-726-red?style=for-the-badge&logo=git&logoColor=white&v=20260614" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-45-red?style=for-the-badge&logo=github&logoColor=white&v=20260614" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260614" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260614" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -379,7 +379,7 @@ gitGraph
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
-- 📦 [`Stock-Manager` `v2.5.10`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.5.10) — Stock Manager Pro v2.5.10 <sub>(2026-06-12)</sub>
+- 📦 [`Stock-Manager` `v2.6.4`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.6.4) — Stock Manager Pro v2.6.4 <sub>(2026-06-13)</sub>
 - 📦 [`PortfolioCraft` `v0.4.4`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.4) — v0.4.4 — Complete enum-leak sweep <sub>(2026-05-01)</sub>
 - 📦 [`cortex` `v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) — v1.0.0 — first GA release <sub>(2026-04-27)</sub>
 <!-- LATEST_RELEASES:END -->
@@ -532,7 +532,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-06-13.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-06-14.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
