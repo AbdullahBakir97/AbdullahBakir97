@@ -357,12 +357,12 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- 🔀 Closed PR [#48](https://github.com/AbdullahBakir97/Stock-Manager/pull/48) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#48](https://github.com/AbdullahBakir97/Stock-Manager/pull/48) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - 🔀 Closed PR [#19](https://github.com/AbdullahBakir97/Stock-Manager/pull/19) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - 🔀 Closed PR [#39](https://github.com/AbdullahBakir97/Stock-Manager/pull/39) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 <!-- ACTIVITY:END -->
