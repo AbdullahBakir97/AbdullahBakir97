@@ -59,7 +59,7 @@ Repository: [AbdullahBakir97/Stock-Manager](https://github.com/AbdullahBakir97/S
 
 ### PortfolioCraft
 
-An active frontend project built primarily in TypeScript, developed over 1 month (2026).
+An active frontend project built primarily in TypeScript, developed over 2 months (2026).
 
 Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
 
