@@ -21,7 +21,7 @@ ajax, css, deployment, django, django-rest-framework, html5, htmx, javascript, j
 
 **Repository:** [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal)
 **Stack:** Python · css, django, django-rest-framework
-**Duration:** Nov 2023–May 2026 (30 months)
+**Duration:** Nov 2023–Jun 2026 (31 months)
 **Status:** active
 **Scale:** 30 stars, 4 forks · pinned
 

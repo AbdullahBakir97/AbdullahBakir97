@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-06-21T06:04:45.841Z"
+    "lastModified": "2026-06-22T06:12:33.426Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -34,12 +34,12 @@
       "keywords": []
     },
     {
-      "name": "Vue",
+      "name": "HTML",
       "level": "expert",
       "keywords": []
     },
     {
-      "name": "HTML",
+      "name": "Vue",
       "level": "expert",
       "keywords": []
     },
@@ -59,12 +59,12 @@
       "keywords": []
     },
     {
-      "name": "Jupyter Notebook",
+      "name": "Jinja",
       "level": "proficient",
       "keywords": []
     },
     {
-      "name": "Jinja",
+      "name": "Jupyter Notebook",
       "level": "proficient",
       "keywords": []
     },

@@ -29,7 +29,7 @@ Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Ba
 
 ### Jobs-Portal
 
-An active backend project built primarily in Python, developed over 30 months (2023–2026).
+An active backend project built primarily in Python, developed over 31 months (2023–2026).
 
 Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
