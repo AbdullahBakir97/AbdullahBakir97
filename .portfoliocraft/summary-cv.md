@@ -1,22 +1,22 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, HTML · 87 public repos · 754 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 87 public repos · 754 commits
 
 Python Developer
 
 ### Technical skills
 
-**Strong:** Python, JavaScript, HTML, Vue, CSS, PowerShell, TypeScript
-**Working knowledge:** Jinja, Inno Setup, Batchfile, Dockerfile
+**Strong:** Python, JavaScript, Vue, HTML, CSS, PowerShell, TypeScript
+**Working knowledge:** Jinja, Inno Setup, Dockerfile, Batchfile
 
 ### Selected projects
 
-**Barber-Salon** — Python · 52★ · 28 mo · pinned
+**Barber-Salon** — Python · 52★ · 29 mo · pinned
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
 **Jobs-Portal** — Python · 30★ · 31 mo · pinned
 Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
-**Django-Store** — Python · 26★ · 31 mo · pinned
+**Django-Store** — Python · 26★ · 33 mo · pinned
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
 **Stock-Manager** — Python, HTML, Inno Setup · 1★ · 3 mo · pinned

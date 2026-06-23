@@ -4,7 +4,7 @@
 
 **Repository:** [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon)
 **Stack:** Python · ajax, css, deployment
-**Duration:** Jan 2024–May 2026 (28 months)
+**Duration:** Jan 2024–Jun 2026 (29 months)
 **Status:** active
 **Scale:** 52 stars, 11 forks · pinned
 
@@ -38,7 +38,7 @@ css, django, django-rest-framework, html, javascript, python, swagger
 
 **Repository:** [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store)
 **Stack:** Python · ajax, bootstrap, cashing
-**Duration:** Sep 2023–May 2026 (31 months)
+**Duration:** Sep 2023–Jun 2026 (33 months)
 **Status:** active
 **Scale:** 26 stars, 5 forks · pinned
 
