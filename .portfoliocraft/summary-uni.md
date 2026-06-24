@@ -23,7 +23,7 @@ An active backend project built primarily in Python, developed over 29 months (2
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
-The repository carries 52 stars and 11 forks, with primary topics: ajax, css, deployment.
+The repository carries 52 stars and 12 forks, with primary topics: ajax, css, deployment.
 
 Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon).
 
