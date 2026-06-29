@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Quality is more important than quantity. One home run is much better than two doubles."</i><br/>
-  <sub>— <b>Steve Jobs</b></sub>
+  <i>"Software undergoes beta testing shortly before it's released. Beta is Latin for 'still doesn't work'."</i><br/>
+  <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -394,7 +394,7 @@ gitGraph
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-06-22.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-06-29.</sub></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="./assets/featured/Stock-Manager.svg" width="49%" alt="Stock-Manager — featured project card" /></a>
@@ -406,11 +406,11 @@ gitGraph
 </div>
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/featured/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System — featured project card" /></a>
-  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project card" /></a>
 </div>
 <div align="center">
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project card" /></a>
   <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/featured/Automtion.svg" width="49%" alt="Automtion — featured project card" /></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project card" /></a>
 </div>
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="./assets/featured/Project-Management-Tool.svg" width="49%" alt="Project-Management-Tool — featured project card" /></a>
@@ -527,7 +527,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-06-28.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-06-29.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
