@@ -25,7 +25,7 @@ Professional desktop inventory management for Windows — local-first SQLite sto
 **PortfolioCraft** — TypeScript, JavaScript, MDX · 1★ · 2 mo · pinned
 Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
 
-**AbdullahBakir97** — Python, HTML · 20★ · 37 mo
+**AbdullahBakir97** — Python, HTML · 20★ · 38 mo
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
 

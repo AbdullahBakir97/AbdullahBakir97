@@ -89,7 +89,7 @@ automation, cli, cv-generator, developer-portfolio, github-action, github-market
 
 **Repository:** [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97)
 **Stack:** Python, HTML · animation, auto-update, dynamic-readme
-**Duration:** May 2023–Jun 2026 (37 months)
+**Duration:** May 2023–Jul 2026 (38 months)
 **Status:** active
 **Scale:** 20 stars, 1 fork
 
