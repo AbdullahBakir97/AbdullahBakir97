@@ -352,13 +352,13 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- 🔀 Merged PR [#50](https://github.com/AbdullahBakir97/Stock-Manager/pull/50) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#55](https://github.com/AbdullahBakir97/Stock-Manager/pull/55) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Merged PR [#53](https://github.com/AbdullahBakir97/Stock-Manager/pull/53) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Closed PR [#52](https://github.com/AbdullahBakir97/Stock-Manager/pull/52) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#53](https://github.com/AbdullahBakir97/Stock-Manager/pull/53) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 <!-- ACTIVITY:END -->
 
