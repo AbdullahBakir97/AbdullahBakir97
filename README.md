@@ -352,14 +352,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- 🔀 Opened PR [#82](https://github.com/AbdullahBakir97/Stock-Manager/pull/82) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Merged PR [#79](https://github.com/AbdullahBakir97/Stock-Manager/pull/79) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Merged PR [#80](https://github.com/AbdullahBakir97/Stock-Manager/pull/80) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#80](https://github.com/AbdullahBakir97/Stock-Manager/pull/80) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - 🔀 Opened PR [#79](https://github.com/AbdullahBakir97/Stock-Manager/pull/79) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - 🔀 Merged PR [#77](https://github.com/AbdullahBakir97/Stock-Manager/pull/77) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#77](https://github.com/AbdullahBakir97/Stock-Manager/pull/77) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Merged PR [#75](https://github.com/AbdullahBakir97/Stock-Manager/pull/75) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#75](https://github.com/AbdullahBakir97/Stock-Manager/pull/75) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
