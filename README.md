@@ -352,14 +352,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- 🔀 Opened PR [#96](https://github.com/AbdullahBakir97/Stock-Manager/pull/96) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#95](https://github.com/AbdullahBakir97/Stock-Manager/pull/95) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#94](https://github.com/AbdullahBakir97/Stock-Manager/pull/94) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#93](https://github.com/AbdullahBakir97/Stock-Manager/pull/93) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Opened PR [#92](https://github.com/AbdullahBakir97/Stock-Manager/pull/92) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 - 🔀 Opened PR [#90](https://github.com/AbdullahBakir97/Stock-Manager/pull/90) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 - 🔀 Merged PR [#89](https://github.com/AbdullahBakir97/Stock-Manager/pull/89) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#89](https://github.com/AbdullahBakir97/Stock-Manager/pull/89) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Merged PR [#88](https://github.com/AbdullahBakir97/Stock-Manager/pull/88) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#88](https://github.com/AbdullahBakir97/Stock-Manager/pull/88) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
