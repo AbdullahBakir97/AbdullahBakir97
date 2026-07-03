@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"If you don't fail at least 90% of the time, you're not aiming high enough."</i><br/>
-  <sub>— <b>Alan Kay</b></sub>
+  <i>"The only way to learn a new programming language is by writing programs in it."</i><br/>
+  <sub>— <b>Dennis Ritchie</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-868-red?style=for-the-badge&logo=git&logoColor=white&v=20260703" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-52-red?style=for-the-badge&logo=github&logoColor=white&v=20260703" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260703" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260703" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-920-red?style=for-the-badge&logo=git&logoColor=white&v=20260703" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-80-red?style=for-the-badge&logo=github&logoColor=white&v=20260703" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260703" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260703" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -336,30 +336,30 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```mermaid
 gitGraph
    commit id: "main"
-   branch AbdullahBakir97
-   checkout AbdullahBakir97
-   commit id: "c1"
-   checkout main
-   merge AbdullahBakir97
    branch Stock-Manager
    checkout Stock-Manager
    commit id: "c1"
    checkout main
    merge Stock-Manager
+   branch AbdullahBakir97
+   checkout AbdullahBakir97
+   commit id: "c1"
+   checkout main
+   merge AbdullahBakir97
 ```
 <!-- GITGRAPH:END -->
 
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- 🔀 Opened PR [#96](https://github.com/AbdullahBakir97/Stock-Manager/pull/96) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#95](https://github.com/AbdullahBakir97/Stock-Manager/pull/95) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#94](https://github.com/AbdullahBakir97/Stock-Manager/pull/94) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#93](https://github.com/AbdullahBakir97/Stock-Manager/pull/93) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Opened PR [#92](https://github.com/AbdullahBakir97/Stock-Manager/pull/92) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- 🔀 Opened PR [#90](https://github.com/AbdullahBakir97/Stock-Manager/pull/90) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
-- 🔀 Merged PR [#89](https://github.com/AbdullahBakir97/Stock-Manager/pull/89) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Merged PR [#96](https://github.com/AbdullahBakir97/Stock-Manager/pull/96) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Merged PR [#95](https://github.com/AbdullahBakir97/Stock-Manager/pull/95) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- 🔀 Merged PR [#94](https://github.com/AbdullahBakir97/Stock-Manager/pull/94) in [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Stock-Manager`](https://github.com/AbdullahBakir97/Stock-Manager)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
@@ -374,7 +374,7 @@ gitGraph
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
-- 📦 [`Stock-Manager` `v2.6.7`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.6.7) — Stock Manager Pro v2.6.7 <sub>(2026-07-01)</sub>
+- 📦 [`Stock-Manager` `v2.7.6`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.7.6) — Stock Manager Pro v2.7.6 <sub>(2026-07-03)</sub>
 - 📦 [`PortfolioCraft` `v0.4.4`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.4) — v0.4.4 — Complete enum-leak sweep <sub>(2026-05-01)</sub>
 - 📦 [`cortex` `v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) — v1.0.0 — first GA release <sub>(2026-04-27)</sub>
 <!-- LATEST_RELEASES:END -->
@@ -527,7 +527,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-07-02.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-07-03.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
