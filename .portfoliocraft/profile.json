@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-07-03T07:42:00.738Z"
+    "lastModified": "2026-07-04T07:17:56.602Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -69,17 +69,17 @@
       "keywords": []
     },
     {
-      "name": "Inno Setup",
-      "level": "proficient",
-      "keywords": []
-    },
-    {
       "name": "Dockerfile",
       "level": "proficient",
       "keywords": []
     },
     {
-      "name": "Batchfile",
+      "name": "Shell",
+      "level": "proficient",
+      "keywords": []
+    },
+    {
+      "name": "MDX",
       "level": "proficient",
       "keywords": []
     }
@@ -158,25 +158,6 @@
       ]
     },
     {
-      "name": "Stock-Manager",
-      "description": "Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.",
-      "url": "https://github.com/AbdullahBakir97/Stock-Manager",
-      "keywords": [
-        "desktop-app",
-        "inventory-management",
-        "offline",
-        "pyqt6",
-        "python",
-        "sqlite",
-        "stock-manager",
-        "windows"
-      ],
-      "highlights": [
-        "primary:Python",
-        "score:0.83"
-      ]
-    },
-    {
       "name": "PortfolioCraft",
       "description": "Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.",
       "url": "https://github.com/AbdullahBakir97/PortfolioCraft",
@@ -213,6 +194,23 @@
       "highlights": [
         "primary:Python",
         "score:0.74"
+      ]
+    },
+    {
+      "name": "2050-Bootstrap-Landing-page",
+      "description": "Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.",
+      "url": "https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page",
+      "keywords": [
+        "bootstrap5",
+        "css",
+        "html",
+        "javascript",
+        "anmation",
+        "anmation-css"
+      ],
+      "highlights": [
+        "primary:HTML",
+        "score:1.21"
       ]
     }
   ],

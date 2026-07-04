@@ -51,23 +51,6 @@ Backend / API
 ### Topics
 ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-rest-framework, docker, javascript, jquery, postman, pyton3, redis, translation
 
-## Stock-Manager
-
-**Repository:** [AbdullahBakir97/Stock-Manager](https://github.com/AbdullahBakir97/Stock-Manager)
-**Stack:** Python, HTML, Inno Setup · desktop-app, inventory-management, offline
-**Duration:** Mar 2026–Jul 2026 (3 months)
-**Status:** active
-**Scale:** 1 star, 0 forks · pinned
-
-### Overview
-Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.
-
-### Domain
-Machine learning / data
-
-### Topics
-desktop-app, inventory-management, offline, pyqt6, python, sqlite, stock-manager, windows
-
 ## PortfolioCraft
 
 **Repository:** [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/PortfolioCraft)
@@ -101,3 +84,20 @@ Machine learning / data
 
 ### Topics
 animation, auto-update, dynamic-readme, github-actions, profile-readme, svg
+
+## 2050-Bootstrap-Landing-page
+
+**Repository:** [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page)
+**Stack:** HTML, CSS, Python · anmation, anmation-css, bootstrap5
+**Duration:** May 2023–Jun 2026 (37 months)
+**Status:** active
+**Scale:** 14 stars, 0 forks
+
+### Overview
+Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
+
+### Domain
+Frontend / UI
+
+### Topics
+anmation, anmation-css, bootstrap5, css, html, javascript

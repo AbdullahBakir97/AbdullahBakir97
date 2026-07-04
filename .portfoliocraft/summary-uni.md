@@ -1,6 +1,6 @@
 # Software development background
 
-I'm an aspiring backend engineer with 87 public repositories on GitHub spanning backend and ml.
+I'm an aspiring backend engineer with 86 public repositories on GitHub spanning backend and frontend.
 
 Python Developer
 
@@ -12,7 +12,7 @@ Python Developer
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
-**2026**: Created 21 repos primarily in Python, TypeScript, and JavaScript, focused on devops and frontend.
+**2026**: Created 20 repos primarily in TypeScript, Python, and JavaScript, focused on devops and frontend.
 
 
 ## Selected projects
@@ -47,16 +47,6 @@ The repository carries 26 stars and 5 forks, with primary topics: ajax, bootstra
 
 Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store).
 
-### Stock-Manager
-
-An active machine-learning project built primarily in Python, developed over 3 months (2026).
-
-Professional desktop inventory management for Windows — local-first SQLite store, barcode-aware, multi-user with role separation.
-
-The repository carries 1 star and 0 forks, with primary topics: desktop-app, inventory-management, offline.
-
-Repository: [AbdullahBakir97/Stock-Manager](https://github.com/AbdullahBakir97/Stock-Manager).
-
 ### PortfolioCraft
 
 An active frontend project built primarily in TypeScript, developed over 2 months (2026).
@@ -77,15 +67,25 @@ The repository carries 20 stars and 1 fork, with primary topics: animation, auto
 
 Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97).
 
+### 2050-Bootstrap-Landing-page
+
+An active frontend project built primarily in HTML, developed over 37 months (2023–2026).
+
+Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
+
+The repository carries 14 stars and 0 forks, with primary topics: anmation, anmation-css, bootstrap5.
+
+Repository: [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page).
+
 ## Technical depth
 
 **Backend** (3 repositories): 3 backend projects in Python covering django, django-rest-framework, javascript.
-**Machine Learning** (2 repositories): 2 machine-learning projects in Python, HTML, and Inno Setup covering animation, auto-update, desktop-app.
-**Frontend** (1 repository): 1 frontend project in TypeScript, JavaScript, and MDX covering automation, cli, cv-generator.
+**Frontend** (2 repositories): 2 frontend projects in TypeScript, HTML, and JavaScript covering anmation, anmation-css, automation.
+**Machine Learning** (1 repository): 1 machine-learning project in Python and HTML covering animation, auto-update, dynamic-readme.
 
 ## Scope of self-directed work
 
-I've worked across 87 public repositories, of which 75% are open-source. My longest sustained project ran for 38 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 52 stars.
+I've worked across 86 public repositories, of which 74% are open-source. My longest sustained project ran for 38 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 52 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
