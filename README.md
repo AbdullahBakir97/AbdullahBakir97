@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The only way to learn a new programming language is by writing programs in it."</i><br/>
-  <sub>— <b>Dennis Ritchie</b></sub>
+  <i>"Computers are good at following instructions, but not at reading your mind."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-920-red?style=for-the-badge&logo=git&logoColor=white&v=20260704" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-80-red?style=for-the-badge&logo=github&logoColor=white&v=20260704" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260704" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260704" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-543-red?style=for-the-badge&logo=git&logoColor=white&v=20260704" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-37-red?style=for-the-badge&logo=github&logoColor=white&v=20260704" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-13-red?style=for-the-badge&logo=github&logoColor=white&v=20260704" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260704" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -336,16 +336,16 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```mermaid
 gitGraph
    commit id: "main"
-   branch Stock-Manager
-   checkout Stock-Manager
-   commit id: "c1"
-   checkout main
-   merge Stock-Manager
    branch AbdullahBakir97
    checkout AbdullahBakir97
    commit id: "c1"
    checkout main
    merge AbdullahBakir97
+   branch Stock-Manager-Pro
+   checkout Stock-Manager-Pro
+   commit id: "c1"
+   checkout main
+   merge Stock-Manager-Pro
 ```
 <!-- GITGRAPH:END -->
 
@@ -374,7 +374,6 @@ gitGraph
 <h2 id="releases" align="center">📦 Latest Releases</h2>
 
 <!-- LATEST_RELEASES:START -->
-- 📦 [`Stock-Manager` `v2.7.6`](https://github.com/AbdullahBakir97/Stock-Manager/releases/tag/v2.7.6) — Stock Manager Pro v2.7.6 <sub>(2026-07-03)</sub>
 - 📦 [`PortfolioCraft` `v0.4.4`](https://github.com/AbdullahBakir97/PortfolioCraft/releases/tag/v0.4.4) — v0.4.4 — Complete enum-leak sweep <sub>(2026-05-01)</sub>
 - 📦 [`cortex` `v1.0.0`](https://github.com/AbdullahBakir97/cortex/releases/tag/v1.0.0) — v1.0.0 — first GA release <sub>(2026-04-27)</sub>
 <!-- LATEST_RELEASES:END -->
@@ -527,23 +526,22 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-07-03.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-07-04.</sub></p>
 
 <details open>
-<summary align="center"><b>📌 Pinned by the author</b> <sub>· 6</sub></summary>
+<summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
 
 <p align="center"><sub><i>Hand-picked headline projects</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Stock-Manager"><img src="./assets/pins/Stock-Manager.svg" width="49%" alt="Stock-Manager" /></a>
   <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/pins/Django-Store.svg" width="49%" alt="Django-Store" /></a>
-</div>
-<div align="center">
   <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/pins/Barber-Salon.svg" width="49%" alt="Barber-Salon" /></a>
-  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/pins/Jobs-Portal.svg" width="49%" alt="Jobs-Portal" /></a>
 </div>
 <div align="center">
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/pins/Jobs-Portal.svg" width="49%" alt="Jobs-Portal" /></a>
   <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/pins/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
+</div>
+<div align="center">
   <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/pins/PortfolioCraft.svg" width="49%" alt="PortfolioCraft" /></a>
 </div>
 
