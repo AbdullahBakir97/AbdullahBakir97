@@ -1,6 +1,6 @@
 ## Audit
 
-_Generated 2026-07-06. 9 findings across 86 repos (8 flagged)._
+_Generated 2026-07-08. 9 findings across 86 repos (8 flagged)._
 
 | Severity | Count |
 | --- | --- |
@@ -17,21 +17,21 @@ _Generated 2026-07-06. 9 findings across 86 repos (8 flagged)._
 ### Findings
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1121 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1121 days)
-  - Evidence: [Opened 1121 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1123 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1123 days)
+  - Evidence: [Opened 1123 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 767 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 769 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 767 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 769 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[medium]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 71 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (71 days)
-  - Evidence: [Opened 71 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 73 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (73 days)
+  - Evidence: [Opened 73 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[low]** `tests` — No tests detected: AbdullahBakir97/DevTrust
