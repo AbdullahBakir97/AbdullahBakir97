@@ -352,12 +352,12 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- 📦 Released [`v2.10.0`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.10.0) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- 📦 Released [`v2.12.0`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.12.0) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- 📦 Released [`v2.11.0`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.11.0) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 <!-- ACTIVITY:END -->
