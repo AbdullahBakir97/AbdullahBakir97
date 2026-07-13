@@ -354,10 +354,10 @@ gitGraph
 <!-- ACTIVITY:START -->
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- 📦 Released [`v2.12.1`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.12.1) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - 📦 Released [`v2.12.0`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.12.0) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- 📦 Released [`v2.11.0`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.11.0) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 <!-- ACTIVITY:END -->
