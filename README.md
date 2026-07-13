@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Code is like humor. When you have to explain it, it's bad."</i><br/>
-  <sub>— <b>Cory House</b></sub>
+  <i>"There are only two kinds of languages: the ones people complain about and the ones nobody uses."</i><br/>
+  <sub>— <b>Bjarne Stroustrup</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -393,7 +393,7 @@ gitGraph
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-07-06.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-07-13.</sub></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/featured/Barber-Salon.svg" width="49%" alt="Barber-Salon — featured project card" /></a>
@@ -526,7 +526,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-07-12.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-07-13.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
