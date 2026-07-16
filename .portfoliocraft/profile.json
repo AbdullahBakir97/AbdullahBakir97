@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-07-14T06:29:18.279Z"
+    "lastModified": "2026-07-16T06:34:57.470Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -74,12 +74,12 @@
       "keywords": []
     },
     {
-      "name": "Shell",
+      "name": "MDX",
       "level": "proficient",
       "keywords": []
     },
     {
-      "name": "MDX",
+      "name": "Shell",
       "level": "proficient",
       "keywords": []
     }

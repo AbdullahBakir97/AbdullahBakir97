@@ -1,16 +1,16 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 86 public repos · 567 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 86 public repos · 579 commits
 
 Python Developer
 
 ### Technical skills
 
 **Strong:** Python, JavaScript, Vue, HTML, CSS, PowerShell, TypeScript
-**Working knowledge:** Jinja, Dockerfile, Shell, MDX
+**Working knowledge:** Jinja, Dockerfile, MDX, Shell
 
 ### Selected projects
 
-**Barber-Salon** — Python · 52★ · 29 mo · pinned
+**Barber-Salon** — Python · 53★ · 29 mo · pinned
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
 **Jobs-Portal** — Python · 30★ · 31 mo · pinned
@@ -19,7 +19,7 @@ Jobs portal for seekers and employers — listings, applications, employer dashb
 **Django-Store** — Python · 26★ · 33 mo · pinned
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
-**PortfolioCraft** — TypeScript, JavaScript, MDX · 1★ · 2 mo · pinned
+**PortfolioCraft** — TypeScript, JavaScript, MDX · 1★ · 3 mo · pinned
 Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
 
 **AbdullahBakir97** — Python, HTML · 20★ · 38 mo
@@ -31,7 +31,7 @@ Marketing landing page demo built with Bootstrap 5 — responsive sections, hero
 
 ### Activity (last 12 months)
 
-567 commits · 37 pull requests · 0 reviews · contributed to 44 repositories
+579 commits · 37 pull requests · 0 reviews · contributed to 44 repositories
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._

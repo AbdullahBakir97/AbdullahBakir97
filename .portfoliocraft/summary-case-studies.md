@@ -6,7 +6,7 @@
 **Stack:** Python · ajax, css, deployment
 **Duration:** Jan 2024–Jun 2026 (29 months)
 **Status:** active
-**Scale:** 52 stars, 13 forks · pinned
+**Scale:** 53 stars, 13 forks · pinned
 
 ### Overview
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
@@ -55,7 +55,7 @@ ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-res
 
 **Repository:** [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/PortfolioCraft)
 **Stack:** TypeScript, JavaScript, MDX · automation, cli, cv-generator
-**Duration:** Apr 2026–Jul 2026 (2 months)
+**Duration:** Apr 2026–Jul 2026 (3 months)
 **Status:** active
 **Scale:** 1 star, 1 fork · pinned
 
