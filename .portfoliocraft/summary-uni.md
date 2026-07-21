@@ -19,7 +19,7 @@ Python Developer
 
 ### Barber-Salon
 
-An active backend project built primarily in Python, developed over 29 months (2024–2026).
+An active backend project built primarily in Python, developed over 30 months (2024–2026).
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
@@ -29,7 +29,7 @@ Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Ba
 
 ### Jobs-Portal
 
-An active backend project built primarily in Python, developed over 31 months (2023–2026).
+An active backend project built primarily in Python, developed over 32 months (2023–2026).
 
 Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
@@ -39,7 +39,7 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 
 ### Django-Store
 
-An active backend project built primarily in Python, developed over 33 months (2023–2026).
+An active backend project built primarily in Python, developed over 34 months (2023–2026).
 
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
@@ -69,7 +69,7 @@ Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97
 
 ### 2050-Bootstrap-Landing-page
 
-An active frontend project built primarily in HTML, developed over 37 months (2023–2026).
+An active frontend project built primarily in HTML, developed over 38 months (2023–2026).
 
 Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
 

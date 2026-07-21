@@ -4,7 +4,7 @@
 
 **Repository:** [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon)
 **Stack:** Python · ajax, css, deployment
-**Duration:** Jan 2024–Jun 2026 (29 months)
+**Duration:** Jan 2024–Jul 2026 (30 months)
 **Status:** active
 **Scale:** 53 stars, 13 forks · pinned
 
@@ -21,7 +21,7 @@ ajax, css, deployment, django, django-rest-framework, html5, htmx, javascript, j
 
 **Repository:** [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal)
 **Stack:** Python · css, django, django-rest-framework
-**Duration:** Nov 2023–Jun 2026 (31 months)
+**Duration:** Nov 2023–Jul 2026 (32 months)
 **Status:** active
 **Scale:** 30 stars, 4 forks · pinned
 
@@ -38,7 +38,7 @@ css, django, django-rest-framework, html, javascript, python, swagger
 
 **Repository:** [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store)
 **Stack:** Python · ajax, bootstrap, cashing
-**Duration:** Sep 2023–Jun 2026 (33 months)
+**Duration:** Sep 2023–Jul 2026 (34 months)
 **Status:** active
 **Scale:** 26 stars, 5 forks · pinned
 
@@ -89,7 +89,7 @@ animation, auto-update, dynamic-readme, github-actions, profile-readme, svg
 
 **Repository:** [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page)
 **Stack:** HTML, CSS, Python · anmation, anmation-css, bootstrap5
-**Duration:** May 2023–Jun 2026 (37 months)
+**Duration:** May 2023–Jul 2026 (38 months)
 **Status:** active
 **Scale:** 14 stars, 0 forks
 

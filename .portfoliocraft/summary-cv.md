@@ -1,22 +1,22 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 86 public repos · 579 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, Vue, JavaScript · 86 public repos · 579 commits
 
 Python Developer
 
 ### Technical skills
 
-**Strong:** Python, JavaScript, Vue, HTML, CSS, PowerShell, TypeScript
-**Working knowledge:** Jinja, Dockerfile, MDX, Shell
+**Strong:** Python, Vue, JavaScript, HTML, CSS, PowerShell, TypeScript
+**Working knowledge:** Jinja, Dockerfile, Shell, MDX
 
 ### Selected projects
 
-**Barber-Salon** — Python · 53★ · 29 mo · pinned
+**Barber-Salon** — Python · 53★ · 30 mo · pinned
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
-**Jobs-Portal** — Python · 30★ · 31 mo · pinned
+**Jobs-Portal** — Python · 30★ · 32 mo · pinned
 Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
-**Django-Store** — Python · 26★ · 33 mo · pinned
+**Django-Store** — Python · 26★ · 34 mo · pinned
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
 **PortfolioCraft** — TypeScript, JavaScript, MDX · 1★ · 3 mo · pinned
@@ -25,7 +25,7 @@ Generate a verifiable professional portfolio from your GitHub history — README
 **AbdullahBakir97** — Python, HTML · 20★ · 38 mo
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
-**2050-Bootstrap-Landing-page** — HTML, CSS, Python · 14★ · 37 mo
+**2050-Bootstrap-Landing-page** — HTML, CSS, Python · 14★ · 38 mo
 Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
 
 
