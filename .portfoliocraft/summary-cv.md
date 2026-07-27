@@ -1,11 +1,11 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, Vue, JavaScript · 86 public repos · 579 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 86 public repos · 579 commits
 
 Python Developer
 
 ### Technical skills
 
-**Strong:** Python, Vue, JavaScript, HTML, CSS, PowerShell, TypeScript
+**Strong:** Python, JavaScript, Vue, HTML, CSS, PowerShell, TypeScript
 **Working knowledge:** Jinja, Dockerfile, Shell, MDX
 
 ### Selected projects
