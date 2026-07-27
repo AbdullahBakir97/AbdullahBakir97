@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programs are meant to be read by humans and only incidentally for computers to execute."</i><br/>
-  <sub>— <b>Donald Knuth</b></sub>
+  <i>"The function of good software is to make the complex appear to be simple."</i><br/>
+  <sub>— <b>Grady Booch</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -393,7 +393,7 @@ gitGraph
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-07-20.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-07-27.</sub></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/featured/Barber-Salon.svg" width="49%" alt="Barber-Salon — featured project card" /></a>
@@ -404,16 +404,16 @@ gitGraph
   <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/featured/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System — featured project card" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project card" /></a>
   <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project card" /></a>
 </div>
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/featured/Automtion.svg" width="49%" alt="Automtion — featured project card" /></a>
-  <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="./assets/featured/Project-Management-Tool.svg" width="49%" alt="Project-Management-Tool — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="./assets/featured/image-cropping.svg" width="49%" alt="image-cropping — featured project card" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="./assets/featured/image-cropping.svg" width="49%" alt="image-cropping — featured project card" /></a>
-  <a href="https://github.com/AbdullahBakir97/Python-Environment-Management-Tool"><img src="./assets/featured/Python-Environment-Management-Tool.svg" width="49%" alt="Python-Environment-Management-Tool — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="./assets/featured/Project-Management-Tool.svg" width="49%" alt="Project-Management-Tool — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Py-Desktop-Expense_Tracker"><img src="./assets/featured/Py-Desktop-Expense_Tracker.svg" width="49%" alt="Py-Desktop-Expense_Tracker — featured project card" /></a>
 </div>
 <!-- FEATURED_PROJECTS:END -->
 
@@ -526,7 +526,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-07-26.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-07-27.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
