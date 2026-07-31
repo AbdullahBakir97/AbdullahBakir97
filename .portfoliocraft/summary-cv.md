@@ -22,7 +22,7 @@ Amazon-style e-commerce platform — products, brands, reviews, orders, payments
 **PortfolioCraft** — TypeScript, JavaScript, MDX · 1★ · 3 mo · pinned
 Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
 
-**AbdullahBakir97** — Python, HTML · 20★ · 38 mo
+**AbdullahBakir97** — Python, HTML · 20★ · 39 mo
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
 **2050-Bootstrap-Landing-page** — HTML, CSS, Python · 14★ · 38 mo
