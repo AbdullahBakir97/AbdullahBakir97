@@ -63,7 +63,7 @@ An active machine-learning project built primarily in Python, developed over 39 
 
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
-The repository carries 20 stars and 1 fork, with primary topics: animation, auto-update, dynamic-readme.
+The repository carries 21 stars and 1 fork, with primary topics: animation, auto-update, dynamic-readme.
 
 Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97).
 

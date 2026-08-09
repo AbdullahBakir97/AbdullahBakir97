@@ -74,7 +74,7 @@ automation, cli, cv-generator, developer-portfolio, github-action, github-market
 **Stack:** Python, HTML · animation, auto-update, dynamic-readme
 **Duration:** May 2023–Aug 2026 (39 months)
 **Status:** active
-**Scale:** 20 stars, 1 fork
+**Scale:** 21 stars, 1 fork
 
 ### Overview
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
