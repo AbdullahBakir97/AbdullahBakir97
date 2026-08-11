@@ -91,7 +91,7 @@ animation, auto-update, dynamic-readme, github-actions, profile-readme, svg
 **Stack:** HTML, CSS, Python · anmation, anmation-css, bootstrap5
 **Duration:** May 2023–Jul 2026 (38 months)
 **Status:** active
-**Scale:** 14 stars, 0 forks
+**Scale:** 15 stars, 0 forks
 
 ### Overview
 Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.

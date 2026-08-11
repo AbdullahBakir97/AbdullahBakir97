@@ -25,7 +25,7 @@ Generate a verifiable professional portfolio from your GitHub history — README
 **AbdullahBakir97** — Python, HTML · 21★ · 39 mo
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
-**2050-Bootstrap-Landing-page** — HTML, CSS, Python · 14★ · 38 mo
+**2050-Bootstrap-Landing-page** — HTML, CSS, Python · 15★ · 38 mo
 Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
 
 

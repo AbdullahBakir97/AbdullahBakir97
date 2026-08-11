@@ -73,7 +73,7 @@ An active frontend project built primarily in HTML, developed over 38 months (20
 
 Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
 
-The repository carries 14 stars and 0 forks, with primary topics: anmation, anmation-css, bootstrap5.
+The repository carries 15 stars and 0 forks, with primary topics: anmation, anmation-css, bootstrap5.
 
 Repository: [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page).
 
