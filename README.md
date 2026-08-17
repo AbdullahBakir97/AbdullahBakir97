@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"If debugging is the process of removing software bugs, then programming must be the process of putting them in."</i><br/>
-  <sub>— <b>Edsger W. Dijkstra</b></sub>
+  <i>"Truth can only be found in one place: the code."</i><br/>
+  <sub>— <b>Robert C. Martin</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -393,7 +393,7 @@ gitGraph
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-08-10.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-08-17.</sub></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/featured/Barber-Salon.svg" width="49%" alt="Barber-Salon — featured project card" /></a>
@@ -404,8 +404,8 @@ gitGraph
   <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/featured/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System — featured project card" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project card" /></a>
   <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project card" /></a>
 </div>
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/featured/Automtion.svg" width="49%" alt="Automtion — featured project card" /></a>
@@ -526,7 +526,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-08-16.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-08-17.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
