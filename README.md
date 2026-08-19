@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programming isn't about what you know; it's about what you can figure out."</i><br/>
-  <sub>— <b>Chris Pine</b></sub>
+  <i>"It's not a bug — it's an undocumented feature."</i><br/>
+  <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-599-red?style=for-the-badge&logo=git&logoColor=white&v=20260819" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-37-red?style=for-the-badge&logo=github&logoColor=white&v=20260819" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-13-red?style=for-the-badge&logo=github&logoColor=white&v=20260819" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260819" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-603-red?style=for-the-badge&logo=git&logoColor=white&v=20260819" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-37-red?style=for-the-badge&logo=github&logoColor=white&v=20260819" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-13-red?style=for-the-badge&logo=github&logoColor=white&v=20260819" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260819" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -526,7 +526,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-08-18.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-08-19.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
