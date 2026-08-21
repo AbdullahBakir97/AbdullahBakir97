@@ -1,11 +1,11 @@
 ## Audit
 
-_Generated 2026-08-20. 9 findings across 86 repos (8 flagged)._
+_Generated 2026-08-21. 10 findings across 87 repos (9 flagged)._
 
 | Severity | Count |
 | --- | --- |
 | critical | 0 |
-| high | 2 |
+| high | 3 |
 | medium | 1 |
 | low | 5 |
 | info | 1 |
@@ -16,22 +16,27 @@ _Generated 2026-08-20. 9 findings across 86 repos (8 flagged)._
 
 ### Findings
 
+- **[high]** `license` — No LICENSE: AbdullahBakir97/e-pay_tool
+  - An unlicensed repo cannot be reused legally; downstream contributors and employers will treat it as all-rights-reserved by default. Pick MIT or Apache-2.0 for permissive open source.
+  - Evidence: [Repo community profile](https://github.com/AbdullahBakir97/e-pay_tool/community)
+  - **Action:** Add a LICENSE file (MIT or Apache-2.0 are common defaults).
+
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1166 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1166 days)
-  - Evidence: [Opened 1166 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1167 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1167 days)
+  - Evidence: [Opened 1167 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[high]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 116 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (116 days)
-  - Evidence: [Opened 116 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 117 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (117 days)
+  - Evidence: [Opened 117 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 812 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 813 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 812 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 813 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[low]** `tests` — No tests detected: AbdullahBakir97/DevTrust
@@ -61,5 +66,5 @@ _Generated 2026-08-20. 9 findings across 86 repos (8 flagged)._
 
 - **[info]** `unverified-employer-context` — Employer signal weak: AbdullahBakir97
   - Your bio or company field references an employer, but the commit-author email domains in your repositories don’t overlap with that claim. This weakens verifiable employment context for visitors.
-  - Evidence: [Unverified domains: 163.com, algolia.com, antonagestam.se, archlinux.org, beimir.net, creativeadvtech.com, decorahvikings.k12.ia.us, dynamous.ai, eecs.harvard.edu, example.com, flo-edelmann.de, ghyllebert.be, github.com, gmail.com, gmx.net, google.com, gorillatech.io, grafana.com, hotmail.co.uk, hotmail.com, ibj.io, icloud.com, iit.demokritos.gr, initiatives.fr, iress.com, j0ach1mmall3.com, jomo.tv, jonrohan.codes, kakaocorp.com, live.ca, m.zato.io, me.com, micropyramid.com, mrlolethan.com, nkmem.es, outlook.com, peth.me, phroa.net, proton.me, protonmail.com, qq.com, readyprompt.com, rtainc.in, sewan.fr, shaunpud.com, smirking.ninja, sobolevn.me, spiral.sh, staples.com, starlogik.com, statsperform.com, stribny.name, student.han.nl, synvert.com, thirty3.de, trivadis.com, viner.tv, whitesourcesoftware.com, wix.com, x-factory.jp, yahoo.com, yahoo.com.br, yahoo.fr, zkorean.com](https://github.com/AbdullahBakir97)
+  - Evidence: [Unverified domains: 163.com, algolia.com, anthropic.com, antonagestam.se, archlinux.org, beimir.net, creativeadvtech.com, decorahvikings.k12.ia.us, dynamous.ai, eecs.harvard.edu, example.com, flo-edelmann.de, ghyllebert.be, github.com, gmail.com, gmx.net, google.com, gorillatech.io, grafana.com, hotmail.co.uk, hotmail.com, ibj.io, icloud.com, iit.demokritos.gr, initiatives.fr, iress.com, j0ach1mmall3.com, jomo.tv, jonrohan.codes, kakaocorp.com, live.ca, m.zato.io, me.com, micropyramid.com, mrlolethan.com, nkmem.es, outlook.com, peth.me, phroa.net, proton.me, protonmail.com, qq.com, readyprompt.com, rtainc.in, sewan.fr, shaunpud.com, smirking.ninja, sobolevn.me, spiral.sh, staples.com, starlogik.com, statsperform.com, stribny.name, student.han.nl, synvert.com, thirty3.de, trivadis.com, viner.tv, whitesourcesoftware.com, wix.com, x-factory.jp, yahoo.com, yahoo.com.br, yahoo.fr, zkorean.com](https://github.com/AbdullahBakir97)
   - **Action:** Add a verified domain to your GitHub email or update your bio so commit context reflects employer claim.
