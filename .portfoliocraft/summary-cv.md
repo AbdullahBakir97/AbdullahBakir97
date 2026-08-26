@@ -5,7 +5,7 @@ Python Developer
 
 ### Technical skills
 
-**Strong:** Python, Vue, JavaScript, HTML, CSS, PowerShell, TypeScript
+**Strong:** Python, Vue, JavaScript, HTML, CSS, TypeScript, PowerShell
 **Working knowledge:** Jinja, Dockerfile, Shell, MDX
 
 ### Selected projects

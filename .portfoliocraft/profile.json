@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-08-25T04:57:31.970Z"
+    "lastModified": "2026-08-26T04:58:45.847Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -49,12 +49,12 @@
       "keywords": []
     },
     {
-      "name": "PowerShell",
+      "name": "TypeScript",
       "level": "expert",
       "keywords": []
     },
     {
-      "name": "TypeScript",
+      "name": "PowerShell",
       "level": "expert",
       "keywords": []
     },
