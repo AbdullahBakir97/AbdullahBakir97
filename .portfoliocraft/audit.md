@@ -1,6 +1,6 @@
 ## Audit
 
-_Generated 2026-08-27. 10 findings across 87 repos (9 flagged)._
+_Generated 2026-08-28. 10 findings across 87 repos (9 flagged)._
 
 | Severity | Count |
 | --- | --- |
@@ -22,21 +22,21 @@ _Generated 2026-08-27. 10 findings across 87 repos (9 flagged)._
   - **Action:** Add a LICENSE file (MIT or Apache-2.0 are common defaults).
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1173 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1173 days)
-  - Evidence: [Opened 1173 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1174 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1174 days)
+  - Evidence: [Opened 1174 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[high]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 123 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (123 days)
-  - Evidence: [Opened 123 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 124 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (124 days)
+  - Evidence: [Opened 124 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 819 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 820 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 819 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 820 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[low]** `tests` — No tests detected: AbdullahBakir97/DevTrust
