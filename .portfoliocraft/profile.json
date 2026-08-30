@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-08-29T11:10:40.208Z"
+    "lastModified": "2026-08-30T09:59:14.312Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -29,12 +29,12 @@
       "keywords": []
     },
     {
-      "name": "Vue",
+      "name": "JavaScript",
       "level": "expert",
       "keywords": []
     },
     {
-      "name": "JavaScript",
+      "name": "Vue",
       "level": "expert",
       "keywords": []
     },

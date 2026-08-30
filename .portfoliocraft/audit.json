@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-08-29T11:11:09.339Z",
+  "generatedAt": "2026-08-30T09:59:41.838Z",
   "user": "AbdullahBakir97",
   "summary": {
-    "totalFindings": 10,
+    "totalFindings": 11,
     "bySeverity": {
       "critical": 0,
-      "high": 3,
+      "high": 4,
       "medium": 1,
       "low": 5,
       "info": 1
@@ -17,17 +17,48 @@
       "docs": 0,
       "tests": 5,
       "pr-rot": 2,
-      "bug-debt": 1,
+      "bug-debt": 2,
       "archived": 0,
       "archive-suggestion": 0,
       "unverified-employer-context": 1
     },
-    "bugDebtScore": 1642,
+    "bugDebtScore": 1766,
     "reposScanned": 87,
     "reposWithFindings": 9,
     "verifiedSignatureRatio": 0.4038421541362437
   },
   "findings": [
+    {
+      "id": "ef0cb0d372fd92a0",
+      "schemaVersion": "1.0.0",
+      "severity": "high",
+      "category": "bug-debt",
+      "repo": {
+        "owner": "AbdullahBakir97",
+        "name": "PortfolioCraft",
+        "url": "https://github.com/AbdullahBakir97/PortfolioCraft"
+      },
+      "title": "Bug debt: AbdullahBakir97/PortfolioCraft",
+      "message": "1 open issues; the oldest is 122 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "evidence": [
+        {
+          "url": "https://github.com/AbdullahBakir97/PortfolioCraft/issues",
+          "label": "1 open · oldest 122 days"
+        }
+      ],
+      "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
+      "metadata": {
+        "debtScore": 122,
+        "weightedDebtScore": 366,
+        "labelMultiplier": 3,
+        "oldestAgeDays": 122,
+        "openIssuesCount": 1,
+        "dominantLabels": [
+          "priority: high"
+        ]
+      }
+    },
     {
       "id": "313e3f9c530ee130",
       "schemaVersion": "1.0.0",
@@ -47,7 +78,7 @@
         }
       ],
       "suggestedAction": "Add a LICENSE file (MIT or Apache-2.0 are common defaults).",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {}
     },
     {
@@ -61,18 +92,18 @@
         "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST"
       },
       "title": "Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1",
-      "message": "This PR has been open for 1175 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 1176 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1",
-          "label": "Opened 1175 days ago"
+          "label": "Opened 1176 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 1175,
+        "ageDays": 1176,
         "lastEventAt": "2023-06-10T22:53:05Z"
       }
     },
@@ -87,18 +118,18 @@
         "url": "https://github.com/bloghd/bloghd"
       },
       "title": "Stale PR: bloghd/bloghd#1",
-      "message": "This PR has been open for 125 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 126 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/bloghd/bloghd/pull/1",
-          "label": "Opened 125 days ago"
+          "label": "Opened 126 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 125,
+        "ageDays": 126,
         "lastEventAt": "2026-04-25T19:09:40Z"
       }
     },
@@ -113,20 +144,20 @@
         "url": "https://github.com/AbdullahBakir97/Project-Management-Tool"
       },
       "title": "Bug debt: AbdullahBakir97/Project-Management-Tool",
-      "message": "2 open issues; the oldest is 821 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "2 open issues; the oldest is 822 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/Project-Management-Tool/issues",
-          "label": "2 open · oldest 821 days"
+          "label": "2 open · oldest 822 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {
-        "debtScore": 1642,
-        "weightedDebtScore": 3284,
+        "debtScore": 1644,
+        "weightedDebtScore": 3288,
         "labelMultiplier": 2,
-        "oldestAgeDays": 821,
+        "oldestAgeDays": 822,
         "openIssuesCount": 2,
         "dominantLabels": [
           "bug"
@@ -152,7 +183,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {}
     },
     {
@@ -174,7 +205,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {}
     },
     {
@@ -196,7 +227,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {}
     },
     {
@@ -218,7 +249,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {}
     },
     {
@@ -240,7 +271,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {}
     },
     {
@@ -258,7 +289,7 @@
         }
       ],
       "suggestedAction": "Add a verified domain to your GitHub email or update your bio so commit context reflects employer claim.",
-      "detectedAt": "2026-08-29T11:11:09.339Z",
+      "detectedAt": "2026-08-30T09:59:41.838Z",
       "metadata": {
         "matchedDomains": [],
         "unmatchedDomains": [
