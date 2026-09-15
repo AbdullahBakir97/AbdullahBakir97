@@ -357,14 +357,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- 🔀 Opened PR [#18](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/18) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Opened PR [#17](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/17) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Opened PR [#16](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/16) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Merged PR [#15](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/15) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Merged PR [#14](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/14) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Merged PR [#21](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/21) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Merged PR [#20](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/20) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Opened PR [#21](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/21) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Opened PR [#20](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/20) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Merged PR [#19](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/19) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Opened PR [#19](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/19) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Merged PR [#18](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/18) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Merged PR [#17](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/17) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
