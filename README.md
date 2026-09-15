@@ -357,14 +357,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- 🔀 Opened PR [#6](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/6) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Closed PR [#5](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/5) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- 📦 Released [`v2.17.1`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.17.1) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- 📦 Released [`v2.17.0`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.17.0) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Opened PR [#9](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/9) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Opened PR [#8](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/8) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Merged PR [#7](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/7) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Merged PR [#6](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/6) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- 🔀 Opened PR [#7](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/7) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
