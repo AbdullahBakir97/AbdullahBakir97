@@ -1,11 +1,11 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, JavaScript, Vue · 87 public repos · 609 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, HTML, JavaScript · 87 public repos · 616 commits
 
 Python Developer
 
 ### Technical skills
 
-**Strong:** Python, JavaScript, Vue, HTML, CSS, TypeScript, PowerShell
+**Strong:** Python, HTML, JavaScript, Vue, CSS, TypeScript, PowerShell
 **Working knowledge:** Jinja, Dockerfile, Shell, MDX
 
 ### Selected projects
@@ -31,7 +31,7 @@ Marketing landing page demo built with Bootstrap 5 — responsive sections, hero
 
 ### Activity (last 12 months)
 
-609 commits · 37 pull requests · 0 reviews · contributed to 44 repositories
+616 commits · 40 pull requests · 0 reviews · contributed to 44 repositories
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
