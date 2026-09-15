@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</i><br/>
-  <sub>— <b>Martin Fowler</b></sub>
+  <i>"Talk is cheap. Show me the code."</i><br/>
+  <sub>— <b>Linus Torvalds</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-611-red?style=for-the-badge&logo=git&logoColor=white&v=20260915" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-38-red?style=for-the-badge&logo=github&logoColor=white&v=20260915" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260915" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260915" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-621-red?style=for-the-badge&logo=git&logoColor=white&v=20260915" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-43-red?style=for-the-badge&logo=github&logoColor=white&v=20260915" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260915" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260915" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -341,22 +341,23 @@ gitGraph
    commit id: "c1"
    checkout main
    merge Tawil-Media---Advertisement
-   branch AbdullahBakir97
-   checkout AbdullahBakir97
-   commit id: "c1"
-   checkout main
-   merge AbdullahBakir97
    branch Stock-Manager-Pro
    checkout Stock-Manager-Pro
    commit id: "c1"
    checkout main
    merge Stock-Manager-Pro
+   branch AbdullahBakir97
+   checkout AbdullahBakir97
+   commit id: "c1"
+   checkout main
+   merge AbdullahBakir97
 ```
 <!-- GITGRAPH:END -->
 
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- 🔀 Opened PR [#10](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/10) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - 🔀 Opened PR [#9](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/9) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - 🔀 Opened PR [#8](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/8) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
@@ -364,7 +365,6 @@ gitGraph
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - 🔀 Merged PR [#6](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/6) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Opened PR [#7](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/7) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
@@ -531,7 +531,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-09-14.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-09-15.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
