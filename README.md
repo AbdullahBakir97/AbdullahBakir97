@@ -357,13 +357,13 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- 🔀 Merged PR [#24](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/24) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 - 🔀 Opened PR [#24](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/24) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - 🔀 Merged PR [#23](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/23) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Merged PR [#22](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/22) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 <!-- ACTIVITY:END -->
 
