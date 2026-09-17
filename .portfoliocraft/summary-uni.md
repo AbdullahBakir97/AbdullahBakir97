@@ -8,7 +8,7 @@ Python Developer
 
 **2023**: Created 21 repos primarily in HTML, Python, and CSS, focused on frontend and ml.
 
-**2024**: Created 39 repos primarily in Python, Vue, and HTML, focused on ml and backend.
+**2024**: Created 39 repos primarily in Python, HTML, and Vue, focused on ml and backend.
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
