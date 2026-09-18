@@ -357,14 +357,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Merged PR [#26](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/26) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Opened PR [#26](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/26) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
-- 🔀 Merged PR [#25](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement/pull/25) in [`AbdullahBakir97/Tawil-Media---Advertisement`](https://github.com/AbdullahBakir97/Tawil-Media---Advertisement)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- 📦 Released [`v2.17.1`](https://github.com/Oranovix/Stock-Manager-Pro/releases/tag/v2.17.1) of [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
