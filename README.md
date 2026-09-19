@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programming isn't about what you know; it's about what you can figure out."</i><br/>
-  <sub>— <b>Chris Pine</b></sub>
+  <i>"It's not a bug — it's an undocumented feature."</i><br/>
+  <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-650-red?style=for-the-badge&logo=git&logoColor=white&v=20260919" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-59-red?style=for-the-badge&logo=github&logoColor=white&v=20260919" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260919" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-44_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260919" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-607-red?style=for-the-badge&logo=git&logoColor=white&v=20260919" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-37-red?style=for-the-badge&logo=github&logoColor=white&v=20260919" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20260919" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20260919" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -336,11 +336,6 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```mermaid
 gitGraph
    commit id: "main"
-   branch Tawil-Media---Advertisement
-   checkout Tawil-Media---Advertisement
-   commit id: "c1"
-   checkout main
-   merge Tawil-Media---Advertisement
    branch AbdullahBakir97
    checkout AbdullahBakir97
    commit id: "c1"
@@ -531,7 +526,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>44</b> active repos shown across <b>7</b> categories. Last updated 2026-09-18.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-09-19.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
@@ -633,7 +628,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 </details>
 
 <details>
-<summary align="center"><b>🎨 Frontend / UI</b> <sub>· 5</sub></summary>
+<summary align="center"><b>🎨 Frontend / UI</b> <sub>· 4</sub></summary>
 
 <p align="center"><sub><i>Vue, Nuxt, and design-forward web apps</i></sub></p>
 
@@ -642,10 +637,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js"><img src="./assets/pins/Weather--App-django-vue.js.svg" width="49%" alt="Weather--App-django-vue.js" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Tawil-Media---Advertisement"><img src="./assets/pins/Tawil-Media---Advertisement.svg" width="49%" alt="Tawil-Media---Advertisement" /></a>
   <a href="https://github.com/AbdullahBakir97/e-pay_tool"><img src="./assets/pins/e-pay_tool.svg" width="49%" alt="e-pay_tool" /></a>
-</div>
-<div align="center">
   <a href="https://github.com/AbdullahBakir97/Portfolio"><img src="./assets/pins/Portfolio.svg" width="49%" alt="Portfolio" /></a>
 </div>
 
