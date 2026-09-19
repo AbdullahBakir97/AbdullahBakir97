@@ -1,6 +1,6 @@
 # Software development background
 
-I'm an aspiring backend engineer with 87 public repositories on GitHub spanning backend and frontend.
+I'm an aspiring backend engineer with 86 public repositories on GitHub spanning backend and frontend.
 
 Python Developer
 
@@ -8,7 +8,7 @@ Python Developer
 
 **2023**: Created 21 repos primarily in HTML, Python, and CSS, focused on frontend and ml.
 
-**2024**: Created 39 repos primarily in Python, HTML, and Vue, focused on ml and backend.
+**2024**: Created 38 repos primarily in Python, Vue, and HTML, focused on ml and backend.
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
@@ -85,7 +85,7 @@ Repository: [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/Abd
 
 ## Scope of self-directed work
 
-I've worked across 87 public repositories, of which 75% are open-source. My longest sustained project ran for 40 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 54 stars.
+I've worked across 86 public repositories, of which 74% are open-source. My longest sustained project ran for 40 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 54 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
