@@ -6,7 +6,7 @@
 **Stack:** Python · ajax, css, deployment
 **Duration:** Jan 2024–Jul 2026 (30 months)
 **Status:** active
-**Scale:** 54 stars, 13 forks · pinned
+**Scale:** 54 stars, 12 forks · pinned
 
 ### Overview
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
@@ -72,7 +72,7 @@ automation, cli, cv-generator, developer-portfolio, github-action, github-market
 
 **Repository:** [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97)
 **Stack:** Python, HTML · animation, auto-update, dynamic-readme
-**Duration:** May 2023–Sep 2026 (40 months)
+**Duration:** May 2023–Sep 2026 (41 months)
 **Status:** active
 **Scale:** 21 stars, 2 forks
 
