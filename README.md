@@ -352,14 +352,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- 🔀 Merged PR [#17](https://github.com/AbdullahBakir97/Baeckrei/pull/17) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
-- 🔀 Opened PR [#17](https://github.com/AbdullahBakir97/Baeckrei/pull/17) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
-- 🔀 Opened PR [#16](https://github.com/AbdullahBakir97/Baeckrei/pull/16) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
-- 🔀 Opened PR [#15](https://github.com/AbdullahBakir97/Baeckrei/pull/15) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
-- 🔀 Opened PR [#14](https://github.com/AbdullahBakir97/Baeckrei/pull/14) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
-- 🔀 Opened PR [#13](https://github.com/AbdullahBakir97/Baeckrei/pull/13) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
+- 🔀 Merged PR [#16](https://github.com/AbdullahBakir97/Baeckrei/pull/16) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
+- 🔀 Merged PR [#15](https://github.com/AbdullahBakir97/Baeckrei/pull/15) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
+- 🔀 Merged PR [#14](https://github.com/AbdullahBakir97/Baeckrei/pull/14) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
+- 🔀 Merged PR [#13](https://github.com/AbdullahBakir97/Baeckrei/pull/13) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
+- 🔀 Merged PR [#12](https://github.com/AbdullahBakir97/Baeckrei/pull/12) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
