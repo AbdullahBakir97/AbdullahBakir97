@@ -357,6 +357,7 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
@@ -364,7 +365,6 @@ gitGraph
 - 🔀 Opened PR [#19](https://github.com/AbdullahBakir97/Baeckrei/pull/19) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
 - 🔀 Opened PR [#18](https://github.com/AbdullahBakir97/Baeckrei/pull/18) in [`AbdullahBakir97/Baeckrei`](https://github.com/AbdullahBakir97/Baeckrei)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
