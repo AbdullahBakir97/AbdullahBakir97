@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"If you don't fail at least 90% of the time, you're not aiming high enough."</i><br/>
-  <sub>— <b>Alan Kay</b></sub>
+  <i>"The only way to learn a new programming language is by writing programs in it."</i><br/>
+  <sub>— <b>Dennis Ritchie</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-658-red?style=for-the-badge&logo=git&logoColor=white&v=20261004" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-48-red?style=for-the-badge&logo=github&logoColor=white&v=20261004" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20261004" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20261004" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-662-red?style=for-the-badge&logo=git&logoColor=white&v=20261004" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-50-red?style=for-the-badge&logo=github&logoColor=white&v=20261004" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20261004" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20261004" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -346,6 +346,11 @@ gitGraph
    commit id: "c1"
    checkout main
    merge AbdullahBakir97
+   branch Stock-Manager-Pro
+   checkout Stock-Manager-Pro
+   commit id: "c1"
+   checkout main
+   merge Stock-Manager-Pro
 ```
 <!-- GITGRAPH:END -->
 
@@ -526,7 +531,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-03.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-04.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
