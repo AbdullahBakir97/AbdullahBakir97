@@ -1,6 +1,6 @@
 # Software development background
 
-I'm an aspiring backend engineer with 86 public repositories on GitHub spanning backend and frontend.
+I'm an aspiring backend engineer with 88 public repositories on GitHub spanning backend and frontend.
 
 Python Developer
 
@@ -12,7 +12,7 @@ Python Developer
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
-**2026**: Created 21 repos primarily in TypeScript, Python, and JavaScript, focused on frontend and devops.
+**2026**: Created 23 repos primarily in TypeScript, Python, and JavaScript, focused on frontend and devops.
 
 
 ## Selected projects
@@ -23,7 +23,7 @@ An active backend project built primarily in Python, developed over 30 months (2
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
-The repository carries 54 stars and 12 forks, with primary topics: ajax, css, deployment.
+The repository carries 55 stars and 12 forks, with primary topics: ajax, css, deployment.
 
 Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon).
 
@@ -85,7 +85,7 @@ Repository: [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/Abd
 
 ## Scope of self-directed work
 
-I've worked across 86 public repositories, of which 74% are open-source. My longest sustained project ran for 41 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 54 stars.
+I've worked across 88 public repositories, of which 73% are open-source. My longest sustained project ran for 41 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 55 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-04T10:39:26.913Z",
+  "generatedAt": "2026-10-11T10:53:46.552Z",
   "user": "AbdullahBakir97",
   "summary": {
     "totalFindings": 11,
@@ -22,10 +22,10 @@
       "archive-suggestion": 0,
       "unverified-employer-context": 1
     },
-    "bugDebtScore": 1871,
-    "reposScanned": 86,
+    "bugDebtScore": 1892,
+    "reposScanned": 88,
     "reposWithFindings": 9,
-    "verifiedSignatureRatio": 0.4080763670213896
+    "verifiedSignatureRatio": 0.4163964505381392
   },
   "findings": [
     {
@@ -39,20 +39,20 @@
         "url": "https://github.com/AbdullahBakir97/PortfolioCraft"
       },
       "title": "Bug debt: AbdullahBakir97/PortfolioCraft",
-      "message": "1 open issues; the oldest is 157 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "1 open issues; the oldest is 164 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/PortfolioCraft/issues",
-          "label": "1 open · oldest 157 days"
+          "label": "1 open · oldest 164 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {
-        "debtScore": 157,
-        "weightedDebtScore": 471,
+        "debtScore": 164,
+        "weightedDebtScore": 492,
         "labelMultiplier": 3,
-        "oldestAgeDays": 157,
+        "oldestAgeDays": 164,
         "openIssuesCount": 1,
         "dominantLabels": [
           "priority: high"
@@ -78,7 +78,7 @@
         }
       ],
       "suggestedAction": "Add a LICENSE file (MIT or Apache-2.0 are common defaults).",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {}
     },
     {
@@ -92,18 +92,18 @@
         "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST"
       },
       "title": "Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1",
-      "message": "This PR has been open for 1211 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 1218 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1",
-          "label": "Opened 1211 days ago"
+          "label": "Opened 1218 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 1211,
+        "ageDays": 1218,
         "lastEventAt": "2023-06-10T22:53:05Z"
       }
     },
@@ -118,18 +118,18 @@
         "url": "https://github.com/bloghd/bloghd"
       },
       "title": "Stale PR: bloghd/bloghd#1",
-      "message": "This PR has been open for 161 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 168 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/bloghd/bloghd/pull/1",
-          "label": "Opened 161 days ago"
+          "label": "Opened 168 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 161,
+        "ageDays": 168,
         "lastEventAt": "2026-04-25T19:09:40Z"
       }
     },
@@ -144,20 +144,20 @@
         "url": "https://github.com/AbdullahBakir97/Project-Management-Tool"
       },
       "title": "Bug debt: AbdullahBakir97/Project-Management-Tool",
-      "message": "2 open issues; the oldest is 857 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "2 open issues; the oldest is 864 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/Project-Management-Tool/issues",
-          "label": "2 open · oldest 857 days"
+          "label": "2 open · oldest 864 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {
-        "debtScore": 1714,
-        "weightedDebtScore": 3428,
+        "debtScore": 1728,
+        "weightedDebtScore": 3456,
         "labelMultiplier": 2,
-        "oldestAgeDays": 857,
+        "oldestAgeDays": 864,
         "openIssuesCount": 2,
         "dominantLabels": [
           "bug"
@@ -183,7 +183,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {}
     },
     {
@@ -205,7 +205,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {}
     },
     {
@@ -227,7 +227,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {}
     },
     {
@@ -249,7 +249,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {}
     },
     {
@@ -271,7 +271,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {}
     },
     {
@@ -285,18 +285,20 @@
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97",
-          "label": "Unverified domains: 163.com, algolia.com, anthropic.com, antonagestam.se, archlinux.org, beimir.net, creativeadvtech.com, decorahvikings.k12.ia.us, dynamous.ai, eecs.harvard.edu, example.com, flo-edelmann.de, ghyllebert.be, github.com, gmail.com, gmx.net, google.com, gorillatech.io, grafana.com, hotmail.co.uk, hotmail.com, ibj.io, icloud.com, iit.demokritos.gr, initiatives.fr, iress.com, j0ach1mmall3.com, jomo.tv, jonrohan.codes, kakaocorp.com, live.ca, m.zato.io, me.com, micropyramid.com, mrlolethan.com, nkmem.es, outlook.com, peth.me, phroa.net, proton.me, protonmail.com, qq.com, readyprompt.com, rtainc.in, sewan.fr, shaunpud.com, smirking.ninja, sobolevn.me, spiral.sh, staples.com, starlogik.com, statsperform.com, stribny.name, student.han.nl, synvert.com, thirty3.de, trivadis.com, viner.tv, whitesourcesoftware.com, wix.com, x-factory.jp, yahoo.com, yahoo.com.br, yahoo.fr, zkorean.com"
+          "label": "Unverified domains: 126.com, 163.com, algolia.com, anthropic.com, antonagestam.se, apache.org, archlinux.org, beimir.net, creativeadvtech.com, decorahvikings.k12.ia.us, dynamous.ai, eecs.harvard.edu, example.com, flo-edelmann.de, ghyllebert.be, github.com, gmail.com, gmx.net, google.com, gorillatech.io, grafana.com, hotmail.co.uk, hotmail.com, ibj.io, icloud.com, iit.demokritos.gr, initiatives.fr, iress.com, j0ach1mmall3.com, jomo.tv, jonrohan.codes, kakaocorp.com, live.ca, live.com, m.zato.io, madisoft.it, me.com, micropyramid.com, minimaxi.com, mrlolethan.com, ndd.tech, neekware.com, nkmem.es, outlook.com, peth.me, phroa.net, proton.me, protonmail.com, qq.com, readyprompt.com, rtainc.in, sarvam.ai, sebastianmendel.de, sewan.fr, shaunpud.com, smirking.ninja, sobolevn.me, spiral.sh, staples.com, starlogik.com, statsperform.com, stribny.name, student.han.nl, substrate.run, synvert.com, thirty3.de, trivadis.com, vercel.com, viner.tv, whitesourcesoftware.com, wix.com, x-factory.jp, xiaomi.com, yahoo.com, yahoo.com.br, yahoo.fr, yandex.ru, zkorean.com"
         }
       ],
       "suggestedAction": "Add a verified domain to your GitHub email or update your bio so commit context reflects employer claim.",
-      "detectedAt": "2026-10-04T10:39:26.913Z",
+      "detectedAt": "2026-10-11T10:53:46.552Z",
       "metadata": {
         "matchedDomains": [],
         "unmatchedDomains": [
+          "126.com",
           "163.com",
           "algolia.com",
           "anthropic.com",
           "antonagestam.se",
+          "apache.org",
           "archlinux.org",
           "beimir.net",
           "creativeadvtech.com",
@@ -324,10 +326,15 @@
           "jonrohan.codes",
           "kakaocorp.com",
           "live.ca",
+          "live.com",
           "m.zato.io",
+          "madisoft.it",
           "me.com",
           "micropyramid.com",
+          "minimaxi.com",
           "mrlolethan.com",
+          "ndd.tech",
+          "neekware.com",
           "nkmem.es",
           "outlook.com",
           "peth.me",
@@ -337,6 +344,8 @@
           "qq.com",
           "readyprompt.com",
           "rtainc.in",
+          "sarvam.ai",
+          "sebastianmendel.de",
           "sewan.fr",
           "shaunpud.com",
           "smirking.ninja",
@@ -347,20 +356,24 @@
           "statsperform.com",
           "stribny.name",
           "student.han.nl",
+          "substrate.run",
           "synvert.com",
           "thirty3.de",
           "trivadis.com",
+          "vercel.com",
           "viner.tv",
           "whitesourcesoftware.com",
           "wix.com",
           "x-factory.jp",
+          "xiaomi.com",
           "yahoo.com",
           "yahoo.com.br",
           "yahoo.fr",
+          "yandex.ru",
           "zkorean.com"
         ],
-        "avgSignatureRatio": 0.4080763670213896,
-        "repoCountWithStats": 85
+        "avgSignatureRatio": 0.4163964505381392,
+        "repoCountWithStats": 87
       }
     }
   ],
