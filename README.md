@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Make it work, make it right, make it fast."</i><br/>
-  <sub>— <b>Kent Beck</b></sub>
+  <i>"Walking on water and developing software from a specification are easy if both are frozen."</i><br/>
+  <sub>— <b>Edward V. Berard</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -398,11 +398,11 @@ gitGraph
 <!-- 🔥 AUTO-RANKED FEATURED PROJECTS — refreshed weekly by readme.yml -->
 <!-- ============================================================ -->
 <!-- FEATURED_PROJECTS:START -->
-<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-10-05.</sub></p>
+<p align="center"><sub>🔥 Top 10 most-active repos · rich cards with topics, last-updated, watchers · ranked by recent commits + stars. Last updated 2026-10-12.</sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/featured/Baeckrei.svg" width="49%" alt="Baeckrei — featured project card" /></a>
   <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/featured/Barber-Salon.svg" width="49%" alt="Barber-Salon — featured project card" /></a>
+  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/featured/Baeckrei.svg" width="49%" alt="Baeckrei — featured project card" /></a>
 </div>
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/featured/Jobs-Portal.svg" width="49%" alt="Jobs-Portal — featured project card" /></a>
@@ -531,7 +531,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-11.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-12.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
