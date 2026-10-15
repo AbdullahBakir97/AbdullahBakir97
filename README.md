@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"There are only two kinds of languages: the ones people complain about and the ones nobody uses."</i><br/>
-  <sub>— <b>Bjarne Stroustrup</b></sub>
+  <i>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</i><br/>
+  <sub>— <b>Martin Fowler</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -346,11 +346,6 @@ gitGraph
    commit id: "c1"
    checkout main
    merge Baeckrei
-   branch Stock-Manager-Pro
-   checkout Stock-Manager-Pro
-   commit id: "c1"
-   checkout main
-   merge Stock-Manager-Pro
 ```
 <!-- GITGRAPH:END -->
 
@@ -531,7 +526,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-14.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-15.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
