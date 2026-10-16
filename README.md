@@ -347,14 +347,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- 🍴 Forked [`addyosmani/agent-skills`](https://github.com/addyosmani/agent-skills)
-- 🍴 Forked [`vercel-labs/skills`](https://github.com/vercel-labs/skills)
+- 🔀 Opened PR [#10](https://github.com/AbdullahBakir97/Mini-RAG/pull/10) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Opened PR [#9](https://github.com/AbdullahBakir97/Mini-RAG/pull/9) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Merged PR [#8](https://github.com/AbdullahBakir97/Mini-RAG/pull/8) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Opened PR [#8](https://github.com/AbdullahBakir97/Mini-RAG/pull/8) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Merged PR [#7](https://github.com/AbdullahBakir97/Mini-RAG/pull/7) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Opened PR [#7](https://github.com/AbdullahBakir97/Mini-RAG/pull/7) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Merged PR [#6](https://github.com/AbdullahBakir97/Mini-RAG/pull/6) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Opened PR [#6](https://github.com/AbdullahBakir97/Mini-RAG/pull/6) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
