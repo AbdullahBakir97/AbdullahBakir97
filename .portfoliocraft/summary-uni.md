@@ -49,7 +49,7 @@ Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Dj
 
 ### PortfolioCraft
 
-An active frontend project built primarily in TypeScript, developed over 3 months (2026).
+A recent frontend project built primarily in TypeScript, developed over 3 months (2026).
 
 Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
 

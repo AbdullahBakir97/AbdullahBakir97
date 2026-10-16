@@ -56,7 +56,7 @@ ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-res
 **Repository:** [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/PortfolioCraft)
 **Stack:** TypeScript, JavaScript, MDX · automation, cli, cv-generator
 **Duration:** Apr 2026–Jul 2026 (3 months)
-**Status:** active
+**Status:** recent
 **Scale:** 1 star, 1 fork · pinned
 
 ### Overview
