@@ -1,6 +1,6 @@
 # Software development background
 
-I'm an aspiring backend engineer with 88 public repositories on GitHub spanning backend and frontend.
+I'm an aspiring backend engineer with 88 public repositories on GitHub spanning backend and ml.
 
 Python Developer
 
@@ -27,16 +27,6 @@ The repository carries 55 stars and 12 forks, with primary topics: ajax, css, de
 
 Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon).
 
-### Jobs-Portal
-
-An active backend project built primarily in Python, developed over 32 months (2023–2026).
-
-Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
-
-The repository carries 29 stars and 6 forks, with primary topics: css, django, django-rest-framework.
-
-Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal).
-
 ### Django-Store
 
 An active backend project built primarily in Python, developed over 34 months (2023–2026).
@@ -47,15 +37,25 @@ The repository carries 26 stars and 5 forks, with primary topics: ajax, bootstra
 
 Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store).
 
-### PortfolioCraft
+### Mini-RAG
 
-A recent frontend project built primarily in TypeScript, developed over 3 months (2026).
+An active machine-learning project built primarily in Python, developed over 28 months (2024–2026).
 
-Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
+Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.
 
-The repository carries 1 star and 1 fork, with primary topics: automation, cli, cv-generator.
+The repository carries 3 stars and 0 forks, with primary topics: embeddings, llm, python.
 
-Repository: [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/PortfolioCraft).
+Repository: [AbdullahBakir97/Mini-RAG](https://github.com/AbdullahBakir97/Mini-RAG).
+
+### Baeckrei
+
+An active backend project built primarily in Python, developed over 21 months (2024–2026).
+
+Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.
+
+The repository carries 1 star and 0 forks, with primary topics: bakery, django, inventory-management.
+
+Repository: [AbdullahBakir97/Baeckrei](https://github.com/AbdullahBakir97/Baeckrei).
 
 ### AbdullahBakir97
 
@@ -67,21 +67,20 @@ The repository carries 21 stars and 2 forks, with primary topics: animation, aut
 
 Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97).
 
-### 2050-Bootstrap-Landing-page
+### Jobs-Portal
 
-An active frontend project built primarily in HTML, developed over 38 months (2023–2026).
+A recent backend project built primarily in Python, developed over 32 months (2023–2026).
 
-Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
+Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
-The repository carries 15 stars and 0 forks, with primary topics: anmation, anmation-css, bootstrap5.
+The repository carries 29 stars and 6 forks, with primary topics: css, django, django-rest-framework.
 
-Repository: [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page).
+Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal).
 
 ## Technical depth
 
-**Backend** (3 repositories): 3 backend projects in Python covering django, django-rest-framework, javascript.
-**Frontend** (2 repositories): 2 frontend projects in TypeScript, HTML, and JavaScript covering anmation, anmation-css, automation.
-**Machine Learning** (1 repository): 1 machine-learning project in Python and HTML covering animation, auto-update, dynamic-readme.
+**Backend** (4 repositories): 4 backend projects in Python, Vue, and JavaScript covering django, django-rest-framework, javascript.
+**Machine Learning** (2 repositories): 2 machine-learning projects in Python, Vue, and TypeScript covering animation, auto-update, dynamic-readme.
 
 ## Scope of self-directed work
 

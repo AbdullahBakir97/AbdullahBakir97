@@ -1,31 +1,31 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-16T09:06:15.902Z",
+  "generatedAt": "2026-10-18T08:55:35.603Z",
   "user": "AbdullahBakir97",
   "summary": {
-    "totalFindings": 11,
+    "totalFindings": 12,
     "bySeverity": {
       "critical": 0,
       "high": 4,
       "medium": 1,
-      "low": 5,
+      "low": 6,
       "info": 1
     },
     "byCategory": {
       "stale": 0,
       "license": 1,
       "docs": 0,
-      "tests": 5,
+      "tests": 6,
       "pr-rot": 2,
       "bug-debt": 2,
       "archived": 0,
       "archive-suggestion": 0,
       "unverified-employer-context": 1
     },
-    "bugDebtScore": 1907,
+    "bugDebtScore": 1913,
     "reposScanned": 88,
-    "reposWithFindings": 9,
-    "verifiedSignatureRatio": 0.4163964505381392
+    "reposWithFindings": 10,
+    "verifiedSignatureRatio": 0.41775509705757624
   },
   "findings": [
     {
@@ -39,20 +39,20 @@
         "url": "https://github.com/AbdullahBakir97/PortfolioCraft"
       },
       "title": "Bug debt: AbdullahBakir97/PortfolioCraft",
-      "message": "1 open issues; the oldest is 169 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "1 open issues; the oldest is 171 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/PortfolioCraft/issues",
-          "label": "1 open · oldest 169 days"
+          "label": "1 open · oldest 171 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {
-        "debtScore": 169,
-        "weightedDebtScore": 507,
+        "debtScore": 171,
+        "weightedDebtScore": 513,
         "labelMultiplier": 3,
-        "oldestAgeDays": 169,
+        "oldestAgeDays": 171,
         "openIssuesCount": 1,
         "dominantLabels": [
           "priority: high"
@@ -78,7 +78,7 @@
         }
       ],
       "suggestedAction": "Add a LICENSE file (MIT or Apache-2.0 are common defaults).",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {}
     },
     {
@@ -92,18 +92,18 @@
         "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST"
       },
       "title": "Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1",
-      "message": "This PR has been open for 1223 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 1225 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1",
-          "label": "Opened 1223 days ago"
+          "label": "Opened 1225 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 1223,
+        "ageDays": 1225,
         "lastEventAt": "2023-06-10T22:53:05Z"
       }
     },
@@ -118,18 +118,18 @@
         "url": "https://github.com/bloghd/bloghd"
       },
       "title": "Stale PR: bloghd/bloghd#1",
-      "message": "This PR has been open for 173 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 175 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/bloghd/bloghd/pull/1",
-          "label": "Opened 173 days ago"
+          "label": "Opened 175 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 173,
+        "ageDays": 175,
         "lastEventAt": "2026-04-25T19:09:40Z"
       }
     },
@@ -144,20 +144,20 @@
         "url": "https://github.com/AbdullahBakir97/Project-Management-Tool"
       },
       "title": "Bug debt: AbdullahBakir97/Project-Management-Tool",
-      "message": "2 open issues; the oldest is 869 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "2 open issues; the oldest is 871 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/Project-Management-Tool/issues",
-          "label": "2 open · oldest 869 days"
+          "label": "2 open · oldest 871 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {
-        "debtScore": 1738,
-        "weightedDebtScore": 3476,
+        "debtScore": 1742,
+        "weightedDebtScore": 3484,
         "labelMultiplier": 2,
-        "oldestAgeDays": 869,
+        "oldestAgeDays": 871,
         "openIssuesCount": 2,
         "dominantLabels": [
           "bug"
@@ -183,7 +183,29 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
+      "metadata": {}
+    },
+    {
+      "id": "c9aedc16a635adf8",
+      "schemaVersion": "1.0.0",
+      "severity": "low",
+      "category": "tests",
+      "repo": {
+        "owner": "AbdullahBakir97",
+        "name": "Django--LMS--Learning-Management-System",
+        "url": "https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"
+      },
+      "title": "No tests detected: AbdullahBakir97/Django--LMS--Learning-Management-System",
+      "message": "Heuristic detector based on top-level entries found no test directory or *.test/spec.* files. Even a single smoke test compounds confidence over time.",
+      "evidence": [
+        {
+          "url": "https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System",
+          "label": "Repo root contents"
+        }
+      ],
+      "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {}
     },
     {
@@ -205,7 +227,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {}
     },
     {
@@ -227,7 +249,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {}
     },
     {
@@ -249,7 +271,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {}
     },
     {
@@ -271,7 +293,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {}
     },
     {
@@ -289,7 +311,7 @@
         }
       ],
       "suggestedAction": "Add a verified domain to your GitHub email or update your bio so commit context reflects employer claim.",
-      "detectedAt": "2026-10-16T09:06:15.902Z",
+      "detectedAt": "2026-10-18T08:55:35.603Z",
       "metadata": {
         "matchedDomains": [],
         "unmatchedDomains": [
@@ -372,7 +394,7 @@
           "yandex.ru",
           "zkorean.com"
         ],
-        "avgSignatureRatio": 0.4163964505381392,
+        "avgSignatureRatio": 0.41775509705757624,
         "repoCountWithStats": 87
       }
     }

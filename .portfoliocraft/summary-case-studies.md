@@ -17,23 +17,6 @@ Backend / API
 ### Topics
 ajax, css, deployment, django, django-rest-framework, html5, htmx, javascript, jquery, postman, python, swagger, translation
 
-## Jobs-Portal
-
-**Repository:** [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal)
-**Stack:** Python · css, django, django-rest-framework
-**Duration:** Nov 2023–Jul 2026 (32 months)
-**Status:** active
-**Scale:** 29 stars, 6 forks · pinned
-
-### Overview
-Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
-
-### Domain
-Backend / API
-
-### Topics
-css, django, django-rest-framework, html, javascript, python, swagger
-
 ## Django-Store
 
 **Repository:** [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store)
@@ -51,22 +34,39 @@ Backend / API
 ### Topics
 ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-rest-framework, docker, javascript, jquery, postman, pyton3, redis, translation
 
-## PortfolioCraft
+## Mini-RAG
 
-**Repository:** [AbdullahBakir97/PortfolioCraft](https://github.com/AbdullahBakir97/PortfolioCraft)
-**Stack:** TypeScript, JavaScript, MDX · automation, cli, cv-generator
-**Duration:** Apr 2026–Jul 2026 (3 months)
-**Status:** recent
-**Scale:** 1 star, 1 fork · pinned
+**Repository:** [AbdullahBakir97/Mini-RAG](https://github.com/AbdullahBakir97/Mini-RAG)
+**Stack:** Python, Vue, TypeScript · embeddings, llm, python
+**Duration:** Jun 2024–Oct 2026 (28 months)
+**Status:** active
+**Scale:** 3 stars, 0 forks · pinned
 
 ### Overview
-Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.
+Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.
 
 ### Domain
-Frontend / UI
+Machine learning / data
 
 ### Topics
-automation, cli, cv-generator, developer-portfolio, github-action, github-marketplace, json-resume, personal-branding, portfolio, profile-readme, typescript
+embeddings, llm, python, rag, vector-store
+
+## Baeckrei
+
+**Repository:** [AbdullahBakir97/Baeckrei](https://github.com/AbdullahBakir97/Baeckrei)
+**Stack:** Python, Vue, JavaScript · bakery, django, inventory-management
+**Duration:** Dec 2024–Oct 2026 (21 months)
+**Status:** active
+**Scale:** 1 star, 0 forks · pinned
+
+### Overview
+Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.
+
+### Domain
+Backend / API
+
+### Topics
+bakery, django, inventory-management, pos, python, vue3
 
 ## AbdullahBakir97
 
@@ -85,19 +85,19 @@ Machine learning / data
 ### Topics
 animation, auto-update, dynamic-readme, github-actions, profile-readme, svg
 
-## 2050-Bootstrap-Landing-page
+## Jobs-Portal
 
-**Repository:** [AbdullahBakir97/2050-Bootstrap-Landing-page](https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page)
-**Stack:** HTML, CSS, Python · anmation, anmation-css, bootstrap5
-**Duration:** May 2023–Jul 2026 (38 months)
-**Status:** active
-**Scale:** 15 stars, 0 forks
+**Repository:** [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Jobs-Portal)
+**Stack:** Python · css, django, django-rest-framework
+**Duration:** Nov 2023–Jul 2026 (32 months)
+**Status:** recent
+**Scale:** 29 stars, 6 forks
 
 ### Overview
-Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.
+Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.
 
 ### Domain
-Frontend / UI
+Backend / API
 
 ### Topics
-anmation, anmation-css, bootstrap5, css, html, javascript
+css, django, django-rest-framework, html, javascript, python, swagger

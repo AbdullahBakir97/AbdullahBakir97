@@ -1,13 +1,13 @@
 ## Audit
 
-_Generated 2026-10-16. 11 findings across 88 repos (9 flagged)._
+_Generated 2026-10-18. 12 findings across 88 repos (10 flagged)._
 
 | Severity | Count |
 | --- | --- |
 | critical | 0 |
 | high | 4 |
 | medium | 1 |
-| low | 5 |
+| low | 6 |
 | info | 1 |
 
 ### Verified signal
@@ -17,9 +17,9 @@ _Generated 2026-10-16. 11 findings across 88 repos (9 flagged)._
 ### Findings
 
 - **[high]** `bug-debt` — Bug debt: AbdullahBakir97/PortfolioCraft
-  - 1 open issues; the oldest is 169 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 1 open issues; the oldest is 171 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 3 (dominant labels: priority: high)
-  - Evidence: [1 open · oldest 169 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
+  - Evidence: [1 open · oldest 171 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[high]** `license` — No LICENSE: AbdullahBakir97/e-pay_tool
@@ -28,26 +28,31 @@ _Generated 2026-10-16. 11 findings across 88 repos (9 flagged)._
   - **Action:** Add a LICENSE file (MIT or Apache-2.0 are common defaults).
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1223 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1223 days)
-  - Evidence: [Opened 1223 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1225 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1225 days)
+  - Evidence: [Opened 1225 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[high]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 173 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (173 days)
-  - Evidence: [Opened 173 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 175 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (175 days)
+  - Evidence: [Opened 175 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 869 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 871 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 869 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 871 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[low]** `tests` — No tests detected: AbdullahBakir97/DevTrust
   - Heuristic detector based on top-level entries found no test directory or *.test/spec.* files. Even a single smoke test compounds confidence over time.
   - Evidence: [Repo root contents](https://github.com/AbdullahBakir97/DevTrust)
+  - **Action:** Add a tests directory with at least a smoke test for your main entrypoint.
+
+- **[low]** `tests` — No tests detected: AbdullahBakir97/Django--LMS--Learning-Management-System
+  - Heuristic detector based on top-level entries found no test directory or *.test/spec.* files. Even a single smoke test compounds confidence over time.
+  - Evidence: [Repo root contents](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
   - **Action:** Add a tests directory with at least a smoke test for your main entrypoint.
 
 - **[low]** `tests` — No tests detected: AbdullahBakir97/Portfolio

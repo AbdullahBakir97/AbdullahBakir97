@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-10-16T09:05:41.144Z"
+    "lastModified": "2026-10-18T08:54:46.041Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -24,12 +24,12 @@
   },
   "skills": [
     {
-      "name": "Python",
+      "name": "Vue",
       "level": "expert",
       "keywords": []
     },
     {
-      "name": "Vue",
+      "name": "Python",
       "level": "expert",
       "keywords": []
     },
@@ -69,17 +69,17 @@
       "keywords": []
     },
     {
+      "name": "Mako",
+      "level": "proficient",
+      "keywords": []
+    },
+    {
       "name": "Dockerfile",
       "level": "proficient",
       "keywords": []
     },
     {
       "name": "Shell",
-      "level": "proficient",
-      "keywords": []
-    },
-    {
-      "name": "MDX",
       "level": "proficient",
       "keywords": []
     }
@@ -102,25 +102,6 @@
         "ajax",
         "jquery",
         "htmx",
-        "swagger"
-      ],
-      "highlights": [
-        "primary:Python",
-        "topic:django",
-        "score:2.30"
-      ]
-    },
-    {
-      "name": "Jobs-Portal",
-      "description": "Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.",
-      "url": "https://github.com/AbdullahBakir97/Jobs-Portal",
-      "keywords": [
-        "css",
-        "django",
-        "html",
-        "javascript",
-        "python",
-        "django-rest-framework",
         "swagger"
       ],
       "highlights": [
@@ -158,25 +139,38 @@
       ]
     },
     {
-      "name": "PortfolioCraft",
-      "description": "Generate a verifiable professional portfolio from your GitHub history — README block, JSON Resume, PDF CV, and stat cards. GitHub Action + CLI.",
-      "url": "https://github.com/AbdullahBakir97/PortfolioCraft",
+      "name": "Mini-RAG",
+      "description": "Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.",
+      "url": "https://github.com/AbdullahBakir97/Mini-RAG",
       "keywords": [
-        "automation",
-        "cli",
-        "cv-generator",
-        "developer-portfolio",
-        "github-action",
-        "github-marketplace",
-        "json-resume",
-        "personal-branding",
-        "portfolio",
-        "profile-readme",
-        "typescript"
+        "embeddings",
+        "llm",
+        "python",
+        "rag",
+        "vector-store"
       ],
       "highlights": [
-        "primary:TypeScript",
-        "score:0.99"
+        "primary:Python",
+        "topic:llm",
+        "score:2.08"
+      ]
+    },
+    {
+      "name": "Baeckrei",
+      "description": "Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.",
+      "url": "https://github.com/AbdullahBakir97/Baeckrei",
+      "keywords": [
+        "bakery",
+        "django",
+        "inventory-management",
+        "pos",
+        "python",
+        "vue3"
+      ],
+      "highlights": [
+        "primary:Python",
+        "topic:django",
+        "score:2.05"
       ]
     },
     {
@@ -197,20 +191,22 @@
       ]
     },
     {
-      "name": "2050-Bootstrap-Landing-page",
-      "description": "Marketing landing page demo built with Bootstrap 5 — responsive sections, hero, features, CTA.",
-      "url": "https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page",
+      "name": "Jobs-Portal",
+      "description": "Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.",
+      "url": "https://github.com/AbdullahBakir97/Jobs-Portal",
       "keywords": [
-        "bootstrap5",
         "css",
+        "django",
         "html",
         "javascript",
-        "anmation",
-        "anmation-css"
+        "python",
+        "django-rest-framework",
+        "swagger"
       ],
       "highlights": [
-        "primary:HTML",
-        "score:1.21"
+        "primary:Python",
+        "topic:django",
+        "score:2.30"
       ]
     }
   ],
