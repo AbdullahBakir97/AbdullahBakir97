@@ -363,13 +363,13 @@ gitGraph
 
 <!-- ACTIVITY:START -->
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- 🔀 Opened PR [#75](https://github.com/AbdullahBakir97/Mini-RAG/pull/75) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Opened PR [#79](https://github.com/AbdullahBakir97/Mini-RAG/pull/79) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
