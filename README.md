@@ -362,14 +362,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
-- 🔀 Opened PR [#22](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/22) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
-- 🔀 Merged PR [#21](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/21) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
-- 🔀 Opened PR [#21](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/21) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- 🔀 Opened PR [#69](https://github.com/AbdullahBakir97/Mini-RAG/pull/69) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Opened PR [#31](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/31) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
-- 🔀 Merged PR [#20](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/20) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
-- 🔀 Opened PR [#20](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/20) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- 🔀 Opened PR [#68](https://github.com/AbdullahBakir97/Mini-RAG/pull/68) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
+- 🔀 Opened PR [#30](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/30) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- 🔀 Opened PR [#67](https://github.com/AbdullahBakir97/Mini-RAG/pull/67) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
