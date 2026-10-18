@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"If debugging is the process of removing software bugs, then programming must be the process of putting them in."</i><br/>
-  <sub>— <b>Edsger W. Dijkstra</b></sub>
+  <i>"Truth can only be found in one place: the code."</i><br/>
+  <sub>— <b>Robert C. Martin</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-722-red?style=for-the-badge&logo=git&logoColor=white&v=20261018" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-63-red?style=for-the-badge&logo=github&logoColor=white&v=20261018" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20261018" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20261018" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-855-red?style=for-the-badge&logo=git&logoColor=white&v=20261018" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-104-red?style=for-the-badge&logo=github&logoColor=white&v=20261018" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20261018" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20261018" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -341,20 +341,35 @@ gitGraph
    commit id: "c1"
    checkout main
    merge AbdullahBakir97
+   branch Django--LMS--Learning-Manageme
+   checkout Django--LMS--Learning-Manageme
+   commit id: "c1"
+   checkout main
+   merge Django--LMS--Learning-Manageme
+   branch Mini-RAG
+   checkout Mini-RAG
+   commit id: "c1"
+   checkout main
+   merge Mini-RAG
+   branch Stock-Manager-Pro
+   checkout Stock-Manager-Pro
+   commit id: "c1"
+   checkout main
+   merge Stock-Manager-Pro
 ```
 <!-- GITGRAPH:END -->
 
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- 🔀 Opened PR [#45](https://github.com/AbdullahBakir97/Mini-RAG/pull/45) in [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
-- ⬆️ Pushed 1 commit to [`Oranovix/Stock-Manager-Pro`](https://github.com/Oranovix/Stock-Manager-Pro)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- 🔀 Opened PR [#22](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/22) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- 🔀 Merged PR [#21](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/21) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- 🔀 Opened PR [#21](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/21) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- 🔀 Merged PR [#20](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/20) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
+- 🔀 Opened PR [#20](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System/pull/20) in [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
@@ -521,7 +536,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-17.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-18.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
@@ -529,41 +544,44 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub><i>Hand-picked headline projects</i></sub></p>
 
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/pins/Django-Store.svg" width="49%" alt="Django-Store" /></a>
-  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/pins/Barber-Salon.svg" width="49%" alt="Barber-Salon" /></a>
+  <a href="https://github.com/AbdullahBakir97/Mini-RAG"><img src="./assets/pins/Mini-RAG.svg" width="49%" alt="Mini-RAG" /></a>
+  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/pins/Baeckrei.svg" width="49%" alt="Baeckrei" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/pins/Jobs-Portal.svg" width="49%" alt="Jobs-Portal" /></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/pins/Django-Store.svg" width="49%" alt="Django-Store" /></a>
   <a href="https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System"><img src="./assets/pins/Django--LMS--Learning-Management-System.svg" width="49%" alt="Django--LMS--Learning-Management-System" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/pins/PortfolioCraft.svg" width="49%" alt="PortfolioCraft" /></a>
+  <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/pins/Barber-Salon.svg" width="49%" alt="Barber-Salon" /></a>
 </div>
 
 </details>
 
 <details>
-<summary align="center"><b>⭐ Most-Starred Showcases</b> <sub>· 6</sub></summary>
+<summary align="center"><b>⭐ Most-Starred Showcases</b> <sub>· 7</sub></summary>
 
 <p align="center"><sub><i>Repos with notable community traction</i></sub></p>
 
 <div align="center">
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/pins/Jobs-Portal.svg" width="49%" alt="Jobs-Portal" /></a>
   <a href="https://github.com/AbdullahBakir97/AbdullahBakir97"><img src="./assets/pins/AbdullahBakir97.svg" width="49%" alt="AbdullahBakir97" /></a>
+</div>
+<div align="center">
   <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/pins/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page" /></a>
-</div>
-<div align="center">
   <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/pins/Django-Blog-app.svg" width="49%" alt="Django-Blog-app" /></a>
-  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/pins/Automtion.svg" width="49%" alt="Automtion" /></a>
 </div>
 <div align="center">
+  <a href="https://github.com/AbdullahBakir97/Automtion"><img src="./assets/pins/Automtion.svg" width="49%" alt="Automtion" /></a>
   <a href="https://github.com/AbdullahBakir97/image-cropping"><img src="./assets/pins/image-cropping.svg" width="49%" alt="image-cropping" /></a>
+</div>
+<div align="center">
   <a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><img src="./assets/pins/Project-Management-Tool.svg" width="49%" alt="Project-Management-Tool" /></a>
 </div>
 
 </details>
 
 <details>
-<summary align="center"><b>🛠️ Developer Tools</b> <sub>· 10</sub></summary>
+<summary align="center"><b>🛠️ Developer Tools</b> <sub>· 11</sub></summary>
 
 <p align="center"><sub><i>GitHub Apps, CLIs, and dev-experience tooling</i></sub></p>
 
@@ -576,22 +594,25 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/GitHub-Doc-Generator"><img src="./assets/pins/GitHub-Doc-Generator.svg" width="49%" alt="GitHub-Doc-Generator" /></a>
 </div>
 <div align="center">
+  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/pins/PortfolioCraft.svg" width="49%" alt="PortfolioCraft" /></a>
   <a href="https://github.com/AbdullahBakir97/ai-quality-gate"><img src="./assets/pins/ai-quality-gate.svg" width="49%" alt="ai-quality-gate" /></a>
+</div>
+<div align="center">
   <a href="https://github.com/AbdullahBakir97/commit-craft"><img src="./assets/pins/commit-craft.svg" width="49%" alt="commit-craft" /></a>
-</div>
-<div align="center">
   <a href="https://github.com/AbdullahBakir97/issue-triage-bot"><img src="./assets/pins/issue-triage-bot.svg" width="49%" alt="issue-triage-bot" /></a>
-  <a href="https://github.com/AbdullahBakir97/pr-coach"><img src="./assets/pins/pr-coach.svg" width="49%" alt="pr-coach" /></a>
 </div>
 <div align="center">
+  <a href="https://github.com/AbdullahBakir97/pr-coach"><img src="./assets/pins/pr-coach.svg" width="49%" alt="pr-coach" /></a>
   <a href="https://github.com/AbdullahBakir97/release-pilot"><img src="./assets/pins/release-pilot.svg" width="49%" alt="release-pilot" /></a>
+</div>
+<div align="center">
   <a href="https://github.com/AbdullahBakir97/repodoc-ai"><img src="./assets/pins/repodoc-ai.svg" width="49%" alt="repodoc-ai" /></a>
 </div>
 
 </details>
 
 <details>
-<summary align="center"><b>🌐 Backend / API</b> <sub>· 12</sub></summary>
+<summary align="center"><b>🌐 Backend / API</b> <sub>· 11</sub></summary>
 
 <p align="center"><sub><i>Django / DRF systems and reference APIs</i></sub></p>
 
@@ -616,7 +637,6 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
   <a href="https://github.com/AbdullahBakir97/ai-approve"><img src="./assets/pins/ai-approve.svg" width="49%" alt="ai-approve" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/pins/Baeckrei.svg" width="49%" alt="Baeckrei" /></a>
   <a href="https://github.com/AbdullahBakir97/Email-Sender"><img src="./assets/pins/Email-Sender.svg" width="49%" alt="Email-Sender" /></a>
 </div>
 
@@ -639,16 +659,15 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 </details>
 
 <details>
-<summary align="center"><b>🧠 AI · Data · Notebooks</b> <sub>· 4</sub></summary>
+<summary align="center"><b>🧠 AI · Data · Notebooks</b> <sub>· 3</sub></summary>
 
 <p align="center"><sub><i>RAG, agents, ML experiments</i></sub></p>
 
 <div align="center">
   <a href="https://github.com/AbdullahBakir97/AI-KI"><img src="./assets/pins/AI-KI.svg" width="49%" alt="AI-KI" /></a>
-  <a href="https://github.com/AbdullahBakir97/Mini-RAG"><img src="./assets/pins/Mini-RAG.svg" width="49%" alt="Mini-RAG" /></a>
+  <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/pins/cortex.svg" width="49%" alt="cortex" /></a>
 </div>
 <div align="center">
-  <a href="https://github.com/AbdullahBakir97/cortex"><img src="./assets/pins/cortex.svg" width="49%" alt="cortex" /></a>
   <a href="https://github.com/AbdullahBakir97/DevTrust"><img src="./assets/pins/DevTrust.svg" width="49%" alt="DevTrust" /></a>
 </div>
 
