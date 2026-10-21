@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"It's not a bug — it's an undocumented feature."</i><br/>
-  <sub>— <b>Anonymous</b></sub>
+  <i>"The most damaging phrase in the language is: 'We've always done it this way!'"</i><br/>
+  <sub>— <b>Grace Hopper</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -336,16 +336,16 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```mermaid
 gitGraph
    commit id: "main"
-   branch Mini-RAG
-   checkout Mini-RAG
-   commit id: "c1"
-   checkout main
-   merge Mini-RAG
    branch Django--LMS--Learning-Manageme
    checkout Django--LMS--Learning-Manageme
    commit id: "c1"
    checkout main
    merge Django--LMS--Learning-Manageme
+   branch Mini-RAG
+   checkout Mini-RAG
+   commit id: "c1"
+   checkout main
+   merge Mini-RAG
    branch Stock-Manager-Pro
    checkout Stock-Manager-Pro
    commit id: "c1"
@@ -531,7 +531,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-20.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-21.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
