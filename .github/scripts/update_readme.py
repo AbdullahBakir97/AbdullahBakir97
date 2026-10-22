@@ -2953,7 +2953,6 @@ def main() -> int:
         # Full daily refresh.
         sections = [
             ("PAGESPEED", fetch_pagespeed),
-            ("HIGHLIGHTS_STATS", fetch_year_stats),
             ("CONTRIB_LINKS", contrib_links),
             ("QUOTE", quote_of_the_day),
         ]

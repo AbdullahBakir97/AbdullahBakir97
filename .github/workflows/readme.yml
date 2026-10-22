@@ -79,12 +79,13 @@ jobs:
           python scripts/build_commit_name.py
           python scripts/build_current_focus.py
           python scripts/build_year_story.py
+          python scripts/build_yearly_highlights.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/commit-name.svg assets/current-focus.svg assets/year-story.svg assets/heatmap-*.svg assets/skyline-*.svg assets/about-hero.svg assets/about-code.svg assets/about-orbit.svg assets/featured/ assets/projects/ assets/stats/
+          git add README.md assets/commit-name.svg assets/current-focus.svg assets/year-story.svg assets/yearly-highlights.svg assets/heatmap-*.svg assets/skyline-*.svg assets/about-hero.svg assets/about-code.svg assets/about-orbit.svg assets/featured/ assets/projects/ assets/stats/
           if git diff --cached --quiet; then
             echo "no changes to commit"
             exit 0

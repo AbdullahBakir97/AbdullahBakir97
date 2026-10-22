@@ -14,6 +14,7 @@ Pure SVG so it renders inside GitHub's <img> proxy.
 import datetime as dt
 import json
 import os
+import re
 import textwrap
 import urllib.request
 from pathlib import Path
@@ -29,14 +30,14 @@ SKIP = {GH_USER.lower()}
 W, H = 1400, 560
 COLS, GAP = 3, 22
 CARD_W = (W - (COLS - 1) * GAP) // COLS
-CARD_H = 258
+CARD_H = 236
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif"
 MONO = "ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace"
 TEXT, MUTED, BORDER, SURFACE = "#e6edf3", "#8b949e", "#30363d", "#161b22"
 STATUS = {  # label: (accent, pill fill)
-    "ACTIVE": ("#39d353", "#0d2818"),
-    "SHIPPING": ("#F90001", "#2a0a0a"),
-    "MAINTAINING": ("#58a6ff", "#0c1d33"),
+    "ACTIVE": ("#3fb950", ""),
+    "SHIPPING": ("#ff652f", ""),
+    "MAINTAINING": ("#58a6ff", ""),
 }
 
 
@@ -70,35 +71,57 @@ def fetch(limit=6):
             if rel and dt.datetime.fromisoformat(rel[0]["published_at"].replace("Z", "+00:00")) >= d30:
                 status = "SHIPPING"
         tags = (r.get("topics") or [])[:4] or [t for t in [r.get("language")] if t]
-        rows.append((len(commits), r["name"], r.get("description") or "", status, tags))
-    rows.sort(reverse=True)
-    return [(name, desc, status, tags, n) for n, name, desc, status, tags in rows[:limit]] or None
+        rows.append((len(commits), r["name"], r.get("description") or "", status, tags, r.get("language")))
+    rows.sort(key=lambda r: r[0], reverse=True)
+    return [(name, desc, status, tags, n, lang) for n, name, desc, status, tags, lang in rows[:limit]] or None
 
 
-def card(x, y, name, desc, status, tags, commits):
-    accent, pill = STATUS[status]
-    lines = textwrap.wrap(desc or "No description yet.", 46)[:3]
-    if len(textwrap.wrap(desc, 46)) > 3:
-        lines[-1] = lines[-1].rstrip(" ,.;—-") + "…"
+LANG_ICON = {"Python": "python", "TypeScript": "typescript", "JavaScript": "javascript", "Vue": "vuejs",
+             "HTML": "html5", "CSS": "css3", "Go": "go", "Dockerfile": "docker"}
+ICONS = ROOT / "assets" / "icons" / "lang"
+
+
+def _icon(lang, x, y, s):
+    f = ICONS / f"{LANG_ICON.get(lang, '')}-original.svg"
+    if not lang or not f.exists():
+        return ""
+    t = f.read_text(encoding="utf-8")
+    inner = re.sub(r"^<svg[^>]*>|</svg>\s*$", "", t.strip())
+    vb = re.search(r'viewBox="([^"]+)"', t).group(1)
+    return f'<svg x="{x}" y="{y}" width="{s}" height="{s}" viewBox="{vb}">{inner}</svg>'
+
+
+def card(i, x, y, name, desc, status, tags, commits, lang=None):
+    accent = STATUS[status][0]
+    lines = textwrap.wrap(desc or "No description yet.", 44)
+    if len(lines) > 3:
+        lines = lines[:3]
+        lines[-1] = lines[-1].rstrip(" ,.;-") + "…"
+    gid = f"fg{i}"
     out = [f'<g transform="translate({x} {y})">',
-           f'<rect width="{CARD_W}" height="{CARD_H}" rx="14" fill="{SURFACE}" stroke="{BORDER}"/>',
-           f'<rect width="{CARD_W}" height="4" rx="2" fill="{accent}"/>',
-           f'<rect x="26" y="28" width="{len(status) * 9 + 34}" height="26" rx="13" fill="{pill}" stroke="{accent}"/>',
-           f'<circle cx="41" cy="41" r="4" fill="{accent}"/>',
-           f'<text x="52" y="45.5" font-family="{SANS}" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="{accent}">{status}</text>',
-           f'<text x="{CARD_W - 26}" y="46" text-anchor="end" font-family="{SANS}" font-size="13" fill="{MUTED}">'
-           f'<tspan fill="{TEXT}" font-weight="700">{commits}</tspan> commits · 30 days</text>',
-           f'<text x="26" y="98" font-family="{SANS}" font-size="25" font-weight="800" letter-spacing="-.3" fill="{TEXT}">{escape(name)}</text>']
-    for i, ln in enumerate(lines):
-        out.append(f'<text x="26" y="{132 + i * 22}" font-family="{SANS}" font-size="15" fill="{MUTED}">{escape(ln)}</text>')
-    tx = 26
+           f'<linearGradient id="{gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{accent}" stop-opacity=".13"/>'
+           f'<stop offset=".55" stop-color="{accent}" stop-opacity=".015"/><stop offset="1" stop-color="{accent}" stop-opacity="0"/></linearGradient>',
+           f'<rect width="{CARD_W}" height="{CARD_H}" rx="16" fill="#0f141b"/>',
+           f'<rect width="{CARD_W}" height="{CARD_H}" rx="16" fill="url(#{gid})" stroke="#ffffff" stroke-opacity=".1" stroke-width="1.2"/>',
+           f'<line x1="24" y1=".6" x2="{CARD_W - 24}" y2=".6" stroke="{accent}" stroke-width="1.6"/>',
+           f'<rect x="24" y="24" width="44" height="44" rx="12" fill="#ffffff" fill-opacity=".04" stroke="#ffffff" stroke-opacity=".1"/>',
+           _icon(lang, 34, 34, 24) or f'<text x="46" y="52" text-anchor="middle" font-family="{MONO}" font-size="16" font-weight="700" fill="{accent}">{escape(name[:1])}</text>',
+           f'<text x="82" y="44" font-family="{SANS}" font-size="20" font-weight="700" fill="#f0f6fc">{escape(name if len(name) <= 24 else name[:23] + "…")}</text>',
+           f'<circle cx="87" cy="59" r="3.5" fill="{accent}"><animate attributeName="opacity" values="1;.3;1" dur="2s" repeatCount="indefinite"/></circle>',
+           f'<text x="97" y="63" font-family="{MONO}" font-size="11.5" font-weight="700" letter-spacing="1.5" fill="{accent}">{status}</text>']
+    for k, ln in enumerate(lines):
+        out.append(f'<text x="24" y="{106 + k * 22}" font-family="{SANS}" font-size="14.5" fill="{MUTED}">{escape(ln)}</text>')
+    out.append(f'<line x1="24" y1="{CARD_H - 62}" x2="{CARD_W - 24}" y2="{CARD_H - 62}" stroke="#ffffff" stroke-opacity=".07"/>')
+    tx = 24
     for t in tags:
-        w = len(t) * 8 + 24
-        if tx + w > CARD_W - 20:
+        w = len(t) * 7.6 + 22
+        if tx + w > CARD_W - 150:
             break
-        out.append(f'<rect x="{tx}" y="{CARD_H - 50}" width="{w}" height="26" rx="13" fill="none" stroke="{accent}" stroke-opacity=".55"/>'
-                   f'<text x="{tx + w / 2}" y="{CARD_H - 32.5}" text-anchor="middle" font-family="{MONO}" font-size="12" fill="{accent}">{escape(t)}</text>')
+        out.append(f'<rect x="{tx}" y="{CARD_H - 44}" width="{w}" height="24" rx="12" fill="#ffffff" fill-opacity=".03" stroke="#ffffff" stroke-opacity=".1"/>'
+                   f'<text x="{tx + w / 2}" y="{CARD_H - 27.5}" text-anchor="middle" font-family="{MONO}" font-size="11.5" fill="#c9d1d9">{escape(t)}</text>')
         tx += w + 8
+    out.append(f'<text x="{CARD_W - 24}" y="{CARD_H - 27}" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="{MUTED}">'
+               f'<tspan font-family="{MONO}" font-size="15" font-weight="700" fill="{accent}">{commits}</tspan> commits · 30d</text>')
     out.append("</g>")
     return "".join(out)
 
@@ -106,10 +129,10 @@ def card(x, y, name, desc, status, tags, commits):
 def render(items):
     rows = (len(items) + COLS - 1) // COLS
     h = rows * CARD_H + (rows - 1) * GAP + 2
-    p = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" role="img" '
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" width="{W}" height="{h}" role="img" '
          f'aria-label="Current focus: {escape(", ".join(i[0] for i in items))}">']
     for i, it in enumerate(items):
-        p.append(card((i % COLS) * (CARD_W + GAP), 1 + (i // COLS) * (CARD_H + GAP), *it))
+        p.append(card(i, (i % COLS) * (CARD_W + GAP), 1 + (i // COLS) * (CARD_H + GAP), *it))
     p.append("</svg>")
     return "".join(p)
 

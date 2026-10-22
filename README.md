@@ -94,81 +94,18 @@
 
 <!-- Request flow — one request through the whole stack (animated SVG) -->
 <p align="center">
-  <img src="./assets/stack-flow.svg" width="100%" alt="One request, my whole stack — Client, Edge, API, Async and Data layers with a live trace" />
+  <img src="./assets/stack-flow.svg" width="100%" alt="How one request goes through my stack: client, edge, API, async and data, with a live trace" />
 </p>
 
 <details>
 <summary align="center"><b>See the full stack</b>: <code>pip install abdullah-bakir</code> (62 packages)</summary>
 <br/>
 <p align="center">
-  <img src="./assets/stack-pip.svg" width="100%" alt="pip install abdullah-bakir — every language, framework and tool, grouped" />
+  <img src="./assets/stack-pip.svg" width="100%" alt="pip install abdullah-bakir: every language, framework and tool I use, grouped" />
 </p>
 </details>
 
 <br/>
-
-<!-- 💎 Elite tech stack cards — single SVG, 6 glassmorphism cards in 3×2 grid
-     with accent stripes, stats, and animated proficiency bars (Vercel/Linear aesthetic) -->
-<a href="https://github.com/AbdullahBakir97?tab=repositories">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/tech-cards.svg" width="100%" alt="Tech Stack — Backend, Frontend, Architecture, Data Layer, DevOps, AI &amp; Data" />
-</a>
-
-<br/><br/>
-
-<!-- 🧠 NEURAL SKILL ATLAS
-     ──────────────────────────────────────────────────────────────────────
-     The brain SVG below is built from Wikimedia Commons' anatomically-
-     accurate "Human-brain.SVG" by Hugh Guiney (CC-BY-SA-3.0), recolored
-     with our neon palette via scripts/build_anatomical_brain.py.
-
-     Regenerate (e.g., to tweak colors) with:
-        python scripts/build_anatomical_brain.py
-     ────────────────────────────────────────────────────────────────────── -->
-
-<h3 align="center">Neural Skill Atlas</h3>
-
-<p align="center"><sub><i>How my skills connect. You can open it in 3D.</i></sub></p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/brain-anatomical.svg" width="100%" alt="Neural Skill Atlas — anatomically-accurate human brain (lateral view) recolored with neon gradient, pulsing" />
-</p>
-
-<p align="center">
-  <a href="https://abdullahbakir97.github.io/AbdullahBakir97/"><img src="https://img.shields.io/badge/🖱️_Explore_in_Interactive_3D-F90001?style=for-the-badge&labelColor=0D1117&logo=three.js&logoColor=white&v=20261022" alt="Interactive 3D — drag to rotate" /></a>
-  &nbsp;
-  <a href="https://commons.wikimedia.org/wiki/File:Human-brain.SVG"><img src="https://img.shields.io/badge/Anatomy-Hugh_Guiney_·_CC--BY--SA_3.0-7C3AED?style=for-the-badge&labelColor=0D1117&v=20261022" alt="Brain anatomy attribution"/></a>
-</p>
-
-
-<details>
-<summary align="center"><b>More skills</b>: paradigms · operating systems · async · UI frameworks · data science · IDEs · APIs &amp; security</summary>
-
-<br/>
-
-<table align="center" width="100%">
-<tr>
-<td align="center" width="33%" valign="top"><h4>Paradigms &amp; Architecture</h4><p><img src="https://img.shields.io/badge/OOP-3333FF?style=for-the-badge&logoColor=white&v=20261022" alt="OOP"> <img src="https://img.shields.io/badge/ORM-111111?style=for-the-badge&logo=database&logoColor=white&v=20261022" alt="ORM"> <img src="https://img.shields.io/badge/Microservices-34D399?style=for-the-badge&logoColor=white&v=20261022" alt="Microservices"> <img src="https://img.shields.io/badge/Event--Driven-F90001?style=for-the-badge&logoColor=white&v=20261022" alt="Event-Driven"> <img src="https://img.shields.io/badge/Domain--Driven-FF652F?style=for-the-badge&logoColor=white&v=20261022" alt="Domain-Driven"> <img src="https://img.shields.io/badge/Version_Control-111111?style=for-the-badge&logo=git&logoColor=F05032&v=20261022" alt="Version Control"></p></td>
-<td align="center" width="33%" valign="top"><h4>Operating Systems &amp; Shells</h4><p><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black&v=20261022" alt="Linux"> <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white&v=20261022" alt="Ubuntu"> <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white&v=20261022" alt="Windows"> <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white&v=20261022" alt="Bash"> <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white&v=20261022" alt="PowerShell"></p></td>
-<td align="center" width="33%" valign="top"><h4>Async &amp; Messaging</h4><p><img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white&v=20261022" alt="Celery"> <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white&v=20261022" alt="RabbitMQ"> <img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&logoColor=white&v=20261022" alt="Socket.io"> <img src="https://img.shields.io/badge/AJAX-111111?style=for-the-badge&logo=ajax&logoColor=white&v=20261022" alt="AJAX"></p></td>
-</tr>
-<tr>
-<td align="center" width="33%" valign="top"><h4>UI Frameworks</h4><p><img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black&v=20261022" alt="React"> <img src="https://img.shields.io/badge/Vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=AEDDFF&v=20261022" alt="Vuetify"> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white&v=20261022" alt="jQuery"> <img src="https://img.shields.io/badge/Htmx-FF4700?style=for-the-badge&logo=htmx&logoColor=white&v=20261022" alt="Htmx"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white&v=20261022" alt="Bootstrap"></p></td>
-<td align="center" width="33%" valign="top"><h4>Data Science</h4><p><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white&v=20261022" alt="PyTorch"> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white&v=20261022" alt="TensorFlow"> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white&v=20261022" alt="NumPy"> <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white&v=20261022" alt="Pandas"> <img src="https://img.shields.io/badge/Matplotlib-3F4F75?style=for-the-badge&logo=Matplotlib&logoColor=white&v=20261022" alt="Matplotlib"></p></td>
-<td align="center" width="33%" valign="top"><h4>IDEs &amp; Notebooks</h4><p><img src="https://img.shields.io/badge/Jupyter-FA0F00?style=for-the-badge&logo=jupyter&logoColor=white&v=20261022" alt="Jupyter"> <img src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252&v=20261022" alt="Colab"> <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white&v=20261022" alt="VS Code"> <img src="https://img.shields.io/badge/PyCharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green&v=20261022" alt="PyCharm"></p></td>
-</tr>
-<tr>
-<td align="center" width="33%" valign="top"><h4>APIs &amp; Security</h4><p><img src="https://img.shields.io/badge/REST_APIs-111111?style=for-the-badge&logo=api&logoColor=white&v=20261022" alt="REST APIs"> <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white&v=20261022" alt="GraphQL"> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black&v=20261022" alt="Swagger"> <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white&v=20261022" alt="Postman"> <img src="https://img.shields.io/badge/JWT-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink&v=20261022" alt="JWT"></p></td>
-<td align="center" width="33%" valign="top"><h4>Design &amp; Docs</h4><p><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&v=20261022" alt="Figma"> <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white&v=20261022" alt="Markdown"> <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white&v=20261022" alt="Canva"></p></td>
-<td align="center" width="33%" valign="top"><h4>Languages</h4><p><img src="https://img.shields.io/badge/English-Professional-F90001?style=for-the-badge&v=20261022" alt="English"> <img src="https://img.shields.io/badge/Deutsch-Fluent-FF652F?style=for-the-badge&v=20261022" alt="Deutsch"> <img src="https://img.shields.io/badge/العربية-Native-FFD700?style=for-the-badge&v=20261022" alt="Arabic"></p></td>
-</tr>
-<tr>
-<td align="center" width="33%" valign="top"><h4>Backend Runtimes</h4><p><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&v=20261022" alt="Python"> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white&v=20261022" alt="Node.js"></p></td>
-<td align="center" width="33%" valign="top"><h4>Databases</h4><p><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white&v=20261022" alt="PostgreSQL"> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white&v=20261022" alt="MySQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white&v=20261022" alt="Redis"> <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white&v=20261022" alt="SQLite"> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white&v=20261022" alt="MongoDB"></p></td>
-<td align="center" width="33%" valign="top"><h4>Cloud Native</h4><p><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&v=20261022" alt="Docker"> <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white&v=20261022" alt="Kubernetes"> <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white&v=20261022" alt="Nginx"></p></td>
-</tr>
-</table>
-
-</details>
 
 <p align="center"><img src="./assets/sections/splitter.svg" width="100%" alt=""/></p>
 
@@ -187,21 +124,8 @@
 <p align="center"><img src="./assets/sections/highlights.svg" width="100%" alt="04 · Yearly Highlights"/></p>
 
 <p align="center">
-  <img src="./assets/yearly-highlights-nobg.svg" width="100%" alt="Career timeline 2024 → 2026 — Foundation, Growth, Tooling &amp; Reach" />
+  <img src="./assets/yearly-highlights.svg" width="100%" alt="What I did each year, 2023 to 2026, with contributions, active days and best month" />
 </p>
-
-<!-- 📊 Live stats — auto-refreshed daily from GitHub GraphQL by readme.yml -->
-<p align="center"><b>This year, live from GitHub</b></p>
-
-<!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-911-30363d?style=for-the-badge&logo=git&logoColor=white&v=20261022" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-146-30363d?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-30363d?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-30363d?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="Active repos" /></p>
-<!-- HIGHLIGHTS_STATS:END -->
-
-<!-- The narrative bullets are still updated separately by you — kept as a marker
-     so the text stays editable without rebuilding the SVG. -->
-<!-- HIGHLIGHTS_CURRENT_YEAR:START -->
-<!-- (Narrative for the current year is rendered inside yearly-highlights.svg) -->
-<!-- HIGHLIGHTS_CURRENT_YEAR:END -->
 
 <p align="center"><img src="./assets/sections/splitter.svg" width="100%" alt=""/></p>
 
