@@ -91,8 +91,12 @@ def _icon(lang, x, y, s):
     return f'<svg x="{x}" y="{y}" width="{s}" height="{s}" viewBox="{vb}">{inner}</svg>'
 
 
+NAMES = {"Django--LMS--Learning-Management-System": "Django LMS"}
+
+
 def card(i, x, y, name, desc, status, tags, commits, lang=None):
     accent = STATUS[status][0]
+    name = NAMES.get(name, name.replace("--", " ").replace("_", " "))
     lines = textwrap.wrap(desc or "No description yet.", 44)
     if len(lines) > 3:
         lines = lines[:3]
