@@ -38,6 +38,8 @@ STATUS = {  # label: (accent, pill fill)
     "ACTIVE": ("#3fb950", ""),
     "SHIPPING": ("#ff652f", ""),
     "MAINTAINING": ("#58a6ff", ""),
+    "SHIPPED": ("#bc8cff", ""),
+    "IN USE": ("#e3b341", ""),
 }
 
 
@@ -49,31 +51,43 @@ def _gh(url):
         return json.load(r)
 
 
+# The repos I'm really focused on. Status and the 30-day commit count are
+# read live; `idle` is the status and `note` the footer used when a repo
+# had no commits in the last 30 days (or the API can't see it).
+FOCUS = [
+    ("Mini-RAG", "Ask your documents a question and get an answer with the sources. Hybrid search, citations and an MCP server.",
+     ["fastapi", "pgvector", "rag", "mcp"], "Python", "SHIPPED", "public repo"),
+    ("Django--LMS--Learning-Management-System", "A course platform with payments, a social feed and a job board.",
+     ["django", "vue", "channels", "celery"], "Python", "SHIPPED", "public repo"),
+    ("Baeckrei", "Bakery management system: production planning, recipe-based inventory, customer accounts and online orders.",
+     ["django", "vue", "postgres"], "Vue", "SHIPPED", "public repo"),
+    ("DevTrust", "Tools I made to check code when AI writes part of it: test selection, PR review and LLM tracing.",
+     ["pypi", "github-apps", "testing"], "Python", "SHIPPED", "9 packages on PyPI"),
+    ("PortfolioCraft", "Turns your GitHub history into a portfolio, CV and README, as a CLI or a GitHub Action.",
+     ["cli", "github-action", "portfolio"], "TypeScript", "SHIPPED", "on GitHub Marketplace"),
+    ("Stock-Manager", "Desktop inventory app: products, stock levels, barcodes and an offline local database.",
+     ["pyqt6", "sqlite", "desktop"], "Python", "IN USE", "desktop app"),
+]
+
+
 def fetch(limit=6):
-    """[(name, description, status, tags, commits_30d)] for the busiest repos, or None offline."""
+    """[(name, description, status, tags, footer_count, language, footer_text)] for FOCUS."""
     now = dt.datetime.now(dt.timezone.utc)
     d7, d30 = now - dt.timedelta(days=7), now - dt.timedelta(days=30)
-    repos = _gh(f"https://api.github.com/users/{GH_USER}/repos?type=owner&sort=pushed&per_page=40")
-    rows = []
-    for r in repos:
-        if r.get("fork") or r.get("archived") or r["name"].lower() in SKIP:
-            continue
-        if dt.datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00")) < d30:
-            continue
-        commits = _gh(f"https://api.github.com/repos/{GH_USER}/{r['name']}/commits"
-                      f"?author={GH_USER}&since={d30:%Y-%m-%dT%H:%M:%SZ}&per_page=100")
-        if not commits:
-            continue
-        last = max(dt.datetime.fromisoformat(c["commit"]["author"]["date"].replace("Z", "+00:00")) for c in commits)
-        status = "ACTIVE" if last >= d7 else "MAINTAINING"
-        if status != "ACTIVE":
-            rel = _gh(f"https://api.github.com/repos/{GH_USER}/{r['name']}/releases?per_page=1")
-            if rel and dt.datetime.fromisoformat(rel[0]["published_at"].replace("Z", "+00:00")) >= d30:
-                status = "SHIPPING"
-        tags = (r.get("topics") or [])[:4] or [t for t in [r.get("language")] if t]
-        rows.append((len(commits), r["name"], r.get("description") or "", status, tags, r.get("language")))
-    rows.sort(key=lambda r: r[0], reverse=True)
-    return [(name, desc, status, tags, n, lang) for n, name, desc, status, tags, lang in rows[:limit]] or None
+    out = []
+    for name, desc, tags, lang, idle, note in FOCUS[:limit]:
+        status, count, footer = idle, None, note
+        try:
+            commits = _gh(f"https://api.github.com/repos/{GH_USER}/{name}/commits"
+                          f"?author={GH_USER}&since={d30:%Y-%m-%dT%H:%M:%SZ}&per_page=100")
+            if commits:
+                last = max(dt.datetime.fromisoformat(c["commit"]["author"]["date"].replace("Z", "+00:00")) for c in commits)
+                status = "ACTIVE" if last >= d7 else "MAINTAINING"
+                count, footer = len(commits), "commits · 30d"
+        except Exception as e:
+            print(f"  {name}: no live data ({e})")
+        out.append((name, desc, status, tags, count, lang, footer))
+    return out
 
 
 LANG_ICON = {"Python": "python", "TypeScript": "typescript", "JavaScript": "javascript", "Vue": "vuejs",
@@ -94,7 +108,7 @@ def _icon(lang, x, y, s):
 NAMES = {"Django--LMS--Learning-Management-System": "Django LMS"}
 
 
-def card(i, x, y, name, desc, status, tags, commits, lang=None):
+def card(i, x, y, name, desc, status, tags, commits, lang=None, footer="commits · 30d"):
     accent = STATUS[status][0]
     name = NAMES.get(name, name.replace("--", " ").replace("_", " "))
     lines = textwrap.wrap(desc or "No description yet.", 44)
@@ -119,13 +133,16 @@ def card(i, x, y, name, desc, status, tags, commits, lang=None):
     tx = 24
     for t in tags:
         w = len(t) * 7.6 + 22
-        if tx + w > CARD_W - 150:
+        if tx + w > CARD_W - 44 - (60 + len(footer) * 6.6 if commits else len(footer) * 6.9):
             break
         out.append(f'<rect x="{tx}" y="{CARD_H - 44}" width="{w}" height="24" rx="12" fill="#ffffff" fill-opacity=".03" stroke="#ffffff" stroke-opacity=".1"/>'
                    f'<text x="{tx + w / 2}" y="{CARD_H - 27.5}" text-anchor="middle" font-family="{MONO}" font-size="11.5" fill="#c9d1d9">{escape(t)}</text>')
         tx += w + 8
-    out.append(f'<text x="{CARD_W - 24}" y="{CARD_H - 27}" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="{MUTED}">'
-               f'<tspan font-family="{MONO}" font-size="15" font-weight="700" fill="{accent}">{commits}</tspan> commits · 30d</text>')
+    if commits:
+        out.append(f'<text x="{CARD_W - 24}" y="{CARD_H - 27}" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="{MUTED}">'
+                   f'<tspan font-family="{MONO}" font-size="15" font-weight="700" fill="{accent}">{commits}</tspan> {escape(footer)}</text>')
+    else:
+        out.append(f'<text x="{CARD_W - 24}" y="{CARD_H - 27}" text-anchor="end" font-family="{SANS}" font-size="12.5" fill="{accent}">{escape(footer)}</text>')
     out.append("</g>")
     return "".join(out)
 
