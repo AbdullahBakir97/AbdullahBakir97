@@ -45,6 +45,13 @@
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
 
+<!-- 🟩 WRITTEN IN COMMITS — my name drawn from real commit days, rebuilt daily by readme.yml -->
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97?tab=overview">
+    <img src="./assets/commit-name.svg" width="100%" alt="Abdullah Bakir, drawn on a contribution graph where every bright square is a real day I committed" />
+  </a>
+</p>
+
 <!-- ============================================================ -->
 <!-- 💻 ABOUT ME — animated cinematic hero card                    -->
 <!-- ============================================================ -->
