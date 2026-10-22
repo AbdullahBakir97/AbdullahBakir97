@@ -8,7 +8,7 @@ Python Developer
 
 **2023**: Created 21 repos primarily in HTML, Python, and CSS, focused on frontend and ml.
 
-**2024**: Created 38 repos primarily in Python, Vue, and JavaScript, focused on ml and backend.
+**2024**: Created 38 repos primarily in Python, Vue, and TypeScript, focused on ml and backend.
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
@@ -19,7 +19,7 @@ Python Developer
 
 ### Barber-Salon
 
-An active backend project built primarily in Python, developed over 30 months (2024–2026).
+A recent backend project built primarily in Python, developed over 30 months (2024–2026).
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
@@ -29,7 +29,7 @@ Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Ba
 
 ### Django-Store
 
-An active backend project built primarily in Python, developed over 34 months (2023–2026).
+A recent backend project built primarily in Python, developed over 34 months (2023–2026).
 
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
@@ -80,7 +80,7 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 ## Technical depth
 
 **Backend** (4 repositories): 4 backend projects in Python, Vue, and JavaScript covering django, django-rest-framework, javascript.
-**Machine Learning** (2 repositories): 2 machine-learning projects in Python, Vue, and TypeScript covering animation, auto-update, dynamic-readme.
+**Machine Learning** (2 repositories): 2 machine-learning projects in Python, TypeScript, and Vue covering animation, auto-update, dynamic-readme.
 
 ## Scope of self-directed work
 
