@@ -56,54 +56,54 @@
     <clipPath id="t48"><rect x="0" y="0" height="40"><animate attributeName="width" values="0;0;880;880;0;0" keyTimes="0;0.96;0.962;0.975;0.977;1" dur="150s" repeatCount="indefinite"/></rect></clipPath>
     <clipPath id="t49"><rect x="0" y="0" height="40"><animate attributeName="width" values="0;0;880;880;0" keyTimes="0;0.98;0.982;0.995;1" dur="150s" repeatCount="indefinite"/></rect></clipPath>
   </defs>
-  <text class="term" x="10" y="26" fill="#FF652F" clip-path="url(#t00)">// Curious about how systems break</text>
-  <text class="term" x="10" y="26" fill="#F90001" clip-path="url(#t01)">// Stubborn about how they're rebuilt</text>
-  <text class="term" x="10" y="26" fill="#FFD700" clip-path="url(#t02)">// Code should be useful before it's clever</text>
-  <text class="term" x="10" y="26" fill="#34D399" clip-path="url(#t03)">// Boring architecture is usually the right one</text>
-  <text class="term" x="10" y="26" fill="#A78BFA" clip-path="url(#t04)">// Tests are letters from past me to future me</text>
-  <text class="term" x="10" y="26" fill="#22D3EE" clip-path="url(#t05)">// A good name is half the documentation</text>
-  <text class="term" x="10" y="26" fill="#EC4899" clip-path="url(#t06)">// Ship -&gt; measure -&gt; learn -&gt; ship again</text>
-  <text class="term" x="10" y="26" fill="#00C853" clip-path="url(#t07)">// The simplest thing that could possibly work</text>
-  <text class="term" x="10" y="26" fill="#FF652F" clip-path="url(#t08)">// Read the code, not the comments</text>
-  <text class="term" x="10" y="26" fill="#F90001" clip-path="url(#t09)">// Premature optimization is the root of all evil</text>
-  <text class="term" x="10" y="26" fill="#FFD700" clip-path="url(#t10)">// Make it work, make it right, make it fast</text>
-  <text class="term" x="10" y="26" fill="#34D399" clip-path="url(#t11)">// Never trust user input</text>
-  <text class="term" x="10" y="26" fill="#A78BFA" clip-path="url(#t12)">// Naming things is the second-hardest problem</text>
-  <text class="term" x="10" y="26" fill="#22D3EE" clip-path="url(#t13)">// Off-by-one errors are inevitable -- design for them</text>
-  <text class="term" x="10" y="26" fill="#EC4899" clip-path="url(#t14)">// Documentation is a love letter to your future self</text>
-  <text class="term" x="10" y="26" fill="#00C853" clip-path="url(#t15)">// Refactor mercilessly once you understand more</text>
-  <text class="term" x="10" y="26" fill="#FF652F" clip-path="url(#t16)">// Bugs are features waiting to be understood</text>
-  <text class="term" x="10" y="26" fill="#F90001" clip-path="url(#t17)">// Empathy for the on-call engineer at 3am</text>
-  <text class="term" x="10" y="26" fill="#FFD700" clip-path="url(#t18)">// YAGNI -- you aren't gonna need it</text>
-  <text class="term" x="10" y="26" fill="#34D399" clip-path="url(#t19)">// The code is the source of truth -- comments lie</text>
-  <text class="term" x="10" y="26" fill="#A78BFA" clip-path="url(#t20)">// Done is better than perfect</text>
-  <text class="term" x="10" y="26" fill="#22D3EE" clip-path="url(#t21)">// First, do no harm to production</text>
-  <text class="term" x="10" y="26" fill="#EC4899" clip-path="url(#t22)">// Question every assumption, including this one</text>
-  <text class="term" x="10" y="26" fill="#00C853" clip-path="url(#t23)">// Patience is a feature, latency is a bug</text>
-  <text class="term" x="10" y="26" fill="#FF652F" clip-path="url(#t24)">// Write code as if the next maintainer is psychotic</text>
-  <text class="term" x="10" y="26" fill="#F90001" clip-path="url(#t25)">// Cache invalidation is one of two hard problems</text>
-  <text class="term" x="10" y="26" fill="#FFD700" clip-path="url(#t26)">// The best code is code you don't have to write</text>
-  <text class="term" x="10" y="26" fill="#34D399" clip-path="url(#t27)">// Build with care, deploy with confidence</text>
-  <text class="term" x="10" y="26" fill="#A78BFA" clip-path="url(#t28)">// Stay hungry, stay foolish -- keep shipping</text>
-  <text class="term" x="10" y="26" fill="#22D3EE" clip-path="url(#t29)">// Done &gt; Perfect &gt; Started</text>
-  <text class="term" x="10" y="26" fill="#FFD700" clip-path="url(#t30)">// I build for small businesses, not hyperscalers</text>
-  <text class="term" x="10" y="26" fill="#FF652F" clip-path="url(#t31)">// Three languages, one keyboard, one ambition</text>
-  <text class="term" x="10" y="26" fill="#34D399" clip-path="url(#t32)">// Code I write today runs at the bakery tomorrow</text>
-  <text class="term" x="10" y="26" fill="#F90001" clip-path="url(#t33)">// Started in HTML, ended up in production</text>
-  <text class="term" x="10" y="26" fill="#A78BFA" clip-path="url(#t34)">// Berlin coffee, Damascus passion, daily commits</text>
-  <text class="term" x="10" y="26" fill="#22D3EE" clip-path="url(#t35)">// Built Baeckrei to make small bakeries thrive</text>
-  <text class="term" x="10" y="26" fill="#EC4899" clip-path="url(#t36)">// PyDev: pip install developer, but make it real</text>
-  <text class="term" x="10" y="26" fill="#00C853" clip-path="url(#t37)">// 5 GitHub Apps, 1 vision: respect maintainer time</text>
-  <text class="term" x="10" y="26" fill="#FF652F" clip-path="url(#t38)">// Production beats demo, every single Friday</text>
-  <text class="term" x="10" y="26" fill="#FFD700" clip-path="url(#t39)">// I write Python the way I'd explain it to a friend</text>
-  <text class="term" x="10" y="26" fill="#34D399" clip-path="url(#t40)">// Vue 3 because composition beats inheritance</text>
-  <text class="term" x="10" y="26" fill="#F90001" clip-path="url(#t41)">// The bakery never sleeps, the code shouldn't crash</text>
-  <text class="term" x="10" y="26" fill="#A78BFA" clip-path="url(#t42)">// Open-source what you wish others had shared with you</text>
-  <text class="term" x="10" y="26" fill="#22D3EE" clip-path="url(#t43)">// Every commit is a small gift to my future team</text>
-  <text class="term" x="10" y="26" fill="#EC4899" clip-path="url(#t44)">// From learning loop to long-running production</text>
-  <text class="term" x="10" y="26" fill="#00C853" clip-path="url(#t45)">// Build it once for yourself, then share it widely</text>
-  <text class="term" x="10" y="26" fill="#FFD700" clip-path="url(#t46)">// Microservices for problems, monoliths for solutions</text>
-  <text class="term" x="10" y="26" fill="#FF652F" clip-path="url(#t47)">// 4+ years in, still excited to type 'git init'</text>
-  <text class="term" x="10" y="26" fill="#34D399" clip-path="url(#t48)">// English, Deutsch, Arabic -- code is the fourth tongue</text>
-  <text class="term" x="10" y="26" fill="#A78BFA" clip-path="url(#t49)">// Made in Germany, for the world's small shops</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t00)">// Curious about how systems break</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t01)">// Stubborn about how they're rebuilt</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t02)">// Code should be useful before it's clever</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t03)">// Boring architecture is usually the right one</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t04)">// Tests are letters from past me to future me</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t05)">// A good name is half the documentation</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t06)">// Ship -&gt; measure -&gt; learn -&gt; ship again</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t07)">// The simplest thing that could possibly work</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t08)">// Read the code, not the comments</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t09)">// Premature optimization is the root of all evil</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t10)">// Make it work, make it right, make it fast</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t11)">// Never trust user input</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t12)">// Naming things is the second-hardest problem</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t13)">// Off-by-one errors are inevitable -- design for them</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t14)">// Documentation is a love letter to your future self</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t15)">// Refactor mercilessly once you understand more</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t16)">// Bugs are features waiting to be understood</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t17)">// Empathy for the on-call engineer at 3am</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t18)">// YAGNI -- you aren't gonna need it</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t19)">// The code is the source of truth -- comments lie</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t20)">// Done is better than perfect</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t21)">// First, do no harm to production</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t22)">// Question every assumption, including this one</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t23)">// Patience is a feature, latency is a bug</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t24)">// Write code as if the next maintainer is psychotic</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t25)">// Cache invalidation is one of two hard problems</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t26)">// The best code is code you don't have to write</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t27)">// Build with care, deploy with confidence</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t28)">// Stay hungry, stay foolish -- keep shipping</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t29)">// Done &gt; Perfect &gt; Started</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t30)">// I build for small businesses, not hyperscalers</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t31)">// Three languages, one keyboard, one ambition</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t32)">// Code I write today runs at the bakery tomorrow</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t33)">// Started in HTML, ended up in production</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t34)">// Berlin coffee, Damascus passion, daily commits</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t35)">// Built Baeckrei to make small bakeries thrive</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t36)">// Measure twice, merge once</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t37)">// 5 GitHub Apps, 1 vision: respect maintainer time</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t38)">// Production beats demo, every single Friday</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t39)">// I write Python the way I'd explain it to a friend</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t40)">// Vue 3 because composition beats inheritance</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t41)">// The bakery never sleeps, the code shouldn't crash</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t42)">// Open-source what you wish others had shared with you</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t43)">// Every commit is a small gift to my future team</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t44)">// From learning loop to long-running production</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t45)">// Build it once for yourself, then share it widely</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t46)">// Microservices for problems, monoliths for solutions</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t47)">// 4+ years in, still excited to type 'git init'</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t48)">// English, Deutsch, Arabic -- code is the fourth tongue</text>
+  <text class="term" x="10" y="26" fill="#39d353" clip-path="url(#t49)">// Made in Germany, for the world's small shops</text>
 </svg>
