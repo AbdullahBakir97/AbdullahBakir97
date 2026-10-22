@@ -1,7 +1,7 @@
 <!-- 🟩 HEADER — my name drawn from real commit days, rebuilt daily by readme.yml (scripts/build_commit_name.py) -->
 <p align="center">
   <a href="https://github.com/AbdullahBakir97?tab=overview">
-    <img src="./assets/commit-name.svg" width="100%" alt="Abdullah Bakir, drawn on a contribution graph where every bright square is a real day I committed" />
+    <img src="./assets/commit-name.svg" width="100%" alt="Abdullah Bakir written in real commit days, coloured by year, with eight drawings found in the graph and a worm that eats them all. Original concept and design by Abdullah Bakir." />
   </a>
 </p>
 
@@ -257,10 +257,6 @@
 <!-- CONTRIBUTION GRAPH -->
 <a id="contributions"></a>
 <p align="center"><img src="./assets/sections/contributions.svg" width="100%" alt="10 · Contribution Graph"/></p>
-
-<p align="center"><img src="./assets/commit-worm.svg" width="100%" alt="A worm eating eight shapes found in my real contribution grid: a skull, a lighthouse, a ghost, a diamond axe, a dog, robots, a dog diving into water and an orange robot"/></p>
-
-<p align="center"><sub>I found eight shapes in my contribution graph. Every square is a real day and I didn't draw anything.</sub></p>
 
 <p align="center"><img src="./assets/year-story.svg" width="100%" alt="Every year of contributions, split into quiet, steady and busy stretches, with the longest streak and biggest day marked"/></p>
 
