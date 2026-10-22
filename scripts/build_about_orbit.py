@@ -4,6 +4,7 @@ Pure SVG. Three concentric counter-rotating rings of tech badges around a
 central glowing core. Companion piece to about-hero.svg — pairs as
 banner+footer for the About Me section.
 """
+import datetime as dt
 import math
 import random
 from pathlib import Path
@@ -19,15 +20,15 @@ CX, CY = W // 2, H // 2
 ORBIT = [
     # Inner ring — core daily stack (6, fastest CW)
     ("Py",      "#3776ab", 0,    0),
-    ("Dj",      "#0c4b33", 0,   60),
-    ("DRF",     "#a30000", 0,  120),
+    ("Dj",      "#44b78b", 0,   60),
+    ("DRF",     "#ff5c5c", 0,  120),
     ("Vue",     "#42b883", 0,  180),
     ("Nx",      "#00dc82", 0,  240),
     ("TS",      "#3178c6", 0,  300),
 
     # Middle ring — frameworks, data, async (10, CCW)
     ("FApi",    "#009485", 1,    0),
-    ("Flsk",    "#000000", 1,   36),
+    ("Flsk",    "#c9d1d9", 1,   36),
     ("PG",      "#336791", 1,   72),
     ("MySQL",   "#00758F", 1,  108),
     ("Rd",      "#dc382d", 1,  144),
@@ -39,8 +40,8 @@ ORBIT = [
 
     # Outer ring — devops, cloud, AI/data, tooling (12, slowest CW)
     ("AWS",     "#ff9900", 2,    0),
-    ("Vrcl",    "#000000", 2,   30),
-    ("Hku",     "#430098", 2,   60),
+    ("Vrcl",    "#c9d1d9", 2,   30),
+    ("Hku",     "#9e7cc1", 2,   60),
     ("Dk",      "#2496ed", 2,   90),
     ("Ngx",     "#009639", 2,  120),
     ("Linux",   "#FCC624", 2,  150),
@@ -144,7 +145,7 @@ def render() -> str:
         f'<text x="60" y="42" '
         f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
         f'font-size="13" font-weight="700" fill="#39d353" letter-spacing="3.5">'
-        f'// THE STACK · v2026.05</text>'
+        f'// THE STACK · v{dt.date.today():%Y.%m}</text>'
         f'<text x="{W-60}" y="42" text-anchor="end" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
         f'font-size="13" font-weight="600" fill="#7d8590" letter-spacing="2">'
@@ -153,7 +154,7 @@ def render() -> str:
 
     # Bottom caption
     parts.append(
-        f'<text x="{CX}" y="{H-30}" text-anchor="middle" '
+        f'<text x="60" y="{H-30}" text-anchor="start" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
         f'font-size="14" font-weight="500" fill="#7d8590" font-style="italic" '
         f'letter-spacing="0.5">'
@@ -224,14 +225,7 @@ def render() -> str:
         f'</g>'
     )
 
-    # Username caption above core
-    parts.append(
-        f'<text x="{CX}" y="{CY-110}" text-anchor="middle" '
-        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-        f'font-size="14" font-weight="700" fill="#7d8590" letter-spacing="3" '
-        f'text-transform="uppercase">'
-        f'@AbdullahBakir97</text>'
-    )
+    # (handle caption removed: it sat inside the inner ring and collided with the orbiting nodes)
 
     parts.append('</svg>')
     return "".join(parts)

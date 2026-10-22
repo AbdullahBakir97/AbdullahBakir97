@@ -1,9 +1,9 @@
-<!-- ============================================================ -->
-<!-- 🎬 ANIMATED HEADER BANNER — capsule-render with wave gradient -->
-<!-- ============================================================ -->
-<a href="https://github.com/AbdullahBakir97">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:F90001&height=260&section=header&text=Abdullah%20Bakir&fontSize=90&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Full-Stack%20Developer%20%E2%9A%A1%20Python%20%E2%80%A2%20Django%20%E2%80%A2%20Vue%20%E2%80%A2%20Nuxt&descAlignY=58&descSize=20&descColor=F0F0F0" width="100%" alt="Abdullah Bakir — Full-Stack Developer" />
-</a>
+<!-- 🟩 HEADER — my name drawn from real commit days, rebuilt daily by readme.yml (scripts/build_commit_name.py) -->
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97?tab=overview">
+    <img src="./assets/commit-name.svg" width="100%" alt="Abdullah Bakir, drawn on a contribution graph where every bright square is a real day I committed" />
+  </a>
+</p>
 
 <!-- 🐙 PROFESSIONAL GITHUB IDENTIFIER — pulsing brand-red halo + Invertocat -->
 <p align="center">
@@ -30,7 +30,6 @@
   <a href="https://github.com/AbdullahBakir97"><img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&label=PROFILE%20VIEWS&color=F90001&style=for-the-badge&v=20261022" alt="Profile views" /></a>
   <a href="https://github.com/AbdullahBakir97?tab=followers"><img src="https://img.shields.io/github/followers/AbdullahBakir97?label=FOLLOWERS&style=for-the-badge&color=F90001&logo=github&logoColor=white&v=20261022" alt="GitHub followers" /></a>
   <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER&label=TOTAL%20STARS&style=for-the-badge&color=F90001&logo=github&logoColor=white&v=20261022" alt="Total stars" /></a>
-  <a href="https://codetime.dev"><img src="https://img.shields.io/endpoint?style=for-the-badge&color=F90001&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D23432%26project%3D%26in=12096000000&v=20261022" alt="CodeTime hours" /></a>
 </p>
 
 <!-- 🏷️ PROFESSIONAL BADGES — contact / availability row -->
@@ -45,13 +44,6 @@
   <img src="./assets/redline.gif" width="100%" alt=""/>
 </div>
 
-<!-- 🟩 WRITTEN IN COMMITS — my name drawn from real commit days, rebuilt daily by readme.yml -->
-<p align="center">
-  <a href="https://github.com/AbdullahBakir97?tab=overview">
-    <img src="./assets/commit-name.svg" width="100%" alt="Abdullah Bakir, drawn on a contribution graph where every bright square is a real day I committed" />
-  </a>
-</p>
-
 <!-- ============================================================ -->
 <!-- 💻 ABOUT ME — animated cinematic hero card                    -->
 <!-- ============================================================ -->
@@ -59,7 +51,7 @@
 
 <!-- 💬 Rotating motto ticker — 50 dev mottos cycling -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahBakir97/cortex/main/examples/rendered/extreme/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
+  <img src="./assets/motto-typing.svg" alt="motto ticker: curious / stubborn / useful before clever" />
 </div>
 
 <!-- 🌟 Editorial hero banner — name, role, availability, stats -->
@@ -67,11 +59,6 @@
   <a href="https://github.com/AbdullahBakir97">
     <img src="./assets/about-hero.svg" width="100%" alt="Abdullah Bakir — Full-Stack Developer · editorial profile banner" />
   </a>
-</p>
-
-<!-- 🎬 Personality break — Python coding GIF -->
-<p align="center">
-  <img src="https://github.com/AbdullahBakir97/AbdullahBakir97/blob/main/giphy1.gif" alt="Python coding animation" />
 </p>
 
 <!-- 📋 Full bio — Python class block, always visible -->
@@ -83,8 +70,10 @@ class AbdullahBakir:
     pronouns        = "he/him"
     location        = "🇩🇪 Germany — open to remote"
     languages       = ["Python", "TypeScript", "JavaScript"]
-    frameworks      = ["Django", "Django REST", "Vue 3", "Nuxt"]
+    backend         = ["Django", "Django REST", "FastAPI"]
+    frontend        = ["Vue 3", "Nuxt"]
     databases       = ["PostgreSQL", "MySQL", "Redis"]
+    infrastructure  = ["Docker", "Kubernetes", "GitHub Actions"]
     currently_into  = ["AI-augmented dev tooling", "GitHub Apps", "CLI ergonomics"]
     available_for   = ["Open source", "Freelance", "Long-term collaboration"]
     speaks          = ["English", "Deutsch", "العربية"]
@@ -99,14 +88,6 @@ class AbdullahBakir:
 me = AbdullahBakir()
 print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```
-
-<!-- 🪐 Tech-orbit footer — animated technologies-circle, paired with the banner -->
-<p align="center">
-  <a href="https://github.com/AbdullahBakir97">
-    <img src="./assets/about-orbit.svg" width="100%" alt="Tech stack — orbiting technologies (animated)" />
-  </a>
-</p>
-
 
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
@@ -151,6 +132,14 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center">
   <i>Production-grade tools for production-grade systems.</i>
 </p>
+
+<!-- 🪐 Tech orbit — animated technologies-circle (scripts/build_about_orbit.py) -->
+<p align="center">
+  <a href="https://github.com/AbdullahBakir97">
+    <img src="./assets/about-orbit.svg" width="100%" alt="Tech stack — orbiting technologies (animated)" />
+  </a>
+</p>
+
 
 <!-- 🌟 Hero icon row — clean 15×3 grid via perline=15. Celery & Socket.io
      are NOT in skillicons.dev's catalog, so they live only in the encyclopedia

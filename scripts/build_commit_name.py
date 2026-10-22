@@ -22,11 +22,11 @@ OUT = ASSETS / "commit-name.svg"
 NAME_LINES = ["ABDULLAH", "BAKIR"]
 HANDLE = "github.com/AbdullahBakir97"
 
-W, H = 1400, 560
+W, H = 1400, 580
 PITCH, CELL, RADIUS = 18, 14, 3
 GRID_COLS, GRID_ROWS = 71, 19
 GX = (W - GRID_COLS * PITCH) / 2 + 12          # room on the left for Mon / Wed / Fri
-GY = 166
+GY = 186
 
 BG, SURFACE, EMPTY, BORDER = "#0d1117", "#161b22", "#161b22", "#30363d"
 TEXT, MUTED = "#e6edf3", "#7d8590"
@@ -112,6 +112,23 @@ def pct(t):
     return f"{max(0.0, min(100.0, t / LOOP * 100)):.2f}%"
 
 
+def stats(days):
+    """Totals for the header stat tiles."""
+    today = dt.date.today()
+    year = today.year
+    by_date = {d: c for d, c, _ in days}
+    total = sum(by_date.values())
+    year_days = sum(1 for d, c in by_date.items() if d.startswith(str(year)) and c > 0)
+    year_elapsed = (today - dt.date(year, 1, 1)).days + 1
+    longest = run = 0                                  # longest run of consecutive commit days
+    prev = None
+    for d in sorted(k for k, c in by_date.items() if c > 0):
+        day = dt.date.fromisoformat(d)
+        run = run + 1 if prev and (day - prev).days == 1 else 1
+        longest, prev = max(longest, run), day
+    return {"total": total, "year": year, "year_days": year_days, "year_elapsed": year_elapsed, "longest": longest}
+
+
 def render():
     days = read_days()
     active = [d for d in days if d[1] > 0] or [("", 1, LEVELS[3])]
@@ -170,18 +187,30 @@ def render():
     p.append(f'<rect width="{W}" height="{H}" rx="14" fill="url(#bg)" stroke="{BORDER}"/>')
     p.append(f'<rect width="{W}" height="{H}" rx="14" fill="url(#glow)"/>')
 
-    # header, in the style of the other banners
+    # header: story on the left, three live stat tiles on the right (same style as about-hero)
+    st = stats(days)
     p.append(f'<text class="mono" x="{GX}" y="44" font-size="13" font-weight="700" letter-spacing="3.2" fill="{GREEN}">'
              f'// WRITTEN IN COMMITS · {first[:4]} — {last[:4]}</text>')
-    p.append(f'<text class="mono" x="{W - GX + 12}" y="44" font-size="13" letter-spacing="1.5" fill="{MUTED}" text-anchor="end">{HANDLE}</text>')
-    p.append(f'<text x="{GX}" y="88" font-size="32" font-weight="800" letter-spacing="-.5" fill="{TEXT}">'
+    p.append(f'<text class="mono" x="{W - GX + 12}" y="44" font-size="12" letter-spacing="1.5" fill="{MUTED}" text-anchor="end">'
+             f'<tspan fill="{GREEN}">●</tspan> REAL DATA · UPDATED {dt.date.today().isoformat()}</text>')
+    p.append(f'<text x="{GX}" y="90" font-size="32" font-weight="800" letter-spacing="-.5" fill="{TEXT}">'
              f'Written in my commits<tspan fill="{GREEN}" font-size="16" dy="-6"> ●</tspan></text>')
-    p.append(f'<text x="{GX}" y="118" font-size="15" font-style="italic" fill="{MUTED}">'
-             f'Every bright square is a real day I pushed code to GitHub. Read the name left to right and you walk my history, oldest day first.</text>')
-    p.append(f'<text class="mono" x="{W - GX + 12}" y="88" font-size="12" letter-spacing="1.5" fill="{MUTED}" text-anchor="end">'
-             f'<tspan fill="{GREEN}">●</tspan> REAL DATA · AUTO-UPDATED DAILY</text>')
-    p.append(f'<text class="mono" x="{W - GX + 12}" y="110" font-size="12" letter-spacing="1.5" fill="{MUTED}" text-anchor="end">'
-             f'last refresh {dt.date.today().isoformat()}</text>')
+    p.append(f'<text x="{GX}" y="118" font-size="14.5" font-style="italic" fill="{MUTED}">'
+             f'Every bright square is a real day I pushed code to GitHub.</text>')
+    p.append(f'<text x="{GX}" y="138" font-size="14.5" font-style="italic" fill="{MUTED}">'
+             f'Read the name left to right: oldest day first, latest day last.</text>')
+    tiles = [("CONTRIBUTIONS", f"{st['total']:,}", f"since {first[:4]}"),
+             (f"COMMIT DAYS {st['year']}", f"{st['year_days']}", f"of {st['year_elapsed']} days"),
+             ("LONGEST STREAK", f"{st['longest']}", "days in a row")]
+    tw, th, gap = 176, 74, 12
+    x0 = W - GX + 12 - (3 * tw + 2 * gap)
+    for i, (label, value, sub) in enumerate(tiles):
+        x = x0 + i * (tw + gap)
+        p.append(f'<g><rect x="{x}" y="66" width="{tw}" height="{th}" rx="8" fill="{SURFACE}" stroke="{BORDER}"/>'
+                 f'<rect x="{x}" y="66" width="3" height="{th}" rx="1.5" fill="{RED}"/>'
+                 f'<text class="mono" x="{x + 16}" y="88" font-size="10" font-weight="700" letter-spacing="2" fill="{MUTED}">{label}</text>'
+                 f'<text x="{x + 16}" y="120" font-size="26" font-weight="800" fill="{TEXT}">{value}</text>'
+                 f'<text x="{x + tw - 12}" y="120" font-size="11" fill="{MUTED}" text-anchor="end">{sub}</text></g>')
 
     # month labels and weekday labels, like the real graph
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -247,9 +276,8 @@ def render():
         p.append(f'<rect x="{GX + 34 + i * 17}" y="{fy - 11}" width="{CELL - 1}" height="{CELL - 1}" rx="{RADIUS}" fill="{col}"/>')
     p.append(f'<text x="{GX + 34 + 5 * 17 + 6}" y="{fy}" font-size="12" fill="{MUTED}">More</text>')
     p.append(f'<text class="cap" x="{W - GX + 12}" y="{fy}" font-size="13" fill="{MUTED}" text-anchor="end">'
-             f'<tspan fill="{TEXT}" font-weight="600">{len(cells)}</tspan> real commit days drawn · '
-             f'<tspan fill="{TEXT}" font-weight="600">{total:,}</tspan> contributions from '
-             f'<tspan fill="{TEXT}">{first}</tspan> to <tspan fill="{TEXT}">{last}</tspan></text>')
+             f'<tspan fill="{TEXT}" font-weight="600">{len(cells)}</tspan> real commit days drawn, from '
+             f'<tspan fill="{TEXT}">{first}</tspan> to <tspan fill="{TEXT}">{last}</tspan> · {HANDLE}</text>')
     p.append("</svg>")
     return "".join(p)
 
@@ -257,3 +285,4 @@ def render():
 if __name__ == "__main__":
     OUT.write_text(render(), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)}")
+

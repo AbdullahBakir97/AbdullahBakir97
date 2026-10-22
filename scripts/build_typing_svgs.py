@@ -247,7 +247,7 @@ def main() -> int:
     )
     # 50 lines × 3s = 150s cycle; longest motto ~ 55 chars at 17pt mono ~= 580px wide
     build_svg(
-        MOTTO_LINES,
+        [(text, "#39d353") for text, _ in MOTTO_LINES],   # one brand green for every motto
         width=900, height=40,
         font_size=17, font_weight=500,
         total_dur=150, reveal_w=880,

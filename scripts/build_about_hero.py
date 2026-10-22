@@ -13,8 +13,12 @@ GitHub's camo image proxy).
 """
 import base64
 import datetime as dt
+import json
+import os
 import random
+import urllib.request
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 ASSETS = Path(__file__).resolve().parents[1] / "assets"
 OUT = ASSETS / "about-hero.svg"
@@ -43,8 +47,71 @@ STATS = [
     ("LANGUAGES",      "EN · DE · AR",  "fluent in 3"),
 ]
 
+GH_USER = os.environ.get("GH_USER", "AbdullahBakir97")
+GH_TOKEN = os.environ.get("GH_TOKEN", "")
+SKIP_REPOS = {GH_USER.lower()}          # the profile repo itself is README plumbing, not a project
+CODING_SINCE = 2022
 
-def render() -> str:
+
+def _gh(url: str):
+    req = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": GH_USER})
+    if GH_TOKEN:
+        req.add_header("Authorization", f"Bearer {GH_TOKEN}")
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.load(r)
+
+
+def live_now_shipping(limit: int = 4):
+    """The repos with the most of my commits in the last 7 days, from the GitHub API.
+
+    Returns [(name, status, blurb)] or None when the API is unreachable, so the
+    static NOW_SHIPPING list stays as the offline fallback.
+    """
+    try:
+        since = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=7)
+        repos = _gh(f"https://api.github.com/users/{GH_USER}/repos?type=owner&sort=pushed&per_page=30")
+        rows = []
+        for repo in repos:
+            if repo.get("fork") or repo.get("archived") or repo["name"].lower() in SKIP_REPOS:
+                continue
+            pushed = dt.datetime.fromisoformat(repo["pushed_at"].replace("Z", "+00:00"))
+            if pushed < since:
+                continue
+            commits = _gh(f"https://api.github.com/repos/{GH_USER}/{repo['name']}/commits"
+                          f"?author={GH_USER}&since={since:%Y-%m-%dT%H:%M:%SZ}&per_page=100")
+            if commits:
+                rows.append((len(commits), pushed, repo))
+        rows.sort(key=lambda r: (r[0], r[1]), reverse=True)
+        out = []
+        for n, _, repo in rows[:limit]:
+            what = repo.get("description") or repo.get("language") or "work in progress"
+            out.append((repo["name"], "active", f"{n} commit{'s' if n != 1 else ''} this week · {what}"))
+        return out or None
+    except Exception as e:  # network, rate limit, schema drift: keep the last known list
+        print(f"  live projects unavailable, using fallback: {e}")
+        return None
+
+
+def live_stats():
+    """Same tiles as STATS, with the repo count taken from the API."""
+    years = dt.date.today().year - CODING_SINCE
+    stats = [("YEARS CODING", f"{years}+", f"since {CODING_SINCE}"), STATS[1], STATS[2]]
+    try:
+        repos = _gh(f"https://api.github.com/users/{GH_USER}/repos?type=owner&per_page=100")
+        own = [r for r in repos if not r.get("fork")]
+        stats[1] = ("PUBLIC REPOS", str(len(own)), "on GitHub")
+    except Exception as e:
+        print(f"  repo count unavailable, using fallback: {e}")
+    return stats
+
+
+def _fit(text: str, max_chars: int) -> str:
+    return text if len(text) <= max_chars else text[: max(0, max_chars - 1)].rstrip(" ·,—-") + "…"
+
+
+def render(shipping=None, stats=None) -> str:
+    shipping = shipping or NOW_SHIPPING
+    stats = stats or STATS
     rng = random.Random(20260504)
     parts: list[str] = []
 
@@ -174,7 +241,7 @@ def render() -> str:
         f'<text x="60" y="42" '
         f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
         f'font-size="13" font-weight="700" fill="#39d353" letter-spacing="3.5">'
-        f'// CURRENTLY SHIPPING · v2026.05</text>'
+        f'// CURRENTLY SHIPPING · WEEK {dt.date.today().isocalendar()[1]:02d} · {dt.date.today().isocalendar()[0]}</text>'
         f'<text x="{W-60}" y="42" text-anchor="end" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
         f'font-size="13" font-weight="600" fill="#7d8590" letter-spacing="2">'
@@ -249,14 +316,14 @@ def render() -> str:
         f'<text x="{panel_x}" y="143" '
         f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
         f'font-size="14" fill="#7d8590" font-style="italic" letter-spacing="0.3">'
-        f'four headline projects with active commits this week</text>'
+        f'the repos with the most of my commits in the last 7 days · live from GitHub</text>'
     )
 
     # Project rows
     row_y = 168
     row_h = 38
     row_w = 760
-    for i, (name, status, blurb) in enumerate(NOW_SHIPPING):
+    for i, (name, status, blurb) in enumerate(shipping):
         ry = row_y + i * (row_h + 6)
         # Card
         parts.append(
@@ -274,7 +341,7 @@ def render() -> str:
             f'<text x="{panel_x+34}" y="{ry+row_h//2+5}" '
             f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Text,Inter,Segoe UI,sans-serif" '
             f'font-size="15" font-weight="700" fill="#e6edf3">'
-            f'{name}</text>'
+            f'{escape(name)}</text>'
         )
         # Separator dot
         name_w = len(name) * 8 + 20
@@ -286,7 +353,7 @@ def render() -> str:
             f'<text x="{panel_x+34+name_w+10}" y="{ry+row_h//2+5}" '
             f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
             f'font-size="13" font-weight="500" fill="#7d8590">'
-            f'{blurb}</text>'
+            f'{escape(_fit(blurb, (row_w - 34 - name_w - 10 - 90) // 7))}</text>'
         )
         # Status pill (right side)
         parts.append(
@@ -303,10 +370,10 @@ def render() -> str:
     # ── Stats strip (bottom) ──────────────────────────────────────────────
     strip_y = H - 100
     strip_h = 80
-    n = len(STATS)
+    n = len(stats)
     total_w = W - 120
     tile_w = (total_w - (n - 1) * 16) // n
-    for i, (label, value, sub) in enumerate(STATS):
+    for i, (label, value, sub) in enumerate(stats):
         sx = 60 + i * (tile_w + 16)
         parts.append(
             f'<g>'
@@ -335,7 +402,7 @@ def render() -> str:
 
 def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(render(), encoding="utf-8")
+    OUT.write_text(render(live_now_shipping(), live_stats()), encoding="utf-8")
     print(f"wrote {OUT} ({OUT.stat().st_size} bytes)")
 
 
