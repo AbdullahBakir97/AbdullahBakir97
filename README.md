@@ -357,14 +357,14 @@ gitGraph
 <h3 align="center">📜 Event Log</h3>
 
 <!-- ACTIVITY:START -->
+- 🔀 Opened PR [#9](https://github.com/AbdullahBakir97/AbdullahBakir97/pull/9) in [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- 🔀 Closed PR [#8](https://github.com/AbdullahBakir97/AbdullahBakir97/pull/8) in [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
+- 🔀 Opened PR [#8](https://github.com/AbdullahBakir97/AbdullahBakir97/pull/8) in [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/AbdullahBakir97`](https://github.com/AbdullahBakir97/AbdullahBakir97)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
 - ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Django--LMS--Learning-Management-System`](https://github.com/AbdullahBakir97/Django--LMS--Learning-Management-System)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
-- ⬆️ Pushed 1 commit to [`AbdullahBakir97/Mini-RAG`](https://github.com/AbdullahBakir97/Mini-RAG)
 <!-- ACTIVITY:END -->
 
 <!-- LATEST RELEASES -->
