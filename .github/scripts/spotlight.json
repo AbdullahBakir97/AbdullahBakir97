@@ -1,0 +1,118 @@
+[
+  {
+    "repo": "Mini-RAG",
+    "eyebrow": "AI · RETRIEVAL",
+    "name": "Mini-RAG",
+    "one_liner": "Ask your documents a question and get an answer with the sources.",
+    "rows": [
+      [
+        "WHAT",
+        "Upload documents, index them with embeddings, and get streamed answers with numbered citations. When the documents don't support an answer, it says so."
+      ],
+      [
+        "BUILT",
+        "Hybrid search (pgvector + full-text), an MCP server for AI agents, multi-tenant API keys with quotas and audit log, TypeScript and Python SDKs."
+      ],
+      [
+        "QUALITY",
+        "Retrieval evaluation suite that runs in CI, alongside pytest, ruff, mypy and Vitest."
+      ]
+    ],
+    "stats": [
+      [
+        "live:commits",
+        "commits"
+      ],
+      [
+        "2",
+        "SDKs"
+      ]
+    ],
+    "stack_icons": [
+      "fastapi",
+      "postgresql",
+      "vuejs",
+      "typescript",
+      "docker"
+    ],
+    "stack_text": "FastAPI · PostgreSQL + pgvector · Vue 3 · TypeScript · Docker"
+  },
+  {
+    "repo": "Django--LMS--Learning-Management-System",
+    "eyebrow": "FULL-STACK PRODUCT",
+    "name": "Django LMS",
+    "one_liner": "A course platform with payments, a social feed and a job board.",
+    "rows": [
+      [
+        "WHAT",
+        "Paid courses via Stripe, quizzes and verifiable PDF certificates, a social feed with groups and events, job search with skill matching."
+      ],
+      [
+        "BUILT",
+        "Live chat with typing indicators and read receipts on Django Channels; notifications in-app, by email or as digests; moderation and instructor analytics."
+      ],
+      [
+        "QUALITY",
+        "CI with backend pytest, frontend unit tests and Playwright end-to-end journeys; OpenAPI docs."
+      ]
+    ],
+    "stats": [
+      [
+        "live:commits",
+        "commits"
+      ],
+      [
+        "live:stars",
+        "stars"
+      ],
+      [
+        "live:forks",
+        "forks"
+      ]
+    ],
+    "stack_icons": [
+      "django",
+      "vuejs",
+      "postgresql",
+      "redis",
+      "docker"
+    ],
+    "stack_text": "Django · DRF · Channels · Celery · Vue 3 · PostgreSQL · Redis"
+  },
+  {
+    "repo": "DevTrust",
+    "eyebrow": "OPEN SOURCE · PYPI",
+    "name": "DevTrust",
+    "one_liner": "Tools I made to check code when AI writes part of it.",
+    "rows": [
+      [
+        "WHAT",
+        "Architecture models of a codebase, smart test selection per change, AI-aware PR review that flags invented function calls, LLM tracing and cost attribution."
+      ],
+      [
+        "BUILT",
+        "Python monorepo with GitHub Apps that run test selection and PR review on every pull request."
+      ],
+      [
+        "QUALITY",
+        "Published to PyPI with Trusted Publishing; 281 tests, mypy --strict and ruff in CI."
+      ]
+    ],
+    "stats": [
+      [
+        "9",
+        "packages on PyPI"
+      ],
+      [
+        "281",
+        "tests"
+      ]
+    ],
+    "stack_icons": [
+      "python",
+      "githubactions",
+      "pytest"
+    ],
+    "stack_text": "Python 3.11+ · uv · tree-sitter · GitHub Apps"
+  }
+]

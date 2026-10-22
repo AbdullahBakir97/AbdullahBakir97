@@ -21,6 +21,7 @@ import random
 import re
 import sys
 import urllib.parse
+from html import escape as html_escape
 from pathlib import Path
 from typing import Callable
 
@@ -29,7 +30,7 @@ import requests
 GH_USER = os.environ.get("GH_USER", "AbdullahBakir97")
 GH_TOKEN = os.environ.get("GH_TOKEN", "")
 PSI_API_KEY = os.environ.get("PSI_API_KEY", "")
-PSI_URL = os.environ.get("PSI_URL", "http://kharsa-style.de/")
+PSI_URL = os.environ.get("PSI_URL", "https://kharsa-style.de/")
 README_PATH = os.environ.get("README_PATH", "README.md")
 START_YEAR = int(os.environ.get("START_YEAR", "2024"))
 
@@ -126,26 +127,37 @@ EVENT_FORMATTERS: dict[str, Callable[[dict], str | None]] = {
 }
 
 
-def fetch_activity(limit: int = 8) -> str:
+def fetch_activity(limit: int = 6) -> str:
+    """Recent public activity grouped by repository: a table instead of one line per push."""
     r = requests.get(
-        f"https://api.github.com/users/{GH_USER}/events/public?per_page=30",
+        f"https://api.github.com/users/{GH_USER}/events/public?per_page=100",
         headers=GH_HEADERS,
         timeout=20,
     )
     r.raise_for_status()
-    lines: list[str] = []
+    repos: dict[str, dict] = {}
     for event in r.json():
-        formatter = EVENT_FORMATTERS.get(event["type"])
-        if not formatter:
-            continue
-        line = formatter(event)
-        if line:
-            lines.append(f"- {line}")
-        if len(lines) >= limit:
-            break
-    if not lines:
+        name = event["repo"]["name"].split("/")[-1]
+        if name.lower() == GH_USER.lower():
+            continue  # the profile repo itself is README plumbing
+        row = repos.setdefault(name, {"commits": 0, "prs": 0, "other": 0, "last": event["created_at"]})
+        kind = event["type"]
+        if kind == "PushEvent":
+            p = event["payload"]
+            row["commits"] += p.get("size") or p.get("distinct_size") or len(p.get("commits") or []) or 1
+        elif kind == "PullRequestEvent":
+            row["prs"] += 1
+        else:
+            row["other"] += 1
+        row["last"] = max(row["last"], event["created_at"])
+    if not repos:
         return "_No recent public activity._"
-    return "\n".join(lines)
+    top = sorted(repos.items(), key=lambda kv: kv[1]["last"], reverse=True)[:limit]
+    out = ["| Repository | Commits | Pull requests | Last activity |", "| :-- | --: | --: | :-- |"]
+    for name, row in top:
+        out.append(f"| [{name}](https://github.com/{GH_USER}/{name}) | {row['commits']} | {row['prs']} | "
+                   f"{_humanize_date(row['last'])} |")
+    return "\n".join(out)
 
 
 # --- LATEST RELEASES ----------------------------------------------------------
@@ -200,13 +212,12 @@ def fetch_releases(limit: int = 5) -> str:
     rows.sort(key=lambda r: r["at"], reverse=True)
     if not rows:
         return "_No releases yet._"
-    out = []
+    out = ["| Project | Version | Released | Notes |", "| :-- | :-- | :-- | :-- |"]
     for row in rows[:limit]:
-        date = row["at"][:10]
-        out.append(
-            f"- 📦 [`{row['repo']}` `{row['tag']}`]({row['url']}) — {row['name']} "
-            f"<sub>({date})</sub>"
-        )
+        notes = row["name"]
+        if notes.startswith(row["tag"]):
+            notes = notes[len(row["tag"]):].lstrip(" —-:") or "—"
+        out.append(f"| **{row['repo']}** | [`{row['tag']}`]({row['url']}) | {row['at'][:10]} | {notes} |")
     return "\n".join(out)
 
 
@@ -229,62 +240,136 @@ def score_color(pct: int) -> str:
     return "red"
 
 
-def fetch_pagespeed() -> str:
-    params = [("url", PSI_URL), ("strategy", "mobile")]
-    for cat in PSI_CATEGORIES:
-        params.append(("category", cat))
+PSI_AUDITS = [("largest-contentful-paint", "LCP"), ("cumulative-layout-shift", "CLS"),
+              ("total-blocking-time", "TBT"), ("first-contentful-paint", "FCP")]
+PAGESPEED_SVG = "pagespeed.svg"
+
+
+def _psi_run(strategy: str) -> dict:
+    params = [("url", PSI_URL), ("strategy", strategy)] + [("category", c) for c in PSI_CATEGORIES]
     if PSI_API_KEY:
         params.append(("key", PSI_API_KEY))
-    qs = urllib.parse.urlencode(params)
-    url = f"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?{qs}"
+    url = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?" + urllib.parse.urlencode(params)
     last_exc: Exception | None = None
     for attempt in range(3):
         try:
             r = requests.get(url, timeout=120)
             if r.status_code == 429:
-                hint = "" if PSI_API_KEY else " (set PSI_API_KEY secret to lift rate limits)"
+                hint = "" if PSI_API_KEY else " (set the PSI_API_KEY secret to lift the shared quota)"
                 raise RuntimeError(f"PSI rate-limited{hint}")
             r.raise_for_status()
-            break
+            lh = r.json().get("lighthouseResult", {})
+            cats = lh.get("categories", {})
+            scores = {c: round(cats[c.lower().replace("_", "-")]["score"] * 100)
+                      for c in PSI_CATEGORIES if cats.get(c.lower().replace("_", "-"), {}).get("score") is not None}
+            audits = lh.get("audits", {})
+            vitals = [(label, audits[k].get("displayValue", "—"), audits[k].get("score"))
+                      for k, label in PSI_AUDITS if k in audits]
+            return {"scores": scores, "vitals": vitals}
         except Exception as e:
             last_exc = e
             if attempt < 2:
                 import time
                 time.sleep(5 * (attempt + 1))
-    else:
-        raise last_exc  # type: ignore[misc]
-    categories = r.json().get("lighthouseResult", {}).get("categories", {})
-    scores: dict[str, int] = {}
-    for cat in PSI_CATEGORIES:
-        key = cat.lower().replace("_", "-")
-        node = categories.get(key)
-        if node and node.get("score") is not None:
-            scores[cat] = round(node["score"] * 100)
-    if not scores:
-        return "_PageSpeed scores unavailable._"
+    raise last_exc  # type: ignore[misc]
 
-    badges: list[str] = []
-    rows: list[str] = []
-    for cat in PSI_CATEGORIES:
-        if cat not in scores:
-            continue
-        pct = scores[cat]
-        label = PSI_LABELS[cat]
-        color = score_color(pct)
-        badges.append(
-            f'<img src="https://img.shields.io/badge/{label}-{pct}%25-{color}'
-            f'?style=for-the-badge&logo=google&logoColor=white" alt="{label}: {pct}%" />'
-        )
-        rows.append(f"<tr><td>{label.replace('_', ' ')}</td><td>{pct}/100</td></tr>")
 
-    today = dt.date.today().isoformat()
-    return (
-        '<p align="center">' + "\n  ".join(badges) + "</p>\n\n"
-        '<table align="center"><tr><th>Metric</th><th>Score</th></tr>\n'
-        + "\n".join(rows)
-        + "\n</table>\n\n"
-        f'<p align="center"><em>Last updated {today} (mobile strategy).</em></p>'
-    )
+def _psi_color(v: float) -> tuple[str, str]:
+    if v >= 90:
+        return "#0cce6b", "#0b2a1a"
+    if v >= 50:
+        return "#ffa400", "#2e2208"
+    return "#ff4e42", "#2e0f0e"
+
+
+def pagespeed_svg(mobile: dict, desktop: dict | None, site: str, host: str, updated: str) -> str:
+    W, H = 1400, 760
+    B, G = SEC_BLUE, SEC_GREEN
+    s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
+         f'aria-label="Lighthouse scores for {html_escape(host)}: '
+         + ", ".join(f"{PSI_LABELS[c].replace('_', ' ')} {v}" for c, v in mobile["scores"].items()) + '">']
+    s.append(f'<text x="6" y="40" font-family="{SEC_SANS}" font-size="30" font-weight="700" fill="#ffffff">{html_escape(site)}'
+             f'<tspan fill="#8b949e" font-weight="400"> · {html_escape(host)}</tspan></text>'
+             f'<text x="6" y="76" font-family="{SEC_SANS}" font-size="20" fill="#8b949e">Live salon website built on my '
+             f'<tspan fill="{B}" font-weight="700">Barber-Salon</tspan> platform</text>'
+             f'<text x="{W - 6}" y="76" text-anchor="end" font-family="{SEC_SANS}" font-size="18" fill="#8b949e">updated {updated}</text>')
+    # mobile tab + rings
+    s.append(f'<path d="M6 150 V118 a10 10 0 0 1 10-10 H146 a10 10 0 0 1 10 10 V150" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>'
+             f'<text x="81" y="137" text-anchor="middle" font-family="{SEC_MONO}" font-size="16" font-weight="700" letter-spacing="2.5" fill="#ffffff">MOBILE</text>'
+             f'<line x1="0" y1="150" x2="{W}" y2="150" stroke="#30363d" stroke-width="1.5"/><line x1="0" y1="430" x2="{W}" y2="430" stroke="#30363d" stroke-width="1.5"/>')
+    cats = [c for c in PSI_CATEGORIES if c in mobile["scores"]]
+    for i, c in enumerate(cats):
+        v = mobile["scores"][c]
+        col, bg = _psi_color(v)
+        cx, cy, r = W / len(cats) * (i + .5), 268, 82
+        circ = 2 * math.pi * r
+        s.append(f'<circle cx="{cx:.0f}" cy="{cy}" r="{r}" fill="{bg}" stroke="{bg}" stroke-width="14"/>'
+                 f'<circle cx="{cx:.0f}" cy="{cy}" r="{r}" fill="none" stroke="{col}" stroke-width="14" stroke-linecap="round" '
+                 f'stroke-dasharray="{circ * v / 100:.1f} {circ:.1f}" transform="rotate(-90 {cx:.0f} {cy})"/>'
+                 f'<text x="{cx:.0f}" y="{cy + 20}" text-anchor="middle" font-family="{SEC_SANS}" font-size="56" font-weight="800" fill="{col}">{v}</text>'
+                 f'<text x="{cx:.0f}" y="{cy + 134}" text-anchor="middle" font-family="{SEC_SANS}" font-size="22" fill="#ffffff">{PSI_LABELS[c].replace("_", " ")}</text>')
+    y = 488
+    if desktop and desktop.get("scores"):
+        parts, x = [], 190
+        s.append(f'<text x="6" y="{y}" font-family="{SEC_MONO}" font-size="16" font-weight="700" letter-spacing="3" fill="#8b949e">DESKTOP</text>')
+        for c in cats:
+            if c not in desktop["scores"]:
+                continue
+            v = desktop["scores"][c]
+            label = PSI_LABELS[c].replace("_", " ")
+            s.append(f'<text x="{x}" y="{y}" font-family="{SEC_SANS}" font-size="20" fill="#ffffff">{label} '
+                     f'<tspan font-size="26" font-weight="800" fill="{_psi_color(v)[0]}">{v}</tspan></text>')
+            x += len(label) * 11 + 92
+    if mobile.get("vitals"):
+        s.append(f'<text x="6" y="{y + 66}" font-family="{SEC_MONO}" font-size="16" font-weight="700" letter-spacing="3.5" fill="{G}">// CORE WEB VITALS · MOBILE</text>')
+        t0, t1 = y + 88, H - 50
+        s.append(f'<line x1="0" y1="{t0}" x2="{W}" y2="{t0}" stroke="#30363d" stroke-width="1.5"/><line x1="0" y1="{t1}" x2="{W}" y2="{t1}" stroke="#30363d" stroke-width="1.5"/>')
+        tw = W / len(mobile["vitals"])
+        for i, (label, value, score) in enumerate(mobile["vitals"]):
+            x = i * tw
+            if i:
+                s.append(f'<line x1="{x}" y1="{t0}" x2="{x}" y2="{t1}" stroke="#30363d" stroke-width="1.5"/>')
+            sc = 0 if score is None else score * 100
+            state, col = ("good", "#0cce6b") if sc >= 90 else ("needs work", "#ffa400") if sc >= 50 else ("poor", "#ff4e42")
+            s.append(f'<text x="{x + 26}" y="{t0 + 34}" font-family="{SEC_MONO}" font-size="15" font-weight="700" letter-spacing="2.5" fill="#8b949e">{label}</text>'
+                     f'<text x="{x + 24}" y="{t0 + 84}" font-family="{SEC_SANS}" font-size="44" font-weight="800" fill="{B}">{html_escape(value)}</text>'
+                     f'<circle cx="{x + 32}" cy="{t0 + 111}" r="6" fill="{col}"/><text x="{x + 46}" y="{t0 + 117}" font-family="{SEC_SANS}" font-size="18" font-weight="600" fill="{col}">{state}</text>')
+    lg = [("#0cce6b", "90–100 good"), ("#ffa400", "50–89 needs work"), ("#ff4e42", "0–49 poor")]
+    x = 6
+    for col, txt in lg:
+        s.append(f'<circle cx="{x + 7}" cy="{H - 16}" r="7" fill="{col}"/><text x="{x + 22}" y="{H - 10}" font-family="{SEC_SANS}" font-size="17" fill="#8b949e">{txt}</text>')
+        x += len(txt) * 9 + 54
+    s.append(f'<text x="{W - 6}" y="{H - 10}" text-anchor="end" font-family="{SEC_SANS}" font-size="16" fill="#6e7681">'
+             'not affiliated with Google · PageSpeed Insights is a trademark of Google LLC</text></svg>')
+    return "".join(s)
+
+
+def fetch_pagespeed() -> str:
+    """Render assets/stats/pagespeed.svg. When Lighthouse can't be reached the previous
+    image stays; with no image at all the section stays empty instead of showing a placeholder."""
+    dest = Path(ASSETS_DIR) / "stats" / PAGESPEED_SVG
+    host = urllib.parse.urlparse(PSI_URL).netloc or PSI_URL
+    try:
+        mobile = _psi_run("mobile")
+        if not mobile["scores"]:
+            raise RuntimeError("no scores in the PSI response")
+        try:
+            desktop = _psi_run("desktop")
+        except Exception as e:
+            warn(f"desktop PSI run failed, showing mobile only: {e}")
+            desktop = None
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(pagespeed_svg(mobile, desktop, "Kharsa Style", host,
+                                      dt.date.today().strftime("%b %-d, %Y") if os.name != "nt" else dt.date.today().isoformat()),
+                        encoding="utf-8")
+    except Exception as e:
+        warn(f"PageSpeed unavailable, keeping the last image: {e}")
+    if not dest.exists():
+        return ""
+    return ('<p align="center"><img src="./assets/sections/pagespeed.svg" width="100%" alt="09 · Live Performance"/></p>\n\n'
+            f'<p align="center"><a href="https://pagespeed.web.dev/analysis?url={urllib.parse.quote(PSI_URL, safe="")}">'
+            f'<img src="./{ASSETS_DIR}/stats/{PAGESPEED_SVG}" width="100%" alt="Lighthouse scores for {host}"/></a></p>\n\n'
+            '<p align="center"><img src="./assets/sections/splitter.svg" width="100%" alt=""/></p>')
 
 
 # --- HIGHLIGHTS_STATS ---------------------------------------------------------
@@ -330,10 +415,10 @@ def fetch_year_stats() -> str:
 
     return (
         '<p align="center">'
-        f'<img src="https://img.shields.io/badge/Commits-{cc["totalCommitContributions"]}-red?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> '
-        f'<img src="https://img.shields.io/badge/PRs-{cc["totalPullRequestContributions"]}-red?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> '
-        f'<img src="https://img.shields.io/badge/New_Repos-{new_repos_count}-red?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> '
-        f'<img src="https://img.shields.io/badge/Active_in-{active_repos}_repos-red?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" />'
+        f'<img src="https://img.shields.io/badge/Commits-{cc["totalCommitContributions"]}-30363d?style=for-the-badge&logo=git&logoColor=white" alt="Commits" /> '
+        f'<img src="https://img.shields.io/badge/PRs-{cc["totalPullRequestContributions"]}-30363d?style=for-the-badge&logo=github&logoColor=white" alt="PRs" /> '
+        f'<img src="https://img.shields.io/badge/New_Repos-{new_repos_count}-30363d?style=for-the-badge&logo=github&logoColor=white" alt="New repos" /> '
+        f'<img src="https://img.shields.io/badge/Active_in-{active_repos}_repos-30363d?style=for-the-badge&logo=github&logoColor=white" alt="Active repos" />'
         "</p>"
     )
 
@@ -1293,14 +1378,16 @@ def gitgraph_from_activity(limit: int = 8) -> str:
     if not pushes:
         return "_No recent push events to visualize._"
 
-    lines = ["```mermaid", "gitGraph", '   commit id: "main"']
+    lines = ["```mermaid",
+             "%%{init: {'theme': 'dark', 'gitGraph': {'showCommitLabel': false, 'mainBranchName': 'main'}}}%%",
+             "gitGraph", "   commit"]
     for repo, count in pushes:
-        # Sanitize branch name for Mermaid (no special chars)
-        branch = re.sub(r"[^a-zA-Z0-9_-]", "-", repo)[:30] or "branch"
+        # Mermaid branch names: letters, digits, dash, underscore; keep the full name
+        branch = re.sub(r"[^a-zA-Z0-9_-]", "-", repo).strip("-") or "branch"
         lines.append(f"   branch {branch}")
         lines.append(f"   checkout {branch}")
-        for i in range(min(count, 4)):  # cap at 4 commits per branch for readability
-            lines.append(f'   commit id: "c{i + 1}"')
+        for _ in range(min(count, 4)):  # cap at 4 commits per branch for readability
+            lines.append("   commit")
         lines.append("   checkout main")
         lines.append("   merge " + branch)
     lines.append("```")
@@ -1320,6 +1407,17 @@ def _link_bar(prefix: str, href_for: Callable[[int], str], label_for: Callable[[
         suffix = " <sub>(live)</sub>" if y == CURRENT_YEAR else ""
         parts.append(f'<a href="{href_for(y)}">{label_for(y)}{suffix}</a>')
     return f'<p align="center"><b>{prefix}</b> ' + " · ".join(parts) + "</p>"
+
+
+def contrib_links() -> str:
+    """One line of links to the same data in 3D: the 3D profile, skyline models and GitHub cities."""
+    years = list(range(2023, dt.date.today().year + 1))
+    def yl(href):
+        return " · ".join(f'<a href="{href(y)}">{y}</a>' for y in years)
+    return ('<p align="center"><b>The same data in 3D:</b> '
+            f'<a href="./profile-3d-contrib/profile-night-rainbow.svg">3D profile</a> · '
+            f'skyline models {yl(lambda y: f"{STL_BASE}/skyline-{y}.stl")} · '
+            f'cities {yl(lambda y: f"https://honzaap.github.io/GithubCity?name={GH_USER}&year={y}")}</p>')
 
 
 def stl_links() -> str:
@@ -1345,23 +1443,6 @@ def gitcity_links() -> str:
 # Scores all owned non-fork non-archived repos by recent activity + stars,
 # renders the top 6 as narrative cards.
 
-def _category_for(repo: dict) -> str:
-    name = repo["name"]
-    topics = set(repo.get("topics") or [])
-    if name in {"PortfolioCraft", "GitHub-Doc-Generator", "Repo-Directory-Structure",
-                "Python-Environment-Management-Tool", "API-Client-Generator",
-                "commit-craft", "pr-coach", "repodoc-ai", "ai-quality-gate",
-                "issue-triage-bot", "release-pilot"}:
-        return "🛠️ Tooling"
-    if topics & {"ai", "ml", "machine-learning", "rag", "llm"} or name in {"AI-KI", "Mini-RAG", "cortex"}:
-        return "🧠 AI / Data"
-    if topics & {"game", "pygame"} or name in {"Py-Tetris-Game", "Space-Shooter"}:
-        return "🎮 Game"
-    if (repo.get("language") or "") in ("Vue", "TypeScript", "JavaScript", "HTML", "CSS"):
-        return "🎨 Frontend"
-    return "🌐 Backend / API"
-
-
 def _score_repo(repo: dict, recent_commits: int) -> float:
     stars = repo.get("stargazers_count", 0)
     forks = repo.get("forks_count", 0)
@@ -1371,11 +1452,6 @@ def _score_repo(repo: dict, recent_commits: int) -> float:
     return 0.4 * stars + 0.4 * recent_commits + 0.2 * (recency * 50)
 
 
-PIN_CARD_TITLE_COLOR = "#c6c6c2"
-PIN_CARD_ICON_COLOR = "#ffde01"
-PIN_CARD_TEXT_COLOR = "#da644d"
-
-# Language → color (mirrors github-readme-stats / GitHub Linguist)
 LANG_COLORS = {
     "Python": "#3572A5", "JavaScript": "#F1E05A", "TypeScript": "#3178C6",
     "Vue": "#41B883", "HTML": "#E34F26", "CSS": "#563D7C", "SCSS": "#C6538C",
@@ -1384,186 +1460,6 @@ LANG_COLORS = {
     "C++": "#F34B7D", "C#": "#178600", "PHP": "#4F5D95", "Ruby": "#701516",
     "Inno Setup": "#264B99", "MDX": "#1B6E5E",
 }
-
-PIN_W, PIN_H = 460, 200
-
-
-def _truncate(s: str, n: int) -> str:
-    s = s.strip()
-    return s if len(s) <= n else s[:n - 1].rstrip() + "…"
-
-
-def _wrap_lines_pin(s: str, line_chars: int, max_lines: int) -> list[str]:
-    s = (s or "").strip()
-    out: list[str] = []
-    while s and len(out) < max_lines:
-        if len(s) <= line_chars:
-            out.append(s)
-            break
-        cut = s.rfind(" ", 0, line_chars + 1)
-        if cut <= 0:
-            cut = line_chars
-        out.append(s[:cut].rstrip())
-        s = s[cut:].lstrip()
-    if s and len(out) == max_lines:
-        last = out[-1]
-        room = line_chars - 1
-        out[-1] = (last[: room].rstrip() + "…") if len(last) > room else last
-    return out
-
-
-def render_pin_svg(repo: dict, dest: Path) -> None:
-    """Render a Pinned repo card — 460x200, distinctly styled vs the
-    larger Featured cards. Editorial layout: repo icon + name header,
-    2-line description, topic chips, lang dot + star/fork stats, last
-    commit timestamp. No third-party dependency."""
-    name = repo["name"]
-    desc = (repo.get("description") or "_No description._").strip()
-    stars = repo.get("stargazers_count", 0)
-    forks = repo.get("forks_count", 0)
-    lang = repo.get("language") or "—"
-    lang_color = LANG_COLORS.get(lang, "#6e7681")
-    topics = (repo.get("topics") or [])[:5]
-    pushed = (repo.get("pushed_at") or "")[:10]
-
-    desc_lines = _wrap_lines_pin(desc, 52, 2)
-    title = _truncate(name, 30)
-
-    parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{PIN_W}" height="{PIN_H}" '
-        f'viewBox="0 0 {PIN_W} {PIN_H}" role="img" aria-label="{name}">',
-        '<defs>'
-        # Background — subtle inverse gradient (pin uses dark-to-mid, featured uses mid-to-dark)
-        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0%" stop-color="#161b22"/>'
-        '<stop offset="100%" stop-color="#0a0e14"/>'
-        '</linearGradient>'
-        # Pin accent stripe gradient (yellow→red, distinct from featured's red→purple)
-        '<linearGradient id="pinAccent" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0%" stop-color="#ffde01"/>'
-        '<stop offset="100%" stop-color="#F90001"/>'
-        '</linearGradient>'
-        '</defs>',
-        # Card body
-        f'<rect width="{PIN_W-2}" height="{PIN_H-2}" x="1" y="1" rx="10" '
-        f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
-        # Left vertical accent stripe (yellow→red, full height — visual fingerprint of "pin")
-        f'<rect x="0" y="0" width="4" height="{PIN_H}" fill="url(#pinAccent)" rx="2"/>',
-    ]
-
-    # Header — pin icon + repo name
-    parts.append(
-        # Stylized pin emoji (rendered as text — works in pure SVG)
-        f'<text x="20" y="36" font-family="-apple-system,Segoe UI Emoji,sans-serif" '
-        f'font-size="18" fill="#F90001">📌</text>'
-        # Repo name
-        f'<text x="46" y="36" '
-        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-        f'font-size="17" font-weight="800" fill="#e6edf3" letter-spacing="-0.2">'
-        f'{title}</text>'
-    )
-    # "PINNED" tag on the right
-    parts.append(
-        f'<g transform="translate({PIN_W-72}, 18)">'
-        f'<rect width="58" height="22" rx="11" fill="#0d1117" '
-        f'stroke="#ffde01" stroke-width="1"/>'
-        f'<text x="29" y="15" text-anchor="middle" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="9.5" font-weight="700" fill="#ffde01" letter-spacing="1.5">'
-        f'PINNED</text>'
-        f'</g>'
-    )
-
-    # Description (2 lines)
-    desc_y = 64
-    for i, line in enumerate(desc_lines):
-        parts.append(
-            f'<text x="20" y="{desc_y + i*18}" '
-            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="12.5" font-weight="400" fill="#c9d1d9" opacity="0.9">'
-            f'{line}</text>'
-        )
-
-    # Topic chips
-    chip_y = 116
-    chip_x = 20
-    for i, t in enumerate(topics):
-        bg, fg = TOPIC_PALETTE[i % len(TOPIC_PALETTE)]
-        chip_w = max(48, len(t) * 6.5 + 14)
-        if chip_x + chip_w > PIN_W - 16:
-            break
-        parts.append(
-            f'<g transform="translate({chip_x}, {chip_y})">'
-            f'<rect width="{chip_w}" height="20" rx="10" fill="#0d1117" '
-            f'stroke="{bg}" stroke-width="1"/>'
-            f'<text x="{chip_w//2}" y="14" text-anchor="middle" '
-            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="10" font-weight="600" fill="{fg}" letter-spacing="0.2">'
-            f'{t}</text>'
-            f'</g>'
-        )
-        chip_x += chip_w + 5
-
-    # Footer — language + stars + forks + last commit
-    foot_y = PIN_H - 22
-    # Language dot + name
-    parts.append(
-        f'<circle cx="28" cy="{foot_y-4}" r="6" fill="{lang_color}"/>'
-        f'<text x="40" y="{foot_y}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="600" fill="#c9d1d9">'
-        f'{lang}</text>'
-    )
-    # Stars
-    star_x = 130
-    parts.append(
-        f'<g transform="translate({star_x}, {foot_y-12})">'
-        f'<path d="M8 0l2.39 4.84L16 5.6l-4 3.9.94 5.5L8 12.4 3.06 15l.94-5.5-4-3.9 5.61-.76L8 0z" '
-        f'fill="#ffde01"/>'
-        f'</g>'
-        f'<text x="{star_x+22}" y="{foot_y}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="700" fill="#c9d1d9">'
-        f'{stars}</text>'
-    )
-    # Forks
-    fork_x = star_x + 60
-    parts.append(
-        f'<g transform="translate({fork_x}, {foot_y-12})" stroke="#7d8590" stroke-width="1.5" fill="none">'
-        f'<circle cx="3" cy="3" r="2"/>'
-        f'<circle cx="13" cy="3" r="2"/>'
-        f'<circle cx="8" cy="14" r="2"/>'
-        f'<path d="M3 5v3a2 2 0 002 2h6a2 2 0 002-2V5"/>'
-        f'<line x1="8" y1="10" x2="8" y2="12"/>'
-        f'</g>'
-        f'<text x="{fork_x+22}" y="{foot_y}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="700" fill="#c9d1d9">'
-        f'{forks}</text>'
-    )
-    # Last commit (right aligned)
-    parts.append(
-        f'<text x="{PIN_W-20}" y="{foot_y}" text-anchor="end" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="11" font-weight="500" fill="#7d8590">'
-        f'updated {pushed}</text>'
-    )
-
-    parts.append('</svg>')
-
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text("".join(parts), encoding="utf-8")
-
-
-def regenerate_pin_svgs(repos: list[dict]) -> None:
-    pins_dir = Path(ASSETS_DIR) / "pins"
-    pins_dir.mkdir(parents=True, exist_ok=True)
-    for r in repos:
-        try:
-            render_pin_svg(r, pins_dir / f"{r['name']}.svg")
-        except Exception as e:
-            warn(f"pin render failed for {r['name']}: {e}")
-
 
 # --- SELF-HOSTED GITHUB-STATS CARDS ------------------------------------------
 # github-readme-stats.vercel.app has been returning 503 globally for hours,
@@ -1598,9 +1494,119 @@ def _fmt(n: int) -> str:
     return str(n)
 
 
+STATS_ACCENT = "#58a6ff"   # icons and numbers on the stats cards; labels keep the codeSTACKr orange
+
+_GITHUB_MARK = ("M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 "
+                "0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 "
+                "0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 "
+                "1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55"
+                "-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 "
+                "1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z")
+
+
+def _stat_icon(kind: str, x: float, y: float, color: str) -> str:
+    """Small line icons in the spirit of the octicons on github-readme-stats (16px box at x, y)."""
+    s = f'fill="none" stroke="{color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"'
+    g = f'<g transform="translate({x} {y})">'
+    if kind == "star":
+        return g + f'<path {s} d="M8 1.5l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.3l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></g>'
+    if kind == "commits":
+        return g + f'<circle {s} cx="8" cy="8" r="6.2"/><path {s} d="M8 4.5V8l2.4 1.6"/></g>'
+    if kind == "pr":
+        return (g + f'<circle {s} cx="4" cy="3.5" r="1.8"/><circle {s} cx="4" cy="12.5" r="1.8"/>'
+                f'<circle {s} cx="12" cy="12.5" r="1.8"/><path {s} d="M4 5.3v5.4M12 10.7V6.5a2 2 0 0 0-2-2H7.5"/></g>')
+    if kind == "issue":
+        return g + f'<circle {s} cx="8" cy="8" r="6.2"/><circle cx="8" cy="8" r="1.4" fill="{color}"/></g>'
+    return (g + f'<path {s} d="M3 2.5h8.5a1 1 0 0 1 1 1v10H4.5A1.5 1.5 0 0 1 3 12z"/>'
+            f'<path {s} d="M3 12a1.5 1.5 0 0 1 1.5-1.5h8"/></g>')
+
+
+_PROFILE_ICONS = {
+    "contrib": "M8 0c4.42 0 8 3.58 8 8a8 8 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38v-2.2c0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82a7.6 7.6 0 0 0-4 0C4.48 3.09 3.8 3.3 3.8 3.3c-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94v1.49c0 .21-.15.45-.55.38A8 8 0 0 1 0 8c0-4.42 3.58-8 8-8Z",
+}
+
+
+def _profile_icon(kind: str, x: float, y: float, color: str) -> str:
+    s = f'fill="none" stroke="{color}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"'
+    g = f'<g transform="translate({x} {y}) scale(1.25)">'
+    if kind == "contrib":
+        return g + f'<path fill="{color}" d="{_PROFILE_ICONS["contrib"]}"/></g>'
+    if kind == "repos":
+        return (g + f'<path {s} d="M3 2.5h8.5a1 1 0 0 1 1 1v10H4.5A1.5 1.5 0 0 1 3 12z"/>'
+                f'<path {s} d="M3 12a1.5 1.5 0 0 1 1.5-1.5h8"/></g>')
+    if kind == "joined":
+        return g + f'<circle {s} cx="8" cy="8" r="6.2"/><path {s} d="M8 4.5V8l2.4 1.6"/></g>'
+    return g + f'<rect {s} x="1.5" y="3.5" width="13" height="9.5" rx="1.2"/><path {s} d="M2 4.5l6 4.5 6-4.5"/></g>'
+
+
+def profile_details_svg(title: str, rows, months, accent: str = STATS_ACCENT) -> str:
+    """profile-details card in the codeSTACKr look: facts on the left, monthly contributions on the right."""
+    W, H = 700, 200
+    sans = "'Segoe UI',Ubuntu,'Helvetica Neue',Sans-Serif"
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{title}">',
+         f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="5" fill="#09131B"/>',
+         f'<text x="30" y="40" font-family="{sans}" font-size="22" fill="#ff652f">{title}</text>']
+    for i, (kind, text) in enumerate(rows):
+        y = 70 + i * 28
+        p.append(_profile_icon(kind, 30, y - 14, accent))
+        p.append(f'<text x="58" y="{y + 1}" font-family="{sans}" font-size="16" fill="#ffffff">{text}</text>')
+    # contributions per month, last 12 months
+    x0, x1, y0, y1 = 360, 640, 165, 60
+    peak = max([c for _, c in months] + [1])
+    step = 10 ** max(0, len(str(peak)) - 1)
+    top = ((peak + step - 1) // step) * step
+    pts = [(x0 + i * (x1 - x0) / max(1, len(months) - 1), y0 - (c / top) * (y0 - y1)) for i, (_, c) in enumerate(months)]
+    d = f"M{pts[0][0]:.1f} {y0}" + "".join(
+        f" C{(a[0] + b[0]) / 2:.1f} {a[1]:.1f} {(a[0] + b[0]) / 2:.1f} {b[1]:.1f} {b[0]:.1f} {b[1]:.1f}" if i else f" L{a[0]:.1f} {a[1]:.1f}"
+        for i, (a, b) in enumerate(zip([pts[0]] + pts[:-1], pts)))
+    p.append(f'<path d="{d} L{pts[-1][0]:.1f} {y0} Z" fill="#ff652f"/>')
+    p.append(f'<text x="{x1}" y="40" text-anchor="end" font-family="{sans}" font-size="12" fill="#ffffff">contributions in the last year</text>')
+    p.append(f'<line x1="{x1}" y1="{y1}" x2="{x1}" y2="{y0}" stroke="#42b883" stroke-width=".8"/>'
+             f'<line x1="{x0}" y1="{y0}" x2="{x1}" y2="{y0}" stroke="#42b883" stroke-width=".8"/>')
+    for k in range(0, 5):
+        v = top * k / 4
+        yy = y0 - (v / top) * (y0 - y1)
+        p.append(f'<text x="{x1 + 6}" y="{yy + 3}" font-family="{sans}" font-size="9" fill="{accent}">{int(v):,}</text>')
+    for i, (label, _) in enumerate(months):
+        if i % 2 == 0 or i == len(months) - 1:
+            p.append(f'<text x="{pts[i][0]:.1f}" y="{y0 + 14}" text-anchor="middle" font-family="{sans}" font-size="9" fill="{accent}">{label}</text>')
+    p.append("</svg>")
+    return "".join(p)
+
+
+def render_profile_details_svg(dest: Path) -> None:
+    r = requests.get(f"https://api.github.com/users/{GH_USER}", headers=GH_HEADERS, timeout=20)
+    r.raise_for_status()
+    u = r.json()
+    # daily counts come from the same heatmaps as the commit-name banner, so the numbers agree
+    days: dict[str, int] = {}
+    for f in sorted(Path(ASSETS_DIR).glob("heatmap-*.svg")):
+        for count, date in re.findall(r"<title>(\d+) on (\d{4}-\d{2}-\d{2})</title>", f.read_text(encoding="utf-8")):
+            days[date] = int(count)
+    total = sum(days.values())
+    today = dt.date.today()
+    months = []
+    for back in range(12, -1, -1):
+        y, m = today.year, today.month - back
+        while m <= 0:
+            y, m = y - 1, m + 12
+        key = f"{y}-{m:02d}"
+        months.append((f"{y % 100:02d}/{m:02d}", sum(c for d, c in days.items() if d.startswith(key))))
+    years = max(1, today.year - int(u["created_at"][:4]))
+    name = (u.get("name") or "").strip()
+    title = f"{GH_USER} ({name})" if name else GH_USER
+    rows = [("contrib", f"{total / 1000:.2f}k Contributions on GitHub" if total >= 1000 else f"{total} Contributions on GitHub"),
+            ("repos", f"{u.get('public_repos', 0)} Public Repos"),
+            ("joined", f"Joined GitHub {years} year{'s' if years != 1 else ''} ago")]
+    if u.get("email"):
+        rows.append(("email", u["email"]))
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(profile_details_svg(title, rows, months), encoding="utf-8")
+
+
 def render_main_stats_svg(dest: Path) -> None:
-    """Emulate github-readme-stats main card with codeSTACKr-style theme.
-    Pulls live numbers via GraphQL — independent of the 503'd service."""
+    """The github-readme-stats main card in its codeSTACKr look, self-hosted so the numbers and icons
+    can carry their own colour (the hosted card can only colour labels and numbers together)."""
     now = dt.datetime.now(dt.timezone.utc)
     year_start = dt.datetime(now.year, 1, 1, tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -1611,90 +1617,37 @@ def render_main_stats_svg(dest: Path) -> None:
     total_prs = user["pullRequests"]["totalCount"]
     total_issues = user["issues"]["totalCount"]
     contributed_to = user["repositoriesContributedTo"]["totalCount"]
-
-    # Title
-    name = user.get("name") or GH_USER
-    title = f"{name}'s GitHub Stats"
-
-    W, H = 495, 195
+    name = (user.get("name") or GH_USER).strip()  # the profile name has a trailing space
     rows = [
-        ("Total Stars Earned",         _fmt(total_stars),       "⭐"),
-        ("Total Commits ({year})".format(year=now.year), _fmt(total_commits_yr), "🕒"),
-        ("Total PRs",                  _fmt(total_prs),          "🔀"),
-        ("Total Issues",               _fmt(total_issues),       "❗"),
-        ("Contributed to (last year)", _fmt(contributed_to),     "🤝"),
+        ("Total Stars Earned", _fmt(total_stars), "star"),
+        (f"Total Commits ({now.year})", _fmt(total_commits_yr), "commits"),
+        ("Total PRs", _fmt(total_prs), "pr"),
+        ("Total Issues", _fmt(total_issues), "issue"),
+        ("Contributed to (last year)", _fmt(contributed_to), "repo"),
     ]
-
-    # Compute simple "rank" (A+ if all metrics over thresholds, scale down)
-    score = (
-        (1 if total_stars >= 100 else 0) +
-        (1 if total_commits_yr >= 1000 else 0) +
-        (1 if total_prs >= 50 else 0) +
-        (1 if total_issues >= 50 else 0) +
-        (1 if contributed_to >= 10 else 0)
-    )
-    rank_label = ["B", "B+", "A-", "A", "A+", "S"][min(score, 5)]
-
-    parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
-        f'viewBox="0 0 {W} {H}" role="img" aria-label="{title}">',
-        '<defs>'
-        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0%" stop-color="#1a1f29"/>'
-        '<stop offset="100%" stop-color="#0d1117"/>'
-        '</linearGradient>'
-        '<linearGradient id="rankRing" x1="0" y1="0" x2="1" y2="1">'
-        '<stop offset="0%" stop-color="#F90001"/>'
-        '<stop offset="100%" stop-color="#FF652F"/>'
-        '</linearGradient>'
-        '</defs>',
-        f'<rect width="{W-2}" height="{H-2}" x="1" y="1" rx="6" '
-        f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
-        # Title
-        f'<text x="20" y="32" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="16" font-weight="700" fill="#c6c6c2">'
-        f'{title}</text>',
-        # Underline accent
-        f'<line x1="20" y1="40" x2="{W-130}" y2="40" stroke="#30363d" stroke-width="1"/>',
-    ]
-
-    # Rows
-    row_y = 65
-    for i, (label, value, icon) in enumerate(rows):
-        y = row_y + i * 22
-        parts.append(
-            f'<text x="20" y="{y}" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif" '
-            f'font-size="14" fill="#ffde01">{icon}</text>'
-            f'<text x="44" y="{y}" '
-            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="13" fill="#da644d">{label}:</text>'
-            f'<text x="{W-130}" y="{y}" text-anchor="end" '
-            f'font-family="-apple-system,BlinkMacSystemFont,SF Mono,Monaco,monospace" '
-            f'font-size="14" font-weight="700" fill="#c6c6c2">{value}</text>'
-        )
-
-    # Rank badge (right side)
-    rank_cx, rank_cy = W - 75, H // 2
-    rank_r = 50
-    parts.append(
-        # Outer gradient ring
-        f'<circle cx="{rank_cx}" cy="{rank_cy}" r="{rank_r}" fill="none" '
-        f'stroke="#30363d" stroke-width="6"/>'
-        f'<circle cx="{rank_cx}" cy="{rank_cy}" r="{rank_r}" fill="none" '
-        f'stroke="url(#rankRing)" stroke-width="6" '
-        f'stroke-dasharray="{(score+1)*52} 314" '
-        f'transform="rotate(-90 {rank_cx} {rank_cy})"/>'
-        # Center
-        f'<text x="{rank_cx}" y="{rank_cy+12}" text-anchor="middle" '
-        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,sans-serif" '
-        f'font-size="32" font-weight="900" fill="#c6c6c2">{rank_label}</text>'
-    )
-
-    parts.append('</svg>')
-
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text("".join(parts), encoding="utf-8")
+    dest.write_text(stats_card_svg(f"{name}'s GitHub Stats", rows), encoding="utf-8")
+
+
+def stats_card_svg(title: str, rows, accent: str = STATS_ACCENT) -> str:
+    W, H = 467, 195
+    sans = "'Segoe UI',Ubuntu,'Helvetica Neue',Sans-Serif"
+    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{title}">',
+         f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="4.5" fill="#09131B"/>',
+         f'<text x="25" y="35" font-family="{sans}" font-size="18" font-weight="600" fill="#ff652f">{title}</text>']
+    for i, (label, value, icon) in enumerate(rows):
+        y = 55 + i * 25
+        p.append(_stat_icon(icon, 25, y + 1, accent))
+        p.append(f'<text x="50" y="{y + 12.5}" font-family="{sans}" font-size="14" font-weight="600" fill="#ffffff">{label}:</text>')
+        p.append(f'<text x="245" y="{y + 12.5}" font-family="{sans}" font-size="14" font-weight="700" fill="{accent}">{value}</text>')
+    # Same rank ring as github-readme-stats (rank_icon=github): faint rim, progress arc, salmon GitHub mark
+    cx, cy, r = 380.5, 110.5, 40
+    p.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="#830203" stroke-opacity=".2" stroke-width="6"/>'
+             f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="#830203" stroke-opacity=".8" stroke-width="6" stroke-linecap="round" '
+             f'stroke-dasharray="{2 * 3.1416 * r * .78:.1f} 999" transform="rotate(-90 {cx} {cy})"/>'
+             f'<svg x="{cx - 33}" y="{cy - 33}" width="66" height="66" viewBox="0 0 16 16"><path fill="#da644d" d="{_GITHUB_MARK}"/></svg>')
+    p.append("</svg>")
+    return "".join(p)
 
 
 LANGS_QUERY = """
@@ -1733,64 +1686,29 @@ def render_top_langs_svg(dest: Path, top_n: int = 8) -> None:
     sorted_items = sorted(totals.items(), key=lambda x: -x[1])[:top_n]
     grand_total = sum(totals.values())
 
-    W, H = 495, 195
+    # Same layout as the github-readme-stats compact card (codeSTACKr), with the title
+    # in the regular orange used by the "Top Languages by Repo" card next to it.
+    items = sorted_items[:6]
+    shown = sum(sz for _, sz in items)
+    W, H = 300, 165
+    sans = "'Segoe UI',Ubuntu,Sans-Serif"
     parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
-        f'viewBox="0 0 {W} {H}" role="img" aria-label="Top Languages">',
-        '<defs>'
-        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0%" stop-color="#1a1f29"/>'
-        '<stop offset="100%" stop-color="#0d1117"/>'
-        '</linearGradient>'
-        '</defs>',
-        f'<rect width="{W-2}" height="{H-2}" x="1" y="1" rx="6" '
-        f'fill="url(#bg)" stroke="#30363d" stroke-width="1"/>',
-        # Title
-        f'<text x="20" y="32" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="16" font-weight="700" fill="#ff6f00">'
-        f'Most Used Languages</text>',
-        f'<line x1="20" y1="40" x2="{W-20}" y2="40" stroke="#30363d" stroke-width="1"/>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Most Used Languages">',
+        f'<rect x=".5" y=".5" rx="4.5" width="{W - 1}" height="{H - 1}" fill="#09131B"/>',
+        f'<text x="25" y="38" font-family="{sans}" font-size="19.4" font-weight="400" fill="#ff652f">Most Used Languages</text>',
+        '<defs><clipPath id="bar"><rect x="25" y="55" width="250" height="8" rx="5"/></clipPath></defs><g clip-path="url(#bar)">',
     ]
-
-    # Stacked bar
-    bar_x, bar_y, bar_w, bar_h = 20, 56, W - 40, 14
-    cur_x = bar_x
-    for name, size in sorted_items:
-        pct = size / grand_total
-        seg = max(2, int(bar_w * pct))
-        parts.append(
-            f'<rect x="{cur_x}" y="{bar_y}" width="{seg}" height="{bar_h}" '
-            f'fill="{colors[name]}" '
-            + ('rx="7"' if cur_x == bar_x else '')
-            + '/>'
-        )
-        cur_x += seg
-    # Round the right edge of the last segment by overlaying a rounded rect
-    parts.append(
-        f'<rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="{bar_h}" '
-        f'rx="7" fill="none" stroke="#30363d" stroke-width="0.5"/>'
-    )
-
-    # Two-column legend
-    leg_y = bar_y + bar_h + 24
-    col_w = (W - 40) // 2
-    for i, (name, size) in enumerate(sorted_items):
-        col = i % 2
-        row = i // 2
-        x = bar_x + col * col_w
-        y = leg_y + row * 22
-        pct = (size / grand_total) * 100
-        parts.append(
-            f'<circle cx="{x+8}" cy="{y-3}" r="6" fill="{colors[name]}"/>'
-            f'<text x="{x+22}" y="{y}" '
-            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="12" font-weight="600" fill="#c6c6c2">{name}</text>'
-            f'<text x="{x+col_w-6}" y="{y}" text-anchor="end" '
-            f'font-family="-apple-system,BlinkMacSystemFont,SF Mono,Monaco,monospace" '
-            f'font-size="11" fill="#7d8590">{pct:.1f}%</text>'
-        )
-
+    x = 25.0
+    for name, size in items:
+        w = 250 * size / shown
+        parts.append(f'<rect x="{x:.2f}" y="55" width="{w + .5:.2f}" height="8" fill="{colors[name]}"/>')
+        x += w
+    parts.append('</g>')
+    for i, (name, size) in enumerate(items):
+        lx, ly = 25 + (i // 3) * 150, 80 + (i % 3) * 25
+        parts.append(f'<circle cx="{lx + 5}" cy="{ly + 6}" r="5" fill="{colors[name]}"/>'
+                     f'<text x="{lx + 15}" y="{ly + 10}" font-family="{sans}" font-size="11" fill="#ffffff">'
+                     f'{name} {100 * size / shown:.2f}%</text>')
     parts.append('</svg>')
 
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -1904,8 +1822,8 @@ def render_streak_svg(dest: Path) -> None:
         '</linearGradient>'
         # Flame gradient for the current-streak ring
         '<linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0%" stop-color="#ffd700"/>'
-        '<stop offset="100%" stop-color="#d60606"/>'
+        '<stop offset="0%" stop-color="#FF5C5C"/>'
+        '<stop offset="100%" stop-color="#F90001"/>'
         '</linearGradient>'
         '</defs>',
         f'<rect width="{W-2}" height="{H-2}" x="1" y="1" rx="6" '
@@ -1932,14 +1850,14 @@ def render_streak_svg(dest: Path) -> None:
                 f'stroke="url(#flame)" stroke-width="3"/>'
                 f'<text x="{cx}" y="73" text-anchor="middle" '
                 f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-                f'font-size="40" font-weight="800" fill="#ffd700">'
+                f'font-size="40" font-weight="800" fill="#F90001">'
                 f'{value}</text>'
             )
         else:
             parts.append(
                 f'<text x="{cx}" y="73" text-anchor="middle" '
                 f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-                f'font-size="40" font-weight="800" fill="#c6c6c2">'
+                f'font-size="40" font-weight="800" fill="#e6edf3">'
                 f'{value}</text>'
             )
 
@@ -1947,7 +1865,7 @@ def render_streak_svg(dest: Path) -> None:
         parts.append(
             f'<text x="{cx}" y="115" text-anchor="middle" '
             f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="13" font-weight="700" fill="#da644d" letter-spacing="0.3">'
+            f'font-size="13" font-weight="700" fill="#8b949e" letter-spacing="0.3">'
             f'{label}</text>'
         )
 
@@ -1982,9 +1900,614 @@ def render_streak_svg(dest: Path) -> None:
     dest.write_text("".join(parts), encoding="utf-8")
 
 
+# --- GITHUB STATS SECTION -----------------------------------------------------
+# One editorial SVG for README section 05: profile + yearly chart, five big
+# numbers, a flame streak ring and the languages. Contribution totals, the
+# chart and the streaks all come from the same heatmaps as the commit-name
+# banner, so every number on the page agrees.
+
+SEC_BLUE, SEC_GREEN, SEC_ORANGE, SEC_RED = "#58a6ff", "#42b883", "#ff652f", "#F90001"
+SEC_SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif"
+SEC_MONO = "ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace"
+LANG_ICON_FILES = {
+    "Python": "python", "HTML": "html5", "Vue": "vuejs", "TypeScript": "typescript", "Jupyter Notebook": "jupyter",
+    "JavaScript": "javascript", "CSS": "css3", "Go": "go", "Java": "java", "C": "c", "C++": "cplusplus",
+    "C#": "csharp", "PHP": "php", "Ruby": "ruby", "Rust": "rust", "Shell": "bash", "Dockerfile": "docker",
+    "Kotlin": "kotlin", "Swift": "swift", "Dart": "dart",
+}
+
+SECTION_LANGS_QUERY = """
+query($login: String!) {
+  user(login: $login) {
+    repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+      nodes {
+        primaryLanguage { name color }
+        languages(first: 10, orderBy: {field: SIZE, direction: DESC}) { edges { size node { name color } } }
+      }
+    }
+  }
+}
+"""
+
+
+def _heatmap_days() -> dict[dt.date, int]:
+    days: dict[dt.date, int] = {}
+    for f in sorted(Path(ASSETS_DIR).glob("heatmap-*.svg")):
+        for count, date in re.findall(r"<title>(\d+) on (\d{4}-\d{2}-\d{2})</title>", f.read_text(encoding="utf-8")):
+            days[dt.date.fromisoformat(date)] = int(count)
+    return days
+
+
+def _streaks(days: dict[dt.date, int], today: dt.date):
+    """(current, current_start, longest, longest_start, longest_end, first_day)"""
+    active = sorted(d for d, c in days.items() if c > 0 and d <= today)
+    if not active:
+        return 0, None, 0, None, None, None
+    longest, ls, le, run, rs = 0, None, None, 0, None
+    prev = None
+    for d in active:
+        run = run + 1 if prev and (d - prev).days == 1 else 1
+        rs = rs if run > 1 else d
+        if run > longest:
+            longest, ls, le = run, rs, d
+        prev = d
+    current, cs = 0, None
+    d = min(today, max(days))  # the newest day we have data for
+    if days.get(d, 0) == 0:
+        d -= dt.timedelta(days=1)  # that day may still be in progress
+    while days.get(d, 0) > 0:
+        current, cs = current + 1, d
+        d -= dt.timedelta(days=1)
+    return current, cs, longest, ls, le, active[0]
+
+
+def _short(d: dt.date | None, year: bool = False) -> str:
+    if d is None:
+        return "—"
+    return d.strftime("%b ") + str(d.day) + (d.strftime(", %Y") if year else "")
+
+
+def _lang_icon(name: str, x: float, y: float, size: float, color: str) -> str:
+    f = Path(ASSETS_DIR) / "icons" / "lang" / f"{LANG_ICON_FILES.get(name, '')}-original.svg"
+    if name in LANG_ICON_FILES and f.exists():
+        inner = re.sub(r"^<svg[^>]*>|</svg>\s*$", "", f.read_text(encoding="utf-8").strip())
+        return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 128 128">{inner}</svg>'
+    initials = "".join(w[0] for w in name.split()[:2]).upper()
+    return (f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="8" fill="{color}"/>'
+            f'<text x="{x + size / 2}" y="{y + size / 2 + 6}" text-anchor="middle" font-family="{SEC_SANS}" '
+            f'font-size="17" font-weight="800" fill="#0d1117">{html_escape(initials)}</text>')
+
+
+def _smooth(pts) -> str:
+    d = f"M{pts[0][0]:.1f} {pts[0][1]:.1f}"
+    for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+        mx = (ax + bx) / 2
+        d += f" C{mx:.1f} {ay:.1f} {mx:.1f} {by:.1f} {bx:.1f} {by:.1f}"
+    return d
+
+
+def _sec_rule(y: float, x0: float, x1: float, eyebrow: str, title: str | None = None) -> str:
+    out = (f'<text x="{x0 + 6}" y="{y + 40}" font-family="{SEC_MONO}" font-size="16" font-weight="700" '
+           f'letter-spacing="3.5" fill="{SEC_GREEN}">// {eyebrow}</text>')
+    if title:
+        out += (f'<text x="{x0 + 6}" y="{y + 92}" font-family="{SEC_SANS}" font-size="40" font-weight="800" '
+                f'letter-spacing="-1" fill="#ffffff">{title}<tspan fill="{SEC_RED}">.</tspan></text>')
+    return out
+
+
+def _kv_row(x0, x1, y, icon, label, value, sub=""):
+    sub_svg = (f'<tspan fill="#8b949e" font-weight="400" font-size="19"> {html_escape(sub)}</tspan>' if sub else "")
+    return (f'{icon}<text x="{x0 + 52}" y="{y + 9}" font-family="{SEC_SANS}" font-size="24" fill="#ffffff">{html_escape(label)}</text>'
+            f'<text x="{x1}" y="{y + 9}" text-anchor="end" font-family="{SEC_SANS}" font-size="24" font-weight="700" '
+            f'fill="{SEC_BLUE}">{html_escape(value)}{sub_svg}</text>'
+            f'<line x1="{x0}" y1="{y + 31}" x2="{x1}" y2="{y + 31}" stroke="#21262d" stroke-width="1.5"/>')
+
+
+def stats_section_svg(p: dict) -> str:
+    W, H = 1400, 1385
+    B, G, O, Rd = SEC_BLUE, SEC_GREEN, SEC_ORANGE, SEC_RED
+    s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
+         f'aria-label="GitHub stats for {html_escape(p["login"])}: {p["total"]:,} contributions, {p["stars"]} stars, '
+         f'{p["commits"]} commits in {p["year"]}, current streak {p["current"]} days">',
+         '<defs>'
+         f'<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{O}" stop-opacity=".5"/><stop offset="1" stop-color="{O}" stop-opacity="0"/></linearGradient>'
+         '<linearGradient id="ring" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5c0007"/><stop offset=".55" stop-color="#c3000c"/><stop offset="1" stop-color="#ff2a1a"/></linearGradient>'
+         '<linearGradient id="flame" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#8a0008"/><stop offset=".45" stop-color="#F90001"/><stop offset=".8" stop-color="#ff5a1f"/><stop offset="1" stop-color="#ffb347"/></linearGradient>'
+         '<linearGradient id="core" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff3b1f"/><stop offset="1" stop-color="#ffd27a"/></linearGradient>'
+         '<radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F90001" stop-opacity=".35"/><stop offset="1" stop-color="#F90001" stop-opacity="0"/></radialGradient>'
+         '<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>'
+         '</defs>']
+
+    # ---- profile (left) ------------------------------------------------------
+    s.append(_sec_rule(0, 0, W, "PROFILE"))
+    rx, ry = 64, 132
+    s.append(f'<circle cx="{rx}" cy="{ry}" r="56" fill="none" stroke="#830203" stroke-opacity=".2" stroke-width="9"/>'
+             f'<circle cx="{rx}" cy="{ry}" r="56" fill="none" stroke="#830203" stroke-opacity=".85" stroke-width="9" '
+             f'stroke-linecap="round" stroke-dasharray="{2 * math.pi * 56 * .78:.1f} 999" transform="rotate(-90 {rx} {ry})"/>'
+             f'<svg x="{rx - 46}" y="{ry - 46}" width="92" height="92" viewBox="0 0 16 16"><path fill="#da644d" d="{_GITHUB_MARK}"/></svg>')
+    s.append(f'<text x="150" y="128" font-family="{SEC_SANS}" font-size="50" font-weight="800" letter-spacing="-1" fill="{O}">{html_escape(p["login"])}</text>')
+    if p["name"]:
+        s.append(f'<text x="152" y="170" font-family="{SEC_SANS}" font-size="30" fill="#ffffff">{html_escape(p["name"])}</text>')
+    rows = [("contrib", "Contributions on GitHub", p["total_short"]), ("repos", "Public repos", str(p["public_repos"])),
+            ("joined", "Joined GitHub", p["joined"])]
+    if p["email"]:
+        rows.append(("email", "Email", p["email"]))
+    y = 236
+    for kind, label, value in rows:
+        icon = f'<g transform="translate(2 {y - 13}) scale(1.4)">{_profile_icon(kind, 0, 0, B)}</g>'
+        s.append(_kv_row(0, 660, y, icon, label, value))
+        y += 66
+    base = y - 66 + 31  # the last row's divider: the chart's baseline sits on it
+
+    # ---- chart (right) -------------------------------------------------------
+    months = p["months"]
+    vals = [v for _, _, v in months]
+    peak = max(vals + [1])
+    step = 10 ** (len(str(peak)) - 1)
+    top = -(-peak // step) * step
+    cx0, cx1, cyt = 740, 1330, 120
+    xs = [cx0 + i * (cx1 - cx0) / (len(vals) - 1) for i in range(len(vals))]
+    ys = [base - v / top * (base - cyt) for v in vals]
+    line = _smooth(list(zip(xs, ys)))
+    s.append(f'<text x="{cx1}" y="86" text-anchor="end" font-family="{SEC_SANS}" font-size="19" fill="#ffffff">contributions in the last year</text>')
+    for k in range(5):
+        gy = base - k * (base - cyt) / 4
+        s.append(f'<line x1="{cx0}" y1="{gy:.1f}" x2="{cx1}" y2="{gy:.1f}" stroke="#21262d" stroke-width="1.2"/>'
+                 f'<text x="{cx1 + 12}" y="{gy + 6:.1f}" font-family="{SEC_SANS}" font-size="17" fill="{B}">{int(top * k / 4):,}</text>')
+    s.append(f'<path d="{line} L{cx1} {base} L{cx0} {base}Z" fill="url(#area)"/><path d="{line}" fill="none" stroke="{O}" stroke-width="3.5"/>'
+             f'<line x1="{cx0}" y1="{base}" x2="{cx1}" y2="{base}" stroke="{G}" stroke-width="2"/>'
+             f'<line x1="{cx1}" y1="{cyt}" x2="{cx1}" y2="{base}" stroke="{G}" stroke-width="2"/>')
+    for i in range(0, len(months), 2):
+        s.append(f'<text x="{xs[i]:.1f}" y="{base + 34}" text-anchor="middle" font-family="{SEC_SANS}" font-size="17" fill="{B}">{months[i][0]}</text>')
+    pi = vals.index(peak)
+    for i, anchor in ((pi, "middle"), (len(vals) - 1, "end")):
+        if i == pi and anchor == "end" and pi == len(vals) - 1:
+            continue
+        tx = xs[i] - (12 if anchor == "end" else 0)
+        s.append(f'<circle cx="{xs[i]:.1f}" cy="{ys[i]:.1f}" r="8" fill="{O}" stroke="#0d1117" stroke-width="3.5"/>'
+                 f'<text x="{tx:.1f}" y="{ys[i] - 18:.1f}" text-anchor="{anchor}" font-family="{SEC_SANS}" font-size="19" '
+                 f'font-weight="700" fill="{B}">{vals[i]:,} · {months[i][0]}</text>')
+
+    # ---- the numbers ----------------------------------------------------------
+    y0 = 560
+    s.append(_sec_rule(y0, 0, W, "AT A GLANCE", "The numbers"))
+    gy0, gy1 = y0 + 128, y0 + 300
+    s.append(f'<line x1="0" y1="{gy0}" x2="{W}" y2="{gy0}" stroke="#30363d" stroke-width="1.5"/>'
+             f'<line x1="0" y1="{gy1}" x2="{W}" y2="{gy1}" stroke="#30363d" stroke-width="1.5"/>')
+    tiles = [(p["stars"], "Stars earned", "across my repos"), (p["commits"], "Commits", f"in {p['year']}"),
+             (p["prs"], "Pull requests", "all time"), (p["issues"], "Issues", "opened"),
+             (p["contributed"], "Contributed to", "repos, last year")]
+    tw = W / len(tiles)
+    for i, (num, label, sub) in enumerate(tiles):
+        x = i * tw
+        if i:
+            s.append(f'<line x1="{x}" y1="{gy0}" x2="{x}" y2="{gy1}" stroke="#30363d" stroke-width="1.5"/>')
+        s.append(f'<text x="{x + 26}" y="{gy0 + 86}" font-family="{SEC_SANS}" font-size="64" font-weight="800" letter-spacing="-2" fill="{B}">{num:,}</text>'
+                 f'<text x="{x + 28}" y="{gy0 + 124}" font-family="{SEC_SANS}" font-size="22" fill="#ffffff">{label}</text>'
+                 f'<text x="{x + 28}" y="{gy0 + 152}" font-family="{SEC_SANS}" font-size="18" fill="#8b949e">{sub}</text>')
+
+    # ---- streak (left) --------------------------------------------------------
+    y0 = 920
+    s.append(_sec_rule(y0, 0, 660, "STREAK", "Every day counts"))
+    fx, fy = 92, y0 + 220
+    s.append(f'<circle cx="{fx}" cy="{fy}" r="98" fill="url(#halo)"/>'
+             f'<circle cx="{fx}" cy="{fy}" r="76" fill="none" stroke="#2a0a0c" stroke-width="13"/>'
+             f'<circle cx="{fx}" cy="{fy}" r="76" fill="none" stroke="url(#ring)" stroke-width="13" stroke-linecap="round" '
+             f'stroke-dasharray="430 600" transform="rotate(-62 {fx} {fy})" filter="url(#soft)" opacity=".6"/>'
+             f'<circle cx="{fx}" cy="{fy}" r="76" fill="none" stroke="url(#ring)" stroke-width="13" stroke-linecap="round" '
+             f'stroke-dasharray="430 600" transform="rotate(-62 {fx} {fy})"/>'
+             f'<circle cx="{fx}" cy="{fy - 76}" r="25" fill="#0d1117"/>')
+    flame = "M0-39c4.5 13.5 19.5 21 19.5 40.5a19.5 19.5 0 0 1-39 0c0-9 4.5-15 9-19.5 0 7.5 3 12 7.5 13.5-1.5-12 0-22.5 3-34.5z"
+    core = "M0-12c3 7.5 9 10.5 9 18a9 9 0 0 1-18 0c0-4.5 3-7.5 4.5-9 0 3 1.5 4.5 3 6 0-6 0-10.5 1.5-15z"
+    s.append(f'<g transform="translate({fx} {fy - 78})"><path d="{flame}" fill="url(#flame)" filter="url(#soft)" opacity=".7"/>'
+             f'<path d="{flame}" fill="url(#flame)"/><path d="{core}" fill="url(#core)"/></g>'
+             f'<text x="{fx}" y="{fy + 18}" text-anchor="middle" font-family="{SEC_SANS}" font-size="62" font-weight="800" fill="{B}">{p["current"]}</text>'
+             f'<text x="{fx}" y="{fy + 46}" text-anchor="middle" font-family="{SEC_SANS}" font-size="15" font-weight="700" letter-spacing="2.5" fill="#ff5a4a">DAYS</text>')
+    st = f'fill="none" stroke="{B}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"'
+    icons = {
+        "sum": f'<path {st} d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+        "flame": f'<path {st} d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/>',
+        "trophy": f'<path {st} d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/>',
+    }
+    srows = [("sum", "Total", f"{p['total']:,}", f"since {_short(p['first'], True)}"),
+             ("flame", "Current", f"{p['current']} day{'s' if p['current'] != 1 else ''}",
+              f"{_short(p['cs'])} – {_short(p['today'])}" if p["current"] else ""),
+             ("trophy", "Longest", f"{p['longest']} days",
+              f"{p['ls'].strftime('%b')} – {p['le'].strftime('%b %Y')}" if p["ls"] else "")]
+    y = y0 + 168
+    for kind, label, value, sub in srows:
+        icon = f'<svg x="232" y="{y - 15}" width="28" height="28" viewBox="0 0 24 24">{icons[kind]}</svg>'
+        s.append(_kv_row(230, 660, y, icon, label, value, sub))
+        y += 66
+
+    # ---- languages (right) ----------------------------------------------------
+    lx0, lx1 = 740, W
+    s.append(_sec_rule(y0, lx0, lx1, "LANGUAGES", "What I write"))
+    langs = p["langs"][:6]
+    shown = sum(v for _, v, _ in langs) or 1
+    bx, by, bw = lx0 + 6, y0 + 134, lx1 - lx0 - 6
+    s.append(f'<defs><clipPath id="bar"><rect x="{bx}" y="{by}" width="{bw}" height="13" rx="6.5"/></clipPath></defs><g clip-path="url(#bar)">')
+    x = bx
+    for name, v, col in langs:
+        w = bw * v / shown
+        s.append(f'<rect x="{x:.1f}" y="{by}" width="{w + .6:.1f}" height="13" fill="{col}"/>')
+        x += w
+    s.append('</g>')
+    for i, (name, v, col) in enumerate(langs):
+        lx, ly = bx + (i % 2) * (bw / 2), by + 52 + (i // 2) * 40
+        s.append(f'<circle cx="{lx + 8}" cy="{ly - 7}" r="8" fill="{col}"/>'
+                 f'<text x="{lx + 26}" y="{ly}" font-family="{SEC_SANS}" font-size="22" fill="#ffffff">{html_escape(name)} '
+                 f'<tspan fill="{B}" font-weight="700">{100 * v / shown:.2f}%</tspan></text>')
+    # repos by primary language: donut + icons
+    dy = by + 52 + 3 * 40 + 34
+    dcx, dcy, dr = bx + 52, dy + 48, 40
+    repo_langs = p["repo_langs"][:5]
+    tot = sum(c for _, c, _ in repo_langs) or 1
+    circ, acc = 2 * math.pi * dr, 0.0
+    s.append(f'<circle cx="{dcx}" cy="{dcy}" r="{dr}" fill="none" stroke="#21262d" stroke-width="18"/>')
+    for name, c, col in repo_langs:
+        seg = circ * c / tot
+        s.append(f'<circle cx="{dcx}" cy="{dcy}" r="{dr}" fill="none" stroke="{col}" stroke-width="18" '
+                 f'stroke-dasharray="{max(seg - 1.5, .5):.1f} {circ:.1f}" stroke-dashoffset="{-acc:.1f}" transform="rotate(-90 {dcx} {dcy})"/>')
+        acc += seg
+    s.append(f'<text x="{bx + 130}" y="{dy + 18}" font-family="{SEC_MONO}" font-size="15" font-weight="700" letter-spacing="3" fill="{G}">BY REPOS</text>')
+    for i, (name, c, col) in enumerate(repo_langs):
+        ix = bx + 130 + i * 72
+        s.append(_lang_icon(name, ix, dy + 36, 48, col)
+                 + f'<rect x="{ix + 6}" y="{dy + 94}" width="36" height="4" rx="2" fill="{col}"/>')
+    s.append("</svg>")
+    return "".join(s)
+
+
+def render_stats_section_svg(dest: Path) -> None:
+    now = dt.datetime.now(dt.timezone.utc)
+    today = now.date()
+    r = requests.get(f"https://api.github.com/users/{GH_USER}", headers=GH_HEADERS, timeout=20)
+    r.raise_for_status()
+    u = r.json()
+    year_start = dt.datetime(now.year, 1, 1, tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    main = graphql(MAIN_STATS_QUERY, {"login": GH_USER, "from": year_start, "to": now.strftime("%Y-%m-%dT%H:%M:%SZ")})["user"]
+    repos = graphql(SECTION_LANGS_QUERY, {"login": GH_USER})["user"]["repositories"]["nodes"]
+    bytes_by, colors, count_by = {}, {}, {}
+    for repo in repos:
+        for e in repo["languages"]["edges"]:
+            n = e["node"]["name"]
+            bytes_by[n] = bytes_by.get(n, 0) + e["size"]
+            colors[n] = e["node"].get("color") or LANG_COLORS.get(n, "#6e7681")
+        pl = repo.get("primaryLanguage")
+        if pl:
+            count_by[pl["name"]] = count_by.get(pl["name"], 0) + 1
+            colors.setdefault(pl["name"], pl.get("color") or "#6e7681")
+    days = _heatmap_days()
+    try:  # the heatmaps can lag a day; the live calendar keeps the streak exact
+        live = graphql(CONTRIB_QUERY, {"login": GH_USER, "from": year_start, "to": now.strftime("%Y-%m-%dT%H:%M:%SZ")})
+        for w in live["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]:
+            for d in w["contributionDays"]:
+                days[dt.date.fromisoformat(d["date"])] = d["contributionCount"]
+    except Exception as e:
+        warn(f"live calendar unavailable, using heatmaps only: {e}")
+    total = sum(days.values())
+    current, cs, longest, ls, le, first = _streaks(days, today)
+    months = []
+    for back in range(12, -1, -1):
+        y, m = today.year, today.month - back
+        while m <= 0:
+            y, m = y - 1, m + 12
+        months.append((dt.date(y, m, 1).strftime("%b"), f"{y}-{m:02d}",
+                       sum(c for d, c in days.items() if d.year == y and d.month == m)))
+    years = max(1, today.year - int(u["created_at"][:4]))
+    p = dict(
+        login=GH_USER, name=(u.get("name") or "").strip(), email=u.get("email") or "",
+        public_repos=u.get("public_repos", 0), joined=f"{years} year{'s' if years != 1 else ''} ago",
+        total=total, total_short=f"{total / 1000:.2f}k" if total >= 1000 else str(total), months=months,
+        stars=sum(n["stargazerCount"] for n in main["repositories"]["nodes"]),
+        commits=main["contributionsCollection"]["totalCommitContributions"], year=now.year,
+        prs=main["pullRequests"]["totalCount"], issues=main["issues"]["totalCount"],
+        contributed=main["repositoriesContributedTo"]["totalCount"],
+        current=current, cs=cs, longest=longest, ls=ls, le=le, first=first, today=today,
+        langs=[(n, v, colors[n]) for n, v in sorted(bytes_by.items(), key=lambda x: -x[1])],
+        repo_langs=[(n, c, colors[n]) for n, c in sorted(count_by.items(), key=lambda x: -x[1])],
+    )
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(stats_section_svg(p), encoding="utf-8")
+
+
+# --- RECENT ACTIVITY + LATEST RELEASES SECTIONS -------------------------------
+# Same editorial look as the stats section. Both are pure render functions fed
+# by small fetchers, so a failed API call just keeps yesterday's SVG.
+
+ACT_PALETTE = ["#58a6ff", "#42b883", "#bc8cff", "#e3b341", "#79c0ff", "#f778ba"]
+BUMP_STYLE = {  # dot, text, pill fill, pill stroke
+    "major": ("#F90001", "#ff6b6b", "#2a0b0e", "#F90001"),
+    "minor": ("#58a6ff", "#79c0ff", "#0c1d33", "#388bfd"),
+    "patch": ("#8b949e", "#c9d1d9", "#161b22", "#6e7681"),
+}
+
+
+def _gh_rest(path: str, params: dict | None = None):
+    r = requests.get(f"https://api.github.com{path}", headers=GH_HEADERS, params=params or {}, timeout=20)
+    r.raise_for_status()
+    return r.json()
+
+
+def _ago(when: dt.datetime, now: dt.datetime) -> str:
+    secs = (now - when).total_seconds()
+    if secs < 3600:
+        return "just now" if secs < 120 else f"{int(secs // 60)} minutes ago"
+    if when.date() == now.date():
+        h = int(secs // 3600)
+        return f"{h} hour{'s' if h != 1 else ''} ago"
+    days = (now.date() - when.date()).days
+    return "yesterday" if days == 1 else f"{days} days ago"
+
+
+def _clip(text: str, n: int) -> str:
+    text = " ".join(text.split())
+    return text if len(text) <= n else text[: n - 1].rstrip(" ,.;:-") + "…"
+
+
+def activity_svg(d: dict) -> str:
+    W = 1400
+    B, G = SEC_BLUE, SEC_GREEN
+    repos = d["repos"][:6]
+    top = 588
+    H = top + max(1, len(repos)) * 86 + 12
+    s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
+         f'aria-label="Last 7 days: {d["kpis"][0][0]} commits across {d["kpis"][1][0]} repositories">']
+    # KPI tiles
+    s.append(f'<line x1="0" y1="10" x2="{W}" y2="10" stroke="#30363d" stroke-width="1.5"/>'
+             f'<line x1="0" y1="176" x2="{W}" y2="176" stroke="#30363d" stroke-width="1.5"/>')
+    tw = W / len(d["kpis"])
+    for i, (val, suffix, label, delta, unit) in enumerate(d["kpis"]):
+        x = i * tw
+        if i:
+            s.append(f'<line x1="{x}" y1="10" x2="{x}" y2="176" stroke="#30363d" stroke-width="1.5"/>')
+        suf = f'<tspan fill="#8b949e" font-size="30" font-weight="700">{suffix}</tspan>' if suffix else ""
+        s.append(f'<text x="{x + 26}" y="88" font-family="{SEC_SANS}" font-size="60" font-weight="800" letter-spacing="-2" fill="{B}">{val}{suf}</text>'
+                 f'<text x="{x + 28}" y="124" font-family="{SEC_SANS}" font-size="22" fill="#ffffff">{label}</text>')
+        if delta is None:
+            pass
+        elif delta == 0:
+            s.append(f'<text x="{x + 28}" y="156" font-family="{SEC_SANS}" font-size="17" fill="#8b949e">= same as last week</text>')
+        else:
+            up = delta > 0
+            s.append(f'<text x="{x + 28}" y="156" font-family="{SEC_SANS}" font-size="17" font-weight="600" fill="{"#3fb950" if up else "#f85149"}">'
+                     f'{"▲" if up else "▼"} {abs(delta)}{unit} vs last week</text>')
+    # stacked 7-day chart
+    color = {r["name"]: r["color"] for r in d["repos"]}
+    totals = [sum(v for v in day.values()) for _, day in d["days"]]
+    peak = max(totals + [1])
+    base, maxh, gap = 430, 190, 24
+    cw = (W - gap * 6) / 7
+    for i, (label, day) in enumerate(d["days"]):
+        x = i * (cw + gap)
+        if not totals[i]:
+            s.append(f'<rect x="{x:.1f}" y="{base - 5}" width="{cw:.1f}" height="5" rx="2.5" fill="#21262d"/>')
+        y = base
+        for name, n in sorted(day.items(), key=lambda kv: list(color).index(kv[0]) if kv[0] in color else 99):
+            h = max(6, maxh * n / peak)
+            y -= h
+            s.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cw:.1f}" height="{h - 3:.1f}" rx="5" fill="{color.get(name, "#6e7681")}"/>')
+        style = 'font-weight="700" fill="#ffffff"' if i == len(d["days"]) - 1 else f'fill="{B}"'
+        s.append(f'<text x="{x + cw / 2:.1f}" y="{base + 34}" text-anchor="middle" font-family="{SEC_SANS}" font-size="19" {style}>{label}</text>')
+    s.append(f'<line x1="0" y1="{base + 1}" x2="{W}" y2="{base + 1}" stroke="{G}" stroke-width="2"/>')
+    lx = 0
+    for r in d["repos"][:6]:
+        s.append(f'<rect x="{lx}" y="{base + 62}" width="15" height="15" rx="4" fill="{r["color"]}"/>'
+                 f'<text x="{lx + 24}" y="{base + 76}" font-family="{SEC_SANS}" font-size="19" fill="#ffffff">{html_escape(r["short"])}</text>')
+        lx += 60 + len(r["short"]) * 10.5
+    # table
+    s.append(f'<text x="64" y="{top - 22}" font-family="{SEC_SANS}" font-size="15" letter-spacing="2" fill="#8b949e">REPOSITORY · LATEST COMMIT</text>'
+             f'<text x="1180" y="{top - 22}" text-anchor="end" font-family="{SEC_SANS}" font-size="15" letter-spacing="2" fill="#8b949e">COMMITS</text>'
+             f'<text x="{W}" y="{top - 22}" text-anchor="end" font-family="{SEC_SANS}" font-size="15" letter-spacing="2" fill="#8b949e">LAST PUSH</text>'
+             f'<line x1="0" y1="{top}" x2="{W}" y2="{top}" stroke="#21262d" stroke-width="1.5"/>')
+    for i, r in enumerate(repos):
+        y = top + i * 86
+        s.append(_lang_icon(r["lang"] or "", 6, y + 22, 40, r["color"]) if r["lang"] else
+                 f'<rect x="6" y="{y + 22}" width="40" height="40" rx="8" fill="#161b22" stroke="#30363d"/>')
+        s.append(f'<rect x="64" y="{y + 25}" width="13" height="13" rx="3" fill="{r["color"]}"/>'
+                 f'<text x="88" y="{y + 38}" font-family="{SEC_SANS}" font-size="24" fill="#ffffff">{html_escape(_clip(r["name"], 52))}</text>'
+                 f'<text x="64" y="{y + 70}" font-family="{SEC_MONO}" font-size="18" fill="#8b949e">{html_escape(_clip(r["msg"], 64))}</text>'
+                 f'<text x="1180" y="{y + 52}" text-anchor="end" font-family="{SEC_SANS}" font-size="28" font-weight="700" fill="{B}">{r["commits"]}</text>'
+                 f'<text x="{W}" y="{y + 52}" text-anchor="end" font-family="{SEC_SANS}" font-size="22" fill="#8b949e">{r["ago"]}</text>'
+                 f'<line x1="0" y1="{y + 86}" x2="{W}" y2="{y + 86}" stroke="#21262d" stroke-width="1.5"/>')
+    if not repos:
+        s.append(f'<text x="64" y="{top + 52}" font-family="{SEC_SANS}" font-size="22" fill="#8b949e">No pushes in the last 7 days.</text>')
+    s.append("</svg>")
+    return "".join(s)
+
+
+def render_activity_svg(dest: Path) -> None:
+    now = dt.datetime.now(dt.timezone.utc)
+    today = now.date()
+    since = now - dt.timedelta(days=14)
+    repos = _gh_rest(f"/users/{GH_USER}/repos", {"type": "owner", "sort": "pushed", "per_page": 40})
+    rows, per_day, prev_days = [], {}, set()
+    week_start = today - dt.timedelta(days=6)
+    commits_now = commits_prev = 0
+    repos_prev = set()
+    for r in repos:
+        if r.get("fork") or r.get("archived") or r["name"].lower() == GH_USER.lower():
+            continue
+        if dt.datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00")) < since:
+            continue
+        cs = _gh_rest(f"/repos/{GH_USER}/{r['name']}/commits",
+                      {"author": GH_USER, "since": since.strftime("%Y-%m-%dT%H:%M:%SZ"), "per_page": 100})
+        this_week = []
+        for c in cs:
+            when = dt.datetime.fromisoformat(c["commit"]["author"]["date"].replace("Z", "+00:00"))
+            if when.date() >= week_start:
+                this_week.append((when, c["commit"]["message"].splitlines()[0]))
+                per_day.setdefault(when.date(), {}).setdefault(r["name"], 0)
+                per_day[when.date()][r["name"]] += 1
+            else:
+                commits_prev += 1
+                repos_prev.add(r["name"])
+                prev_days.add(when.date())
+        if this_week:
+            this_week.sort(reverse=True)
+            commits_now += len(this_week)
+            rows.append(dict(name=r["name"], lang=r.get("language"), commits=len(this_week),
+                             msg=this_week[0][1], ago=_ago(this_week[0][0], now)))
+    rows.sort(key=lambda x: -x["commits"])
+    for i, row in enumerate(rows):
+        row["color"] = ACT_PALETTE[i % len(ACT_PALETTE)]
+        parts = re.split(r"[-_]+", row["name"])
+        row["short"] = row["name"] if len(row["name"]) <= 18 else "-".join(p for p in parts[:2] if p)
+    try:
+        q = f"type:pr author:{GH_USER} created:>={(today - dt.timedelta(days=13)).isoformat()}"
+        items = _gh_rest("/search/issues", {"q": q, "per_page": 100})["items"]
+        prs_now = sum(1 for it in items if it["created_at"][:10] >= week_start.isoformat())
+        prs_prev = len(items) - prs_now
+    except Exception as e:
+        warn(f"PR count unavailable: {e}")
+        prs_now = prs_prev = None
+    days = [(("Today" if i == 6 else (week_start + dt.timedelta(days=i)).strftime("%a")),
+             per_day.get(week_start + dt.timedelta(days=i), {})) for i in range(7)]
+    active = sum(1 for _, day in days if day)
+    kpis = [(commits_now, "", "commits", commits_now - commits_prev, ""),
+            (len(rows), "", "repos touched", len(rows) - len(repos_prev), ""),
+            (prs_now if prs_now is not None else "—", "", "pull requests",
+             (prs_now - prs_prev) if prs_now is not None else None, ""),
+            (active, "/7", "active days", active - len(prev_days), "")]
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(activity_svg(dict(kpis=kpis, days=days, repos=rows)), encoding="utf-8")
+
+
+def _semver(tag: str):
+    m = re.search(r"(\d+)\.(\d+)(?:\.(\d+))?", tag or "")
+    return tuple(int(x or 0) for x in m.groups()) if m else None
+
+
+def _bump(tag: str) -> str:
+    v = _semver(tag)
+    if not v:
+        return "patch"
+    if v[1] == 0 and v[2] == 0:
+        return "major"
+    return "minor" if v[2] == 0 else "patch"
+
+
+def _release_lines(body: str, title: str, n: int = 3) -> list[str]:
+    out = []
+    for line in (body or "").splitlines():
+        t = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", line)
+        t = re.sub(r"[`*_>#]+", "", t).strip().lstrip("-•+ ").strip()
+        if not t or t.lower() == (title or "").lower() or t.lower().startswith(("full changelog", "what's changed", "**full")):
+            continue
+        out.append(_clip(t, 92))
+        if len(out) == n:
+            break
+    return out
+
+
+def releases_svg(d: dict) -> str:
+    W = 1400
+    B = SEC_BLUE
+    L = d["latest"]
+    notes = L["notes"]
+    s_ = []
+    s_.append(f'<text x="0" y="40" font-family="{SEC_SANS}" font-size="24" fill="#ffffff">'
+              f'<tspan fill="{B}" font-size="34" font-weight="800">{d["year_count"]}</tspan> release{"s" if d["year_count"] != 1 else ""} this year'
+              f'<tspan fill="#8b949e">  ·  </tspan>latest <tspan fill="{B}" font-weight="700">{d["days_since"]} day{"s" if d["days_since"] != 1 else ""}</tspan> ago</text>')
+    cy = 80
+    title_y = cy + 152
+    ny = title_y + 46
+    link_y = ny + len(notes) * 36 + (14 if notes else 0)
+    ch = link_y + 34 - cy
+    dot, txt, pf, ps = BUMP_STYLE[L["bump"]]
+    name_w = len(L["repo"]) * 17
+    tag_w = len(L["tag"]) * 11 + 32
+    s_.append(f'<rect x="1" y="{cy}" width="{W - 2}" height="{ch}" rx="14" fill="url(#card)" stroke="#30363d" stroke-width="1.5"/>'
+              f'<text x="36" y="{cy + 50}" font-family="{SEC_MONO}" font-size="16" font-weight="700" letter-spacing="3.5" fill="{SEC_GREEN}">// LATEST</text>'
+              f'<text x="{W - 36}" y="{cy + 50}" text-anchor="end" font-family="{SEC_SANS}" font-size="19" fill="#8b949e">{L["date"].strftime("%b ")}{L["date"].day}{L["date"].strftime(", %Y")}</text>'
+              f'<text x="36" y="{cy + 110}" font-family="{SEC_SANS}" font-size="36" font-weight="800" letter-spacing="-.6" fill="#ffffff">{html_escape(L["repo"])}</text>'
+              f'<rect x="{36 + name_w + 16:.0f}" y="{cy + 82}" width="{tag_w}" height="36" rx="18" fill="{pf}" stroke="{ps}" stroke-width="1.5"/>'
+              f'<text x="{36 + name_w + 16 + tag_w / 2:.0f}" y="{cy + 106}" text-anchor="middle" font-family="{SEC_MONO}" font-size="17" font-weight="700" fill="{txt}">{html_escape(L["tag"])}</text>'
+              f'<text x="36" y="{title_y}" font-family="{SEC_SANS}" font-size="23" fill="#c9d1d9">{html_escape(_clip(L["title"], 90))}</text>')
+    for i, line in enumerate(notes):
+        y = ny + i * 36
+        s_.append(f'<circle cx="62" cy="{y - 7}" r="3.5" fill="#8b949e"/>'
+                  f'<text x="80" y="{y}" font-family="{SEC_SANS}" font-size="20" fill="#c9d1d9">{html_escape(line)}</text>')
+    s_.append(f'<text x="36" y="{link_y}" font-family="{SEC_SANS}" font-size="20" font-weight="700" fill="{B}">Read the release notes →</text>')
+    # timeline
+    tl = d["timeline"]
+    ty = cy + ch + 96
+    n = len(tl)
+    span = min(W - 160, max(1, n - 1) * 300)
+    x0, x1 = (W - span) / 2, (W + span) / 2
+    s_.append(f'<rect x="{x0 - 40}" y="{ty - 1.5}" width="{x1 - x0 + 80}" height="3" rx="1.5" fill="url(#tl)"/>')
+    for i, r in enumerate(tl):
+        x = (x0 + x1) / 2 if n == 1 else x0 + i * (x1 - x0) / (n - 1)
+        dot, txt, _, _ = BUMP_STYLE[r["bump"]]
+        s_.append(f'<circle cx="{x:.1f}" cy="{ty}" r="13" fill="{dot}" stroke="#0d1117" stroke-width="4"/>'
+                  f'<text x="{x:.1f}" y="{ty + 48}" text-anchor="middle" font-family="{SEC_MONO}" font-size="18" font-weight="700" fill="{txt}">{html_escape(r["tag"])}</text>'
+                  f'<text x="{x:.1f}" y="{ty + 76}" text-anchor="middle" font-family="{SEC_SANS}" font-size="20" fill="#ffffff">{html_escape(_clip(r["repo"], 22))}</text>'
+                  f'<text x="{x:.1f}" y="{ty + 100}" text-anchor="middle" font-family="{SEC_SANS}" font-size="16" fill="#8b949e">{r["date"].strftime("%b ")}{r["date"].day}</text>')
+    ly = ty + 150
+    lx = 0
+    for kind in ("major", "minor", "patch"):
+        s_.append(f'<circle cx="{lx + 8}" cy="{ly - 6}" r="8" fill="{BUMP_STYLE[kind][0]}"/>'
+                  f'<text x="{lx + 24}" y="{ly}" font-family="{SEC_SANS}" font-size="18" fill="#8b949e">{kind}</text>')
+        lx += 110
+    H = ly + 14
+    head = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
+            f'aria-label="Latest release: {html_escape(L["repo"])} {html_escape(L["tag"])}">'
+            '<defs><linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121821"/><stop offset="1" stop-color="#0d1117"/></linearGradient>'
+            '<linearGradient id="tl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#30363d"/><stop offset="1" stop-color="#42b883"/></linearGradient></defs>')
+    return head + "".join(s_) + "</svg>"
+
+
+def render_releases_svg(dest: Path) -> None:
+    now = dt.datetime.now(dt.timezone.utc)
+    cutoff = now - dt.timedelta(days=730)
+    repos = _gh_rest(f"/users/{GH_USER}/repos", {"type": "owner", "sort": "pushed", "per_page": 100})
+    rels = []
+    for r in repos:
+        if r.get("fork") or dt.datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00")) < cutoff:
+            continue
+        for rel in _gh_rest(f"/repos/{GH_USER}/{r['name']}/releases", {"per_page": 5}):
+            if rel.get("draft") or not rel.get("published_at"):
+                continue
+            when = dt.datetime.fromisoformat(rel["published_at"].replace("Z", "+00:00"))
+            title = (rel.get("name") or rel["tag_name"]).strip()
+            title = re.sub(rf"^{re.escape(rel['tag_name'])}\s*[—–-]\s*", "", title) or title
+            rels.append(dict(repo=r["name"], tag=rel["tag_name"], bump=_bump(rel["tag_name"]), date=when.date(),
+                             title=title, notes=_release_lines(rel.get("body") or "", title), url=rel["html_url"]))
+    if not rels:
+        warn("no releases found — keeping the previous releases.svg")
+        return
+    rels.sort(key=lambda x: x["date"], reverse=True)
+    d = dict(year_count=sum(1 for x in rels if x["date"].year == now.year),
+             days_since=(now.date() - rels[0]["date"]).days, latest=rels[0], timeline=list(reversed(rels[:6])))
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(releases_svg(d), encoding="utf-8")
+
+
+def regenerate_activity_cards() -> None:
+    stats_dir = Path(ASSETS_DIR) / "stats"
+    for name, fn in (("activity", render_activity_svg), ("releases", render_releases_svg)):
+        try:
+            fn(stats_dir / f"{name}.svg")
+            print(f"rendered {name}.svg")
+        except Exception as e:
+            warn(f"{name} render failed, keeping the previous file: {e}")
+
+
 def regenerate_stats_cards() -> None:
     stats_dir = Path(ASSETS_DIR) / "stats"
     stats_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        render_stats_section_svg(stats_dir / "section.svg")
+        print("rendered section.svg")
+    except Exception as e:
+        warn(f"stats section render failed: {e}")
+    regenerate_activity_cards()
+    try:
+        render_profile_details_svg(stats_dir / "profile-details.svg")
+        print("rendered profile-details.svg")
+    except Exception as e:
+        warn(f"profile-details render failed: {e}")
     try:
         render_main_stats_svg(stats_dir / "main-stats.svg")
         print("rendered main-stats.svg")
@@ -2002,23 +2525,7 @@ def regenerate_stats_cards() -> None:
         warn(f"streak render failed: {e}")
 
 
-# --- RICH FEATURED-PROJECT CARD ---------------------------------------------
-# Distinct visual style from the small pin card: 720x240, three-line
-# description, topic chips, fuller metrics, trending indicator on the right.
-
-FEATURED_W, FEATURED_H = 720, 240
-
-# Topic chip palette — cycle so chips of different topics look visually distinct
-TOPIC_PALETTE = [
-    ("#1f6feb", "#388bfd"),   # blue
-    ("#bf4b8a", "#db61a2"),   # pink
-    ("#3fb950", "#56d364"),   # green
-    ("#d29922", "#e3b341"),   # gold
-    ("#a371f7", "#bc8cff"),   # purple
-    ("#f78166", "#ffa28b"),   # orange
-    ("#39c5cf", "#76e3ea"),   # teal
-]
-
+# --- PROJECTS: shared helpers ------------------------------------------------
 
 def _humanize_date(iso: str) -> str:
     """Turn an ISO date into 'today' / 'yesterday' / 'N days ago' / '~M months ago'."""
@@ -2040,324 +2547,6 @@ def _humanize_date(iso: str) -> str:
     if days < 365:
         return f"~{days // 30} months ago"
     return f"~{days // 365} years ago"
-
-
-def _wrap_lines(s: str, line_chars: int, max_lines: int) -> list[str]:
-    s = (s or "").strip()
-    out: list[str] = []
-    while s and len(out) < max_lines:
-        if len(s) <= line_chars:
-            out.append(s)
-            break
-        cut = s.rfind(" ", 0, line_chars + 1)
-        if cut <= 0:
-            cut = line_chars
-        out.append(s[:cut].rstrip())
-        s = s[cut:].lstrip()
-    if s and len(out) == max_lines:
-        # ellipsize the last line
-        last = out[-1]
-        room = line_chars - 1
-        if len(last) > room:
-            last = last[: room - 1].rstrip() + "…"
-        else:
-            last = last[: room].rstrip() + "…"
-        out[-1] = last
-    return out
-
-
-def render_featured_card_svg(repo: dict, recent_commits: int, dest: Path) -> None:
-    """Render a rich Featured Project card — 720x240, distinct from pin cards.
-
-    Layout:
-      - Header strip (top, 50px): category icon + repo name + trending badge
-      - Description block (3 lines, 60px)
-      - Topics chip row (40px, up to 5 chips)
-      - Footer stats row (40px): lang dot + name | ⭐ N | 🍴 N | created · updated
-    """
-    name = repo["name"]
-    desc = (repo.get("description") or "").strip() or "_No description._"
-    stars = repo.get("stargazers_count", 0)
-    forks = repo.get("forks_count", 0)
-    watchers = repo.get("watchers_count", stars)
-    lang = repo.get("language") or "—"
-    lang_color = LANG_COLORS.get(lang, "#6e7681")
-    topics = (repo.get("topics") or [])[:6]
-    pushed = (repo.get("pushed_at") or "")[:10]
-    created = (repo.get("created_at") or "")[:10]
-    pushed_human = _humanize_date(repo.get("pushed_at") or "")
-
-    # Category emoji
-    category = _category_for(repo)
-    cat_emoji = category.split(" ")[0]
-    cat_text = " ".join(category.split(" ")[1:])
-
-    # Trending badge — show if many recent commits
-    if recent_commits >= 30:
-        trend_label, trend_color = f"🔥 {recent_commits}/30d", "#F90001"
-    elif recent_commits >= 10:
-        trend_label, trend_color = f"⚡ {recent_commits}/30d", "#FF652F"
-    elif recent_commits >= 1:
-        trend_label, trend_color = f"📈 {recent_commits}/30d", "#39d353"
-    else:
-        trend_label, trend_color = "💤 quiet", "#7d8590"
-
-    desc_lines = _wrap_lines(desc, 60, 3)
-
-    parts: list[str] = []
-    parts.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{FEATURED_W}" '
-        f'height="{FEATURED_H}" viewBox="0 0 {FEATURED_W} {FEATURED_H}" '
-        f'role="img" aria-label="{name} — featured project card">'
-    )
-
-    # Defs
-    parts.append(
-        '<defs>'
-        '<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0%" stop-color="#1f242c"/>'
-        '<stop offset="100%" stop-color="#0d1117"/>'
-        '</linearGradient>'
-        '<linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">'
-        '<stop offset="0%" stop-color="#F90001"/>'
-        '<stop offset="50%" stop-color="#FF652F"/>'
-        '<stop offset="100%" stop-color="#a855f7"/>'
-        '</linearGradient>'
-        '<filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">'
-        '<feGaussianBlur stdDeviation="2.4" result="b"/>'
-        '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>'
-        '</filter>'
-        '</defs>'
-    )
-
-    # Card background
-    parts.append(
-        f'<rect width="{FEATURED_W-2}" height="{FEATURED_H-2}" x="1" y="1" '
-        f'rx="10" fill="url(#bg)" stroke="#30363d" stroke-width="1"/>'
-    )
-    # Top accent strip
-    parts.append(
-        f'<rect width="{FEATURED_W-20}" height="3" x="10" y="0" '
-        f'fill="url(#accentGrad)" rx="1.5"/>'
-    )
-
-    # ── Header row: category badge + repo name + trending pill ───────────
-    # Category pill (left)
-    parts.append(
-        f'<g transform="translate(20, 22)">'
-        f'<rect width="148" height="26" rx="13" fill="#161b22" stroke="#30363d" stroke-width="1"/>'
-        f'<text x="74" y="18" text-anchor="middle" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="700" fill="#c9d1d9" letter-spacing="0.5">'
-        f'{cat_emoji} {cat_text[:14]}</text>'
-        f'</g>'
-    )
-    # Repo name (centered, large)
-    parts.append(
-        f'<text x="20" y="78" '
-        f'font-family="-apple-system,BlinkMacSystemFont,SF Pro Display,Inter,Segoe UI,sans-serif" '
-        f'font-size="22" font-weight="800" fill="#e6edf3" letter-spacing="-0.3">'
-        f'{name}</text>'
-    )
-    # Trending pill (right) — anchored to the right edge
-    parts.append(
-        f'<g transform="translate({FEATURED_W-148}, 22)">'
-        f'<rect width="128" height="26" rx="13" fill="#0d1117" '
-        f'stroke="{trend_color}" stroke-width="1.5"/>'
-        f'<text x="64" y="18" text-anchor="middle" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="700" fill="{trend_color}" letter-spacing="0.5">'
-        f'{trend_label}</text>'
-        f'</g>'
-    )
-
-    # ── Description (up to 3 lines) ──────────────────────────────────────
-    desc_y = 105
-    for i, line in enumerate(desc_lines):
-        parts.append(
-            f'<text x="20" y="{desc_y + i*20}" '
-            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="13" font-weight="400" fill="#c9d1d9" opacity="0.9">'
-            f'{line}</text>'
-        )
-
-    # ── Topic chips ──────────────────────────────────────────────────────
-    chip_y = 175
-    chip_x = 20
-    for i, t in enumerate(topics):
-        bg, fg = TOPIC_PALETTE[i % len(TOPIC_PALETTE)]
-        chip_w = max(48, len(t) * 7 + 16)
-        if chip_x + chip_w > FEATURED_W - 20:
-            break  # ran out of room
-        parts.append(
-            f'<g transform="translate({chip_x}, {chip_y})">'
-            f'<rect width="{chip_w}" height="22" rx="11" fill="#0d1117" '
-            f'stroke="{bg}" stroke-width="1"/>'
-            f'<text x="{chip_w//2}" y="15" text-anchor="middle" '
-            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-            f'font-size="10.5" font-weight="600" fill="{fg}" letter-spacing="0.2">'
-            f'{t}</text>'
-            f'</g>'
-        )
-        chip_x += chip_w + 6
-
-    # ── Footer stats row ─────────────────────────────────────────────────
-    foot_y = FEATURED_H - 20
-    # Language
-    parts.append(
-        f'<circle cx="28" cy="{foot_y-4}" r="6" fill="{lang_color}"/>'
-        f'<text x="40" y="{foot_y}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="600" fill="#c9d1d9">'
-        f'{lang}</text>'
-    )
-    # Stars
-    star_x = 130
-    parts.append(
-        f'<g transform="translate({star_x}, {foot_y-12})">'
-        f'<path d="M8 0l2.39 4.84L16 5.6l-4 3.9.94 5.5L8 12.4 3.06 15l.94-5.5-4-3.9 5.61-.76L8 0z" '
-        f'fill="#ffde01"/>'
-        f'</g>'
-        f'<text x="{star_x+22}" y="{foot_y}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="700" fill="#c9d1d9">'
-        f'{stars}</text>'
-    )
-    # Forks
-    fork_x = star_x + 70
-    parts.append(
-        f'<g transform="translate({fork_x}, {foot_y-12})" stroke="#7d8590" stroke-width="1.5" fill="none">'
-        f'<circle cx="3" cy="3" r="2"/>'
-        f'<circle cx="13" cy="3" r="2"/>'
-        f'<circle cx="8" cy="14" r="2"/>'
-        f'<path d="M3 5v3a2 2 0 002 2h6a2 2 0 002-2V5"/>'
-        f'<line x1="8" y1="10" x2="8" y2="12"/>'
-        f'</g>'
-        f'<text x="{fork_x+22}" y="{foot_y}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="700" fill="#c9d1d9">'
-        f'{forks}</text>'
-    )
-    # Watchers (eye)
-    eye_x = fork_x + 70
-    parts.append(
-        f'<g transform="translate({eye_x}, {foot_y-12})" stroke="#7d8590" stroke-width="1.4" fill="none">'
-        f'<path d="M0 8 C 4 2, 12 2, 16 8 C 12 14, 4 14, 0 8 Z"/>'
-        f'<circle cx="8" cy="8" r="2.2" fill="#7d8590"/>'
-        f'</g>'
-        f'<text x="{eye_x+22}" y="{foot_y}" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="12" font-weight="700" fill="#c9d1d9">'
-        f'{watchers}</text>'
-    )
-    # Created · updated (right-aligned)
-    parts.append(
-        f'<text x="{FEATURED_W-20}" y="{foot_y}" text-anchor="end" '
-        f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" '
-        f'font-size="11" font-weight="500" fill="#7d8590">'
-        f'created {created}  ·  updated {pushed_human}</text>'
-    )
-
-    parts.append('</svg>')
-
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text("".join(parts), encoding="utf-8")
-
-
-def _pin_card_url(name: str, lines: int = 2) -> str:
-    """Reference the locally-rendered pin card. Independent of the flaky
-    github-readme-stats.vercel.app service (which 503s frequently)."""
-    return f"./{ASSETS_DIR}/pins/{name}.svg"
-
-
-def _render_pin_grid(repos: list[dict]) -> str:
-    """Render a 2-col grid of github-readme-stats pin cards."""
-    if not repos:
-        return ""
-    rows = []
-    for i in range(0, len(repos), 2):
-        rows.append('<div align="center">')
-        for j in range(2):
-            if i + j >= len(repos):
-                continue
-            r = repos[i + j]
-            name = r["name"]
-            url = _pin_card_url(name)
-            rows.append(
-                f'  <a href="https://github.com/{GH_USER}/{name}">'
-                f'<img src="{url}" width="49%" alt="{name}" /></a>'
-            )
-        rows.append('</div>')
-    return "\n".join(rows)
-
-
-def fetch_featured_projects(limit: int = 10) -> str:
-    """Top N most-active owned non-fork non-archived repos, rendered as
-    github-readme-stats pin cards (consistent visual with Pinned Repos)."""
-    r = requests.get(
-        f"https://api.github.com/users/{GH_USER}/repos?per_page=100&type=owner",
-        headers=GH_HEADERS, timeout=20,
-    )
-    r.raise_for_status()
-    repos = [
-        x for x in r.json()
-        if not x.get("fork") and not x.get("archived")
-        and x["name"] != GH_USER  # exclude profile readme repo
-    ]
-    since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=30)).isoformat()
-    scored = []
-    for repo in repos:
-        commits = 0
-        try:
-            cr = requests.get(
-                f"https://api.github.com/repos/{GH_USER}/{repo['name']}/commits",
-                headers=GH_HEADERS, params={"since": since, "per_page": 100}, timeout=10,
-            )
-            if cr.ok:
-                commits = len(cr.json())
-        except Exception:
-            pass
-        scored.append((_score_repo(repo, commits), repo, commits))
-    scored.sort(key=lambda t: -t[0])
-    top = [r for _, r, _ in scored[:limit]]
-
-    if not top:
-        return "_No featured projects yet._"
-
-    # Side effect: render rich Featured-card SVGs for each entry.
-    feat_dir = Path(ASSETS_DIR) / "featured"
-    feat_dir.mkdir(parents=True, exist_ok=True)
-    # commit-count map needed for trending labels
-    commits_by_name = {r["name"]: c for _, r, c in scored}
-    for r in top:
-        try:
-            render_featured_card_svg(r, commits_by_name.get(r["name"], 0),
-                                     feat_dir / f"{r['name']}.svg")
-        except Exception as e:
-            warn(f"featured render failed for {r['name']}: {e}")
-
-    # Render as 2-col grid of <a><img></a> referencing the new cards
-    rows = []
-    for i in range(0, len(top), 2):
-        rows.append('<div align="center">')
-        for j in range(2):
-            if i + j >= len(top):
-                continue
-            n = top[i + j]["name"]
-            rows.append(
-                f'  <a href="https://github.com/{GH_USER}/{n}">'
-                f'<img src="./{ASSETS_DIR}/featured/{n}.svg" '
-                f'width="49%" alt="{n} — featured project card" /></a>'
-            )
-        rows.append('</div>')
-
-    today = dt.date.today().isoformat()
-    return (
-        f'<p align="center"><sub>🔥 Top {len(top)} most-active repos · '
-        f'rich cards with topics, last-updated, watchers · ranked by recent '
-        f'commits + stars. Last updated {today}.</sub></p>\n\n'
-        + "\n".join(rows)
-    )
 
 
 # --- PINNED REPOS (daily auto-update) ----------------------------------------
@@ -2387,115 +2576,296 @@ def _categorize_repo(repo: dict) -> str:
     return "backend"
 
 
-def fetch_pinned_repos() -> str:
-    """Render an exhaustive showcase grid: pinned repos at the top, then
-    every active (non-archived) repo grouped by category, all using the
-    consistent github-readme-stats pin-card visual style."""
-    r = requests.get(
-        f"https://api.github.com/users/{GH_USER}/repos?per_page=100&type=owner",
-        headers=GH_HEADERS, timeout=20,
-    )
-    r.raise_for_status()
-    all_repos = [
-        x for x in r.json()
-        if not x.get("fork") and not x.get("archived")
-    ]
+# --- PROJECTS: spotlight, featured cards, project index ----------------------
+# Same editorial system as the stats section: dark cards, green mono eyebrows,
+# blue numbers, white text, no emoji. Spotlight copy is curated in
+# spotlight.json; every number on it is fetched live.
 
-    # Pinned via GraphQL (authoritative for pin order)
-    PINNED_Q = """
-    query($login: String!) {
-      user(login: $login) {
-        pinnedItems(first: 6, types: REPOSITORY) {
-          nodes { ... on Repository { name } }
-        }
-      }
-    }
-    """
-    pinned_names = []
+SPOTLIGHT_FILE = Path(__file__).resolve().parent / "spotlight.json"
+PROJECTS_DIR_NAME = "projects"
+CATEGORY_LABELS = {"tools": "DEVELOPER TOOLS", "ai": "AI · DATA", "game": "GAMES",
+                   "frontend": "FRONTEND", "backend": "BACKEND / API"}
+LIGHT_TILE_ICONS = {"django"}  # dark glyphs that need a light tile
+_FEATURED_NAMES: list[str] = []
+
+
+def _load_spotlight() -> list[dict]:
     try:
-        data = graphql(PINNED_Q, {"login": GH_USER})
-        pinned_names = [n["name"] for n in data["user"]["pinnedItems"]["nodes"]]
+        return json.loads(SPOTLIGHT_FILE.read_text(encoding="utf-8"))
     except Exception as e:
-        warn(f"pinnedItems query failed: {e}")
+        warn(f"spotlight.json unreadable: {e}")
+        return []
 
-    by_name = {r["name"]: r for r in all_repos}
-    pinned_set = set(pinned_names)
 
-    pinned_repos = [by_name[n] for n in pinned_names if n in by_name]
-    rest = [r for r in all_repos if r["name"] not in pinned_set]
-    rest.sort(key=lambda r: -r.get("stargazers_count", 0))
+def _spotlight_names() -> set[str]:
+    return {s["repo"] for s in _load_spotlight()}
 
-    # Category buckets (rest)
-    buckets: dict[str, list[dict]] = {
-        "most_starred": [], "tools": [], "backend": [],
-        "frontend": [], "ai": [], "game": [],
-    }
-    for r in rest:
-        if r.get("stargazers_count", 0) >= 10:
-            buckets["most_starred"].append(r)
+
+def _wrap_px(text: str, width_px: float, font_px: float) -> list[str]:
+    """Greedy word wrap using an average glyph width of ~0.52em."""
+    per_line = max(10, int(width_px / (font_px * 0.52)))
+    words, lines, cur = (text or "").split(), [], ""
+    for w in words:
+        nxt = f"{cur} {w}".strip()
+        if len(nxt) > per_line and cur:
+            lines.append(cur)
+            cur = w
         else:
-            buckets[_categorize_repo(r)].append(r)
+            cur = nxt
+    if cur:
+        lines.append(cur)
+    return lines
 
-    # Side effect: render pin SVG for every repo we'll show, so all <img src>
-    # references in the markdown resolve to local files (independent of
-    # third-party stats services).
-    showcase_set = list(pinned_repos)
-    seen = {r["name"] for r in showcase_set}
-    for r in all_repos:
-        if r["name"] not in seen:
-            showcase_set.append(r)
-            seen.add(r["name"])
-    regenerate_pin_svgs(showcase_set)
 
-    sections: list[str] = []
+def _icon_tile(name: str, x: float, y: float, size: float = 64) -> str:
+    fill = "#e6edf3" if name in LIGHT_TILE_ICONS else "#1c2330"
+    pad = size * 0.2
+    return (f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="14" fill="{fill}" stroke="#30363d" stroke-width="1.5"/>'
+            + _lang_icon_file(name, x + pad, y + pad, size - 2 * pad))
 
-    def _collapsible(title: str, count: int, sub: str, body: str, *, open_: bool = False) -> str:
-        """Each category renders inside a <details> so users can collapse it.
-        First section (Pinned-by-author) opens by default; rest collapsed."""
-        attr = " open" if open_ else ""
-        return (
-            f'<details{attr}>\n'
-            f'<summary align="center"><b>{title}</b> '
-            f'<sub>· {count}</sub></summary>\n\n'
-            f'<p align="center"><sub><i>{sub}</i></sub></p>\n\n'
-            f'{body}\n\n'
-            f'</details>'
-        )
 
-    if pinned_repos:
-        sections.append(_collapsible(
-            "📌 Pinned by the author",
-            len(pinned_repos),
-            "Hand-picked headline projects",
-            _render_pin_grid(pinned_repos),
-            open_=True,
-        ))
+def _lang_icon_file(icon: str, x: float, y: float, size: float) -> str:
+    f = Path(ASSETS_DIR) / "icons" / "lang" / f"{icon}-original.svg"
+    if not f.exists():
+        return ""
+    inner = re.sub(r"^<svg[^>]*>|</svg>\s*$", "", f.read_text(encoding="utf-8").strip())
+    return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 128 128">{inner}</svg>'
 
-    label_map = {
-        "most_starred": ("⭐ Most-Starred Showcases", "Repos with notable community traction"),
-        "tools":        ("🛠️ Developer Tools",        "GitHub Apps, CLIs, and dev-experience tooling"),
-        "backend":      ("🌐 Backend / API",          "Django / DRF systems and reference APIs"),
-        "frontend":     ("🎨 Frontend / UI",          "Vue, Nuxt, and design-forward web apps"),
-        "ai":           ("🧠 AI · Data · Notebooks",  "RAG, agents, ML experiments"),
-        "game":         ("🎮 Game",                   "Pygame & arcade clones"),
-    }
-    for key in ("most_starred", "tools", "backend", "frontend", "ai", "game"):
-        items = buckets[key]
+
+def spotlight_svg(s: dict, live: dict) -> str:
+    W, PAD = 1400, 48
+    B, G = SEC_BLUE, SEC_GREEN
+    lx0, lx1 = PAD, 820
+    rx0, rx1 = 880, W - PAD
+    label_w = 150
+    body_font = 21
+    rows = [(k, _wrap_px(v, lx1 - lx0 - label_w, body_font)) for k, v in s["rows"]]
+    one = _wrap_px(s["one_liner"], lx1 - lx0, 25)
+    y = PAD + 30
+    left = [f'<text x="{lx0}" y="{y}" font-family="{SEC_MONO}" font-size="16" font-weight="700" letter-spacing="3.5" fill="{G}">// {html_escape(s["eyebrow"])}</text>']
+    y += 62
+    left.append(f'<text x="{lx0}" y="{y}" font-family="{SEC_SANS}" font-size="52" font-weight="800" letter-spacing="-1.5" fill="#ffffff">'
+                f'{html_escape(s["name"])}<tspan fill="{SEC_RED}">.</tspan></text>')
+    y += 44
+    for ln in one:
+        left.append(f'<text x="{lx0}" y="{y}" font-family="{SEC_SANS}" font-size="25" fill="#c9d1d9">{html_escape(ln)}</text>')
+        y += 34
+    y += 14
+    for label, lines in rows:
+        left.append(f'<text x="{lx0}" y="{y + 4}" font-family="{SEC_MONO}" font-size="15" font-weight="700" letter-spacing="2.5" fill="{B}">{label}</text>')
+        for i, ln in enumerate(lines):
+            left.append(f'<text x="{lx0 + label_w}" y="{y + 6 + i * 29}" font-family="{SEC_SANS}" font-size="{body_font}" fill="#c9d1d9">{html_escape(ln)}</text>')
+        y += 6 + len(lines) * 29 + 14
+        left.append(f'<line x1="{lx0}" y1="{y - 6}" x2="{lx1}" y2="{y - 6}" stroke="#21262d" stroke-width="1.5"/>')
+        y += 18
+    left_h = y
+
+    # right column
+    ry = PAD + 74
+    right = [f'<line x1="{rx0}" y1="{ry}" x2="{rx1}" y2="{ry}" stroke="#30363d" stroke-width="1.5"/>']
+    stats = []
+    for val, label in s["stats"]:
+        if str(val).startswith("live:"):
+            v = live.get(val[5:])
+            if v is None:
+                continue
+            val = f"{v:,}"
+        stats.append((val, label))
+    cw = (rx1 - rx0) / max(1, len(stats))
+    for i, (val, label) in enumerate(stats):
+        x = rx0 + i * cw + 6
+        right.append(f'<text x="{x}" y="{ry + 62}" font-family="{SEC_SANS}" font-size="44" font-weight="800" letter-spacing="-1" fill="{B}">{html_escape(str(val))}</text>'
+                     f'<text x="{x}" y="{ry + 94}" font-family="{SEC_SANS}" font-size="19" fill="#ffffff">{html_escape(label)}</text>')
+    ry += 122
+    right.append(f'<line x1="{rx0}" y1="{ry}" x2="{rx1}" y2="{ry}" stroke="#30363d" stroke-width="1.5"/>')
+    ry += 46
+    right.append(f'<text x="{rx0}" y="{ry}" font-family="{SEC_MONO}" font-size="16" font-weight="700" letter-spacing="3.5" fill="{G}">// STACK</text>')
+    ry += 22
+    for i, ic in enumerate(s["stack_icons"]):
+        right.append(_icon_tile(ic, rx0 + i * 78, ry))
+    ry += 64 + 34
+    for ln in _wrap_px(s["stack_text"], rx1 - rx0, 18):
+        right.append(f'<text x="{rx0}" y="{ry}" font-family="{SEC_SANS}" font-size="18" fill="#8b949e">{html_escape(ln)}</text>')
+        ry += 26
+    ry += 22
+    right.append(f'<text x="{rx0}" y="{ry}" font-family="{SEC_SANS}" font-size="21" font-weight="700" fill="{B}">View the repository →</text>')
+    H = max(left_h, ry + 20) + PAD - 18
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
+            f'aria-label="{html_escape(s["name"])}: {html_escape(s["one_liner"])}">'
+            f'<defs><radialGradient id="sg" cx="1" cy="0" r="1.3"><stop offset="0" stop-color="#161b24"/><stop offset=".55" stop-color="#0d1117"/></radialGradient></defs>'
+            f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="24" fill="url(#sg)" stroke="#30363d" stroke-width="2"/>'
+            + "".join(left) + "".join(right) + "</svg>")
+
+
+SPOTLIGHT_QUERY = """
+query($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    stargazerCount
+    forkCount
+    defaultBranchRef { target { ... on Commit { history { totalCount } } } }
+  }
+}
+"""
+
+
+def render_spotlight_svgs() -> None:
+    out = Path(ASSETS_DIR) / PROJECTS_DIR_NAME
+    out.mkdir(parents=True, exist_ok=True)
+    for s in _load_spotlight():
+        try:
+            r = graphql(SPOTLIGHT_QUERY, {"owner": GH_USER, "name": s["repo"]})["repository"]
+            live = {"stars": r["stargazerCount"], "forks": r["forkCount"],
+                    "commits": ((r.get("defaultBranchRef") or {}).get("target") or {}).get("history", {}).get("totalCount")}
+            (out / f"spotlight-{s['repo']}.svg").write_text(spotlight_svg(s, live), encoding="utf-8")
+            print(f"rendered spotlight-{s['repo']}.svg")
+        except Exception as e:
+            warn(f"spotlight {s['repo']} failed, keeping the previous file: {e}")
+
+
+def featured_card_svg(c: dict) -> str:
+    """One Featured card. c: name, category, desc, tags, language, stars, status, status_kind, updated."""
+    W, H, P = 700, 340, 34
+    B, G = SEC_BLUE, SEC_GREEN
+    status_fill = {"live": "#ff6b6b", "active": "#3fb950", "quiet": "#6e7681"}[c["status_kind"]]
+    s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
+         f'aria-label="{html_escape(c["name"])} — {html_escape(c["desc"])}">'
+         f'<defs><linearGradient id="fc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121821"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>'
+         f'<rect x="1.5" y="1.5" width="{W - 3}" height="{H - 3}" rx="20" fill="url(#fc)" stroke="#30363d" stroke-width="2"/>'
+         f'<text x="{P}" y="{P + 18}" font-family="{SEC_MONO}" font-size="16" font-weight="700" letter-spacing="3.5" fill="{G}">{html_escape(c["category"])}</text>'
+         f'<text x="{W - P}" y="{P + 18}" text-anchor="end" font-family="{SEC_SANS}" font-size="18" font-weight="600" fill="{status_fill}">● {html_escape(c["status"])}</text>']
+    name = c["name"] if len(c["name"]) <= 30 else c["name"][:29] + "…"
+    s.append(f'<text x="{P}" y="{P + 70}" font-family="{SEC_SANS}" font-size="31" font-weight="800" letter-spacing="-.5" fill="#ffffff">{html_escape(name)}</text>')
+    lines = _wrap_px(c["desc"], W - 2 * P, 19.5)
+    if len(lines) > 3:
+        lines = lines[:3]
+        lines[-1] = lines[-1].rstrip(" ,.;—-") + "…"
+    for i, ln in enumerate(lines):
+        s.append(f'<text x="{P}" y="{P + 110 + i * 28}" font-family="{SEC_SANS}" font-size="19.5" fill="#9da7b3">{html_escape(ln)}</text>')
+    tx, ty = P, H - 112
+    for t in c["tags"][:3]:
+        w = len(t) * 10.4 + 30
+        s.append(f'<rect x="{tx}" y="{ty}" width="{w:.0f}" height="34" rx="17" fill="none" stroke="#30363d" stroke-width="1.6"/>'
+                 f'<text x="{tx + w / 2:.0f}" y="{ty + 23}" text-anchor="middle" font-family="{SEC_MONO}" font-size="16.5" fill="#c9d1d9">{html_escape(t)}</text>')
+        tx += w + 10
+    fy = H - 44
+    s.append(f'<line x1="{P}" y1="{fy - 24}" x2="{W - P}" y2="{fy - 24}" stroke="#21262d" stroke-width="1.5"/>')
+    lang = c.get("language") or ""
+    x = P
+    if lang:
+        s.append(_lang_icon(lang, x, fy - 9, 26, LANG_COLORS.get(lang, "#6e7681")))
+        s.append(f'<text x="{x + 36}" y="{fy + 11}" font-family="{SEC_SANS}" font-size="19" fill="#ffffff">{html_escape(lang)}</text>')
+        x += 36 + len(lang) * 10.5 + 28
+    s.append(f'<text x="{x}" y="{fy + 11}" font-family="{SEC_SANS}" font-size="19" font-weight="700" fill="{B}">★ {c["stars"]}</text>'
+             f'<text x="{W - P}" y="{fy + 11}" text-anchor="end" font-family="{SEC_SANS}" font-size="18" fill="#8b949e">updated {html_escape(c["updated"])}</text>')
+    s.append("</svg>")
+    return "".join(s)
+
+
+def _featured_card_data(repo: dict, recent_commits: int) -> dict:
+    home = (repo.get("homepage") or "").strip()
+    host = urllib.parse.urlparse(home if "://" in home else f"https://{home}").netloc.removeprefix("www.") if home else ""
+    if host and not host.endswith(("github.com", "github.io")):
+        status, kind = f"LIVE · {host}", "live"
+    elif recent_commits >= 5:
+        status, kind = f"{recent_commits} commits · 30d", "active"
+    else:
+        status, kind = "quiet", "quiet"
+    generic = {"python", "python3", "html", "css", "javascript", "html5"}
+    tags = [t for t in (repo.get("topics") or []) if t not in generic][:3]
+    return dict(name=repo["name"], category=CATEGORY_LABELS.get(_categorize_repo(repo), "PROJECT"),
+                desc=(repo.get("description") or "No description yet.").strip(), tags=tags,
+                language=repo.get("language") or "", stars=repo.get("stargazers_count", 0),
+                status=status, status_kind=kind,
+                updated=_humanize_date(repo.get("pushed_at") or "").lstrip("~"))
+
+
+def fetch_featured_projects(limit: int = 6) -> str:
+    """The most active owned repos (score: recent commits, stars, recency), minus the
+    profile repo and the spotlight projects. Rendered as editorial SVG cards."""
+    global _FEATURED_NAMES
+    r = requests.get(f"https://api.github.com/users/{GH_USER}/repos?per_page=100&type=owner",
+                     headers=GH_HEADERS, timeout=20)
+    r.raise_for_status()
+    skip = _spotlight_names() | {GH_USER}
+    repos = [x for x in r.json() if not x.get("fork") and not x.get("archived") and x["name"] not in skip]
+    since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=30)).isoformat()
+    scored = []
+    for repo in repos:
+        commits = 0
+        try:
+            cr = requests.get(f"https://api.github.com/repos/{GH_USER}/{repo['name']}/commits",
+                              headers=GH_HEADERS, params={"since": since, "per_page": 100}, timeout=10)
+            if cr.ok:
+                commits = len(cr.json())
+        except Exception:
+            pass
+        scored.append((_score_repo(repo, commits), repo, commits))
+    scored.sort(key=lambda t: -t[0])
+    top = scored[:limit]
+    if not top:
+        return "_No featured projects yet._"
+    feat_dir = Path(ASSETS_DIR) / "featured"
+    feat_dir.mkdir(parents=True, exist_ok=True)
+    for _, repo, commits in top:
+        try:
+            (feat_dir / f"{repo['name']}.svg").write_text(featured_card_svg(_featured_card_data(repo, commits)), encoding="utf-8")
+        except Exception as e:
+            warn(f"featured render failed for {repo['name']}: {e}")
+    _FEATURED_NAMES = [repo["name"] for _, repo, _ in top]
+    return _featured_grid(_FEATURED_NAMES)
+
+
+def _featured_grid(names: list[str]) -> str:
+    rows = []
+    for i in range(0, len(names), 2):
+        rows.append('<p align="center">')
+        for n in names[i:i + 2]:
+            rows.append(f'  <a href="https://github.com/{GH_USER}/{n}"><img src="./{ASSETS_DIR}/featured/{n}.svg" '
+                        f'width="49%" alt="{n} — featured project"/></a>')
+        rows.append('</p>')
+    return "\n".join(rows)
+
+
+def _featured_names_in_readme() -> list[str]:
+    try:
+        text = Path(README_PATH).read_text(encoding="utf-8")
+        m = re.search(r"<!--\s*FEATURED_PROJECTS:START\s*-->(.*?)<!--\s*FEATURED_PROJECTS:END\s*-->", text, re.S)
+        return re.findall(r"assets/featured/([^\"/]+)\.svg", m.group(1)) if m else []
+    except Exception:
+        return []
+
+
+def _short_desc(desc: str, n: int = 64) -> str:
+    desc = " ".join((desc or "").split())
+    first = re.split(r" — | - |\. ", desc)[0].rstrip(".")
+    return _clip(first or desc, n) if first else "—"
+
+
+def fetch_pinned_repos() -> str:
+    """Compact project index: every active repo not already in the spotlight or the
+    featured grid, grouped by category, as a two-column HTML table."""
+    r = requests.get(f"https://api.github.com/users/{GH_USER}/repos?per_page=100&type=owner",
+                     headers=GH_HEADERS, timeout=20)
+    r.raise_for_status()
+    shown = _spotlight_names() | set(_FEATURED_NAMES or _featured_names_in_readme()) | {GH_USER}
+    repos = [x for x in r.json() if not x.get("fork") and not x.get("archived") and x["name"] not in shown]
+    order = ["tools", "ai", "backend", "frontend", "game"]
+    titles = {"tools": "Developer tools", "ai": "AI · Data", "backend": "Backend / API",
+              "frontend": "Frontend", "game": "Games"}
+    buckets: dict[str, list[dict]] = {k: [] for k in order}
+    for repo in repos:
+        buckets[_categorize_repo(repo)].append(repo)
+    rows = []
+    for k in order:
+        items = sorted(buckets[k], key=lambda x: (-x.get("stargazers_count", 0), x["name"].lower()))
         if not items:
             continue
-        title, sub = label_map[key]
-        sections.append(_collapsible(title, len(items), sub, _render_pin_grid(items)))
-
-    today = dt.date.today().isoformat()
-    sections.insert(
-        0,
-        f'<p align="center"><sub>🔄 Auto-refreshed daily · '
-        f'<b>{len(all_repos)}</b> active repos shown across '
-        f'<b>{sum(1 for k,v in buckets.items() if v) + (1 if pinned_repos else 0)}</b> categories. '
-        f'Last updated {today}.</sub></p>'
-    )
-
-    return "\n\n".join(sections)
+        rows.append(f'<tr><th align="left" colspan="2">{titles[k]} <sub>· {len(items)}</sub></th></tr>')
+        rows += [f'<tr><td><a href="https://github.com/{GH_USER}/{x["name"]}"><b>{html_escape(x["name"])}</b></a></td>'
+                 f'<td>{html_escape(_short_desc(x.get("description") or ""))}</td></tr>' for x in items]
+    if not rows:
+        return "_Nothing else to list yet._"
+    return '<table width="100%">\n' + "\n".join(rows) + "\n</table>"
 
 
 # --- STATS CACHE BUSTER ------------------------------------------------------
@@ -2552,6 +2922,11 @@ def main() -> int:
         except Exception as e:
             warn(f"stats cards regeneration failed: {e}")
 
+        try:
+            render_spotlight_svgs()
+        except Exception as e:
+            warn(f"spotlight regeneration failed: {e}")
+
         # Regenerate the About-Me hero SVG too (idempotent — same byte output
         # given same date, so no spurious commits).
         try:
@@ -2571,30 +2946,22 @@ def main() -> int:
     original = text
 
     if activity_only:
-        # 3-hourly fast path — only activity + cache-buster + featured-trending.
-        sections: list[tuple[str, Callable[[], str]]] = [
-            ("ACTIVITY", fetch_activity),
-        ]
+        # 3-hourly fast path — redraw the activity + releases SVGs, then the cache-buster.
+        regenerate_activity_cards()
+        sections: list[tuple[str, Callable[[], str]]] = []
     else:
         # Full daily refresh.
         sections = [
-            ("ACTIVITY", fetch_activity),
-            ("LATEST_RELEASES", fetch_releases),
             ("PAGESPEED", fetch_pagespeed),
             ("HIGHLIGHTS_STATS", fetch_year_stats),
-            ("SNAKE_GRID", snake_grid),
-            ("SKYLINE_GRID", skyline_grid),
-            ("STL_LINKS", stl_links),
-            ("CITY_GRID", city_grid),
-            ("GITCITY_LINKS", gitcity_links),
+            ("CONTRIB_LINKS", contrib_links),
             ("QUOTE", quote_of_the_day),
-            ("GITGRAPH", gitgraph_from_activity),
-            ("PINNED_REPOS", fetch_pinned_repos),
         ]
-        # Featured Projects only refreshes if it's a Monday (or via dispatch flag),
-        # but include it on every full run too — score is fast and idempotent.
+        # Featured cards re-rank weekly (Mondays, or with --include-featured); the
+        # index runs after them so it can leave out whatever the cards show.
         if "--include-featured" in sys.argv or dt.date.today().weekday() == 0:
             sections.append(("FEATURED_PROJECTS", fetch_featured_projects))
+        sections.append(("PINNED_REPOS", fetch_pinned_repos))
 
     for marker, fn in sections:
         try:

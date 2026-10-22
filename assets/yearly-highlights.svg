@@ -267,7 +267,7 @@
     <text x="24"  y="320" class="t-stat-num" fill="#FFD23F">5</text>
     <text x="24"  y="338" class="t-stat-lbl">GH APPS</text>
     <text x="120" y="320" class="t-stat-num" fill="#FFD23F">v1</text>
-    <text x="120" y="338" class="t-stat-lbl">PYDEV PLATFORM</text>
+    <text x="120" y="338" class="t-stat-lbl">PYPI PACKAGES</text>
     <text x="216" y="320" class="t-stat-num" fill="#FFD23F">9+</text>
     <text x="216" y="338" class="t-stat-lbl">NEW REPOS</text>
   </g>

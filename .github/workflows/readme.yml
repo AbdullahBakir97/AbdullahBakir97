@@ -59,7 +59,7 @@ jobs:
           GH_USER: AbdullahBakir97
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PSI_API_KEY: ${{ secrets.PSI_API_KEY }}
-          PSI_URL: http://kharsa-style.de/
+          PSI_URL: https://kharsa-style.de/
         run: |
           if [ "${{ steps.mode.outputs.mode }}" = "activity-only" ]; then
             python .github/scripts/update_readme.py --activity-only
@@ -71,14 +71,20 @@ jobs:
             python .github/scripts/update_readme.py $FLAGS
           fi
 
-      - name: Draw name from real commit days
-        run: python scripts/build_commit_name.py
+      - name: Draw name from real commit days and the current-focus cards
+        env:
+          GH_USER: AbdullahBakir97
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/build_commit_name.py
+          python scripts/build_current_focus.py
+          python scripts/build_year_story.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/commit-name.svg assets/heatmap-*.svg assets/skyline-*.svg assets/about-hero.svg assets/about-orbit.svg assets/pins/ assets/featured/ assets/stats/
+          git add README.md assets/commit-name.svg assets/current-focus.svg assets/year-story.svg assets/heatmap-*.svg assets/skyline-*.svg assets/about-hero.svg assets/about-code.svg assets/about-orbit.svg assets/featured/ assets/projects/ assets/stats/
           if git diff --cached --quiet; then
             echo "no changes to commit"
             exit 0
