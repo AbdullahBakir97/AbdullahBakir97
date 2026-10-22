@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-10-18T08:54:46.041Z"
+    "lastModified": "2026-10-22T09:28:35.219Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -24,17 +24,22 @@
   },
   "skills": [
     {
-      "name": "Vue",
-      "level": "expert",
-      "keywords": []
-    },
-    {
       "name": "Python",
       "level": "expert",
       "keywords": []
     },
     {
+      "name": "Vue",
+      "level": "expert",
+      "keywords": []
+    },
+    {
       "name": "JavaScript",
+      "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "TypeScript",
       "level": "expert",
       "keywords": []
     },
@@ -45,11 +50,6 @@
     },
     {
       "name": "HTML",
-      "level": "expert",
-      "keywords": []
-    },
-    {
-      "name": "TypeScript",
       "level": "expert",
       "keywords": []
     },
@@ -152,7 +152,7 @@
       "highlights": [
         "primary:Python",
         "topic:llm",
-        "score:2.08"
+        "score:2.10"
       ]
     },
     {
