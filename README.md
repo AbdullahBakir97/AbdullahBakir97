@@ -104,8 +104,8 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The most damaging phrase in the language is: 'We've always done it this way!'"</i><br/>
-  <sub>— <b>Grace Hopper</b></sub>
+  <i>"Software is a great combination of artistry and engineering."</i><br/>
+  <sub>— <b>Bill Gates</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -262,7 +262,7 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 <p align="center"><b>📊 This year, live from GitHub</b></p>
 
 <!-- HIGHLIGHTS_STATS:START -->
-<p align="center"><img src="https://img.shields.io/badge/Commits-911-red?style=for-the-badge&logo=git&logoColor=white&v=20261022" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-146-red?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="Active repos" /></p>
+<p align="center"><img src="https://img.shields.io/badge/Commits-911-red?style=for-the-badge&logo=git&logoColor=white&v=20261022" alt="Commits" /> <img src="https://img.shields.io/badge/PRs-148-red?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="PRs" /> <img src="https://img.shields.io/badge/New_Repos-14-red?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="New repos" /> <img src="https://img.shields.io/badge/Active_in-43_repos-red?style=for-the-badge&logo=github&logoColor=white&v=20261022" alt="Active repos" /></p>
 <!-- HIGHLIGHTS_STATS:END -->
 
 <!-- The narrative bullets are still updated separately by you — kept as a marker
@@ -336,6 +336,11 @@ print(me.philosophy())  # → Ship something useful → learn → ship again.
 ```mermaid
 gitGraph
    commit id: "main"
+   branch AbdullahBakir97
+   checkout AbdullahBakir97
+   commit id: "c1"
+   checkout main
+   merge AbdullahBakir97
    branch Django--LMS--Learning-Manageme
    checkout Django--LMS--Learning-Manageme
    commit id: "c1"
@@ -531,7 +536,7 @@ Then replace the `<img>` above with `<a href="...asciinema URL..."><img src="...
 <p align="center"><sub>🔄 Auto-refreshed daily from GitHub's pinned-repos GraphQL API. Tracks new pins automatically.</sub></p>
 
 <!-- PINNED_REPOS:START -->
-<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-21.</sub></p>
+<p align="center"><sub>🔄 Auto-refreshed daily · <b>43</b> active repos shown across <b>7</b> categories. Last updated 2026-10-22.</sub></p>
 
 <details open>
 <summary align="center"><b>📌 Pinned by the author</b> <sub>· 5</sub></summary>
