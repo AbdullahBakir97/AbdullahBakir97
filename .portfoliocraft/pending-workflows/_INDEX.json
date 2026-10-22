@@ -1,0 +1,157 @@
+[
+  {
+    "repo": "Barber-Salon",
+    "kind": "django(project.settings)",
+    "path": "Barber-Salon\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Jobs-Portal",
+    "kind": "django(project.settings)",
+    "path": "Jobs-Portal\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Django-Store",
+    "kind": "django(project.settings)",
+    "path": "Django-Store\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Django--LMS--Learning-Management-System",
+    "kind": "django(project.settings)",
+    "path": "Django--LMS--Learning-Management-System\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Project-Management-Tool",
+    "kind": "python",
+    "path": "Project-Management-Tool\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Py-Desktop-Expense_Tracker",
+    "kind": "python",
+    "path": "Py-Desktop-Expense_Tracker\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Python-Environment-Management-Tool",
+    "kind": "python",
+    "path": "Python-Environment-Management-Tool\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Django-Followers-System",
+    "kind": "django(project.settings)",
+    "path": "Django-Followers-System\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "API",
+    "kind": "django(project.settings)",
+    "path": "API\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Pilot-Logbook",
+    "kind": "django(project.settings)",
+    "path": "Pilot-Logbook\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Mini-RAG",
+    "kind": "python",
+    "path": "Mini-RAG\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Content-Creator-Tool",
+    "kind": "django(project.settings)",
+    "path": "Content-Creator-Tool\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Tawil-Media---Advertisement",
+    "kind": "django(project.settings)",
+    "path": "Tawil-Media---Advertisement\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Django-Reporting-System",
+    "kind": "django(project.settings)",
+    "path": "Django-Reporting-System\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Django-Blog-app",
+    "kind": "django(project.settings)",
+    "path": "Django-Blog-app\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Trello-Clone-Services",
+    "kind": "python",
+    "path": "Trello-Clone-Services\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Automtion",
+    "kind": "python",
+    "path": "Automtion\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "image-cropping",
+    "kind": "python",
+    "path": "image-cropping\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Email-Sender",
+    "kind": "python",
+    "path": "Email-Sender\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Baeckrei",
+    "kind": "python",
+    "path": "Baeckrei\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Dj--To-Do",
+    "kind": "django(project.settings)",
+    "path": "Dj--To-Do\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Weather--App-django-vue.js",
+    "kind": "python",
+    "path": "Weather--App-django-vue.js\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Python-Django-join_with",
+    "kind": "django(project.settings)",
+    "path": "Python-Django-join_with\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Py-Tetris-Game",
+    "kind": "python",
+    "path": "Py-Tetris-Game\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Space-Shooter",
+    "kind": "python",
+    "path": "Space-Shooter\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Repo-Directory-Structure",
+    "kind": "python",
+    "path": "Repo-Directory-Structure\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "GitHub-Doc-Generator",
+    "kind": "python",
+    "path": "GitHub-Doc-Generator\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "AI-KI",
+    "kind": "python",
+    "path": "AI-KI\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "2050-Bootstrap-Landing-page",
+    "kind": "python",
+    "path": "2050-Bootstrap-Landing-page\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "GitHub-Issues-Wall",
+    "kind": "node",
+    "path": "GitHub-Issues-Wall\\.github\\workflows\\ci.yml"
+  },
+  {
+    "repo": "Portfolio",
+    "kind": "node",
+    "path": "Portfolio\\.github\\workflows\\ci.yml"
+  }
+]

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640" role="img" aria-label="Currently working on — 6 active focus tiles">
+  <!--
+    NOW PLAYING — CURRENT FOCUS DASHBOARD
+      • Netflix-tile aesthetic: 6 rich cards in 3×2 grid
+      • Per-tile: status badge (ACTIVE / EXPLORING / SHIPPING / MAINTAINING),
+        title, description, tech-pill row, accent border
+      • Live "RECORDING NOW" pulse on the status indicator
+  -->
+  <style>
+    .t-display   { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.01em; fill: #FFFFFF; }
+    .t-tag       { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.30em; text-transform: uppercase; fill: #C4B5FD; }
+    .t-status    { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 700; font-size: 9px; letter-spacing: 0.20em; text-transform: uppercase; }
+    .t-title     { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.005em; fill: #FFFFFF; }
+    .t-desc      { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 500; font-size: 12.5px; fill: #C9CDD3; }
+    .t-pill      { font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-weight: 600; font-size: 10px; }
+
+    .live-dot { animation: liveDot 1.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes liveDot {
+      0%, 100% { transform: scale(1);   opacity: 1; }
+      50%      { transform: scale(1.8); opacity: 0.4; }
+    }
+
+    .stripe-glow { animation: stripeGlow 3s ease-in-out infinite; }
+    @keyframes stripeGlow {
+      0%, 100% { opacity: 0.85; }
+      50%      { opacity: 1; }
+    }
+
+    .tile-rise {
+      opacity: 0;
+      animation: tileRise 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    @keyframes tileRise { to { opacity: 1; } }
+    .t1 { animation-delay: 0.0s; } .t2 { animation-delay: 0.08s; } .t3 { animation-delay: 0.16s; }
+    .t4 { animation-delay: 0.24s; } .t5 { animation-delay: 0.32s; } .t6 { animation-delay: 0.40s; }
+  </style>
+
+  <defs>
+    <radialGradient id="bgRadial" cx="50%" cy="50%" r="80%">
+      <stop offset="0%"   stop-color="#0F0816"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#F90001" fill-opacity="0.07"/>
+    </pattern>
+
+    <linearGradient id="tileBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#1A2028" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="tileHighlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="3" result="shadow"/>
+      <feFlood flood-color="#000000" flood-opacity="0.65"/>
+      <feComposite in2="shadow" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="640" fill="url(#bgRadial)"/>
+  <rect width="1400" height="640" fill="url(#dots)"/>
+
+  <!-- Title -->
+  <text x="700" y="42" class="t-tag" text-anchor="middle">⏵ NOW · WORKING · ON ⏴</text>
+  <text x="700" y="78" class="t-display" text-anchor="middle">Current Focus</text>
+
+  <!-- ═════════════════════════════════════════════════════════════════
+       6 TILES in 3×2 grid
+       Tile size: 420×220, gap 20, starts at (40, 110)
+       ═════════════════════════════════════════════════════════════════ -->
+
+  <!-- TILE 1 — PyDev (top-left, red, ACTIVE) -->
+  <g transform="translate(40,110)">
+    <g class="tile-rise t1">
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileBg)" filter="url(#tileShadow)"/>
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileHighlight)"/>
+      <rect x="0" y="0" width="420" height="3" rx="1.5" fill="#F90001" class="stripe-glow"/>
+
+      <!-- Status pill -->
+      <g transform="translate(20, 24)">
+        <rect x="0" y="0" width="92" height="22" rx="11" fill="#F90001" fill-opacity="0.18" stroke="#F90001" stroke-width="1"/>
+        <circle cx="14" cy="11" r="3.5" fill="#F90001" class="live-dot"/>
+        <text x="62" y="15" class="t-status" fill="#F90001" text-anchor="middle">ACTIVE</text>
+      </g>
+
+      <text x="20" y="84" class="t-title">🛠️ PyDev Platform</text>
+      <text x="20" y="116" class="t-desc">Enterprise-grade Python tooling: CLI</text>
+      <text x="20" y="134" class="t-desc">+ secure template marketplace +</text>
+      <text x="20" y="152" class="t-desc">AI-driven dev features.</text>
+
+      <!-- Tech pills -->
+      <g transform="translate(20, 178)">
+        <g><rect x="0"   y="0" width="64" height="22" rx="11" fill="none" stroke="#F90001" stroke-width="1"/>     <text x="32"  y="15" class="t-pill" fill="#F90001" text-anchor="middle">Python</text></g>
+        <g><rect x="72"  y="0" width="50" height="22" rx="11" fill="none" stroke="#F90001" stroke-width="1"/>     <text x="97"  y="15" class="t-pill" fill="#F90001" text-anchor="middle">CLI</text></g>
+        <g><rect x="130" y="0" width="44" height="22" rx="11" fill="none" stroke="#F90001" stroke-width="1"/>     <text x="152" y="15" class="t-pill" fill="#F90001" text-anchor="middle">AI</text></g>
+        <g><rect x="182" y="0" width="100" height="22" rx="11" fill="none" stroke="#F90001" stroke-width="1"/>    <text x="232" y="15" class="t-pill" fill="#F90001" text-anchor="middle">GitHub Apps</text></g>
+      </g>
+    </g>
+  </g>
+
+  <!-- TILE 2 — Baeckrei (top-mid, orange, SHIPPING) -->
+  <g transform="translate(480,110)">
+    <g class="tile-rise t2">
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileBg)" filter="url(#tileShadow)"/>
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileHighlight)"/>
+      <rect x="0" y="0" width="420" height="3" rx="1.5" fill="#FF652F" class="stripe-glow"/>
+
+      <g transform="translate(20, 24)">
+        <rect x="0" y="0" width="100" height="22" rx="11" fill="#FF652F" fill-opacity="0.18" stroke="#FF652F" stroke-width="1"/>
+        <circle cx="14" cy="11" r="3.5" fill="#FF652F" class="live-dot"/>
+        <text x="65" y="15" class="t-status" fill="#FF652F" text-anchor="middle">SHIPPING</text>
+      </g>
+
+      <text x="20" y="84" class="t-title">🥖 Baeckrei</text>
+      <text x="20" y="116" class="t-desc">Bakery management system: inventory,</text>
+      <text x="20" y="134" class="t-desc">recipes, online orders, customer accounts,</text>
+      <text x="20" y="152" class="t-desc">real-time production scheduling.</text>
+
+      <g transform="translate(20, 178)">
+        <g><rect x="0"   y="0" width="64" height="22" rx="11" fill="none" stroke="#FF652F" stroke-width="1"/>  <text x="32"  y="15" class="t-pill" fill="#FF652F" text-anchor="middle">Django</text></g>
+        <g><rect x="72"  y="0" width="44" height="22" rx="11" fill="none" stroke="#FF652F" stroke-width="1"/>  <text x="94"  y="15" class="t-pill" fill="#FF652F" text-anchor="middle">Vue</text></g>
+        <g><rect x="124" y="0" width="80" height="22" rx="11" fill="none" stroke="#FF652F" stroke-width="1"/>  <text x="164" y="15" class="t-pill" fill="#FF652F" text-anchor="middle">Postgres</text></g>
+        <g><rect x="212" y="0" width="58" height="22" rx="11" fill="none" stroke="#FF652F" stroke-width="1"/>  <text x="241" y="15" class="t-pill" fill="#FF652F" text-anchor="middle">Redis</text></g>
+      </g>
+    </g>
+  </g>
+
+  <!-- TILE 3 — Stock-Manager (top-right, green, ACTIVE) -->
+  <g transform="translate(920,110)">
+    <g class="tile-rise t3">
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileBg)" filter="url(#tileShadow)"/>
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileHighlight)"/>
+      <rect x="0" y="0" width="420" height="3" rx="1.5" fill="#34D399" class="stripe-glow"/>
+
+      <g transform="translate(20, 24)">
+        <rect x="0" y="0" width="92" height="22" rx="11" fill="#34D399" fill-opacity="0.18" stroke="#34D399" stroke-width="1"/>
+        <circle cx="14" cy="11" r="3.5" fill="#34D399" class="live-dot"/>
+        <text x="62" y="15" class="t-status" fill="#34D399" text-anchor="middle">ACTIVE</text>
+      </g>
+
+      <text x="20" y="84" class="t-title">📦 Stock-Manager</text>
+      <text x="20" y="116" class="t-desc">Desktop inventory app for shop floors</text>
+      <text x="20" y="134" class="t-desc">— local-first, barcode-aware, role-based.</text>
+      <text x="20" y="152" class="t-desc">v2.4.3 in production.</text>
+
+      <g transform="translate(20, 178)">
+        <g><rect x="0"   y="0" width="64" height="22" rx="11" fill="none" stroke="#34D399" stroke-width="1"/>  <text x="32"  y="15" class="t-pill" fill="#34D399" text-anchor="middle">Python</text></g>
+        <g><rect x="72"  y="0" width="50" height="22" rx="11" fill="none" stroke="#34D399" stroke-width="1"/>  <text x="97"  y="15" class="t-pill" fill="#34D399" text-anchor="middle">PyQt</text></g>
+        <g><rect x="130" y="0" width="62" height="22" rx="11" fill="none" stroke="#34D399" stroke-width="1"/>  <text x="161" y="15" class="t-pill" fill="#34D399" text-anchor="middle">SQLite</text></g>
+        <g><rect x="200" y="0" width="80" height="22" rx="11" fill="none" stroke="#34D399" stroke-width="1"/>  <text x="240" y="15" class="t-pill" fill="#34D399" text-anchor="middle">Desktop</text></g>
+      </g>
+    </g>
+  </g>
+
+  <!-- TILE 4 — Generative AI (bot-left, purple, EXPLORING) -->
+  <g transform="translate(40,350)">
+    <g class="tile-rise t4">
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileBg)" filter="url(#tileShadow)"/>
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileHighlight)"/>
+      <rect x="0" y="0" width="420" height="3" rx="1.5" fill="#A78BFA" class="stripe-glow"/>
+
+      <g transform="translate(20, 24)">
+        <rect x="0" y="0" width="108" height="22" rx="11" fill="#A78BFA" fill-opacity="0.18" stroke="#A78BFA" stroke-width="1"/>
+        <circle cx="14" cy="11" r="3.5" fill="#A78BFA" class="live-dot"/>
+        <text x="69" y="15" class="t-status" fill="#A78BFA" text-anchor="middle">EXPLORING</text>
+      </g>
+
+      <text x="20" y="84" class="t-title">🤖 Generative AI</text>
+      <text x="20" y="116" class="t-desc">Integrating LLMs and RAG into</text>
+      <text x="20" y="134" class="t-desc">Django/Vue applications. Local agents,</text>
+      <text x="20" y="152" class="t-desc">prompt engineering, embeddings.</text>
+
+      <g transform="translate(20, 178)">
+        <g><rect x="0"   y="0" width="56" height="22" rx="11" fill="none" stroke="#A78BFA" stroke-width="1"/>  <text x="28"  y="15" class="t-pill" fill="#A78BFA" text-anchor="middle">LLMs</text></g>
+        <g><rect x="64"  y="0" width="48" height="22" rx="11" fill="none" stroke="#A78BFA" stroke-width="1"/>  <text x="88"  y="15" class="t-pill" fill="#A78BFA" text-anchor="middle">RAG</text></g>
+        <g><rect x="120" y="0" width="64" height="22" rx="11" fill="none" stroke="#A78BFA" stroke-width="1"/>  <text x="152" y="15" class="t-pill" fill="#A78BFA" text-anchor="middle">PyTorch</text></g>
+        <g><rect x="192" y="0" width="62" height="22" rx="11" fill="none" stroke="#A78BFA" stroke-width="1"/>  <text x="223" y="15" class="t-pill" fill="#A78BFA" text-anchor="middle">Agents</text></g>
+      </g>
+    </g>
+  </g>
+
+  <!-- TILE 5 — Vue 3 / Nuxt (bot-mid, cyan, MAINTAINING) -->
+  <g transform="translate(480,350)">
+    <g class="tile-rise t5">
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileBg)" filter="url(#tileShadow)"/>
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileHighlight)"/>
+      <rect x="0" y="0" width="420" height="3" rx="1.5" fill="#22D3EE" class="stripe-glow"/>
+
+      <g transform="translate(20, 24)">
+        <rect x="0" y="0" width="120" height="22" rx="11" fill="#22D3EE" fill-opacity="0.18" stroke="#22D3EE" stroke-width="1"/>
+        <circle cx="14" cy="11" r="3.5" fill="#22D3EE" class="live-dot"/>
+        <text x="75" y="15" class="t-status" fill="#22D3EE" text-anchor="middle">MAINTAINING</text>
+      </g>
+
+      <text x="20" y="84" class="t-title">🐳 Docker &amp; CI/CD</text>
+      <text x="20" y="116" class="t-desc">Production deploy workflows that</text>
+      <text x="20" y="134" class="t-desc">don't break on Friday — multi-stage</text>
+      <text x="20" y="152" class="t-desc">builds, GitHub Actions, blue-green.</text>
+
+      <g transform="translate(20, 178)">
+        <g><rect x="0"   y="0" width="62" height="22" rx="11" fill="none" stroke="#22D3EE" stroke-width="1"/>  <text x="31"  y="15" class="t-pill" fill="#22D3EE" text-anchor="middle">Docker</text></g>
+        <g><rect x="70"  y="0" width="84" height="22" rx="11" fill="none" stroke="#22D3EE" stroke-width="1"/>  <text x="112" y="15" class="t-pill" fill="#22D3EE" text-anchor="middle">GH Actions</text></g>
+        <g><rect x="162" y="0" width="58" height="22" rx="11" fill="none" stroke="#22D3EE" stroke-width="1"/>  <text x="191" y="15" class="t-pill" fill="#22D3EE" text-anchor="middle">Linux</text></g>
+        <g><rect x="228" y="0" width="56" height="22" rx="11" fill="none" stroke="#22D3EE" stroke-width="1"/>  <text x="256" y="15" class="t-pill" fill="#22D3EE" text-anchor="middle">Nginx</text></g>
+      </g>
+    </g>
+  </g>
+
+  <!-- TILE 6 — Media Archive (bot-right, gold, BUILDING) -->
+  <g transform="translate(920,350)">
+    <g class="tile-rise t6">
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileBg)" filter="url(#tileShadow)"/>
+      <rect x="0" y="0" width="420" height="220" rx="14" fill="url(#tileHighlight)"/>
+      <rect x="0" y="0" width="420" height="3" rx="1.5" fill="#FFD23F" class="stripe-glow"/>
+
+      <g transform="translate(20, 24)">
+        <rect x="0" y="0" width="100" height="22" rx="11" fill="#FFD23F" fill-opacity="0.18" stroke="#FFD23F" stroke-width="1"/>
+        <circle cx="14" cy="11" r="3.5" fill="#FFD23F" class="live-dot"/>
+        <text x="65" y="15" class="t-status" fill="#FFD23F" text-anchor="middle">BUILDING</text>
+      </g>
+
+      <text x="20" y="84" class="t-title">📚 Media Archive</text>
+      <text x="20" y="116" class="t-desc">Digital archive for magazines &amp; news</text>
+      <text x="20" y="134" class="t-desc">— edition mgmt, metadata, multi-format</text>
+      <text x="20" y="152" class="t-desc">preservation, searchable taxonomies.</text>
+
+      <g transform="translate(20, 178)">
+        <g><rect x="0"   y="0" width="64" height="22" rx="11" fill="none" stroke="#FFD23F" stroke-width="1"/>  <text x="32"  y="15" class="t-pill" fill="#FFD23F" text-anchor="middle">Django</text></g>
+        <g><rect x="72"  y="0" width="56" height="22" rx="11" fill="none" stroke="#FFD23F" stroke-width="1"/>  <text x="100" y="15" class="t-pill" fill="#FFD23F" text-anchor="middle">DRF</text></g>
+        <g><rect x="136" y="0" width="80" height="22" rx="11" fill="none" stroke="#FFD23F" stroke-width="1"/>  <text x="176" y="15" class="t-pill" fill="#FFD23F" text-anchor="middle">Postgres</text></g>
+        <g><rect x="224" y="0" width="78" height="22" rx="11" fill="none" stroke="#FFD23F" stroke-width="1"/>  <text x="263" y="15" class="t-pill" fill="#FFD23F" text-anchor="middle">Archive</text></g>
+      </g>
+    </g>
+  </g>
+</svg>

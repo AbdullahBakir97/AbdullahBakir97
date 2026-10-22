@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="800" viewBox="0 0 1300 800" role="img" aria-label="Abdullah's neural skill atlas — anatomical neon brain with 6 skill labels in side columns">
+  <!--
+    NEON BRAIN SKILL ATLAS v3 (anatomy-first redesign)
+      • Detailed side-view brain silhouette with 6 visible gyri bumps,
+        distinct cerebellum lobe, and brainstem stub.
+      • Multi-color rainbow gradient fill (cyan→purple→magenta→orange→red).
+      • Crisp 2px neon stroke (NO heavy blur — that turned it into a blob before).
+      • Internal sulci/gyri lines drawn with thin strokes (no filter blur on them).
+      • Skill cards arranged in 2 columns flanking the brain (3 left + 3 right),
+        no overlap, with thin curved connection lines.
+  -->
+  <style>
+    .t-display   { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.01em; fill: #FFFFFF; }
+    .t-tag       { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.30em; text-transform: uppercase; fill: #C4B5FD; }
+    .t-cat-cap   { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 600; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; }
+    .t-cat-title { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 700; font-size: 16px; fill: #FFFFFF; }
+    .t-cat-tools { font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-weight: 500; font-size: 10.5px; fill: #D1D5DB; }
+
+    .brain-pulse { animation: brainPulse 5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes brainPulse {
+      0%, 100% { transform: scale(1);     filter: drop-shadow(0 0 16px rgba(236,72,153,0.45)) hue-rotate(0deg); }
+      50%      { transform: scale(1.02);  filter: drop-shadow(0 0 34px rgba(236,72,153,0.85)) hue-rotate(20deg); }
+    }
+
+    .conn-pulse { animation: connPulse 3s ease-in-out infinite; }
+    @keyframes connPulse {
+      0%, 100% { stroke-opacity: 0.4; }
+      50%      { stroke-opacity: 0.85; }
+    }
+
+    .fade { opacity: 0; animation: fade 0.9s cubic-bezier(0.22,1,0.36,1) forwards; }
+    @keyframes fade { to { opacity: 1; } }
+    .d1{animation-delay:0.4s} .d2{animation-delay:0.55s} .d3{animation-delay:0.7s}
+    .d4{animation-delay:0.85s} .d5{animation-delay:1.0s} .d6{animation-delay:1.15s}
+
+    .twinkle { animation: twinkle 2.4s ease-in-out infinite; }
+    @keyframes twinkle { 0%,100%{opacity:0.2} 50%{opacity:0.85} }
+
+    .spark { animation: spark 3s ease-in-out infinite; }
+    @keyframes spark { 0%,100%{opacity:0.3} 50%{opacity:1} }
+  </style>
+
+  <defs>
+    <radialGradient id="bgSpace" cx="50%" cy="50%" r="80%">
+      <stop offset="0%"   stop-color="#180826"/>
+      <stop offset="60%"  stop-color="#080410"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- BRAIN GRADIENT (matches reference image's neon rainbow) -->
+    <linearGradient id="brainPrimary" x1="0" y1="0.05" x2="1" y2="0.95">
+      <stop offset="0%"   stop-color="#22D3EE"/>
+      <stop offset="22%"  stop-color="#7C3AED"/>
+      <stop offset="50%"  stop-color="#EC4899"/>
+      <stop offset="76%"  stop-color="#FF652F"/>
+      <stop offset="100%" stop-color="#F90001"/>
+    </linearGradient>
+
+    <!-- Top-left highlight -->
+    <radialGradient id="brainHighlight" cx="28%" cy="20%" r="38%">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Bottom-right shadow -->
+    <radialGradient id="brainShadow" cx="78%" cy="80%" r="48%">
+      <stop offset="0%"   stop-color="#0A0010" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0A0010" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Aura ellipse around brain -->
+    <radialGradient id="brainAura" cx="50%" cy="50%" r="55%">
+      <stop offset="0%"   stop-color="#EC4899" stop-opacity="0.30"/>
+      <stop offset="55%"  stop-color="#7C3AED" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#1C1428" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#0A0612" stop-opacity="0.94"/>
+    </linearGradient>
+
+    <linearGradient id="floorMirror" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="floorLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0"/>
+      <stop offset="20%"  stop-color="#7C3AED" stop-opacity="0.7"/>
+      <stop offset="50%"  stop-color="#EC4899" stop-opacity="0.95"/>
+      <stop offset="80%"  stop-color="#FF652F" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#FF652F" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Connection gradients -->
+    <linearGradient id="connRed"    x1="1" y1="0" x2="0" y2="0"><stop offset="0%" stop-color="#F90001" stop-opacity="0.95"/><stop offset="100%" stop-color="#F90001" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="connOrange" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF652F" stop-opacity="0.95"/><stop offset="100%" stop-color="#FF652F" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="connGold"   x1="1" y1="0" x2="0" y2="0"><stop offset="0%" stop-color="#FFD23F" stop-opacity="0.95"/><stop offset="100%" stop-color="#FFD23F" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="connGreen"  x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#34D399" stop-opacity="0.95"/><stop offset="100%" stop-color="#34D399" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="connPurple" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#A78BFA" stop-opacity="0.95"/><stop offset="100%" stop-color="#A78BFA" stop-opacity="0.2"/></linearGradient>
+    <linearGradient id="connCyan"   x1="1" y1="0" x2="0" y2="0"><stop offset="0%" stop-color="#22D3EE" stop-opacity="0.95"/><stop offset="100%" stop-color="#22D3EE" stop-opacity="0.2"/></linearGradient>
+
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="3" result="shadow"/>
+      <feFlood flood-color="#000000" flood-opacity="0.7"/>
+      <feComposite in2="shadow" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- ═══ BRAIN 3D LIGHTING — feTurbulence noise → feSpecularLighting + feDiffuseLighting
+         creates an embossed 3D-rendered surface look from a flat path ═══ -->
+    <filter id="brainLighting" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" seed="7" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="noiseAlpha"/>
+      <feSpecularLighting in="noiseAlpha" surfaceScale="2.5" specularConstant="1.0" specularExponent="22" lighting-color="#FFFFFF" result="spec">
+        <feDistantLight azimuth="225" elevation="55"/>
+      </feSpecularLighting>
+      <feComposite in="spec" in2="SourceAlpha" operator="in" result="specLit"/>
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="specLit"/>
+      </feMerge>
+    </filter>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         BRAIN PATH (anatomical side view, facing RIGHT)
+         Coordinates relative to (0,0); rendered at translate(650,400).
+         Width spans -260 to +275 = 535. Height -170 to +175 = 345.
+         Features:
+           • Frontal lobe (right) bulge
+           • 6 visible gyri bumps along top
+           • Occipital lobe (back-left) bulge
+           • Distinct CEREBELLUM lobe at back-bottom (separate visible bulge)
+           • Brainstem stub at bottom-center
+         ════════════════════════════════════════════════════════════════ -->
+    <path id="brain" d="
+      M 245,80
+      C 280,40 290,-30 270,-95
+      C 250,-145 215,-165 180,-155
+      C 170,-168 150,-170 130,-155
+      C 115,-170 90,-170 70,-155
+      C 50,-172 25,-170 5,-155
+      C -15,-172 -45,-170 -65,-155
+      C -90,-170 -120,-165 -145,-150
+      C -175,-160 -210,-145 -230,-115
+      C -255,-80 -265,-30 -255,15
+      C -245,50 -220,65 -190,55
+      C -210,95 -200,135 -170,148
+      C -148,160 -120,156 -100,140
+      C -85,155 -55,160 -28,148
+      C -8,168 18,168 42,150
+      C 70,138 100,128 135,118
+      C 175,108 220,98 245,80 Z
+    "/>
+  </defs>
+
+  <!-- ═══ LAYER 1 — Background ═══ -->
+  <rect width="1300" height="800" fill="url(#bgSpace)"/>
+  <g fill="#FFFFFF">
+    <circle cx="80"   cy="120" r="0.8" class="twinkle" style="animation-delay:0.1s"/>
+    <circle cx="220"  cy="80"  r="1.0" class="twinkle" style="animation-delay:0.5s"/>
+    <circle cx="380"  cy="50"  r="0.7" class="twinkle" style="animation-delay:1.2s"/>
+    <circle cx="540"  cy="40"  r="0.9" class="twinkle" style="animation-delay:0.3s"/>
+    <circle cx="780"  cy="60"  r="1.1" class="twinkle" style="animation-delay:0.8s"/>
+    <circle cx="940"  cy="40"  r="0.6" class="twinkle" style="animation-delay:2.0s"/>
+    <circle cx="1110" cy="90"  r="0.8" class="twinkle" style="animation-delay:1.5s"/>
+    <circle cx="1230" cy="140" r="0.9" class="twinkle" style="animation-delay:0.7s"/>
+    <circle cx="60"   cy="350" r="0.7" class="twinkle" style="animation-delay:1.4s"/>
+    <circle cx="1240" cy="350" r="0.9" class="twinkle" style="animation-delay:0.6s"/>
+    <circle cx="100"  cy="600" r="0.8" class="twinkle" style="animation-delay:1.8s"/>
+    <circle cx="1200" cy="600" r="0.7" class="twinkle" style="animation-delay:1.0s"/>
+  </g>
+
+  <!-- ═══ LAYER 2 — Reflective floor + mirrored brain ═══ -->
+  <line x1="0" y1="690" x2="1300" y2="690" stroke="url(#floorLine)" stroke-width="1.5"/>
+  <rect x="0" y="690" width="1300" height="100" fill="url(#floorMirror)"/>
+
+  <!-- Reflected brain (low opacity, no glow) -->
+  <g transform="translate(650, 985) scale(1, -1)" opacity="0.13">
+    <use href="#brain" fill="url(#brainPrimary)"/>
+  </g>
+
+  <!-- ═══ LAYER 3 — Brain aura (subtle halo, NOT blob blur) ═══ -->
+  <ellipse cx="650" cy="400" rx="370" ry="260" fill="url(#brainAura)"/>
+
+  <!-- ═══ LAYER 4 — Connection curves (drawn behind brain) ═══
+       Each path has an id so we can attach traveling neuron lights via mpath. -->
+  <g fill="none" stroke-width="1.8" class="conn-pulse">
+    <path id="connP1" d="M 1115,200 Q 1010,250 915,305" stroke="url(#connRed)"/>
+    <path id="connP2" d="M 1115,400 Q 1010,400 910,400" stroke="url(#connCyan)"/>
+    <path id="connP3" d="M 1115,600 Q 1010,560 880,510" stroke="url(#connGreen)"/>
+    <path id="connP4" d="M 185,200 Q 290,250 390,305"   stroke="url(#connOrange)"/>
+    <path id="connP5" d="M 185,400 Q 290,400 390,400"   stroke="url(#connPurple)"/>
+    <path id="connP6" d="M 185,600 Q 290,560 420,510"   stroke="url(#connGold)"/>
+  </g>
+
+  <!-- Traveling neuron lights — small dots that travel along each connection
+       from card → brain endpoint (signal propagation effect) -->
+  <g>
+    <circle r="3" fill="#F90001"><animateMotion dur="3s" repeatCount="indefinite" begin="0s"     ><mpath href="#connP1"/></animateMotion></circle>
+    <circle r="3" fill="#22D3EE"><animateMotion dur="3s" repeatCount="indefinite" begin="0.5s"   ><mpath href="#connP2"/></animateMotion></circle>
+    <circle r="3" fill="#34D399"><animateMotion dur="3s" repeatCount="indefinite" begin="1.0s"   ><mpath href="#connP3"/></animateMotion></circle>
+    <circle r="3" fill="#FF652F"><animateMotion dur="3s" repeatCount="indefinite" begin="1.5s"   ><mpath href="#connP4"/></animateMotion></circle>
+    <circle r="3" fill="#A78BFA"><animateMotion dur="3s" repeatCount="indefinite" begin="2.0s"   ><mpath href="#connP5"/></animateMotion></circle>
+    <circle r="3" fill="#FFD23F"><animateMotion dur="3s" repeatCount="indefinite" begin="2.5s"   ><mpath href="#connP6"/></animateMotion></circle>
+  </g>
+
+  <!-- Synaptic sparks at brain endpoints (where signals arrive and "fire") -->
+  <g>
+    <circle cx="915" cy="305" r="4" fill="#F90001" class="spark"/>
+    <circle cx="910" cy="400" r="4" fill="#22D3EE" class="spark" style="animation-delay:0.5s"/>
+    <circle cx="880" cy="510" r="4" fill="#34D399" class="spark" style="animation-delay:1s"/>
+    <circle cx="390" cy="305" r="4" fill="#FF652F" class="spark" style="animation-delay:1.5s"/>
+    <circle cx="390" cy="400" r="4" fill="#A78BFA" class="spark" style="animation-delay:2s"/>
+    <circle cx="420" cy="510" r="4" fill="#FFD23F" class="spark" style="animation-delay:2.5s"/>
+  </g>
+
+  <!-- ═══ Floating atmospheric particles (neurons floating in space) ═══ -->
+  <g class="twinkle">
+    <circle cx="450"  cy="180" r="1.5" fill="#A78BFA" style="animation-delay:0.2s"/>
+    <circle cx="850"  cy="180" r="1.2" fill="#F90001" style="animation-delay:0.7s"/>
+    <circle cx="320"  cy="280" r="1.0" fill="#FF652F" style="animation-delay:1.1s"/>
+    <circle cx="980"  cy="290" r="1.4" fill="#22D3EE" style="animation-delay:1.6s"/>
+    <circle cx="280"  cy="450" r="1.2" fill="#A78BFA" style="animation-delay:0.4s"/>
+    <circle cx="1020" cy="450" r="1.5" fill="#22D3EE" style="animation-delay:0.9s"/>
+    <circle cx="350"  cy="620" r="1.0" fill="#FFD23F" style="animation-delay:1.4s"/>
+    <circle cx="950"  cy="620" r="1.3" fill="#34D399" style="animation-delay:1.9s"/>
+    <circle cx="500"  cy="640" r="1.1" fill="#FFD23F" style="animation-delay:0.6s"/>
+    <circle cx="800"  cy="640" r="1.4" fill="#34D399" style="animation-delay:1.3s"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       LAYER 5 — THE NEON BRAIN (centerpiece, crisp, no blob blur)
+       Outer g: SVG translate (positions at center). Inner g: CSS animation.
+       Separated to avoid CSS transform overriding SVG translate attribute.
+       ═══════════════════════════════════════════════════════════════════ -->
+  <g transform="translate(650, 400)">
+    <g class="brain-pulse">
+    <!-- Subtle outer glow stroke (small blur via stroke alpha, NO huge filter) -->
+    <use href="#brain" fill="none" stroke="#EC4899" stroke-width="4" stroke-opacity="0.35"/>
+    <use href="#brain" fill="none" stroke="#EC4899" stroke-width="2" stroke-opacity="0.6"/>
+
+    <!-- Main brain fill — multi-color rainbow gradient with 3D specular lighting -->
+    <use href="#brain" fill="url(#brainPrimary)" filter="url(#brainLighting)"/>
+
+    <!-- Bottom-right shadow for depth -->
+    <use href="#brain" fill="url(#brainShadow)"/>
+
+    <!-- Top-left highlight (volumetric light) -->
+    <use href="#brain" fill="url(#brainHighlight)"/>
+
+    <!-- Crisp neon edge on top (sharper than the outer glow) -->
+    <use href="#brain" fill="none" stroke="#FFB6E1" stroke-width="0.8" stroke-opacity="0.7"/>
+
+    <!-- ═══ DEEP SULCI (dark grooves separating lobes) ═══ -->
+    <g fill="none" stroke-width="2" stroke-opacity="0.75">
+      <!-- Central sulcus: separates frontal from parietal -->
+      <path d="M 100,-160 C 90,-100 95,-50 105,10 C 115,55 125,90 130,115" stroke="#1A0024"/>
+      <!-- Lateral sulcus (Sylvian fissure): the big horizontal groove -->
+      <path d="M 220,-15 C 120,30 -10,55 -120,45 C -180,35 -215,15 -240,-10" stroke="#1A0024"/>
+      <!-- Cerebellum boundary -->
+      <path d="M -195,55 C -170,80 -130,92 -85,92 C -45,92 -10,90 25,90" stroke="#1A0024"/>
+      <!-- Pre-central sulcus (in front of central) -->
+      <path d="M 165,-130 C 160,-80 165,-30 175,15" stroke="#1A0024" stroke-opacity="0.55"/>
+      <!-- Post-central sulcus (behind central) -->
+      <path d="M 50,-165 C 45,-110 50,-60 60,-15" stroke="#1A0024" stroke-opacity="0.55"/>
+      <!-- Parieto-occipital: dividing parietal from occipital -->
+      <path d="M -45,-165 C -55,-115 -55,-65 -55,-15" stroke="#1A0024" stroke-opacity="0.55"/>
+      <!-- Occipital sulci -->
+      <path d="M -175,-130 C -180,-80 -185,-30 -195,15" stroke="#1A0024" stroke-opacity="0.55"/>
+    </g>
+
+    <!-- ═══ GYRI ridges (raised cerebrum convolutions) — many short curves following surface ═══ -->
+    <g fill="none" stroke="#FFFFFF" stroke-width="0.9" stroke-opacity="0.45">
+      <!-- Top arcs (5 visible bumps along the cerebrum top) -->
+      <path d="M -140,-150 C -125,-130 -115,-115 -100,-105"/>
+      <path d="M -85,-155  C -70,-135  -60,-115  -45,-95"/>
+      <path d="M -20,-160  C -10,-140  0,-115   12,-95"/>
+      <path d="M 30,-155   C 40,-135   50,-115  60,-95"/>
+      <path d="M 78,-150   C 88,-130   100,-110 112,-90"/>
+      <path d="M 145,-140  C 155,-118  170,-95  185,-78"/>
+      <!-- Inner vertical strokes between bumps -->
+      <path d="M -110,-150 C -115,-100 -110,-50 -100,-15"/>
+      <path d="M -55,-155  C -60,-100  -55,-50  -45,-15"/>
+      <path d="M 5,-160    C 0,-105    5,-55    15,-15"/>
+      <path d="M 65,-155   C 60,-100   65,-50   75,-15"/>
+      <path d="M 120,-148  C 115,-95   120,-45  130,-10"/>
+      <!-- Mid-section gyri (above the lateral sulcus) -->
+      <path d="M -200,-90  C -180,-75  -150,-65  -120,-65"/>
+      <path d="M -210,-60  C -180,-50  -140,-45  -100,-45"/>
+      <path d="M -225,-30  C -190,-25  -150,-22  -110,-25"/>
+      <!-- Below lateral sulcus (temporal lobe region) -->
+      <path d="M -210,-5   C -180,5    -140,8   -100,5"/>
+      <path d="M -200,18   C -170,28   -130,30  -90,28"/>
+      <path d="M 80,-50    C 110,-45   140,-40  175,-35"/>
+      <path d="M 70,-25    C 100,-20   135,-15  175,-12"/>
+      <path d="M 60,5      C 95,10     130,12   170,12"/>
+      <path d="M 45,30     C 80,35     115,38   155,35"/>
+      <!-- Frontal lobe vertical fissures -->
+      <path d="M 195,-120  C 200,-80   210,-40  225,-5"/>
+      <path d="M 230,-95   C 235,-50   245,-15  255,15"/>
+    </g>
+
+    <!-- ═══ CEREBELLUM internal folia (small parallel folds, fine pattern) ═══ -->
+    <g fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-opacity="0.5">
+      <path d="M -185,75   C -165,82   -140,85  -110,82"/>
+      <path d="M -190,90   C -165,98   -135,102 -105,98"/>
+      <path d="M -190,105  C -165,113  -130,118 -100,114"/>
+      <path d="M -185,120  C -160,128  -125,131 -100,128"/>
+      <path d="M -180,135  C -155,143  -125,145 -105,142"/>
+      <path d="M -170,150  C -150,156  -130,158 -115,154"/>
+    </g>
+    <g fill="none" stroke="#1A0024" stroke-width="0.6" stroke-opacity="0.5">
+      <path d="M -180,82   C -160,90   -135,92  -110,89"/>
+      <path d="M -185,97   C -160,105  -130,109 -105,105"/>
+      <path d="M -180,112  C -155,120  -125,124 -105,121"/>
+      <path d="M -178,127  C -155,135  -125,137 -110,134"/>
+    </g>
+    </g><!-- /brain-pulse (CSS animation) -->
+  </g><!-- /SVG translate(650,400) -->
+
+  <!-- ═══ LAYER 6 — Title at top ═══ -->
+  <text x="650" y="40"  class="t-tag"     text-anchor="middle">⏵ NEURAL · COGNITIVE · SKILL · ATLAS ⏴</text>
+  <text x="650" y="76" class="t-display" text-anchor="middle">Abdullah's Skill Brain</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       LAYER 7 — 6 SKILL CARDS in 2 columns flanking the brain
+       Left column (x=185-385):  Frontend, AI & Data, Data Layer
+       Right column (x=915-1115): Backend, DevOps, Architecture
+       Each card 200×80; positioned at y=160, 360, 560
+       ═══════════════════════════════════════════════════════════════════ -->
+
+  <!-- LEFT COLUMN -->
+
+  <!-- 🟠 FRONTEND (top-left) -->
+  <g transform="translate(185, 160)">
+    <g class="fade d3">
+      <rect x="0" y="0" width="200" height="80" rx="12" fill="url(#cardBg)" stroke="#FF652F" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6"   height="80" rx="3" fill="#FF652F"/>
+      <text x="100" y="22" class="t-cat-cap" text-anchor="middle" fill="#FF652F">CLIENT · UI</text>
+      <text x="100" y="46" class="t-cat-title" text-anchor="middle">🎨 Frontend</text>
+      <text x="100" y="65" class="t-cat-tools" text-anchor="middle">Vue · Nuxt · TypeScript</text>
+    </g>
+  </g>
+
+  <!-- 🟣 AI & DATA (mid-left) -->
+  <g transform="translate(185, 360)">
+    <g class="fade d5">
+      <rect x="0" y="0" width="200" height="80" rx="12" fill="url(#cardBg)" stroke="#A78BFA" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6"   height="80" rx="3" fill="#A78BFA"/>
+      <text x="100" y="22" class="t-cat-cap" text-anchor="middle" fill="#A78BFA">INTELLIGENCE</text>
+      <text x="100" y="46" class="t-cat-title" text-anchor="middle">🤖 AI &amp; Data</text>
+      <text x="100" y="65" class="t-cat-tools" text-anchor="middle">PyTorch · LLMs · RAG</text>
+    </g>
+  </g>
+
+  <!-- 🟡 DATA LAYER (bot-left) -->
+  <g transform="translate(185, 560)">
+    <g class="fade d6">
+      <rect x="0" y="0" width="200" height="80" rx="12" fill="url(#cardBg)" stroke="#FFD23F" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6"   height="80" rx="3" fill="#FFD23F"/>
+      <text x="100" y="22" class="t-cat-cap" text-anchor="middle" fill="#FFD23F">PERSISTENCE</text>
+      <text x="100" y="46" class="t-cat-title" text-anchor="middle">💾 Data Layer</text>
+      <text x="100" y="65" class="t-cat-tools" text-anchor="middle">Postgres · Redis · MySQL</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN -->
+
+  <!-- 🔴 BACKEND (top-right) -->
+  <g transform="translate(915, 160)">
+    <g class="fade d2">
+      <rect x="0" y="0" width="200" height="80" rx="12" fill="url(#cardBg)" stroke="#F90001" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6"   height="80" rx="3" fill="#F90001"/>
+      <text x="100" y="22" class="t-cat-cap" text-anchor="middle" fill="#F90001">SERVER · APIS</text>
+      <text x="100" y="46" class="t-cat-title" text-anchor="middle">⚙️ Backend</text>
+      <text x="100" y="65" class="t-cat-tools" text-anchor="middle">Python · Django · DRF</text>
+    </g>
+  </g>
+
+  <!-- 🔵 DEVOPS (mid-right) -->
+  <g transform="translate(915, 360)">
+    <g class="fade d4">
+      <rect x="0" y="0" width="200" height="80" rx="12" fill="url(#cardBg)" stroke="#22D3EE" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6"   height="80" rx="3" fill="#22D3EE"/>
+      <text x="100" y="22" class="t-cat-cap" text-anchor="middle" fill="#22D3EE">PLATFORM · CI/CD</text>
+      <text x="100" y="46" class="t-cat-title" text-anchor="middle">🛠️ DevOps</text>
+      <text x="100" y="65" class="t-cat-tools" text-anchor="middle">Docker · GitHub · AWS</text>
+    </g>
+  </g>
+
+  <!-- 🟢 ARCHITECTURE (bot-right) -->
+  <g transform="translate(915, 560)">
+    <g class="fade d1">
+      <rect x="0" y="0" width="200" height="80" rx="12" fill="url(#cardBg)" stroke="#34D399" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="6"   height="80" rx="3" fill="#34D399"/>
+      <text x="100" y="22" class="t-cat-cap" text-anchor="middle" fill="#34D399">SYSTEMS · DESIGN</text>
+      <text x="100" y="46" class="t-cat-title" text-anchor="middle">🏗️ Architecture</text>
+      <text x="100" y="65" class="t-cat-tools" text-anchor="middle">µservices · RabbitMQ</text>
+    </g>
+  </g>
+</svg>

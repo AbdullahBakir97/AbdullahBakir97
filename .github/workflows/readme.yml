@@ -1,0 +1,96 @@
+name: Update README
+
+on:
+  schedule:
+    # Full refresh daily at 06:30 UTC (runs after metrics.yml at 00:00).
+    - cron: "30 6 * * *"
+    # Activity-only refresh every 3 hours so the Recent Activity / Branch Flow
+    # blocks stay close to live without burning runner minutes on the heavier
+    # SVG / PageSpeed / per-year regeneration steps.
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Refresh mode"
+        required: false
+        default: "full"
+        type: choice
+        options:
+          - full
+          - activity-only
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --no-cache-dir requests==2.32.3
+
+      - name: Decide mode
+        id: mode
+        run: |
+          # Cron schedule string is exposed as ${{ github.event.schedule }}.
+          # Daily run: full refresh.
+          # 3-hourly run: activity-only.
+          # Manual dispatch: respect inputs.mode.
+          MODE="full"
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "${{ github.event.schedule }}" = "0 */3 * * *" ]; then
+              MODE="activity-only"
+            fi
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            MODE="${{ github.event.inputs.mode }}"
+          fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "Selected mode: $MODE"
+
+      - name: Refresh README sections
+        env:
+          GH_USER: AbdullahBakir97
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PSI_API_KEY: ${{ secrets.PSI_API_KEY }}
+          PSI_URL: http://kharsa-style.de/
+        run: |
+          if [ "${{ steps.mode.outputs.mode }}" = "activity-only" ]; then
+            python .github/scripts/update_readme.py --activity-only
+          else
+            # On Mondays additionally rank Featured Projects.
+            DAY=$(date -u +%u)
+            FLAGS=""
+            if [ "$DAY" = "1" ]; then FLAGS="--include-featured"; fi
+            python .github/scripts/update_readme.py $FLAGS
+          fi
+
+      - name: Draw name from real commit days
+        run: python scripts/build_commit_name.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/commit-name.svg assets/heatmap-*.svg assets/skyline-*.svg assets/about-hero.svg assets/about-orbit.svg assets/pins/ assets/featured/ assets/stats/
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          MSG="chore(readme): refresh (${{ steps.mode.outputs.mode }})"
+          git commit -m "$MSG"
+          # Retry on push race with sibling workflows (3d-contrib, snake, metrics)
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            echo "push attempt $i rejected — rebasing"
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::failed to push after 5 attempts"
+          exit 1

@@ -1,0 +1,34 @@
+name: 📝 Guestbook entry
+description: Drop a hello, share something cool you're building, or just say hi!
+title: "[guestbook] "
+labels: ["guestbook"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Your name (or handle)
+      placeholder: e.g., Octocat
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where are you visiting from?
+      placeholder: e.g., Berlin, the internet, a search engine, a referral
+  - type: textarea
+    id: message
+    attributes:
+      label: Your message
+      description: Anything goes — feedback, a hello, a project link, a question.
+      placeholder: |
+        Hey Abdullah, just dropped by from …
+    validations:
+      required: true
+  - type: checkboxes
+    id: signal
+    attributes:
+      label: How can I follow up (optional)
+      options:
+        - label: Reply here is fine
+        - label: I left a contact in the message
+        - label: No reply needed — just saying hi 👋

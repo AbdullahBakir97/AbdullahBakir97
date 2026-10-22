@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="760" viewBox="0 0 1380 760" role="img" aria-label="Career timeline 2023 — 2026">
+  <style>
+    .t-display     { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 800; font-size: 36px; letter-spacing: -0.01em; fill: #FFFFFF; }
+    .t-tag         { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.30em; text-transform: uppercase; fill: #C4B5FD; }
+    .t-year        { font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-weight: 800; font-size: 26px; letter-spacing: -0.04em; }
+    .t-year-tag    { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; }
+    .t-headline    { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.01em; fill: #FFFFFF; }
+    .t-highlight   { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 500; font-size: 15px; fill: #E8E8E8; }
+    .t-bullet      { font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-weight: 700; font-size: 17px; }
+    .t-stat-num    { font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-weight: 700; font-size: 22px; }
+    .t-stat-num-sm { font-family: 'JetBrains Mono','SF Mono',Consolas,monospace; font-weight: 700; font-size: 16px; }
+    .t-stat-lbl    { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; fill: #8B95A1; }
+    .t-stat-lbl-sm { font-family: 'Inter','SF Pro Display','Segoe UI',sans-serif; font-weight: 700; font-size: 9px;  letter-spacing: 0.10em; text-transform: uppercase; fill: #8B95A1; }
+    .timeline-pulse { stroke-dasharray: 4 8; animation: tlflow 3s linear infinite; }
+    @keyframes tlflow { to { stroke-dashoffset: -36; } }
+    .marker-pulse { animation: markerPulse 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes markerPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.10); opacity: 0.85; } }
+    .live-pulse { animation: livePulse 1.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes livePulse { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 3px rgba(255,210,63,0.5)); } 50% { transform: scale(1.06); filter: drop-shadow(0 0 8px rgba(255,210,63,0.9)); } }
+    .card-rise { opacity: 0; animation: cardRise 0.9s cubic-bezier(0.22,1,0.36,1) forwards; }
+    @keyframes cardRise { to { opacity: 1; } }
+    .y0 { animation-delay: 0.30s; } .y1 { animation-delay: 0.50s; }
+    .y2 { animation-delay: 0.70s; } .y3 { animation-delay: 0.90s; }
+    .y4 { animation-delay: 1.10s; } .y5 { animation-delay: 1.30s; }
+    /* Travelling edge highlight — colored segment loops around card perimeter,
+       staggered per card. Matches the brain-region card pattern from R2-4. */
+    .card-edge { stroke-dasharray: 80 1700; animation: cardEdgeTravel 4.4s linear infinite; filter: url(#cardEdgeGlow); opacity: 0.95; }
+    @keyframes cardEdgeTravel { to { stroke-dashoffset: -1780; } }
+    .ce0 { animation-delay: 0s; } .ce1 { animation-delay: 0.7s; }
+    .ce2 { animation-delay: 1.4s; } .ce3 { animation-delay: 2.1s; }
+    .ce4 { animation-delay: 2.8s; } .ce5 { animation-delay: 3.5s; }
+    /* Inner radial glow — soft accent pulse from card center, slow 5s. */
+    .card-inner-pulse { animation: cardPulse 5s ease-in-out infinite; }
+    @keyframes cardPulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1.0; } }
+  </style>
+  <defs>
+    <pattern id="dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="0.8" fill="#F90001" fill-opacity="0.07"/></pattern>
+    <linearGradient id="tlGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#A78BFA"/><stop offset="33%" stop-color="#F90001"/><stop offset="66%" stop-color="#FF652F"/><stop offset="100%" stop-color="#FFD23F"/></linearGradient>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1C1428" stop-opacity="0.94"/><stop offset="100%" stop-color="#0A0612" stop-opacity="0.94"/></linearGradient>
+    <radialGradient id="markerGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+    <!-- Stacked drop shadow — 3 layers for real depth (replaces single shadow). -->
+    <filter id="cardShadowStacked" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.30"/><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.40"/><feDropShadow dx="0" dy="14" stdDeviation="24" flood-color="#000" flood-opacity="0.30"/></filter>
+    <filter id="cardEdgeGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.2"/></filter>
+  </defs>
+  <rect width="1380" height="760" fill="url(#dots)"/>
+  <text x="690" y="42" class="t-tag" text-anchor="middle">⏵ CAREER · TIMELINE · 2023 — 2026 ⏴</text>
+  <text x="690" y="78" class="t-display" text-anchor="middle">Yearly Journey</text>
+  <line x1="140" y1="160" x2="1240" y2="160" stroke="url(#tlGrad)" stroke-width="3" stroke-opacity="0.4"/>
+  <line x1="140" y1="160" x2="1240" y2="160" stroke="url(#tlGrad)" stroke-width="3" class="timeline-pulse"/>
+  <g transform="translate(180,160)">
+    <circle r="34" fill="url(#markerGlow)"/>
+    <circle r="24" fill="#0D1117" stroke="#A78BFA" stroke-width="2" class="marker-pulse" style="animation-delay:0.0s"/>
+    <text x="0" y="6" class="t-year" fill="#A78BFA" text-anchor="middle">&apos;23</text>
+  </g>
+  <g transform="translate(520,160)">
+    <circle r="34" fill="url(#markerGlow)"/>
+    <circle r="24" fill="#0D1117" stroke="#F90001" stroke-width="2" class="marker-pulse" style="animation-delay:0.3s"/>
+    <text x="0" y="6" class="t-year" fill="#F90001" text-anchor="middle">&apos;24</text>
+  </g>
+  <g transform="translate(860,160)">
+    <circle r="34" fill="url(#markerGlow)"/>
+    <circle r="24" fill="#0D1117" stroke="#FF652F" stroke-width="2" class="marker-pulse" style="animation-delay:0.6s"/>
+    <text x="0" y="6" class="t-year" fill="#FF652F" text-anchor="middle">&apos;25</text>
+  </g>
+  <g transform="translate(1200,160)">
+    <circle r="34" fill="url(#markerGlow)"/>
+    <circle r="24" fill="#0D1117" stroke="#FFD23F" stroke-width="2" class="marker-pulse" style="animation-delay:0.9s"/>
+    <text x="0" y="6" class="t-year" fill="#FFD23F" text-anchor="middle">&apos;26</text>
+    <g transform="translate(78, 0)">
+      <g class="live-pulse">
+        <rect x="0" y="-12" width="60" height="22" rx="11" fill="#FFD23F"/>
+        <circle cx="11" cy="-1" r="3.5" fill="#0D1117"/>
+        <text x="40" y="3" class="t-year-tag" fill="#0D1117" text-anchor="middle" font-weight="700">LIVE</text>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(20, 230)" class="card-rise y0">
+    <line x1="160" y1="0" x2="160" y2="-60" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.5"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="url(#cardBg)" filter="url(#cardShadowStacked)"/>
+    <rect x="6" y="6" width="308" height="448" rx="12" fill="#A78BFA" fill-opacity="0.10" class="card-inner-pulse"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="none" stroke="#A78BFA" stroke-width="2" pathLength="1780" class="card-edge ce0"/>
+    <text x="24" y="42" class="t-year-tag" fill="#A78BFA">2023 · ORIGIN</text>
+    <text x="24" y="84" class="t-headline">First Steps</text>
+    <line x1="24" y1="108" x2="296" y2="108" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="144" class="t-bullet" fill="#A78BFA">▸</text>
+    <text x="48"  y="144" class="t-highlight">Started shipping public projects —</text>
+    <text x="48"  y="164" class="t-highlight">Django-Store, Jobs-Portal,</text>
+    <text x="48"  y="184" class="t-highlight">BookStore.</text>
+    <text x="24"  y="222" class="t-bullet" fill="#A78BFA">▸</text>
+    <text x="48"  y="222" class="t-highlight">Built foundations in Python,</text>
+    <text x="48"  y="242" class="t-highlight">Django, REST APIs, JS &amp; HTML/CSS.</text>
+    <text x="24"  y="280" class="t-bullet" fill="#A78BFA">▸</text>
+    <text x="48"  y="280" class="t-highlight">Earned first community stars —</text>
+    <text x="48"  y="300" class="t-highlight">Jobs-Portal &amp; Django-Blog took</text>
+    <text x="48"  y="320" class="t-highlight">off.</text>
+    <line x1="24" y1="388" x2="296" y2="388" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="422" class="t-stat-num" fill="#A78BFA">15+</text>
+    <text x="24"  y="444" class="t-stat-lbl">PROJECTS</text>
+    <text x="114"  y="422" class="t-stat-num" fill="#A78BFA">30★</text>
+    <text x="114"  y="444" class="t-stat-lbl-sm">PEAK STARS</text>
+    <text x="204"  y="424" class="t-stat-num-sm" fill="#A78BFA">FIRST</text>
+    <text x="204"  y="444" class="t-stat-lbl">CLIENT</text>
+  </g>
+  <g transform="translate(360, 230)" class="card-rise y1">
+    <line x1="160" y1="0" x2="160" y2="-60" stroke="#F90001" stroke-width="1" stroke-opacity="0.5"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="url(#cardBg)" filter="url(#cardShadowStacked)"/>
+    <rect x="6" y="6" width="308" height="448" rx="12" fill="#F90001" fill-opacity="0.10" class="card-inner-pulse"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="none" stroke="#F90001" stroke-width="2" pathLength="1780" class="card-edge ce1"/>
+    <text x="24" y="42" class="t-year-tag" fill="#F90001">2024 · FOUNDATION</text>
+    <text x="24" y="84" class="t-headline">A Year of Shipping</text>
+    <line x1="24" y1="108" x2="296" y2="108" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="144" class="t-bullet" fill="#F90001">▸</text>
+    <text x="48"  y="144" class="t-highlight">Wave of full-stack Django + Vue</text>
+    <text x="48"  y="164" class="t-highlight">projects went live for real users.</text>
+    <text x="24"  y="202" class="t-bullet" fill="#F90001">▸</text>
+    <text x="48"  y="202" class="t-highlight">Established long-running client</text>
+    <text x="48"  y="222" class="t-highlight">engagements that still run today.</text>
+    <text x="24"  y="260" class="t-bullet" fill="#F90001">▸</text>
+    <text x="48"  y="260" class="t-highlight">Earned community recognition —</text>
+    <text x="48"  y="280" class="t-highlight">Barber-Salon hit 52★, Django-LMS</text>
+    <text x="48"  y="300" class="t-highlight">22★.</text>
+    <line x1="24" y1="388" x2="296" y2="388" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="422" class="t-stat-num" fill="#F90001">25+</text>
+    <text x="24"  y="444" class="t-stat-lbl">PROJECTS</text>
+    <text x="114"  y="422" class="t-stat-num" fill="#F90001">52★</text>
+    <text x="114"  y="444" class="t-stat-lbl-sm">PEAK STARS</text>
+    <text x="204"  y="422" class="t-stat-num" fill="#F90001">5+</text>
+    <text x="204"  y="444" class="t-stat-lbl">CLIENTS</text>
+  </g>
+  <g transform="translate(700, 230)" class="card-rise y2">
+    <line x1="160" y1="0" x2="160" y2="-60" stroke="#FF652F" stroke-width="1" stroke-opacity="0.5"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="url(#cardBg)" filter="url(#cardShadowStacked)"/>
+    <rect x="6" y="6" width="308" height="448" rx="12" fill="#FF652F" fill-opacity="0.10" class="card-inner-pulse"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="none" stroke="#FF652F" stroke-width="2" pathLength="1780" class="card-edge ce2"/>
+    <text x="24" y="42" class="t-year-tag" fill="#FF652F">2025 · GROWTH</text>
+    <text x="24" y="84" class="t-headline">Production &amp; AI</text>
+    <line x1="24" y1="108" x2="296" y2="108" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="144" class="t-bullet" fill="#FF652F">▸</text>
+    <text x="48"  y="144" class="t-highlight">Maintained &amp; grew long-running</text>
+    <text x="48"  y="164" class="t-highlight">client systems through their first</text>
+    <text x="48"  y="184" class="t-highlight">full year in production.</text>
+    <text x="24"  y="222" class="t-bullet" fill="#FF652F">▸</text>
+    <text x="48"  y="222" class="t-highlight">Hands-on with the AI/LLM stack —</text>
+    <text x="48"  y="242" class="t-highlight">local models, RAG, agent</text>
+    <text x="48"  y="262" class="t-highlight">workflows.</text>
+    <text x="24"  y="300" class="t-bullet" fill="#FF652F">▸</text>
+    <text x="48"  y="300" class="t-highlight">Contributed to community &amp;</text>
+    <text x="48"  y="320" class="t-highlight">educational projects beyond own</text>
+    <text x="48"  y="340" class="t-highlight">work.</text>
+    <line x1="24" y1="388" x2="296" y2="388" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="422" class="t-stat-num" fill="#FF652F">2+</text>
+    <text x="24"  y="444" class="t-stat-lbl">SAAS LIVE</text>
+    <text x="114"  y="422" class="t-stat-num" fill="#FF652F">10+</text>
+    <text x="114"  y="444" class="t-stat-lbl-sm">AI EXPERIMENTS</text>
+    <text x="204"  y="422" class="t-stat-num" fill="#FF652F">200+</text>
+    <text x="204"  y="444" class="t-stat-lbl">DEPLOYS</text>
+  </g>
+  <g transform="translate(1040, 230)" class="card-rise y3">
+    <line x1="160" y1="0" x2="160" y2="-60" stroke="#FFD23F" stroke-width="1" stroke-opacity="0.5"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="url(#cardBg)" filter="url(#cardShadowStacked)"/>
+    <rect x="6" y="6" width="308" height="448" rx="12" fill="#FFD23F" fill-opacity="0.10" class="card-inner-pulse"/>
+    <rect x="0" y="0" width="320" height="460" rx="16" fill="none" stroke="#FFD23F" stroke-width="2" pathLength="1780" class="card-edge ce3"/>
+    <text x="24" y="42" class="t-year-tag" fill="#FFD23F">2026 · CURRENT YEAR</text>
+    <text x="24" y="84" class="t-headline">Tooling &amp; Reach</text>
+    <line x1="24" y1="108" x2="296" y2="108" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="144" class="t-bullet" fill="#FFD23F">▸</text>
+    <text x="48"  y="144" class="t-highlight">Shifting to developer tooling &amp;</text>
+    <text x="48"  y="164" class="t-highlight">automation — building for</text>
+    <text x="48"  y="184" class="t-highlight">engineers, not just end users.</text>
+    <text x="24"  y="222" class="t-bullet" fill="#FFD23F">▸</text>
+    <text x="48"  y="222" class="t-highlight">Branching from web into desktop</text>
+    <text x="48"  y="242" class="t-highlight">and CLI applications.</text>
+    <text x="24"  y="280" class="t-bullet" fill="#FFD23F">▸</text>
+    <text x="48"  y="280" class="t-highlight">Investing in public presence —</text>
+    <text x="48"  y="300" class="t-highlight">portfolio, blog, open-source.</text>
+    <line x1="24" y1="388" x2="296" y2="388" stroke="#21262D" stroke-width="1"/>
+    <text x="24"  y="422" class="t-stat-num" fill="#FFD23F">5</text>
+    <text x="24"  y="444" class="t-stat-lbl">GH APPS</text>
+    <text x="114"  y="422" class="t-stat-num" fill="#FFD23F">v1</text>
+    <text x="114"  y="444" class="t-stat-lbl-sm">PYDEV PLATFORM</text>
+    <text x="204"  y="422" class="t-stat-num" fill="#FFD23F">9+</text>
+    <text x="204"  y="444" class="t-stat-lbl">NEW REPOS</text>
+  </g>
+</svg>

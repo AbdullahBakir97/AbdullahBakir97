@@ -1,0 +1,220 @@
+{
+  "$schema": "https://jsonresume.org/schema/1.0.0/resume.json",
+  "schemaVersion": "1.0.0",
+  "meta": {
+    "canonical": "https://abdullah-personalpage.netlify.app/",
+    "lastModified": "2026-10-18T08:54:46.041Z"
+  },
+  "basics": {
+    "name": "Abdullah Bakir ",
+    "label": "Python Developer\r\n\r\n",
+    "image": "https://avatars.githubusercontent.com/u/127149804?u=27cd46bd72320ba8a13c92cd7ba5234e3c00dee2&v=4",
+    "summary": "Python Developer\r\n\r\n",
+    "location": {
+      "city": "Berlin"
+    },
+    "url": "https://abdullah-personalpage.netlify.app/",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "AbdullahBakir97",
+        "url": "https://github.com/AbdullahBakir97"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "Vue",
+      "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "Python",
+      "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "JavaScript",
+      "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "CSS",
+      "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "HTML",
+      "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "TypeScript",
+      "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "PowerShell",
+      "level": "proficient",
+      "keywords": []
+    },
+    {
+      "name": "Jupyter Notebook",
+      "level": "proficient",
+      "keywords": []
+    },
+    {
+      "name": "Jinja",
+      "level": "proficient",
+      "keywords": []
+    },
+    {
+      "name": "Mako",
+      "level": "proficient",
+      "keywords": []
+    },
+    {
+      "name": "Dockerfile",
+      "level": "proficient",
+      "keywords": []
+    },
+    {
+      "name": "Shell",
+      "level": "proficient",
+      "keywords": []
+    }
+  ],
+  "projects": [
+    {
+      "name": "Barber-Salon",
+      "description": "Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.",
+      "url": "https://github.com/AbdullahBakir97/Barber-Salon",
+      "keywords": [
+        "css",
+        "django",
+        "html5",
+        "javascript",
+        "python",
+        "deployment",
+        "django-rest-framework",
+        "postman",
+        "translation",
+        "ajax",
+        "jquery",
+        "htmx",
+        "swagger"
+      ],
+      "highlights": [
+        "primary:Python",
+        "topic:django",
+        "score:2.30"
+      ]
+    },
+    {
+      "name": "Django-Store",
+      "description": "Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.",
+      "url": "https://github.com/AbdullahBakir97/Django-Store",
+      "keywords": [
+        "ajax",
+        "bootstrap",
+        "cashing",
+        "celery",
+        "deployment",
+        "django",
+        "django-queries",
+        "django-rest-framework",
+        "docker",
+        "javascript",
+        "jquery",
+        "postman",
+        "pyton3",
+        "redis",
+        "translation"
+      ],
+      "highlights": [
+        "primary:Python",
+        "topic:django",
+        "topic:docker",
+        "score:2.30"
+      ]
+    },
+    {
+      "name": "Mini-RAG",
+      "description": "Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.",
+      "url": "https://github.com/AbdullahBakir97/Mini-RAG",
+      "keywords": [
+        "embeddings",
+        "llm",
+        "python",
+        "rag",
+        "vector-store"
+      ],
+      "highlights": [
+        "primary:Python",
+        "topic:llm",
+        "score:2.08"
+      ]
+    },
+    {
+      "name": "Baeckrei",
+      "description": "Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.",
+      "url": "https://github.com/AbdullahBakir97/Baeckrei",
+      "keywords": [
+        "bakery",
+        "django",
+        "inventory-management",
+        "pos",
+        "python",
+        "vue3"
+      ],
+      "highlights": [
+        "primary:Python",
+        "topic:django",
+        "score:2.05"
+      ]
+    },
+    {
+      "name": "AbdullahBakir97",
+      "description": "GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.",
+      "url": "https://github.com/AbdullahBakir97/AbdullahBakir97",
+      "keywords": [
+        "animation",
+        "auto-update",
+        "dynamic-readme",
+        "github-actions",
+        "profile-readme",
+        "svg"
+      ],
+      "highlights": [
+        "primary:Python",
+        "score:0.74"
+      ]
+    },
+    {
+      "name": "Jobs-Portal",
+      "description": "Jobs portal for seekers and employers — listings, applications, employer dashboards, REST API. Django + DRF.",
+      "url": "https://github.com/AbdullahBakir97/Jobs-Portal",
+      "keywords": [
+        "css",
+        "django",
+        "html",
+        "javascript",
+        "python",
+        "django-rest-framework",
+        "swagger"
+      ],
+      "highlights": [
+        "primary:Python",
+        "topic:django",
+        "score:2.30"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "name": "Mystro",
+      "position": "Python Developer\r\n\r\n",
+      "summary": "Python Developer\r\n\r\n"
+    }
+  ]
+}

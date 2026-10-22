@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdullah's Skill Brain — Interactive 3D</title>
+  <meta name="description" content="Interactive 3D rendering of Abdullah Bakir's skill brain. Drag to rotate, scroll to zoom." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext x='0' y='14' font-size='14'%3E🧠%3C/text%3E%3C/svg%3E" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, #180826 0%, #080410 60%, #000000 100%);
+      font-family: 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
+      color: #FFFFFF;
+    }
+
+    #canvas-container { position: fixed; inset: 0; z-index: 0; }
+    canvas { display: block; }
+
+    .ui {
+      position: fixed;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .top-tag {
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      color: #C4B5FD;
+      text-align: center;
+    }
+    .top-title {
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    .controls-hint {
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      font-size: 12px;
+      color: #9BA1A6;
+      text-align: center;
+      background: rgba(13,17,23,0.72);
+      padding: 10px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(236,72,153,0.3);
+      backdrop-filter: blur(8px);
+    }
+    .controls-hint kbd {
+      background: rgba(236,72,153,0.2);
+      border: 1px solid rgba(236,72,153,0.4);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: inherit;
+      color: #F5F5F5;
+    }
+
+    .legend {
+      top: 24px;
+      right: 24px;
+      background: rgba(13,17,23,0.78);
+      border: 1px solid rgba(236,72,153,0.25);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 11px;
+      backdrop-filter: blur(8px);
+      pointer-events: auto;
+      max-width: 220px;
+    }
+    .legend h3 {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #C4B5FD;
+      margin-bottom: 10px;
+    }
+    .legend ul { list-style: none; }
+    .legend li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 0;
+      color: #E8E8E8;
+    }
+    .legend .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      box-shadow: 0 0 6px currentColor;
+    }
+    .legend .label { font-weight: 600; font-size: 12px; }
+    .legend .skill { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #9BA1A6; }
+
+    .back-btn {
+      top: 24px;
+      left: 24px;
+      background: rgba(13,17,23,0.78);
+      border: 1px solid rgba(236,72,153,0.3);
+      border-radius: 8px;
+      padding: 8px 14px;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      pointer-events: auto;
+    }
+    .back-btn:hover { background: rgba(249,0,1,0.2); border-color: rgba(249,0,1,0.6); }
+
+    .loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 5;
+      background: radial-gradient(ellipse at center, #180826 0%, #080410 60%, #000000 100%);
+      transition: opacity 0.6s ease;
+    }
+    .loading.hidden { opacity: 0; pointer-events: none; }
+    .loading .spinner {
+      width: 56px; height: 56px;
+      border: 3px solid rgba(236,72,153,0.2);
+      border-top-color: #EC4899;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading .text {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #C4B5FD;
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas-container"></div>
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <div class="text">⏵ Synthesizing Neural Atlas ⏴</div>
+  </div>
+
+  <a class="ui back-btn" href="https://github.com/AbdullahBakir97">← Back to GitHub</a>
+
+  <div class="ui top-tag">⏵ Neural · Skill · Atlas · v1.0 ⏴</div>
+  <div class="ui top-title">Abdullah's Skill Brain</div>
+
+  <aside class="ui legend">
+    <h3>Skill Map</h3>
+    <ul>
+      <li><span class="dot" style="background:#F90001;color:#F90001"></span> <span class="label">Frontal Lobe</span></li>
+      <li><span class="skill" style="margin-left:16px">⚙️ Backend · APIs · Logic</span></li>
+      <li><span class="dot" style="background:#34D399;color:#34D399"></span> <span class="label">Parietal Lobe</span></li>
+      <li><span class="skill" style="margin-left:16px">🏗️ Architecture · Systems</span></li>
+      <li><span class="dot" style="background:#FF652F;color:#FF652F"></span> <span class="label">Occipital Lobe</span></li>
+      <li><span class="skill" style="margin-left:16px">🎨 Frontend · UI · UX</span></li>
+      <li><span class="dot" style="background:#FFD23F;color:#FFD23F"></span> <span class="label">Temporal Lobe</span></li>
+      <li><span class="skill" style="margin-left:16px">💾 Data · Memory · Cache</span></li>
+      <li><span class="dot" style="background:#22D3EE;color:#22D3EE"></span> <span class="label">Cerebellum</span></li>
+      <li><span class="skill" style="margin-left:16px">🛠️ DevOps · CI/CD</span></li>
+      <li><span class="dot" style="background:#A78BFA;color:#A78BFA"></span> <span class="label">Brainstem</span></li>
+      <li><span class="skill" style="margin-left:16px">🤖 AI · LLMs · RAG</span></li>
+    </ul>
+  </aside>
+
+  <div class="ui controls-hint">
+    <kbd>drag</kbd> rotate · <kbd>scroll</kbd> zoom · <kbd>right-drag</kbd> pan · auto-rotates when idle
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.162.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { SVGLoader } from 'three/addons/loaders/SVGLoader.js';
+
+    /* ════════════════════════════════════════════════════════════════════
+       SCENE SETUP — dark space, neon-lit camera with orbit controls
+       ════════════════════════════════════════════════════════════════════ */
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+
+    // Camera
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 5000);
+    camera.position.set(0, 0, 800);
+
+    // Renderer (anti-aliased, transparent so the radial-gradient body shows through)
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
+    container.appendChild(renderer.domElement);
+
+    // Orbit controls — drag rotate, scroll zoom, right-drag pan, auto-rotate when idle
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.6;
+    controls.minDistance = 250;
+    controls.maxDistance = 2000;
+
+    // Pause auto-rotate while user is interacting; resume after 2.5s of no input
+    let idleTimer;
+    const pauseAutoRotate = () => {
+      controls.autoRotate = false;
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => { controls.autoRotate = true; }, 2500);
+    };
+    controls.addEventListener('start', pauseAutoRotate);
+
+    /* ════════════════════════════════════════════════════════════════════
+       LIGHTING — magenta key + cyan fill + soft ambient (matches palette)
+       ════════════════════════════════════════════════════════════════════ */
+    scene.add(new THREE.AmbientLight(0xFFFFFF, 0.45));
+
+    const keyLight = new THREE.PointLight(0xEC4899, 4.5, 2000);
+    keyLight.position.set(-380, 350, 500);
+    scene.add(keyLight);
+
+    const fillLight = new THREE.PointLight(0x22D3EE, 3, 2000);
+    fillLight.position.set(420, -250, 350);
+    scene.add(fillLight);
+
+    const rimLight = new THREE.PointLight(0xFF652F, 2.5, 1800);
+    rimLight.position.set(0, -400, -300);
+    scene.add(rimLight);
+
+    /* ════════════════════════════════════════════════════════════════════
+       LOAD THE BRAIN SVG and extrude every path into a 3D mesh
+       ════════════════════════════════════════════════════════════════════ */
+    const brainGroup = new THREE.Group();
+    scene.add(brainGroup);
+
+    // Each anatomical region gets a thematic emissive color so the brain
+    // glows differently in different lobes.
+    const REGION_COLORS = [
+      new THREE.Color(0x22D3EE),  // cyan
+      new THREE.Color(0x7C3AED),  // purple
+      new THREE.Color(0xEC4899),  // magenta
+      new THREE.Color(0xFF652F),  // orange
+      new THREE.Color(0xF90001),  // red
+      new THREE.Color(0xFFD23F),  // gold
+      new THREE.Color(0x34D399),  // green
+      new THREE.Color(0xA78BFA),  // light purple
+    ];
+
+    const loader = new SVGLoader();
+    // The SVG lives next to this HTML file in /docs.
+    loader.load('./brain.svg', (data) => {
+      const paths = data.paths;
+
+      paths.forEach((path, idx) => {
+        const shapes = SVGLoader.createShapes(path);
+        const baseColor = REGION_COLORS[idx % REGION_COLORS.length];
+
+        shapes.forEach((shape) => {
+          const geometry = new THREE.ExtrudeGeometry(shape, {
+            depth: 12,
+            bevelEnabled: true,
+            bevelThickness: 1.5,
+            bevelSize: 1,
+            bevelOffset: 0,
+            bevelSegments: 2,
+          });
+
+          const material = new THREE.MeshStandardMaterial({
+            color: baseColor,
+            emissive: baseColor,
+            emissiveIntensity: 0.55,
+            metalness: 0.35,
+            roughness: 0.42,
+            transparent: true,
+            opacity: 0.92,
+            side: THREE.DoubleSide,
+          });
+
+          const mesh = new THREE.Mesh(geometry, material);
+          brainGroup.add(mesh);
+        });
+      });
+
+      // Center the brain and flip Y (SVG Y is down, Three Y is up)
+      const box = new THREE.Box3().setFromObject(brainGroup);
+      const center = box.getCenter(new THREE.Vector3());
+      brainGroup.position.sub(center);
+      brainGroup.scale.y = -1;
+      brainGroup.scale.x = 1;
+      brainGroup.scale.z = 1;
+
+      // Hide loading spinner
+      document.getElementById('loading').classList.add('hidden');
+    },
+    (xhr) => {
+      // progress
+    },
+    (err) => {
+      console.error('Brain load error:', err);
+      document.getElementById('loading').innerHTML = '<div class="text" style="color:#F90001">Failed to load brain — check brain.svg in /docs</div>';
+    });
+
+    /* ════════════════════════════════════════════════════════════════════
+       AMBIENT PARTICLE FIELD (background neurons floating in space)
+       ════════════════════════════════════════════════════════════════════ */
+    const particleCount = 220;
+    const particleGeo = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    const palette = [
+      [0.13, 0.83, 0.93], // cyan
+      [0.93, 0.28, 0.6],  // magenta
+      [1.0, 0.4, 0.18],   // orange
+      [0.97, 0.0, 0.0],   // red
+      [0.65, 0.55, 0.98], // purple
+    ];
+    for (let i = 0; i < particleCount; i++) {
+      const r = 800 + Math.random() * 1500;
+      const theta = Math.random() * Math.PI * 2;
+      const phi   = Math.random() * Math.PI * 2;
+      positions[i*3]   = r * Math.cos(theta) * Math.sin(phi);
+      positions[i*3+1] = r * Math.cos(phi);
+      positions[i*3+2] = r * Math.sin(theta) * Math.sin(phi);
+      const col = palette[Math.floor(Math.random() * palette.length)];
+      colors[i*3] = col[0]; colors[i*3+1] = col[1]; colors[i*3+2] = col[2];
+    }
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    const particleMat = new THREE.PointsMaterial({
+      size: 3,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.7,
+      sizeAttenuation: true,
+    });
+    scene.add(new THREE.Points(particleGeo, particleMat));
+
+    /* ════════════════════════════════════════════════════════════════════
+       RENDER LOOP
+       ════════════════════════════════════════════════════════════════════ */
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+
+      // Subtle continuous rotation on the key light for shifting highlights
+      const t = performance.now() * 0.0004;
+      keyLight.position.x = -380 * Math.cos(t) + 80 * Math.sin(t * 0.3);
+      keyLight.position.z =  500 * Math.sin(t) + 60 * Math.cos(t * 0.3);
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    /* ════════════════════════════════════════════════════════════════════
+       RESIZE
+       ════════════════════════════════════════════════════════════════════ */
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
