@@ -22,16 +22,17 @@ OUT = ASSETS / "commit-name.svg"
 NAME_LINES = ["ABDULLAH", "BAKIR"]
 HANDLE = "github.com/AbdullahBakir97"
 
-W, H = 1400, 580
+W, H = 1400, 596
 PITCH, CELL, RADIUS = 18, 14, 3
 GRID_COLS, GRID_ROWS = 71, 19
 GX = (W - GRID_COLS * PITCH) / 2 + 12          # room on the left for Mon / Wed / Fri
-GY = 186
+GY = 202
 
 BG, SURFACE, EMPTY, BORDER = "#0d1117", "#161b22", "#161b22", "#30363d"
 TEXT, MUTED = "#e6edf3", "#7d8590"
-RED, GREEN = "#F90001", "#39d353"
+RED, GREEN, PURPLE = "#F90001", "#39d353", "#bc8cff"
 LEVELS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+GHOST = ["#161b22", "#1a2029", "#1d242e", "#212833", "#252d38"]   # the unused days, quiet grey
 
 LOOP = 16.0
 START, STEP = 0.7, 0.42          # first letter at START s, then one letter every STEP s
@@ -88,6 +89,43 @@ def level_colour(count, cuts):
     return LEVELS[4]
 
 
+YEAR_COLOURS = {2023: ("#bc8cff", "#6e4fa6"), 2024: ("#F90001", "#8f1414"),
+                2025: ("#ff652f", "#99401f"), 2026: ("#e3b341", "#8a6d29")}
+FALLBACK = ("#39d353", "#26a641")
+
+
+def year_colour(date, bright=True):
+    pair = YEAR_COLOURS.get(int(date[:4]), FALLBACK)
+    return pair[0] if bright else pair[1]
+
+
+def longest_streak(active):
+    """(start, end, length) of the longest run of consecutive active days."""
+    best = (None, None, 0)
+    prev, run, run_start = None, 0, None
+    for d, _, _ in active:
+        day = dt.date.fromisoformat(d)
+        if prev and (day - prev).days == 1:
+            run += 1
+        else:
+            run, run_start = 1, day
+        if run > best[2]:
+            best = (run_start, day, run)
+        prev = day
+    return best
+
+
+def choose_days(active, n, keep):
+    """n days spread evenly over all active days, always including the dates in keep."""
+    if len(active) <= n:
+        return [active[i % len(active)] for i in range(n)]
+    must = [d for d in active if d[0] in keep][:n]
+    rest = [d for d in active if d[0] not in keep]
+    k = n - len(must)
+    picked = [rest[round(i * (len(rest) - 1) / max(1, k - 1))] for i in range(k)] if k > 0 else []
+    return sorted(must + picked)
+
+
 def letter_cells():
     """[(letter_index, col, row)] in drawing order: letter by letter, column by column."""
     cells, k = [], 0
@@ -141,10 +179,15 @@ def render():
     lit = {(c, r) for _, c, r in cells}
     # spread the real active days over the lit squares, oldest first
     n = len(cells)
-    if len(active) >= n:
-        picks = [active[round(i * (len(active) - 1) / max(1, n - 1))] for i in range(n)]
-    else:
-        picks = [active[i % len(active)] for i in range(n)]
+    s_from, s_to, s_len = longest_streak(active)
+    top = max(active, key=lambda d: d[1])
+    streak_dates = set()
+    if s_from:
+        d = s_from
+        while d <= s_to:
+            streak_dates.add(d.isoformat())
+            d += dt.timedelta(days=1)
+    picks = choose_days(active, n, streak_dates | {top[0]})
 
     css = [
         f"text{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif}}",
@@ -198,12 +241,18 @@ def render():
     p.append(f'<text x="{GX}" y="118" font-size="14.5" font-style="italic" fill="{MUTED}">'
              f'Every bright square is a real day I pushed code to GitHub.</text>')
     p.append(f'<text x="{GX}" y="138" font-size="14.5" font-style="italic" fill="{MUTED}">'
-             f'Read the name left to right: oldest day first, latest day last.</text>')
+             f'Read the name left to right: oldest day first. Each year has its own colour.</text>')
+    act_days = len([d for d in days if d[1] > 0])
+    per_year = {}
+    for d, c, _ in days:
+        per_year[d[:4]] = per_year.get(d[:4], 0) + c
+    best_year = max(per_year, key=per_year.get)
     tiles = [("CONTRIBUTIONS", f"{st['total']:,}", f"since {first[:4]}"),
-             (f"COMMIT DAYS {st['year']}", f"{st['year_days']}", f"of {st['year_elapsed']} days"),
-             ("LONGEST STREAK", f"{st['longest']}", "days in a row")]
-    tw, th, gap = 176, 74, 12
-    x0 = W - GX + 12 - (3 * tw + 2 * gap)
+             ("ACTIVE DAYS", f"{act_days}", f"in {len(per_year)} years"),
+             ("LONGEST STREAK", f"{s_len}", "days in a row"),
+             ("BEST YEAR", best_year, f"{per_year[best_year]:,}")]
+    tw, th, gap = 162, 74, 10
+    x0 = W - GX + 12 - (4 * tw + 3 * gap)
     for i, (label, value, sub) in enumerate(tiles):
         x = x0 + i * (tw + gap)
         p.append(f'<g><rect x="{x}" y="66" width="{tw}" height="{th}" rx="8" fill="{SURFACE}" stroke="{BORDER}"/>'
@@ -212,30 +261,20 @@ def render():
                  f'<text x="{x + 16}" y="120" font-size="26" font-weight="800" fill="{TEXT}">{value}</text>'
                  f'<text x="{x + tw - 12}" y="120" font-size="11" fill="{MUTED}" text-anchor="end">{sub}</text></g>')
 
-    # month labels and weekday labels, like the real graph
-    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    for i, m in enumerate(months):
-        x = GX + round(i * GRID_COLS / 12) * PITCH
-        p.append(f'<text x="{x}" y="{GY - 10}" font-size="11" fill="{MUTED}">{m}</text>')
-    for r, d in ((2, "Mon"), (6, "Wed"), (10, "Fri"), (14, "Mon"), (18, "Wed")):
-        p.append(f'<text x="{GX - 10}" y="{GY + r * PITCH + CELL - 3}" font-size="11" fill="{MUTED}" text-anchor="end">{d}</text>')
-
     # the calendar: every empty square, with the rest of the real year ghosted in
-    ghost = [d for d in days]
-    gi = 0
+    # every other square is a real day too: the whole timeline, oldest to newest, column by column,
+    # tinted with its year's colour so the four years read as four zones behind the name
+    free = [(c, r) for c in range(GRID_COLS) for r in range(GRID_ROWS) if (c, r) not in lit]
     empty = []
-    for c in range(GRID_COLS):
-        for r in range(GRID_ROWS):
-            if (c, r) in lit:
-                continue
-            col = EMPTY
-            if ghost:
-                g = ghost[gi % len(ghost)]
-                gi += 1
-                col = level_colour(g[1], cuts) if g[1] > 0 else EMPTY
-            x, y = GX + c * PITCH, GY + r * PITCH
-            op = "" if col == EMPTY else ' opacity=".12"'
-            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{col}"{op}/>')
+    for i, (c, r) in enumerate(free):
+        g = days[round(i * (len(days) - 1) / max(1, len(free) - 1))] if days else None
+        x, y = GX + c * PITCH, GY + r * PITCH
+        if g and g[1] > 0:
+            op = (.07, .1, .13, .17)[LEVELS.index(level_colour(g[1], cuts)) - 1]
+            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{year_colour(g[0])}" '
+                         f'opacity="{op}"><title>{g[1]} contributions on {g[0]}</title></rect>')
+        else:
+            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{EMPTY}"/>')
     p.append(f'<g>{"".join(empty)}</g>')
 
     # the name: real active days, oldest to newest, landing letter by letter
@@ -243,7 +282,7 @@ def render():
     under = []
     for i, ((k, c, r), day) in enumerate(zip(cells, picks)):
         x, y = GX + c * PITCH, GY + r * PITCH
-        colour = LEVELS[4] if day[1] > cuts[1] else LEVELS[3]   # letters use the two brightest levels so they read
+        colour = year_colour(day[0], day[1] > cuts[0])   # each year has its own colour, busier days brighter
         in_letter = sum(1 for kk, _, _ in cells[:i] if kk == k)
         delay = in_letter * .012
         under.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{EMPTY}"/>')
@@ -252,6 +291,33 @@ def render():
             f'style="--c:{colour};animation:L{k} {LOOP}s linear {delay:.3f}s infinite both" fill="{colour}">'
             f'<title>{day[1]} contributions on {day[0]}</title></rect>')
     p.append(f'<g>{"".join(under)}</g><g filter="url(#lit)">{"".join(lit_rects)}</g>')
+
+    # analysis drawn on the name itself: the longest streak and the biggest day
+    def callout(ax, ay, line1, line2, colour, row):
+        gap_y = GY + (9.5 if row >= 9 else -1.6) * PITCH       # between the two lines, or above the grid
+        w = (len(line1) + len(line2) + 3) * 7.25 + 30
+        bx = min(max(ax - w / 2, GX), W - GX + 12 - w)
+        return (f'<g class="cap"><path d="M{ax} {ay}V{gap_y + 13}" stroke="{colour}" stroke-width="1.4" stroke-dasharray="3 3"/>'
+                f'<rect x="{bx}" y="{gap_y - 13}" width="{w}" height="26" rx="13" fill="{BG}" stroke="{colour}"/>'
+                f'<text class="mono" x="{bx + w / 2}" y="{gap_y + 4.5}" font-size="12" font-weight="700" fill="{colour}" '
+                f'text-anchor="middle">{line1} <tspan fill="{MUTED}" font-weight="400">· {line2}</tspan></text></g>')
+
+    pos = {day[0]: (c, r) for (k, c, r), day in zip(cells, picks)}
+    streak_cells = [pos[d] for d in sorted(streak_dates) if d in pos]
+    if streak_cells:
+        outl = "".join(f'<rect x="{GX + c * PITCH - 2}" y="{GY + r * PITCH - 2}" width="{CELL + 4}" height="{CELL + 4}" '
+                       f'rx="{RADIUS + 1}" fill="none" stroke="#000000" stroke-width="2.2"/>' for c, r in streak_cells)
+        p.append(f'<g class="cap">{outl}</g>')
+        c0, r0 = min(streak_cells, key=lambda cr: (cr[1], cr[0]))
+        p.append(callout(GX + c0 * PITCH + CELL / 2, GY + r0 * PITCH - 2, f"LONGEST STREAK {s_len} DAYS",
+                         f"{s_from:%b %d} – {s_to:%b %d %Y}", RED, r0))
+    if top[0] in pos:
+        c, r = pos[top[0]]
+        bx, by = GX + c * PITCH + CELL / 2, GY + r * PITCH + CELL / 2
+        tday = dt.date.fromisoformat(top[0])
+        p.append(f'<g class="cap"><circle cx="{bx}" cy="{by}" r="12" fill="none" stroke="{year_colour(top[0])}" stroke-width="2"/>'
+                 f'<circle class="pulse" cx="{bx}" cy="{by}" r="12" fill="none" stroke="{year_colour(top[0])}" stroke-width="1.5"/></g>')
+        p.append(callout(bx, by - 13, f"BIGGEST DAY {top[1]}", f"{tday:%b %d %Y}", year_colour(top[0]), r))
 
     # the first square gets a pin: this is where the story starts
     k, c, r = cells[0]
@@ -264,19 +330,22 @@ def render():
     # HEAD lands on the last square
     k, c, r = cells[-1]
     hx, hy = GX + c * PITCH + CELL / 2, GY + r * PITCH + CELL / 2
-    p.append(f'<g class="head"><circle class="pulse" cx="{hx}" cy="{hy}" r="9" fill="none" stroke="{RED}" stroke-width="2"/>'
-             f'<rect x="{hx + 18}" y="{hy - 13}" width="214" height="26" rx="13" fill="{BG}" stroke="{RED}"/>'
-             f'<text class="mono" x="{hx + 125}" y="{hy + 4.5}" font-size="12.5" font-weight="700" fill="{RED}" text-anchor="middle">'
+    p.append(f'<g class="head"><circle class="pulse" cx="{hx}" cy="{hy}" r="9" fill="none" stroke="{PURPLE}" stroke-width="2"/>'
+             f'<rect x="{hx + 18}" y="{hy - 13}" width="214" height="26" rx="13" fill="{BG}" stroke="{PURPLE}"/>'
+             f'<text class="mono" x="{hx + 125}" y="{hy + 4.5}" font-size="12.5" font-weight="700" fill="{PURPLE}" text-anchor="middle">'
              f'HEAD → main <tspan fill="{MUTED}" font-weight="400">· {last}</tspan></text></g>')
 
     # footer: legend left, the honest caption right
     fy = GY + GRID_ROWS * PITCH + 30
-    p.append(f'<text x="{GX}" y="{fy}" font-size="12" fill="{MUTED}">Less</text>')
-    for i, col in enumerate(LEVELS):
-        p.append(f'<rect x="{GX + 34 + i * 17}" y="{fy - 11}" width="{CELL - 1}" height="{CELL - 1}" rx="{RADIUS}" fill="{col}"/>')
-    p.append(f'<text x="{GX + 34 + 5 * 17 + 6}" y="{fy}" font-size="12" fill="{MUTED}">More</text>')
+    lx = GX
+    for y in sorted(per_year):
+        col = YEAR_COLOURS.get(int(y), FALLBACK)[0]
+        label = f"{y} · {per_year[y]:,}"
+        p.append(f'<rect x="{lx}" y="{fy - 11}" width="{CELL - 1}" height="{CELL - 1}" rx="{RADIUS}" fill="{col}"/>'
+                 f'<text x="{lx + 20}" y="{fy}" font-size="12.5" fill="{TEXT}">{y} <tspan fill="{MUTED}">· {per_year[y]:,}</tspan></text>')
+        lx += 20 + len(label) * 7.2 + 18
     p.append(f'<text class="cap" x="{W - GX + 12}" y="{fy}" font-size="13" fill="{MUTED}" text-anchor="end">'
-             f'<tspan fill="{TEXT}" font-weight="600">{len(cells)}</tspan> real commit days drawn, from '
+             f'<tspan fill="{TEXT}" font-weight="600">{len(cells)}</tspan> of my real commit days, oldest to newest, from '
              f'<tspan fill="{TEXT}">{first}</tspan> to <tspan fill="{TEXT}">{last}</tspan> · {HANDLE}</text>')
     p.append("</svg>")
     return "".join(p)
