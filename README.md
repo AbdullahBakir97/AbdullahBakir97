@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The most damaging phrase in the language is: 'We've always done it this way!'"</i><br/>
-  <sub>— <b>Grace Hopper</b></sub>
+  <i>"Java is to JavaScript what car is to carpet."</i><br/>
+  <sub>— <b>Chris Heilmann</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -205,42 +205,40 @@
 <!-- PINNED_REPOS:START -->
 <table width="100%">
 <tr><th align="left" colspan="2">Developer tools <sub>· 10</sub></th></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/ai-quality-gate"><b>ai-quality-gate</b></a></td><td>GitHub App that runs an AI-driven quality gate on</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Python-Environment-Management-Tool"><b>Python-Environment-Management-Tool</b></a></td><td>CLI to manage Python virtualenvs and project dependencies</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/API-Client-Generator"><b>API-Client-Generator</b></a></td><td>Generate typed Python API clients from OpenAPI specs</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/commit-craft"><b>commit-craft</b></a></td><td>GitHub App that auto-formats pull-request commits to</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/GitHub-Doc-Generator"><b>GitHub-Doc-Generator</b></a></td><td>Auto-generate documentation pages from a GitHub</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/issue-triage-bot"><b>issue-triage-bot</b></a></td><td>GitHub App that auto-labels and routes new issues</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/pr-coach"><b>pr-coach</b></a></td><td>GitHub App that coaches authors during pull-request</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Python-Environment-Management-Tool"><b>Python-Environment-Management-Tool</b></a></td><td>CLI to manage Python virtualenvs and project</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/release-pilot"><b>release-pilot</b></a></td><td>GitHub App that drafts release notes and version</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Repo-Directory-Structure"><b>Repo-Directory-Structure</b></a></td><td>Generate a tree-style snapshot of any repository&#x27;s</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/repodoc-ai"><b>repodoc-ai</b></a></td><td>GitHub App that auto-generates and refreshes README</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Repo-Directory-Structure"><b>Repo-Directory-Structure</b></a></td><td>Generate a tree-style snapshot of any repository&#x27;s directory st…</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/GitHub-Doc-Generator"><b>GitHub-Doc-Generator</b></a></td><td>Auto-generate documentation pages from a GitHub repository</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/ai-quality-gate"><b>ai-quality-gate</b></a></td><td>GitHub App that runs an AI-driven quality gate on every PR</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/commit-craft"><b>commit-craft</b></a></td><td>GitHub App that auto-formats pull-request commits to convention…</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/issue-triage-bot"><b>issue-triage-bot</b></a></td><td>GitHub App that auto-labels and routes new issues based on titl…</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/pr-coach"><b>pr-coach</b></a></td><td>GitHub App that coaches authors during pull-request review</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/release-pilot"><b>release-pilot</b></a></td><td>GitHub App that drafts release notes and version bumps from mer…</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/repodoc-ai"><b>repodoc-ai</b></a></td><td>GitHub App that auto-generates and refreshes README sections fr…</td></tr>
 <tr><th align="left" colspan="2">AI · Data <sub>· 2</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/AI-KI"><b>AI-KI</b></a></td><td>Notebook-driven AI experiments</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/cortex"><b>cortex</b></a></td><td>Memory-augmented agent kernel</td></tr>
-<tr><th align="left" colspan="2">Backend / API <sub>· 17</sub></th></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/ai-approve"><b>ai-approve</b></a></td><td>GitHub App + autonomous code-review bot</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/API"><b>API</b></a></td><td>Django REST Framework reference API</td></tr>
+<tr><th align="left" colspan="2">Backend / API <sub>· 14</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Automtion"><b>Automtion</b></a></td><td>Browser-automation playground</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Content-Creator-Tool"><b>Content-Creator-Tool</b></a></td><td>Content creation utility</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Dj--To-Do"><b>Dj--To-Do</b></a></td><td>Django to-do app</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Django-Followers-System"><b>Django-Followers-System</b></a></td><td>Reusable followers/following app for Django</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Django-Reporting-System"><b>Django-Reporting-System</b></a></td><td>Reporting dashboard for Django apps</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/e-pay_tool"><b>e-pay_tool</b></a></td><td>—</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Email-Sender"><b>Email-Sender</b></a></td><td>Bulk email sender</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/GitHub-Issues-Wall"><b>GitHub-Issues-Wall</b></a></td><td>Browser wall of GitHub issues</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/image-cropping"><b>image-cropping</b></a></td><td>Server-side image cropping utility</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Pilot-Logbook"><b>Pilot-Logbook</b></a></td><td>Pilot logbook</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><b>Project-Management-Tool</b></a></td><td>Project management tool</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/image-cropping"><b>image-cropping</b></a></td><td>Server-side image cropping utility</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Py-Desktop-Expense_Tracker"><b>Py-Desktop-Expense_Tracker</b></a></td><td>Desktop expense tracker</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Django-Followers-System"><b>Django-Followers-System</b></a></td><td>Reusable followers/following app for Django</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Pilot-Logbook"><b>Pilot-Logbook</b></a></td><td>Pilot logbook</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/API"><b>API</b></a></td><td>Django REST Framework reference API</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Django-Reporting-System"><b>Django-Reporting-System</b></a></td><td>Reporting dashboard for Django apps</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Python-Django-join_with"><b>Python-Django-join_with</b></a></td><td>Django QuerySet join examples</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Stock-Manager"><b>Stock-Manager</b></a></td><td>Professional desktop inventory management for</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Trello-Clone-Services"><b>Trello-Clone-Services</b></a></td><td>Trello-style kanban backend</td></tr>
-<tr><th align="left" colspan="2">Frontend <sub>· 4</sub></th></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Content-Creator-Tool"><b>Content-Creator-Tool</b></a></td><td>Content creation utility</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/GitHub-Issues-Wall"><b>GitHub-Issues-Wall</b></a></td><td>Browser wall of GitHub issues</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/ai-approve"><b>ai-approve</b></a></td><td>GitHub App + autonomous code-review bot</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Email-Sender"><b>Email-Sender</b></a></td><td>Bulk email sender</td></tr>
+<tr><th align="left" colspan="2">Frontend <sub>· 5</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><b>2050-Bootstrap-Landing-page</b></a></td><td>Marketing landing page demo built with Bootstrap 5</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Portfolio"><b>Portfolio</b></a></td><td>Personal portfolio site</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Tawil-Media---Advertisement"><b>Tawil-Media---Advertisement</b></a></td><td>Marketing site for Tawil Media</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Dj--To-Do"><b>Dj--To-Do</b></a></td><td>Django to-do app</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js"><b>Weather--App-django-vue.js</b></a></td><td>Weather lookup app</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/e-pay_tool"><b>e-pay_tool</b></a></td><td>—</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Portfolio"><b>Portfolio</b></a></td><td>Personal portfolio site</td></tr>
 <tr><th align="left" colspan="2">Games <sub>· 2</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Py-Tetris-Game"><b>Py-Tetris-Game</b></a></td><td>Tetris implementation in Python with pygame</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Space-Shooter"><b>Space-Shooter</b></a></td><td>Space shooter mini-game</td></tr>
@@ -252,6 +250,7 @@
 <!-- LIVE PERFORMANCE — Lighthouse scores for kharsa-style.de, rebuilt daily by readme.yml -->
 <a id="pagespeed"></a>
 <!-- PAGESPEED:START -->
+
 <!-- PAGESPEED:END -->
 
 <!-- CONTRIBUTION GRAPH -->
