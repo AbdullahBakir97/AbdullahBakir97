@@ -92,7 +92,7 @@ def level_colour(count, cuts):
     return LEVELS[4]
 
 
-YEAR_COLOURS = {2023: ("#bc8cff", "#6e4fa6"), 2024: ("#F90001", "#8f1414"),
+YEAR_COLOURS = {2023: ("#22d3ee", "#127a8a"), 2024: ("#F90001", "#8f1414"),
                 2025: ("#ff652f", "#99401f"), 2026: ("#e3b341", "#8a6d29")}
 FALLBACK = ("#39d353", "#26a641")
 
@@ -341,7 +341,7 @@ def worm(food):
                f'{build_end / T:.5f};{(move - .3) / T:.5f};{move / T:.5f};1" dur="{T:.2f}s" repeatCount="indefinite"/>'
                f'<circle cx="{sx}" cy="{sy}" r="11" fill="{RED}" opacity=".35" filter="url(#wg)">'
                f'<animate attributeName="r" values="9;14;9" dur="1.6s" repeatCount="indefinite"/></circle>')
-    for i, (dx, dy, fs) in enumerate(((12, -12, 11), (20, -22, 13), (30, -34, 16))):
+    for i, (dx, dy, fs) in enumerate(((-16, -6, 11), (-27, -14, 13), (-40, -24, 16))):
         out.append(f'<text class="mono" x="{sx + dx}" y="{sy + dy}" font-size="{fs}" font-weight="700" fill="{MUTED}" opacity="0">z'
                    f'<animate attributeName="opacity" values="0;.9;0" dur="1.8s" begin="{i * .45:.2f}s" repeatCount="indefinite"/></text>')
     out.append("</g>")
