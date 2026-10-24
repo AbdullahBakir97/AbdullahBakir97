@@ -26,7 +26,8 @@ HANDLE = "github.com/AbdullahBakir97"
 
 W, H = 1400, 640
 PITCH, CELL, RADIUS = 13.4, 10.6, 2.4
-GRID_COLS, GRID_ROWS = 97, 19
+GRID_COLS, GRID_ROWS = 97, 28
+LINE_TOP = 10          # the name starts under the octopus' head
 GX = (W - GRID_COLS * PITCH) / 2
 GY = 202
 
@@ -131,7 +132,7 @@ def choose_days(active, n, keep):
 def letter_cells():
     """[(letter_index, col, row)] in drawing order: letter by letter, column by column."""
     cells, k = [], 0
-    top = 2
+    top = LINE_TOP
     for li, line in enumerate(NAME_LINES):
         width = len(line) * 6 - 1
         x0 = (GRID_COLS - width) // 2
@@ -187,8 +188,8 @@ def cell_rect(f, T):
 
 
 # where each drawing sits on the grid, in the space the name leaves free (col, row of its top-left)
-SLOTS = {"Dog": (1, 1), "Ghost": (18, 1), "Orange robot": (75, 1), "Lighthouse": (89, 1),
-         "Robots": (2, 11), "Skull": (22, 11), "Dog diving": (67, 11), "Diamond axe": (81, 11)}
+SLOTS = {"Dog": (1, 10), "Ghost": (18, 10), "Orange robot": (75, 10), "Lighthouse": (89, 10),
+         "Robots": (2, 20), "Skull": (22, 20), "Dog diving": (67, 20), "Diamond axe": (81, 20)}
 ART_OPACITY = .62     # the drawings sit a step behind the name
 # when each drawing happened in the graph, so the worm meets them in time order
 FIG_DATES = {"Diamond axe": "2023-09-01", "Skull": "2023-09-20", "Lighthouse": "2023-11-05", "Ghost": "2023-11-20",
@@ -220,6 +221,50 @@ def drawings():
         c0 = min(c[1] for c in cells)
         shapes[name] = [(c[1] - c0, c[2], c[4]) for c in cells]
     return shapes
+
+
+OCTO = ["#2c2050", "#382968", "#463383", "#563fa0", "#6b4fc2"]   # purple scale for the octopus days
+
+
+OCTO_EYES = {}
+
+
+def octopus_mask(phase=0.0):
+    """Squares of a big octopus drawn on the grid: a dome with two eyes and eight curling arms.
+    `phase` sways the arms, so two phases make the arms wave."""
+    import math
+    cx, cells = GRID_COLS / 2, set()
+    for c in range(GRID_COLS):
+        for r in range(GRID_ROWS):
+            if ((c + .5 - cx) / 15) ** 2 + ((r + .5 - 5.4) / 5.6) ** 2 <= 1 and r <= 8:
+                cells.add((c, r))
+    for ex in (-7, 5):                                   # two eyes: white with a dark pupil
+        for dc in (0, 1, 2):
+            for dr in (0, 1):
+                cells.discard((int(cx) + ex + dc, 3 + dr))
+                OCTO_EYES[(int(cx) + ex + dc, 3 + dr)] = "#14102a" if (dc, dr) == (1, 1) else "#e8dcff"
+    bases = [-12, -8.5, -5, -1.5, 1.5, 5, 8.5, 12]
+    for i, bx in enumerate(bases):
+        side = -1 if bx < 0 else 1
+        outer = abs(i - 3.5) / 3.5                       # 0 for the middle arms, 1 for the outer ones
+        x, y = cx + bx, 8.0
+        ang = math.radians(90 - side * (8 + 46 * outer))
+        length = 26 + 30 * outer
+        curl = side * math.radians(120) * (.45 + .4 * outer)
+        n = int(length * 3)
+        for j in range(n):
+            t = j / n
+            a = ang - curl * t ** 2.2 + math.sin(phase + i * .9 + t * 4) * .22 * t
+            x += math.cos(a) / 3
+            y += math.sin(a) / 3
+            w = 1.6 * (1 - t) + .45
+            for dc in range(-2, 3):
+                for dr in range(-2, 3):
+                    if dc * dc + dr * dr <= w * w:
+                        cc, rr = int(x + dc), int(y + dr)
+                        if 0 <= cc < GRID_COLS and 0 <= rr < GRID_ROWS:
+                            cells.add((cc, rr))
+    return cells
 
 
 def worm(food):
@@ -264,16 +309,20 @@ def worm(food):
         idx[id(f)] = len(pts) - 1
     cum = [0.0]
     for (ax, ay), (bx, by) in zip(pts, pts[1:]):
-        cum.append(cum[-1] + abs(bx - ax) + abs(by - ay))
+        cum.append(cum[-1] + ((bx - ax) ** 2 + (by - ay) ** 2) ** .5)
     move = build_end + SLEEP
     travel = len(pts) * WORM_DT
     T = move + travel + 2.4
     for f in route:
         f[10] = move + cum[idx[id(f)]] / (cum[-1] or 1) * travel
 
+    # drop only the points in the middle of a straight run in the same direction; keep every
+    # corner and every turn-back, so the drawn path is exactly as long as the timing assumes
     keep = [pts[0]]
     for a, b, c in zip(pts, pts[1:], pts[2:]):
-        if (b[0] - a[0]) * (c[1] - b[1]) != (b[1] - a[1]) * (c[0] - b[0]):
+        u, v = (b[0] - a[0], b[1] - a[1]), (c[0] - b[0], c[1] - b[1])
+        straight = abs(u[0] * v[1] - u[1] * v[0]) < 1e-6 and u[0] * v[0] + u[1] * v[1] > 0
+        if not straight:
             keep.append(b)
     keep.append(pts[-1])
     d = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in keep)
@@ -409,8 +458,7 @@ def render():
                  f'<text x="{x + tw - 12}" y="120" font-size="11" fill="{MUTED}" text-anchor="end">{sub}</text></g>')
 
     # the calendar: every empty square, with the rest of the real year ghosted in
-    # every other square is a real day too: the whole timeline, oldest to newest, column by column,
-    # tinted with its year's colour so the four years read as four zones behind the name
+    # every other square is a real day too: the whole timeline, oldest to newest, column by column
     shapes = drawings()
     art = {}
     for name, cells_ in shapes.items():
@@ -434,14 +482,29 @@ def render():
                       f'stroke="#ffffff" stroke-opacity=".12" stroke-dasharray="3 3"/>'
                       f'<text x="{fx + fw / 2}" y="{fy_ + fh + 13}" text-anchor="middle" font-size="10.5" '
                       f'letter-spacing=".4" fill="{MUTED}">{name}</text>')
+    # behind everything: an octopus drawn from the same real days, its arms waving between two poses
+    oct_a, oct_b = octopus_mask(0.0), octopus_mask(2.4)
     empty = []
     for i, (c, r) in enumerate(free):
         g = days[round(i * (len(days) - 1) / max(1, len(free) - 1))] if days else None
         x, y = GX + c * PITCH, GY + r * PITCH
-        if g and g[1] > 0:
-            op = (.07, .1, .13, .17)[LEVELS.index(level_colour(g[1], cuts)) - 1]
-            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{year_colour(g[0])}" '
-                         f'opacity="{op}"><title>{g[1]} contributions on {g[0]}</title></rect>')
+        lv = LEVELS.index(level_colour(g[1], cuts)) if g and g[1] > 0 else 0
+        tip = f"<title>{g[1]} contributions on {g[0]}</title>" if g else ""
+        in_a, in_b = (c, r) in oct_a, (c, r) in oct_b
+        if (c, r) in OCTO_EYES:
+            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{OCTO_EYES[(c, r)]}" opacity=".9">'
+                         f'<animate attributeName="height" values="{CELL};{CELL};1;{CELL};{CELL}" keyTimes="0;.9;.93;.96;1" '
+                         f'dur="6s" repeatCount="indefinite"/></rect>')
+        elif in_a or in_b:
+            col = OCTO[lv]
+            wave = ""
+            if in_a != in_b:                              # an arm square that comes and goes
+                v = "1;1;0;0;1" if in_a else "0;0;1;1;0"
+                wave = f'<animate attributeName="opacity" values="{v}" keyTimes="0;.4;.5;.9;1" dur="3.6s" repeatCount="indefinite"/>'
+            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{col}"'
+                         f'{" opacity=\"0\"" if in_b and not in_a else ""}>{wave}{tip}</rect>')
+        elif lv:
+            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{GHOST[lv]}">{tip}</rect>')
         else:
             empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{EMPTY}"/>')
     p.append(f'<g>{"".join(empty)}</g><g>{"".join(frames)}</g>')
@@ -462,7 +525,7 @@ def render():
 
     # analysis drawn on the name itself: the longest streak and the biggest day
     def callout(ax, ay, line1, line2, colour, row):
-        gap_y = GY + (9.5 if row >= 9 else -1.6) * PITCH       # between the two lines, or above the grid
+        gap_y = GY + (LINE_TOP + 7.5 if row >= LINE_TOP + 8 else LINE_TOP - 1.4) * PITCH   # between the lines, or above the name
         w = (len(line1) + len(line2) + 3) * 7.25 + 30
         bx = min(max(ax - w / 2, GX), W - GX + 12 - w)
         return (f'<g class="cap"><path d="M{ax} {ay}V{gap_y + 13}" stroke="{colour}" stroke-width="1.4" stroke-dasharray="3 3"/>'
@@ -490,8 +553,8 @@ def render():
     # the first square gets a pin: this is where the story starts
     k, c, r = cells[0]
     sx = GX + c * PITCH + CELL / 2
-    gy_ = GY + 9.5 * PITCH
-    p.append(f'<g class="first"><path d="M{sx} {GY + 8 * PITCH + CELL}V{gy_ - 12}" stroke="{GREEN}" stroke-width="1.4" stroke-dasharray="3 3"/>'
+    gy_ = GY + (LINE_TOP + 7.5) * PITCH
+    p.append(f'<g class="first"><path d="M{sx} {GY + (LINE_TOP + 6) * PITCH + CELL}V{gy_ - 12}" stroke="{GREEN}" stroke-width="1.4" stroke-dasharray="3 3"/>'
              f'<rect x="{sx - 20}" y="{gy_ - 12}" width="182" height="24" rx="12" fill="{BG}" stroke="{GREEN}"/>'
              f'<text class="mono" x="{sx + 71}" y="{gy_ + 4.5}" font-size="12" font-weight="700" fill="{GREEN}" text-anchor="middle">'
              f'FIRST DAY <tspan fill="{MUTED}" font-weight="400">· {first}</tspan></text></g>')
