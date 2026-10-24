@@ -1,6 +1,6 @@
 ## Audit
 
-_Generated 2026-10-22. 13 findings across 88 repos (11 flagged)._
+_Generated 2026-10-24. 13 findings across 88 repos (11 flagged)._
 
 | Severity | Count |
 | --- | --- |
@@ -17,9 +17,9 @@ _Generated 2026-10-22. 13 findings across 88 repos (11 flagged)._
 ### Findings
 
 - **[high]** `bug-debt` — Bug debt: AbdullahBakir97/PortfolioCraft
-  - 1 open issues; the oldest is 175 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 1 open issues; the oldest is 177 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 3 (dominant labels: priority: high)
-  - Evidence: [1 open · oldest 175 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
+  - Evidence: [1 open · oldest 177 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[high]** `license` — No LICENSE: AbdullahBakir97/e-pay_tool
@@ -28,26 +28,26 @@ _Generated 2026-10-22. 13 findings across 88 repos (11 flagged)._
   - **Action:** Add a LICENSE file (MIT or Apache-2.0 are common defaults).
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1229 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1229 days)
-  - Evidence: [Opened 1229 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1231 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1231 days)
+  - Evidence: [Opened 1231 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[high]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 179 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (179 days)
-  - Evidence: [Opened 179 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 181 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (181 days)
+  - Evidence: [Opened 181 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 875 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 877 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 875 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 877 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[low]** `pr-rot` — Awaiting reviewer: AbdullahBakir97/Mini-RAG#74
   - A reviewer was the last to act on this PR and hasn't replied since 2026-10-18. This isn't your problem to push on — it's logged for awareness.
-  - Awaiting: reviewer (3 days)
+  - Awaiting: reviewer (5 days)
   - Evidence: [Last activity: 2026-10-18](https://github.com/AbdullahBakir97/Mini-RAG/pull/74)
   - **Action:** Reach out to the reviewer or convert to draft.
 
