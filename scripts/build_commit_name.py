@@ -189,11 +189,13 @@ def cell_rect(f, T):
 
 # where each drawing sits on the grid, in the space the name leaves free (col, row of its top-left)
 SLOTS = {"Dog": (1, 10), "Ghost": (18, 10), "Orange robot": (75, 10), "Lighthouse": (89, 10),
-         "Robots": (2, 20), "Skull": (22, 20), "Dog diving": (67, 20), "Diamond axe": (81, 20)}
+         "Robots": (2, 20), "Skull": (22, 20), "Dog diving": (67, 20), "Diamond axe": (81, 20),
+         "Me at my desk": (8, 1)}
 ART_OPACITY = .62     # the drawings sit a step behind the name
 # when each drawing happened in the graph, so the worm meets them in time order
 FIG_DATES = {"Diamond axe": "2023-09-01", "Skull": "2023-09-20", "Lighthouse": "2023-11-05", "Ghost": "2023-11-20",
-             "Dog": "2024-02-01", "Robots": "2024-08-15", "Dog diving": "2026-04-10", "Orange robot": "2026-07-10"}
+             "Dog": "2024-02-01", "Robots": "2024-08-15", "Dog diving": "2026-04-10", "Orange robot": "2026-07-10",
+             "Me at my desk": "2026-09-20"}
 LETTER_STEP, FIG_STEP, SLEEP = .26, .55, 3.0
 
 
