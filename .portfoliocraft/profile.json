@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-10-24T08:56:16.984Z"
+    "lastModified": "2026-10-25T09:13:12.318Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -64,12 +64,12 @@
       "keywords": []
     },
     {
-      "name": "Jinja",
+      "name": "Mako",
       "level": "proficient",
       "keywords": []
     },
     {
-      "name": "Mako",
+      "name": "Jinja",
       "level": "proficient",
       "keywords": []
     },
@@ -187,7 +187,7 @@
       ],
       "highlights": [
         "primary:Python",
-        "score:0.78"
+        "score:0.79"
       ]
     },
     {
