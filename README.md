@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/AbdullahBakir97">
-    <img src="https://img.shields.io/badge/%40AbdullahBakir97-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117&v=20261024" alt="@AbdullahBakir97" />
+    <img src="https://img.shields.io/badge/%40AbdullahBakir97-F90001?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117&v=20261025" alt="@AbdullahBakir97" />
   </a>
 </p>
 
@@ -27,17 +27,17 @@
 
 <!-- 🏷️ PROFESSIONAL BADGES — stats row -->
 <p align="center">
-  <a href="https://github.com/AbdullahBakir97"><img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&label=PROFILE%20VIEWS&color=ff652f&labelColor=0d1117&style=for-the-badge&v=20261024" alt="Profile views" /></a>
-  <a href="https://github.com/AbdullahBakir97?tab=followers"><img src="https://img.shields.io/github/followers/AbdullahBakir97?label=FOLLOWERS&style=for-the-badge&color=0A66C2&labelColor=0d1117&logo=github&logoColor=white&v=20261024" alt="GitHub followers" /></a>
-  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER&label=TOTAL%20STARS&style=for-the-badge&color=e3b341&labelColor=0d1117&logo=github&logoColor=white&v=20261024" alt="Total stars" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://komarev.com/ghpvc/?username=AbdullahBakir97&label=PROFILE%20VIEWS&color=ff652f&labelColor=0d1117&style=for-the-badge&v=20261025" alt="Profile views" /></a>
+  <a href="https://github.com/AbdullahBakir97?tab=followers"><img src="https://img.shields.io/github/followers/AbdullahBakir97?label=FOLLOWERS&style=for-the-badge&color=0A66C2&labelColor=0d1117&logo=github&logoColor=white&v=20261025" alt="GitHub followers" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/github/stars/AbdullahBakir97?affiliations=OWNER&label=TOTAL%20STARS&style=for-the-badge&color=e3b341&labelColor=0d1117&logo=github&logoColor=white&v=20261025" alt="Total stars" /></a>
 </p>
 
 <!-- 🏷️ PROFESSIONAL BADGES — contact / availability row -->
 <p align="center">
-  <a href="mailto:abdullah.bakir.204@gmail.com"><img src="https://img.shields.io/badge/EMAIL-D44638?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117&v=20261024" alt="Email" /></a>
-  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117&v=20261024" alt="LinkedIn" /></a>
-  <a href="https://t.me/BlackSea0011"><img src="https://img.shields.io/badge/TELEGRAM-26A5E4?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117&v=20261024" alt="Telegram" /></a>
-  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/badge/OPEN_TO_WORK-00C853?style=for-the-badge&logo=googlechat&logoColor=white&labelColor=0d1117&v=20261024" alt="Open to work" /></a>
+  <a href="mailto:abdullah.bakir.204@gmail.com"><img src="https://img.shields.io/badge/EMAIL-D44638?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117&v=20261025" alt="Email" /></a>
+  <a href="https://www.linkedin.com/in/abdullah-bakir-809065273/"><img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117&v=20261025" alt="LinkedIn" /></a>
+  <a href="https://t.me/BlackSea0011"><img src="https://img.shields.io/badge/TELEGRAM-26A5E4?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117&v=20261025" alt="Telegram" /></a>
+  <a href="https://github.com/AbdullahBakir97"><img src="https://img.shields.io/badge/OPEN_TO_WORK-00C853?style=for-the-badge&logo=googlechat&logoColor=white&labelColor=0d1117&v=20261025" alt="Open to work" /></a>
 </p>
 
 <p align="center"><img src="./assets/sections/splitter.svg" width="100%" alt=""/></p>
