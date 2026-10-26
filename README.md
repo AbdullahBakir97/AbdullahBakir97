@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"In order to be irreplaceable, one must always be different."</i><br/>
-  <sub>— <b>Coco Chanel</b></sub>
+  <i>"Don't comment bad code — rewrite it."</i><br/>
+  <sub>— <b>Brian Kernighan</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -185,16 +185,16 @@
 
 <!-- FEATURED_PROJECTS:START -->
 <p align="center">
+  <a href="https://github.com/AbdullahBakir97/Ragolex"><img src="./assets/featured/Ragolex.svg" width="49%" alt="Ragolex — featured project"/></a>
   <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/featured/Barber-Salon.svg" width="49%" alt="Barber-Salon — featured project"/></a>
+</p>
+<p align="center">
   <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/featured/Baeckrei.svg" width="49%" alt="Baeckrei — featured project"/></a>
-</p>
-<p align="center">
   <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/featured/Jobs-Portal.svg" width="49%" alt="Jobs-Portal — featured project"/></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/featured/Django-Store.svg" width="49%" alt="Django-Store — featured project"/></a>
 </p>
 <p align="center">
-  <a href="https://github.com/AbdullahBakir97/PortfolioCraft"><img src="./assets/featured/PortfolioCraft.svg" width="49%" alt="PortfolioCraft — featured project"/></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project"/></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/featured/Django-Store.svg" width="49%" alt="Django-Store — featured project"/></a>
+  <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project"/></a>
 </p>
 <!-- FEATURED_PROJECTS:END -->
 
@@ -204,11 +204,12 @@
 
 <!-- PINNED_REPOS:START -->
 <table width="100%">
-<tr><th align="left" colspan="2">Developer tools <sub>· 10</sub></th></tr>
+<tr><th align="left" colspan="2">Developer tools <sub>· 11</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Python-Environment-Management-Tool"><b>Python-Environment-Management-Tool</b></a></td><td>CLI to manage Python virtualenvs and project dependencies</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/API-Client-Generator"><b>API-Client-Generator</b></a></td><td>Generate typed Python API clients from OpenAPI specs</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Repo-Directory-Structure"><b>Repo-Directory-Structure</b></a></td><td>Generate a tree-style snapshot of any repository&#x27;s directory st…</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/GitHub-Doc-Generator"><b>GitHub-Doc-Generator</b></a></td><td>Auto-generate documentation pages from a GitHub repository</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/PortfolioCraft"><b>PortfolioCraft</b></a></td><td>Generate a verifiable professional portfolio from your GitHub h…</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/ai-quality-gate"><b>ai-quality-gate</b></a></td><td>GitHub App that runs an AI-driven quality gate on every PR</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/commit-craft"><b>commit-craft</b></a></td><td>GitHub App that auto-formats pull-request commits to convention…</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/issue-triage-bot"><b>issue-triage-bot</b></a></td><td>GitHub App that auto-labels and routes new issues based on titl…</td></tr>
@@ -217,8 +218,9 @@
 <tr><td><a href="https://github.com/AbdullahBakir97/repodoc-ai"><b>repodoc-ai</b></a></td><td>GitHub App that auto-generates and refreshes README sections fr…</td></tr>
 <tr><th align="left" colspan="2">AI · Data <sub>· 2</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/AI-KI"><b>AI-KI</b></a></td><td>Notebook-driven AI experiments</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/cortex"><b>cortex</b></a></td><td>Memory-augmented agent kernel</td></tr>
-<tr><th align="left" colspan="2">Backend / API <sub>· 14</sub></th></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/cortex"><b>cortex</b></a></td><td>Animated SVG widgets for your GitHub profile README, generated…</td></tr>
+<tr><th align="left" colspan="2">Backend / API <sub>· 15</sub></th></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Django-Blog-app"><b>Django-Blog-app</b></a></td><td>Django blog application</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Automtion"><b>Automtion</b></a></td><td>Browser-automation playground</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><b>Project-Management-Tool</b></a></td><td>Project management tool</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/image-cropping"><b>image-cropping</b></a></td><td>Server-side image cropping utility</td></tr>
@@ -233,8 +235,7 @@
 <tr><td><a href="https://github.com/AbdullahBakir97/GitHub-Issues-Wall"><b>GitHub-Issues-Wall</b></a></td><td>Browser wall of GitHub issues</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/ai-approve"><b>ai-approve</b></a></td><td>GitHub App + autonomous code-review bot</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Email-Sender"><b>Email-Sender</b></a></td><td>Bulk email sender</td></tr>
-<tr><th align="left" colspan="2">Frontend <sub>· 5</sub></th></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><b>2050-Bootstrap-Landing-page</b></a></td><td>Marketing landing page demo built with Bootstrap 5</td></tr>
+<tr><th align="left" colspan="2">Frontend <sub>· 4</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Dj--To-Do"><b>Dj--To-Do</b></a></td><td>Django to-do app</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js"><b>Weather--App-django-vue.js</b></a></td><td>Weather lookup app</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/e-pay_tool"><b>e-pay_tool</b></a></td><td>—</td></tr>
