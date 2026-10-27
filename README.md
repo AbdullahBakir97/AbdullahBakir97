@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Don't comment bad code — rewrite it."</i><br/>
-  <sub>— <b>Brian Kernighan</b></sub>
+  <i>"Programs are meant to be read by humans and only incidentally for computers to execute."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
