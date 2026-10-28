@@ -40,7 +40,7 @@ W, H = 1400, 560
 NOW_SHIPPING = [
     ("PortfolioCraft", "active",  "GitHub-history → portfolio CLI + Action"),
     ("Stock-Manager",  "active",  "desktop inventory · v2.4.x · daily commits"),
-    ("Mini-RAG",       "active",  "RAG service — hybrid search, citations, MCP"),
+    ("Ragolex",        "active",  "RAG service — hybrid search, citations, MCP"),
     ("Baeckrei",       "active",  "bakery management — Django + Vue 3"),
 ]
 

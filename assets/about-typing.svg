@@ -100,8 +100,8 @@
   <text class="term" x="20" y="40" fill="#F90001" clip-path="url(#t36)">$ python -m commit_craft check HEAD</text>
   <text class="term" x="20" y="40" fill="#A78BFA" clip-path="url(#t37)">PS&gt; python -m repodoc_ai generate</text>
   <text class="term" x="20" y="40" fill="#34D399" clip-path="url(#t38)">$ python -m ai_quality_gate scan</text>
-  <text class="term" x="20" y="40" fill="#FFD700" clip-path="url(#t39)">PS&gt; docker compose -f mini-rag.yml up -d</text>
-  <text class="term" x="20" y="40" fill="#00C853" clip-path="url(#t40)">$ tail -f logs/mini-rag.log</text>
+  <text class="term" x="20" y="40" fill="#FFD700" clip-path="url(#t39)">PS&gt; docker compose -f ragolex.yml up -d</text>
+  <text class="term" x="20" y="40" fill="#00C853" clip-path="url(#t40)">$ tail -f logs/ragolex.log</text>
   <text class="term" x="20" y="40" fill="#22D3EE" clip-path="url(#t41)">PS&gt; npx nuxt build; npx nuxt start</text>
   <text class="term" x="20" y="40" fill="#FF652F" clip-path="url(#t42)">$ python manage.py migrate baeckrei</text>
   <text class="term" x="20" y="40" fill="#EC4899" clip-path="url(#t43)">PS&gt; rabbitmq-plugins enable management</text>

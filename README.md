@@ -170,7 +170,7 @@
 <h3 align="center">Spotlight</h3>
 
 <p align="center">
-  <a href="https://github.com/AbdullahBakir97/Mini-RAG"><img src="./assets/projects/spotlight-Mini-RAG.svg" width="100%" alt="Mini-RAG — ask questions about your own documents and get answers that cite their sources"/></a>
+  <a href="https://github.com/AbdullahBakir97/Ragolex"><img src="./assets/projects/spotlight-Ragolex.svg" width="100%" alt="Ragolex — ask questions about your own documents and get answers that cite their sources"/></a>
 </p>
 
 <p align="center">
@@ -291,6 +291,11 @@
 </p>
 <p align="center">
   <a href="https://www.buymeacoffee.com/abdullahbad"><img src="./assets/connect/coffee.svg" width="99%" alt="Buy me a coffee — support my work"/></a>
+</p>
+
+<!-- CLOSING — the ayah over a rain of characters taken from the source code that draws it -->
+<p align="center">
+  <img src="./assets/ayah-rain.webp" width="100%" alt="وَأَن لَّيْسَ لِلْإِنسَانِ إِلَّا مَا سَعَىٰ — And that there is not for man except that for which he strives (An-Najm 53:39)" />
 </p>
 
 <a href="#about"><img src="./assets/connect/footer.svg" width="100%" alt="Thanks for stopping by. Back to top"/></a>

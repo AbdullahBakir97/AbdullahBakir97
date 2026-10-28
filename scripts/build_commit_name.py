@@ -229,34 +229,51 @@ OCTO = ["#2c2050", "#382968", "#463383", "#563fa0", "#6b4fc2"]   # purple scale 
 
 
 OCTO_EYES = {}
+OCTO_FRAMES, OCTO_LOOP = 14, 7.0   # the octopus is a flipbook: one sample per frame, one cycle per loop
 
 
 def octopus_mask(phase=0.0):
-    """Squares of a big octopus drawn on the grid: a dome with two eyes and eight curling arms.
-    `phase` sways the arms, so two phases make the arms wave."""
+    """Squares of a big octopus: a dome with two eyes and eight arms that keep moving.
+
+    `phase` runs 0 to 2*pi over one cycle. The whole animal breathes with it: the dome
+    rises and falls a little, each arm curls and uncurls on its own beat, and a wave
+    travels out along every arm from the body to the tip, the way a real arm moves.
+    Sampled at a dozen phases it plays back as a flipbook that never jumps."""
     import math
+    bob = math.sin(phase) * .55                          # the body breathes
+    squash = 1.0 + .045 * math.cos(phase)
     cx, cells = GRID_COLS / 2, set()
+    dome_y = 5.4 + bob
     for c in range(GRID_COLS):
         for r in range(GRID_ROWS):
-            if ((c + .5 - cx) / 15) ** 2 + ((r + .5 - 5.4) / 5.6) ** 2 <= 1 and r <= 8:
+            if ((c + .5 - cx) / (15 * squash)) ** 2 + ((r + .5 - dome_y) / (5.6 / squash)) ** 2 <= 1 \
+                    and r <= 8 + bob:
                 cells.add((c, r))
     for ex in (-7, 5):                                   # two eyes: white with a dark pupil
         for dc in (0, 1, 2):
             for dr in (0, 1):
+                # the eyes keep their rows while the dome breathes, so they do not
+                # smear across three rows when the frames are merged
+                cells.discard((int(cx) + ex + dc, int(3 + dr + bob)))
                 cells.discard((int(cx) + ex + dc, 3 + dr))
-                OCTO_EYES[(int(cx) + ex + dc, 3 + dr)] = "#14102a" if (dc, dr) == (1, 1) else "#e8dcff"
+                OCTO_EYES[(int(cx) + ex + dc, 3 + dr)] = (
+                    "#14102a" if (dc, dr) == (1, 1) else "#e8dcff"
+                )
     bases = [-12, -8.5, -5, -1.5, 1.5, 5, 8.5, 12]
     for i, bx in enumerate(bases):
         side = -1 if bx < 0 else 1
         outer = abs(i - 3.5) / 3.5                       # 0 for the middle arms, 1 for the outer ones
-        x, y = cx + bx, 8.0
+        beat = phase + i * .78                           # each arm on its own beat
+        x, y = cx + bx, 8.0 + bob
         ang = math.radians(90 - side * (8 + 46 * outer))
         length = 26 + 30 * outer
-        curl = side * math.radians(120) * (.45 + .4 * outer)
+        # the curl opens and closes, so the arm reaches out and draws back in
+        curl = side * math.radians(120) * (.45 + .4 * outer) * (1.0 + .3 * math.sin(beat))
         n = int(length * 3)
         for j in range(n):
             t = j / n
-            a = ang - curl * t ** 2.2 + math.sin(phase + i * .9 + t * 4) * .22 * t
+            ripple = math.sin(beat - t * 5.4) * (.10 + .34 * t)   # a wave out to the tip
+            a = ang - curl * t ** 2.2 + ripple
             x += math.cos(a) / 3
             y += math.sin(a) / 3
             w = 1.6 * (1 - t) + .45
@@ -484,27 +501,37 @@ def render():
                       f'stroke="#ffffff" stroke-opacity=".12" stroke-dasharray="3 3"/>'
                       f'<text x="{fx + fw / 2}" y="{fy_ + fh + 13}" text-anchor="middle" font-size="10.5" '
                       f'letter-spacing=".4" fill="{MUTED}">{name}</text>')
-    # behind everything: an octopus drawn from the same real days, its arms waving between two poses
-    oct_a, oct_b = octopus_mask(0.0), octopus_mask(2.4)
+    # behind everything: an octopus drawn from the same real days. It is a flipbook —
+    # the mask is sampled at OCTO_FRAMES phases of one cycle and played back, so the
+    # arms ripple instead of flicking between two poses.
+    import math as _m
+    OCTO_EYES.clear()
+    octo_frames = [octopus_mask(k / OCTO_FRAMES * 2 * _m.pi) for k in range(OCTO_FRAMES)]
+    octo_keys = ";".join(f"{k / OCTO_FRAMES:.4f}" for k in range(OCTO_FRAMES)) + ";1"
+    in_any = set().union(*octo_frames)
     empty = []
     for i, (c, r) in enumerate(free):
         g = days[round(i * (len(days) - 1) / max(1, len(free) - 1))] if days else None
         x, y = GX + c * PITCH, GY + r * PITCH
         lv = LEVELS.index(level_colour(g[1], cuts)) if g and g[1] > 0 else 0
         tip = f"<title>{g[1]} contributions on {g[0]}</title>" if g else ""
-        in_a, in_b = (c, r) in oct_a, (c, r) in oct_b
         if (c, r) in OCTO_EYES:
             empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{OCTO_EYES[(c, r)]}" opacity=".9">'
                          f'<animate attributeName="height" values="{CELL};{CELL};1;{CELL};{CELL}" keyTimes="0;.9;.93;.96;1" '
                          f'dur="6s" repeatCount="indefinite"/></rect>')
-        elif in_a or in_b:
-            col = OCTO[lv]
-            wave = ""
-            if in_a != in_b:                              # an arm square that comes and goes
-                v = "1;1;0;0;1" if in_a else "0;0;1;1;0"
-                wave = f'<animate attributeName="opacity" values="{v}" keyTimes="0;.4;.5;.9;1" dur="3.6s" repeatCount="indefinite"/>'
-            empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{col}"'
-                         f'{" opacity=\"0\"" if in_b and not in_a else ""}>{wave}{tip}</rect>')
+        elif (c, r) in in_any:
+            # the colour this square shows in each frame: the octopus when the arm is
+            # over it, the quiet day underneath when it is not
+            cols = [OCTO[lv] if (c, r) in f else GHOST[lv] for f in octo_frames]
+            if len(set(cols)) == 1:
+                empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" '
+                             f'fill="{cols[0]}">{tip}</rect>')
+            else:
+                empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" '
+                             f'fill="{cols[0]}">{tip}'
+                             f'<animate attributeName="fill" values="{";".join(cols)};{cols[0]}" '
+                             f'keyTimes="{octo_keys}" calcMode="discrete" dur="{OCTO_LOOP}s" '
+                             f'repeatCount="indefinite"/></rect>')
         elif lv:
             empty.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RADIUS}" fill="{GHOST[lv]}">{tip}</rect>')
         else:

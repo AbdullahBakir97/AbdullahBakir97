@@ -1,8 +1,8 @@
 [
   {
-    "repo": "Mini-RAG",
+    "repo": "Ragolex",
     "eyebrow": "AI · RETRIEVAL",
-    "name": "Mini-RAG",
+    "name": "Ragolex",
     "one_liner": "Ask your documents a question and get an answer with the sources.",
     "rows": [
       [

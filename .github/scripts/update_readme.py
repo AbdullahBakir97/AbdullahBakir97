@@ -2401,6 +2401,47 @@ def _release_lines(body: str, title: str, n: int = 3) -> list[str]:
     return out
 
 
+_TAG_RE = re.compile(r"^(?P<pkg>.*?)[-_/@]?(?P<ver>v?\d+(?:\.\d+){1,2}(?:[-+.][\w.]+)?)$")
+
+
+def _release_entry(repo: str, tag: str, when: dt.datetime, title: str, body: str, url: str, kind: str = "release") -> dict:
+    """One row for the releases card. Monorepo tags like `devtrust-whychanged-v0.1.0`
+    show as `v0.1.0` with the package next to the repo name."""
+    m = _TAG_RE.match(tag)
+    label, short = repo, tag
+    if m and m.group("pkg"):
+        pkg = re.sub(rf"^{re.escape(repo.lower())}[-_/]?", "", m.group("pkg").lower()).strip("-_/")
+        short = m.group("ver")
+        label = f"{repo} · {pkg}" if pkg else repo
+    return dict(repo=label, tag=short, raw_tag=tag, bump=_bump(short), when=when, date=when.date(),
+                title=title, notes=_release_lines(body, title), url=url, kind=kind)
+
+
+def _tag_entries(repo: str, known: set[str], newer_than: dt.datetime | None, look_at: int = 3) -> list[dict]:
+    """Version tags that have no GitHub Release, newer than the latest release.
+    Notes come from the annotated tag message, or the tagged commit's message."""
+    tags = [t for t in _gh_rest(f"/repos/{GH_USER}/{repo}/tags", {"per_page": 30})
+            if t["name"] not in known and _TAG_RE.match(t["name"])]
+    tags.sort(key=lambda t: _semver(_TAG_RE.match(t["name"]).group("ver")) or (0, 0, 0), reverse=True)
+    out = []
+    for t in tags[:look_at]:
+        ref = _gh_rest(f"/repos/{GH_USER}/{repo}/git/ref/tags/{urllib.parse.quote(t['name'], safe='')}")["object"]
+        if ref["type"] == "tag":  # annotated: has its own date and message
+            obj = _gh_rest(f"/repos/{GH_USER}/{repo}/git/tags/{ref['sha']}")
+            when_s, message = obj["tagger"]["date"], obj.get("message") or ""
+        else:
+            obj = _gh_rest(f"/repos/{GH_USER}/{repo}/git/commits/{ref['sha']}")
+            when_s, message = obj["committer"]["date"], obj.get("message") or ""
+        when = dt.datetime.fromisoformat(when_s.replace("Z", "+00:00"))
+        if newer_than and when <= newer_than:
+            continue
+        lines = [ln for ln in message.strip().splitlines() if not ln.startswith("-----BEGIN")]
+        title = (lines[0].strip() if lines else "") or t["name"]
+        out.append(_release_entry(repo, t["name"], when, title, "\n".join(lines[1:]),
+                                  f"https://github.com/{GH_USER}/{repo}/releases/tag/{urllib.parse.quote(t['name'])}", "tag"))
+    return out
+
+
 def releases_svg(d: dict) -> str:
     W = 1400
     B = SEC_BLUE
@@ -2429,7 +2470,7 @@ def releases_svg(d: dict) -> str:
         y = ny + i * 36
         s_.append(f'<circle cx="62" cy="{y - 7}" r="3.5" fill="#8b949e"/>'
                   f'<text x="80" y="{y}" font-family="{SEC_SANS}" font-size="20" fill="#c9d1d9">{html_escape(line)}</text>')
-    s_.append(f'<text x="36" y="{link_y}" font-family="{SEC_SANS}" font-size="20" font-weight="700" fill="{B}">Read the release notes →</text>')
+    s_.append(f'<text x="36" y="{link_y}" font-family="{SEC_SANS}" font-size="20" font-weight="700" fill="{B}">{"Read the release notes" if L.get("kind", "release") == "release" else "View the tag"} →</text>')
     # timeline
     tl = d["timeline"]
     ty = cy + ch + 96
@@ -2442,7 +2483,7 @@ def releases_svg(d: dict) -> str:
         dot, txt, _, _ = BUMP_STYLE[r["bump"]]
         s_.append(f'<circle cx="{x:.1f}" cy="{ty}" r="13" fill="{dot}" stroke="#0d1117" stroke-width="4"/>'
                   f'<text x="{x:.1f}" y="{ty + 48}" text-anchor="middle" font-family="{SEC_MONO}" font-size="18" font-weight="700" fill="{txt}">{html_escape(r["tag"])}</text>'
-                  f'<text x="{x:.1f}" y="{ty + 76}" text-anchor="middle" font-family="{SEC_SANS}" font-size="20" fill="#ffffff">{html_escape(_clip(r["repo"], 22))}</text>'
+                  f'<text x="{x:.1f}" y="{ty + 76}" text-anchor="middle" font-family="{SEC_SANS}" font-size="20" fill="#ffffff">{html_escape(_clip(r["repo"], 24))}</text>'
                   f'<text x="{x:.1f}" y="{ty + 100}" text-anchor="middle" font-family="{SEC_SANS}" font-size="16" fill="#8b949e">{r["date"].strftime("%b ")}{r["date"].day}</text>')
     ly = ty + 150
     lx = 0
@@ -2466,14 +2507,21 @@ def render_releases_svg(dest: Path) -> None:
     for r in repos:
         if r.get("fork") or dt.datetime.fromisoformat(r["pushed_at"].replace("Z", "+00:00")) < cutoff:
             continue
+        repo_rels = []
         for rel in _gh_rest(f"/repos/{GH_USER}/{r['name']}/releases", {"per_page": 5}):
             if rel.get("draft") or not rel.get("published_at"):
                 continue
             when = dt.datetime.fromisoformat(rel["published_at"].replace("Z", "+00:00"))
             title = (rel.get("name") or rel["tag_name"]).strip()
             title = re.sub(rf"^{re.escape(rel['tag_name'])}\s*[—–-]\s*", "", title) or title
-            rels.append(dict(repo=r["name"], tag=rel["tag_name"], bump=_bump(rel["tag_name"]), date=when.date(),
-                             title=title, notes=_release_lines(rel.get("body") or "", title), url=rel["html_url"]))
+            repo_rels.append(_release_entry(r["name"], rel["tag_name"], when, title, rel.get("body") or "", rel["html_url"]))
+        # Tags pushed after the newest release (or with no release at all) count too.
+        try:
+            repo_rels += _tag_entries(r["name"], {x["raw_tag"] for x in repo_rels},
+                                      max((x["when"] for x in repo_rels), default=None))
+        except Exception as e:
+            warn(f"tags for {r['name']} unavailable: {e}")
+        rels += [x for x in repo_rels if x["when"] >= cutoff]
     if not rels:
         warn("no releases found — keeping the previous releases.svg")
         return
@@ -2563,7 +2611,7 @@ def _categorize_repo(repo: dict) -> str:
         return "tools"
     if topics & {"ai", "ml", "machine-learning", "rag", "llm", "embeddings"}:
         return "ai"
-    if name in {"AI-KI", "Mini-RAG", "cortex"}:
+    if name in {"AI-KI", "Ragolex", "cortex"}:
         return "ai"
     if topics & {"game", "pygame", "arcade"}:
         return "game"
@@ -2812,6 +2860,10 @@ def fetch_featured_projects(limit: int = 6) -> str:
         except Exception as e:
             warn(f"featured render failed for {repo['name']}: {e}")
     _FEATURED_NAMES = [repo["name"] for _, repo, _ in top]
+    # Drop cards for repos that left the grid (or were renamed), so assets/ stays honest.
+    for old in feat_dir.glob("*.svg"):
+        if old.stem not in _FEATURED_NAMES:
+            old.unlink()
     return _featured_grid(_FEATURED_NAMES)
 
 
@@ -2908,6 +2960,14 @@ def main() -> int:
     activity_only = "--activity-only" in sys.argv
 
     if not activity_only:
+        # Follow repo renames first, so every section below uses the current names.
+        try:
+            sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+            import repo_names
+            repo_names.sync_renames()
+        except Exception as e:
+            warn(f"rename sync failed (continuing with the names on file): {e}")
+
         # Regenerate per-year contribution heatmap + skyline SVGs first so the
         # snake/skyline marker bodies reference fresh files in this same commit.
         try:
@@ -2956,10 +3016,9 @@ def main() -> int:
             ("CONTRIB_LINKS", contrib_links),
             ("QUOTE", quote_of_the_day),
         ]
-        # Featured cards re-rank weekly (Mondays, or with --include-featured); the
-        # index runs after them so it can leave out whatever the cards show.
-        if "--include-featured" in sys.argv or dt.date.today().weekday() == 0:
-            sections.append(("FEATURED_PROJECTS", fetch_featured_projects))
+        # Featured cards re-rank on every full run; the index runs after them so it
+        # can leave out whatever the cards show.
+        sections.append(("FEATURED_PROJECTS", fetch_featured_projects))
         sections.append(("PINNED_REPOS", fetch_pinned_repos))
 
     for marker, fn in sections:

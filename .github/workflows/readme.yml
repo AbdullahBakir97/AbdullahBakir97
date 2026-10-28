@@ -64,11 +64,8 @@ jobs:
           if [ "${{ steps.mode.outputs.mode }}" = "activity-only" ]; then
             python .github/scripts/update_readme.py --activity-only
           else
-            # On Mondays additionally rank Featured Projects.
-            DAY=$(date -u +%u)
-            FLAGS=""
-            if [ "$DAY" = "1" ]; then FLAGS="--include-featured"; fi
-            python .github/scripts/update_readme.py $FLAGS
+            # Full refresh: follows repo renames and re-ranks Featured Projects too.
+            python .github/scripts/update_readme.py
           fi
 
       - name: Draw name from real commit days and the current-focus cards
@@ -85,7 +82,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/commit-name.svg assets/current-focus.svg assets/year-story.svg assets/yearly-highlights.svg assets/heatmap-*.svg assets/skyline-*.svg assets/about-hero.svg assets/about-code.svg assets/about-orbit.svg assets/featured/ assets/projects/ assets/stats/
+          git add README.md .github/scripts/spotlight.json assets/commit-name.svg assets/current-focus.svg assets/year-story.svg assets/yearly-highlights.svg assets/heatmap-*.svg assets/skyline-*.svg assets/about-hero.svg assets/about-code.svg assets/about-orbit.svg assets/featured/ assets/projects/ assets/stats/
           if git diff --cached --quiet; then
             echo "no changes to commit"
             exit 0
