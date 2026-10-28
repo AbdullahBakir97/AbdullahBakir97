@@ -1,8 +1,9 @@
 """Generate assets/current-focus.svg — what I'm working on, from real GitHub activity.
 
-Six cards, one per repository with the most of my commits in the last 30 days.
-Each card shows the repo name, its description, a status worked out from the
-data, and its topics (or language) as tags:
+Six cards, one per public repository with the most of my commits in the last
+30 days, picked fresh on every run. Each card shows the repo name, its
+description (my own words from OVERRIDES when I wrote some), a status worked
+out from the data, and its topics (or language) as tags:
 
   ACTIVE       commits in the last 7 days
   SHIPPING     a release published in the last 30 days
@@ -18,9 +19,11 @@ import re
 import textwrap
 import urllib.request
 from pathlib import Path
+import sys
 from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 OUT = ROOT / "assets" / "current-focus.svg"
 
 GH_USER = os.environ.get("GH_USER", "AbdullahBakir97")
@@ -51,42 +54,102 @@ def _gh(url):
         return json.load(r)
 
 
-# The repos I'm really focused on. Status and the 30-day commit count are
-# read live; `idle` is the status and `note` the footer used when a repo
-# had no commits in the last 30 days (or the API can't see it).
-FOCUS = [
-    ("Mini-RAG", "Ask your documents a question and get an answer with the sources. Hybrid search, citations and an MCP server.",
-     ["fastapi", "pgvector", "rag", "mcp"], "Python", "SHIPPED", "public repo"),
-    ("Django--LMS--Learning-Management-System", "A course platform with payments, a social feed and a job board.",
-     ["django", "vue", "channels", "celery"], "Python", "SHIPPED", "public repo"),
-    ("Baeckrei", "Bakery management system: production planning, recipe-based inventory, customer accounts and online orders.",
-     ["django", "vue", "postgres"], "Vue", "SHIPPED", "public repo"),
-    ("DevTrust", "Tools I made to check code when AI writes part of it: test selection, PR review and LLM tracing.",
-     ["pypi", "github-apps", "testing"], "Python", "SHIPPED", "9 packages on PyPI"),
-    ("PortfolioCraft", "Turns your GitHub history into a portfolio, CV and README, as a CLI or a GitHub Action.",
-     ["cli", "github-action", "portfolio"], "TypeScript", "SHIPPED", "on GitHub Marketplace"),
-    ("Stock-Manager", "Desktop inventory app: products, stock levels, barcodes and an offline local database.",
-     ["pyqt6", "sqlite", "desktop"], "Python", "IN USE", "desktop app"),
-]
+# My own words for repos I care about. Everything else on a card is live: which
+# repos show up, their order, status, commit count and language. A repo without
+# an entry here uses its GitHub description and topics. Keys survive renames:
+# a key that is not a current repo name is looked up through GitHub's redirect.
+OVERRIDES = {
+    "Ragolex": ("Ask your documents a question and get an answer with the sources. Hybrid search, citations and an MCP server.",
+                ["fastapi", "pgvector", "rag", "mcp"]),
+    "Django--LMS--Learning-Management-System": ("A course platform with payments, a social feed and a job board.",
+                                                ["django", "vue", "channels", "celery"]),
+    "Baeckrei": ("Bakery management system: production planning, recipe-based inventory, customer accounts and online orders.",
+                 ["django", "vue", "postgres"]),
+    "DevTrust": ("Tools I made to check code when AI writes part of it: test selection, PR review and LLM tracing.",
+                 ["pypi", "github-apps", "testing"]),
+    "PortfolioCraft": ("Turns your GitHub history into a portfolio, CV and README, as a CLI or a GitHub Action.",
+                       ["cli", "github-action", "portfolio"]),
+    "cortex": ("Profile widgets from your GitHub data, including graph-art: drawings found in the contribution calendar.",
+               ["python", "svg", "github-action"]),
+}
+
+
+def _when(s):
+    return dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
+
+
+def _my_commits(name, since, pages=3):
+    """My commits in `name` since `since`: (count, newest date)."""
+    count, newest = 0, None
+    for page in range(1, pages + 1):
+        batch = _gh(f"https://api.github.com/repos/{GH_USER}/{name}/commits"
+                    f"?author={GH_USER}&since={since:%Y-%m-%dT%H:%M:%SZ}&per_page=100&page={page}")
+        count += len(batch)
+        for c in batch:
+            d = _when(c["commit"]["author"]["date"])
+            newest = d if newest is None or d > newest else newest
+        if len(batch) < 100:
+            break
+    return count, newest
+
+
+def _overrides(names):
+    """OVERRIDES keyed by the repos' current names (lower case)."""
+    out = {}
+    for key, val in OVERRIDES.items():
+        if key.lower() not in names:
+            try:
+                import repo_names
+                key = repo_names.current_name(key)
+            except Exception as e:
+                print(f"  could not resolve {key}: {e}")
+        out[key.lower()] = val
+    return out
 
 
 def fetch(limit=6):
-    """[(name, description, status, tags, footer_count, language, footer_text)] for FOCUS."""
+    """The public repos with the most of my commits in the last 30 days.
+
+    [(name, description, status, tags, footer_count, language, footer_text)]
+    Forks, archived and private repos are left out. If fewer than `limit` repos
+    had commits, the rest are the most recently pushed ones.
+    """
     now = dt.datetime.now(dt.timezone.utc)
     d7, d30 = now - dt.timedelta(days=7), now - dt.timedelta(days=30)
+    repos = [r for r in _gh(f"https://api.github.com/users/{GH_USER}/repos?type=owner&sort=pushed&per_page=100")
+             if not r.get("fork") and not r.get("archived") and not r.get("private") and r["name"].lower() not in SKIP]
+    if not repos:
+        raise RuntimeError("no repositories returned")
+    ranked, rest = [], []
+    for r in repos:
+        count, newest = 0, None
+        if _when(r["pushed_at"]) >= d30:
+            try:
+                count, newest = _my_commits(r["name"], d30)
+            except Exception as e:
+                print(f"  {r['name']}: commits unavailable ({e})")
+        (ranked if count else rest).append((r, count, newest))
+    ranked.sort(key=lambda t: (t[1], t[2]), reverse=True)
+    rest.sort(key=lambda t: t[0]["pushed_at"], reverse=True)
+    picked = (ranked + rest)[:limit]
+    ov = _overrides({r["name"].lower() for r in repos})
     out = []
-    for name, desc, tags, lang, idle, note in FOCUS[:limit]:
-        status, count, footer = idle, None, note
+    for r, count, newest in picked:
+        desc, tags = ov.get(r["name"].lower(), (None, None))
+        desc = desc or r.get("description") or ""
+        tags = tags or (r.get("topics") or [])[:4] or ([r["language"].lower()] if r.get("language") else [])
+        if count:
+            status, footer = ("ACTIVE" if newest >= d7 else "MAINTAINING"), "commits · 30d"
+        else:
+            pushed = _when(r["pushed_at"])
+            status, footer = "SHIPPED", f"updated {pushed:%b} {pushed.day}"
         try:
-            commits = _gh(f"https://api.github.com/repos/{GH_USER}/{name}/commits"
-                          f"?author={GH_USER}&since={d30:%Y-%m-%dT%H:%M:%SZ}&per_page=100")
-            if commits:
-                last = max(dt.datetime.fromisoformat(c["commit"]["author"]["date"].replace("Z", "+00:00")) for c in commits)
-                status = "ACTIVE" if last >= d7 else "MAINTAINING"
-                count, footer = len(commits), "commits · 30d"
-        except Exception as e:
-            print(f"  {name}: no live data ({e})")
-        out.append((name, desc, status, tags, count, lang, footer))
+            rel = _gh(f"https://api.github.com/repos/{GH_USER}/{r['name']}/releases?per_page=1")
+            if rel and rel[0].get("published_at") and _when(rel[0]["published_at"]) >= d30 and status != "ACTIVE":
+                status = "SHIPPING"
+        except Exception:
+            pass
+        out.append((r["name"], desc, status, tags, count or None, r.get("language"), footer))
     return out
 
 
