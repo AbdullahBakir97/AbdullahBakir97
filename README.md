@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programs are meant to be read by humans and only incidentally for computers to execute."</i><br/>
-  <sub>— <b>Donald Knuth</b></sub>
+  <i>"The function of good software is to make the complex appear to be simple."</i><br/>
+  <sub>— <b>Grady Booch</b></sub>
 </p>
 <!-- QUOTE:END -->
 
