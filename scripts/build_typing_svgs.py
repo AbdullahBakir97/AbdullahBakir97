@@ -68,8 +68,8 @@ ABOUT_LINES = [
     ("$ python -m commit_craft check HEAD",            "#F90001"),  # mac: GitHub App
     ("PS> python -m repodoc_ai generate",              "#A78BFA"),  # win: GitHub App
     ("$ python -m ai_quality_gate scan",               "#34D399"),  # mac: GitHub App
-    ("PS> docker compose -f mini-rag.yml up -d",       "#FFD700"),  # win: Mini-RAG
-    ("$ tail -f logs/mini-rag.log",                    "#00C853"),  # mac: logs
+    ("PS> docker compose -f ragolex.yml up -d",        "#FFD700"),  # win: Ragolex
+    ("$ tail -f logs/ragolex.log",                     "#00C853"),  # mac: logs
     ("PS> npx nuxt build; npx nuxt start",             "#22D3EE"),  # win: Vue/Nuxt
     ("$ python manage.py migrate baeckrei",            "#FF652F"),  # mac: Django
     ("PS> rabbitmq-plugins enable management",         "#EC4899"),  # win: RabbitMQ

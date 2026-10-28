@@ -24,7 +24,7 @@ YEARS = {
     2024: ("#F90001", "My first real customer", [
         "Built Barber-Salon for a real salon. It runs at kharsa-style.de and has 55 stars.",
         "Started Django LMS in June, and more than 10 other projects that summer.",
-        "Started Mini-RAG, and Baeckrei for a bakery customer."]),
+        "Started Mini-RAG (now Ragolex), and Baeckrei for a bakery customer."]),
     2025: ("#ff652f", "A quieter year", [
         "Fewer public commits this year.",
         "Kept building Baeckrei with Django and Vue 3: recipes, inventory and online orders.",
