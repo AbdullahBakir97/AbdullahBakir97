@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Code never lies, comments sometimes do."</i><br/>
-  <sub>— <b>Ron Jeffries</b></sub>
+  <i>"Quality is more important than quantity. One home run is much better than two doubles."</i><br/>
+  <sub>— <b>Steve Jobs</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -189,12 +189,12 @@
   <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/featured/Baeckrei.svg" width="49%" alt="Baeckrei — featured project"/></a>
 </p>
 <p align="center">
+  <a href="https://github.com/AbdullahBakir97/Space-Shooter"><img src="./assets/featured/Space-Shooter.svg" width="49%" alt="Space-Shooter — featured project"/></a>
   <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/featured/Jobs-Portal.svg" width="49%" alt="Jobs-Portal — featured project"/></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/featured/Django-Store.svg" width="49%" alt="Django-Store — featured project"/></a>
 </p>
 <p align="center">
+  <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/featured/Django-Store.svg" width="49%" alt="Django-Store — featured project"/></a>
   <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project"/></a>
-  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project"/></a>
 </p>
 <!-- FEATURED_PROJECTS:END -->
 
@@ -219,7 +219,8 @@
 <tr><th align="left" colspan="2">AI · Data <sub>· 2</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/AI-KI"><b>AI-KI</b></a></td><td>Notebook-driven AI experiments</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/cortex"><b>cortex</b></a></td><td>Animated SVG widgets for your GitHub profile README, generated…</td></tr>
-<tr><th align="left" colspan="2">Backend / API <sub>· 14</sub></th></tr>
+<tr><th align="left" colspan="2">Backend / API <sub>· 15</sub></th></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Django-Blog-app"><b>Django-Blog-app</b></a></td><td>Django blog application</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Automtion"><b>Automtion</b></a></td><td>Browser-automation playground</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><b>Project-Management-Tool</b></a></td><td>Project management tool</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/image-cropping"><b>image-cropping</b></a></td><td>Server-side image cropping utility</td></tr>
@@ -239,9 +240,8 @@
 <tr><td><a href="https://github.com/AbdullahBakir97/Weather--App-django-vue.js"><b>Weather--App-django-vue.js</b></a></td><td>Weather lookup app</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/e-pay_tool"><b>e-pay_tool</b></a></td><td>—</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Portfolio"><b>Portfolio</b></a></td><td>Personal portfolio site</td></tr>
-<tr><th align="left" colspan="2">Games <sub>· 2</sub></th></tr>
+<tr><th align="left" colspan="2">Games <sub>· 1</sub></th></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Py-Tetris-Game"><b>Py-Tetris-Game</b></a></td><td>Tetris implementation in Python with pygame</td></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Space-Shooter"><b>Space-Shooter</b></a></td><td>Space shooter mini-game</td></tr>
 </table>
 <!-- PINNED_REPOS:END -->
 
