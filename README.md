@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Quality is more important than quantity. One home run is much better than two doubles."</i><br/>
-  <sub>— <b>Steve Jobs</b></sub>
+  <i>"Software undergoes beta testing shortly before it's released. Beta is Latin for 'still doesn't work'."</i><br/>
+  <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
 
@@ -186,15 +186,15 @@
 <!-- FEATURED_PROJECTS:START -->
 <p align="center">
   <a href="https://github.com/AbdullahBakir97/Barber-Salon"><img src="./assets/featured/Barber-Salon.svg" width="49%" alt="Barber-Salon — featured project"/></a>
-  <a href="https://github.com/AbdullahBakir97/Baeckrei"><img src="./assets/featured/Baeckrei.svg" width="49%" alt="Baeckrei — featured project"/></a>
-</p>
-<p align="center">
   <a href="https://github.com/AbdullahBakir97/Space-Shooter"><img src="./assets/featured/Space-Shooter.svg" width="49%" alt="Space-Shooter — featured project"/></a>
-  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/featured/Jobs-Portal.svg" width="49%" alt="Jobs-Portal — featured project"/></a>
 </p>
 <p align="center">
+  <a href="https://github.com/AbdullahBakir97/Jobs-Portal"><img src="./assets/featured/Jobs-Portal.svg" width="49%" alt="Jobs-Portal — featured project"/></a>
   <a href="https://github.com/AbdullahBakir97/Django-Store"><img src="./assets/featured/Django-Store.svg" width="49%" alt="Django-Store — featured project"/></a>
+</p>
+<p align="center">
   <a href="https://github.com/AbdullahBakir97/2050-Bootstrap-Landing-page"><img src="./assets/featured/2050-Bootstrap-Landing-page.svg" width="49%" alt="2050-Bootstrap-Landing-page — featured project"/></a>
+  <a href="https://github.com/AbdullahBakir97/Django-Blog-app"><img src="./assets/featured/Django-Blog-app.svg" width="49%" alt="Django-Blog-app — featured project"/></a>
 </p>
 <!-- FEATURED_PROJECTS:END -->
 
@@ -220,7 +220,6 @@
 <tr><td><a href="https://github.com/AbdullahBakir97/AI-KI"><b>AI-KI</b></a></td><td>Notebook-driven AI experiments</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/cortex"><b>cortex</b></a></td><td>Animated SVG widgets for your GitHub profile README, generated…</td></tr>
 <tr><th align="left" colspan="2">Backend / API <sub>· 15</sub></th></tr>
-<tr><td><a href="https://github.com/AbdullahBakir97/Django-Blog-app"><b>Django-Blog-app</b></a></td><td>Django blog application</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Automtion"><b>Automtion</b></a></td><td>Browser-automation playground</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Project-Management-Tool"><b>Project-Management-Tool</b></a></td><td>Project management tool</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/image-cropping"><b>image-cropping</b></a></td><td>Server-side image cropping utility</td></tr>
@@ -232,6 +231,7 @@
 <tr><td><a href="https://github.com/AbdullahBakir97/Python-Django-join_with"><b>Python-Django-join_with</b></a></td><td>Django QuerySet join examples</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Trello-Clone-Services"><b>Trello-Clone-Services</b></a></td><td>Trello-style kanban backend</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Content-Creator-Tool"><b>Content-Creator-Tool</b></a></td><td>Content creation utility</td></tr>
+<tr><td><a href="https://github.com/AbdullahBakir97/Baeckrei"><b>Baeckrei</b></a></td><td>Bakery management system</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/GitHub-Issues-Wall"><b>GitHub-Issues-Wall</b></a></td><td>Browser wall of GitHub issues</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/ai-approve"><b>ai-approve</b></a></td><td>GitHub App + autonomous code-review bot</td></tr>
 <tr><td><a href="https://github.com/AbdullahBakir97/Email-Sender"><b>Email-Sender</b></a></td><td>Bulk email sender</td></tr>
