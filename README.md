@@ -63,7 +63,7 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Software undergoes beta testing shortly before it's released. Beta is Latin for 'still doesn't work'."</i><br/>
+  <i>"Real programmers count from 0."</i><br/>
   <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
