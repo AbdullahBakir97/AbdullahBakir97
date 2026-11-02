@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Real programmers count from 0."</i><br/>
-  <sub>— <b>Anonymous</b></sub>
+  <i>"Programming is the art of telling another human being what one wants the computer to do."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
