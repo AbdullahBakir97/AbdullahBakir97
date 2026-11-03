@@ -4,8 +4,8 @@
 
 **Repository:** [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon)
 **Stack:** Python · ajax, css, deployment
-**Duration:** Jan 2024–Jul 2026 (30 months)
-**Status:** recent
+**Duration:** Jan 2024–Oct 2026 (33 months)
+**Status:** active
 **Scale:** 55 stars, 12 forks · pinned
 
 ### Overview
@@ -34,28 +34,28 @@ Backend / API
 ### Topics
 ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-rest-framework, docker, javascript, jquery, postman, pyton3, redis, translation
 
-## Mini-RAG
+## Ragolex
 
-**Repository:** [AbdullahBakir97/Mini-RAG](https://github.com/AbdullahBakir97/Mini-RAG)
-**Stack:** Python, TypeScript, Vue · embeddings, llm, python
-**Duration:** Jun 2024–Oct 2026 (28 months)
+**Repository:** [AbdullahBakir97/Ragolex](https://github.com/AbdullahBakir97/Ragolex)
+**Stack:** Python, TypeScript, Vue · ai-agents, chatbot, document-qa
+**Duration:** Jun 2024–Nov 2026 (28 months)
 **Status:** active
 **Scale:** 3 stars, 0 forks · pinned
 
 ### Overview
-Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.
+Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.
 
 ### Domain
-Machine learning / data
+Backend / API
 
 ### Topics
-embeddings, llm, python, rag, vector-store
+ai-agents, chatbot, document-qa, embeddings, fastapi, hybrid-search, llm, mcp, ollama, openai, pgvector, postgresql, python, rag, vector-store
 
 ## Baeckrei
 
 **Repository:** [AbdullahBakir97/Baeckrei](https://github.com/AbdullahBakir97/Baeckrei)
 **Stack:** Python, Vue, JavaScript · bakery, django, inventory-management
-**Duration:** Dec 2024–Oct 2026 (21 months)
+**Duration:** Dec 2024–Oct 2026 (22 months)
 **Status:** active
 **Scale:** 1 star, 0 forks · pinned
 
@@ -72,7 +72,7 @@ bakery, django, inventory-management, pos, python, vue3
 
 **Repository:** [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97)
 **Stack:** Python, HTML · animation, auto-update, dynamic-readme
-**Duration:** May 2023–Oct 2026 (41 months)
+**Duration:** May 2023–Nov 2026 (42 months)
 **Status:** active
 **Scale:** 21 stars, 2 forks
 

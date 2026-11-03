@@ -1,6 +1,6 @@
 ## Audit
 
-_Generated 2026-10-25. 13 findings across 88 repos (11 flagged)._
+_Generated 2026-11-03. 13 findings across 89 repos (10 flagged)._
 
 | Severity | Count |
 | --- | --- |
@@ -12,14 +12,14 @@ _Generated 2026-10-25. 13 findings across 88 repos (11 flagged)._
 
 ### Verified signal
 
-- Signed-commit ratio: 42% (averaged across repos with commit history)
+- Signed-commit ratio: 41% (averaged across repos with commit history)
 
 ### Findings
 
 - **[high]** `bug-debt` — Bug debt: AbdullahBakir97/PortfolioCraft
-  - 1 open issues; the oldest is 178 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 1 open issues; the oldest is 187 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 3 (dominant labels: priority: high)
-  - Evidence: [1 open · oldest 178 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
+  - Evidence: [1 open · oldest 187 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[high]** `license` — No LICENSE: AbdullahBakir97/e-pay_tool
@@ -28,27 +28,27 @@ _Generated 2026-10-25. 13 findings across 88 repos (11 flagged)._
   - **Action:** Add a LICENSE file (MIT or Apache-2.0 are common defaults).
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1232 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1232 days)
-  - Evidence: [Opened 1232 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1241 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1241 days)
+  - Evidence: [Opened 1241 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[high]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 182 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (182 days)
-  - Evidence: [Opened 182 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 191 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (191 days)
+  - Evidence: [Opened 191 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 878 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 887 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 878 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 887 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
-- **[low]** `pr-rot` — Awaiting reviewer: AbdullahBakir97/Mini-RAG#74
-  - A reviewer was the last to act on this PR and hasn't replied since 2026-10-18. This isn't your problem to push on — it's logged for awareness.
-  - Awaiting: reviewer (6 days)
-  - Evidence: [Last activity: 2026-10-18](https://github.com/AbdullahBakir97/Mini-RAG/pull/74)
+- **[low]** `pr-rot` — Awaiting reviewer: AbdullahBakir97/DevTrust#1
+  - A reviewer was the last to act on this PR and hasn't replied since 2026-10-27. This isn't your problem to push on — it's logged for awareness.
+  - Awaiting: reviewer (7 days)
+  - Evidence: [Last activity: 2026-10-27](https://github.com/AbdullahBakir97/DevTrust/pull/1)
   - **Action:** Reach out to the reviewer or convert to draft.
 
 - **[low]** `tests` — No tests detected: AbdullahBakir97/DevTrust

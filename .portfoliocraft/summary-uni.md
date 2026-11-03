@@ -1,6 +1,6 @@
 # Software development background
 
-I'm an aspiring backend engineer with 88 public repositories on GitHub spanning backend and ml.
+I'm an aspiring backend engineer with 89 public repositories on GitHub spanning backend and ml.
 
 Python Developer
 
@@ -12,14 +12,14 @@ Python Developer
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
-**2026**: Created 23 repos primarily in TypeScript, Python, and JavaScript, focused on frontend and devops.
+**2026**: Created 24 repos primarily in TypeScript, Python, and JavaScript, focused on frontend and devops.
 
 
 ## Selected projects
 
 ### Barber-Salon
 
-A recent backend project built primarily in Python, developed over 30 months (2024–2026).
+An active backend project built primarily in Python, developed over 33 months (2024–2026).
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
@@ -37,19 +37,19 @@ The repository carries 26 stars and 5 forks, with primary topics: ajax, bootstra
 
 Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store).
 
-### Mini-RAG
+### Ragolex
 
-An active machine-learning project built primarily in Python, developed over 28 months (2024–2026).
+An active backend project built primarily in Python, developed over 28 months (2024–2026).
 
-Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.
+Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.
 
-The repository carries 3 stars and 0 forks, with primary topics: embeddings, llm, python.
+The repository carries 3 stars and 0 forks, with primary topics: ai-agents, chatbot, document-qa.
 
-Repository: [AbdullahBakir97/Mini-RAG](https://github.com/AbdullahBakir97/Mini-RAG).
+Repository: [AbdullahBakir97/Ragolex](https://github.com/AbdullahBakir97/Ragolex).
 
 ### Baeckrei
 
-An active backend project built primarily in Python, developed over 21 months (2024–2026).
+An active backend project built primarily in Python, developed over 22 months (2024–2026).
 
 Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.
 
@@ -59,7 +59,7 @@ Repository: [AbdullahBakir97/Baeckrei](https://github.com/AbdullahBakir97/Baeckr
 
 ### AbdullahBakir97
 
-An active machine-learning project built primarily in Python, developed over 41 months (2023–2026).
+An active machine-learning project built primarily in Python, developed over 42 months (2023–2026).
 
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
@@ -79,12 +79,12 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 
 ## Technical depth
 
-**Backend** (4 repositories): 4 backend projects in Python, Vue, and JavaScript covering django, django-rest-framework, javascript.
-**Machine Learning** (2 repositories): 2 machine-learning projects in Python, TypeScript, and Vue covering animation, auto-update, dynamic-readme.
+**Backend** (5 repositories): 5 backend projects in Python, Vue, and TypeScript covering django, python, django-rest-framework.
+**Machine Learning** (1 repository): 1 machine-learning project in Python and HTML covering animation, auto-update, dynamic-readme.
 
 ## Scope of self-directed work
 
-I've worked across 88 public repositories, of which 73% are open-source. My longest sustained project ran for 41 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 55 stars.
+I've worked across 89 public repositories, of which 72% are open-source. My longest sustained project ran for 42 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 55 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._

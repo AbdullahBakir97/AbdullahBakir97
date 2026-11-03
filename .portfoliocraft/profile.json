@@ -3,7 +3,7 @@
   "schemaVersion": "1.0.0",
   "meta": {
     "canonical": "https://abdullah-personalpage.netlify.app/",
-    "lastModified": "2026-10-25T09:13:12.318Z"
+    "lastModified": "2026-11-03T12:02:02.204Z"
   },
   "basics": {
     "name": "Abdullah Bakir ",
@@ -34,12 +34,12 @@
       "keywords": []
     },
     {
-      "name": "JavaScript",
+      "name": "TypeScript",
       "level": "expert",
       "keywords": []
     },
     {
-      "name": "TypeScript",
+      "name": "JavaScript",
       "level": "expert",
       "keywords": []
     },
@@ -51,6 +51,11 @@
     {
       "name": "HTML",
       "level": "expert",
+      "keywords": []
+    },
+    {
+      "name": "Shell",
+      "level": "proficient",
       "keywords": []
     },
     {
@@ -69,17 +74,12 @@
       "keywords": []
     },
     {
-      "name": "Jinja",
-      "level": "proficient",
-      "keywords": []
-    },
-    {
       "name": "Dockerfile",
       "level": "proficient",
       "keywords": []
     },
     {
-      "name": "Shell",
+      "name": "Jinja",
       "level": "proficient",
       "keywords": []
     }
@@ -139,20 +139,31 @@
       ]
     },
     {
-      "name": "Mini-RAG",
-      "description": "Minimal retrieval-augmented generation pipeline — embeddings, vector store, prompt assembly.",
-      "url": "https://github.com/AbdullahBakir97/Mini-RAG",
+      "name": "Ragolex",
+      "description": "Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.",
+      "url": "https://github.com/AbdullahBakir97/Ragolex",
       "keywords": [
         "embeddings",
         "llm",
         "python",
         "rag",
-        "vector-store"
+        "vector-store",
+        "ai-agents",
+        "chatbot",
+        "document-qa",
+        "fastapi",
+        "hybrid-search",
+        "mcp",
+        "ollama",
+        "openai",
+        "pgvector",
+        "postgresql"
       ],
       "highlights": [
         "primary:Python",
         "topic:llm",
-        "score:2.10"
+        "topic:fastapi",
+        "score:2.16"
       ]
     },
     {
