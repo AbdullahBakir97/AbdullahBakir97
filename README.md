@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programming is the art of telling another human being what one wants the computer to do."</i><br/>
-  <sub>— <b>Donald Knuth</b></sub>
+  <i>"If you don't fail at least 90% of the time, you're not aiming high enough."</i><br/>
+  <sub>— <b>Alan Kay</b></sub>
 </p>
 <!-- QUOTE:END -->
 
