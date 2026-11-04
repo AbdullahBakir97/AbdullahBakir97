@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"If you don't fail at least 90% of the time, you're not aiming high enough."</i><br/>
-  <sub>— <b>Alan Kay</b></sub>
+  <i>"The only way to learn a new programming language is by writing programs in it."</i><br/>
+  <sub>— <b>Dennis Ritchie</b></sub>
 </p>
 <!-- QUOTE:END -->
 
