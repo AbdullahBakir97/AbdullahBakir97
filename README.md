@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The only way to learn a new programming language is by writing programs in it."</i><br/>
-  <sub>— <b>Dennis Ritchie</b></sub>
+  <i>"Computers are good at following instructions, but not at reading your mind."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
