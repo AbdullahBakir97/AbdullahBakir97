@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Computers are good at following instructions, but not at reading your mind."</i><br/>
-  <sub>— <b>Donald Knuth</b></sub>
+  <i>"First, solve the problem. Then, write the code."</i><br/>
+  <sub>— <b>John Johnson</b></sub>
 </p>
 <!-- QUOTE:END -->
 
