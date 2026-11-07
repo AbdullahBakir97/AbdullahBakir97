@@ -1,5 +1,5 @@
 ## Abdullah Bakir 
-Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, Vue, TypeScript · 89 public repos · 1,133 commits
+Berlin · https://abdullah-personalpage.netlify.app/ · Backend developer · Python, Vue, TypeScript · 90 public repos · 1,139 commits
 
 Python Developer
 
@@ -10,13 +10,13 @@ Python Developer
 
 ### Selected projects
 
-**Barber-Salon** — Python · 55★ · 33 mo · pinned
+**Barber-Salon** — Python · 55★ · 34 mo · pinned
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
 **Django-Store** — Python · 26★ · 34 mo · pinned
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
-**Ragolex** — Python, TypeScript, Vue · 3★ · 28 mo · pinned
+**Ragolex** — Python, TypeScript, Vue · 3★ · 29 mo · pinned
 Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.
 
 **Baeckrei** — Python, Vue, JavaScript · 1★ · 22 mo · pinned
@@ -31,7 +31,7 @@ Jobs portal for seekers and employers — listings, applications, employer dashb
 
 ### Activity (last 12 months)
 
-1133 commits · 182 pull requests · 0 reviews · contributed to 43 repositories
+1139 commits · 182 pull requests · 0 reviews · contributed to 43 repositories
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._

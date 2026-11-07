@@ -4,7 +4,7 @@
 
 **Repository:** [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon)
 **Stack:** Python · ajax, css, deployment
-**Duration:** Jan 2024–Oct 2026 (33 months)
+**Duration:** Jan 2024–Nov 2026 (34 months)
 **Status:** active
 **Scale:** 55 stars, 12 forks · pinned
 
@@ -38,7 +38,7 @@ ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-res
 
 **Repository:** [AbdullahBakir97/Ragolex](https://github.com/AbdullahBakir97/Ragolex)
 **Stack:** Python, TypeScript, Vue · ai-agents, chatbot, document-qa
-**Duration:** Jun 2024–Nov 2026 (28 months)
+**Duration:** Jun 2024–Nov 2026 (29 months)
 **Status:** active
 **Scale:** 3 stars, 0 forks · pinned
 

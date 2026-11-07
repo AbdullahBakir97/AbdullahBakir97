@@ -1,6 +1,6 @@
 # Software development background
 
-I'm an aspiring backend engineer with 89 public repositories on GitHub spanning backend and ml.
+I'm an aspiring backend engineer with 90 public repositories on GitHub spanning backend and ml.
 
 Python Developer
 
@@ -12,14 +12,14 @@ Python Developer
 
 **2025**: Created 6 repos primarily in JavaScript, Python, and TeX, focused on frontend and ml.
 
-**2026**: Created 24 repos primarily in TypeScript, Python, and JavaScript, focused on frontend and devops.
+**2026**: Created 25 repos primarily in JavaScript, TypeScript, and Python, focused on frontend and devops.
 
 
 ## Selected projects
 
 ### Barber-Salon
 
-An active backend project built primarily in Python, developed over 33 months (2024–2026).
+An active backend project built primarily in Python, developed over 34 months (2024–2026).
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
@@ -39,7 +39,7 @@ Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Dj
 
 ### Ragolex
 
-An active backend project built primarily in Python, developed over 28 months (2024–2026).
+An active backend project built primarily in Python, developed over 29 months (2024–2026).
 
 Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.
 
@@ -84,7 +84,7 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 
 ## Scope of self-directed work
 
-I've worked across 89 public repositories, of which 72% are open-source. My longest sustained project ran for 42 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 55 stars.
+I've worked across 90 public repositories, of which 71% are open-source. My longest sustained project ran for 42 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 55 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
