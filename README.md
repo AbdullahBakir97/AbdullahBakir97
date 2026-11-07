@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"First, solve the problem. Then, write the code."</i><br/>
-  <sub>— <b>John Johnson</b></sub>
+  <i>"Programs must be written for people to read, and only incidentally for machines to execute."</i><br/>
+  <sub>— <b>Harold Abelson</b></sub>
 </p>
 <!-- QUOTE:END -->
 
