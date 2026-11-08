@@ -10,7 +10,7 @@ Python Developer
 
 ### Selected projects
 
-**Barber-Salon** — Python · 55★ · 34 mo · pinned
+**Barber-Salon** — Python · 54★ · 34 mo · pinned
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
 **Django-Store** — Python · 26★ · 34 mo · pinned

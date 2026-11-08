@@ -23,7 +23,7 @@ An active backend project built primarily in Python, developed over 34 months (2
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
-The repository carries 55 stars and 12 forks, with primary topics: ajax, css, deployment.
+The repository carries 54 stars and 12 forks, with primary topics: ajax, css, deployment.
 
 Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon).
 
@@ -84,7 +84,7 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 
 ## Scope of self-directed work
 
-I've worked across 90 public repositories, of which 71% are open-source. My longest sustained project ran for 42 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 55 stars.
+I've worked across 90 public repositories, of which 71% are open-source. My longest sustained project ran for 42 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 54 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._

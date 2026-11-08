@@ -6,7 +6,7 @@
 **Stack:** Python · ajax, css, deployment
 **Duration:** Jan 2024–Nov 2026 (34 months)
 **Status:** active
-**Scale:** 55 stars, 12 forks · pinned
+**Scale:** 54 stars, 12 forks · pinned
 
 ### Overview
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
