@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programs must be written for people to read, and only incidentally for machines to execute."</i><br/>
-  <sub>— <b>Harold Abelson</b></sub>
+  <i>"Premature optimization is the root of all evil."</i><br/>
+  <sub>— <b>Donald Knuth</b></sub>
 </p>
 <!-- QUOTE:END -->
 
