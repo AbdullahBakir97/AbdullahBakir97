@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Premature optimization is the root of all evil."</i><br/>
-  <sub>— <b>Donald Knuth</b></sub>
+  <i>"Simplicity is prerequisite for reliability."</i><br/>
+  <sub>— <b>Edsger W. Dijkstra</b></sub>
 </p>
 <!-- QUOTE:END -->
 
