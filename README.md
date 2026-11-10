@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Simplicity is prerequisite for reliability."</i><br/>
-  <sub>— <b>Edsger W. Dijkstra</b></sub>
+  <i>"The best error message is the one that never shows up."</i><br/>
+  <sub>— <b>Thomas Fuchs</b></sub>
 </p>
 <!-- QUOTE:END -->
 
