@@ -43,7 +43,7 @@ An active backend project built primarily in Python, developed over 29 months (2
 
 Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.
 
-The repository carries 3 stars and 0 forks, with primary topics: ai-agents, chatbot, document-qa.
+The repository carries 3 stars and 1 fork, with primary topics: ai-agents, chatbot, document-qa.
 
 Repository: [AbdullahBakir97/Ragolex](https://github.com/AbdullahBakir97/Ragolex).
 

@@ -40,7 +40,7 @@ ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-res
 **Stack:** Python, TypeScript, Vue · ai-agents, chatbot, document-qa
 **Duration:** Jun 2024–Nov 2026 (29 months)
 **Status:** active
-**Scale:** 3 stars, 0 forks · pinned
+**Scale:** 3 stars, 1 fork · pinned
 
 ### Overview
 Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.

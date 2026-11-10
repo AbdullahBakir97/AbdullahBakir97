@@ -1,6 +1,6 @@
 ## Audit
 
-_Generated 2026-11-08. 15 findings across 90 repos (11 flagged)._
+_Generated 2026-11-10. 15 findings across 90 repos (11 flagged)._
 
 | Severity | Count |
 | --- | --- |
@@ -17,9 +17,9 @@ _Generated 2026-11-08. 15 findings across 90 repos (11 flagged)._
 ### Findings
 
 - **[high]** `bug-debt` — Bug debt: AbdullahBakir97/PortfolioCraft
-  - 1 open issues; the oldest is 192 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 1 open issues; the oldest is 194 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 3 (dominant labels: priority: high)
-  - Evidence: [1 open · oldest 192 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
+  - Evidence: [1 open · oldest 194 days](https://github.com/AbdullahBakir97/PortfolioCraft/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[high]** `license` — No LICENSE: AbdullahBakir97/e-pay_tool
@@ -28,38 +28,38 @@ _Generated 2026-11-08. 15 findings across 90 repos (11 flagged)._
   - **Action:** Add a LICENSE file (MIT or Apache-2.0 are common defaults).
 
 - **[high]** `pr-rot` — Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1
-  - This PR has been open for 1246 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (1246 days)
-  - Evidence: [Opened 1246 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
+  - This PR has been open for 1248 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (1248 days)
+  - Evidence: [Opened 1248 days ago](https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[high]** `pr-rot` — Stale PR: bloghd/bloghd#1
-  - This PR has been open for 196 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
-  - Awaiting: unknown (196 days)
-  - Evidence: [Opened 196 days ago](https://github.com/bloghd/bloghd/pull/1)
+  - This PR has been open for 198 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.
+  - Awaiting: unknown (198 days)
+  - Evidence: [Opened 198 days ago](https://github.com/bloghd/bloghd/pull/1)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `bug-debt` — Bug debt: AbdullahBakir97/Project-Management-Tool
-  - 2 open issues; the oldest is 892 days old. Long-lived issues compound and signal abandonment to visitors.
+  - 2 open issues; the oldest is 894 days old. Long-lived issues compound and signal abandonment to visitors.
   - Label weight: × 2 (dominant labels: bug)
-  - Evidence: [2 open · oldest 892 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
+  - Evidence: [2 open · oldest 894 days](https://github.com/AbdullahBakir97/Project-Management-Tool/issues)
   - **Action:** Triage stale issues — close, label, or convert to discussions.
 
 - **[medium]** `pr-rot` — Stale PR: AbdullahBakir97/Baeckrei#19
-  - This PR has been open for 35 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/19 to keep your contribution graph honest.
-  - Awaiting: unknown (35 days)
-  - Evidence: [Opened 35 days ago](https://github.com/AbdullahBakir97/Baeckrei/pull/19)
+  - This PR has been open for 37 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/19 to keep your contribution graph honest.
+  - Awaiting: unknown (37 days)
+  - Evidence: [Opened 37 days ago](https://github.com/AbdullahBakir97/Baeckrei/pull/19)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[medium]** `pr-rot` — Stale PR: AbdullahBakir97/Baeckrei#18
-  - This PR has been open for 35 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/18 to keep your contribution graph honest.
-  - Awaiting: unknown (35 days)
-  - Evidence: [Opened 35 days ago](https://github.com/AbdullahBakir97/Baeckrei/pull/18)
+  - This PR has been open for 37 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/18 to keep your contribution graph honest.
+  - Awaiting: unknown (37 days)
+  - Evidence: [Opened 37 days ago](https://github.com/AbdullahBakir97/Baeckrei/pull/18)
   - **Action:** Update with a fresh comment, mark as draft, or close.
 
 - **[low]** `pr-rot` — Awaiting reviewer: AbdullahBakir97/DevTrust#1
   - A reviewer was the last to act on this PR and hasn't replied since 2026-10-27. This isn't your problem to push on — it's logged for awareness.
-  - Awaiting: reviewer (12 days)
+  - Awaiting: reviewer (14 days)
   - Evidence: [Last activity: 2026-10-27](https://github.com/AbdullahBakir97/DevTrust/pull/1)
   - **Action:** Reach out to the reviewer or convert to draft.
 
