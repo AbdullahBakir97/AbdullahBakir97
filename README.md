@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The best error message is the one that never shows up."</i><br/>
-  <sub>— <b>Thomas Fuchs</b></sub>
+  <i>"Make it work, make it right, make it fast."</i><br/>
+  <sub>— <b>Kent Beck</b></sub>
 </p>
 <!-- QUOTE:END -->
 
