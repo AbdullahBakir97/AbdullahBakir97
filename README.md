@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Make it work, make it right, make it fast."</i><br/>
-  <sub>— <b>Kent Beck</b></sub>
+  <i>"Walking on water and developing software from a specification are easy if both are frozen."</i><br/>
+  <sub>— <b>Edward V. Berard</b></sub>
 </p>
 <!-- QUOTE:END -->
 
