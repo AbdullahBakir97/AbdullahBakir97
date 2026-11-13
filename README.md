@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Walking on water and developing software from a specification are easy if both are frozen."</i><br/>
-  <sub>— <b>Edward V. Berard</b></sub>
+  <i>"Code is like humor. When you have to explain it, it's bad."</i><br/>
+  <sub>— <b>Cory House</b></sub>
 </p>
 <!-- QUOTE:END -->
 
