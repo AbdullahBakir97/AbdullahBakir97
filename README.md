@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Code is like humor. When you have to explain it, it's bad."</i><br/>
-  <sub>— <b>Cory House</b></sub>
+  <i>"There are only two kinds of languages: the ones people complain about and the ones nobody uses."</i><br/>
+  <sub>— <b>Bjarne Stroustrup</b></sub>
 </p>
 <!-- QUOTE:END -->
 
