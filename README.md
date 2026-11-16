@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</i><br/>
-  <sub>— <b>Martin Fowler</b></sub>
+  <i>"Talk is cheap. Show me the code."</i><br/>
+  <sub>— <b>Linus Torvalds</b></sub>
 </p>
 <!-- QUOTE:END -->
 
