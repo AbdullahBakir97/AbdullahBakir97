@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Talk is cheap. Show me the code."</i><br/>
-  <sub>— <b>Linus Torvalds</b></sub>
+  <i>"If debugging is the process of removing software bugs, then programming must be the process of putting them in."</i><br/>
+  <sub>— <b>Edsger W. Dijkstra</b></sub>
 </p>
 <!-- QUOTE:END -->
 
