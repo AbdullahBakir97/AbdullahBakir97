@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Truth can only be found in one place: the code."</i><br/>
-  <sub>— <b>Robert C. Martin</b></sub>
+  <i>"Programming isn't about what you know; it's about what you can figure out."</i><br/>
+  <sub>— <b>Chris Pine</b></sub>
 </p>
 <!-- QUOTE:END -->
 
