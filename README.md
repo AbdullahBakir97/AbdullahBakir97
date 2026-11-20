@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Programming isn't about what you know; it's about what you can figure out."</i><br/>
-  <sub>— <b>Chris Pine</b></sub>
+  <i>"It's not a bug — it's an undocumented feature."</i><br/>
+  <sub>— <b>Anonymous</b></sub>
 </p>
 <!-- QUOTE:END -->
 
