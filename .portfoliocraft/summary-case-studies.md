@@ -6,7 +6,7 @@
 **Stack:** Python · ajax, css, deployment
 **Duration:** Jan 2024–Nov 2026 (34 months)
 **Status:** active
-**Scale:** 54 stars, 12 forks · pinned
+**Scale:** 55 stars, 12 forks · pinned
 
 ### Overview
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
@@ -23,7 +23,7 @@ ajax, css, deployment, django, django-rest-framework, html5, htmx, javascript, j
 **Stack:** Python · ajax, bootstrap, cashing
 **Duration:** Sep 2023–Jul 2026 (34 months)
 **Status:** recent
-**Scale:** 26 stars, 5 forks · pinned
+**Scale:** 27 stars, 5 forks · pinned
 
 ### Overview
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
@@ -40,7 +40,7 @@ ajax, bootstrap, cashing, celery, deployment, django, django-queries, django-res
 **Stack:** Python, TypeScript, Vue · ai-agents, chatbot, document-qa
 **Duration:** Jun 2024–Nov 2026 (29 months)
 **Status:** active
-**Scale:** 3 stars, 1 fork · pinned
+**Scale:** 4 stars, 1 fork · pinned
 
 ### Overview
 Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.
@@ -57,7 +57,7 @@ ai-agents, chatbot, document-qa, embeddings, fastapi, hybrid-search, llm, mcp, o
 **Stack:** Python, Vue, JavaScript · bakery, django, inventory-management
 **Duration:** Dec 2024–Oct 2026 (22 months)
 **Status:** active
-**Scale:** 1 star, 0 forks · pinned
+**Scale:** 2 stars, 0 forks · pinned
 
 ### Overview
 Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.
@@ -74,7 +74,7 @@ bakery, django, inventory-management, pos, python, vue3
 **Stack:** Python, HTML · animation, auto-update, dynamic-readme
 **Duration:** May 2023–Nov 2026 (42 months)
 **Status:** active
-**Scale:** 21 stars, 2 forks
+**Scale:** 22 stars, 2 forks
 
 ### Overview
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.

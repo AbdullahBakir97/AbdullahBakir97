@@ -23,7 +23,7 @@ An active backend project built primarily in Python, developed over 34 months (2
 
 Salon management platform — appointments, staff profiles, customer reviews, gallery, products, multi-language. Django + DRF + Vue.
 
-The repository carries 54 stars and 12 forks, with primary topics: ajax, css, deployment.
+The repository carries 55 stars and 12 forks, with primary topics: ajax, css, deployment.
 
 Repository: [AbdullahBakir97/Barber-Salon](https://github.com/AbdullahBakir97/Barber-Salon).
 
@@ -33,7 +33,7 @@ A recent backend project built primarily in Python, developed over 34 months (20
 
 Amazon-style e-commerce platform — products, brands, reviews, orders, payments, charts, multi-language. Django + DRF + Bootstrap.
 
-The repository carries 26 stars and 5 forks, with primary topics: ajax, bootstrap, cashing.
+The repository carries 27 stars and 5 forks, with primary topics: ajax, bootstrap, cashing.
 
 Repository: [AbdullahBakir97/Django-Store](https://github.com/AbdullahBakir97/Django-Store).
 
@@ -43,7 +43,7 @@ An active backend project built primarily in Python, developed over 29 months (2
 
 Open-source RAG platform: upload documents and get streamed answers that cite their sources. Hybrid search (pgvector + full-text), Vue web app, embeddable chat widget, Python & TypeScript SDKs, an MCP server for AI agents, multi-tenant API keys and retrieval quality measured in CI.
 
-The repository carries 3 stars and 1 fork, with primary topics: ai-agents, chatbot, document-qa.
+The repository carries 4 stars and 1 fork, with primary topics: ai-agents, chatbot, document-qa.
 
 Repository: [AbdullahBakir97/Ragolex](https://github.com/AbdullahBakir97/Ragolex).
 
@@ -53,7 +53,7 @@ An active backend project built primarily in Python, developed over 22 months (2
 
 Bakery management system — production scheduling, recipe-driven inventory deduction, customer accounts, online orders. Django + Vue 3.
 
-The repository carries 1 star and 0 forks, with primary topics: bakery, django, inventory-management.
+The repository carries 2 stars and 0 forks, with primary topics: bakery, django, inventory-management.
 
 Repository: [AbdullahBakir97/Baeckrei](https://github.com/AbdullahBakir97/Baeckrei).
 
@@ -63,7 +63,7 @@ An active machine-learning project built primarily in Python, developed over 42 
 
 GitHub profile README — animated headers, 3D contribution skyline, per-year stats, full project showcase. Auto-refreshed daily by GitHub Actions.
 
-The repository carries 21 stars and 2 forks, with primary topics: animation, auto-update, dynamic-readme.
+The repository carries 22 stars and 2 forks, with primary topics: animation, auto-update, dynamic-readme.
 
 Repository: [AbdullahBakir97/AbdullahBakir97](https://github.com/AbdullahBakir97/AbdullahBakir97).
 
@@ -84,7 +84,7 @@ Repository: [AbdullahBakir97/Jobs-Portal](https://github.com/AbdullahBakir97/Job
 
 ## Scope of self-directed work
 
-I've worked across 90 public repositories, of which 71% are open-source. My longest sustained project ran for 42 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 54 stars.
+I've worked across 90 public repositories, of which 71% are open-source. My longest sustained project ran for 42 months. My most-starred repository is AbdullahBakir97/Barber-Salon at 55 stars.
 
 ---
 _Generated from GitHub history by [PortfolioCraft](https://github.com/marketplace/actions/portfoliocraft-action)._
