@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"It's not a bug — it's an undocumented feature."</i><br/>
-  <sub>— <b>Anonymous</b></sub>
+  <i>"The most damaging phrase in the language is: 'We've always done it this way!'"</i><br/>
+  <sub>— <b>Grace Hopper</b></sub>
 </p>
 <!-- QUOTE:END -->
 
