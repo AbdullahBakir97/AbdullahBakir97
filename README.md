@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"The most damaging phrase in the language is: 'We've always done it this way!'"</i><br/>
-  <sub>— <b>Grace Hopper</b></sub>
+  <i>"Software is a great combination of artistry and engineering."</i><br/>
+  <sub>— <b>Bill Gates</b></sub>
 </p>
 <!-- QUOTE:END -->
 
