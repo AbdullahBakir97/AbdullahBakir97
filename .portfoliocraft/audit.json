@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-20T13:10:01.805Z",
+  "generatedAt": "2026-11-22T12:41:54.364Z",
   "user": "AbdullahBakir97",
   "summary": {
     "totalFindings": 16,
@@ -22,10 +22,10 @@
       "archive-suggestion": 0,
       "unverified-employer-context": 1
     },
-    "bugDebtScore": 2012,
+    "bugDebtScore": 2018,
     "reposScanned": 90,
     "reposWithFindings": 11,
-    "verifiedSignatureRatio": 0.4096311469268287
+    "verifiedSignatureRatio": 0.4095187873762669
   },
   "findings": [
     {
@@ -39,20 +39,20 @@
         "url": "https://github.com/AbdullahBakir97/PortfolioCraft"
       },
       "title": "Bug debt: AbdullahBakir97/PortfolioCraft",
-      "message": "1 open issues; the oldest is 204 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "1 open issues; the oldest is 206 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/PortfolioCraft/issues",
-          "label": "1 open · oldest 204 days"
+          "label": "1 open · oldest 206 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
-        "debtScore": 204,
-        "weightedDebtScore": 612,
+        "debtScore": 206,
+        "weightedDebtScore": 618,
         "labelMultiplier": 3,
-        "oldestAgeDays": 204,
+        "oldestAgeDays": 206,
         "openIssuesCount": 1,
         "dominantLabels": [
           "priority: high"
@@ -78,7 +78,7 @@
         }
       ],
       "suggestedAction": "Add a LICENSE file (MIT or Apache-2.0 are common defaults).",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -92,18 +92,18 @@
         "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST"
       },
       "title": "Stale PR: AbdullahBakir97/JS-TO-DO-LIST#1",
-      "message": "This PR has been open for 1258 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 1260 days. Review or close at https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/JS-TO-DO-LIST/pull/1",
-          "label": "Opened 1258 days ago"
+          "label": "Opened 1260 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 1258,
+        "ageDays": 1260,
         "lastEventAt": "2023-06-10T22:53:05Z"
       }
     },
@@ -118,18 +118,18 @@
         "url": "https://github.com/bloghd/bloghd"
       },
       "title": "Stale PR: bloghd/bloghd#1",
-      "message": "This PR has been open for 208 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
+      "message": "This PR has been open for 210 days. Review or close at https://github.com/bloghd/bloghd/pull/1 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/bloghd/bloghd/pull/1",
-          "label": "Opened 208 days ago"
+          "label": "Opened 210 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 208,
+        "ageDays": 210,
         "lastEventAt": "2026-04-25T19:09:40Z"
       }
     },
@@ -144,20 +144,20 @@
         "url": "https://github.com/AbdullahBakir97/Project-Management-Tool"
       },
       "title": "Bug debt: AbdullahBakir97/Project-Management-Tool",
-      "message": "2 open issues; the oldest is 904 days old. Long-lived issues compound and signal abandonment to visitors.",
+      "message": "2 open issues; the oldest is 906 days old. Long-lived issues compound and signal abandonment to visitors.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/Project-Management-Tool/issues",
-          "label": "2 open · oldest 904 days"
+          "label": "2 open · oldest 906 days"
         }
       ],
       "suggestedAction": "Triage stale issues — close, label, or convert to discussions.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
-        "debtScore": 1808,
-        "weightedDebtScore": 3616,
+        "debtScore": 1812,
+        "weightedDebtScore": 3624,
         "labelMultiplier": 2,
-        "oldestAgeDays": 904,
+        "oldestAgeDays": 906,
         "openIssuesCount": 2,
         "dominantLabels": [
           "bug"
@@ -175,18 +175,18 @@
         "url": "https://github.com/AbdullahBakir97/Baeckrei"
       },
       "title": "Stale PR: AbdullahBakir97/Baeckrei#19",
-      "message": "This PR has been open for 47 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/19 to keep your contribution graph honest.",
+      "message": "This PR has been open for 49 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/19 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/Baeckrei/pull/19",
-          "label": "Opened 47 days ago"
+          "label": "Opened 49 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 47,
+        "ageDays": 49,
         "lastEventAt": "2026-10-04T02:05:56Z"
       }
     },
@@ -201,18 +201,18 @@
         "url": "https://github.com/AbdullahBakir97/Baeckrei"
       },
       "title": "Stale PR: AbdullahBakir97/Baeckrei#18",
-      "message": "This PR has been open for 47 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/18 to keep your contribution graph honest.",
+      "message": "This PR has been open for 49 days. Review or close at https://github.com/AbdullahBakir97/Baeckrei/pull/18 to keep your contribution graph honest.",
       "evidence": [
         {
           "url": "https://github.com/AbdullahBakir97/Baeckrei/pull/18",
-          "label": "Opened 47 days ago"
+          "label": "Opened 49 days ago"
         }
       ],
       "suggestedAction": "Update with a fresh comment, mark as draft, or close.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
         "lastActorRole": "unknown",
-        "ageDays": 47,
+        "ageDays": 49,
         "lastEventAt": "2026-10-03T18:13:20Z"
       }
     },
@@ -235,7 +235,7 @@
         }
       ],
       "suggestedAction": "Push a fresh commit, archive the repo, or exclude it from your portfolio config.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -257,10 +257,10 @@
         }
       ],
       "suggestedAction": "Reach out to the reviewer or convert to draft.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
         "lastActorRole": "reviewer",
-        "ageDays": 24,
+        "ageDays": 26,
         "lastEventAt": "2026-10-27T10:52:47.000Z"
       }
     },
@@ -283,7 +283,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -305,7 +305,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -327,7 +327,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -349,7 +349,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -371,7 +371,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -393,7 +393,7 @@
         }
       ],
       "suggestedAction": "Add a tests directory with at least a smoke test for your main entrypoint.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {}
     },
     {
@@ -411,7 +411,7 @@
         }
       ],
       "suggestedAction": "Add a verified domain to your GitHub email or update your bio so commit context reflects employer claim.",
-      "detectedAt": "2026-11-20T13:10:01.805Z",
+      "detectedAt": "2026-11-22T12:41:54.364Z",
       "metadata": {
         "matchedDomains": [],
         "unmatchedDomains": [
@@ -494,7 +494,7 @@
           "yandex.ru",
           "zkorean.com"
         ],
-        "avgSignatureRatio": 0.4096311469268287,
+        "avgSignatureRatio": 0.4095187873762669,
         "repoCountWithStats": 89
       }
     }
