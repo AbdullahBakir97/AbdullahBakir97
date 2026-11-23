@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Software is a great combination of artistry and engineering."</i><br/>
-  <sub>— <b>Bill Gates</b></sub>
+  <i>"Java is to JavaScript what car is to carpet."</i><br/>
+  <sub>— <b>Chris Heilmann</b></sub>
 </p>
 <!-- QUOTE:END -->
 
