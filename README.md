@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Java is to JavaScript what car is to carpet."</i><br/>
-  <sub>— <b>Chris Heilmann</b></sub>
+  <i>"Good code is its own best documentation."</i><br/>
+  <sub>— <b>Steve McConnell</b></sub>
 </p>
 <!-- QUOTE:END -->
 
