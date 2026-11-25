@@ -63,8 +63,8 @@
 <!-- 💭 QUOTE OF THE DAY — auto-rotates daily by day-of-year -->
 <!-- QUOTE:START -->
 <p align="center">
-  <i>"Good code is its own best documentation."</i><br/>
-  <sub>— <b>Steve McConnell</b></sub>
+  <i>"In order to be irreplaceable, one must always be different."</i><br/>
+  <sub>— <b>Coco Chanel</b></sub>
 </p>
 <!-- QUOTE:END -->
 
